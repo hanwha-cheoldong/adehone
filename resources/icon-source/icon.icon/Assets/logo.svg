@@ -1,23 +1,111 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 164 138" width="328" height="276">
+  <defs>
+    <linearGradient id="gradA" x1="54.5" y1="22.5" x2="42" y2="82" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#39C2FF" />
+      <stop offset="45%" stop-color="#3385D9" />
+      <stop offset="82%" stop-color="#2752A3" />
+      <stop offset="100%" stop-color="#1B377B" />
+    </linearGradient>
 
-<svg
-   version="1.1"
-   id="svg1"
-   width="318.60233"
-   height="202.66667"
-   viewBox="0 0 318.60232 202.66667"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs1" />
-  <g
-     id="g1"
-     style="display:inline"
-     transform="translate(-6.6666669,-70.666669)">
-    <path
-       style="display:inline;fill:#ffffff"
-       d="m 177.81311,248.33334 c 23.82304,-41.29793 40.54045,-66.84626 49.51207,-75.66667 6.81685,-6.70196 10.07373,-8.7374 20.07265,-12.54475 34.57822,-13.16655 61.04674,-26.78733 72.37222,-37.24295 9.62924,-8.88966 9.34286,-9.01142 -23.43671,-9.964 -35.71756,-1.03796 -43.72989,0.42119 -62.17546,11.323 -16.72118,9.88265 -34.20103,30.11225 -42.74704,49.47157 -2.57353,5.82985 -14.81294,44.3056 -27.96399,87.90747 -2.86036,9.48343 -3.02466,11.71633 -0.86213,11.71633 0.44382,0 7.29659,-11.25 15.22839,-25 z m -65.14644,-8.32267 C 120,239.3326 130.5,237.50979 136,235.95998 c 5.5,-1.5498 12.25,-3.13783 15,-3.52895 2.75,-0.39111 5,-0.95485 5,-1.25275 0,-0.29789 2.15135,-7.58487 4.78078,-16.19328 8.49209,-27.80201 12.21334,-40.41629 21.13747,-71.65166 4.81891,-16.86667 11.23502,-39.185 14.25802,-49.596301 5.12803,-17.66103 5.74763,-23.07037 2.64253,-23.07037 -1.84887,0 -4.07048,6.908293 -16.72243,52.000001 -21.78975,77.65896 -20.80806,74.74393 -26.84794,79.72251 -7.5925,6.25838 -25.03916,14.82524 -36.10856,17.73044 -17.0947,4.48656 -33.410599,3.86724 -53.116765,-2.01622 -18.569242,-5.54403 -23.142662,-5.80284 -33.639754,-1.9037 -5.875424,2.18242 -9.864152,5.04363 -16.716684,11.99127 -4.95,5.0187 -9.0000001,10.02884 -9.0000001,11.13364 0,1.75174 5.9276921,2.00299 46.3333351,1.96383 25.483334,-0.0247 52.333338,-0.59969 59.666668,-1.27777 z M 252.69513,104.63708 c 12.18267,-3.48651 15.77304,-7.895503 9.63821,-11.835773 -10.19296,-6.546726 -36.19849,-1.77301 -41.19436,7.561863 -1.2556,2.3461 -0.98698,3.2037 1.68353,5.375 2.69471,2.19098 4.59991,2.47691 12.53928,1.88189 5.14899,-0.3859 12.94899,-1.72824 17.33334,-2.98298 z"
-       id="path1" />
-  </g>
+    <linearGradient id="gradHLeftTop" x1="109" y1="35" x2="109" y2="75" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4A72A8" />
+      <stop offset="22%" stop-color="#DF9A7E" />
+      <stop offset="48%" stop-color="#FF9663" />
+      <stop offset="100%" stop-color="#F77362" />
+    </linearGradient>
+
+    <linearGradient id="gradHLeftBot" x1="109" y1="94" x2="109" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7D4574" />
+      <stop offset="18%" stop-color="#C85D82" />
+      <stop offset="50%" stop-color="#E8656C" />
+      <stop offset="100%" stop-color="#FC7E64" />
+    </linearGradient>
+
+    <linearGradient id="gradHRight" x1="148.5" y1="71" x2="148.5" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2B427B" />
+      <stop offset="22%" stop-color="#765692" />
+      <stop offset="50%" stop-color="#DC6C8B" />
+      <stop offset="80%" stop-color="#FB7986" />
+      <stop offset="100%" stop-color="#FF868E" />
+    </linearGradient>
+
+    <linearGradient id="gradLowerRibbon" x1="162" y1="42" x2="62" y2="124" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FCA18B" />
+      <stop offset="28%" stop-color="#FF9162" />
+      <stop offset="65%" stop-color="#F86D63" />
+      <stop offset="86%" stop-color="#BA5F88" />
+      <stop offset="100%" stop-color="#31438C" />
+    </linearGradient>
+
+    <linearGradient id="gradUpperRibbon" x1="25" y1="88" x2="158" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#37BCF9" />
+      <stop offset="48%" stop-color="#3AB6FB" />
+      <stop offset="68%" stop-color="#5AA6E3" />
+      <stop offset="84%" stop-color="#9E9EC4" />
+      <stop offset="100%" stop-color="#FCA18B" />
+    </linearGradient>
+
+    <linearGradient id="gradBottomCircle" x1="18" y1="94" x2="68" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#37BCF9" />
+      <stop offset="42%" stop-color="#3B9FE9" />
+      <stop offset="82%" stop-color="#5877D1" />
+      <stop offset="100%" stop-color="#6B78C8" />
+    </linearGradient>
+
+    <linearGradient id="fadeBottomGrad" x1="48" y1="126" x2="22" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <mask id="fadeBottomMask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="180" height="154">
+      <rect x="0" y="0" width="180" height="154" fill="url(#fadeBottomGrad)" />
+    </mask>
+
+    <clipPath id="clipA">
+      <polygon points="0,0 90,0 74.0,55.0 60.5,64.0 45,95 0,95" />
+    </clipPath>
+
+    <clipPath id="clipHLeftTop">
+      <polygon points="95,25 125,25 125,63.8 95,82.5" />
+    </clipPath>
+
+    <mask id="ribbonMask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="180" height="154">
+      <path d="M 65.24,94.42 A 26.5,26.5 0 1,1 40.11,83.76 C 68.83,79.72 99.71,46.38 115.78,27.23 A 26.4,26.4 0 1,1 149.60,66.83 C 127.31,80.22 92.00,102.00 63.49,127.73" fill="none" stroke="#ffffff" stroke-width="13.4" stroke-linecap="butt" />
+    </mask>
+</defs>
+  <g>
+    <g clip-path="url(#clipA)">
+      <path d="M 26.5,85 L 46.5,22.5 L 62.5,22.5 L 77.5,65 L 64.5,65 L 54.5,35.5 L 39.8,85 Z" fill="url(#gradA)" />
+    </g>
+
+    <g clip-path="url(#clipHLeftTop)">
+      <rect x="102.5" y="34" width="13.2" height="48" fill="url(#gradHLeftTop)" />
+    </g>
+
+    <rect x="102.5" y="94" width="13.2" height="33.5" fill="url(#gradHLeftBot)" />
+    <rect x="142.0" y="68" width="13.2" height="59.5" fill="url(#gradHRight)" />
+
+    <g mask="url(#ribbonMask)">
+      <path d="
+        M 159.93,33.04
+        A 26.4,26.4 0 0,1 149.60,66.83
+        C 127.31,80.22 92.00,102.00 63.49,127.73
+      " fill="none" stroke="url(#gradLowerRibbon)" stroke-width="15" stroke-linecap="butt" />
+
+      <path d="
+        M 22.09,125.20
+        A 26.5,26.5 0 0,1 40.11,83.76
+        C 68.83,79.72 99.71,46.38 115.78,27.23
+        A 26.4,26.4 0 0,1 159.93,33.04
+      " fill="none" stroke="url(#gradUpperRibbon)" stroke-width="15" stroke-linecap="round" />
+
+      <g mask="url(#fadeBottomMask)">
+        <path d="
+          M 65.24,94.42
+          A 26.5,26.5 0 1,1 30.55,87.05
+        " fill="none" stroke="url(#gradBottomCircle)" stroke-width="15" stroke-linecap="butt" />
+      </g>
+    </g>
+</g>
 </svg>

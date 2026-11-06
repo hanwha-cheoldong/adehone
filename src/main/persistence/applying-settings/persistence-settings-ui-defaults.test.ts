@@ -12,7 +12,7 @@ import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import type { GlobalSettings } from '../../../shared/global-settings-types'
 import type { PersistedState } from '../../../shared/persisted-state-types'
-import { getDefaultPersistedState } from '../../../shared/constants'
+import { getDefaultPersistedState, DEFAULT_APP_FONT_FAMILY } from '../../../shared/constants'
 import { nativeChatQueueFollowUps } from '../../../shared/native-chat/input/native-chat-follow-up-behavior'
 import { ONBOARDING_FINAL_STEP, ONBOARDING_FLOW_VERSION } from '../../../shared/onboarding-defaults'
 
@@ -75,7 +75,7 @@ describe('Store', () => {
     expect(settings.sourceControlGroupOrder).toBe('changes-first')
     expect(settings.theme).toBe('system')
     expect(settings.appIcon).toBe('classic')
-    expect(settings.appFontFamily).toBe('Geist')
+    expect(settings.appFontFamily).toBe(DEFAULT_APP_FONT_FAMILY)
     expect(settings.editorAutoSave).toBe(false)
     expect(settings.editorAutoSaveDelayMs).toBe(1000)
     expect(settings.terminalFontSize).toBe(14)

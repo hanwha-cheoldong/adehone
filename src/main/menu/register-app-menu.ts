@@ -112,12 +112,12 @@ function buildAndApplyMenu(options: RegisterAppMenuOptions): void {
   }
 
   const featureTourItem: Electron.MenuItemConstructorOptions = {
-    label: translateMain('menu.exploreOrca', 'Explore Orca'),
+    label: translateMain('menu.exploreOrca', 'Explore Adehone'),
     click: (_menuItem, window) => onOpenFeatureTour(window)
   }
 
   const setupGuideItem: Electron.MenuItemConstructorOptions = {
-    label: translateMain('menu.gettingStarted', 'Getting Started with Orca'),
+    label: translateMain('menu.gettingStarted', 'Getting Started with Adehone'),
     click: (_menuItem, window) => onOpenSetupGuide(window)
   }
 
@@ -126,20 +126,21 @@ function buildAndApplyMenu(options: RegisterAppMenuOptions): void {
     click: (_menuItem, window) => onOpenCrashReport(window)
   }
 
+  const appMenuTitle = options.appMenuLabel ?? app.name ?? 'Adehone'
   const macAppMenu: Electron.MenuItemConstructorOptions = {
-    label: options.appMenuLabel ?? app.name,
+    label: appMenuTitle,
     submenu: [
-      { role: 'about' },
+      { role: 'about', label: `About ${appMenuTitle}` },
       checkForUpdatesItem,
       settingsItem,
       { type: 'separator' },
       { role: 'services' },
       { type: 'separator' },
-      { role: 'hide' },
+      { role: 'hide', label: `Hide ${appMenuTitle}` },
       { role: 'hideOthers' },
       { role: 'unhide' },
       { type: 'separator' },
-      ...createAppMenuQuitItems(options, options.appMenuLabel ?? app.name)
+      ...createAppMenuQuitItems(options, appMenuTitle)
     ]
   }
 
@@ -227,7 +228,7 @@ function buildAndApplyMenu(options: RegisterAppMenuOptions): void {
         click: () => onToggleAppearance('showAutomationsButton')
       },
       {
-        label: translateMain('menu.showMobileButton', 'Show Orca Mobile Button'),
+        label: translateMain('menu.showMobileButton', 'Show Adehone Mobile Button'),
         type: 'checkbox',
         checked: appearance.showMobileButton,
         click: () => onToggleAppearance('showMobileButton')

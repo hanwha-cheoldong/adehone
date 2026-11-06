@@ -1,11 +1,21 @@
 import { DEFAULT_APP_FONT_FAMILY } from '../../../../../../shared/constants'
 
+export const RECOMMENDED_APP_FONTS = [
+  DEFAULT_APP_FONT_FAMILY,
+  'Pretendard Variable',
+  'Geist',
+  'Inter',
+  'SF Pro Text',
+  'Segoe UI',
+  'system-ui'
+] as const
+
 export function mergeFontSuggestions(
   systemFonts: readonly string[],
   previousFonts: readonly string[]
 ): string[] {
   // Keep every installed font searchable even if rendering is capped later.
-  return Array.from(new Set([DEFAULT_APP_FONT_FAMILY, ...systemFonts, ...previousFonts]))
+  return Array.from(new Set([...RECOMMENDED_APP_FONTS, ...systemFonts, ...previousFonts]))
 }
 
 export function getFallbackTerminalFonts(): string[] {

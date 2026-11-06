@@ -258,7 +258,7 @@ const ORCA_MAC_TEAM_ID = '6CX3WHS9HZ'
 /** @type {import('electron-builder').Configuration} */
 module.exports = {
   appId,
-  productName: 'Orca',
+  productName: 'Adehone',
   protocols: [{ name: 'Orca', schemes: ['orca'] }],
   toolsets: { appimage: '1.0.3' },
   ...(devChannelBuildVersion
@@ -531,6 +531,26 @@ module.exports = {
         context.packager
       )
       await packageMacTerminalHost(join(resourcesDir, '..', '..'), context)
+      if (!isMacRelease && 'false' === process.env.CSC_IDENTITY_AUTO_DISCOVERY) {
+        const appPath = join(context.appOutDir, `${context.packager.appInfo.productFilename}.app`)
+        const entitlementsPath = resolve(__dirname, '../resources/build/entitlements.mac.plist')
+        const identity = process.env.CSC_NAME ?? findInstalledMacSigningIdentity() ?? '-'
+        execFileSync(
+          'codesign',
+          [
+            '--force',
+            '--deep',
+            '--sign',
+            identity,
+            '--timestamp=none',
+            '--entitlements',
+            entitlementsPath,
+            appPath
+          ],
+          { stdio: 'inherit' }
+        )
+        execFileSync('codesign', ['--verify', '--deep', '--strict', appPath], { stdio: 'inherit' })
+      }
     }
   },
   win: {
@@ -669,7 +689,7 @@ module.exports = {
   // silently downgrading to ad-hoc artifacts that look shippable in CI logs.
   forceCodeSigning: isMacRelease,
   dmg: {
-    artifactName: 'orca-macos-${arch}.${ext}'
+    artifactName: 'adehone-macos-${arch}.${ext}'
   },
   linux: {
     // shared-mime-info already maps md/markdown: advertise handler only, leaving mimeapps.list defaults intact.
@@ -900,6 +920,9 @@ function codesignArgs(identity, targetPath) {
 }
 
 function findInstalledMacSigningIdentity(keychainFile) {
+  if (!isMacRelease && '-' === process.env.CSC_NAME) {
+    return null
+  }
   try {
     const output = execFileSync(
       'security',

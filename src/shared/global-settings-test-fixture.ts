@@ -1,7 +1,7 @@
 import { expect, vi } from 'vitest'
 import * as shell from './agent-launch/startup/tui-agent-startup-shell'
 import type { GlobalSettings } from './global-settings-types'
-import { getDefaultVoiceSettings } from './constants'
+import { DEFAULT_APP_FONT_FAMILY, getDefaultVoiceSettings } from './constants'
 import { getDefaultNotificationSettings } from './notification-settings-defaults'
 import { buildDefaultSettings } from './default-global-settings'
 
@@ -13,7 +13,7 @@ export function createGlobalSettingsFixture(
     ...buildDefaultSettings({
       // Callers supply the real directory; no platform-specific default belongs here.
       workspaceDir: overrides.workspaceDir ?? '',
-      appFontFamily: 'Geist',
+      appFontFamily: DEFAULT_APP_FONT_FAMILY,
       editorAutoSaveDelayMs: 1000,
       primarySelectionMiddleClickPaste: false,
       primarySelectionDefaultedForLinux: false,

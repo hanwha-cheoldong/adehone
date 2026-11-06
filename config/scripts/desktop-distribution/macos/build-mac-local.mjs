@@ -31,12 +31,22 @@ export function getLocalBuildIdentity() {
 if (process.argv[1] && resolve(process.argv[1]) === resolve(import.meta.filename)) {
   const identity = getLocalBuildIdentity()
   console.log(`[build:mac] local update version ${identity.version}`)
+  const extraArgs = process.argv.slice(2)
+  const archArgs = 0 < extraArgs.length ? extraArgs : ['dmg', 'zip', `--${process.arch}`]
   execFileSync(
-    process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm',
-    ['exec', 'electron-builder', '--config', 'config/electron-builder.config.cjs', '--mac'],
+    'win32' === process.platform ? 'pnpm.cmd' : 'pnpm',
+    [
+      'exec',
+      'electron-builder',
+      '--config',
+      'config/electron-builder.config.cjs',
+      '--mac',
+      ...archArgs
+    ],
     {
       env: {
         ...process.env,
+        CSC_IDENTITY_AUTO_DISCOVERY: process.env.CSC_IDENTITY_AUTO_DISCOVERY ?? 'false',
         ORCA_BUILD_COMMIT: identity.commit,
         ORCA_LOCAL_BUILD_VERSION: identity.version
       },

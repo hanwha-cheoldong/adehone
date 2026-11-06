@@ -12,6 +12,22 @@
 @import '../../../shared/styles/scrollbar-sleek.css';
 
 @font-face {
+  font-family: 'Pretendard Variable';
+  src: url('./fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Geist';
   src: url('./fonts/Geist-Variable.woff2') format('woff2');
   font-weight: 100 900;
@@ -187,7 +203,9 @@
 }
 
 :root {
-  --app-font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --app-font-family:
+    'Pretendard', 'Pretendard Variable', 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
   --font-sans: var(--app-font-family);
   --font-mono:
     'SF Mono', SFMono-Regular, ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Liberation Mono',
@@ -723,6 +741,8 @@ body[data-modal-overlay-open]
     height: 100dvh;
     font-family: var(
       --app-font-family,
+      'Pretendard',
+      'Pretendard Variable',
       'Geist',
       -apple-system,
       BlinkMacSystemFont,

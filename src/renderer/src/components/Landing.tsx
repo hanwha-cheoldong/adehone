@@ -258,16 +258,19 @@ export default function Landing(): React.JSX.Element {
         <div className="flex flex-col items-center gap-4 py-8">
           <div
             className="flex items-center justify-center size-20 rounded-2xl border border-border/80 shadow-lg shadow-black/40"
-            style={{ backgroundColor: '#12181e' }}
+            style={{
+              background:
+                'radial-gradient(94% 94% at 50% 6%, #195273 0%, #163E5F 32%, #152647 65%, #12163A 100%)'
+            }}
           >
             <img
               src={logo}
-              alt={translate('auto.components.Landing.520304a067', 'Orca logo')}
+              alt={translate('auto.components.Landing.520304a067', 'Adehone logo')}
               className="size-12"
             />
           </div>
           <h1 className="text-4xl font-bold text-foreground tracking-tight">
-            {translate('auto.components.Landing.6ca6ff404e', 'ORCA')}
+            {translate('auto.components.Landing.6ca6ff404e', 'ADEHONE')}
           </h1>
 
           {preflightIssues.length > 0 && <PreflightBanner issues={preflightIssues} repos={repos} />}

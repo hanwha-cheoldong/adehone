@@ -104,6 +104,7 @@ docs/**
 !docs/agents-md-refs/**
 !docs/agent-skill-sharing-implementation-checklist.md
 !docs/mobile-terminal-shortcut-bar.md
+!docs/ADEHONE_REBRANDING_GUIDE.md
 
 .stably/*
 !.stably/docs/
@@ -156,3 +157,5 @@ ci-shards/
 /.build/windows-native-benchmark/
 
 .local/static-analysis-research/
+.antigravitycli/
+run.sh
