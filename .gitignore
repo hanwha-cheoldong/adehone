@@ -159,3 +159,8 @@ ci-shards/
 .local/static-analysis-research/
 .antigravitycli/
 run.sh
+build.sh
+mac-build.sh
+win-build.sh
+asset-build.sh
+.gradle/

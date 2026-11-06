@@ -6,11 +6,12 @@
 
 ## 0. 변경 이력 (Change Log)
 
-| 버전     | 날짜       | 작업 내역                                                                                                      |
-| :------- | :--------- | :------------------------------------------------------------------------------------------------------------- |
-| **v1.2** | 2026-11-06 | 원격 `origin/main` 최신 288개 커밋 병합 (`25d677f7ad4`), 다국어(`en.json`) 신규 기능 키 충돌 해결 및 머지 완료 |
-| **v1.1** | 2026-11-06 | Adehone 신규 브랜드 아이덴티티(무한대 루프 로고/아이콘) 전면 반영 및 Pretendard 기본 UI 폰트 시스템 구축       |
-| **v1.0** | 2026-11-05 | Orca -> Adehone 기본 명칭 리브랜딩, macOS 로컬 코드서명 봉인 및 패키징 스크립트 트러블슈팅                     |
+| 버전     | 날짜       | 작업 내역                                                                                                              |
+| :------- | :--------- | :--------------------------------------------------------------------------------------------------------------------- |
+| **v1.3** | 2026-11-06 | `Developer ID Application` 인증서 연동 및 macOS `.app` 번들과 `.dmg` 디스크 이미지 자동 코드 서명 봉인 파이프라인 구축 |
+| **v1.2** | 2026-11-06 | 원격 `origin/main` 최신 288개 커밋 병합 (`25d677f7ad4`), 다국어(`en.json`) 신규 기능 키 충돌 해결 및 머지 완료         |
+| **v1.1** | 2026-11-06 | Adehone 신규 브랜드 아이덴티티(무한대 루프 로고/아이콘) 전면 반영 및 Pretendard 기본 UI 폰트 시스템 구축               |
+| **v1.0** | 2026-11-05 | Orca -> Adehone 기본 명칭 리브랜딩, macOS 로컬 코드서명 봉인 및 패키징 스크립트 트러블슈팅                             |
 
 ---
 
@@ -73,7 +74,7 @@
 - [`config/scripts/run-electron-vite-dev.mjs`](file:///Users/cdchoi/Documents/git/orca/config/scripts/run-electron-vite-dev.mjs)
   - 개발 모드 실행 시 macOS Dock 타이틀 `Adehone` 반영
 - [`config/scripts/desktop-distribution/macos/build-mac-local.mjs`](file:///Users/cdchoi/Documents/git/orca/config/scripts/desktop-distribution/macos/build-mac-local.mjs)
-  - 단일 아키텍처 지정(`--arm64` 등) 인자 처리 및 `CSC_IDENTITY_AUTO_DISCOVERY: 'false'` 기본 적용
+  - 단일 아키텍처 지정(`--arm64` 등) 인자 처리, `CSC_IDENTITY_AUTO_DISCOVERY: 'false'` 기본 적용 및 패키징 완료 후 `dist/*.dmg` 파일에 대한 `Developer ID Application` 자동 서명 봉인 처리
 
 ### 1.6 로고 및 앱 아이콘 에셋 (Adehone Brand Identity)
 

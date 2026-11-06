@@ -1,6 +1,38 @@
 import { execFileSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+
+export function findLocalSigningIdentity() {
+  if (process.env.CSC_NAME) {
+    return process.env.CSC_NAME
+  }
+  try {
+    const output = execFileSync('security', ['find-identity', '-v', '-p', 'codesigning'], {
+      encoding: 'utf8'
+    })
+    const releaseMatch =
+      output.match(/"([^"]*Developer ID Application:[^"]+)"/) ??
+      output.match(/"([^"]*Apple Distribution:[^"]+)"/)
+    if (releaseMatch?.[1]) {
+      return releaseMatch[1]
+    }
+    const devMatch = output.match(/"([^"]*Apple Development:[^"]+)"/)
+    if (devMatch?.[1]) {
+      return devMatch[1]
+    }
+  } catch (error) {
+    if (error instanceof TypeError) {
+      console.warn('[build:mac] TypeError querying signing identity:', error.message)
+    } else if (error instanceof RangeError) {
+      console.warn('[build:mac] RangeError querying signing identity:', error.message)
+    } else if (error instanceof Error) {
+      console.warn('[build:mac] Error querying signing identity:', error.message)
+    } else {
+      console.warn('[build:mac] Unknown exception querying signing identity')
+    }
+  }
+  return null
+}
 
 export function createLocalBuildVersion(baseVersion, timestamp, commit) {
   if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(baseVersion)) {
@@ -53,4 +85,25 @@ if (process.argv[1] && resolve(process.argv[1]) === resolve(import.meta.filename
       stdio: 'inherit'
     }
   )
+
+  if ('darwin' === process.platform) {
+    const signingIdentity = findLocalSigningIdentity()
+    if (signingIdentity) {
+      const distDir = resolve('dist')
+      if (existsSync(distDir)) {
+        const dmgFiles = readdirSync(distDir).filter((file) => {
+          return file.endsWith('.dmg')
+        })
+        for (const dmg of dmgFiles) {
+          const dmgPath = resolve(distDir, dmg)
+          console.log(`[build:mac] sealing dmg signature: ${dmg} with ${signingIdentity}`)
+          execFileSync(
+            'codesign',
+            ['--force', '--sign', signingIdentity, '--timestamp=none', dmgPath],
+            { stdio: 'inherit' }
+          )
+        }
+      }
+    }
+  }
 }
