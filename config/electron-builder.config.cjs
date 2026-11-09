@@ -9,7 +9,7 @@ const electronBuilderNativeRebuild = require('./scripts/desktop-distribution/run
 const {
   assertPackagedDaemonEntryExists,
   verifyPackagedDaemonEntryBoots,
-  verifyPackagedMacTerminalHostBoots
+
 } = require('./scripts/desktop-distribution/runtime-verification/verify-packaged-daemon-entry.cjs')
 const {
   buildMacTerminalHost,
@@ -411,11 +411,11 @@ module.exports = {
     const resourcesDir =
       context.electronPlatformName === 'darwin'
         ? join(
-            context.appOutDir,
-            `${context.packager.appInfo.productFilename}.app`,
-            'Contents',
-            'Resources'
-          )
+          context.appOutDir,
+          `${context.packager.appInfo.productFilename}.app`,
+          'Contents',
+          'Resources'
+        )
         : join(context.appOutDir, 'resources')
     if (!existsSync(resourcesDir)) {
       throw new Error(`Missing packaged resources directory: ${resourcesDir}`)
@@ -786,8 +786,8 @@ module.exports = {
   npmRebuild: true,
   publish: {
     provider: 'github',
-    owner: 'stablyai',
-    repo: devChannelRepo ?? 'orca',
+    owner: 'hanwha-cheoldong',
+    repo: devChannelRepo ?? 'adehone',
     // Keep main-repo releases draft until release-cut verifies all assets; early --publish always would expose missing Windows installers.
     releaseType: devChannelRepo ? 'prerelease' : 'draft'
   }
@@ -945,6 +945,6 @@ function findInstalledMacSigningIdentity(keychainFile) {
     if (!isMacRelease) {
       return output.match(/"([^"]*Apple Development:[^"]+)"/)?.[1] ?? null
     }
-  } catch {}
+  } catch { }
   return null
 }

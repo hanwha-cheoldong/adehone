@@ -1,7 +1,7 @@
 import { net } from 'electron'
 import { parse } from 'yaml'
 
-const RELEASES_DOWNLOAD_BASE = 'https://github.com/stablyai/orca/releases/download'
+const RELEASES_DOWNLOAD_BASE = 'https://github.com/hanwha-cheoldong/adehone/releases/download'
 export const FETCH_TIMEOUT_MS = 5000
 
 export function getReleaseDownloadUrl(tag: string): string {
