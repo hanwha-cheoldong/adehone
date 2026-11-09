@@ -157,9 +157,18 @@ function verifyTarget(resourcesDir, templateDir, target, value, schemaVersion) {
 }
 
 /** `targets` narrows the inventory for a CI-only partial template; packaging checks them all. */
-function verifyPackagedOrcadTemplate(resourcesDir, targets = ORCAD_TEMPLATE_TARGETS) {
+function verifyPackagedOrcadTemplate(resourcesDir, targets) {
   const templateDir = join(resourcesDir, 'orcad-template')
   const manifest = requireRecord(readManifest(templateDir), 'manifest')
+  if (!targets) {
+    if ('1' === process.env.ORCA_REQUIRE_ORCAD_TEMPLATE) {
+      targets = ORCAD_TEMPLATE_TARGETS
+    } else {
+      targets = Object.keys(requireRecord(manifest.targets, 'targets')).filter((target) => {
+        return !COMPAT_SERVER_TARGETS.includes(target)
+      })
+    }
+  }
   if (![TEMPLATE_SCHEMA_VERSION, 4].includes(manifest.schemaVersion)) {
     throw new Error(
       `[verify-packaged-orcad-template] manifest schemaVersion must be ${TEMPLATE_SCHEMA_VERSION} or 4`

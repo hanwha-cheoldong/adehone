@@ -2,10 +2,10 @@
 import { act, cleanup, fireEvent, render } from '@testing-library/react'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import type { AppState } from '@/store/types'
-import type { ActivePluginCommand } from '@/store/plugin-panels'
+import type { ActivePluginCommand } from '@/store/plugins/catalog/plugin-contribution-catalog'
 import { worktree } from '../sidebar/worktree-list/grouping/worktree-list-groups-test-fixtures'
 import { useGlobalKeybindings } from '../../app-shell/use-global-keybindings'
-import { useNativeChatComposerKeyDown } from './use-native-chat-composer-keydown'
+import { useNativeChatComposerKeyDown } from './composer/editor/use-native-chat-composer-keydown'
 import { RENAME_TERMINAL_TAB_EVENT } from '../tab-bar/terminal-tab-rename-request'
 import { installMainWindowShortcutRouting } from '../../../../main/window/main-window-shortcut-routing'
 import { registerWorkspaceShortcutIpcBridge } from '../../hooks/ipc-events/workspace-shortcut-ipc-bridge'
@@ -39,7 +39,9 @@ vi.mock('@/store', () => ({
     getState: () => fixture.state
   })
 }))
-vi.mock('@/store/plugin-panels', () => ({ usePluginCommands: () => fixture.plugins }))
+vi.mock('@/store/plugins/catalog/plugin-contribution-catalog', () => ({
+  usePluginCommands: () => fixture.plugins
+}))
 vi.mock('@/lib/plugin-command-execution', () => ({ executePluginCommand: fixture.pluginRun }))
 vi.mock('@/lib/plugin-command-replacements', () => ({
   runBuiltInOrReplacement: (_: string, run: () => void) => run()
