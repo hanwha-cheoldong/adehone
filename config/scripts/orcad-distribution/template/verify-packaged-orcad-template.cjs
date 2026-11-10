@@ -161,13 +161,12 @@ function verifyPackagedOrcadTemplate(resourcesDir, targets) {
   const templateDir = join(resourcesDir, 'orcad-template')
   const manifest = requireRecord(readManifest(templateDir), 'manifest')
   if (!targets) {
-    if ('1' === process.env.ORCA_REQUIRE_ORCAD_TEMPLATE) {
-      targets = ORCAD_TEMPLATE_TARGETS
-    } else {
-      targets = Object.keys(requireRecord(manifest.targets, 'targets')).filter((target) => {
-        return !COMPAT_SERVER_TARGETS.includes(target)
-      })
-    }
+    targets =
+      '1' === process.env.ORCA_REQUIRE_ORCAD_TEMPLATE
+        ? ORCAD_TEMPLATE_TARGETS
+        : Object.keys(requireRecord(manifest.targets, 'targets')).filter((target) => {
+            return !COMPAT_SERVER_TARGETS.includes(target)
+          })
   }
   if (![TEMPLATE_SCHEMA_VERSION, 4].includes(manifest.schemaVersion)) {
     throw new Error(
