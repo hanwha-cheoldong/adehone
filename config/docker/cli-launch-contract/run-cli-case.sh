@@ -39,13 +39,13 @@ case "$case_name" in
   nofuse-userns-bundled-worktree) command=("$launcher" worktree list) ;;
   # Direct binaries must hand off before Ozone initializes.
   nofuse-nosandbox-direct-binary-skills)
-    command=("$extracted_root/orca-ide" --no-sandbox skills --help)
+    command=("$extracted_root/adehone" --no-sandbox skills --help)
     ;;
   nofuse-nosandbox-direct-binary-gui)
-    command=("$extracted_root/orca-ide" --no-sandbox)
+    command=("$extracted_root/adehone" --no-sandbox)
     ;;
   stale-display-nosandbox-direct-binary-gui)
-    command=("$extracted_root/orca-ide" --no-sandbox)
+    command=("$extracted_root/adehone" --no-sandbox)
     ;;
   *)
     echo "UNKNOWN_CASE $case_name"

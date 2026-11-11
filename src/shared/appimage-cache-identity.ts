@@ -5,7 +5,7 @@ import { basename, dirname, isAbsolute, join, resolve, sep } from 'node:path'
 import { APPIMAGE_NODE_RUNTIME_SEGMENTS } from './appimage-node-runtime'
 
 const CACHE_KEY_PATTERN = /^[0-9a-f]{24}$/u
-const LINUX_EXECUTABLE_NAME = 'orca-ide'
+const LINUX_EXECUTABLE_NAME = 'adehone'
 // Version the namespace so older pruners cannot delete generations a newer build still runs; rollback reopens only the old namespace's risk.
 const NAMESPACE_KEY_VERSION = 'generation-lease-v1'
 /** Beside a namespace's generations; not a cache key, so pruning skips it. */

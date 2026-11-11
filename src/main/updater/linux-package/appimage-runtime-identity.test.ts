@@ -31,7 +31,7 @@ function createFixture(appDirName = '.mount_Orca123', machine = 0x3e) {
   const root = mkdtempSync(join(tmpdir(), 'orca-appimage-identity-'))
   const appImagePath = join(root, 'Applications', 'Orca.AppImage')
   const appDirPath = join(root, appDirName)
-  const execPath = join(appDirPath, 'orca-ide')
+  const execPath = join(appDirPath, 'adehone')
   const resourcesPath = join(appDirPath, 'resources')
   const packageTypePath = join(resourcesPath, 'package-type')
   const packageMarkerPath = join(resourcesPath, 'app.asar.unpacked', 'out', 'package.json')

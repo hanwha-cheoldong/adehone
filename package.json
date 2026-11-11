@@ -152,7 +152,7 @@
     "audit:translate-helpers": "node config/scripts/localization/reactive-translate/report-translate-helpers.mjs",
     "build:cli": "pnpm run build:packages && node config/scripts/cli-build/build-cli.mjs && pnpm run prepare:cli-output",
     "prepare:cli-output": "node config/scripts/cli-build/verify-cli-bin.mjs --fix-executable --fix-package-json && node config/scripts/development/setup/install-dev-cli.mjs",
-    "test:linux-cli-contract": "node config/scripts/runtime-verification/desktop-transport/run-linux-cli-launch-contract-docker.mjs --appimage dist/orca-linux.AppImage",
+    "test:linux-cli-contract": "node config/scripts/runtime-verification/desktop-transport/run-linux-cli-launch-contract-docker.mjs --appimage dist/adehone-linux.AppImage",
     "test:repro:skills-cli-runtime": "pnpm run build:cli && pnpm run build:electron-vite && pnpm run verify:built-skills-cli",
     "build:electron-vite": "pnpm run build:packages && node config/scripts/desktop-build/execution/run-electron-vite-build.mjs",
     "build:electron-vite:parallel": "pnpm run build:packages && node config/scripts/development/launch/run-electron-vite-targets-in-parallel.mjs",

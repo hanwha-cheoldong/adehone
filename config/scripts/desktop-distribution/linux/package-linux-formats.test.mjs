@@ -30,8 +30,8 @@ beforeEach(() => {
   mkdirSync(outputDirectory)
   writeFileSync(join(preparedDirectory, 'resources/package-type'), 'AppImage')
   writeFileSync(join(preparedDirectory, 'resources/app.asar'), 'verified application')
-  writeFileSync(join(preparedDirectory, 'orca-ide'), 'executable')
-  chmodSync(join(preparedDirectory, 'orca-ide'), 0o755)
+  writeFileSync(join(preparedDirectory, 'adehone'), 'executable')
+  chmodSync(join(preparedDirectory, 'adehone'), 0o755)
 })
 
 afterEach(() => rmSync(root, { recursive: true, force: true }))
@@ -68,7 +68,7 @@ describe('independent Linux package formats', () => {
         expect(readFileSync(join(app, 'resources/app.asar'), 'utf8')).toBe('verified application')
         if (process.platform !== 'win32') {
           expect(readlinkSync(join(app, 'marker-link'))).toBe('resources/package-type')
-          expect(statSync(join(app, 'orca-ide')).mode & 0o777).toBe(0o755)
+          expect(statSync(join(app, 'adehone')).mode & 0o777).toBe(0o755)
           expect(statSync(join(app, 'resources/package-type')).ino).not.toBe(
             statSync(join(preparedDirectory, 'resources/package-type')).ino
           )

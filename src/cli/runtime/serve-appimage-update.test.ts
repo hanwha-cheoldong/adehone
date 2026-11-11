@@ -37,7 +37,7 @@ async function makeRunningGeneration() {
   const generationPath = join(namespacePath, resolveAppImageCacheKey(appImagePath)!)
   await mkdir(generationPath, { recursive: true })
   await writeFile(join(namespacePath, APPIMAGE_SOURCE_RECORD_NAME), appImagePath)
-  return { root, appImagePath, executable: join(generationPath, 'orca-ide') }
+  return { root, appImagePath, executable: join(generationPath, 'adehone') }
 }
 
 /** Replace the inode at the same path, as an AppImage update does. */
@@ -87,14 +87,14 @@ describe('supervised serve and a replaced AppImage', () => {
     const { appImagePath, root } = await makeRunningGeneration()
     const mount = join(root, '.mount_Orca')
     const watch = resolveAppImageBuildWatch(
-      join(mount, 'orca-ide'),
+      join(mount, 'adehone'),
       { APPIMAGE: appImagePath, APPDIR: mount },
       'linux'
     )
     expect(watch).toEqual({ appImagePath, runningKey: resolveAppImageCacheKey(appImagePath) })
     expect(
       resolveAppImageBuildWatch(
-        '/opt/Orca/orca-ide',
+        '/opt/Adehone/adehone',
         { APPIMAGE: appImagePath, APPDIR: mount },
         'linux'
       )

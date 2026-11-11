@@ -122,7 +122,7 @@ describe('electron-builder config', () => {
   it('validates each AppImage before electron-builder publishes it', async () => {
     const root = await mkdtemp(join(tmpdir(), 'orca-electron-builder-appimage-'))
     try {
-      const appImage = join(root, 'orca-linux.AppImage')
+      const appImage = join(root, 'adehone-linux.AppImage')
       await writeFile(appImage, 'not an ELF')
       await chmod(appImage, 0o755)
 
@@ -130,7 +130,7 @@ describe('electron-builder config', () => {
         electronBuilderConfig.artifactBuildCompleted({ file: appImage, arch: 1 })
       ).toThrow(/ELF header is outside/)
       expect(() =>
-        electronBuilderConfig.artifactBuildCompleted({ file: join(root, 'orca-ide.deb') })
+        electronBuilderConfig.artifactBuildCompleted({ file: join(root, 'adehone.deb') })
       ).not.toThrow()
     } finally {
       await rm(root, { recursive: true, force: true })

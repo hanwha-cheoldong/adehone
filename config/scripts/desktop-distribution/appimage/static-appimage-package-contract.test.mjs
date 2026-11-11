@@ -16,14 +16,18 @@ const FIXTURE_BYTES = 384
 describe('static AppImage package contract', () => {
   it('does not scan the appended AppImage payload as outer ELF data', async () => {
     const payload = Buffer.concat([RUNTIME_SOURCE, Buffer.alloc(16, 1)])
-    await withFixture('orca-linux.AppImage', Buffer.concat([createRuntime(), payload]), (path) => {
-      expect(() => verifyStaticAppImagePackage(path, 1)).not.toThrow()
-    })
+    await withFixture(
+      'adehone-linux.AppImage',
+      Buffer.concat([createRuntime(), payload]),
+      (path) => {
+        expect(() => verifyStaticAppImagePackage(path, 1)).not.toThrow()
+      }
+    )
 
     const unidentifiedRuntime = createRuntime()
     unidentifiedRuntime.fill(0, 192, 192 + RUNTIME_SOURCE.length)
     await withFixture(
-      'orca-linux.AppImage',
+      'adehone-linux.AppImage',
       Buffer.concat([unidentifiedRuntime, payload]),
       (path) => {
         expect(() => verifyStaticAppImagePackage(path, 1)).toThrow(/does not identify/)

@@ -94,7 +94,7 @@ export function installedElectronCandidates(
     joinPath(homePath, '.local', 'bin', 'orca-ide'),
     '/usr/local/bin/orca-ide',
     '/usr/bin/orca-ide',
-    '/opt/Orca/orca-ide'
+    '/opt/Adehone/adehone'
   ]
 }
 
