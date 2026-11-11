@@ -1,6 +1,6 @@
 name: Daily macOS Dev Build
 
-# Publish daily main builds to orca-daily, separate from hourly and stable/RC feeds. Sign/notarize for update-preserved macOS TCC grants; PR/release pipelines own blocking validation, with E2E detached after publish. Cron 18:15 UTC means 10:15 PST/11:15 PDT, offset from hourly. Use the shared hourly App with write access to orca-daily (setup-hourly-release-token.sh/setup-daily-release-repo.sh). Mint tokens again after build and upload because 2×45min retry can exceed their 1h life. Keep releases draft until manifests verify; drafts retain build numbers.
+# Publish daily develop builds to adehone-daily, separate from hourly and stable/RC feeds. Sign/notarize for update-preserved macOS TCC grants; PR/release pipelines own blocking validation, with E2E detached after publish. Cron 18:15 UTC means 10:15 PST/11:15 PDT, offset from hourly. Use the shared hourly App with write access to orca-daily (setup-hourly-release-token.sh/setup-daily-release-repo.sh). Mint tokens again after build and upload because 2×45min retry can exceed their 1h life. Keep releases draft until manifests verify; drafts retain build numbers.
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: Build even if main has not moved since the last daily
+        description: Build even if develop has not moved since the last daily
         required: false
         default: false
         type: boolean
@@ -27,40 +27,40 @@ env:
   DAILY_RETAIN_COUNT: 30
 
 jobs:
-  # Why: the app and the orcad template it ships must come from one commit, so resolve main once.
-  resolve-main:
+  # Why: the app and the orcad template it ships must come from one commit, so resolve develop once.
+  resolve-develop:
     if: github.repository == 'hanwha-cheoldong/adehone'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
       head_sha: ${{ steps.resolve.outputs.head_sha }}
     steps:
-      - name: Resolve main
+      - name: Resolve develop
         id: resolve
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          head_sha="$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)"
-          [[ "$head_sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::Could not resolve main"; exit 1; }
+          head_sha="$(gh api "repos/$GITHUB_REPOSITORY/commits/develop" --jq .sha)"
+          [[ "$head_sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::Could not resolve develop"; exit 1; }
           echo "head_sha=$head_sha" >>"$GITHUB_OUTPUT"
 
   # As release-cut does: every SSH host runs orcad, deployed from the template this build ships.
   orcad-template:
-    needs: resolve-main
+    needs: resolve-develop
     permissions:
       contents: read
       actions: read
     uses: ./.github/workflows/node-server-tests.yml
     with:
-      ref: ${{ needs.resolve-main.outputs.head_sha }}
+      ref: ${{ needs.resolve-develop.outputs.head_sha }}
       build_template: true
       fast_runners: false
 
   build-daily-mac:
     needs:
-      - resolve-main
+      - resolve-develop
       - orcad-template
     if: github.repository == 'hanwha-cheoldong/adehone'
     outputs:
@@ -78,7 +78,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          ref: ${{ needs.resolve-main.outputs.head_sha }}
+          ref: ${{ needs.resolve-develop.outputs.head_sha }}
           # Version helpers only read HEAD; published versions come from git tags.
           fetch-depth: 1
           # Read this repo without persisted credentials; write orca-daily through env-passed App token (zizmor: artipacked).
@@ -93,8 +93,8 @@ jobs:
           owner: hanwha-cheoldong
           repositories: orca-daily
 
-      # Skip unchanged main to avoid duplicate builds/tags and runner cost.
-      - name: Check whether main moved since the last daily
+      # Skip unchanged develop to avoid duplicate builds/tags and runner cost.
+      - name: Check whether develop moved since the last daily
         id: freshness
         shell: bash
         env:
@@ -121,10 +121,10 @@ jobs:
             --jq '.body | capture("commit `(?<sha>[0-9a-f]{7,40})`") | .sha' 2>/dev/null || true)"
           if [[ -n "$last_sha" && "$head_sha" == "$last_sha"* ]]; then
             echo "should_build=false" >>"$GITHUB_OUTPUT"
-            echo "main is unchanged since $last_body ($last_sha); skipping."
+            echo "develop is unchanged since $last_body ($last_sha); skipping."
           else
             echo "should_build=true" >>"$GITHUB_OUTPUT"
-            echo "main moved to $head_sha (last daily built $last_sha); building."
+            echo "develop moved to $head_sha (last daily built $last_sha); building."
           fi
 
       - name: Setup pnpm
@@ -436,7 +436,7 @@ jobs:
               echo "::warning::Could not prune $tag"
           done <<<"$stale"
 
-  # Dispatch E2E separately so main’s red full suite cannot fail an already-published daily. Use main’s workflow plus exact built SHA because daily tags live in another repo.
+  # Dispatch E2E separately so develop’s red full suite cannot fail an already-published daily. Use develop’s workflow plus exact built SHA because daily tags live in another repo.
   post-daily-e2e:
     needs: build-daily-mac
     if: ${{ needs.build-daily-mac.outputs.published == 'true' && needs.build-daily-mac.outputs.head_sha != '' }}
@@ -452,7 +452,7 @@ jobs:
           for attempt in 1 2 3; do
             if gh workflow run e2e.yml \
               --repo "$GITHUB_REPOSITORY" \
-              --ref main \
+              --ref develop \
               --raw-field "ref=$SHA"; then
               echo "Dispatched post-daily E2E for $SHA."
               exit 0
