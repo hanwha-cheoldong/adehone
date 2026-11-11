@@ -3,7 +3,7 @@ import { dirname } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { isAgentStateRulesTag } from '../../config/scripts/release/versioning/release-tag-patterns.mjs'
 
-const repository = process.env.GITHUB_REPOSITORY ?? 'stablyai/orca'
+const repository = process.env.GITHUB_REPOSITORY ?? 'hanwha-cheoldong/adehone'
 const token = process.env.GITHUB_TOKEN
 const outputPath = process.env.DOWNLOADS_BADGE_PATH ?? 'docs/assets/readme-downloads.svg'
 

@@ -22,7 +22,7 @@ runs:
         ORCA_PINNED_VERSION: ${{ inputs.version }}
         ORCA_PINNED_SHA512: ${{ inputs.sha512 }}
       run: |
-        gh release download "v$ORCA_PINNED_VERSION" --repo stablyai/orca --pattern "orca-ide_${ORCA_PINNED_VERSION}_amd64.deb" --dir "$RUNNER_TEMP/old-orca"
+        gh release download "v$ORCA_PINNED_VERSION" --repo hanwha-cheoldong/adehone --pattern "orca-ide_${ORCA_PINNED_VERSION}_amd64.deb" --dir "$RUNNER_TEMP/old-orca"
         python3 - <<'PYVERIFY'
         import base64,hashlib,os,pathlib,subprocess
         version=os.environ['ORCA_PINNED_VERSION']

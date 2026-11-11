@@ -20,7 +20,7 @@ concurrency:
 jobs:
   update:
     # Badge updates belong to the upstream repository.
-    if: github.repository == 'stablyai/orca'
+    if: github.repository == 'hanwha-cheoldong/adehone'
     runs-on: ubuntu-latest
     steps:
       - name: Generate badge update token
@@ -29,7 +29,7 @@ jobs:
         with:
           app-id: 2590194
           private-key: ${{ secrets.BUFO_BOT_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca
           permission-contents: write
           permission-pull-requests: write

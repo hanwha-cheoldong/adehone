@@ -22,14 +22,14 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DAILY_REPO: stablyai/orca-daily
+  DAILY_REPO: hanwha-cheoldong/adehone-daily
   # Keep ~30 days so a regression can be bisected without holding a full year.
   DAILY_RETAIN_COUNT: 30
 
 jobs:
   # Why: the app and the orcad template it ships must come from one commit, so resolve main once.
   resolve-main:
-    if: github.repository == 'stablyai/orca'
+    if: github.repository == 'hanwha-cheoldong/adehone'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
@@ -62,14 +62,14 @@ jobs:
     needs:
       - resolve-main
       - orcad-template
-    if: github.repository == 'stablyai/orca'
+    if: github.repository == 'hanwha-cheoldong/adehone'
     outputs:
       tag: ${{ steps.release.outputs.tag }}
       version: ${{ steps.daily.outputs.version }}
       head_sha: ${{ steps.freshness.outputs.head_sha }}
       published: ${{ steps.publish_live.outcome == 'success' && 'true' || 'false' }}
     # Hosted macos-15 cannot boot the packaged x64 terminal host that afterPack verifies.
-    runs-on: blacksmith-6vcpu-macos-15
+    runs-on: macos-15
     # Allow 150min for install 3×10 + publish 2×45 + ~25 setup/build/verify, so outer timeout cannot strand cleanup mid-retry.
     timeout-minutes: 150
     env:
@@ -90,7 +90,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-daily
 
       # Skip unchanged main to avoid duplicate builds/tags and runner cost.
@@ -253,7 +253,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-daily
 
       - name: Create daily release
@@ -274,7 +274,7 @@ jobs:
           cat >"$notes_file" <<EOF
           Automated daily macOS and Windows dev build from commit \`$short_sha\`.
 
-          Built from [\`stablyai/orca@$short_sha\`](https://github.com/stablyai/orca/commit/$SHA).
+          Built from [\`hanwha-cheoldong/adehone@$short_sha\`](https://github.com/hanwha-cheoldong/adehone/commit/$SHA).
 
           **Unvetted.** No tests ran. The macOS build is signed and notarized like a
           release, so it installs through Orca's in-app updater and opens from a manual
@@ -282,7 +282,7 @@ jobs:
 
           **Windows builds are unsigned.** They install and update normally once you
           are on one, but a signed Stable or RC build cannot install one through the
-          in-app updater — download \`orca-windows-setup.exe\` below and run it once
+          in-app updater — download \`adehone-windows-setup.exe\` below and run it once
           (SmartScreen will warn about an unknown publisher). Every later switch,
           including back to Stable, works in-app from there.
           EOF
@@ -327,7 +327,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-daily
 
       # Builder cannot write this field, so older macOS updaters would install a build that won't launch.

@@ -23,7 +23,7 @@ jobs:
     with:
       # Match the PR unit matrix so the cache key's runtime and shard fields line up.
       node_versions: '["24"]'
-      runner: blacksmith-8vcpu-ubuntu-2404
+      runner: ubuntu-24.04
       shards: ${{ needs.unit_plan.outputs.shards }}
       module_cache: cold
       artifact_prefix: cache-producer-unit

@@ -78,11 +78,11 @@ concurrency:
 
 jobs:
   build-win:
-    if: github.repository == 'stablyai/orca'
+    if: github.repository == 'hanwha-cheoldong/adehone'
     # Use mac workflows’ same environment for cross-repo App secrets.
     environment: adhoc-mac-build
     # The fast image has VS Build Tools 2022; signed release provenance stays separate.
-    runs-on: ${{ inputs.fast_release && 'blacksmith-8vcpu-windows-2025' || 'windows-2022' }}
+    runs-on: ${{ inputs.fast_release && 'windows-2022' || 'windows-2022' }}
     permissions:
       contents: read
       actions: read
@@ -133,11 +133,11 @@ jobs:
           git init -q --bare --ref-format=reftable "$scratch"
           git -C "$scratch" fetch -q --filter=tree:0 "$REPO_URL" '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
           if ! git -C "$scratch" rev-parse --verify --quiet "$REQUESTED_SHA^{commit}" >/dev/null; then
-            echo "::error::Commit $REQUESTED_SHA is not in stablyai/orca."
+            echo "::error::Commit $REQUESTED_SHA is not in hanwha-cheoldong/adehone."
             exit 1
           fi
           if [[ -z "$(git -C "$scratch" for-each-ref --contains "$REQUESTED_SHA" refs/heads refs/tags | head -1)" ]]; then
-            echo "::error::Commit $REQUESTED_SHA is not reachable from any branch or tag of stablyai/orca; refusing to build it."
+            echo "::error::Commit $REQUESTED_SHA is not reachable from any branch or tag of hanwha-cheoldong/adehone; refusing to build it."
             exit 1
           fi
           echo "Vetted $CHANNEL $TAG at $REQUESTED_SHA"
@@ -297,7 +297,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-${{ inputs.channel }}
 
       # Require existing release: publish:always would recreate a discarded mac draft as an untitled Windows-only release.
@@ -308,8 +308,8 @@ jobs:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
         run: |
           set -euo pipefail
-          if ! gh release view "$TAG" --repo "stablyai/orca-$CHANNEL" --json tagName >/dev/null 2>&1; then
-            echo "::error::Release $TAG no longer exists in stablyai/orca-$CHANNEL; the mac leg most likely failed and discarded it. Not creating a Windows-only release."
+          if ! gh release view "$TAG" --repo "hanwha-cheoldong/adehone-$CHANNEL" --json tagName >/dev/null 2>&1; then
+            echo "::error::Release $TAG no longer exists in hanwha-cheoldong/adehone-$CHANNEL; the mac leg most likely failed and discarded it. Not creating a Windows-only release."
             exit 1
           fi
 
@@ -338,10 +338,10 @@ jobs:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
         run: |
           set -euo pipefail
-          assets="$(gh release view "$TAG" --repo "stablyai/orca-$CHANNEL" --json assets --jq '.assets[].name')"
+          assets="$(gh release view "$TAG" --repo "hanwha-cheoldong/adehone-$CHANNEL" --json assets --jq '.assets[].name')"
           echo "Assets on $TAG:"
           echo "$assets"
-          for required in latest.yml orca-windows-setup.exe; do
+          for required in latest.yml adehone-windows-setup.exe; do
             if ! grep -qx "$required" <<<"$assets"; then
               echo "::error::$TAG is missing $required; Windows could not install this build."
               exit 1
@@ -366,7 +366,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for required in orca-windows-setup.exe orca-windows-setup.exe.blockmap latest.yml; do
+          for required in adehone-windows-setup.exe adehone-windows-setup.exe.blockmap latest.yml; do
             if [[ ! -s "dist/$required" ]]; then
               echo "::error::Missing or empty staged Windows artifact: $required"
               exit 1
@@ -379,8 +379,8 @@ jobs:
         with:
           name: dev-channel-windows-${{ inputs.tag }}
           path: |
-            dist/orca-windows-setup.exe
-            dist/orca-windows-setup.exe.blockmap
+            dist/adehone-windows-setup.exe
+            dist/adehone-windows-setup.exe.blockmap
             dist/latest.yml
           if-no-files-found: error
           retention-days: 3

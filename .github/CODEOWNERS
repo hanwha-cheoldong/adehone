@@ -1,8 +1,8 @@
-/src/renderer/src/i18n/locales/ @brennanb2025
-/config/scripts/*localization*.mjs @brennanb2025
-/config/scripts/*locale*.mjs @brennanb2025
-/config/i18next.config.ts @brennanb2025
+/src/renderer/src/i18n/locales/ @hanwha-cheoldong
+/config/scripts/*localization*.mjs @hanwha-cheoldong
+/config/scripts/*locale*.mjs @hanwha-cheoldong
+/config/i18next.config.ts @hanwha-cheoldong
 
-/cloud/ @Jinwoo-H
-/.github/workflows/cloud-*.yml @Jinwoo-H
-/.github/actions/cloud-sql-rollout-lease/ @Jinwoo-H
+/cloud/ @hanwha-cheoldong
+/.github/workflows/cloud-*.yml @hanwha-cheoldong
+/.github/actions/cloud-sql-rollout-lease/ @hanwha-cheoldong

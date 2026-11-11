@@ -45,9 +45,9 @@ function buildWindowsManifest(version: string): string {
   return [
     `version: ${version}`,
     'files:',
-    '  - url: orca-windows-setup.exe',
+    '  - url: adehone-windows-setup.exe',
     '    sha512: test',
-    'path: orca-windows-setup.exe'
+    'path: adehone-windows-setup.exe'
   ].join('\n')
 }
 
@@ -255,11 +255,11 @@ describe('fetchNewerReleaseTagsWithReadiness', () => {
               [
                 `version: ${version}`,
                 'files:',
-                '  - url: orca-windows-setup.exe',
+                '  - url: adehone-windows-setup.exe',
                 '    sha512: test',
-                `  - url: Orca-${version}-mac.zip`,
+                `  - url: Adehone-${version}-mac.zip`,
                 '    sha512: test',
-                `path: Orca-${version}-mac.zip`
+                `path: Adehone-${version}-mac.zip`
               ].join('\n')
             )
         })
@@ -267,8 +267,8 @@ describe('fetchNewerReleaseTagsWithReadiness', () => {
 
       if (init?.method === 'HEAD') {
         const latest = url.includes('/v1.4.28/')
-        const unavailable = latest && url.endsWith('/Orca-1.4.28-mac.zip')
-        const missing = latest && url.endsWith('/orca-windows-setup.exe')
+        const unavailable = latest && url.endsWith('/Adehone-1.4.28-mac.zip')
+        const missing = latest && url.endsWith('/adehone-windows-setup.exe')
         return Promise.resolve({
           ok: !missing && !unavailable,
           status: missing ? publishingIncident.missingWindowsAssetStatus : unavailable ? 503 : 200,

@@ -3,9 +3,8 @@ name: Hourly macOS Dev Build
 # Publish signed/notarized main builds to orca-hourly; notarization preserves TCC grants across updates. PR/release gates own validation. Separate repo avoids hourly tags crowding stable/RC Atom entries. Provision shared HOURLY_RELEASE_APP_ID/private key with setup-hourly-release-token.sh and App write access there. Refresh one-hour token after read-only build; a retry may still outlive it, leaving only an invisible draft whose build number remains reserved until manifests validate.
 
 on:
-  schedule:
-    # Top of every hour. Skipped automatically when main has not moved.
-    - cron: '0 * * * *'
+  # Cron schedule disabled: only the daily dev-build channel is active for hanwha-cheoldong/adehone.
+  # - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       force:
@@ -22,14 +21,14 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  HOURLY_REPO: stablyai/orca-hourly
+  HOURLY_REPO: hanwha-cheoldong/adehone-hourly
   # Keep ~3 days of history so a regression can be bisected across a weekend.
   HOURLY_RETAIN_COUNT: 72
 
 jobs:
   # Avoid occupying the limited Mac pool when main has not moved.
   preflight:
-    if: github.repository == 'stablyai/orca'
+    if: false # disabled: only the daily dev-build channel is active for hanwha-cheoldong/adehone
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
@@ -42,7 +41,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-hourly
           permission-contents: read
 
@@ -105,7 +104,7 @@ jobs:
       head_sha: ${{ needs.preflight.outputs.head_sha }}
       published: ${{ steps.publish_live.outcome == 'success' && 'true' || 'false' }}
     # Hosted macos-15 cannot boot the packaged x64 terminal host that afterPack verifies.
-    runs-on: blacksmith-6vcpu-macos-15
+    runs-on: macos-15
     # Allow 150min for install 3×10 + publish 2×45 + ~25 setup/build/verify; outer timeout otherwise interrupts cleanup.
     timeout-minutes: 150
     env:
@@ -126,7 +125,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-hourly
 
       - name: Setup pnpm
@@ -240,7 +239,7 @@ jobs:
         with:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
-          owner: stablyai
+          owner: hanwha-cheoldong
           repositories: orca-hourly
 
       - name: Create hourly release
@@ -263,7 +262,7 @@ jobs:
             --draft \
             --notes "Automated hourly macOS and Windows dev build from commit \`$short_sha\`.
 
-          Built from [\`stablyai/orca@$short_sha\`](https://github.com/stablyai/orca/commit/$SHA).
+          Built from [\`hanwha-cheoldong/adehone@$short_sha\`](https://github.com/hanwha-cheoldong/adehone/commit/$SHA).
 
           **Unvetted.** No tests ran. The macOS build is signed and notarized like a
           release, so it installs through Orca's in-app updater and opens from a manual
@@ -271,7 +270,7 @@ jobs:
 
           **Windows builds are unsigned.** They install and update normally once you
           are on one, but a signed Stable or RC build cannot install one through the
-          in-app updater — download \`orca-windows-setup.exe\` below and run it once
+          in-app updater — download \`adehone-windows-setup.exe\` below and run it once
           (SmartScreen will warn about an unknown publisher). Every later switch,
           including back to Stable, works in-app from there."
           echo "tag=$TAG" >>"$GITHUB_OUTPUT"

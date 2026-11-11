@@ -5,7 +5,7 @@
 **Please do not report security vulnerabilities through public GitHub issues, pull requests, or discussions.**
 
 Report them privately through GitHub instead:
-[**Security → Report a vulnerability**](https://github.com/stablyai/orca/security/advisories/new).
+[**Security → Report a vulnerability**](https://github.com/hanwha-cheoldong/adehone/security/advisories/new).
 Only you and the maintainers can see the report. The maintainers may invite you to work on the fix with them in a temporary private fork.
 
 Please include:

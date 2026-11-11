@@ -23,7 +23,7 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.draft != true
     name: detect changes and check repository guards
     # Hosted runners start faster than Blacksmith's (~5s vs ~13s) and this sparse checkout fits one vCPU.
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read
@@ -1025,7 +1025,7 @@ jobs:
       needs.code_paths.outputs.managed_hook_node18 == 'true' &&
       needs.preflight.result == 'success'
     # Retain the required check while sharing preflight's checkout and built packages.
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
 
     steps:
@@ -1409,7 +1409,7 @@ jobs:
         run: pnpm exec electron-builder --config config/electron-builder.config.cjs --dir
 
       - name: Smoke packaged Windows PTY native capability
-        run: pnpm run smoke:windows-pty-native-capability -- --exe=dist/win-unpacked/Orca.exe
+        run: pnpm run smoke:windows-pty-native-capability -- --exe=dist/win-unpacked/Adehone.exe
 
       - name: Smoke packaged CLI
         run: node config/scripts/desktop-distribution/runtime-verification/smoke-packaged-cli.mjs --app-dir=dist/win-unpacked
@@ -1557,7 +1557,7 @@ jobs:
       - package_windows
       - layout_oracle
       - dependency_isolation
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
 
     steps:

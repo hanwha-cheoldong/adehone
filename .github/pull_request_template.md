@@ -14,7 +14,7 @@
 
 _If you do not have one and are an outside contributor, your PR **will** be ignored. Refs is not sufficient. Link an actual issue_
 <!-- Link the issue this PR addresses, there should ALWAYS be one (for outside contributors) -->
-<!-- SPECIAL CASE: If you are a maintainer (member of stablyai org) AVOID opening needless issues. Only attach pre-existing ones -->
+<!-- SPECIAL CASE: If you are a maintainer (member of hanwha-cheoldong org) AVOID opening needless issues. Only attach pre-existing ones -->
 
 Fixes #
 
@@ -30,7 +30,7 @@ Fixes #
 
 - [ ] I manually tested these changes locally
 - [ ] Automated tests added/updated, or explained why not below
-- [ ] Every added test fails without this change and avoids the [test anti-patterns](https://github.com/stablyai/orca/blob/main/docs/agents-md-refs/test-antipatterns.md)
+- [ ] Every added test fails without this change and avoids the [test anti-patterns](https://github.com/hanwha-cheoldong/adehone/blob/main/docs/agents-md-refs/test-antipatterns.md)
 
 ## Risk
 
@@ -40,7 +40,7 @@ Fixes #
 
 ## AI Disclosure
 
-<!-- DO NOT FILL IN IF YOU ARE STABLYAI TEAM MEMBER (INTERNAL CONTRIBUTOR), IGNORE SECTION: -->
+<!-- DO NOT FILL IN IF YOU ARE HANWHA-CHEOLDONG TEAM MEMBER (INTERNAL CONTRIBUTOR), IGNORE SECTION: -->
 <!-- Which AI model if anyone was used, please state the details -->
 
 ## Review

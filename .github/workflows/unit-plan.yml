@@ -27,7 +27,7 @@ permissions:
 
 jobs:
   plan:
-    runs-on: ${{ inputs.defer_shadow && 'ubuntu-slim' || 'ubuntu-24.04' }}
+    runs-on: ${{ inputs.defer_shadow && 'ubuntu-24.04' || 'ubuntu-24.04' }}
     timeout-minutes: 5
     env:
       DEFER_SHADOW: ${{ inputs.defer_shadow }}

@@ -16,7 +16,7 @@ const makeDir = () => mkdtempSync(join(tmpdir(), 'orca-uninstaller-signing-'))
 
 describe('relayNsisUninstaller', () => {
   const writeUninstaller = (dir, contents) => {
-    const filePath = join(dir, 'orca-windows-setup.__uninstaller.exe')
+    const filePath = join(dir, 'adehone-windows-setup.__uninstaller.exe')
     writeFileSync(filePath, contents)
     return filePath
   }
@@ -73,7 +73,7 @@ describe('signWindowsUninstallerViaSignPath', () => {
   }
 
   const writeBuiltUninstaller = (dir) => {
-    const filePath = join(dir, 'orca-windows-setup.__uninstaller.exe')
+    const filePath = join(dir, 'adehone-windows-setup.__uninstaller.exe')
     writeFileSync(filePath, 'built-by-makensis')
     return filePath
   }

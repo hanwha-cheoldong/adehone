@@ -78,7 +78,7 @@ const ORCA_PUSH_DATA: Record<string, unknown> = {
   notificationEpoch: 'epoch',
   notificationSeq: '3',
   paneKey: 'pane',
-  channelId: 'orca-desktop'
+  channelId: 'adehone-desktop'
 }
 
 function notification(
@@ -122,7 +122,7 @@ it('presents a title-only data push with its original identity, routing and chan
       data: incoming.request.content.data,
       sound: 'default'
     },
-    trigger: { channelId: 'orca-desktop' }
+    trigger: { channelId: 'adehone-desktop' }
   })
   stop()
   expect(mocks.remove).toHaveBeenCalledOnce()
@@ -131,7 +131,7 @@ it('presents a title-only data push with its original identity, routing and chan
 it('does not reschedule its own local notification or normal provider notifications', () => {
   startAndroidForegroundPushPresentation()
   mocks.receive(notification(null))
-  mocks.receive(notification({ channelId: 'orca-desktop' }))
+  mocks.receive(notification({ channelId: 'adehone-desktop' }))
   mocks.receive(notification(pushTrigger({ ...REMOTE_NOTIFICATION, title: 'Test' })))
   expect(mocks.schedule).not.toHaveBeenCalled()
 })

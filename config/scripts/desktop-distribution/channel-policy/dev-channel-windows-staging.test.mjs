@@ -32,8 +32,8 @@ describe('Windows dev-channel artifact staging', () => {
     mkdirSync(join(attempt, folder))
     expect((await runScript(step.run, { cwd: attempt })).code).toBe(1)
     for (const file of [
-      'orca-windows-setup.exe',
-      'orca-windows-setup.exe.blockmap',
+      'adehone-windows-setup.exe',
+      'adehone-windows-setup.exe.blockmap',
       'latest.yml'
     ]) {
       writeFileSync(join(attempt, folder, file), '')

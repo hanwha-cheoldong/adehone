@@ -20,10 +20,10 @@ cask "orca" do
   conflicts_with cask: "orca@rc"
   depends_on macos: :ventura
 
-  app "Orca.app"
+  app "Adehone.app"
 
   # Expose the symlink-resolving bundled CLI on PATH so headless hosts can use orca serve without the in-app installer.
-  binary "#{appdir}/Orca.app/Contents/Resources/bin/orca"
+  binary "#{appdir}/Adehone.app/Contents/Resources/bin/orca"
 
   # depends_on can't say 13.4, and Homebrew upgrades auto_updates casks past the in-app updater's macOS gate.
   preflight_steps do
@@ -38,10 +38,10 @@ cask "orca" do
   zap trash: [
     "~/.orca",
     "~/Library/Application Support/Orca",
-    "~/Library/Caches/com.stablyai.orca",
-    "~/Library/Caches/com.stablyai.orca.ShipIt",
-    "~/Library/HTTPStorages/com.stablyai.orca",
-    "~/Library/Preferences/com.stablyai.orca.plist",
-    "~/Library/Saved Application State/com.stablyai.orca.savedState",
+    "~/Library/Caches/com.hanwha.adehone",
+    "~/Library/Caches/com.hanwha.adehone.ShipIt",
+    "~/Library/HTTPStorages/com.hanwha.adehone",
+    "~/Library/Preferences/com.hanwha.adehone.plist",
+    "~/Library/Saved Application State/com.hanwha.adehone.savedState",
   ]
 end

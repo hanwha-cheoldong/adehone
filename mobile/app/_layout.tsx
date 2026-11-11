@@ -48,7 +48,7 @@ const appearanceReady = startMobileAppearance()
 // Likewise the UI language: the saved choice and its catalog load under the splash.
 const languageReady = startMobileUiLanguage()
 
-// Create orca-desktop channel at boot: background FCM can arrive before socket subscription, and Android drops unknown-channel pushes.
+// Create adehone-desktop channel at boot: background FCM can arrive before socket subscription, and Android drops unknown-channel pushes.
 void ensureDesktopNotificationChannel().catch(() => {})
 // Channel names show in Android settings; rename them in the active language.
 subscribeMobileUiLanguage(() => {

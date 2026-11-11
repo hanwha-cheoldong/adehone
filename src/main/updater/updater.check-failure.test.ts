@@ -146,7 +146,7 @@ describe('updater check failure handling', () => {
       return new Response(
         url.endsWith('.atom')
           ? '<feed></feed>'
-          : 'version: 1.0.51\nfiles:\n  - url: orca-windows-setup.exe\n'
+          : 'version: 1.0.51\nfiles:\n  - url: adehone-windows-setup.exe\n'
       )
     })
     netRequestMock.mockReset()

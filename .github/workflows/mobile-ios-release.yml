@@ -27,7 +27,7 @@ permissions:
 jobs:
   ios-build:
     # Xcode 27.1's iOS SDK enables iPhone Duo resizing; Expo SDK 55 requires Swift 6 syntax.
-    runs-on: xcode-27
+    runs-on: macos-15
     # Archive + upload is ~30–40m when healthy; 90m leaves margin for setup.
     timeout-minutes: 90
 

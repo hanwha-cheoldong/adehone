@@ -22,12 +22,12 @@ it('carries a silent preference through validation to APNs and Android payloads'
   })
   expect(JSON.parse(apnsBody(delivery)).aps).not.toHaveProperty('sound')
   expect(
-    JSON.parse(fcmMessageBody({ delivery, token: 'test-token', channelId: 'orca-desktop' })).message
-      .data.channelId
-  ).toBe('orca-desktop-silent')
+    JSON.parse(fcmMessageBody({ delivery, token: 'test-token', channelId: 'adehone-desktop' }))
+      .message.data.channelId
+  ).toBe('adehone-desktop-silent')
   expect(
-    JSON.parse(fcmMessageBody({ delivery, token: 'test-token', channelId: 'orca-desktop' })).message
-      .data.sound
+    JSON.parse(fcmMessageBody({ delivery, token: 'test-token', channelId: 'adehone-desktop' }))
+      .message.data.sound
   ).toBe('')
   expect(JSON.parse(apnsBody({ ...delivery, sound: undefined })).aps.sound).toBe('default')
 })

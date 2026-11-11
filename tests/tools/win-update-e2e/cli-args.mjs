@@ -101,7 +101,9 @@ function pathsOverlap(a, b) {
 
 /** A prior harness install directory carries both the app exe and its uninstaller. */
 function looksLikeHarnessInstall(dir) {
-  return existsSync(path.join(dir, 'Orca.exe')) && existsSync(path.join(dir, 'Uninstall Orca.exe'))
+  return (
+    existsSync(path.join(dir, 'Adehone.exe')) && existsSync(path.join(dir, 'Uninstall Adehone.exe'))
+  )
 }
 
 // Isolated /D must be last/unquoted, spaces-free, disjoint from the real install and not an unrelated nonempty directory.
@@ -140,7 +142,7 @@ export function validateInstallDir(installDir) {
     if (entries.length > 0 && !looksLikeHarnessInstall(installDir)) {
       errors.push(
         `--install-dir "${installDir}" is a non-empty directory that does not look like a ` +
-          `prior harness install (no Orca.exe + "Uninstall Orca.exe"). Refusing to overwrite ` +
+          `prior harness install (no Adehone.exe + "Uninstall Adehone.exe"). Refusing to overwrite ` +
           `unrelated files. Point at an empty or non-existent directory.`
       )
     }

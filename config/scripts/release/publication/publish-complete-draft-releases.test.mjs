@@ -73,7 +73,7 @@ describe('publishCompleteDraftReleases', () => {
         created_at: `2026-05-15T0${id}:31:19Z`,
         author: { login: 'github-actions[bot]' },
         assets: getRequiredReleaseAssetNames(`v1.4.2-rc.${id}`)
-          .filter((name) => id === 7 || name !== 'orca-windows-setup.exe')
+          .filter((name) => id === 7 || name !== 'adehone-windows-setup.exe')
           .map((name, index) => ({ id: id * 100 + index, name, state: 'uploaded', size: 1 }))
       }))
       const manifestUrls = new Map(
@@ -83,7 +83,7 @@ describe('publishCompleteDraftReleases', () => {
             .map(({ id, name }) => [
               `https://api.github.com/repos/stablyai/orca/releases/assets/${id}`,
               name === 'latest.yml'
-                ? 'path: orca-windows-setup.exe\n'
+                ? 'path: adehone-windows-setup.exe\n'
                 : name === 'latest-mac.yml'
                   ? 'minimumSystemVersion: 22.0.0\n'
                   : ''

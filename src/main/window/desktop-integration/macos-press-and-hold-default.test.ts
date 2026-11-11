@@ -24,11 +24,11 @@ describe('readBundleIdentifierFromExecutablePath', () => {
 
   it('reads CFBundleIdentifier from the plist beside the executable', () => {
     const exe = bundleWithPlist(
-      '<plist><dict>\n<key>CFBundleName</key>\n<string>Orca</string>\n' +
-        '<key>CFBundleIdentifier</key>\n\t<string>com.stablyai.orca</string>\n</dict></plist>'
+      '<plist><dict>\n<key>CFBundleName</key>\n<string>Adehone</string>\n' +
+        '<key>CFBundleIdentifier</key>\n\t<string>com.hanwha.adehone</string>\n</dict></plist>'
     )
 
-    expect(readBundleIdentifierFromExecutablePath(exe)).toBe('com.stablyai.orca')
+    expect(readBundleIdentifierFromExecutablePath(exe)).toBe('com.hanwha.adehone')
   })
 
   it('returns null when the plist is missing or carries no identifier', () => {

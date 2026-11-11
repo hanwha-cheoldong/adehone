@@ -440,20 +440,6 @@
         }
       }
     },
-    "b23af609a818": {
-      "name": "notification.schedule",
-      "ordinal": 3,
-      "value": {
-        "content": {
-          "body": "Local notification test from this phone.",
-          "sound": "default",
-          "title": "Test notification"
-        },
-        "trigger": {
-          "channelId": "orca-desktop"
-        }
-      }
-    },
     "c37bd4097e53": {
       "name": "notifications.testPush#1",
       "ordinal": 1,
@@ -523,6 +509,20 @@
           },
           "id": "frame-1",
           "ok": false
+        }
+      }
+    },
+    "da6584d0bae6": {
+      "name": "notification.schedule",
+      "ordinal": 3,
+      "value": {
+        "content": {
+          "body": "Local notification test from this phone.",
+          "sound": "default",
+          "title": "Test notification"
+        },
+        "trigger": {
+          "channelId": "adehone-desktop"
         }
       }
     },
@@ -718,7 +718,7 @@
             "press": "eb79a9b3682a"
           },
           "state": "4b56b6931151",
-          "effects": ["b23af609a818"]
+          "effects": ["da6584d0bae6"]
         }
       },
       {
