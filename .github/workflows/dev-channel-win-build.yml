@@ -298,7 +298,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-${{ inputs.channel }}
+          repositories: adehone-${{ inputs.channel }}
 
       # Require existing release: publish:always would recreate a discarded mac draft as an untitled Windows-only release.
       - name: Confirm the target release still exists

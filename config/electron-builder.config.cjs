@@ -116,7 +116,7 @@ const devChannelBuildVersion = isHourlyChannel
 const devChannelRepo = isHourlyChannel
   ? 'orca-hourly'
   : isDailyChannel
-    ? 'orca-daily'
+    ? 'adehone-daily'
     : isAdhocChannel
       ? 'orca-adhoc'
       : null

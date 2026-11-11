@@ -1,6 +1,6 @@
 name: Daily macOS Dev Build
 
-# Publish daily develop builds to adehone-daily, separate from hourly and stable/RC feeds. Sign/notarize for update-preserved macOS TCC grants; PR/release pipelines own blocking validation, with E2E detached after publish. Cron 18:15 UTC means 10:15 PST/11:15 PDT, offset from hourly. Use the shared hourly App with write access to orca-daily (setup-hourly-release-token.sh/setup-daily-release-repo.sh). Mint tokens again after build and upload because 2×45min retry can exceed their 1h life. Keep releases draft until manifests verify; drafts retain build numbers.
+# Publish daily develop builds to adehone-daily, separate from hourly and stable/RC feeds. Sign/notarize for update-preserved macOS TCC grants; PR/release pipelines own blocking validation, with E2E detached after publish. Cron 18:15 UTC means 10:15 PST/11:15 PDT, offset from hourly. Use the shared hourly App with write access to adehone-daily (setup-hourly-release-token.sh/setup-daily-release-repo.sh). Mint tokens again after build and upload because 2×45min retry can exceed their 1h life. Keep releases draft until manifests verify; drafts retain build numbers.
 
 on:
   schedule:
@@ -81,7 +81,7 @@ jobs:
           ref: ${{ needs.resolve-develop.outputs.head_sha }}
           # Version helpers only read HEAD; published versions come from git tags.
           fetch-depth: 1
-          # Read this repo without persisted credentials; write orca-daily through env-passed App token (zizmor: artipacked).
+          # Read this repo without persisted credentials; write adehone-daily through env-passed App token (zizmor: artipacked).
           persist-credentials: false
 
       - name: Mint daily repo token
@@ -91,7 +91,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-daily
+          repositories: adehone-daily
 
       # Skip unchanged develop to avoid duplicate builds/tags and runner cost.
       - name: Check whether develop moved since the last daily
@@ -254,7 +254,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-daily
+          repositories: adehone-daily
 
       - name: Create daily release
         id: release
@@ -306,7 +306,7 @@ jobs:
           retry_wait_seconds: 30
           command: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON "$(if [ -f config/scripts/orcad-distribution/prebuilds/pinned-node-downloads.mjs ]; then printf %s config/scripts/orcad-distribution/prebuilds/pinned-node-downloads.mjs; else printf %s config/scripts/pinned-node-downloads.mjs; fi)" darwin-arm64 darwin-x64 && node "$(if [ -f config/scripts/native-build/node-addons/ensure-native-runtime.mjs ]; then printf %s config/scripts/native-build/node-addons/ensure-native-runtime.mjs; else printf %s config/scripts/ensure-native-runtime.mjs; fi)" --runtime=electron && if { [ -f config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs ] || [ -f config/scripts/build-mac-notarization-overlap.mjs ]; }; then ORCA_MAC_DAILY=1 node "$(if [ -f config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs ]; then printf %s config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs; else printf %s config/scripts/build-mac-notarization-overlap.mjs; fi)" --publish always; else ORCA_MAC_DAILY=1 pnpm exec electron-builder --config config/electron-builder.config.cjs --mac --publish always; fi
         env:
-          # Give the publisher App write access to its configured orca-daily target.
+          # Give the publisher App write access to its configured adehone-daily target.
           GH_TOKEN: ${{ steps.app_token_publish.outputs.token }}
           ORCA_DAILY_BUILD_VERSION: ${{ steps.daily.outputs.version }}
           ORCA_BUILD_COMMIT: ${{ steps.daily.outputs.commit }}
@@ -328,7 +328,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-daily
+          repositories: adehone-daily
 
       # Builder cannot write this field, so older macOS updaters would install a build that won't launch.
       - name: Gate the update manifest on the minimum macOS

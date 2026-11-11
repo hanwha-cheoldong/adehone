@@ -17,7 +17,7 @@ import { pathToFileURL } from 'node:url'
 
 const CHANNEL_REPOS = {
   hourly: 'orca-hourly',
-  daily: 'orca-daily',
+  daily: 'adehone-daily',
   adhoc: 'orca-adhoc'
 }
 
