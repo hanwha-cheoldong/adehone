@@ -26,7 +26,7 @@
     "audit:dead-code": "node config/scripts/dependency-security/audit-tools/run-audit-tool.mjs knip --config config/knip.json",
     "check:changed": "node config/scripts/preflight/changed-checks/check-changed.mjs",
     "check:local": "node config/scripts/preflight/changed-checks/check-changed.mjs --base=HEAD",
-    "check:dev": "node config/scripts/preflight/changed-checks/check-changed.mjs --base=origin/develop",
+    "check:dev": "node config/scripts/preflight/changed-checks/check-changed.mjs --base=origin/merge",
     "check:code-quality:changed": "node config/scripts/preflight/changed-checks/check-changed-code-quality.mjs",
     "lint:js-plugins": "oxlint --config config/oxlint-js-plugins.json src config tests mobile native .github",
     "lint:ast-grep": "ast-grep scan --config config/sgconfig.yml --min-severity warning src config tests mobile",
