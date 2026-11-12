@@ -5,7 +5,10 @@ import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const require = createRequire(import.meta.url)
-const { runTerminalHostRoundTrip } = require('./verify-packaged-daemon-entry.cjs')
+const {
+  macCommandPrefixForArch,
+  runTerminalHostRoundTrip
+} = require('./verify-packaged-daemon-entry.cjs')
 
 describe.skipIf(process.platform === 'win32')('terminal host round trip', () => {
   let root
@@ -106,5 +109,17 @@ describe.skipIf(process.platform === 'win32')('terminal host round trip', () => 
       }
     })
     expect(messages[2].payload.cwd.startsWith(join(root, 'oth-'))).toBe(true)
+  })
+})
+
+describe('macCommandPrefixForArch', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('skips cross-arch prefix on GitHub Actions runners', () => {
+    vi.stubEnv('GITHUB_ACTIONS', 'true')
+    const crossArch = process.arch === 'arm64' ? 'x64' : 'arm64'
+    expect(macCommandPrefixForArch(crossArch)).toBe(null)
   })
 })
