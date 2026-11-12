@@ -19,9 +19,9 @@ export const RELEASE_CHANNEL_LABELS: Readonly<Record<ReleaseChannel, string>> = 
 }
 
 /** Keep dev tags out of the 10-entry main releases feed, where hourlies would evict stable/RC updates. */
-export const HOURLY_RELEASE_REPO = 'stablyai/orca-hourly'
+export const HOURLY_RELEASE_REPO = 'hanwha-cheoldong/adehone-hourly'
 export const DAILY_RELEASE_REPO = 'hanwha-cheoldong/adehone-daily'
-export const ADHOC_RELEASE_REPO = 'stablyai/orca-adhoc'
+export const ADHOC_RELEASE_REPO = 'hanwha-cheoldong/adehone-adhoc'
 export const MAIN_RELEASE_REPO = 'hanwha-cheoldong/adehone'
 
 /** The dev channels, each published to its own repo rather than the main one. */

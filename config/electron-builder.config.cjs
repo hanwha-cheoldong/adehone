@@ -114,11 +114,11 @@ const devChannelBuildVersion = isHourlyChannel
       : undefined
 // Separate dev-channel repos: 24 hourly tags/day would evict stable/RC from the ten-entry release feed; isolate adhoc/daily from hourly subscribers too.
 const devChannelRepo = isHourlyChannel
-  ? 'orca-hourly'
+  ? 'adehone-hourly'
   : isDailyChannel
     ? 'adehone-daily'
     : isAdhocChannel
-      ? 'orca-adhoc'
+      ? 'adehone-adhoc'
       : null
 const appId = 'com.hanwha.adehone'
 const featureWallResources = {

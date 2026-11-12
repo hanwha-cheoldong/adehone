@@ -1,6 +1,6 @@
 name: Adhoc macOS + Windows Dev Build
 
-# Build trusted repo refs on demand: signed/notarized macOS and unsigned Windows, with qualified orcad slots; PR/release pipelines own other gates. Publish to orca-adhoc so branch experiments cannot enter main’s hourly channel or crowd stable/RC release feeds. Dispatch main’s workflow with -f ref=my-branch to avoid stale YAML. Writes use the hourly GitHub App installed on orca-adhoc (setup-hourly-release-token.sh); GITHUB_TOKEN cannot publish cross-repo. Ref vetting rejects PR refs and unreachable SHAs before source runs beside signing secrets.
+# Build trusted repo refs on demand: signed/notarized macOS and unsigned Windows, with qualified orcad slots; PR/release pipelines own other gates. Publish to adehone-adhoc so branch experiments cannot enter main’s hourly channel or crowd stable/RC release feeds. Dispatch main’s workflow with -f ref=my-branch to avoid stale YAML. Writes use the hourly GitHub App installed on adehone-adhoc (setup-hourly-release-token.sh); GITHUB_TOKEN cannot publish cross-repo. Ref vetting rejects PR refs and unreachable SHAs before source runs beside signing secrets.
 
 on:
   workflow_dispatch:
@@ -211,7 +211,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-adhoc
+          repositories: adehone-adhoc
 
       - name: Create adhoc release
         id: release
@@ -299,7 +299,7 @@ jobs:
           ref: ${{ steps.vetted.outputs.sha }}
           # Version helpers only read HEAD; published versions come from the release API.
           fetch-depth: 1
-          # Read this repo without persisted checkout credentials; all writes use an env-passed App token for orca-adhoc (zizmor: artipacked).
+          # Read this repo without persisted checkout credentials; all writes use an env-passed App token for adehone-adhoc (zizmor: artipacked).
           persist-credentials: false
 
       - name: Setup pnpm
@@ -384,8 +384,6 @@ jobs:
           ORCA_RELEASE_JAVASCRIPT_SOURCE_SHA: ${{ needs.release-javascript.outputs.supported == 'true' && needs.release-javascript.outputs.source_sha || '' }}
           ORCA_RELEASE_JAVASCRIPT_BUILD_IDENTITY: dev
           NODE_OPTIONS: --max-old-space-size=4096
-          # Leave build identity unset: telemetry accepts only official stable/rc, so branch artifacts stay silent.
-          ORCA_DIAGNOSTICS_TOKEN_URL: https://www.onorca.dev/diagnostics/token
 
       # After the app build so nothing that cleans out/ can drop it; electron-builder ships it.
       - name: Download the orcad deployment template
@@ -456,7 +454,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-adhoc
+          repositories: adehone-adhoc
 
       - name: Upload verified architecture assets to the draft
         shell: bash
@@ -501,7 +499,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-adhoc
+          repositories: adehone-adhoc
 
       - name: Require both architecture jobs
         env:

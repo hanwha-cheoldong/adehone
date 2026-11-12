@@ -103,9 +103,10 @@ describe('release JavaScript configuration', () => {
         ORCA_RELEASE_JAVASCRIPT_SOURCE_SHA: 'b'.repeat(40)
       })
     ).toThrow('Release checkout differs from bundle source')
-    expect(() =>
+    expect(
       releaseJavascriptConfiguration(root, { ...devEnv, ORCA_DIAGNOSTICS_TOKEN_URL: '' })
-    ).toThrow('Missing release diagnostics URL')
+        .diagnosticsTokenUrl
+    ).toBeNull()
   })
 })
 

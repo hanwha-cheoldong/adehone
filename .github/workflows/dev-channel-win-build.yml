@@ -253,8 +253,6 @@ jobs:
         env:
           ORCA_RELEASE_JAVASCRIPT_SOURCE_SHA: ${{ inputs.javascript_source_sha }}
           ORCA_RELEASE_JAVASCRIPT_BUILD_IDENTITY: dev
-          # Unset dev build identity so official stable/rc telemetry stays silent.
-          ORCA_DIAGNOSTICS_TOKEN_URL: https://www.onorca.dev/diagnostics/token
 
       # Inline so refs predating the wait can still use the trusted dispatch workflow.
       - name: Wait for the qualified orcad template

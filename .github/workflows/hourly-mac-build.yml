@@ -1,6 +1,6 @@
 name: Hourly macOS Dev Build
 
-# Publish signed/notarized main builds to orca-hourly; notarization preserves TCC grants across updates. PR/release gates own validation. Separate repo avoids hourly tags crowding stable/RC Atom entries. Provision shared HOURLY_RELEASE_APP_ID/private key with setup-hourly-release-token.sh and App write access there. Refresh one-hour token after read-only build; a retry may still outlive it, leaving only an invisible draft whose build number remains reserved until manifests validate.
+# Publish signed/notarized main builds to adehone-hourly; notarization preserves TCC grants across updates. PR/release gates own validation. Separate repo avoids hourly tags crowding stable/RC Atom entries. Provision shared HOURLY_RELEASE_APP_ID/private key with setup-hourly-release-token.sh and App write access there. Refresh one-hour token after read-only build; a retry may still outlive it, leaving only an invisible draft whose build number remains reserved until manifests validate.
 
 on:
   # Cron schedule disabled: only the daily dev-build channel is active for hanwha-cheoldong/adehone.
@@ -42,7 +42,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-hourly
+          repositories: adehone-hourly
           permission-contents: read
 
       - name: Check whether main moved since the last hourly
@@ -116,7 +116,7 @@ jobs:
           ref: ${{ needs.preflight.outputs.head_sha }}
           # Version helpers only read HEAD; published versions come from git tags.
           fetch-depth: 1
-          # Read this repo without persisted credentials; write orca-hourly via env App token (zizmor: artipacked).
+          # Read this repo without persisted credentials; write adehone-hourly via env App token (zizmor: artipacked).
           persist-credentials: false
 
       - name: Mint hourly repo token
@@ -126,7 +126,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-hourly
+          repositories: adehone-hourly
 
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
@@ -222,8 +222,6 @@ jobs:
         run: pnpm build:release
         env:
           NODE_OPTIONS: --max-old-space-size=4096
-          # Unset dev identity so official-only stable/rc telemetry stays silent.
-          ORCA_DIAGNOSTICS_TOKEN_URL: https://www.onorca.dev/diagnostics/token
 
       # After the app build so nothing that cleans out/ can drop it; electron-builder ships it.
       - name: Download the orcad deployment template
@@ -240,7 +238,7 @@ jobs:
           app-id: ${{ secrets.HOURLY_RELEASE_APP_ID }}
           private-key: ${{ secrets.HOURLY_RELEASE_APP_PRIVATE_KEY }}
           owner: hanwha-cheoldong
-          repositories: orca-hourly
+          repositories: adehone-hourly
 
       - name: Create hourly release
         id: release
@@ -284,7 +282,7 @@ jobs:
           retry_wait_seconds: 30
           command: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON "$(if [ -f config/scripts/orcad-distribution/prebuilds/pinned-node-downloads.mjs ]; then printf %s config/scripts/orcad-distribution/prebuilds/pinned-node-downloads.mjs; else printf %s config/scripts/pinned-node-downloads.mjs; fi)" darwin-arm64 darwin-x64 && node "$(if [ -f config/scripts/native-build/node-addons/ensure-native-runtime.mjs ]; then printf %s config/scripts/native-build/node-addons/ensure-native-runtime.mjs; else printf %s config/scripts/ensure-native-runtime.mjs; fi)" --runtime=electron && if { [ -f config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs ] || [ -f config/scripts/build-mac-notarization-overlap.mjs ]; }; then ORCA_MAC_HOURLY=1 node "$(if [ -f config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs ]; then printf %s config/scripts/desktop-distribution/macos/build-mac-notarization-overlap.mjs; else printf %s config/scripts/build-mac-notarization-overlap.mjs; fi)" --publish always; else ORCA_MAC_HOURLY=1 pnpm exec electron-builder --config config/electron-builder.config.cjs --mac --publish always; fi
         env:
-          # Give publisher token write access to configured orca-hourly repo.
+          # Give publisher token write access to configured adehone-hourly repo.
           GH_TOKEN: ${{ steps.app_token_publish.outputs.token }}
           ORCA_HOURLY_BUILD_VERSION: ${{ steps.hourly.outputs.version }}
           ORCA_BUILD_COMMIT: ${{ steps.hourly.outputs.commit }}

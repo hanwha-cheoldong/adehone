@@ -75,13 +75,12 @@ export function releaseJavascriptConfiguration(root, env = process.env) {
     assert.equal(env.ORCA_BUILD_IDENTITY, identity, 'Release build identity differs from version')
     assert(env.ORCA_POSTHOG_WRITE_KEY, 'Missing release telemetry key')
   }
-  assert(env.ORCA_DIAGNOSTICS_TOKEN_URL, 'Missing release diagnostics URL')
   return {
     sourceSha,
     version,
     packageManager,
     identity,
-    diagnosticsTokenUrl: env.ORCA_DIAGNOSTICS_TOKEN_URL,
+    diagnosticsTokenUrl: env.ORCA_DIAGNOSTICS_TOKEN_URL || null,
     telemetryKeySha256: identity === 'dev' ? null : sha256(env.ORCA_POSTHOG_WRITE_KEY)
   }
 }
