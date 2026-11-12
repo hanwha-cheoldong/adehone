@@ -606,7 +606,7 @@
   "menu": {
     "checkForUpdates": "检查更新...",
     "settings": "设置",
-    "exploreAdehone": "探索 Adehone",
+    "exploreOrca": "探索 Adehone",
     "gettingStarted": "Adehone 入门",
     "reportCrash": "报告崩溃...",
     "file": "文件",
@@ -2320,8 +2320,8 @@
         "addHost": "添加主机",
         "addSshHost": "添加 SSH 主机",
         "addSshHostHint": "通过 SSH 使用现有机器",
-        "addRemoteAdehoneServer": "添加远程 Adehone 服务器",
-        "addRemoteAdehoneServerHint": "配对另一个 Adehone 运行时",
+        "addRemoteOrcaServer": "添加远程 Adehone 服务器",
+        "addRemoteOrcaServerHint": "配对另一个 Adehone 运行时",
         "hostConnectionFailed": "连接失败",
         "defaultBranchUpdateFailed": "无法更新项目的默认分支，请重试",
         "setLocation": "设置项目位置",
@@ -5630,7 +5630,7 @@
           "removeWithChildrenFolder_other": "从 Adehone 移除 <target/> 和<descendants>{{count}} 个子工作区</descendants>。磁盘上的项目文件夹不会被删除",
           "removeWithChildrenMixed_other": "从 Adehone 移除 <target/> 和<descendants>{{count}} 个子工作区</descendants>。Git 工作树也会从 git 和磁盘中移除；文件夹工作区只会移除 Adehone 中的工作区条目",
           "removeWithChildrenGit_other": "从 git 移除 <target/> 和<descendants>{{count}} 个子工作区</descendants>，并删除其工作区文件夹",
-          "removeSingleFolderFromAdehone": "将其从 Adehone 中移除。磁盘上的文件夹会保留。",
+          "removeSingleFolderFromOrca": "将其从 Adehone 中移除。磁盘上的文件夹会保留。",
           "deleteSingleWorktreeAndBranch": "删除工作树及其分支（未合并的分支会保留）。"
         },
         "DeleteWorktreeDirtyChangeHint": {
@@ -6650,7 +6650,7 @@
           "port": "端口",
           "identityFile": "身份文件",
           "identityFilePlaceholder": "~/.ssh/id_ed25519(可选)",
-          "nameInAdehone": "在 Adehone 中的名称",
+          "nameInOrca": "在 Adehone 中的名称",
           "serverNamePlaceholder": "开发机",
           "accessLink": "访问链接",
           "pairingCodePlaceholder": "orca://pair?code=...",
@@ -6676,7 +6676,7 @@
           "sshConfigPickerEmptyHint": "在那里添加 Host 条目，或返回手动填写",
           "sshConfigPickerNoMatchHint": "试试其他筛选，或返回手动输入",
           "sshConfigPickerMoreResults": "仅显示前 {{value0}} 个匹配项，缩小筛选范围以查看更多",
-          "sshConfigPickerInAdehone": "已在 Adehone 中",
+          "sshConfigPickerInOrca": "已在 Adehone 中",
           "sshConfigPickerPreviouslyRemoved": "已从 Adehone 移除",
           "sshConfigPickerBack": "返回",
           "fillFromSshConfig": "从 ~/.ssh/config 填充…",
@@ -7176,7 +7176,7 @@
           "retrySetup": "重试",
           "installing": "正在安装...",
           "hostUnavailable": "Adehone 暂时无法在此工作区所在的机器上安装技能",
-          "replaceWithAdehoneCopy": "替换为 Adehone 的副本",
+          "replaceWithOrcaCopy": "替换为 Adehone 的副本",
           "copyCommandAria": "复制命令",
           "ed197f59a2": "复制命令",
           "failedToCopyCommand": "复制命令失败",
@@ -7681,16 +7681,7 @@
           "editor_preview_tabs": "浏览文件时复用预览标签页",
           "confirm_running_work_close": "关闭活动聊天或终端前确认"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "感谢您的支持！",
-          "6922c1fa2b": "点击 Adehone Star 支持项目",
-          "511782265b": "通过 GitHub star 支持该项目",
-          "55a87e5fd1": "支持 Adehone",
-          "964acc6bb4": "加星标",
-          "397719bee5": "正在Star…",
-          "cb65c75b11": "正在打开...",
-          "f2d4f877b2": "打开 GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "发行说明",
           "d89806cc89": "已准备好安装",
@@ -11538,9 +11529,9 @@
         },
         "BrowserLinkRoutingModifierSetting": {
           "titleSystem": "按住 Shift 在系统浏览器中打开",
-          "titleAdehone": "按住 Shift 在 Adehone 中打开",
+          "titleOrca": "按住 Shift 在 Adehone 中打开",
           "descriptionSystem": "链接在 Adehone 中打开，因此 {{chord}}+点击会将其发送到系统浏览器",
-          "descriptionAdehone": "链接在系统浏览器中打开，启用后，{{chord}}+点击会改在 Adehone 内置浏览器中打开"
+          "descriptionOrca": "链接在系统浏览器中打开，启用后，{{chord}}+点击会改在 Adehone 内置浏览器中打开"
         },
         "BrowserLinkRoutingBackgroundSetting": {
           "title": "在后台打开链接",
@@ -12294,8 +12285,8 @@
             "keepLinked": "保持关联",
             "forgetDescription": "在此处取消关联此服务器，而不联系其主机，如果主机恢复，服务器可能仍在那里运行",
             "orcaVersion": "此主机上的 Adehone：{{version}}",
-            "stopAdehoneDescription": "停止 SSH 主机上的 Adehone，并将其从此列表中移除",
-            "updateAdehoneOnHost": "更新此主机上的 Adehone",
+            "stopOrcaDescription": "停止 SSH 主机上的 Adehone，并将其从此列表中移除",
+            "updateOrcaOnHost": "更新此主机上的 Adehone",
             "updateAnyway": "仍然更新",
             "notNow": "暂不",
             "forceUpdate": "此主机上有终端正在运行。更新期间它们会继续运行，Adehone 服务器重启后其窗格会重新连接"
@@ -12787,8 +12778,8 @@
           "stoppedTitle": "因错误而停止",
           "stoppedBody": "它一直崩溃。重新启动以重试",
           "invalidTitle": "Adehone 无法加载此插件",
-          "needsAdehoneTitle": "需要 Adehone {{value0}} 或更高版本",
-          "needsAdehoneBody": "你的 Adehone 版本为 {{value0}}",
+          "needsOrcaTitle": "需要 Adehone {{value0}} 或更高版本",
+          "needsOrcaBody": "你的 Adehone 版本为 {{value0}}",
           "back": "插件",
           "info": "信息",
           "version": "版本",
@@ -18826,7 +18817,7 @@
       },
       "reasoning": "推理",
       "contextMenu": {
-        "copyAdehoneSessionId": "复制 Adehone 会话 ID",
+        "copyOrcaSessionId": "复制 Adehone 会话 ID",
         "orcaSessionIdCopied": "已复制 Adehone 会话 ID",
         "orcaSessionIdCopyFailed": "无法复制 Adehone 会话 ID",
         "orcaSessionIdTooltip": "Adehone 为此聊天分配的 ID，独立于智能体 CLI 自身的会话 ID，智能体通过 Adehone 用它来相互指代"
@@ -18974,10 +18965,10 @@
         "historyUnreadable": "Adehone 无法读取此聊天的已保存历史记录",
         "historyUnusable": "无法加载此聊天",
         "historyUnavailable": "Adehone 目前无法打开此聊天的历史记录",
-        "savedByNewerAdehone": "这些聊天由更新版本的 Adehone 保存",
-        "updateAdehoneToKeepUsing": "请更新 Adehone 以继续使用这些聊天",
-        "chatSavedByNewerAdehone": "此聊天由更新版本的 Adehone 保存",
-        "updateAdehoneToOpenChat": "请更新 Adehone 以打开它",
+        "savedByNewerOrca": "这些聊天由更新版本的 Adehone 保存",
+        "updateOrcaToKeepUsing": "请更新 Adehone 以继续使用这些聊天",
+        "chatSavedByNewerOrca": "此聊天由更新版本的 Adehone 保存",
+        "updateOrcaToOpenChat": "请更新 Adehone 以打开它",
         "unsupported": "运行此聊天的计算机需要更新版本的 Adehone，请在该计算机上更新 Adehone 后重试",
         "notAvailable": "此聊天中无法使用此功能",
         "cannotRunHere": "Adehone 无法在此处以聊天方式运行此代理",
@@ -19299,7 +19290,7 @@
         "openTerminal": "在终端中回答"
       },
       "approval": {
-        "needsNewerAdehone": "此请求需要更新版本的 Adehone",
+        "needsNewerOrca": "此请求需要更新版本的 Adehone",
         "title": "允许 {{value0}}？",
         "allow": "允许",
         "deny": "拒绝",
@@ -23022,7 +23013,7 @@
       "alreadyPairedAddAgain": "此服务器已作为“{{name}}”配对。要更新其连接，请在设置 > 远程 Adehone 服务器下重新添加",
       "alreadyPairedUnreadable": "此服务器已作为“{{name}}”配对，但此版本的 Adehone 无法读取其已保存的设置",
       "nameTaken": "名为“{{name}}”的服务器已存在",
-      "idNeedsNewerAdehone": "具有此 ID 的服务器已存在，其格式需要更新版本的 Adehone",
+      "idNeedsNewerOrca": "具有此 ID 的服务器已存在，其格式需要更新版本的 Adehone",
       "hostSaveFailed": "Adehone 已验证主机，但无法保存。请检查本地设置存储并重试",
       "repairSaveFailed": "Adehone 已验证服务器，但无法保存新的配对。请检查本地设置存储并重试",
       "repairCloudWorkspace": "此服务器属于一个云工作区，该工作区恢复运行时会再次与其配对"

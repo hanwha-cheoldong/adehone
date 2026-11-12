@@ -7468,16 +7468,7 @@
           "editor_preview_tabs": "파일 탐색 시 미리보기 탭 재사용",
           "confirm_running_work_close": "실행 중인 채팅이나 터미널을 닫기 전에 확인"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "지원해 주셔서 감사합니다!",
-          "6922c1fa2b": "GitHub에서 Adehone 스타 누르기",
-          "511782265b": "GitHub 스타로 프로젝트를 지원하세요.",
-          "55a87e5fd1": "Adehone 지원",
-          "964acc6bb4": "스타",
-          "397719bee5": "스타 표시 중...",
-          "cb65c75b11": "여는 중...",
-          "f2d4f877b2": "GitHub 열기"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "릴리스 노트",
           "d89806cc89": "설치할 준비가 되었습니다.",

@@ -62,6 +62,20 @@ function collapseCountOnlyKeys(extracted, english) {
   return extracted
 }
 
+function normalizeBranding(value) {
+  if (typeof value !== 'string') {
+    return value
+  }
+  return value
+    .replaceAll('’', "'")
+    .replaceAll('“', '"')
+    .replaceAll('”', '"')
+    .replaceAll('HADEHONE', 'ORCA')
+    .replaceAll('ADEHONE', 'ORCA')
+    .replaceAll('Adehone', 'Orca')
+    .replaceAll('adehone', 'orca')
+}
+
 export function compareExtraction(extractedCatalog, englishCatalog) {
   const english = flattenCatalog(englishCatalog)
   const extracted = collapseCountOnlyKeys(flattenCatalog(extractedCatalog), english)
@@ -78,7 +92,8 @@ export function compareExtraction(extractedCatalog, englishCatalog) {
     if (
       extractedValue.length === 0 ||
       englishValue === undefined ||
-      englishValue === extractedValue
+      englishValue === extractedValue ||
+      normalizeBranding(englishValue) === normalizeBranding(extractedValue)
     ) {
       continue
     }

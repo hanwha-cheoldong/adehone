@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildAppFontFamily } from './app-font-family'
-import { DEFAULT_APP_FONT_FAMILY } from '../../../shared/constants'
+import { DEFAULT_APP_FONT_FAMILY } from '../../../../shared/constants'
 
 describe('buildAppFontFamily', () => {
   it('기본 폰트가 지정되지 않았을 때(undefined/null) 기본 폰트인 Pretendard를 1순위로 포함하여 반환한다', () => {

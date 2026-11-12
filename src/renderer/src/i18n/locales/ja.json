@@ -7471,16 +7471,7 @@
           "editor_preview_tabs": "ファイルを参照するときにプレビュータブを再利用する",
           "confirm_running_work_close": "実行中のチャットやターミナルを閉じる前に確認する"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "サポートありがとうございます!",
-          "6922c1fa2b": "GitHub 上のスター Adehone",
-          "511782265b": "GitHub スターでプロジェクトをサポートします。",
-          "55a87e5fd1": "Adehone をサポートする",
-          "964acc6bb4": "スター",
-          "397719bee5": "スターを付けています…",
-          "cb65c75b11": "開いています…",
-          "f2d4f877b2": "GitHub を開く"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "リリースノート",
           "d89806cc89": "インストールする準備ができました。",

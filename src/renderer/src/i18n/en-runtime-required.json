@@ -766,9 +766,6 @@
           "277ba45540": "Adehone onboarding",
           "ff92d15436": "Adehone will notify you when agents are done or need help."
         },
-        "OnboardingFooter": {
-          "111d3f8d92": "Skip to project setup"
-        },
         "WindowsTerminalStep": {
           "defaultShellDescription": "Choose the shell Adehone opens for new Windows terminal panes."
         },
@@ -1281,16 +1278,6 @@
           "description": "Check and update paired Adehone servers from this client.",
           "fdd271abf0": "Remote Adehone servers"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "Starring...",
-          "511782265b": "Support the project with a GitHub star.",
-          "55a87e5fd1": "Support Adehone",
-          "6922c1fa2b": "Star Adehone on GitHub",
-          "964acc6bb4": "Star",
-          "af7d9f4396": "Thanks for the support!",
-          "cb65c75b11": "Opening...",
-          "f2d4f877b2": "Open GitHub"
-        },
         "GeneralUpdateSettingsSection": {
           "ceb579abaf": "Check for app updates and install a newer Adehone version.",
           "e3b9d21c07": "is available. Update Adehone through your system package manager — Adehone cannot install this release itself."
@@ -1385,7 +1372,7 @@
           "shownPluginCount_other": "{{count}} matching plugins shown, including this one"
         },
         "PluginConsentDialog": {
-          "fullAccessWarning": "Full access: runs as a normal program and can read your files, use the network and run other programs.",
+          "fullAccessWarning": "Full access: runs as a normal program and can read your files, use the network, run other programs and control Adehone, including your terminals and agents.",
           "uiWarning": "Runs the publisher's code inside Adehone to draw its view. Adehone shows what it can access and asks before enabling it."
         },
         "PluginConsentProvenance": {
@@ -1592,8 +1579,8 @@
           "orcaServer": "Adehone server"
         },
         "SshTargetForm": {
-          "allowRemoteCliControl": "Allow this host's orca CLI to control Adehone",
-          "allowRemoteCliControlHelp": "On by default for new hosts. Lets orca commands run on this host open and drive Adehone browser tabs on this desktop, only in this host's workspaces and only while it is connected, and lets terminals started by an older Adehone on this host run orchestration commands (check, inbox, send, ask, reply) for their own supervised work. They cannot read your files, clipboard or cookies. When off, they reach only this host's own Adehone server.",
+          "allowRemoteCliControl": "Allow this host to control Adehone browser tabs in its workspaces",
+          "allowRemoteCliControlHelp": "On by default for new hosts. Agents and orca commands on this host can open, read and use Adehone browser tabs on this desktop, only in this host's workspaces and only while it is connected. Tabs it controls show its name. Terminals started on this host by an older Adehone also need this on to run orca orchestration commands. It cannot read your files, clipboard or cookies.",
           "reconnectOnLaunchHelp": "When off, Adehone leaves this host, and any Adehone server reached through it, disconnected at launch until you connect it."
         },
         "SshTargetList": {
@@ -3045,16 +3032,6 @@
           "unrecognized": "Adehone cannot use {{path}}, and this version does not recognize the reason. Update Adehone to see the details."
         }
       },
-      "launch": {
-        "work": {
-          "item": {
-            "direct": {
-              "19c7683acf": "Selected agent is not available in the created workspace.",
-              "8bc45efdbc": "Failed to resolve PR head."
-            }
-          }
-        }
-      },
       "rateLimits": {
         "errors": {
           "chatgptAuthRequired": "ChatGPT authentication required to read rate limits",
@@ -3458,7 +3435,7 @@
           "title": "Trust this folder?",
           "trust": "Trust folder"
         },
-        "needsNewerAdehone": "This request needs a newer version of Adehone.",
+        "needsNewerOrca": "This request needs a newer version of Adehone.",
         "plan": {
           "refineHint": "Refine plan closes the review so you can send what to change.",
           "reviewTitle": "Review proposed plan"
@@ -3760,8 +3737,7 @@
       "resumeInNewChat": {
         "hostUpdateRequired": "Update Adehone on this host to continue in Chat UI.",
         "terminalChanged": "The terminal running {{agent}} changed before it closed, so Adehone left it open. Try again.",
-        "terminalExitUnproven": "Adehone closed {{agent}}'s terminal but couldn't confirm it stopped, so the chat didn't open. Check the host connection, then open the conversation from Session History.",
-        "terminalExitUnprovenInChat": "Adehone closed {{agent}}'s terminal but couldn't confirm {{agent}} stopped. Make sure it has stopped, then try again."
+        "terminalExitUnproven": "Adehone closed {{agent}}'s terminal but couldn't confirm it stopped, so the chat didn't open. Check the host connection, then open the conversation from Session History."
       },
       "rewind": {
         "outcomeUnknown": "Adehone couldn't confirm whether the conversation went back to an earlier message. It checks before your next message is sent.",
@@ -4265,7 +4241,7 @@
     "signatureRequirement": "The build must have the same valid code signature as Adehone or installation will stop."
   },
   "macosUpdateRequirement": {
-    "whyIntro": "We updated Electron, the foundation Orca runs on, to bring:"
+    "whyIntro": "We updated parts of Adehone’s foundation, like Electron and the on-device speech engine, to bring:"
   },
   "menu": {
     "about": "About Adehone",
@@ -4483,7 +4459,7 @@
   },
   "sessionSearch": {
     "panel": {
-      "consent": "Enable full-text search? Adehone builds an index on this computer from local agent transcripts, including full conversations and up to 3,072 characters per tool output. Content is not redacted. Authenticated paired clients can search it.",
+      "consent": "Enable full-text search? Adehone builds an index on this computer from local agent transcripts, including full conversations. Content is not redacted. Authenticated paired clients can search it.",
       "noService": "Search is unavailable on this computer. It may need an Adehone update or a runtime with search support.",
       "resultCount_one": "{{count}} result",
       "resultCount_other": "{{count}} results",

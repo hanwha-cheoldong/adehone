@@ -7759,16 +7759,7 @@
           "editor_preview_tabs": "Reutilice una pestaña de vista previa al explorar archivos",
           "confirm_running_work_close": "Confirmar antes de cerrar chats o terminales activos"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "¡Gracias por el apoyo!",
-          "6922c1fa2b": "Dale una estrella a Adehone en GitHub",
-          "511782265b": "Apoya el proyecto con una estrella de GitHub.",
-          "55a87e5fd1": "Apoya a Adehone",
-          "964acc6bb4": "Dar una estrella",
-          "397719bee5": "Dando una estrella...",
-          "cb65c75b11": "Abriendo...",
-          "f2d4f877b2": "Abrir GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "Notas de la versión",
           "d89806cc89": "está listo para instalar.",

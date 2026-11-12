@@ -8146,16 +8146,7 @@
           "confirm_running_work_close": "Vor dem Schließen aktiver Chats oder Terminals nachfragen",
           "5cb5475664": "Vor dem Schließen angehefteter Tabs nachfragen"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "Danke für die Unterstützung!",
-          "6922c1fa2b": "Adehone auf GitHub einen Stern geben",
-          "511782265b": "Das Projekt mit einem GitHub-Stern unterstützen.",
-          "55a87e5fd1": "Adehone unterstützen",
-          "964acc6bb4": "Stern vergeben",
-          "397719bee5": "Stern wird vergeben…",
-          "cb65c75b11": "Wird geöffnet…",
-          "f2d4f877b2": "GitHub öffnen"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "Versionshinweise",
           "d89806cc89": "ist zur Installation bereit.",

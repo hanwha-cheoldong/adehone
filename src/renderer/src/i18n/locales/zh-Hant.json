@@ -7967,16 +7967,7 @@
           "confirm_running_work_close": "關閉使用中的聊天或終端機前先確認",
           "5cb5475664": "關閉固定分頁前確認"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "感謝您的支持！",
-          "6922c1fa2b": "在 GitHub 上為 Adehone 加上星號",
-          "511782265b": "在 GitHub 上加上星號，支持此專案。",
-          "55a87e5fd1": "支持 Adehone",
-          "964acc6bb4": "加上星號",
-          "397719bee5": "正在加上星號...",
-          "cb65c75b11": "正在開啟...",
-          "f2d4f877b2": "開啟 GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "發行說明",
           "d89806cc89": "已準備好安裝。",

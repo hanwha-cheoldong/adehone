@@ -8123,16 +8123,7 @@
           "confirm_running_work_close": "Etkin sohbetleri veya terminalleri kapatmadan önce onayla",
           "5cb5475664": "Sabitlenmiş sekmeleri kapatmadan önce onayla"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "Desteğiniz için teşekkürler!",
-          "6922c1fa2b": "Adehone'yı GitHub'da Yıldızlayın",
-          "511782265b": "GitHub'da yıldız vererek projeyi destekleyin.",
-          "55a87e5fd1": "Adehone'yı Destekleyin",
-          "964acc6bb4": "Yıldızla",
-          "397719bee5": "Yıldızlanıyor...",
-          "cb65c75b11": "Açılıyor...",
-          "f2d4f877b2": "GitHub'ı Aç"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "Sürüm notları",
           "d89806cc89": "yüklenmeye hazır.",

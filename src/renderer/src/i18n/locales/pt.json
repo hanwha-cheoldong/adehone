@@ -8012,16 +8012,7 @@
           "2f3cda96f5": "Fixado para este repositório",
           "ee110e1830": "Nenhuma ref base padrão"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "Obrigado pelo apoio!",
-          "6922c1fa2b": "Dar estrela ao Adehone no GitHub",
-          "511782265b": "Apoie o projeto com uma estrela no GitHub.",
-          "55a87e5fd1": "Apoiar o Adehone",
-          "964acc6bb4": "Dar Estrela",
-          "397719bee5": "Dando estrela...",
-          "cb65c75b11": "Abrindo...",
-          "f2d4f877b2": "Abrir GitHub"
-        },
+        "GeneralSupportSection": {},
         "MobileEmulatorAgentControlRow": {
           "8af7a8bc38": "Os comandos têm como alvo o emulador ativo da worktree atual. As coordenadas são normalizadas de 0 a 1.",
           "c7f3fe0a6e": "Comandos comuns do emulador",
@@ -21450,7 +21441,7 @@
         "deferredNote": "Carregado sob demanda. Não conta no total usado."
       },
       "contextMenu": {
-        "copyAdehoneSessionId": "Copiar ID de sessão do Adehone",
+        "copyOrcaSessionId": "Copiar ID de sessão do Adehone",
         "orcaSessionIdCopied": "ID de sessão do Adehone copiado",
         "orcaSessionIdCopyFailed": "Não foi possível copiar o ID de sessão do Adehone",
         "orcaSessionIdTooltip": "ID deste chat no Adehone, separado do ID de sessão da CLI do agente. Os agentes o usam para se referir uns aos outros pelo Adehone.",

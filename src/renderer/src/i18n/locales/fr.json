@@ -8029,16 +8029,7 @@
           "editor_preview_tabs": "Réutiliser un onglet d'aperçu lors de la navigation dans les fichiers",
           "confirm_running_work_close": "Confirmer avant de fermer des conversations ou terminaux actifs"
         },
-        "GeneralSupportSection": {
-          "af7d9f4396": "Merci pour votre soutien !",
-          "6922c1fa2b": "Ajouter une étoile à Adehone sur GitHub",
-          "511782265b": "Soutenez le projet avec une étoile GitHub.",
-          "55a87e5fd1": "Soutenir Adehone",
-          "964acc6bb4": "Ajouter une étoile",
-          "397719bee5": "Ajout de l'étoile...",
-          "cb65c75b11": "Ouverture...",
-          "f2d4f877b2": "Ouvrir GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "Notes de version",
           "d89806cc89": "est prête à être installée.",
