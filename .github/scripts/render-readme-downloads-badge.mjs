@@ -43,20 +43,25 @@ export function countReleaseDownloads(releases) {
 }
 
 async function getTotalReleaseDownloads() {
-  let page = 1
-  let total = 0
+  try {
+    let page = 1
+    let total = 0
 
-  while (true) {
-    const releases = await fetchJson(
-      `https://api.github.com/repos/${repository}/releases?per_page=100&page=${page}`
-    )
+    while (true) {
+      const releases = await fetchJson(
+        `https://api.github.com/repos/${repository}/releases?per_page=100&page=${page}`
+      )
 
-    if (releases.length === 0) {
-      return total
+      if (!Array.isArray(releases) || releases.length === 0) {
+        return total
+      }
+
+      total += countReleaseDownloads(releases)
+      page += 1
     }
-
-    total += countReleaseDownloads(releases)
-    page += 1
+  } catch (error) {
+    console.error('Failed to get release downloads, defaulting to 0:', error)
+    return 0
   }
 }
 
@@ -114,7 +119,13 @@ function renderBadge(value) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
-  const total = await getTotalReleaseDownloads()
+  let total = 0
+  try {
+    total = await getTotalReleaseDownloads()
+  } catch (error) {
+    console.error('Failed to get release downloads count, defaulting to 0:', error)
+    total = 0
+  }
   const badge = renderBadge(formatDownloads(total))
 
   await mkdir(dirname(outputPath), { recursive: true })
