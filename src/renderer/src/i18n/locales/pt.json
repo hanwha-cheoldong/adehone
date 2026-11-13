@@ -2440,8 +2440,6 @@
         "225071c560": "Experimental",
         "e338c507c1": "Configurações de compatibilidade de baixo nível para solução de problemas.",
         "580a04cd81": "Avançado",
-        "8400cfe1c1": "Controles de dados de uso anônimos e telemetria.",
-        "3618579df6": "Privacidade e Telemetria",
         "65ec7d1968": "Acesso de privacidade do macOS para ferramentas de desenvolvedor iniciadas pelo terminal.",
         "d91ae31fbd": "Permissões do macOS",
         "95a1886d94": "Controle terminais e agentes a partir do seu celular.",
@@ -5250,16 +5248,12 @@
           "5426ecbdcb": "Scripts locais não serão executados",
           "95a0411b3e": "modelo",
           "175daba180": "Exemplo",
-          "b20c5df6ca": "Adicione um arquivo `orca.yaml` para habilitar padrões compartilhados de configuração, arquivamento ou automação de issue para este repositório. Modelo de exemplo:",
-          "56f9a4a1d0": "Usando `orca.yaml`",
           "623e0c9f31": "Não foi possível interpretar o `orca.yaml`",
-          "5a67e4793d": "Nenhum `orca.yaml` detectado",
           "07ba35bc68": "Verifique a indentação sob `scripts:`. As chaves de hook devem usar dois espaços, e as linhas de comando devem usar quatro.",
           "787ca433ef": "Defina somente as chaves suportadas: `scripts`, `setup`, `archive` e `issueCommand`.",
           "ecc73d9125": "Compare seu arquivo com o modelo funcional abaixo e copie essa estrutura se necessário.",
           "0cc712b823": "O arquivo de configuração principal existe na raiz do repositório, mas o Adehone ainda não conseguiu interpretar as definições de hook suportadas.",
           "aba825233f": "O arquivo contém chaves de configuração que esta versão do Adehone não reconhece. Talvez seja necessário atualizar o Adehone, ou verificar o arquivo em busca de erros de digitação.",
-          "ca424ff135": "Padrões compartilhados de hook e automação de issue estão definidos no repositório e disponíveis para todos que o usam.",
           "8bfe65fc60": "Usar comandos locais",
           "8d6c56bff8": "Executar ambos",
           "0fa21e19ec": "Nome do espaço de trabalho, geralmente baseado no nome da branch.",
@@ -5388,7 +5382,6 @@
           "8b017f2506": "Experimental",
           "499c1cd7f9": "Configurações de compatibilidade de baixo nível para solução de problemas.",
           "1c87f8d024": "Avançado",
-          "c1b43dc4e2": "Controles de dados de uso anônimos e telemetria.",
           "9b83cc62c2": "Acesso de privacidade do macOS para ferramentas de desenvolvedor iniciadas pelo terminal.",
           "65660d4548": "Permissões do macOS",
           "c6c01ac209": "Controle terminais e agentes a partir do seu celular.",
@@ -5450,7 +5443,6 @@
           "4198aae333": "Contas de Provedores de IA",
           "3f3e11cb5d": "Uso do Computador",
           "084f34826d": "Estatísticas e Uso",
-          "742ca66ea6": "Privacidade e Telemetria",
           "c2bb9fc528": "Espaço de Trabalho Flutuante",
           "f1fddf7764": "Entrada e Edição",
           "d60b7f0e58": "Comandos Rápidos"
@@ -5829,8 +5821,6 @@
             "df205a675e": "Intensidade da Tonalidade",
             "ba1d9a0607": "Tonalidade da Barra Lateral"
           },
-          "interfaceDefaultFont": "Fonte padrão",
-          "terminalDefaultFont": "Fonte padrão",
           "interfaceTitle": "Interface",
           "terminalTitle": "Terminal",
           "windowSidebarSummary": "Barra lateral, barra de status e explorador de arquivos",
@@ -6602,13 +6592,6 @@
           "notificationPlayground": "Playground de notificações",
           "notificationPlaygroundDescription": "Acionadores exclusivos para desenvolvedores verificarem o layout do toast, ações de recuperação e quebra de texto longo.",
           "devOnly": "Somente dev",
-          "orcaCloud": "Adehone Cloud",
-          "orcaCloudDescription": "Pré-visualização exclusiva para desenvolvedores do login na nuvem próprio. Oculto em produção; em dev também aparece no alternador de conta da barra lateral quando ADEHONE_CLOUD_API_URL e ADEHONE_CLOUD_CLIENT_ID estão definidos.",
-          "orcaCloudStatus": "Status",
-          "orcaCloudSignOut": "Sair",
-          "orcaCloudConnect": "Conectar perfil",
-          "orcaCloudRefresh": "Atualizar status",
-          "orcaCloudNotConfigured": "Defina ADEHONE_CLOUD_API_URL e ADEHONE_CLOUD_CLIENT_ID para pré-visualizar o login do Adehone Cloud nesta versão de dev.",
           "deleteAnywayClicked": "Excluir Assim Mesmo clicado"
         },
         "GeneralEditorSettingsSection": {
@@ -8578,8 +8561,7 @@
           "60f8a673a7": "Voltar ao app",
           "6503182299": "Checklist de introdução",
           "82db1b7de4": "Checklist de introdução, {{value0}} de {{value1}} concluído(s). Mostrar guia de configuração.",
-          "df38d612b7": "Nenhum projeto adicionado ainda.",
-          "3e483e256b": "Nenhuma configuração de projeto correspondente."
+          "df38d612b7": "Nenhum projeto adicionado ainda."
         },
         "computer": {
           "use": {
@@ -13754,7 +13736,6 @@
         "RichMarkdownLinkBubble": {
           "1c99b726e0": "Remover link",
           "cdfe166f6f": "Editar link",
-          "bfc813e909": "Abrir link",
           "7b0b945fdc": "Cole ou digite um link…",
           "copyLink": "Copiar link"
         },
@@ -14784,7 +14765,14 @@
           "precheckNone": "Nenhuma",
           "migrate": "Migrar",
           "migrateNotice": "{{host}} foi atualizado para um novo host remoto. Migre esta automação para que ela continue em execução.",
-          "needsMigration": "Requer migração"
+          "needsMigration": "Requer migração",
+          "repeats": "Repetição",
+          "missedRunGrace": "Tolerância de execução perdida",
+          "execution": "Execução",
+          "notRunYet": "Ainda não executada",
+          "usageDetail_one": "{{tokens}} tokens · {{known}}/{{count}} execução relatada",
+          "usageDetail_many": "{{tokens}} tokens · {{known}}/{{count}} execuções relatadas",
+          "usageDetail_other": "{{tokens}} tokens · {{known}}/{{count}} execuções relatadas"
         },
         "ExternalAutomationManagers": {
           "e02f970595": "Nenhum gerenciador de automação externa encontrado.",
@@ -15013,7 +15001,10 @@
         },
         "AutomationPromptDisclosure": {
           "showLess": "Mostrar menos",
-          "showMore": "Mostrar mais"
+          "showMore": "Mostrar mais",
+          "copied": "Copiado",
+          "copyFailed": "Falha ao copiar",
+          "copyPrompt": "Copiar prompt"
         },
         "AutomationRunPageFrame": {
           "40a511bed4": "Contexto da execução",
@@ -22307,6 +22298,7 @@
           "about": {
             "parakeetV3": "Rápido. {{languages}} idiomas europeus.",
             "parakeetV2": "Rápido. Só inglês, e o mais preciso nele.",
+            "parakeetUnifiedEn": "Somente inglês. As palavras aparecem enquanto você fala.",
             "whisperTiny": "O menor download. Bom para experimentar o ditado.",
             "whisperTurbo": "Mais idiomas, cerca de 100. Lento sem GPU.",
             "senseVoice": "Rápido. Para chinês, japonês e coreano.",

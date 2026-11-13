@@ -1246,11 +1246,6 @@
           "signedInGeneric": "Signed in. Adehone reads the Cursor session stored on this computer.",
           "subtitle": "Shows your Cursor plan usage from the sign-in already on this computer. Adehone only reads it — it never changes your Cursor login."
         },
-        "DevToolsPane": {
-          "orcaCloud": "Adehone Cloud",
-          "orcaCloudDescription": "Dev-only preview of first-party cloud sign-in. Hidden in production; in dev it also appears in the sidebar account switcher once HADEHONE_CLOUD_API_URL and HADEHONE_CLOUD_CLIENT_ID are set.",
-          "orcaCloudNotConfigured": "Set HADEHONE_CLOUD_API_URL and HADEHONE_CLOUD_CLIENT_ID to preview Adehone Cloud sign-in in this dev build."
-        },
         "DeveloperPermissionsPane": {
           "6326a4c5cc": "Use these controls when a CLI, local app, or automation tool needs macOS privacy access. Adehone does not ask at startup.",
           "6f011b9bf6": "Terminal tools inherit Adehone's macOS privacy envelope.",
@@ -4554,9 +4549,6 @@
       }
     },
     "general": {
-      "about": {
-        "version": "Adehone {{version}}"
-      },
       "cli": {
         "description": "Adehone’s own terminals already have it.",
         "skillTitle": "Adehone skill for agents"
