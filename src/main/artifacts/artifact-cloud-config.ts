@@ -1,7 +1,5 @@
 import { app } from 'electron'
 
-const PRODUCTION_ARTIFACTS_API_URL = 'https://share.onorca.dev'
-
 function isPackaged(): boolean {
   try {
     return app?.isPackaged === true
@@ -16,7 +14,10 @@ export function resolveArtifactCloudApiUrl(
   packaged = isPackaged()
 ): string {
   const candidate = override?.trim() || env.ORCA_ARTIFACTS_API_URL?.trim()
-  const url = new URL(candidate || PRODUCTION_ARTIFACTS_API_URL)
+  if (!candidate) {
+    throw new Error('Artifact sharing is disabled until a self-hosted server is configured.')
+  }
+  const url = new URL(candidate)
   const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname)
   const firstParty = ['onorca.dev', 'orca.dev'].some(
     (domain) => url.hostname === domain || url.hostname.endsWith(`.${domain}`)

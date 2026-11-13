@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { fetchMock } = vi.hoisted(() => ({ fetchMock: vi.fn<typeof fetch>() }))
 
@@ -31,7 +31,20 @@ function requestSignal(index = 0): AbortSignal {
 }
 
 describe('feedback request ownership', () => {
-  beforeEach(() => fetchMock.mockReset())
+  const previousFeedbackApiUrl = process.env.ORCA_FEEDBACK_API_URL
+
+  beforeEach(() => {
+    process.env.ORCA_FEEDBACK_API_URL = FEEDBACK_API_URL
+    fetchMock.mockReset()
+  })
+
+  afterEach(() => {
+    if (previousFeedbackApiUrl === undefined) {
+      delete process.env.ORCA_FEEDBACK_API_URL
+    } else {
+      process.env.ORCA_FEEDBACK_API_URL = previousFeedbackApiUrl
+    }
+  })
 
   it('keeps the request live until the image response reader finishes', async () => {
     const reading = Promise.withResolvers<void>()
