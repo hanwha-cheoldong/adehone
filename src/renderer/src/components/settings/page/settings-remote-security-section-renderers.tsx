@@ -1,5 +1,4 @@
 import { DeveloperPermissionsPane } from '../developer-permissions/DeveloperPermissionsPane'
-import { PrivacyPane } from '../privacy/PrivacyPane'
 import { RuntimeEnvironmentsPane } from '../runtime-environments/catalog/RuntimeEnvironmentsPane'
 import { RuntimeServersHeaderActions } from '../runtime-environments/runtime-servers-header-actions'
 import { RuntimeServersPageProvider } from '../runtime-environments/runtime-servers-page-context'
@@ -38,8 +37,6 @@ export function renderServersSettingsSection(
             <RuntimeServersHeaderActions canGeneratePairingUrl={!model.isWebClient} />
           ) : undefined
         }
-        // Rows/cards already supply surfaces; another frame would nest cards.
-        bodyClassName="rounded-none border-0 bg-transparent px-0 py-0 shadow-none"
       >
         {mounted ? (
           <RuntimeEnvironmentsPane
@@ -72,8 +69,6 @@ export function renderSshSettingsSection(
         )}
         searchEntries={navigation.getSectionSearchEntries('ssh')}
         headerAction={mounted ? <SshHostsHeaderSlot /> : undefined}
-        // Host groups already supply surfaces; another frame would nest cards.
-        bodyClassName="rounded-none border-0 bg-transparent px-0 py-0 shadow-none"
       >
         {mounted ? <SshPane addTargetIntentSignal={model.sshHostAddIntentSignal} /> : null}
       </SettingsSection>
@@ -89,7 +84,6 @@ export function renderDeveloperPermissionsSettingsSection(
   return model.showDesktopOnlySettings && model.isMac ? (
     <SettingsSection
       id="developer-permissions"
-      grouped
       title={t('auto.components.settings.Settings.65660d4548', 'macOS Permissions')}
       description={t(
         'auto.components.settings.Settings.9b83cc62c2',
@@ -97,31 +91,7 @@ export function renderDeveloperPermissionsSettingsSection(
       )}
       searchEntries={navigation.getSectionSearchEntries('developer-permissions')}
     >
-      {view.isSectionMounted('developer-permissions') ? (
-        <DeveloperPermissionsPane
-          highlightedSettingId={model.highlightedSettingsTarget?.id ?? null}
-        />
-      ) : null}
+      {view.isSectionMounted('developer-permissions') ? <DeveloperPermissionsPane /> : null}
     </SettingsSection>
   ) : null
-}
-
-export function renderPrivacySettingsSection(
-  context: SettingsRenderContext,
-  t: Translate = translate
-): React.JSX.Element {
-  const { model, navigation, view } = context
-  return (
-    <SettingsSection
-      id="privacy"
-      title={t('auto.components.settings.Settings.742ca66ea6', 'Privacy & telemetry')}
-      description={t(
-        'auto.components.settings.Settings.c1b43dc4e2',
-        'Anonymous usage data and telemetry controls.'
-      )}
-      searchEntries={navigation.getSectionSearchEntries('privacy')}
-    >
-      {view.isSectionMounted('privacy') ? <PrivacyPane settings={model.settings} /> : null}
-    </SettingsSection>
-  )
 }

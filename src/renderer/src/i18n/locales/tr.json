@@ -1994,8 +1994,6 @@
         "225071c560": "Deneysel",
         "e338c507c1": "Sorun giderme için düşük seviyeli uyumluluk ayarları.",
         "580a04cd81": "Gelişmiş",
-        "8400cfe1c1": "Anonim kullanım verisi ve telemetri denetimleri.",
-        "3618579df6": "Gizlilik ve Telemetri",
         "65ec7d1968": "Terminalden başlatılan geliştirici araçları için macOS gizlilik erişimi.",
         "d91ae31fbd": "macOS İzinleri",
         "95a1886d94": "Terminalleri ve ajanları telefonunuzdan kontrol edin.",
@@ -7686,8 +7684,6 @@
             "df205a675e": "Renk Yoğunluğu",
             "ba1d9a0607": "Kenar Çubuğu Rengi"
           },
-          "interfaceDefaultFont": "Varsayılan yazı tipi",
-          "terminalDefaultFont": "Varsayılan yazı tipi",
           "interfaceTitle": "Arayüz",
           "terminalTitle": "Terminal",
           "windowSidebarSummary": "Kenar çubuğu, durum çubuğu ve dosya gezgini",
@@ -8598,16 +8594,12 @@
           "5426ecbdcb": "Yerel betikler çalıştırılmayacak",
           "95a0411b3e": "şablon",
           "175daba180": "Örnek",
-          "b20c5df6ca": "Bu repo için paylaşılan kurulum, arşiv veya sorun otomasyonu varsayılanlarını etkinleştirmek üzere bir `orca.yaml` dosyası ekleyin. Örnek şablon:",
-          "56f9a4a1d0": "`orca.yaml` Kullanılıyor",
           "623e0c9f31": "`orca.yaml` ayrıştırılamadı",
-          "5a67e4793d": "`orca.yaml` algılanmadı",
           "07ba35bc68": "`scripts:` altındaki girintiyi kontrol edin. Hook anahtarları iki boşluk, komut satırları ise dört boşluk kullanmalıdır.",
           "787ca433ef": "Yalnızca desteklenen anahtarları tanımlayın: `scripts`, `setup`, `archive` ve `issueCommand`.",
           "ecc73d9125": "Dosyanızı aşağıdaki çalışan şablonla karşılaştırın ve gerekirse aynı yapıyı kopyalayın.",
           "0cc712b823": "Temel yapılandırma dosyası repo kökünde mevcut, ancak Adehone desteklenen hook tanımlarını henüz ayrıştıramadı.",
           "aba825233f": "Dosya, Adehone'nın bu sürümünün tanımadığı yapılandırma anahtarları içeriyor. Adehone'yı güncellemeniz veya dosyada yazım hatası olup olmadığını kontrol etmeniz gerekebilir.",
-          "ca424ff135": "Paylaşılan hook ve sorun otomasyonu varsayılanları repoda tanımlıdır ve repoyu kullanan herkes için kullanılabilir.",
           "8bfe65fc60": "Yerel komutları kullan",
           "8d6c56bff8": "İkisini de çalıştır",
           "0fa21e19ec": "Genellikle branch adına dayanan çalışma alanı adı.",
@@ -8916,7 +8908,6 @@
           "8b017f2506": "Deneysel",
           "499c1cd7f9": "Sorun giderme için düşük seviyeli uyumluluk ayarları.",
           "1c87f8d024": "Gelişmiş",
-          "c1b43dc4e2": "Anonim kullanım verileri ve telemetri kontrolleri.",
           "9b83cc62c2": "Terminalden başlatılan geliştirici araçları için macOS gizlilik erişimi.",
           "65660d4548": "macOS İzinleri",
           "c6c01ac209": "Terminalleri ve ajanları telefonunuzdan kontrol edin.",
@@ -8978,7 +8969,6 @@
           "4198aae333": "AI Sağlayıcı Hesapları",
           "3f3e11cb5d": "Bilgisayar Kullanımı",
           "084f34826d": "İstatistikler ve Kullanım",
-          "742ca66ea6": "Gizlilik ve Telemetri",
           "c2bb9fc528": "Yüzen Çalışma Alanı",
           "f1fddf7764": "Girdi ve Düzenleme",
           "d60b7f0e58": "Hızlı Komutlar"
@@ -9003,8 +8993,7 @@
           "60f8a673a7": "Uygulamaya dön",
           "6503182299": "Başlangıç kontrol listesi",
           "82db1b7de4": "Başlangıç kontrol listesi, {{value1}} adımdan {{value0}} tanesi tamamlandı. Kurulum kılavuzunu göster.",
-          "df38d612b7": "Henüz proje eklenmedi.",
-          "3e483e256b": "Eşleşen proje ayarı yok."
+          "df38d612b7": "Henüz proje eklenmedi."
         },
         "ShortcutFilterRail": {
           "28b63545bf": "Durum",
@@ -11668,13 +11657,6 @@
           "notificationPlayground": "Bildirim oyun alanı",
           "notificationPlaygroundDescription": "Toast düzenini, kurtarma eylemlerini ve uzun metin sarmalamasını kontrol etmek için yalnızca geliştirmede kullanılan tetikleyiciler.",
           "devOnly": "Yalnızca geliştirme",
-          "orcaCloud": "Adehone Cloud",
-          "orcaCloudDescription": "Birinci taraf bulut girişinin yalnızca geliştirme için önizlemesi. Üretimde gizlidir; geliştirmede ADEHONE_CLOUD_API_URL ve ADEHONE_CLOUD_CLIENT_ID ayarlandığında kenar çubuğu hesap değiştiricisinde de görünür.",
-          "orcaCloudStatus": "Durum",
-          "orcaCloudSignOut": "Çıkış yap",
-          "orcaCloudConnect": "Profili bağla",
-          "orcaCloudRefresh": "Durumu yenile",
-          "orcaCloudNotConfigured": "Bu geliştirme sürümünde Adehone Cloud girişini önizlemek için ADEHONE_CLOUD_API_URL ve ADEHONE_CLOUD_CLIENT_ID ayarlayın.",
           "deleteAnywayClicked": "Yine de Sil'e tıklandı"
         },
         "EphemeralVmRecipeRow": {
@@ -16483,7 +16465,6 @@
         "RichMarkdownLinkBubble": {
           "1c99b726e0": "Bağlantıyı kaldır",
           "cdfe166f6f": "Bağlantıyı düzenle",
-          "bfc813e909": "Bağlantıyı aç",
           "7b0b945fdc": "Bir bağlantı yapıştırın veya yazın…",
           "copyLink": "Bağlantıyı kopyala"
         },
@@ -17543,7 +17524,10 @@
         },
         "AutomationPromptDisclosure": {
           "showLess": "Daha az göster",
-          "showMore": "Daha fazla göster"
+          "showMore": "Daha fazla göster",
+          "copied": "Kopyalandı",
+          "copyFailed": "Kopyalanamadı",
+          "copyPrompt": "İstemi kopyala"
         },
         "AutomationDetail": {
           "host": "Sunucu",
@@ -17580,7 +17564,13 @@
           "precheckNone": "Yok",
           "migrate": "Taşı",
           "migrateNotice": "{{host}} yeni bir uzak ana bilgisayara yükseltildi. Çalışmaya devam etmesi için bu otomasyonu taşıyın.",
-          "needsMigration": "Taşınması gerekiyor"
+          "needsMigration": "Taşınması gerekiyor",
+          "repeats": "Tekrar",
+          "missedRunGrace": "Kaçırılan çalıştırma toleransı",
+          "execution": "Çalıştırma",
+          "notRunYet": "Henüz çalıştırılmadı",
+          "usageDetail_one": "{{tokens}} token · {{known}}/{{count}} çalıştırma raporlandı",
+          "usageDetail_other": "{{tokens}} token · {{known}}/{{count}} çalıştırma raporlandı"
         },
         "AutomationEditorDialog": {
           "fb1896a5e7": "İptal",
@@ -20736,6 +20726,7 @@
           "about": {
             "parakeetV3": "Hızlı. {{languages}} Avrupa dili.",
             "parakeetV2": "Hızlı. Yalnızca İngilizce, bunda en doğrusu.",
+            "parakeetUnifiedEn": "Yalnızca İngilizce. Kelimeler siz konuşurken görünür.",
             "whisperTiny": "En küçük indirme. Dikteyi denemek için iyi.",
             "whisperTurbo": "En çok dil, yaklaşık 100. GPU olmadan yavaş.",
             "senseVoice": "Hızlı. Çince, Japonca ve Korece için.",
@@ -21578,8 +21569,7 @@
         "unreachable": "erişilemiyor",
         "scopeNotFound": "arama kapsamı orada bulunamadı",
         "agentNotSupported": "ajan desteklenmiyor"
-      },
-      "consent": "Tam metin arama etkinleştirilsin mi? Adehone, tam konuşmalar ve araç çıktısı başına 3.072 karaktere kadar dahil olmak üzere yerel ajan dökümlerinden bu bilgisayarda bir dizin oluşturur. İçerik sansürlenmez. Kimliği doğrulanmış eşlenmiş istemciler bu dizinde arama yapabilir."
+      }
     }
   },
   "sessionHistory": {
@@ -21623,8 +21613,7 @@
       "openInSidebar": "Kenar çubuğunda aç",
       "openInSidebarCopy": "Hatırladığınızı yazın veya bir ajana sorun: “giriş zaman aşımını düzelttiğimiz oturumu bul.”",
       "open": "Aç",
-      "enableOnAll": "Tüm bilgisayarlarda etkinleştir",
-      "computersConsent": "Her bilgisayar, kendi ajan konuşmalarının ve araç çıktısının aranabilir bir kopyasını tutar. Hiçbir şey o bilgisayardan dışarı çıkmaz."
+      "enableOnAll": "Tüm bilgisayarlarda etkinleştir"
     },
     "dialog": {
       "select": "Seç",

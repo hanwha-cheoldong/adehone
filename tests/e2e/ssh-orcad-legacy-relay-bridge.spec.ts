@@ -20,6 +20,7 @@ import {
 } from './helpers/docker-ssh-host-target'
 import {
   echoThroughDockerRelay,
+  hasLegacyRelayReleaseTag,
   installReleasedRelayOnDockerHost,
   listDockerRelayPtys,
   startDockerRelayWithShell
@@ -32,6 +33,7 @@ test.skip(
   process.env.ORCA_E2E_ORCAD_CONVERT_HOST !== 'docker' || !TEMPLATE_SOURCE,
   'Set ORCA_E2E_ORCAD_CONVERT_HOST=docker and ORCA_E2E_ORCAD_CONVERT_TEMPLATE'
 )
+test.skip(!hasLegacyRelayReleaseTag(), 'Requires refs/tags/v1.4.224 in this repository')
 
 let host: DockerSshHostTarget | null = null
 

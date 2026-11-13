@@ -26,14 +26,22 @@ function requestInit(callIndex = 0): RequestInit {
 }
 
 describe('submitFeedback', () => {
+  const previousFeedbackApiUrl = process.env.ORCA_FEEDBACK_API_URL
+
   beforeEach(() => {
     vi.useRealTimers()
+    process.env.ORCA_FEEDBACK_API_URL = 'https://orca.dev/v1/feedback'
     handlers.clear()
     fetchMock.mockReset()
     fetchMock.mockResolvedValue(okResponse())
   })
 
   afterEach(() => {
+    if (previousFeedbackApiUrl === undefined) {
+      delete process.env.ORCA_FEEDBACK_API_URL
+    } else {
+      process.env.ORCA_FEEDBACK_API_URL = previousFeedbackApiUrl
+    }
     vi.useRealTimers()
   })
 

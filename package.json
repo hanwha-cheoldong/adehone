@@ -1,9 +1,9 @@
 {
-  "name": "orca",
+  "name": "adehone",
   "version": "1.4.214",
   "description": "Next-gen IDE for parallel agentic development",
   "homepage": "https://github.com/hanwha-cheoldong/adehone",
-  "author": "stablyai",
+  "author": "hanwha",
   "bin": {
     "adehone": "./out/cli/index.js",
     "adehone-dev": "./config/scripts/development/launch/orca-dev.mjs",

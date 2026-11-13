@@ -18,6 +18,7 @@ import { ReleaseChannelSection } from './ReleaseChannelSection'
 import { UpdateDelaySetting } from './UpdateDelaySetting'
 import { formatUpdateDelayDate } from './update-delay-copy'
 import { useNow } from '@/hooks/use-now'
+import { formatAdehoneDisplayVersion } from '../../../../../shared/app-display-version'
 import { isDelayedUpdatePending } from '../../../../../shared/update-delay'
 import { getReleaseNotesUrlForVersion } from '../../../../../shared/release-channel'
 import { openAppHttpLinkFromAnchor } from '@/lib/browser/navigation/app-http-link-open'
@@ -91,8 +92,8 @@ export function GeneralUpdateSettingsSection({
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm">
-            {t('settings.general.about.version', 'Orca {{version}}', {
-              version: appVersion ?? '…'
+            {t('settings.general.about.version', 'Adehone {{version}}', {
+              version: appVersion ? formatAdehoneDisplayVersion(appVersion) : '…'
             })}
           </span>
           <Button

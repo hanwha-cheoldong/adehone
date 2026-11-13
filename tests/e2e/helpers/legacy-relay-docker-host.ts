@@ -17,6 +17,17 @@ export type DockerReleasedRelay = { dir: string; version: string }
 
 export type DockerRelayInstance = { sockPath: string; relayPtyId: string }
 
+export function hasLegacyRelayReleaseTag(ref = 'v1.4.224'): boolean {
+  try {
+    execFileSync('git', ['rev-parse', '--verify', '--quiet', `refs/tags/${ref}`], {
+      stdio: 'ignore'
+    })
+    return true
+  } catch {
+    return false
+  }
+}
+
 // Bundle release sources using the orcad template’s glibc-floor N-API node-pty, which loads on the host Node.
 export async function installReleasedRelayOnDockerHost(
   target: DockerSshHostTarget,

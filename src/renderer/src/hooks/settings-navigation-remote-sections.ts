@@ -5,7 +5,6 @@ import {
   getPluginsPaneSearchEntries,
   getPluginsSectionPresentation
 } from '@/components/settings/plugins/plugins-search'
-import { getPrivacyPaneSearchEntries } from '@/components/settings/privacy/privacy-search'
 import { getRepositoryPaneSearchEntries } from '@/components/settings/repository/repository-search'
 import { buildSettingsProjectList } from '@/components/settings/navigation/settings-project-list'
 import { getSshPaneSearchEntries } from '@/components/settings/ssh/ssh-search'
@@ -19,7 +18,6 @@ import {
   Bug,
   Cable,
   FlaskConical,
-  Lock,
   Server,
   ShieldCheck,
   SlidersHorizontal,
@@ -82,17 +80,6 @@ export function buildRemoteSettingsSections(
           }
         ]
       : []),
-    {
-      id: 'privacy',
-      title: t('auto.hooks.useSettingsNavigationMetadata.3618579df6', 'Privacy & Telemetry'),
-      description: t(
-        'auto.hooks.useSettingsNavigationMetadata.8400cfe1c1',
-        'Anonymous usage data and telemetry controls.'
-      ),
-      icon: Lock,
-      searchEntries: getPrivacyPaneSearchEntries(),
-      group: 'security'
-    },
     ...(showDesktopOnlySettings
       ? [
           {

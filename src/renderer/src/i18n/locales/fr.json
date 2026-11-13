@@ -1806,8 +1806,6 @@
         "225071c560": "Expérimental",
         "e338c507c1": "Paramètres de compatibilité bas niveau pour le dépannage.",
         "580a04cd81": "Avancé",
-        "8400cfe1c1": "Données d'utilisation anonymes et contrôles de télémétrie.",
-        "3618579df6": "Confidentialité & télémétrie",
         "65ec7d1968": "Accès de confidentialité macOS pour les outils de développement lancés depuis le terminal.",
         "d91ae31fbd": "Autorisations macOS",
         "95a1886d94": "Contrôlez les terminaux et les agents depuis votre téléphone.",
@@ -7592,8 +7590,6 @@
             "df205a675e": "Intensité de la teinte",
             "ba1d9a0607": "Teinte de la barre latérale"
           },
-          "interfaceDefaultFont": "Police par défaut",
-          "terminalDefaultFont": "Police par défaut",
           "interfaceTitle": "Interface",
           "terminalTitle": "Terminal",
           "windowSidebarSummary": "Barre latérale, barre d'état et explorateur de fichiers",
@@ -8505,16 +8501,12 @@
           "5426ecbdcb": "Les scripts locaux ne s'exécuteront pas",
           "95a0411b3e": "template",
           "175daba180": "Exemple",
-          "b20c5df6ca": "Ajoutez un fichier `orca.yaml` pour activer des valeurs par défaut partagées de setup, d'archivage ou d'automatisation d'issues pour ce dépôt. Exemple de modèle :",
-          "56f9a4a1d0": "Utilisation de `orca.yaml`",
           "623e0c9f31": "`orca.yaml` n'a pas pu être analysé",
-          "5a67e4793d": "Aucun `orca.yaml` détecté",
           "07ba35bc68": "Vérifiez l'indentation sous `scripts:`. Les clés de hook doivent être indentées de deux espaces, et les lignes de commande de quatre.",
           "787ca433ef": "Définissez uniquement les clés prises en charge : `scripts`, `setup`, `archive` et `issueCommand`.",
           "ecc73d9125": "Comparez votre fichier au modèle fonctionnel ci-dessous et recopiez cette structure si besoin.",
           "0cc712b823": "Le fichier de configuration principal existe à la racine du dépôt, mais Adehone n'a pas encore pu analyser les définitions de hooks prises en charge.",
           "aba825233f": "Le fichier contient des clés de configuration que cette version d'Adehone ne reconnaît pas. Vous devrez peut-être mettre à jour Adehone, ou vérifier le fichier pour écarter une faute de frappe.",
-          "ca424ff135": "Les hooks partagés et les valeurs par défaut d'automatisation d'issues sont définis dans le dépôt et accessibles à tous ceux qui l'utilisent.",
           "8bfe65fc60": "Utiliser les commandes locales",
           "8d6c56bff8": "Exécuter les deux",
           "0fa21e19ec": "Nom de l'espace de travail, généralement basé sur le nom de branche.",
@@ -8823,7 +8815,6 @@
           "8b017f2506": "Expérimental",
           "499c1cd7f9": "Paramètres de compatibilité bas niveau pour le dépannage.",
           "1c87f8d024": "Avancé",
-          "c1b43dc4e2": "Données d'utilisation anonymes et contrôles de télémétrie.",
           "9b83cc62c2": "Accès de confidentialité macOS pour les outils de développement lancés depuis le terminal.",
           "65660d4548": "Autorisations macOS",
           "c6c01ac209": "Contrôlez les terminaux et les agents depuis votre téléphone.",
@@ -8885,7 +8876,6 @@
           "4198aae333": "Comptes de fournisseurs d'IA",
           "3f3e11cb5d": "Computer Use",
           "084f34826d": "Statistiques & usage",
-          "742ca66ea6": "Confidentialité & télémétrie",
           "c2bb9fc528": "Espace de travail flottant",
           "f1fddf7764": "Saisie & édition",
           "d60b7f0e58": "Commandes rapides"
@@ -8910,8 +8900,7 @@
           "60f8a673a7": "Retour à l'application",
           "6503182299": "Checklist d'intégration",
           "82db1b7de4": "Checklist d'intégration, {{value0}} sur {{value1}} terminés. Afficher le guide de configuration.",
-          "df38d612b7": "Aucun projet ajouté pour le moment.",
-          "3e483e256b": "Aucun paramètre de projet correspondant."
+          "df38d612b7": "Aucun projet ajouté pour le moment."
         },
         "ShortcutFilterRail": {
           "28b63545bf": "Statut",
@@ -11576,13 +11565,6 @@
           "notificationPlayground": "Terrain d'essai des notifications",
           "notificationPlaygroundDescription": "Déclencheurs réservés au développement pour vérifier la disposition des toasts, les actions de récupération et le retour à la ligne des textes longs.",
           "devOnly": "Réservé au développement",
-          "orcaCloud": "Adehone Cloud",
-          "orcaCloudDescription": "Aperçu réservé au développement de la connexion au cloud officiel. Masqué en production ; en dev, il apparaît aussi dans le sélecteur de comptes de la barre latérale dès que ADEHONE_CLOUD_API_URL et ADEHONE_CLOUD_CLIENT_ID sont définis.",
-          "orcaCloudStatus": "Statut",
-          "orcaCloudSignOut": "Se déconnecter",
-          "orcaCloudConnect": "Connecter le profil",
-          "orcaCloudRefresh": "Actualiser le statut",
-          "orcaCloudNotConfigured": "Définissez ADEHONE_CLOUD_API_URL et ADEHONE_CLOUD_CLIENT_ID pour prévisualiser la connexion à Adehone Cloud dans ce build de développement.",
           "deleteAnywayClicked": "Supprimer quand même cliqué"
         },
         "EphemeralVmRecipeRow": {
@@ -16470,7 +16452,6 @@
         "RichMarkdownLinkBubble": {
           "1c99b726e0": "Supprimer le lien",
           "cdfe166f6f": "Modifier le lien",
-          "bfc813e909": "Ouvrir le lien",
           "7b0b945fdc": "Collez ou saisissez un lien…",
           "copyLink": "Copier le lien"
         },
@@ -17540,7 +17521,10 @@
         },
         "AutomationPromptDisclosure": {
           "showLess": "Afficher moins",
-          "showMore": "Afficher plus"
+          "showMore": "Afficher plus",
+          "copied": "Copié",
+          "copyFailed": "Échec de la copie",
+          "copyPrompt": "Copier le prompt"
         },
         "AutomationDetail": {
           "401f40ae79": "Dépense est.",
@@ -17579,7 +17563,14 @@
           "precheckNone": "Aucune",
           "migrate": "Migrer",
           "migrateNotice": "{{host}} a été mis à niveau vers un nouvel hôte distant. Migrez cette automatisation pour qu'elle continue de s'exécuter.",
-          "needsMigration": "Migration requise"
+          "needsMigration": "Migration requise",
+          "repeats": "Répétition",
+          "missedRunGrace": "Marge de rattrapage",
+          "execution": "Exécution",
+          "notRunYet": "Pas encore exécutée",
+          "usageDetail_one": "{{tokens}} tokens · {{known}}/{{count}} exécution signalée",
+          "usageDetail_many": "{{tokens}} tokens · {{known}}/{{count}} exécutions signalées",
+          "usageDetail_other": "{{tokens}} tokens · {{known}}/{{count}} exécutions signalées"
         },
         "AutomationEditorDialog": {
           "fb1896a5e7": "Annuler",
@@ -20911,6 +20902,7 @@
           "about": {
             "parakeetV3": "Rapide. {{languages}} langues européennes.",
             "parakeetV2": "Rapide. Anglais uniquement, et le plus précis en anglais.",
+            "parakeetUnifiedEn": "Anglais uniquement. Les mots s’affichent à mesure que vous parlez.",
             "whisperTiny": "Le plus petit téléchargement. Idéal pour essayer la dictée.",
             "whisperTurbo": "Le plus de langues, environ 100. Lent sans GPU.",
             "senseVoice": "Rapide. Pour le chinois, le japonais et le coréen.",
@@ -21973,8 +21965,7 @@
         "unreachable": "injoignable",
         "scopeNotFound": "périmètre de recherche introuvable sur cet hôte",
         "agentNotSupported": "agent non pris en charge"
-      },
-      "consent": "Activer la recherche en texte intégral ? Adehone crée un index sur cet ordinateur à partir des transcriptions des agents locaux, comprenant des conversations complètes et jusqu'à 3 072 caractères par sortie d'outil. Le contenu n'est pas expurgé. Les clients couplés authentifiés peuvent le rechercher."
+      }
     }
   },
   "sessionHistory": {

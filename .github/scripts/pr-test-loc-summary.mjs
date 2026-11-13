@@ -28,16 +28,44 @@ function githubHeaders(token) {
   }
 }
 
-export async function listPullFiles({ owner, repo, pullNumber, token, fetchImpl = fetch }) {
+const RETRYABLE_STATUSES = new Set([500, 502, 503, 504])
+const defaultSleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))
+
+async function fetchWithRetry(url, options, { fetchImpl = fetch, sleepImpl = defaultSleep } = {}) {
+  let response
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    response = await fetchImpl(url, options)
+    if (response.ok || !RETRYABLE_STATUSES.has(response.status) || attempt === 2) {
+      return response
+    }
+    await sleepImpl(1000 * 2 ** attempt)
+  }
+  return response
+}
+
+export async function listPullFiles({
+  owner,
+  repo,
+  pullNumber,
+  token,
+  fetchImpl = fetch,
+  sleepImpl = defaultSleep
+}) {
   const files = []
   let url = `https://api.github.com/repos/${owner}/${repo}/pulls/${pullNumber}/files?per_page=100`
 
   while (url != null) {
-    const response = await fetchImpl(url, { headers: githubHeaders(token) })
+    const response = await fetchWithRetry(
+      url,
+      { headers: githubHeaders(token) },
+      { fetchImpl, sleepImpl }
+    )
     if (!response.ok) {
-      throw new Error(
+      const error = new Error(
         `Failed to list PR #${pullNumber} files: ${response.status} ${response.statusText}`
       )
+      error.status = response.status
+      throw error
     }
     const page = await response.json()
     if (!Array.isArray(page)) {
@@ -103,14 +131,7 @@ export async function updatePullRequest({
     },
     body: JSON.stringify({ body: nextBody })
   }
-  let update
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    update = await fetchImpl(url, updateRequest)
-    if (update.ok || ![500, 502, 503, 504].includes(update.status) || attempt === 2) {
-      break
-    }
-    await sleepImpl(1000 * 2 ** attempt)
-  }
+  const update = await fetchWithRetry(url, updateRequest, { fetchImpl, sleepImpl })
   if (update.status === 403) {
     console.log('Skipping PR body update: token cannot write (likely a fork PR).')
     return 0
@@ -196,11 +217,21 @@ async function main(argv) {
       console.error('GITHUB_REPOSITORY and GITHUB_TOKEN are required to read a pull request.')
       return 2
     }
-    files = await listPullFiles({
-      ...repository,
-      pullNumber: Number(pullNumber),
-      token
-    })
+    try {
+      files = await listPullFiles({
+        ...repository,
+        pullNumber: Number(pullNumber),
+        token
+      })
+    } catch (error) {
+      if (updatePrNumber != null && RETRYABLE_STATUSES.has(error?.status)) {
+        console.warn(
+          `Skipping PR #${pullNumber} LoC header update due to GitHub API ${error.status}: ${error.message}`
+        )
+        return 0
+      }
+      throw error
+    }
   }
 
   const totals = sumChangedFiles(files)

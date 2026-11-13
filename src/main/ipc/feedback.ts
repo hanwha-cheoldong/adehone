@@ -9,7 +9,6 @@ import type {
 } from '../../shared/feedback-submit-contract'
 import {
   errorFailure,
-  FEEDBACK_API_URL,
   messageFromError,
   postFeedback,
   responseFailure,
@@ -17,6 +16,11 @@ import {
   type FeedbackSubmissionType,
   type FeedbackSubmitBody
 } from './feedback-request'
+
+function resolveFeedbackApiUrl(env: NodeJS.ProcessEnv = process.env): string | null {
+  const configured = env.ORCA_FEEDBACK_API_URL?.trim()
+  return configured || null
+}
 
 export type {
   FeedbackDiagnosticBundleAttachment,
@@ -61,11 +65,12 @@ function buildSubmitBody(args: InternalFeedbackSubmitArgs): FeedbackSubmitBody {
 }
 
 async function retryFeedbackOnPrimary(
+  apiUrl: string,
   body: FeedbackSubmitBody,
   primaryError?: unknown
 ): Promise<FeedbackSubmitResult> {
   try {
-    const retry = await postFeedback(FEEDBACK_API_URL, body)
+    const retry = await postFeedback(apiUrl, body)
     if (retry.ok) {
       return { ok: true }
     }
@@ -98,10 +103,11 @@ function shouldRetryWithoutDiagnosticBundle(status: number): boolean {
 
 /** Posts the attachment-free report; resolves to the failure, or null once it lands. */
 async function postFeedbackWithoutAttachment(
+  apiUrl: string,
   body: FeedbackSubmitBody
 ): Promise<FeedbackRequestFailure | null> {
   try {
-    const response = await postFeedback(FEEDBACK_API_URL, body)
+    const response = await postFeedback(apiUrl, body)
     return response.ok ? null : responseFailure(response)
   } catch (error) {
     return errorFailure(error)
@@ -109,23 +115,25 @@ async function postFeedbackWithoutAttachment(
 }
 
 async function submitFeedbackWithoutDiagnosticBundle(
+  apiUrl: string,
   body: FeedbackSubmitBody,
   diagnosticBundleFailure: FeedbackRequestFailure
 ): Promise<FeedbackSubmitResult> {
-  const failure = await postFeedbackWithoutAttachment(body)
+  const failure = await postFeedbackWithoutAttachment(apiUrl, body)
   return failure
     ? { ok: false, ...failure, diagnosticBundleFailure }
     : { ok: true, diagnosticBundleFailure }
 }
 
 async function submitFeedbackWithImages(
+  apiUrl: string,
   body: FeedbackSubmitBody,
   bodyWithoutImages: FeedbackSubmitBody
 ): Promise<FeedbackSubmitResult> {
   try {
     let imagesDelivered = true
     const response = await postFeedback(
-      FEEDBACK_API_URL,
+      apiUrl,
       body,
       FEEDBACK_ATTACHMENT_REQUEST_TIMEOUT_MS,
       async (nextResponse) => {
@@ -137,7 +145,7 @@ async function submitFeedbackWithImages(
     }
     const imagesFailure = responseFailure(response)
     if (ATTACHMENT_JSON_RETRY_STATUSES.has(response.status)) {
-      const failure = await postFeedbackWithoutAttachment(bodyWithoutImages)
+      const failure = await postFeedbackWithoutAttachment(apiUrl, bodyWithoutImages)
       return failure
         ? {
             ok: false,
@@ -154,28 +162,29 @@ async function submitFeedbackWithImages(
 }
 
 async function submitFeedbackWithDiagnosticBundle(
+  apiUrl: string,
   body: FeedbackSubmitBody,
   bodyWithoutDiagnosticBundle: FeedbackSubmitBody | null
 ): Promise<FeedbackSubmitResult> {
   try {
     // Large diagnostic bundles need longer upload deadlines than small JSON reports.
-    const response = await postFeedback(
-      FEEDBACK_API_URL,
-      body,
-      FEEDBACK_ATTACHMENT_REQUEST_TIMEOUT_MS
-    )
+    const response = await postFeedback(apiUrl, body, FEEDBACK_ATTACHMENT_REQUEST_TIMEOUT_MS)
     if (response.ok) {
       return { ok: true }
     }
     const failure = responseFailure(response)
     if (bodyWithoutDiagnosticBundle && shouldRetryWithoutDiagnosticBundle(response.status)) {
-      return await submitFeedbackWithoutDiagnosticBundle(bodyWithoutDiagnosticBundle, failure)
+      return await submitFeedbackWithoutDiagnosticBundle(
+        apiUrl,
+        bodyWithoutDiagnosticBundle,
+        failure
+      )
     }
     return { ok: false, ...failure }
   } catch (error) {
     const failure = errorFailure(error)
     return bodyWithoutDiagnosticBundle
-      ? submitFeedbackWithoutDiagnosticBundle(bodyWithoutDiagnosticBundle, failure)
+      ? submitFeedbackWithoutDiagnosticBundle(apiUrl, bodyWithoutDiagnosticBundle, failure)
       : { ok: false, ...failure }
   }
 }
@@ -183,6 +192,14 @@ async function submitFeedbackWithDiagnosticBundle(
 export async function submitFeedback(
   args: InternalFeedbackSubmitArgs
 ): Promise<FeedbackSubmitResult> {
+  const apiUrl = resolveFeedbackApiUrl()
+  if (!apiUrl) {
+    return {
+      ok: false,
+      status: null,
+      error: 'Feedback submission is disabled until a self-hosted server is configured.'
+    }
+  }
   // Ignore discarded crash-lane images instead of rejecting over unused attachments.
   if (args.submissionType !== 'crash' && args.images !== undefined) {
     const imageError = validateFeedbackImages(args.images)
@@ -192,7 +209,7 @@ export async function submitFeedback(
   }
   const body = buildSubmitBody(args)
   if (body.images?.length) {
-    return submitFeedbackWithImages(body, buildSubmitBody({ ...args, images: undefined }))
+    return submitFeedbackWithImages(apiUrl, body, buildSubmitBody({ ...args, images: undefined }))
   }
   if (body.diagnosticBundle) {
     const bodyWithoutDiagnosticBundle =
@@ -203,20 +220,20 @@ export async function submitFeedback(
             diagnosticBundle: undefined
           })
         : null
-    return submitFeedbackWithDiagnosticBundle(body, bodyWithoutDiagnosticBundle)
+    return submitFeedbackWithDiagnosticBundle(apiUrl, body, bodyWithoutDiagnosticBundle)
   }
   try {
-    const res = await postFeedback(FEEDBACK_API_URL, body)
+    const res = await postFeedback(apiUrl, body)
     if (res.ok) {
       return { ok: true }
     }
     // Retry the owning endpoint; api.onorca.dev serves a different product.
     if (res.status >= 500) {
-      return await retryFeedbackOnPrimary(body, new Error(`status ${res.status}`))
+      return await retryFeedbackOnPrimary(apiUrl, body, new Error(`status ${res.status}`))
     }
     return { ok: false, status: res.status, error: `status ${res.status}` }
   } catch (error) {
-    return retryFeedbackOnPrimary(body, error)
+    return retryFeedbackOnPrimary(apiUrl, body, error)
   }
 }
 
