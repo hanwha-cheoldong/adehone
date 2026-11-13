@@ -265,7 +265,9 @@
           "graceHours_one": "{{count}} hour",
           "graceHours_other": "{{count}} hours",
           "graceMinutes_one": "{{count}} minute",
-          "graceMinutes_other": "{{count}} minutes"
+          "graceMinutes_other": "{{count}} minutes",
+          "usageDetail_one": "{{tokens}} tokens · {{known}}/{{count}} run reported",
+          "usageDetail_other": "{{tokens}} tokens · {{known}}/{{count}} runs reported"
         },
         "AutomationMissedRunGraceField": {
           "3d70c185c8": "If Adehone or the execution host was unavailable at the scheduled time, Adehone runs one missed occurrence when it becomes available within this window. Older missed runs are skipped."
@@ -902,6 +904,8 @@
             "discardFailedSampleMore_other": "{{paths}}, +{{count}} more",
             "discardFailed_one": "Failed to discard {{count}} file",
             "discardFailed_other": "Failed to discard {{count}} files",
+            "mergedReviewUncommitted_one": "{{review}} is merged, but this workspace has {{count}} uncommitted change that is not in it.",
+            "mergedReviewUncommitted_other": "{{review}} is merged, but this workspace has {{count}} uncommitted changes that are not in it.",
             "noteCount_one": "{{count}} note",
             "noteCount_other": "{{count}} notes"
           },
