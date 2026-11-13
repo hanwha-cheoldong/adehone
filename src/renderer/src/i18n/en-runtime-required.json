@@ -1356,6 +1356,8 @@
         },
         "OrchestrationPane": {
           "9bedd2a6e5": "Enables agents to hand off context and coordinate work through Adehone.",
+          "coordinatorApprovalsKeywordApprove": "approve",
+          "coordinatorApprovalsKeywordPermission": "permission",
           "workerAutoReleaseKeywordClose": "close",
           "workerAutoReleaseKeywordRelease": "release"
         },
@@ -1509,6 +1511,14 @@
           "removeProjectAllHosts": "Remove this project from Adehone on all configured hosts.",
           "removeProjectCheckout": "Remove this checkout from Adehone. Other checkouts of this project stay.",
           "removeProjectKeepCheckouts": "Remove this project from Adehone. Checkouts that have their own settings stay."
+        },
+        "RepositoryRemoveProjectSection": {
+          "checkoutCount_one": "{{count}} checkout",
+          "checkoutCount_other": "{{count}} checkouts",
+          "hostCount_one": "{{count}} host",
+          "hostCount_other": "{{count}} hosts",
+          "terminalWarning_one": "{{count}} open terminal in this project will be closed.",
+          "terminalWarning_other": "{{count}} open terminals in this project will be closed."
         },
         "RuntimeAccessGrantList": {
           "legacyEncryption": "Last used with older encryption. Update Adehone where this link is used.",
@@ -3443,8 +3453,6 @@
         "startupMenu": {
           "title": "{{value0}} is waiting for a choice in the terminal"
         },
-        "strip_one": "{{count}} approval",
-        "strip_other": "{{count}} approvals",
         "title": "Allow {{value0}}?"
       },
       "ask": {

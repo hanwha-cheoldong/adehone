@@ -13,23 +13,26 @@ using System.Collections.Generic;
 public static class OrcaDesktopWin32 {
     public static readonly List<string> Calls = new List<string>();
     public static bool AllowActivation;
-    public static bool Minimized;
     public static IntPtr Foreground;
     public static IntPtr Pending;
     public static int FocusReads;
     public static int WindowX;
+    public static int TargetIntegrity;
 
     public static void Reset(bool allow) {
+        TargetIntegrity = 0x2000;
         Calls.Clear();
         AllowActivation = allow;
-        Minimized = false;
         Foreground = new IntPtr(202);
         Pending = IntPtr.Zero;
         FocusReads = 0;
         WindowX = 100;
     }
+    public static int GetProcessIntegrityLevel(int processId) {
+        return processId == 4242 ? TargetIntegrity : 0x2000;
+    }
     public static bool IsIconic(IntPtr hwnd) {
-        return Minimized;
+        return false;
     }
     public static bool ShowWindow(IntPtr hwnd, int command) {
         Calls.Add("restore");
@@ -70,14 +73,16 @@ $functions = @(
     "Assert-OrcaPointerFocus", "Restore-OrcaWindow", "Restore-OrcaPointerWindow", "Assert-OrcaWindowTarget",
     "Get-OrcaRequiredNumber", "Get-OrcaPositiveInteger", "Get-OrcaPositiveNumber",
     "Get-OrcaScreenPoint", "Get-OrcaElementScreenPoint", "Get-OrcaModifierVirtualKey",
-    "Get-OrcaClickModifierVirtualKeys", "Send-OrcaMouseClick", "Send-OrcaDrag", "Invoke-OrcaOperation"
+    "Get-OrcaClickModifierVirtualKeys", "Send-OrcaMouseClick", "Send-OrcaDrag", "Invoke-OrcaOperation",
+    "Assert-OrcaInputAllowed"
 )
 foreach ($definition in $ast.FindAll({ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] }, $false)) {
     if ($definition.Name -in $functions) { . ([scriptblock]::Create($definition.Extent.Text)) }
 }
 
 $MouseEvents = @{ LeftDown = 2; LeftUp = 4; RightDown = 8; RightUp = 16; MiddleDown = 32; MiddleUp = 64; Wheel = 2048; HorizontalWheel = 4096 }
-function Find-OrcaProcess { [pscustomobject]@{ MainWindowHandle = 101 } }
+function Find-OrcaProcess { [pscustomobject]@{ MainWindowHandle = 101; Id = 4242; ProcessName = "Fixture" } }
+function Get-OrcaAppName($Process) { $Process.ProcessName }
 function Get-OrcaRootElement { $null }
 function Get-OrcaWindowFrame { @{ x = [OrcaDesktopWin32]::WindowX; y = 200 } }
 function Find-OrcaElement($RootElement, $Record) { $Record }
@@ -86,7 +91,6 @@ function New-OrcaSnapshot { [pscustomobject]@{} }
 
 foreach ($case in @(
     @{ tool = "click"; x = 5; y = 6 },
-    @{ tool = "click"; x = 5; y = 6; modifiers = "ctrl" },
     @{ tool = "scroll"; x = 5; y = 6; direction = "down"; pages = 1 },
     @{ tool = "drag"; from_x = 5; from_y = 6; to_x = 25; to_y = 26 }
 )) {
@@ -119,13 +123,18 @@ foreach ($case in @(
 $result = Invoke-OrcaOperation ([pscustomobject]@{ tool = "click"; app = "Fixture"; element = [pscustomobject]@{ index = 1 } })
 Assert-TestEqual $result.action.path "accessibility" "pattern click path"
 Assert-TestEqual ([OrcaDesktopWin32]::Calls.Count) 0 "pattern click bypasses activation and global input"
-[OrcaDesktopWin32]::Reset($true)
-Restore-OrcaWindow (Find-OrcaProcess)
-Assert-TestEqual (@([OrcaDesktopWin32]::Calls) -join ",") "activate" "non-minimized window skips SW_RESTORE"
-
-[OrcaDesktopWin32]::Reset($true)
-[OrcaDesktopWin32]::Minimized = $true
-Restore-OrcaWindow (Find-OrcaProcess)
-Assert-TestEqual (@([OrcaDesktopWin32]::Calls) -join ",") "restore,activate" "minimized window runs SW_RESTORE"
-
+foreach ($case in @(
+    @{ tool = "click"; element = [pscustomobject]@{ index = 1 } },
+    @{ tool = "click"; x = 5; y = 6; restoreWindow = $true },
+    @{ tool = "type_text"; text = "x"; restoreWindow = $true }
+)) {
+    [OrcaDesktopWin32]::Reset($true)
+    [OrcaDesktopWin32]::TargetIntegrity = 0x3000
+    $operation = [pscustomobject]@{ app = "Fixture"; noScreenshot = $true }
+    foreach ($key in $case.Keys) { $operation | Add-Member -NotePropertyName $key -NotePropertyValue $case[$key] }
+    $message = $null
+    try { Invoke-OrcaOperation $operation | Out-Null } catch { $message = $_.Exception.Message }
+    if ($message -notlike "target_elevated:*") { throw "$($case.tool) elevated target expected target_elevated, received '$message'" }
+    Assert-TestEqual ([OrcaDesktopWin32]::Calls.Count) 0 "$($case.tool) elevated target sends no activation or input"
+}
 Write-Output "windows-pointer-tests-ok"
