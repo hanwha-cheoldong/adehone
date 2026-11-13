@@ -182,7 +182,7 @@ export class LoadedCohortMigrationOperations {
               ? existing.optedIn
               : resolvedExistedBefore
                 ? null
-                : true,
+                : false,
           installId:
             typeof existing?.installId === 'string' && existing.installId.length > 0
               ? existing.installId

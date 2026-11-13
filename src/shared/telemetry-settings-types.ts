@@ -14,7 +14,7 @@ export type ChatUiLaunchTipCohort =
   | 'treatment-center'
 
 export type TelemetrySettings = {
-  /** New users: true at install. Existing users: null until they resolve the first-launch banner. */
+  /** New users: false at install. Existing users: null until they resolve the first-launch banner. */
   optedIn: boolean | null
   /** Anonymous UUID v4. Generated on first run. Stable across launches; not surfaced in the UI. */
   installId: string
