@@ -587,7 +587,7 @@ describe('language changes', () => {
 
       expect(trayInstances).toHaveLength(1)
       expect(trayInstances[0].setContextMenu).toHaveBeenCalledTimes(2)
-      expect(builtMenuItems()[0].label).toBe('Orca を開く')
+      expect(builtMenuItems()[0].label).toBe('Adehone を開く')
       expect(builtMenuItems().at(-2)?.label).toBe('完全に終了…')
       expect(builtMenuItems().at(-1)?.label).toBe('終了')
       builtMenuItems()[0].click?.()
