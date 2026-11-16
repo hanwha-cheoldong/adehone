@@ -276,7 +276,9 @@
           "historyUnavailable_one": "Run history is unavailable for {{count}} automation. Counts include available history only.",
           "historyUnavailable_other": "Run history is unavailable for {{count}} automations. Counts include available history only.",
           "local": "Local",
-          "remote": "Remote"
+          "remote": "Remote",
+          "runs": "Runs",
+          "triggered": "Triggered"
         },
         "AutomationSchedulePicker": {
           "55b2ef82a4": "Hourly",
@@ -322,6 +324,16 @@
         "hostSummary": {
           "partialFailureOfHosts_one": "{{failed}} of {{count}} host could not be loaded",
           "partialFailureOfHosts_other": "{{failed}} of {{count}} hosts could not be loaded"
+        },
+        "listGroups": {
+          "active": "Active",
+          "attention": "Needs attention",
+          "paused": "Paused"
+        },
+        "recentRuns": {
+          "allRuns": "All {{count}} runs",
+          "allRuns_one": "All {{count}} run",
+          "allRuns_other": "All {{count}} runs"
         },
         "runHistory": {
           "occurrencesCount_one": "{{count}} time",
@@ -624,6 +636,8 @@
       },
       "github": {
         "PRFilterSections": {
+          "authorCount_one": "{{count}} author",
+          "authorCount_other": "{{count}} authors",
           "labelCount_one": "{{count}} label",
           "labelCount_other": "{{count}} labels"
         },
@@ -904,8 +918,6 @@
             "discardFailedSampleMore_other": "{{paths}}, +{{count}} more",
             "discardFailed_one": "Failed to discard {{count}} file",
             "discardFailed_other": "Failed to discard {{count}} files",
-            "mergedReviewUncommitted_one": "{{review}} is merged, but this workspace has {{count}} uncommitted change that is not in it.",
-            "mergedReviewUncommitted_other": "{{review}} is merged, but this workspace has {{count}} uncommitted changes that are not in it.",
             "noteCount_one": "{{count}} note",
             "noteCount_other": "{{count}} notes"
           },
@@ -1156,7 +1168,6 @@
       "settings": {
         "AccountsPane": {
           "340d6f7a85": "Each account keeps its own local sign-in context in Adehone. Account auth stays on this device.",
-          "380a7736cc": "Removing this account permanently deletes its managed Codex home, including all Codex session history and MCP logins stored inside. This cannot be undone. If the account is currently active, Adehone falls back to the system default Codex login.",
           "3fe7862418": "No managed Claude accounts for {{value0}}. Adehone will use that environment's system default Claude login until you add one here.",
           "72b36ea174": "Optional. Adehone can use your normal Claude login; add accounts only if you want quick switching without moving chat sessions.",
           "b4c9450319": "No managed Codex accounts for {{value0}}. Adehone will use that environment's system default Codex login until you add one here.",
@@ -2243,11 +2254,6 @@
           "reviewHiddenWorktrees_one": "Review {{count}} hidden worktree in {{scope}}",
           "reviewHiddenWorktrees_other": "Review {{count}} hidden worktrees in {{scope}}"
         },
-        "PreservedBranchBatchReviewDialog": {
-          "a0f9863597": "Force Delete {{count}} Branches",
-          "a0f9863597_one": "Force Delete {{count}} Branch",
-          "a0f9863597_other": "Force Delete {{count}} Branches"
-        },
         "ProjectGroupDeleteDialog": {
           "moreProjects_one": "+{{count}} more",
           "moreProjects_other": "+{{count}} more",
@@ -2735,10 +2741,6 @@
             "browserTabsOpen_other": "{{count}} browser tabs open",
             "changedFiles_one": "{{count}} changed file",
             "changedFiles_other": "{{count}} changed files",
-            "completedAgentsRetained_one": "{{count}} completed agent retained",
-            "completedAgentsRetained_other": "{{count}} completed agents retained",
-            "completedAgents_one": "{{count}} completed agent",
-            "completedAgents_other": "{{count}} completed agents",
             "dirtyEditorBuffers_one": "{{count}} dirty editor buffer",
             "dirtyEditorBuffers_other": "{{count}} dirty editor buffers",
             "editorFilesOpen_one": "{{count}} editor file open",
@@ -2893,10 +2895,6 @@
         "description": "Running Adehone terminals are hosted by a daemon started by a previous Adehone installation. macOS may not apply Adehone’s Accessibility, Automation, or protected-file permissions to them. Restart the daemon from Manage Sessions to restore access. This will close all running Adehone terminals.",
         "folderAccessDescription": "macOS is blocking Adehone’s terminal service from this folder, so commands run there may fail until it’s fixed.",
         "title": "macOS permissions may not reach Adehone terminals"
-      },
-      "useMacosTccPromptNotice": {
-        "description": "Permission messages from macOS may appear when an agent or terminal tool running in Adehone attempts to access protected files. Grant Full Disk Access in Settings to reduce these prompts.",
-        "title": "Seeing “Adehone would like to access…” prompts?"
       },
       "useSettingsNavigationMetadata": {
         "0505d0df29": "get started with Adehone",
@@ -3422,6 +3420,11 @@
     }
   },
   "components": {
+    "RepositoryBrowserProfileSection": {
+      "keywordCookies": "cookies",
+      "keywordProfile": "browser profile",
+      "keywordSignIn": "sign in"
+    },
     "agentSessionContinuation": {
       "deliveryUnconfirmed": "Adehone could not confirm {{agent}} received the session context. Check the new session, and paste it yourself if its input is empty."
     },
@@ -3695,12 +3698,23 @@
         "outdatedHost": "This host runs an older Adehone that ignores chat permissions, so {{value0}} would run here without asking. Update Adehone on this host to use {{value1}}.",
         "unverified": "Adehone couldn't confirm the host's permissions for {{value0}}."
       },
+      "mcp": {
+        "status": {
+          "tools_one": "{{count}} tool",
+          "tools_other": "{{count}} tools"
+        },
+        "summary": {
+          "needsAuth_one": "{{count}} needs sign-in",
+          "needsAuth_other": "{{count}} need sign-in"
+        }
+      },
       "notices": {
         "compaction": "Context compacted",
         "contextCleared": "Context cleared",
         "continuedOutside": "Continued outside this chat.",
         "continuedOutsideRewound": "Continued outside this chat. Earlier replies above are no longer in this conversation's history.",
         "forkedFrom": "Forked from",
+        "forkedFromUnknown": "Forked from another chat",
         "historyItemTooLarge": "This part of the chat was too large to show.",
         "historyRepaired": "Part of this chat's history couldn't be loaded.",
         "modelFallback": "Claude switched models: {{from}} → {{to}}.",
@@ -4014,6 +4028,38 @@
         "vocabulary": {
           "repoSaveFailed": "Couldn't save the repo's terms. The host running this repo may need an Adehone update."
         }
+      },
+      "workspaceCleanup": {
+        "activity": {
+          "notListed_one": "1 more kept workspace is not listed.",
+          "notListed_other": "{{count}} more kept workspaces are not listed."
+        },
+        "change": {
+          "description_one": "This change makes 1 more workspace match right now. It'll be deleted a few seconds after you apply it.",
+          "description_other": "This change makes {{count}} more workspaces match right now. They'll be deleted a few seconds after you apply it."
+        },
+        "disableIgnoredFiles": {
+          "matches_one": "Without pinning, {{count}} additional workspace will be deleted a few seconds after you turn off protection.",
+          "matches_other": "Without pinning, {{count}} additional workspaces will be deleted a few seconds after you turn off protection."
+        },
+        "enable": {
+          "description_one": "1 workspace matches right now. It'll be deleted a few seconds after you turn this on.",
+          "description_other": "{{count}} workspaces match right now. They'll be deleted a few seconds after you turn this on."
+        },
+        "rules": {
+          "inactiveDescription": "No activity for {{count}} days.",
+          "inactiveDescription_one": "No activity for 1 day.",
+          "inactiveDescription_other": "No activity for {{count}} days.",
+          "matchesCount": "Matches {{count}} workspaces now",
+          "matchesCount_one": "Matches 1 workspace now",
+          "matchesCount_other": "Matches {{count}} workspaces now"
+        },
+        "status": {
+          "lastRunFreed_one": "Last run {{when}} removed 1 workspace and freed {{size}}.",
+          "lastRunFreed_other": "Last run {{when}} removed {{count}} workspaces and freed {{size}}.",
+          "lastRunRemoved_one": "Last run {{when}} removed 1 workspace.",
+          "lastRunRemoved_other": "Last run {{when}} removed {{count}} workspaces."
+        }
       }
     },
     "tab": {
@@ -4048,8 +4094,6 @@
           "workspaceCount_other": "{{count}} workspaces"
         },
         "confirm": {
-          "deleteTitle_one": "Delete {{count}} workspace?",
-          "deleteTitle_other": "Delete {{count}} workspaces?",
           "deletingTitle_one": "Deleting {{count}} workspace",
           "deletingTitle_other": "Deleting {{count}} workspaces"
         },
@@ -4478,9 +4522,6 @@
     }
   },
   "settings": {
-    "accounts": {
-      "claudeRemoveFolder": "Adehone deletes this account's Claude folder and its sign-in from this computer. Chat history shared with System default stays. If it is selected, the next Claude you start uses System default."
-    },
     "agents": {
       "autoUnsupported": "Approve for me needs a newer Adehone on this host.",
       "codexHistorySharing": {
@@ -4788,8 +4829,6 @@
     "discard": {
       "deleteUntrackedFilesDescription_one": "This will permanently delete {{count}} untracked file. This cannot be undone.",
       "deleteUntrackedFilesDescription_other": "This will permanently delete these {{count}} untracked files. This cannot be undone.",
-      "deleteUntrackedTitle_one": "Delete {{count}} untracked file?",
-      "deleteUntrackedTitle_other": "Delete {{count}} untracked files?",
       "unstagedFilesIncludingUntrackedDescription_one": "This will revert unstaged changes and permanently delete any untracked files among {{count}} file. This cannot be undone.",
       "unstagedFilesIncludingUntrackedDescription_other": "This will revert unstaged changes and permanently delete any untracked files among these {{count}} files. This cannot be undone."
     },

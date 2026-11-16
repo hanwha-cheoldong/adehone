@@ -10,7 +10,7 @@ import {
 } from '../credentials/integration-credential-file'
 import { readCredentialFileProtection } from '../credentials/credential-file-protection'
 import type { BitbucketDataCenterAuthMode } from '../../shared/bitbucket-datacenter-credentials'
-import type { SecretAtRestProtection } from '../../shared/secret-at-rest-protection'
+import type { SecretAtRestProtection } from '../../shared/secure-storage/secret-at-rest-protection'
 import { normalizeBitbucketDataCenterBaseUrl } from './auth-config'
 
 // Plaintext display metadata lets status reads avoid keychain prompts.
