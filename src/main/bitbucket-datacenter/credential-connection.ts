@@ -12,7 +12,6 @@ import {
 import {
   clearStoredBitbucketDataCenterCredentials,
   getBitbucketDataCenterCredentialProtection,
-  getCachedStoredBitbucketDataCenterMetadata,
   getStoredBitbucketDataCenterMetadata,
   hasStoredBitbucketDataCenterCredential,
   loadStoredBitbucketDataCenterSecret,
@@ -151,24 +150,10 @@ export async function getBitbucketDataCenterConnectionStatus(): Promise<Bitbucke
   }
 }
 
-export async function ensureBitbucketDataCenterCredentialsLoaded(): Promise<void> {
-  await getStoredBitbucketDataCenterMetadata()
-}
-
-export function listConfiguredBitbucketDataCenterBaseUrls(): string[] {
-  const urls = new Set<string>()
-  const env = getEnvAuthConfig()
-  if (env) {
-    urls.add(env.baseUrl)
-  }
-  if (hasStoredBitbucketDataCenterCredential()) {
-    const metadata = getCachedStoredBitbucketDataCenterMetadata()
-    for (const server of metadata?.servers ?? []) {
-      urls.add(server.baseUrl)
-    }
-  }
-  return Array.from(urls)
-}
+export {
+  ensureBitbucketDataCenterCredentialsLoaded,
+  listConfiguredBitbucketDataCenterBaseUrls
+} from './configured-servers'
 
 export async function resolveBitbucketDataCenterAuthForBaseUrl(
   baseUrl: string

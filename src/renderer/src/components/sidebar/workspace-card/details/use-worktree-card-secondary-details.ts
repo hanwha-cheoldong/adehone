@@ -149,12 +149,16 @@ export function useWorktreeCardSecondaryDetails({
     hoverReviewProvider === 'github' ||
     (hoverReviewProvider === 'gitlab' && linkedGitLabMR !== null) ||
     (hoverReviewProvider === 'bitbucket' && linkedBitbucketPR !== null) ||
+    (hoverReviewProvider === 'bitbucket-datacenter' &&
+      (worktree.linkedBitbucketDataCenterPR ?? null) !== null) ||
     (hoverReviewProvider === 'azure-devops' && linkedAzureDevOpsPR !== null) ||
     (hoverReviewProvider === 'gitea' && linkedGiteaPR !== null)
   const hasExplicitLinkedReview =
     (hoverReviewProvider === 'github' && worktree.linkedPR !== null) ||
     (hoverReviewProvider === 'gitlab' && linkedGitLabMR !== null) ||
     (hoverReviewProvider === 'bitbucket' && linkedBitbucketPR !== null) ||
+    (hoverReviewProvider === 'bitbucket-datacenter' &&
+      (worktree.linkedBitbucketDataCenterPR ?? null) !== null) ||
     (hoverReviewProvider === 'azure-devops' && linkedAzureDevOpsPR !== null) ||
     (hoverReviewProvider === 'gitea' && linkedGiteaPR !== null)
   const handleUnlinkReview = useCallback(
@@ -200,6 +204,9 @@ export function useWorktreeCardSecondaryDetails({
           return
         case 'bitbucket':
           void updateWorktreeMeta(worktree.id, { linkedBitbucketPR: null }, options)
+          return
+        case 'bitbucket-datacenter':
+          void updateWorktreeMeta(worktree.id, { linkedBitbucketDataCenterPR: null }, options)
           return
         case 'azure-devops':
           void updateWorktreeMeta(worktree.id, { linkedAzureDevOpsPR: null }, options)
