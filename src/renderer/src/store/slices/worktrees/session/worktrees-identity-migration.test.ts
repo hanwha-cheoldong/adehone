@@ -140,6 +140,7 @@ describe('migrateWorktreeIdentity', () => {
           linkedPR: null,
           linkedGitLabMR: null,
           linkedBitbucketPR: null,
+          linkedBitbucketDataCenterPR: null,
           linkedAzureDevOpsPR: null,
           linkedGiteaPR: null,
           pushTarget: undefined

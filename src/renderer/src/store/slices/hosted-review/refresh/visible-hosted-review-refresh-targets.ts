@@ -142,12 +142,14 @@ export function getVisibleHostedReviewRefreshTargets(
       linkedGitHubPR: worktree.linkedPR,
       linkedGitLabMR: worktree.linkedGitLabMR,
       linkedBitbucketPR: worktree.linkedBitbucketPR,
+      linkedBitbucketDataCenterPR: worktree.linkedBitbucketDataCenterPR,
       linkedAzureDevOpsPR: worktree.linkedAzureDevOpsPR,
       linkedGiteaPR: worktree.linkedGiteaPR
     }
     const nonGitHub =
       hints.linkedGitLabMR != null ||
       hints.linkedBitbucketPR != null ||
+      hints.linkedBitbucketDataCenterPR != null ||
       hints.linkedAzureDevOpsPR != null ||
       hints.linkedGiteaPR != null ||
       (hostedEntry?.data != null && hostedEntry.data.provider !== 'github')

@@ -258,6 +258,7 @@ export function hostedReviewBranchLookupArgs(
     ...(fallbackGitHubPR !== null ? { fallbackGitHubPR } : {}),
     linkedGitLabMR: options?.linkedGitLabMR ?? null,
     linkedBitbucketPR: options?.linkedBitbucketPR ?? null,
+    linkedBitbucketDataCenterPR: options?.linkedBitbucketDataCenterPR ?? null,
     linkedAzureDevOpsPR: options?.linkedAzureDevOpsPR ?? null,
     linkedGiteaPR: options?.linkedGiteaPR ?? null
   }

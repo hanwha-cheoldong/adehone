@@ -4,6 +4,11 @@ import type {
   BitbucketConnectionStatus
 } from '../../shared/bitbucket-credentials'
 import type {
+  BitbucketDataCenterConnectArgs,
+  BitbucketDataCenterConnectResult,
+  BitbucketDataCenterConnectionStatus
+} from '../../shared/bitbucket-datacenter-credentials'
+import type {
   CreateHostedReviewArgs,
   CreateHostedReviewResult,
   CreateStackedHostedReviewArgs,
@@ -33,4 +38,10 @@ export type BitbucketApi = {
   connect: (args: BitbucketConnectArgs) => Promise<BitbucketConnectResult>
   disconnect: () => Promise<void>
   status: () => Promise<BitbucketConnectionStatus>
+}
+
+export type BitbucketDataCenterApi = {
+  connect: (args: BitbucketDataCenterConnectArgs) => Promise<BitbucketDataCenterConnectResult>
+  disconnect: (baseUrl?: string | null) => Promise<void>
+  status: () => Promise<BitbucketDataCenterConnectionStatus>
 }

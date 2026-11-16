@@ -569,6 +569,7 @@ type SelectedReviewBranchInput = Pick<
   | 'linkedPR'
   | 'linkedGitLabMR'
   | 'linkedBitbucketPR'
+  | 'linkedBitbucketDataCenterPR'
   | 'linkedAzureDevOpsPR'
   | 'linkedGiteaPR'
   | 'pushTarget'
@@ -588,6 +589,9 @@ function getSelectedReviewBranch(args: SelectedReviewBranchInput): SelectedRevie
   }
   if (typeof args.linkedBitbucketPR === 'number') {
     return { provider: 'bitbucket', number: args.linkedBitbucketPR }
+  }
+  if (typeof args.linkedBitbucketDataCenterPR === 'number') {
+    return { provider: 'bitbucket-datacenter', number: args.linkedBitbucketDataCenterPR }
   }
   if (typeof args.linkedAzureDevOpsPR === 'number') {
     return { provider: 'azure-devops', number: args.linkedAzureDevOpsPR }

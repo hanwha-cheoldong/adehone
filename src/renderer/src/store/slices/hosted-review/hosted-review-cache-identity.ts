@@ -11,6 +11,7 @@ export type LinkedReviewHints = {
   fallbackGitHubPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
 }
@@ -55,6 +56,7 @@ export function linkedReviewHintKey(options?: LinkedReviewHints): string {
     ['github', options?.linkedGitHubPR ?? options?.fallbackGitHubPR ?? null],
     ['gitlab', options?.linkedGitLabMR ?? null],
     ['bitbucket', options?.linkedBitbucketPR ?? null],
+    ['bitbucket-datacenter', options?.linkedBitbucketDataCenterPR ?? null],
     ['azure-devops', options?.linkedAzureDevOpsPR ?? null],
     ['gitea', options?.linkedGiteaPR ?? null]
   ] as const

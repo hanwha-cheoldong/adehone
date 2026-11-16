@@ -63,7 +63,7 @@ describe('reference URLs', () => {
     ],
     [
       'https://git.example/projects/ACME/repos/api/pull-requests/42/overview',
-      'bitbucket',
+      'bitbucket-datacenter',
       'pr',
       42,
       'https://git.example/projects/ACME/repos/api/pull-requests/42'

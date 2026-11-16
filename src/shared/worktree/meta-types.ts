@@ -46,6 +46,8 @@ export type WorktreeMeta = {
   linkedGitLabIssue?: number | null
   /** Optional for backward compatibility — see Worktree.linkedBitbucketPR. */
   linkedBitbucketPR?: number | null
+  /** Optional for backward compatibility — see Worktree.linkedBitbucketDataCenterPR. */
+  linkedBitbucketDataCenterPR?: number | null
   /** Optional for backward compatibility — see Worktree.linkedAzureDevOpsPR. */
   linkedAzureDevOpsPR?: number | null
   /** Optional for backward compatibility — see Worktree.linkedGiteaPR. */

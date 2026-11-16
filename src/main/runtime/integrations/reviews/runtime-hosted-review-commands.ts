@@ -149,6 +149,7 @@ export class RuntimeHostedReviewCommands {
     fallbackGitHubPR?: number | null
     linkedGitLabMR?: number | null
     linkedBitbucketPR?: number | null
+    linkedBitbucketDataCenterPR?: number | null
     linkedAzureDevOpsPR?: number | null
     linkedGiteaPR?: number | null
   }): Promise<HostedReviewForBranchReply> {
@@ -166,6 +167,7 @@ export class RuntimeHostedReviewCommands {
       fallbackGitHubPR: args.linkedGitHubPR == null ? (args.fallbackGitHubPR ?? null) : null,
       linkedGitLabMR: args.linkedGitLabMR ?? null,
       linkedBitbucketPR: args.linkedBitbucketPR ?? null,
+      linkedBitbucketDataCenterPR: args.linkedBitbucketDataCenterPR ?? null,
       linkedAzureDevOpsPR: args.linkedAzureDevOpsPR ?? null,
       linkedGiteaPR: args.linkedGiteaPR ?? null,
       ...executionOptions
@@ -199,6 +201,7 @@ export class RuntimeHostedReviewCommands {
           fallbackGitHubPR: args.linkedGitHubPR == null ? (args.fallbackGitHubPR ?? null) : null,
           linkedGitLabMR: args.linkedGitLabMR ?? null,
           linkedBitbucketPR: args.linkedBitbucketPR ?? null,
+          linkedBitbucketDataCenterPR: args.linkedBitbucketDataCenterPR ?? null,
           linkedAzureDevOpsPR: args.linkedAzureDevOpsPR ?? null,
           linkedGiteaPR: args.linkedGiteaPR ?? null,
           ...executionOptions

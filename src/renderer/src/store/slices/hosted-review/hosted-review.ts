@@ -199,6 +199,7 @@ export const createHostedReviewSlice: StateCreator<AppState, [], [], HostedRevie
                   options?.linkedGitHubPR == null &&
                   options?.linkedGitLabMR == null &&
                   options?.linkedBitbucketPR == null &&
+                  options?.linkedBitbucketDataCenterPR == null &&
                   options?.linkedAzureDevOpsPR == null &&
                   options?.linkedGiteaPR == null
                     ? { branchLookupGitHubPRNumber: review.number }

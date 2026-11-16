@@ -17,6 +17,7 @@ import {
   getBitbucketRepoSlug
 } from '../bitbucket/client'
 import { createBitbucketPullRequest } from '../bitbucket/pull-request-creation'
+import { bitbucketDataCenterForgeProvider } from './bitbucket-datacenter-forge-provider'
 import {
   getGiteaPullRequest,
   getGiteaPullRequestForBranchOrThrow,
@@ -304,6 +305,7 @@ const giteaForgeProvider = {
 export const FORGE_PROVIDERS = [
   gitLabForgeProvider,
   gitHubForgeProvider,
+  bitbucketDataCenterForgeProvider,
   bitbucketForgeProvider,
   azureDevOpsForgeProvider,
   giteaForgeProvider

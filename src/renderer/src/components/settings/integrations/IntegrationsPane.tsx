@@ -3,6 +3,7 @@ import {
   GiteaIntegrationCard
 } from '../../integrations/source-control/token-source-control-integration-cards'
 import { BitbucketIntegrationCard } from '../../integrations/source-control/bitbucket-integration-card'
+import { BitbucketDataCenterIntegrationCard } from '../../integrations/source-control/bitbucket-datacenter-integration-card'
 import {
   GitHubIntegrationCard,
   GitLabIntegrationCard
@@ -45,6 +46,9 @@ export function IntegrationsPane(): React.JSX.Element {
             'Connect the source hosts Orca can use for pull requests, merge requests, checks, and review status.'
           )}
         >
+          <ProviderRow id={INTEGRATION_SETTING_TARGET_IDS.bitbucketDatacenter}>
+            <BitbucketDataCenterIntegrationCard />
+          </ProviderRow>
           <ProviderRow id={INTEGRATION_SETTING_TARGET_IDS.github}>
             <GitHubIntegrationCard />
           </ProviderRow>

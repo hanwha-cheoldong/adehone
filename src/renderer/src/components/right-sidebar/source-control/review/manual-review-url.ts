@@ -171,6 +171,10 @@ export function buildSourceControlManualReviewUrl(input: ManualReviewUrlInput): 
         source: headBranch,
         dest: baseBranch
       })
+    case 'bitbucket-datacenter':
+      return `${baseRepo.webBaseUrl}/pull-requests?create&sourceBranch=${encodeURIComponent(
+        `refs/heads/${headBranch}`
+      )}&targetBranch=${encodeURIComponent(`refs/heads/${baseBranch}`)}`
     case 'azure-devops':
       return appendQuery(`${baseRepo.webBaseUrl}/pullrequestcreate`, {
         sourceRef: `refs/heads/${headBranch}`,

@@ -9,6 +9,7 @@ export const WORKTREE_META_PERSISTED_DEFAULTS = {
   linkedGitLabMR: null,
   linkedGitLabIssue: null,
   linkedBitbucketPR: null,
+  linkedBitbucketDataCenterPR: null,
   linkedAzureDevOpsPR: null,
   linkedGiteaPR: null,
   linkedWorkItem: null,

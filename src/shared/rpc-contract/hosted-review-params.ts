@@ -16,6 +16,7 @@ export const HostedReviewForBranch = z.object({
   fallbackGitHubPR: z.number().int().positive().nullable().optional(),
   linkedGitLabMR: z.number().int().positive().nullable().optional(),
   linkedBitbucketPR: z.number().int().positive().nullable().optional(),
+  linkedBitbucketDataCenterPR: z.number().int().positive().nullable().optional(),
   linkedAzureDevOpsPR: z.number().int().positive().nullable().optional(),
   linkedGiteaPR: z.number().int().positive().nullable().optional()
 })
@@ -33,6 +34,7 @@ export const HostedReviewCreationEligibility = z.object({
   fallbackGitHubPR: z.number().int().positive().nullable().optional(),
   linkedGitLabMR: z.number().int().positive().nullable().optional(),
   linkedBitbucketPR: z.number().int().positive().nullable().optional(),
+  linkedBitbucketDataCenterPR: z.number().int().positive().nullable().optional(),
   linkedAzureDevOpsPR: z.number().int().positive().nullable().optional(),
   linkedGiteaPR: z.number().int().positive().nullable().optional(),
   /** The user's Create PR; older hosts drop it. */

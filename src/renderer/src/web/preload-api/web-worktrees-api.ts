@@ -73,6 +73,7 @@ export function createWorktreesApi(): NonNullable<Partial<PreloadApi>['worktrees
         linkedGitLabIssue: args.linkedGitLabIssue,
         linkedGitLabMR: args.linkedGitLabMR,
         linkedBitbucketPR: args.linkedBitbucketPR,
+        linkedBitbucketDataCenterPR: args.linkedBitbucketDataCenterPR,
         linkedAzureDevOpsPR: args.linkedAzureDevOpsPR,
         linkedGiteaPR: args.linkedGiteaPR,
         displayName: args.displayName,
