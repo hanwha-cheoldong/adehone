@@ -26,6 +26,7 @@ type LinkedReviewNumbers = {
   linkedPR: number | null
   linkedGitLabMR: number | null
   linkedBitbucketPR: number | null
+  linkedBitbucketDataCenterPR: number | null
   linkedAzureDevOpsPR: number | null
   linkedGiteaPR: number | null
 }
@@ -47,6 +48,7 @@ type WorktreeCardPrDisplayOptions = {
   /** GitHub PR number proven by a branch-scoped lookup. */
   branchLookupGitHubPRNumber?: number | null
   suppressedGitHubPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
 }
 
 function getLinkedReviewNumber(
@@ -60,6 +62,8 @@ function getLinkedReviewNumber(
       return links.linkedGitLabMR
     case 'bitbucket':
       return links.linkedBitbucketPR
+    case 'bitbucket-datacenter':
+      return links.linkedBitbucketDataCenterPR
     case 'azure-devops':
       return links.linkedAzureDevOpsPR
     case 'gitea':
@@ -104,10 +108,12 @@ export function getWorktreeCardPrDisplay(
   options: WorktreeCardPrDisplayOptions = {},
   t?: Translate
 ): WorktreeCardPrDisplay | null {
+  const linkedBitbucketDataCenterPR = options.linkedBitbucketDataCenterPR ?? null
   const links = {
     linkedPR,
     linkedGitLabMR,
     linkedBitbucketPR,
+    linkedBitbucketDataCenterPR,
     linkedAzureDevOpsPR,
     linkedGiteaPR
   }
@@ -115,6 +121,7 @@ export function getWorktreeCardPrDisplay(
     linkedPR !== null ||
     linkedGitLabMR !== null ||
     linkedBitbucketPR !== null ||
+    linkedBitbucketDataCenterPR !== null ||
     linkedAzureDevOpsPR !== null ||
     linkedGiteaPR !== null
   if (

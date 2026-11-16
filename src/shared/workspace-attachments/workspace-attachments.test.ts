@@ -301,6 +301,7 @@ describe('workspace attachments', () => {
         linkedPR: null,
         linkedGitLabMR: null,
         linkedBitbucketPR: null,
+        linkedBitbucketDataCenterPR: null,
         linkedAzureDevOpsPR: null,
         linkedGiteaPR: null
       }

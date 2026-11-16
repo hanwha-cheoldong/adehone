@@ -133,6 +133,7 @@ export type CreateWorktreeArgs = {
   linkedGitLabIssue?: number
   linkedGitLabMR?: number
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   linkedWorkItem?: WorkspaceLinkedItem | null

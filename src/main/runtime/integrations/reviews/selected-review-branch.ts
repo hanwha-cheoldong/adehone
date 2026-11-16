@@ -7,6 +7,7 @@ export type SelectedReviewBranchInput = {
   linkedPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   pushTarget?: GitPushTarget
@@ -28,6 +29,9 @@ export function getSelectedReviewBranch(
   }
   if (typeof args.linkedBitbucketPR === 'number') {
     return { provider: 'bitbucket', number: args.linkedBitbucketPR }
+  }
+  if (typeof args.linkedBitbucketDataCenterPR === 'number') {
+    return { provider: 'bitbucket-datacenter', number: args.linkedBitbucketDataCenterPR }
   }
   if (typeof args.linkedAzureDevOpsPR === 'number') {
     return { provider: 'azure-devops', number: args.linkedAzureDevOpsPR }
@@ -80,6 +84,7 @@ export function getSelectedReviewLookupHints(args: SelectedReviewBranchInput): {
   linkedGitHubPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
 } {

@@ -74,6 +74,8 @@ function getLinkedReviewNumberForProvider(
       return worktree.linkedGitLabMR ?? null
     case 'bitbucket':
       return worktree.linkedBitbucketPR ?? null
+    case 'bitbucket-datacenter':
+      return worktree.linkedBitbucketDataCenterPR ?? null
     case 'azure-devops':
       return worktree.linkedAzureDevOpsPR ?? null
     case 'gitea':

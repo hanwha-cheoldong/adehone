@@ -11,6 +11,12 @@ export type PreflightStatus = {
   /** Absent on payloads predating GitLab support. */
   glab?: { installed: boolean; authenticated: boolean }
   bitbucket?: { configured: boolean; authenticated: boolean; account: string | null }
+  bitbucketDataCenter?: {
+    configured: boolean
+    authenticated: boolean
+    account: string | null
+    serverCount: number
+  }
   azureDevOps?: {
     configured: boolean
     authenticated: boolean

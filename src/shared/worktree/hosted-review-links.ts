@@ -4,6 +4,7 @@ export type HostedReviewLinkKey =
   | 'linkedPR'
   | 'linkedGitLabMR'
   | 'linkedBitbucketPR'
+  | 'linkedBitbucketDataCenterPR'
   | 'linkedAzureDevOpsPR'
   | 'linkedGiteaPR'
 
@@ -11,6 +12,7 @@ export const HOSTED_REVIEW_LINK_KEYS: readonly HostedReviewLinkKey[] = [
   'linkedPR',
   'linkedGitLabMR',
   'linkedBitbucketPR',
+  'linkedBitbucketDataCenterPR',
   'linkedAzureDevOpsPR',
   'linkedGiteaPR'
 ]
@@ -19,6 +21,7 @@ export const CLEARED_HOSTED_REVIEW_SELECTION_UPDATES: Pick<WorktreeMeta, HostedR
   linkedPR: null,
   linkedGitLabMR: null,
   linkedBitbucketPR: null,
+  linkedBitbucketDataCenterPR: null,
   linkedAzureDevOpsPR: null,
   linkedGiteaPR: null
 }

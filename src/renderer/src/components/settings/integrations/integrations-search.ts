@@ -8,6 +8,7 @@ import {
 
 // Provider rows carry these ids so search results can scroll to and highlight them.
 export const INTEGRATION_SETTING_TARGET_IDS = {
+  bitbucketDatacenter: 'integrations-bitbucket-datacenter',
   github: 'integrations-github',
   gitlab: 'integrations-gitlab',
   bitbucket: 'integrations-bitbucket',
@@ -18,6 +19,47 @@ export const INTEGRATION_SETTING_TARGET_IDS = {
 } as const
 
 export const getIntegrationsPaneSearchEntries = createLocalizedCatalog(() => [
+  {
+    targetSectionId: INTEGRATION_SETTING_TARGET_IDS.bitbucketDatacenter,
+    title: translate(
+      'auto.components.settings.integrations.search.bitbucketDatacenterTitle',
+      'Bitbucket Data Center integration'
+    ),
+    description: translate(
+      'auto.components.settings.integrations.search.bitbucketDatacenterDescription',
+      'Self-hosted Bitbucket Data Center authentication with a personal access token.'
+    ),
+    keywords: [
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.50d20817f7',
+        'bitbucket'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.bitbucketDatacenterKeywordDataCenter',
+        'data center'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.bitbucketDatacenterKeywordDatacenter',
+        'datacenter'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.bitbucketDatacenterKeywordServer',
+        'server'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.bitbucketDatacenterKeywordSelfHosted',
+        'self-hosted'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.c450244ad7',
+        'integration'
+      ),
+      ...translateSearchKeyword(
+        'auto.components.settings.integrations.search.8c568d761c',
+        'pull request'
+      )
+    ]
+  },
   {
     targetSectionId: INTEGRATION_SETTING_TARGET_IDS.github,
     title: translate(

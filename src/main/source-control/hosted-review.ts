@@ -33,6 +33,8 @@ function reviewLinkForProvider(
       return { linkedReviewNumber: input.linkedGitLabMR ?? null }
     case 'bitbucket':
       return { linkedReviewNumber: input.linkedBitbucketPR ?? null }
+    case 'bitbucket-datacenter':
+      return { linkedReviewNumber: input.linkedBitbucketDataCenterPR ?? null }
     case 'azure-devops':
       return { linkedReviewNumber: input.linkedAzureDevOpsPR ?? null }
     case 'gitea':
@@ -55,6 +57,7 @@ export async function readHostedReviewForBranch(
     fallbackGitHubPR?: number | null
     linkedGitLabMR?: number | null
     linkedBitbucketPR?: number | null
+    linkedBitbucketDataCenterPR?: number | null
     linkedAzureDevOpsPR?: number | null
     linkedGiteaPR?: number | null
     currentHeadOid?: string | null
@@ -72,6 +75,7 @@ export async function readHostedReviewForBranch(
     input.fallbackGitHubPR == null &&
     input.linkedGitLabMR == null &&
     input.linkedBitbucketPR == null &&
+    input.linkedBitbucketDataCenterPR == null &&
     input.linkedAzureDevOpsPR == null &&
     input.linkedGiteaPR == null
   ) {

@@ -21,7 +21,15 @@ export type WorkspaceAttachmentOrigin = {
 }
 
 export type WorkspaceAttachment = {
-  provider: 'github' | 'gitlab' | 'linear' | 'jira' | 'bitbucket' | 'azure-devops' | 'gitea'
+  provider:
+    | 'github'
+    | 'gitlab'
+    | 'linear'
+    | 'jira'
+    | 'bitbucket'
+    | 'bitbucket-datacenter'
+    | 'azure-devops'
+    | 'gitea'
   type: 'issue' | 'pr' | 'mr'
   number: number
   identifier?: string
@@ -124,6 +132,7 @@ export type Worktree = {
   linkedGitLabMR?: number | null
   linkedGitLabIssue?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   linkedWorkItem?: WorkspaceLinkedItem | null

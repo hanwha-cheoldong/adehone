@@ -4,6 +4,7 @@ import type { PRInfo } from '../../shared/github/pull-requests/pull-request-type
 import type { MRInfo } from '../../shared/gitlab-types'
 import type { AzureDevOpsPullRequestInfo } from '../azure-devops/pull-request-mappers'
 import type { BitbucketPullRequestInfo } from '../bitbucket/pull-request-mappers'
+import type { BitbucketDataCenterPullRequestInfo } from '../bitbucket-datacenter/pull-request-mappers'
 import type { GiteaPullRequestInfo } from '../gitea/pull-request-mappers'
 
 export function mapGitHubReview(pr: PRInfo): HostedReviewInfo {
@@ -45,6 +46,25 @@ export function mapBitbucketReview(pr: BitbucketPullRequestInfo): HostedReviewIn
     updatedAt: pr.updatedAt,
     mergeable: pr.mergeable,
     ...(pr.headSha ? { headSha: pr.headSha } : {})
+  }
+}
+
+export function mapBitbucketDataCenterReview(
+  pr: BitbucketDataCenterPullRequestInfo
+): HostedReviewInfo {
+  return {
+    provider: 'bitbucket-datacenter',
+    number: pr.number,
+    title: pr.title,
+    state: pr.state,
+    url: pr.url,
+    status: pr.status,
+    ...(pr.checksSummary ? { checksSummary: pr.checksSummary } : {}),
+    updatedAt: pr.updatedAt,
+    mergeable: pr.mergeable,
+    ...(pr.reviewDecision !== undefined ? { reviewDecision: pr.reviewDecision } : {}),
+    ...(pr.headSha ? { headSha: pr.headSha } : {}),
+    ...(pr.baseRefName ? { baseRefName: pr.baseRefName } : {})
   }
 }
 

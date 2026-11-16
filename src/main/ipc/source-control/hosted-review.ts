@@ -131,6 +131,7 @@ export function registerHostedReviewHandlers(store: Store, stats: StatsCollector
           fallbackGitHubPR: args.linkedGitHubPR == null ? (args.fallbackGitHubPR ?? null) : null,
           linkedGitLabMR: args.linkedGitLabMR ?? null,
           linkedBitbucketPR: args.linkedBitbucketPR ?? null,
+          linkedBitbucketDataCenterPR: args.linkedBitbucketDataCenterPR ?? null,
           linkedAzureDevOpsPR: args.linkedAzureDevOpsPR ?? null,
           linkedGiteaPR: args.linkedGiteaPR ?? null,
           currentHeadOid: args.currentHeadOid ?? null,

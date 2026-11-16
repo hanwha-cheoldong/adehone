@@ -82,6 +82,7 @@ describe('persistWorktreeMeta GitHub PR suppression compatibility', () => {
         linkedPR: 42,
         linkedGitLabMR: null,
         linkedBitbucketPR: null,
+        linkedBitbucketDataCenterPR: null,
         linkedAzureDevOpsPR: null,
         linkedGiteaPR: null
       },

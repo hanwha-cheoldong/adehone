@@ -25,6 +25,12 @@ export function authRequiredDetail(
       'Bitbucket is not authenticated. Next step: connect Bitbucket in Settings > Integrations, or set ORCA_BITBUCKET_* in this environment.'
     )
   }
+  if (provider === 'bitbucket-datacenter') {
+    return t(
+      'sourceControl.createReviewFailure.authRequiredBitbucketDataCenter',
+      'Bitbucket Data Center is not authenticated. Next step: connect Bitbucket Data Center in Settings > Integrations, or set ORCA_BITBUCKET_DC_* in this environment.'
+    )
+  }
   if (provider === 'github' || provider === 'gitlab') {
     return t(
       'sourceControl.createReviewFailure.authRequiredCommand',
@@ -49,6 +55,12 @@ export function hostedReviewSignInHint(
     return t(
       'sourceControl.createReviewFailure.signInHintBitbucket',
       'Connect Bitbucket in Settings > Integrations'
+    )
+  }
+  if (supported === 'bitbucket-datacenter') {
+    return t(
+      'sourceControl.createReviewFailure.signInHintBitbucketDataCenter',
+      'Connect Bitbucket Data Center in Settings > Integrations'
     )
   }
   if (supported === 'github' || supported === 'gitlab') {

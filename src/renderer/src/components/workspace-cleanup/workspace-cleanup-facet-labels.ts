@@ -105,6 +105,8 @@ export function getWorkspaceCleanupReviewProviderLabel(provider: HostedReviewPro
       return 'GitLab'
     case 'bitbucket':
       return 'Bitbucket'
+    case 'bitbucket-datacenter':
+      return 'Bitbucket Data Center'
     case 'azure-devops':
       return 'Azure DevOps'
     case 'gitea':
