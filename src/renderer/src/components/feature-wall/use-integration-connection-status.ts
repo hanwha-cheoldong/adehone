@@ -69,6 +69,7 @@ type ProviderStatusFacts = {
     gh?: CliStatus
     glab?: CliStatus
     bitbucket?: BitbucketStatus
+    bitbucketDataCenter?: TokenReviewStatus
     azureDevOps?: TokenReviewStatus
     gitea?: TokenReviewStatus
   } | null
@@ -88,7 +89,14 @@ type ProviderStatusFacts = {
 
 export type IntegrationConnectionStatus = {
   reviewConnected: boolean
-  reviewProviderName: 'GitHub' | 'GitLab' | 'Bitbucket' | 'Azure DevOps' | 'Gitea' | null
+  reviewProviderName:
+    | 'GitHub'
+    | 'GitLab'
+    | 'Bitbucket'
+    | 'Bitbucket Data Center'
+    | 'Azure DevOps'
+    | 'Gitea'
+    | null
   // GitHub/GitLab issues can double as tasks; token/env review providers do not.
   codeHostTaskProviderName: 'GitHub' | 'GitLab' | null
   // Any usable task source, including code-host issues, satisfies this legacy-named field.
@@ -145,6 +153,10 @@ export function deriveIntegrationConnectionStatus(
     facts.preflightStatus.glab.authenticated === true
   const bitbucketConnected =
     reviewReadyForConnection && isBitbucketReviewConnected(facts.preflightStatus?.bitbucket)
+  const bitbucketDataCenterConnected =
+    reviewReadyForConnection &&
+    facts.preflightStatus?.bitbucketDataCenter?.configured === true &&
+    facts.preflightStatus.bitbucketDataCenter.authenticated === true
   const azureDevOpsConnected =
     reviewReadyForConnection && isAzureDevOpsReviewConfigured(facts.preflightStatus?.azureDevOps)
   const giteaConnected =
@@ -164,11 +176,13 @@ export function deriveIntegrationConnectionStatus(
       ? 'GitLab'
       : bitbucketConnected
         ? 'Bitbucket'
-        : azureDevOpsConnected
-          ? 'Azure DevOps'
-          : giteaConnected
-            ? 'Gitea'
-            : null
+        : bitbucketDataCenterConnected
+          ? 'Bitbucket Data Center'
+          : azureDevOpsConnected
+            ? 'Azure DevOps'
+            : giteaConnected
+              ? 'Gitea'
+              : null
   const codeHostTaskProviderName = githubConnected ? 'GitHub' : gitlabConnected ? 'GitLab' : null
   const trackerProviderName = linearConnected ? 'Linear' : jiraConnected ? 'Jira' : null
   const taskSourceNames: IntegrationConnectionStatus['taskSourceNames'] = [
@@ -186,6 +200,7 @@ export function deriveIntegrationConnectionStatus(
       githubConnected ||
       gitlabConnected ||
       bitbucketConnected ||
+      bitbucketDataCenterConnected ||
       azureDevOpsConnected ||
       giteaConnected,
     reviewProviderName,

@@ -6,6 +6,7 @@
 
 > [!IMPORTANT]
 > Run `pnpm check:changed` after your last edit/rebase, right before every push. Never `--no-verify`.
+> On the `merge` branch, run `pnpm check:dev` (`--base=origin/merge`) right before push instead of `pnpm check:local` (`--base=HEAD`). During iteration, prefer scoped checks (`pnpm tc`, `pnpm check:code-quality:changed origin/merge`, relevant ratchets, and targeted `pnpm test <path> --maxWorkers=2`) to avoid slow `vitest related` fan-out.
 
 If selection fans out excessively, use scoped checks and report limits. Use the PR base (default `origin/main`; `ORCA_CODE_QUALITY_BASE=<ref>` for stacks). `--base=HEAD` and dirty-only checks provide incremental evidence only.
 

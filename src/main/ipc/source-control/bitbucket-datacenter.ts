@@ -17,11 +17,29 @@ function normalizeConnectInput(value: unknown): BitbucketDataCenterConnectArgs |
     return null
   }
   const raw = value as Record<string, unknown>
-  if (typeof raw.baseUrl !== 'string' || typeof raw.accessToken !== 'string') {
+  if (typeof raw.baseUrl !== 'string') {
+    return null
+  }
+  if (raw.authMode === 'basic') {
+    if (typeof raw.username !== 'string' || typeof raw.password !== 'string') {
+      return null
+    }
+    return {
+      baseUrl: raw.baseUrl,
+      authMode: 'basic',
+      username: raw.username,
+      password: raw.password
+    }
+  }
+  if (raw.authMode !== undefined && raw.authMode !== 'token') {
+    return null
+  }
+  if (typeof raw.accessToken !== 'string') {
     return null
   }
   return {
     baseUrl: raw.baseUrl,
+    authMode: 'token',
     accessToken: raw.accessToken
   }
 }
@@ -46,7 +64,7 @@ export function registerBitbucketDataCenterHandlers(): void {
   ipcMain.handle(
     'bitbucket-datacenter:disconnect',
     async (_event, baseUrl?: unknown): Promise<void> => {
-      disconnectBitbucketDataCenter(typeof baseUrl === 'string' ? baseUrl : null)
+      await disconnectBitbucketDataCenter(typeof baseUrl === 'string' ? baseUrl : null)
       _resetPreflightCache()
     }
   )

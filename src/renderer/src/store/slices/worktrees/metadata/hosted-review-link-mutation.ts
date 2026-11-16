@@ -195,6 +195,7 @@ export function getHostedReviewLinkUpdates(
     linkedPR: worktree.linkedPR ?? null,
     linkedGitLabMR: worktree.linkedGitLabMR ?? null,
     linkedBitbucketPR: worktree.linkedBitbucketPR ?? null,
+    linkedBitbucketDataCenterPR: worktree.linkedBitbucketDataCenterPR ?? null,
     linkedAzureDevOpsPR: worktree.linkedAzureDevOpsPR ?? null,
     linkedGiteaPR: worktree.linkedGiteaPR ?? null,
     pushTarget: worktree.pushTarget

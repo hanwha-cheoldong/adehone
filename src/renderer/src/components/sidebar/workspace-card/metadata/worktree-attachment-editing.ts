@@ -43,6 +43,11 @@ export const ATTACHMENT_INPUT_KINDS = [
     label: () => translate('workspace.links.kind.bitbucket_pr', 'Bitbucket PR')
   },
   {
+    value: 'bitbucket-datacenter-pr',
+    label: () =>
+      translate('workspace.links.kind.bitbucket_datacenter_pr', 'Bitbucket Data Center PR')
+  },
+  {
     value: 'azure-devops-pr',
     label: () => translate('workspace.links.kind.azure_devops_pr', 'Azure DevOps PR')
   },
@@ -61,6 +66,7 @@ export function workspaceAttachmentProviderLabel(item: WorkspaceAttachment): str
     linear: 'Linear',
     jira: 'Jira',
     bitbucket: 'Bitbucket',
+    'bitbucket-datacenter': 'Bitbucket Data Center',
     'azure-devops': 'Azure DevOps',
     gitea: 'Gitea'
   }
@@ -142,9 +148,20 @@ export function parseWorkspaceAttachmentInput(
   if (kind === 'gitlab-mr' || kind === 'gitlab-issue') {
     return { provider: 'gitlab', type: kind === 'gitlab-mr' ? 'mr' : 'issue', number }
   }
-  if (kind === 'bitbucket-pr' || kind === 'azure-devops-pr' || kind === 'gitea-pr') {
+  if (
+    kind === 'bitbucket-pr' ||
+    kind === 'bitbucket-datacenter-pr' ||
+    kind === 'azure-devops-pr' ||
+    kind === 'gitea-pr'
+  ) {
     const provider =
-      kind === 'bitbucket-pr' ? 'bitbucket' : kind === 'gitea-pr' ? 'gitea' : 'azure-devops'
+      kind === 'bitbucket-pr'
+        ? 'bitbucket'
+        : kind === 'bitbucket-datacenter-pr'
+          ? 'bitbucket-datacenter'
+          : kind === 'gitea-pr'
+            ? 'gitea'
+            : 'azure-devops'
     return { provider, type: 'pr', number }
   }
   return { provider: 'github', type: kind === 'github-pr' ? 'pr' : 'issue', number }
@@ -173,11 +190,13 @@ export function getActiveWorkspaceReviewKey(worktree: Worktree | undefined): str
         ? worktree.linkedGitLabMR === item.number
         : item.provider === 'bitbucket'
           ? worktree.linkedBitbucketPR === item.number
-          : item.provider === 'azure-devops'
-            ? worktree.linkedAzureDevOpsPR === item.number
-            : item.provider === 'gitea'
-              ? worktree.linkedGiteaPR === item.number
-              : false
+          : item.provider === 'bitbucket-datacenter'
+            ? worktree.linkedBitbucketDataCenterPR === item.number
+            : item.provider === 'azure-devops'
+              ? worktree.linkedAzureDevOpsPR === item.number
+              : item.provider === 'gitea'
+                ? worktree.linkedGiteaPR === item.number
+                : false
   )
   return active ? getWorkspaceAttachmentKey(active) : null
 }
@@ -202,7 +221,9 @@ function parseOtherReviewUrl(value: string): WorkspaceAttachment | null {
   }
   const provider =
     match[1] === 'pull-requests'
-      ? 'bitbucket'
+      ? /(?:^|\/)(?:projects|users)\/[^/]+\/repos\/[^/]+\/pull-requests\/\d+\/?$/.test(url.pathname)
+        ? 'bitbucket-datacenter'
+        : 'bitbucket'
       : match[1] === 'pullrequest'
         ? 'azure-devops'
         : 'gitea'

@@ -17,9 +17,14 @@ import {
   type HostedReviewExecutionOptions
 } from '../source-control/hosted-review-git-options'
 import { readHostedPullRequestTemplate } from '../source-control/pull-request-template'
-import { authHeaders } from './auth-config'
+import {
+  authHeaders,
+  hasUsableBitbucketDataCenterAuth,
+  type BitbucketDataCenterAuthConfig
+} from './auth-config'
 import { getBitbucketDataCenterPullRequestForBranch } from './client'
 import {
+  ensureBitbucketDataCenterCredentialsLoaded,
   listConfiguredBitbucketDataCenterBaseUrls,
   resolveBitbucketDataCenterAuthForBaseUrl
 } from './credential-connection'
@@ -32,7 +37,8 @@ import { getBitbucketDataCenterRepoRef, type BitbucketDataCenterRepoRef } from '
 const CREATE_REQUEST_TIMEOUT_MS = 60_000
 const DEFAULT_BRANCH_TIMEOUT_MS = 5_000
 
-export function isBitbucketDataCenterReviewCreationAuthenticated(): boolean {
+export async function isBitbucketDataCenterReviewCreationAuthenticated(): Promise<boolean> {
+  await ensureBitbucketDataCenterCredentialsLoaded()
   return listConfiguredBitbucketDataCenterBaseUrls().length > 0
 }
 
@@ -98,7 +104,7 @@ function classifyCreateError(error: unknown): CreateHostedReviewResult {
 
 async function fetchDefaultBranch(
   repo: BitbucketDataCenterRepoRef,
-  accessToken: string
+  auth: BitbucketDataCenterAuthConfig
 ): Promise<string | null> {
   try {
     const data = await requestHostedReviewJson<{ displayId?: string; id?: string }>(
@@ -107,7 +113,7 @@ async function fetchDefaultBranch(
         method: 'GET',
         headers: {
           Accept: 'application/json',
-          ...authHeaders(accessToken)
+          ...authHeaders(auth)
         }
       },
       DEFAULT_BRANCH_TIMEOUT_MS
@@ -146,8 +152,8 @@ export async function createBitbucketDataCenterPullRequest(
     }
   }
 
-  const auth = resolveBitbucketDataCenterAuthForBaseUrl(repo.baseUrl)
-  if (!auth?.accessToken) {
+  const auth = await resolveBitbucketDataCenterAuthForBaseUrl(repo.baseUrl)
+  if (!auth || !hasUsableBitbucketDataCenterAuth(auth)) {
     return {
       ok: false,
       code: 'auth_required',
@@ -160,7 +166,7 @@ export async function createBitbucketDataCenterPullRequest(
   const head = normalizeHostedReviewHeadRef(input.head ?? '')
   const title = input.title.trim()
   const rawBase = normalizeHostedReviewBaseRef(input.base)
-  const base = rawBase || (await fetchDefaultBranch(repo, auth.accessToken)) || ''
+  const base = rawBase || (await fetchDefaultBranch(repo, auth)) || ''
   if (!head || !base || !title) {
     return {
       ok: false,
@@ -189,7 +195,7 @@ export async function createBitbucketDataCenterPullRequest(
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          ...authHeaders(auth.accessToken)
+          ...authHeaders(auth)
         },
         body: JSON.stringify({
           title,

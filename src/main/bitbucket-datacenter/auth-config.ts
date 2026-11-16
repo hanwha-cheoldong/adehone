@@ -1,6 +1,16 @@
-export type BitbucketDataCenterAuthConfig = {
+export type BitbucketDataCenterAuthCredentials =
+  | {
+      authMode: 'token'
+      accessToken: string
+    }
+  | {
+      authMode: 'basic'
+      username: string
+      password: string
+    }
+
+export type BitbucketDataCenterAuthConfig = BitbucketDataCenterAuthCredentials & {
   baseUrl: string
-  accessToken: string | null
 }
 
 export function envValue(name: string): string | null {
@@ -35,21 +45,54 @@ export function normalizeBitbucketDataCenterBaseUrl(rawUrl: string): string | nu
 
 export function getEnvAuthConfig(): BitbucketDataCenterAuthConfig | null {
   const rawBaseUrl = envValue('ORCA_BITBUCKET_DC_URL') ?? envValue('ORCA_BITBUCKET_DATACENTER_URL')
-  const accessToken =
-    envValue('ORCA_BITBUCKET_DC_TOKEN') ?? envValue('ORCA_BITBUCKET_DATACENTER_TOKEN')
-  if (!rawBaseUrl || !accessToken) {
+  if (!rawBaseUrl) {
     return null
   }
   const baseUrl = normalizeBitbucketDataCenterBaseUrl(rawBaseUrl)
   if (!baseUrl) {
     return null
   }
-  return { baseUrl, accessToken }
+  const accessToken =
+    envValue('ORCA_BITBUCKET_DC_TOKEN') ?? envValue('ORCA_BITBUCKET_DATACENTER_TOKEN')
+  if (accessToken) {
+    return { baseUrl, authMode: 'token', accessToken }
+  }
+  const username =
+    envValue('ORCA_BITBUCKET_DC_USERNAME') ?? envValue('ORCA_BITBUCKET_DATACENTER_USERNAME')
+  const password =
+    envValue('ORCA_BITBUCKET_DC_PASSWORD') ?? envValue('ORCA_BITBUCKET_DATACENTER_PASSWORD')
+  if (username && password) {
+    return { baseUrl, authMode: 'basic', username, password }
+  }
+  return null
 }
 
-export function authHeaders(accessToken: string | null): Record<string, string> {
-  if (!accessToken) {
+export function hasUsableBitbucketDataCenterAuth(
+  auth: BitbucketDataCenterAuthConfig | null | undefined
+): boolean {
+  if (!auth) {
+    return false
+  }
+  return auth.authMode === 'basic'
+    ? auth.username.length > 0 && auth.password.length > 0
+    : auth.accessToken.length > 0
+}
+
+export function authHeaders(
+  auth: BitbucketDataCenterAuthCredentials | null | undefined
+): Record<string, string> {
+  if (!auth) {
     return {}
   }
-  return { Authorization: `Bearer ${accessToken}` }
+  if (auth.authMode === 'basic') {
+    if (!auth.username || !auth.password) {
+      return {}
+    }
+    const encoded = Buffer.from(`${auth.username}:${auth.password}`, 'utf-8').toString('base64')
+    return { Authorization: `Basic ${encoded}` }
+  }
+  if (!auth.accessToken) {
+    return {}
+  }
+  return { Authorization: `Bearer ${auth.accessToken}` }
 }

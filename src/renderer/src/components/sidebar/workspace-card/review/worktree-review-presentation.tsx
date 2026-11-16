@@ -21,6 +21,9 @@ export function getProviderName(review: WorktreeCardPrDisplay): string {
   if (review.provider === 'bitbucket') {
     return 'Bitbucket'
   }
+  if (review.provider === 'bitbucket-datacenter') {
+    return 'Bitbucket Data Center'
+  }
   if (review.provider === 'azure-devops') {
     return 'Azure DevOps'
   }

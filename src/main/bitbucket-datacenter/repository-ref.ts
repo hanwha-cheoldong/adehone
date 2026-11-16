@@ -1,5 +1,8 @@
 import { createRemoteRefProbeCache } from '../git/remotes/remote-ref-probe-cache'
-import { listConfiguredBitbucketDataCenterBaseUrls } from './credential-connection'
+import {
+  ensureBitbucketDataCenterCredentialsLoaded,
+  listConfiguredBitbucketDataCenterBaseUrls
+} from './credential-connection'
 
 export type BitbucketDataCenterRepoRef = {
   host: string
@@ -242,6 +245,7 @@ export async function getBitbucketDataCenterRepoRefForRemote(
   connectionId?: string | null,
   localGitOptions: LocalGitExecOptions = {}
 ): Promise<BitbucketDataCenterRepoRef | null> {
+  await ensureBitbucketDataCenterCredentialsLoaded()
   return repoRefProbeCache.get(repoPath, remoteName, connectionId, localGitOptions)
 }
 

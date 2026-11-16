@@ -4,25 +4,36 @@ import type { BitbucketDataCenterConnectionStatus } from '../../../../../shared/
 import { Button } from '@/components/ui/button'
 import { useMountedRef } from '@/hooks/useMountedRef'
 import { readIpcErrorMessage } from '@/runtime/errors/ipc-error'
+import { useAppStore } from '@/store/index'
 import { UnsealedCredentialNotice } from '../../provider-accounts/UnsealedCredentialNotice'
 import {
   IntegrationCardDetails,
   IntegrationCardShell
 } from '../presentation/integration-card-shell'
 import { useIntegrationSubordinateRowClass } from '../presentation/integration-card-presentation'
-import { usePreflightCardStatuses } from './source-control-preflight-card-status'
 import { tokenProviderStatusLabel } from './token-source-control-status'
 import { BitbucketDataCenterCredentialsDialog } from './bitbucket-datacenter-credentials-dialog'
 import { useTranslate } from '@/i18n/use-translate'
 
+async function disconnectBitbucketDataCenterServer(
+  baseUrl: string,
+  fallbackMessage: string
+): Promise<string | null> {
+  try {
+    await window.api.bitbucketDataCenter.disconnect(baseUrl)
+    return null
+  } catch (error) {
+    return readIpcErrorMessage(error) ?? fallbackMessage
+  }
+}
+
 export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
   const t = useTranslate()
-  const { statuses, unavailable, refresh } = usePreflightCardStatuses('bitbucketDataCenter')
-  const status = unavailable ? 'unavailable' : statuses.bitbucketDataCenterStatus
-  const connected = status === 'connected'
+  const refreshPreflightStatus = useAppStore((s) => s.refreshPreflightStatus)
   const mountedRef = useMountedRef()
   const subordinateRowClass = useIntegrationSubordinateRowClass('flex items-center gap-3')
   const [connection, setConnection] = useState<BitbucketDataCenterConnectionStatus | null>(null)
+  const [checking, setChecking] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editingBaseUrl, setEditingBaseUrl] = useState<string | null>(null)
   const [disconnectingUrl, setDisconnectingUrl] = useState<string | null>(null)
@@ -32,15 +43,18 @@ export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
 
   const loadConnection = useCallback(async () => {
     const generation = ++connectionLoadGenerationRef.current
+    setChecking(true)
     try {
       const next = await window.api.bitbucketDataCenter.status()
       if (mountedRef.current && generation === connectionLoadGenerationRef.current) {
         setConnection(next)
         setConnectionLoadFailed(false)
+        setChecking(false)
       }
     } catch {
       if (mountedRef.current && generation === connectionLoadGenerationRef.current) {
         setConnectionLoadFailed(true)
+        setChecking(false)
       }
     }
   }, [mountedRef])
@@ -53,11 +67,23 @@ export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
   const credentialStatusKnown = currentConnection !== null
   const servers = currentConnection?.servers ?? []
   const envServer = currentConnection?.envServer ?? null
+  const status = checking
+    ? 'checking'
+    : connectionLoadFailed
+      ? 'unavailable'
+      : currentConnection?.configured
+        ? 'connected'
+        : 'not-configured'
+  const connected = status === 'connected'
 
   const reloadCardState = (): void => {
     void loadConnection()
-    refresh()
+    void refreshPreflightStatus({ force: true, wakeWslDistro: true })
   }
+
+  const editingServer = editingBaseUrl
+    ? (servers.find((server) => server.baseUrl === editingBaseUrl) ?? null)
+    : null
 
   const openAddServerDialog = (): void => {
     setEditingBaseUrl(null)
@@ -72,24 +98,18 @@ export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
   const handleDisconnectServer = async (baseUrl: string): Promise<void> => {
     setDisconnectingUrl(baseUrl)
     setDisconnectError(null)
-    try {
-      await window.api.bitbucketDataCenter.disconnect(baseUrl)
-    } catch (error) {
-      if (mountedRef.current) {
-        setDisconnectError(
-          readIpcErrorMessage(error) ??
-            t(
-              'auto.components.settings.bitbucketDatacenter.card.disconnectFailed',
-              'Could not remove the saved Bitbucket Data Center credential.'
-            )
-        )
-      }
-    } finally {
-      if (mountedRef.current) {
-        setDisconnectingUrl(null)
-      }
-      reloadCardState()
+    const errorMessage = await disconnectBitbucketDataCenterServer(
+      baseUrl,
+      t(
+        'auto.components.settings.bitbucketDatacenter.card.disconnectFailed',
+        'Could not remove the saved Bitbucket Data Center credential.'
+      )
+    )
+    if (mountedRef.current) {
+      setDisconnectError(errorMessage)
+      setDisconnectingUrl(null)
     }
+    reloadCardState()
   }
 
   const summaryDescription = connected
@@ -176,10 +196,15 @@ export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
                   ]
                     .filter(Boolean)
                     .join(' · ') ||
-                    t(
-                      'auto.components.settings.bitbucketDatacenter.card.tokenSaved',
-                      'Personal access token saved'
-                    )}
+                    (server.authMode === 'basic'
+                      ? t(
+                          'auto.components.settings.bitbucketDatacenter.card.basicSaved',
+                          'Username & password saved'
+                        )
+                      : t(
+                          'auto.components.settings.bitbucketDatacenter.card.tokenSaved',
+                          'Personal access token saved'
+                        ))}
                 </p>
               </button>
               <button
@@ -241,7 +266,9 @@ export function BitbucketDataCenterIntegrationCard(): React.JSX.Element {
       <BitbucketDataCenterCredentialsDialog
         open={dialogOpen}
         onOpenChange={setDialogOpen}
+        initialAuthMode={editingServer?.authMode ?? null}
         initialBaseUrl={editingBaseUrl}
+        initialAccount={editingServer?.account ?? null}
         environmentManaged={false}
         onConnected={reloadCardState}
       />

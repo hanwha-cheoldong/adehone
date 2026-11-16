@@ -1,5 +1,5 @@
 import { cancelUnreadResponseBody } from '../lib/unread-response-body'
-import { authHeaders } from './auth-config'
+import { authHeaders, type BitbucketDataCenterAuthCredentials } from './auth-config'
 
 const USER_REQUEST_TIMEOUT_MS = 6000
 
@@ -42,12 +42,12 @@ function asNonEmptyString(value: unknown): string | null {
 
 async function fetchWhoamiUsername(
   baseUrl: string,
-  accessToken: string,
+  auth: BitbucketDataCenterAuthCredentials,
   timeoutMs: number
 ): Promise<string | null> {
   try {
     const response = await fetch(`${baseUrl}/plugins/servlet/applinks/whoami`, {
-      headers: authHeaders(accessToken),
+      headers: authHeaders(auth),
       signal: AbortSignal.timeout(timeoutMs)
     })
     if (!response.ok) {
@@ -67,7 +67,7 @@ async function fetchWhoamiUsername(
 
 export async function verifyBitbucketDataCenterConnection(
   baseUrl: string,
-  accessToken: string,
+  auth: BitbucketDataCenterAuthCredentials,
   timeoutMs: number = USER_REQUEST_TIMEOUT_MS
 ): Promise<BitbucketDataCenterVerificationResult> {
   const normalizedBase = baseUrl.replace(/\/+$/, '')
@@ -76,7 +76,10 @@ export async function verifyBitbucketDataCenterConnection(
   let serverVersion: string | null = null
   try {
     const propsRes = await fetch(`${normalizedBase}/rest/api/1.0/application-properties`, {
-      headers: { Accept: 'application/json' },
+      headers: {
+        Accept: 'application/json',
+        ...authHeaders(auth)
+      },
       signal: AbortSignal.timeout(timeoutMs)
     })
     if (!propsRes.ok) {
@@ -103,12 +106,12 @@ export async function verifyBitbucketDataCenterConnection(
     }
   }
 
-  // 2. Verify the PAT against an authenticated REST endpoint.
+  // 2. Verify the credentials against an authenticated REST endpoint.
   try {
     const authRes = await fetch(`${normalizedBase}/rest/api/1.0/projects?limit=1`, {
       headers: {
         Accept: 'application/json',
-        ...authHeaders(accessToken)
+        ...authHeaders(auth)
       },
       signal: AbortSignal.timeout(timeoutMs)
     })
@@ -120,8 +123,7 @@ export async function verifyBitbucketDataCenterConnection(
     if (!authRes.ok) {
       return { ok: false, reason: 'unreachable' }
     }
-    const account =
-      headerUser ?? (await fetchWhoamiUsername(normalizedBase, accessToken, timeoutMs))
+    const account = headerUser ?? (await fetchWhoamiUsername(normalizedBase, auth, timeoutMs))
     return { ok: true, account, serverVersion }
   } catch (error) {
     return {

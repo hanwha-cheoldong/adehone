@@ -22,10 +22,15 @@ const COPY: Record<BitbucketDataCenterConnectFailureCode, () => string> = {
       'codeHost.bitbucketDataCenterConnect.accessTokenRequired',
       'Enter a personal access token.'
     ),
+  usernameAndPasswordRequired: () =>
+    translate(
+      'codeHost.bitbucketDataCenterConnect.usernameAndPasswordRequired',
+      'Enter both a username and a password.'
+    ),
   rejected: () =>
     translate(
       'codeHost.bitbucketDataCenterConnect.rejected',
-      'Bitbucket Data Center rejected this token. Check the token and permissions, then try again.'
+      'Bitbucket Data Center rejected these credentials. Check them and try again.'
     ),
   untrustedCertificate: () =>
     translate(

@@ -5,6 +5,7 @@ import {
   GiteaIntegrationCard
 } from '@/components/integrations/source-control/token-source-control-integration-cards'
 import { BitbucketIntegrationCard } from '@/components/integrations/source-control/bitbucket-integration-card'
+import { BitbucketDataCenterIntegrationCard } from '@/components/integrations/source-control/bitbucket-datacenter-integration-card'
 import {
   GitHubIntegrationCard,
   GitLabIntegrationCard
@@ -104,6 +105,7 @@ export function ConnectIntegrationsList(): React.JSX.Element {
           canToggle={reviewCanToggle}
         >
           <IntegrationCardGroup>
+            <BitbucketDataCenterIntegrationCard />
             <GitHubIntegrationCard />
             <GitLabIntegrationCard />
             <BitbucketIntegrationCard />
@@ -165,6 +167,7 @@ export function ConnectIntegrationsList(): React.JSX.Element {
             )}
           </p>
           <IntegrationCardGroup>
+            <BitbucketDataCenterIntegrationCard />
             <GitHubIntegrationCard />
             <GitLabIntegrationCard />
           </IntegrationCardGroup>

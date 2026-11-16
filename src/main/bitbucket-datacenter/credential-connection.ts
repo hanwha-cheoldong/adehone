@@ -12,6 +12,7 @@ import {
 import {
   clearStoredBitbucketDataCenterCredentials,
   getBitbucketDataCenterCredentialProtection,
+  getCachedStoredBitbucketDataCenterMetadata,
   getStoredBitbucketDataCenterMetadata,
   hasStoredBitbucketDataCenterCredential,
   loadStoredBitbucketDataCenterSecret,
@@ -34,6 +35,39 @@ export async function connectBitbucketDataCenter(
   if (!normalizedBaseUrl) {
     return bitbucketDataCenterConnectFailure('invalidBaseUrl')
   }
+
+  if (input.authMode === 'basic') {
+    const username = input.username.trim()
+    const password = input.password
+    if (!username || !password) {
+      return bitbucketDataCenterConnectFailure('usernameAndPasswordRequired')
+    }
+    const verification = await verifyBitbucketDataCenterConnection(
+      normalizedBaseUrl,
+      { authMode: 'basic', username, password },
+      VERIFY_TIMEOUT_MS
+    )
+    if (!verification.ok) {
+      return bitbucketDataCenterConnectFailure(verification.reason)
+    }
+    const account = verification.account ?? username
+    await upsertBitbucketDataCenterCredential({
+      baseUrl: normalizedBaseUrl,
+      authMode: 'basic',
+      account,
+      serverVersion: verification.serverVersion,
+      username,
+      password
+    })
+    _resetBitbucketDataCenterRepoRefCache()
+    return {
+      ok: true,
+      baseUrl: normalizedBaseUrl,
+      account,
+      serverVersion: verification.serverVersion
+    }
+  }
+
   const accessToken = input.accessToken.trim()
   if (!accessToken) {
     return bitbucketDataCenterConnectFailure('accessTokenRequired')
@@ -41,15 +75,16 @@ export async function connectBitbucketDataCenter(
 
   const verification = await verifyBitbucketDataCenterConnection(
     normalizedBaseUrl,
-    accessToken,
+    { authMode: 'token', accessToken },
     VERIFY_TIMEOUT_MS
   )
   if (!verification.ok) {
     return bitbucketDataCenterConnectFailure(verification.reason)
   }
 
-  upsertBitbucketDataCenterCredential({
+  await upsertBitbucketDataCenterCredential({
     baseUrl: normalizedBaseUrl,
+    authMode: 'token',
     account: verification.account,
     serverVersion: verification.serverVersion,
     accessToken
@@ -63,19 +98,17 @@ export async function connectBitbucketDataCenter(
   }
 }
 
-export function disconnectBitbucketDataCenter(baseUrl?: string | null): void {
-  if (baseUrl && baseUrl.trim().length > 0) {
-    removeBitbucketDataCenterCredential(baseUrl)
-  } else {
-    clearStoredBitbucketDataCenterCredentials()
-  }
+export async function disconnectBitbucketDataCenter(baseUrl?: string | null): Promise<void> {
+  await (baseUrl && baseUrl.trim().length > 0
+    ? removeBitbucketDataCenterCredential(baseUrl)
+    : clearStoredBitbucketDataCenterCredentials())
   _resetBitbucketDataCenterRepoRefCache()
 }
 
 // Status reads must avoid keychain prompts.
-export function getBitbucketDataCenterConnectionStatus(): BitbucketDataCenterConnectionStatus {
+export async function getBitbucketDataCenterConnectionStatus(): Promise<BitbucketDataCenterConnectionStatus> {
   const env = getEnvAuthConfig()
-  const metadata = getStoredBitbucketDataCenterMetadata()
+  const metadata = await getStoredBitbucketDataCenterMetadata()
   const hasStored = hasStoredBitbucketDataCenterCredential()
   const protection = hasStored ? getBitbucketDataCenterCredentialProtection() : null
   const storedServers = hasStored && metadata ? metadata.servers : []
@@ -118,6 +151,10 @@ export function getBitbucketDataCenterConnectionStatus(): BitbucketDataCenterCon
   }
 }
 
+export async function ensureBitbucketDataCenterCredentialsLoaded(): Promise<void> {
+  await getStoredBitbucketDataCenterMetadata()
+}
+
 export function listConfiguredBitbucketDataCenterBaseUrls(): string[] {
   const urls = new Set<string>()
   const env = getEnvAuthConfig()
@@ -125,7 +162,7 @@ export function listConfiguredBitbucketDataCenterBaseUrls(): string[] {
     urls.add(env.baseUrl)
   }
   if (hasStoredBitbucketDataCenterCredential()) {
-    const metadata = getStoredBitbucketDataCenterMetadata()
+    const metadata = getCachedStoredBitbucketDataCenterMetadata()
     for (const server of metadata?.servers ?? []) {
       urls.add(server.baseUrl)
     }
@@ -133,9 +170,9 @@ export function listConfiguredBitbucketDataCenterBaseUrls(): string[] {
   return Array.from(urls)
 }
 
-export function resolveBitbucketDataCenterAuthForBaseUrl(
+export async function resolveBitbucketDataCenterAuthForBaseUrl(
   baseUrl: string
-): BitbucketDataCenterAuthConfig | null {
+): Promise<BitbucketDataCenterAuthConfig | null> {
   const normalized = normalizeBitbucketDataCenterBaseUrl(baseUrl)
   if (!normalized) {
     return null
@@ -145,10 +182,18 @@ export function resolveBitbucketDataCenterAuthForBaseUrl(
     return env
   }
   try {
-    const secret = loadStoredBitbucketDataCenterSecret({ force: true })
+    const secret = await loadStoredBitbucketDataCenterSecret({ force: true })
     const entry = secret?.servers[normalized]
-    if (entry?.accessToken) {
-      return { baseUrl: normalized, accessToken: entry.accessToken }
+    if (entry?.authMode === 'basic' && entry.username && entry.password) {
+      return {
+        baseUrl: normalized,
+        authMode: 'basic',
+        username: entry.username,
+        password: entry.password
+      }
+    }
+    if (entry && 'accessToken' in entry && entry.accessToken) {
+      return { baseUrl: normalized, authMode: 'token', accessToken: entry.accessToken }
     }
   } catch {
     return env && env.baseUrl === normalized ? env : null

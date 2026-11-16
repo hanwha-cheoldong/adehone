@@ -197,7 +197,7 @@ async function lookupPullRequestForBranch(
 }
 
 export async function getBitbucketDataCenterAuthStatus(): Promise<BitbucketDataCenterAuthStatus> {
-  const status = getBitbucketDataCenterConnectionStatus()
+  const status = await getBitbucketDataCenterConnectionStatus()
   if (!status.configured) {
     return { configured: false, authenticated: false, account: null, serverCount: 0 }
   }

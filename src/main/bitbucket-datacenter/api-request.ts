@@ -1,5 +1,5 @@
 import { cancelUnreadResponseBody } from '../lib/unread-response-body'
-import { authHeaders } from './auth-config'
+import { authHeaders, hasUsableBitbucketDataCenterAuth } from './auth-config'
 import { resolveBitbucketDataCenterAuthForBaseUrl } from './credential-connection'
 
 const REQUEST_TIMEOUT_MS = 5000
@@ -31,8 +31,8 @@ export async function requestBitbucketDataCenterJson<T>(
   throwOnFailure = false,
   notFoundIsNull = false
 ): Promise<T | null> {
-  const auth = resolveBitbucketDataCenterAuthForBaseUrl(baseUrl)
-  if (!auth?.accessToken) {
+  const auth = await resolveBitbucketDataCenterAuthForBaseUrl(baseUrl)
+  if (!hasUsableBitbucketDataCenterAuth(auth)) {
     if (throwOnFailure) {
       throw new Error('Bitbucket Data Center request failed: no usable credential')
     }
@@ -42,7 +42,7 @@ export async function requestBitbucketDataCenterJson<T>(
     const response = await fetch(buildUrl(urlBase, path, options.searchParams), {
       headers: {
         Accept: 'application/json',
-        ...authHeaders(auth.accessToken)
+        ...authHeaders(auth)
       },
       signal: AbortSignal.timeout(options.timeoutMs ?? REQUEST_TIMEOUT_MS)
     })

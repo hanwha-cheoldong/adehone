@@ -123,6 +123,7 @@ describe('worktree remote runtime mutations', () => {
       linkedGitHubPR: null,
       linkedGitLabMR: null,
       linkedBitbucketPR: null,
+      linkedBitbucketDataCenterPR: null,
       linkedAzureDevOpsPR: null,
       linkedGiteaPR: null,
       force: true

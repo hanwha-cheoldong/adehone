@@ -7,6 +7,7 @@ const REVIEW_SLOTS = [
   'linkedPR',
   'linkedGitLabMR',
   'linkedBitbucketPR',
+  'linkedBitbucketDataCenterPR',
   'linkedAzureDevOpsPR',
   'linkedGiteaPR'
 ] as const
@@ -26,6 +27,11 @@ export function getWorkspaceReviewRefreshHints(
     linkedGitHubPR: getHostedReviewLinkForMetaRefresh(updates, workspace, 'linkedPR'),
     linkedGitLabMR: getHostedReviewLinkForMetaRefresh(updates, workspace, 'linkedGitLabMR'),
     linkedBitbucketPR: getHostedReviewLinkForMetaRefresh(updates, workspace, 'linkedBitbucketPR'),
+    linkedBitbucketDataCenterPR: getHostedReviewLinkForMetaRefresh(
+      updates,
+      workspace,
+      'linkedBitbucketDataCenterPR'
+    ),
     linkedAzureDevOpsPR: getHostedReviewLinkForMetaRefresh(
       updates,
       workspace,

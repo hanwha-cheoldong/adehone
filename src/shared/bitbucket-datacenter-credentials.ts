@@ -2,13 +2,24 @@ import type { SecretAtRestProtection } from './secret-at-rest-protection'
 
 export type BitbucketDataCenterCredentialSource = 'environment' | 'stored' | 'none'
 
-export type BitbucketDataCenterConnectArgs = {
-  baseUrl: string
-  accessToken: string
-}
+export type BitbucketDataCenterAuthMode = 'token' | 'basic'
+
+export type BitbucketDataCenterConnectArgs =
+  | {
+      baseUrl: string
+      authMode?: 'token'
+      accessToken: string
+    }
+  | {
+      baseUrl: string
+      authMode: 'basic'
+      username: string
+      password: string
+    }
 
 export type BitbucketDataCenterServerStatus = {
   baseUrl: string
+  authMode?: BitbucketDataCenterAuthMode
   account: string | null
   serverVersion: string | null
   updatedAt: string
@@ -34,6 +45,7 @@ export const BITBUCKET_DC_CONNECT_FAILURE_COPY = {
   baseUrlRequired: 'Enter a Bitbucket Data Center server URL.',
   invalidBaseUrl: 'Enter a valid HTTP or HTTPS server URL.',
   accessTokenRequired: 'Enter a personal access token.',
+  usernameAndPasswordRequired: 'Enter both a username and a password.',
   rejected:
     'Bitbucket Data Center rejected this token. Check the token and permissions, then try again.',
   untrustedCertificate:
