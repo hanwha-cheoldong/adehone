@@ -1,13 +1,15 @@
-// Stable desktop release tags (vX.Y.Z); shared by the cross-version harness and the R1 protocol gate.
-export const STABLE_DESKTOP_RELEASE_TAG = /^v\d+\.\d+\.\d+$/
+// Stable desktop release tags (vX.Y.Z or vA.B-X.Y.Z); shared by the cross-version harness and the R1 protocol gate.
+export const STABLE_DESKTOP_RELEASE_TAG = /^v(?:\d+(?:\.\d+)*-)?\d+\.\d+\.\d+$/
 
 export function compareReleaseTags(a, b) {
-  const parts = (tag) =>
-    tag
-      .replace(/^v/, '')
+  const parts = (tag) => {
+    const raw = tag.replace(/^v/, '')
+    const orcaPart = raw.includes('-') ? raw.split('-').slice(1).join('-') : raw
+    return orcaPart
       .split('.')
       .map((part) => Number.parseInt(part, 10))
       .map((value) => (Number.isFinite(value) ? value : 0))
+  }
   const left = parts(a)
   const right = parts(b)
   for (let index = 0; index < Math.max(left.length, right.length); index++) {

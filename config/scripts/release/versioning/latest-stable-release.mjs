@@ -3,7 +3,7 @@
 import { pathToFileURL } from 'node:url'
 
 const API_VERSION = '2022-11-28'
-const DESKTOP_STABLE_TAG_PATTERN = /^v([0-9]+)\.([0-9]+)\.([0-9]+)$/
+const DESKTOP_STABLE_TAG_PATTERN = /^v(?:([0-9]+(?:\.[0-9]+)*)-)?([0-9]+)\.([0-9]+)\.([0-9]+)$/
 
 export function parseDesktopStableTag(tag) {
   const match = DESKTOP_STABLE_TAG_PATTERN.exec(tag)
@@ -13,9 +13,10 @@ export function parseDesktopStableTag(tag) {
 
   return {
     tag,
-    major: Number(match[1]),
-    minor: Number(match[2]),
-    patch: Number(match[3])
+    adehonePrefix: match[1] ?? null,
+    major: Number(match[2]),
+    minor: Number(match[3]),
+    patch: Number(match[4])
   }
 }
 

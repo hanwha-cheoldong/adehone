@@ -8317,7 +8317,11 @@
           "workerAutoReleaseDescription": "除非選擇「保持開啟」，否則工作代理程式完成 2 分鐘後會關閉其終端機或聊天。如果它再次開始工作，完成後會重新計時 2 分鐘。",
           "workerAutoReleaseKeywordClose": "關閉",
           "workerAutoReleaseKeywordRelease": "釋放",
-          "8a94078d05": "代理程式編排"
+          "8a94078d05": "代理程式編排",
+          "coordinatorApprovalsTitle": "允許協調者核准工作者的權限提示",
+          "coordinatorApprovalsDescription": "協調智能體可以附帶原因允許工作者的權限提示。您仍會看到「允許」和「拒絕」，並以最先給出的回答為準。此設定僅適用於在此電腦上執行的工作者。",
+          "coordinatorApprovalsKeywordApprove": "核准",
+          "coordinatorApprovalsKeywordPermission": "權限"
         },
         "OrchestrationSetupCard": {
           "e7d2a5146c": "使代理程式能夠透過 Adehone 交接上下文並協調工作。",
@@ -13020,7 +13024,7 @@
           "catalog": "目錄",
           "clear": "清除篩選",
           "themes": "主題",
-          "codeLanguages": "程式語言",
+          "codeLanguages": "語言",
           "translations": "翻譯",
           "icons": "圖示",
           "commands": "命令和面板",

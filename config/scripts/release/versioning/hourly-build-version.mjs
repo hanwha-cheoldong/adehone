@@ -3,12 +3,13 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { formatReleaseTitleTimestamp } from './release-title-timestamp.mjs'
 import {
+  readAdehoneVersion,
   readPublishedVersionsFromEnv,
   resolveDevChannelBaseVersion
 } from './dev-channel-base-version.mjs'
 
 // UTC minute tags sort chronologically by semver.
-export function createHourlyBuildVersion(baseVersion, date) {
+export function createHourlyBuildVersion(baseVersion, date, adehoneVersion) {
   const match = /^(\d+\.\d+\.\d+)(?:-[0-9A-Za-z.-]+)?$/.exec(baseVersion)
   if (!match) {
     throw new Error(`Package version is not valid semver: ${baseVersion}`)
@@ -25,15 +26,20 @@ export function createHourlyBuildVersion(baseVersion, date) {
     pad(date.getUTCMinutes())
   ].join('')
   // Strip RC tail: rc.N-hourly outranks RC and would offer untested builds automatically; base-hourly stays below RC/stable for explicit selection.
-  return `${match[1]}-hourly.${stamp}`
+  const prefix = adehoneVersion ? `${adehoneVersion}-` : ''
+  return `${prefix}${match[1]}-hourly.${stamp}`
 }
 
 // Restart numbering per base; take max release-title number, not count, so retention pruning cannot reissue numbers. Legacy unmatched titles yield 01.
 export function nextHourlyBuildNumber(baseVersion, releaseNames = []) {
-  const prefix = `${baseVersion} • `
+  const prefixes = [
+    `${baseVersion} • `,
+    baseVersion.includes('-') ? `${baseVersion.split('-').slice(1).join('-')} • ` : null
+  ].filter(Boolean)
   const highest = releaseNames.reduce((max, entry) => {
     const name = String(entry ?? '')
-    if (!name.startsWith(prefix)) {
+    const prefix = prefixes.find((p) => name.startsWith(p))
+    if (!prefix) {
       return max
     }
     const match = /^(\d+) • /.exec(name.slice(prefix.length))
@@ -42,13 +48,14 @@ export function nextHourlyBuildNumber(baseVersion, releaseNames = []) {
   return highest + 1
 }
 
-// Release title shown verbatim in GitHub/build picker: 1.4.163 • 01 • Jul 31, 1:54PM • e698241.
+// Release title shown verbatim in GitHub/build picker: 0.1-1.4.163 • 01 • Jul 31, 1:54PM • e698241.
 export function formatHourlyReleaseName(version, buildNumber, commit, date) {
   if (!Number.isInteger(buildNumber) || buildNumber < 1) {
     throw new Error(`Hourly build number must be a positive integer: ${buildNumber}`)
   }
+  const baseLabel = version.replace(/-hourly\.\d+$/, '')
   return [
-    version.split('-')[0],
+    baseLabel,
     String(buildNumber).padStart(2, '0'),
     formatReleaseTitleTimestamp(date),
     commit.slice(0, 7)
@@ -60,14 +67,16 @@ export function getHourlyBuildIdentity(
   now = new Date(),
   { packageVersion, publishedVersions, releaseNames } = {}
 ) {
-  const versionFromPackage =
-    packageVersion ?? JSON.parse(readFileSync(resolve('package.json'), 'utf8')).version
+  const packageJson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
+  const adehoneVersion = readAdehoneVersion(packageJson)
+  const versionFromPackage = packageVersion ?? packageJson.version
   const commit = execFileSync('git', ['rev-parse', '--short=12', 'HEAD'], {
     encoding: 'utf8'
   }).trim()
   const base = resolveDevChannelBaseVersion(versionFromPackage, publishedVersions ?? [])
-  const version = createHourlyBuildVersion(base, now)
-  const buildNumber = nextHourlyBuildNumber(base, releaseNames ?? [])
+  const version = createHourlyBuildVersion(base, now, adehoneVersion)
+  const fullBase = adehoneVersion ? `${adehoneVersion}-${base}` : base
+  const buildNumber = nextHourlyBuildNumber(fullBase, releaseNames ?? [])
   return {
     commit,
     version,

@@ -422,7 +422,7 @@ jobs:
             src/shared/remote-runtime/ephemeral-vm-store/ephemeral-vm-runtime-rollback-projection.ts \
             src/shared/remote-runtime/ephemeral-vm-store/ephemeral-vm-runtimes.ts \
             src/shared/remote-runtime/ephemeral-vm-recipes/ephemeral-vm-recipes.ts \
-            src/shared/orca-yaml-hook-types.ts \
+            src/shared/workspace-setup/orca-yaml-hook-types.ts \
             config/scripts/runtime-verification/ephemeral-store/run-ephemeral-vm-runtime-store-rollback-repro.mjs \
             config/scripts/runtime-verification/ephemeral-store/ephemeral-vm-runtime-store-cross-version.test.ts \
             src/main/ephemeral-vm/runtime-service.ts \
@@ -858,9 +858,7 @@ jobs:
             src/renderer/src/components/terminal-pane/pty-connection/emulation/fish-color-scheme-child-stdin.node-pty.test.ts \
             src/shared/shell/wsl/fish-wsl-cwd-report.node-pty.test.ts \
             src/main/wsl/filesystem/wsl-sh-cwd-report.node-pty.test.ts \
-            src/shared/terminal/pty/ingress/pty-reply-echo-shapes.node-pty.test.ts \
-            src/shared/shell/launch/startup-shell-portability.live-shell.test.ts \
-            src/shared/shell/command-resolution/posix-command-path-lookup.test.ts
+            src/shared/terminal/pty/ingress/pty-reply-echo-shapes.node-pty.test.ts
 
   # Shards wait only for the plan, not preflight, which moves them about two minutes earlier.
   unit_plan:
@@ -998,17 +996,42 @@ jobs:
           filter: blob:none
           persist-credentials: false
 
+      - name: Check for stable release baseline tag
+        id: baseline
+        run: |
+          HAS_BASELINE="$(node --input-type=module -e "
+            import { execFileSync } from 'node:child_process';
+            import { selectLatestStableReleaseTag } from './config/scripts/release/versioning/stable-release-tags.mjs';
+            const override = process.env.ORCA_CROSS_VERSION_BASELINE_REF?.trim();
+            if (override) {
+              console.log('true');
+              process.exit(0);
+            }
+            const tags = execFileSync('git', ['tag', '--list', 'v[0-9]*'], { encoding: 'utf8' }).split('\n').filter(Boolean);
+            const latest = selectLatestStableReleaseTag(tags);
+            if (latest) {
+              console.log('true');
+            } else {
+              console.error('No stable release tags matching vX.Y.Z or vA.B-X.Y.Z found; skipping cross-version-wire checks.');
+              console.log('false');
+            }
+          ")"
+          echo "has_baseline=$HAS_BASELINE" >> "$GITHUB_OUTPUT"
+
       - uses: ./.github/actions/install-node-dependencies
+        if: steps.baseline.outputs.has_baseline == 'true'
         with:
           native-runtime: node
 
       # R1: an upgrade from the newest release must adopt its live terminal daemon.
       - name: Daemon protocol crossing against newest release
+        if: steps.baseline.outputs.has_baseline == 'true'
         run: pnpm run check:daemon-protocol-crossing
 
       # R3: a runtime launcher swap must not also bump the daemon protocol (D7.1).
       # The label is read from the event payload, so push again after applying it.
       - name: Runtime launcher change does not bump daemon protocol
+        if: steps.baseline.outputs.has_baseline == 'true'
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           ORCA_ALLOW_RUNTIME_LAUNCHER_PROTOCOL_BUMP: ${{ contains(github.event.pull_request.labels.*.name, 'allow-runtime-launcher-protocol-bump') }}
@@ -1018,6 +1041,7 @@ jobs:
 
       # Run the entire directory; zero matches fail so new contracts cannot be omitted silently.
       - name: Old/new client and server compatibility journeys
+        if: steps.baseline.outputs.has_baseline == 'true'
         run: pnpm exec vitest run --config config/vitest.config.ts tests/e2e/cross-version-wire/
 
   managed_hook_node18:

@@ -34,7 +34,7 @@ export function findLocalSigningIdentity() {
   return null
 }
 
-export function createLocalBuildVersion(baseVersion, timestamp, commit) {
+export function createLocalBuildVersion(baseVersion, timestamp, commit, adehoneVersion) {
   if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(baseVersion)) {
     throw new Error(`Package version is not valid semver: ${baseVersion}`)
   }
@@ -46,17 +46,20 @@ export function createLocalBuildVersion(baseVersion, timestamp, commit) {
     throw new Error('Git commit identity is empty.')
   }
   const suffix = `local.${timestamp}.${sanitizedCommit}`
-  return baseVersion.includes('-') ? `${baseVersion}.${suffix}` : `${baseVersion}-${suffix}`
+  const built = baseVersion.includes('-') ? `${baseVersion}.${suffix}` : `${baseVersion}-${suffix}`
+  const prefix = adehoneVersion ? `${adehoneVersion}-` : ''
+  return `${prefix}${built}`
 }
 
 export function getLocalBuildIdentity() {
   const packageJson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
+  const adehoneVersion = packageJson.adehoneVersion ?? '0.1'
   const commit = execFileSync('git', ['rev-parse', '--short=12', 'HEAD'], {
     encoding: 'utf8'
   }).trim()
   return {
     commit,
-    version: createLocalBuildVersion(packageJson.version, Date.now(), commit)
+    version: createLocalBuildVersion(packageJson.version, Date.now(), commit, adehoneVersion)
   }
 }
 

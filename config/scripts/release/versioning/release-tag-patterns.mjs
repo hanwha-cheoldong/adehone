@@ -2,13 +2,15 @@
 
 const NUMBER = '(?:0|[1-9][0-9]*)'
 const VERSION = `${NUMBER}\\.${NUMBER}\\.${NUMBER}`
+const ADEHONE_PREFIX = `(?:${NUMBER}(?:\\.${NUMBER})*-)?`
 
 /** The stable desktop tag as a bash `[[ =~ ]]` pattern, for workflows that gate inline. */
-export const DESKTOP_STABLE_TAG_SHELL_PATTERN =
-  '^v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$'
+export const DESKTOP_STABLE_TAG_SHELL_PATTERN = `^v${ADEHONE_PREFIX}(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$`
 
 export const DESKTOP_STABLE_TAG = new RegExp(DESKTOP_STABLE_TAG_SHELL_PATTERN)
-export const DESKTOP_RC_TAG = new RegExp(`^v${VERSION}-rc\\.${NUMBER}(?:\\.[0-9A-Za-z]+)?$`)
+export const DESKTOP_RC_TAG = new RegExp(
+  `^v${ADEHONE_PREFIX}${VERSION}-rc\\.${NUMBER}(?:\\.[0-9A-Za-z]+)?$`
+)
 export const MOBILE_TAG = new RegExp(`^mobile(?:-android)?-v${VERSION}$`)
 
 /** The agent state rules bundle, one release per rules engine and channel, updated in place. */

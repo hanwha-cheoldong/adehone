@@ -8354,7 +8354,11 @@
           "workerAutoReleaseDescription": "Fecha o terminal ou chat de um worker 2 minutos após a conclusão, a menos que você escolha Manter aberto. Se ele voltar a trabalhar, os 2 minutos recomeçam quando terminar.",
           "workerAutoReleaseKeywordClose": "fechar",
           "workerAutoReleaseKeywordRelease": "liberar",
-          "8a94078d05": "Orquestração de Agentes"
+          "8a94078d05": "Orquestração de Agentes",
+          "coordinatorApprovalsTitle": "Permitir que coordenadores aprovem solicitações de permissão de workers",
+          "coordinatorApprovalsDescription": "Um agente coordenador pode permitir a solicitação de permissão de um worker, com um motivo. Você ainda verá «Permitir» e «Negar», e a primeira resposta vence. Aplica-se aos workers em execução neste computador.",
+          "coordinatorApprovalsKeywordApprove": "aprovar",
+          "coordinatorApprovalsKeywordPermission": "permissão"
         },
         "RuntimeAccessGrantList": {
           "6f6d5188ed": "Revogar {{value0}}",
@@ -9809,7 +9813,7 @@
           "catalog": "Catálogo",
           "clear": "Limpar filtros",
           "themes": "Temas",
-          "codeLanguages": "Linguagens de programação",
+          "codeLanguages": "Linguagens",
           "translations": "Traduções",
           "icons": "Ícones",
           "commands": "Comandos e painéis",

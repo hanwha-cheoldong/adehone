@@ -8602,7 +8602,11 @@
           "workerAutoReleaseDescription": "Açık tut seçilmediği sürece çalışanın terminalini veya sohbetini tamamlandıktan 2 dakika sonra kapatır. Yeniden çalışmaya başlarsa tamamladığında 2 dakika yeniden başlar.",
           "workerAutoReleaseKeywordClose": "kapat",
           "workerAutoReleaseKeywordRelease": "serbest bırak",
-          "8a94078d05": "Ajan Orkestrasyonu"
+          "8a94078d05": "Ajan Orkestrasyonu",
+          "coordinatorApprovalsTitle": "Koordinatörlerin çalışan izin istemlerini onaylamasına izin ver",
+          "coordinatorApprovalsDescription": "Bir koordinatör aracı, bir çalışanın izin istemine bir gerekçe belirterek izin verebilir. Yine de 'İzin ver' ve 'Reddet' seçeneklerini görürsünüz ve ilk yanıt geçerli olur. Bu bilgisayarda çalıştırılan çalışanlar için geçerlidir.",
+          "coordinatorApprovalsKeywordApprove": "onayla",
+          "coordinatorApprovalsKeywordPermission": "izin"
         },
         "OrchestrationSetupCard": {
           "e7d2a5146c": "Ajanların Adehone üzerinden bağlamı devretmesini ve işi koordine etmesini sağlar.",
@@ -13309,7 +13313,7 @@
           "catalog": "Katalog",
           "clear": "Filtreleri temizle",
           "themes": "Temalar",
-          "codeLanguages": "Programlama dilleri",
+          "codeLanguages": "Diller",
           "translations": "Çeviriler",
           "icons": "Simgeler",
           "commands": "Komutlar ve paneller",

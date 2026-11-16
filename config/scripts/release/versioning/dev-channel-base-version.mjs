@@ -1,4 +1,4 @@
-const SEMVER = /^v?(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/
+const SEMVER = /^v?(?:([0-9]+(?:\.[0-9]+)*)-)?(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/
 
 function parseVersionTriple(value) {
   const match = SEMVER.exec(String(value ?? '').trim())
@@ -6,10 +6,11 @@ function parseVersionTriple(value) {
     return null
   }
   return {
-    major: Number(match[1]),
-    minor: Number(match[2]),
-    patch: Number(match[3]),
-    prerelease: match[4] ?? null
+    adehonePrefix: match[1] ?? null,
+    major: Number(match[2]),
+    minor: Number(match[3]),
+    patch: Number(match[4]),
+    prerelease: match[5] ?? null
   }
 }
 
@@ -51,4 +52,8 @@ export function readPublishedVersionsFromEnv(value = process.env.ORCA_PUBLISHED_
   return String(value ?? '')
     .split(/\s+/)
     .filter(Boolean)
+}
+
+export function readAdehoneVersion(packageJson) {
+  return packageJson?.adehoneVersion ?? '0.1'
 }

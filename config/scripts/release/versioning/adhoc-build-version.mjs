@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { formatReleaseTitleTimestamp } from './release-title-timestamp.mjs'
 import {
+  readAdehoneVersion,
   readPublishedVersionsFromEnv,
   resolveDevChannelBaseVersion
 } from './dev-channel-base-version.mjs'
@@ -11,7 +12,7 @@ import {
 export const ADHOC_LABEL_MAX_LENGTH = 32
 
 // UTC seconds avoid tag collisions between concurrent branch builds; hourly runs serialize and can use minutes.
-export function createAdhocBuildVersion(baseVersion, date) {
+export function createAdhocBuildVersion(baseVersion, date, adehoneVersion) {
   const match = /^(\d+\.\d+\.\d+)(?:-[0-9A-Za-z.-]+)?$/.exec(baseVersion)
   if (!match) {
     throw new Error(`Package version is not valid semver: ${baseVersion}`)
@@ -29,7 +30,8 @@ export function createAdhocBuildVersion(baseVersion, date) {
     pad(date.getUTCSeconds())
   ].join('')
   // Strip RC tail so adhoc sorts below RC/hourly/stable; routine update checks must not offer unreviewed branch builds.
-  return `${match[1]}-adhoc.${stamp}`
+  const prefix = adehoneVersion ? `${adehoneVersion}-` : ''
+  return `${prefix}${match[1]}-adhoc.${stamp}`
 }
 
 // Replace title separators/newlines from dispatch labels to prevent forged fields and broken GITHUB_OUTPUT lines.
@@ -52,8 +54,9 @@ export function normalizeAdhocLabel(label) {
 
 // Release title names the branch where hourly uses a counter, distinguishing simultaneous adhoc builds in the picker.
 export function formatAdhocReleaseName(version, label, commit, date) {
+  const baseLabel = version.replace(/-adhoc\.\d+$/, '')
   return [
-    version.split('-')[0],
+    baseLabel,
     normalizeAdhocLabel(label),
     formatReleaseTitleTimestamp(date),
     commit.slice(0, 7)
@@ -62,11 +65,12 @@ export function formatAdhocReleaseName(version, label, commit, date) {
 
 export function getAdhocBuildIdentity(now = new Date(), label = '', publishedVersions = []) {
   const packageJson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
+  const adehoneVersion = readAdehoneVersion(packageJson)
   const commit = execFileSync('git', ['rev-parse', '--short=12', 'HEAD'], {
     encoding: 'utf8'
   }).trim()
   const base = resolveDevChannelBaseVersion(packageJson.version, publishedVersions)
-  const version = createAdhocBuildVersion(base, now)
+  const version = createAdhocBuildVersion(base, now, adehoneVersion)
   return {
     commit,
     version,

@@ -8379,7 +8379,11 @@
           "workerAutoReleaseDescription": "Ferme le terminal ou le chat d’un worker 2 minutes après sa fin, sauf si vous choisissez Garder ouvert. S’il reprend son travail, le délai de 2 minutes recommence lorsqu’il termine.",
           "workerAutoReleaseKeywordClose": "fermer",
           "workerAutoReleaseKeywordRelease": "libérer",
-          "8a94078d05": "Orchestration d'agents"
+          "8a94078d05": "Orchestration d'agents",
+          "coordinatorApprovalsTitle": "Autoriser les coordinateurs à approuver les demandes d'autorisation des workers",
+          "coordinatorApprovalsDescription": "Un agent coordinateur peut autoriser la demande d'autorisation d'un worker, avec un motif. Vous voyez toujours « Autoriser » et « Refuser », et la première réponse l'emporte. S'applique aux workers exécutés sur cet ordinateur.",
+          "coordinatorApprovalsKeywordApprove": "approuver",
+          "coordinatorApprovalsKeywordPermission": "autorisation"
         },
         "OrchestrationSetupCard": {
           "e7d2a5146c": "Permet aux agents de transmettre le contexte et de coordonner le travail via Adehone.",
@@ -13119,7 +13123,7 @@
           "catalog": "Catalogue",
           "clear": "Effacer les filtres",
           "themes": "Thèmes",
-          "codeLanguages": "Langages de programmation",
+          "codeLanguages": "Langages",
           "translations": "Traductions",
           "icons": "Icônes",
           "commands": "Commandes et panneaux",

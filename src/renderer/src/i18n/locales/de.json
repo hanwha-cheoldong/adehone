@@ -8495,7 +8495,11 @@
           "workerAutoReleaseDescription": "Schließt das Terminal oder den Chat eines Workers 2 Minuten nach Abschluss, sofern du nicht „Offen halten“ wählst. Wenn er erneut arbeitet, beginnen die 2 Minuten nach dem Abschluss von vorn.",
           "workerAutoReleaseKeywordClose": "schließen",
           "workerAutoReleaseKeywordRelease": "freigeben",
-          "8a94078d05": "Agenten-Orchestrierung"
+          "8a94078d05": "Agenten-Orchestrierung",
+          "coordinatorApprovalsTitle": "Koordinatoren das Genehmigen von Berechtigungsanfragen der Worker erlauben",
+          "coordinatorApprovalsDescription": "Ein Koordinator-Agent kann eine Berechtigungsanfrage eines Workers mit Begründung zulassen. Sie sehen weiterhin „Zulassen“ und „Ablehnen“, und die erste Antwort zählt. Gilt für Worker, die auf diesem Computer ausgeführt werden.",
+          "coordinatorApprovalsKeywordApprove": "genehmigen",
+          "coordinatorApprovalsKeywordPermission": "Berechtigung"
         },
         "OrchestrationSetupCard": {
           "e7d2a5146c": "Ermöglicht Agenten, Kontext zu übergeben und die Arbeit über Adehone zu koordinieren.",
@@ -13198,7 +13202,7 @@
           "catalog": "Katalog",
           "clear": "Filter zurücksetzen",
           "themes": "Designs",
-          "codeLanguages": "Programmiersprachen",
+          "codeLanguages": "Sprachen",
           "translations": "Übersetzungen",
           "icons": "Symbole",
           "commands": "Befehle & Panels",
