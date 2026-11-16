@@ -14,8 +14,11 @@ function resolveShortBuildCommit(buildCommit?: string): string {
  * Internal comparisons and updater/daemon protocols continue using raw `app.getVersion()`.
  */
 export function formatAdehoneDisplayVersion(orcaVersion: string, buildCommit?: string): string {
-  const trimmedOrcaVersion = orcaVersion.trim()
-  if (!trimmedOrcaVersion) {
+  let trimmedOrcaVersion = orcaVersion.trim()
+  if (trimmedOrcaVersion.startsWith(`${ADEHONE_VERSION}-`)) {
+    trimmedOrcaVersion = trimmedOrcaVersion.slice(ADEHONE_VERSION.length + 1)
+  }
+  if (!trimmedOrcaVersion || trimmedOrcaVersion === ADEHONE_VERSION) {
     return ADEHONE_VERSION
   }
   const shortCommit = resolveShortBuildCommit(buildCommit)
