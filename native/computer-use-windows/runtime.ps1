@@ -648,11 +648,26 @@ function Test-OrcaSensitiveElement($Element) {
 function Get-OrcaValueText($Element) {
     try {
         if (Test-OrcaSensitiveElement $Element) { return "[redacted]" }
-        $pattern = $Element.GetCurrentPattern([Windows.Automation.ValuePattern]::Pattern)
-        $rawValue = $pattern.Current.Value
-        $text = if ($null -eq $rawValue) { "" } else { [string]$rawValue }
-        if ($text.Length -gt $TextLimit) { return $text.Substring(0, $TextLimit) + "..." }
-        $text
+        try {
+            $pattern = $Element.GetCurrentPattern([Windows.Automation.ValuePattern]::Pattern)
+            $rawValue = $pattern.Current.Value
+            if ($null -ne $rawValue -and [string]$rawValue -ne "") {
+                $text = [string]$rawValue
+                if ($text.Length -gt $TextLimit) { return $text.Substring(0, $TextLimit) + "..." }
+                return $text
+            }
+        } catch {}
+        try {
+            # Document and rich-edit controls expose content through TextPattern instead of ValuePattern.
+            $textPattern = $Element.GetCurrentPattern([Windows.Automation.TextPattern]::Pattern)
+            $rawText = $textPattern.DocumentRange.GetText($TextLimit + 1)
+            if ($null -ne $rawText -and [string]$rawText -ne "") {
+                $text = [string]$rawText
+                if ($text.Length -gt $TextLimit) { return $text.Substring(0, $TextLimit) + "..." }
+                return $text
+            }
+        } catch {}
+        ""
     } catch {
         ""
     }
