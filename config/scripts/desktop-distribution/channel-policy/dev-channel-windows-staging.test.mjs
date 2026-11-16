@@ -33,7 +33,7 @@ describe('Windows dev-channel artifact staging', () => {
     ]) {
       writeFileSync(join(attempt, folder, file), 'artifact')
     }
-    const installer = join(attempt, folder, 'orca-windows-setup.exe')
+    const installer = join(attempt, folder, 'adehone-windows-setup.exe')
     writeFileSync(installer, '')
     expect((await runScript(step.run, { cwd: attempt })).code).toBe(1)
     writeFileSync(installer, 'artifact')
