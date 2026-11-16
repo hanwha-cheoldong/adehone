@@ -8072,7 +8072,11 @@
           "workerAutoReleaseDescription": "Cierra el terminal o chat de un trabajador 2 minutos después de que termine, salvo que elijas Mantener abierto. Si vuelve a trabajar, los 2 minutos empiezan de nuevo cuando termina.",
           "workerAutoReleaseKeywordClose": "cerrar",
           "workerAutoReleaseKeywordRelease": "liberar",
-          "8a94078d05": "Orquestación de agentes"
+          "8a94078d05": "Orquestación de agentes",
+          "coordinatorApprovalsTitle": "Permitir que los coordinadores aprueben las solicitudes de permiso de los trabajadores",
+          "coordinatorApprovalsDescription": "Un agente coordinador puede permitir la solicitud de permiso de un trabajador, indicando un motivo. Seguirá viendo «Permitir» y «Denegar», y prevalecerá la primera respuesta. Se aplica a los trabajadores que se ejecutan en este equipo.",
+          "coordinatorApprovalsKeywordApprove": "aprobar",
+          "coordinatorApprovalsKeywordPermission": "permiso"
         },
         "OrchestrationSetupCard": {
           "e7d2a5146c": "Permite a los agentes transferir contexto y coordinar el trabajo a través de Adehone.",
