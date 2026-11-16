@@ -13,7 +13,7 @@ export type NativeChatProviderSettings = Pick<
 >
 
 export function normalizeAgentDefaultSurface(value: unknown): AgentDefaultSurface {
-  return value === 'chat' ? 'chat' : 'terminal'
+  return value === 'terminal' ? 'terminal' : 'chat'
 }
 
 export function normalizeNativeChatProviderChoices(value: unknown): NativeChatProviderChoices {

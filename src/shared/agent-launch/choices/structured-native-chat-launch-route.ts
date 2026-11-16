@@ -9,6 +9,7 @@ import {
 } from '../../agent-session/agent-session-runtime-capabilities'
 import { STRUCTURED_AGENT_SESSION_REGISTERED_AGENTS_RUNTIME_CAPABILITY } from '../../agent-session/structured-agent-session-surface-capabilities'
 import type { AgentDefaultSurface } from '../../native-chat/native-chat-appearance-settings'
+import { normalizeAgentDefaultSurface } from '../../native-chat/native-chat-providers'
 import type { TuiAgent } from '../catalog/tui-agent'
 import type { WorkspaceLaunchKind } from '../contracts/workspace-launch-kind'
 
@@ -60,7 +61,9 @@ export function nativeChatPreferenceFor(
   agent: string
 ): boolean {
   const override = settings?.nativeChatProviders?.[agent]
-  return typeof override === 'boolean' ? override : settings?.agentDefaultSurface === 'chat'
+  return typeof override === 'boolean'
+    ? override
+    : normalizeAgentDefaultSurface(settings?.agentDefaultSurface) === 'chat'
 }
 
 function clientChoosesStructuredLaunches(capabilities: readonly string[] | undefined): boolean {

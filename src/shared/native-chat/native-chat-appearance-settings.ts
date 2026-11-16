@@ -18,7 +18,7 @@ export type NativeChatAppearanceSettings = {
 export type AgentDefaultSurface = 'chat' | 'terminal'
 
 export type NativeChatGlobalSettings = {
-  /** Unlisted agents follow this default; absent means terminal. */
+  /** Unlisted agents follow this default; absent means chat. */
   agentDefaultSurface?: AgentDefaultSurface
   nativeChatAppearance?: NativeChatAppearanceSettings
   /** Off keeps chats unnamed without running a naming agent. Absent means on. */

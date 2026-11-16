@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { LOCAL_EXECUTION_HOST_ID } from '../../../../../shared/execution-host'
 import { nativeChatPreferenceFor } from '../../../../../shared/agent-launch/choices/structured-native-chat-launch-route'
+import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/native-chat-providers'
 import {
   chatProviderAgents,
   useHostStructuredAgentsVersion
@@ -30,7 +31,7 @@ export function useOnboardingSkillRuntime() {
   const chatRequested = useAppStore((state) =>
     selectedAgent
       ? nativeChatPreferenceFor(state.settings, selectedAgent)
-      : state.settings?.agentDefaultSurface === 'chat'
+      : normalizeAgentDefaultSurface(state.settings?.agentDefaultSurface) === 'chat'
   )
   const hostAgentsVersion = useHostStructuredAgentsVersion()
   const desktopChatRequested = chatRequested && !isWebClientLocation()

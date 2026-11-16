@@ -1,3 +1,4 @@
+import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/native-chat-providers'
 import { useCallback, useEffect, useMemo } from 'react'
 import { Check } from 'lucide-react'
 import type {
@@ -203,7 +204,7 @@ function DefaultAgentAction(): React.JSX.Element {
     settings?.defaultTuiAgent && settings.defaultTuiAgent !== 'blank'
       ? settings.defaultTuiAgent
       : null
-  const agentSurface: AgentSurface = settings?.agentDefaultSurface === 'chat' ? 'chat' : 'terminal'
+  const agentSurface: AgentSurface = normalizeAgentDefaultSurface(settings?.agentDefaultSurface)
   const detectedSet = useMemo(() => new Set(detectedAgentIds ?? []), [detectedAgentIds])
   const handleSelectAgent = useCallback(
     (agent: TuiAgent) => {

@@ -151,7 +151,7 @@ export function buildDefaultSettings(args: {
     terminalLinkClickBehavior: 'actions',
     terminalUrlMiddleClickBehavior: 'open',
     browserExtensionsEnabled: true,
-    agentDefaultSurface: 'terminal',
+    agentDefaultSurface: 'chat',
     nativeChatResumeWorkOnRestart: true,
     nativeChatQueueFollowUps: true,
     nativeChatAutoContinueAfterUsageLimit: false,
