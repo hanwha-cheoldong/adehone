@@ -2,7 +2,7 @@ import { createRemoteRefProbeCache } from '../git/remotes/remote-ref-probe-cache
 import {
   ensureBitbucketDataCenterCredentialsLoaded,
   listConfiguredBitbucketDataCenterBaseUrls
-} from './credential-connection'
+} from './configured-servers'
 
 export type BitbucketDataCenterRepoRef = {
   host: string
