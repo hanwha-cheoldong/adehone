@@ -8,6 +8,7 @@ export const WORKSPACE_ATTACHMENT_NUMBER_SLOTS = [
   ['linkedGitLabMR', 'gitlab', 'mr'],
   ['linkedGitLabIssue', 'gitlab', 'issue'],
   ['linkedBitbucketPR', 'bitbucket', 'pr'],
+  ['linkedBitbucketDataCenterPR', 'bitbucket-datacenter', 'pr'],
   ['linkedAzureDevOpsPR', 'azure-devops', 'pr'],
   ['linkedGiteaPR', 'gitea', 'pr']
 ] as const

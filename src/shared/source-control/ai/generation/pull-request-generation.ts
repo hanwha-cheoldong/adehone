@@ -49,6 +49,7 @@ const PROVIDER_LABELS: Record<HostedReviewProvider, string> = {
   github: 'GitHub',
   gitlab: 'GitLab',
   bitbucket: 'Bitbucket',
+  'bitbucket-datacenter': 'Bitbucket Data Center',
   'azure-devops': 'Azure DevOps',
   gitea: 'Gitea',
   unsupported: 'hosted-review'

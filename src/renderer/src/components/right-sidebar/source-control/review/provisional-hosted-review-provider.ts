@@ -16,6 +16,7 @@ export function resolveProvisionalHostedReviewProvider(input: {
   fallbackGitHubPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   // Infer the remote provider before defaulting to GitHub so loading/failed probes retain provider-specific copy.
@@ -33,6 +34,12 @@ export function resolveProvisionalHostedReviewProvider(input: {
   }
   if (input.linkedGitLabMR != null) {
     return 'gitlab'
+  }
+  if (input.linkedBitbucketDataCenterPR != null) {
+    return 'bitbucket-datacenter'
+  }
+  if (input.linkedBitbucketPR != null) {
+    return 'bitbucket'
   }
   if (input.linkedAzureDevOpsPR != null) {
     return 'azure-devops'

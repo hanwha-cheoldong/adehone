@@ -1,7 +1,7 @@
 import type { HostedReviewInfo } from '../../../../../../shared/source-control/hosted-review/hosted-review-contracts'
 import type { PRInfo } from '../../../../../../shared/github/pull-requests/pull-request-types'
 import type { Worktree } from '../../../../../../shared/worktree/types'
-import { isGitHubPRSuppressed } from '../../../../../../shared/worktree/github-pr-suppression'
+import { isGitHubPRSuppressed } from '../../../../../../shared/worktree/hosted-review/github-pr-suppression'
 import {
   getWorktreeCardPrDisplay,
   isCachedMergedBranchPRCurrentForWorktree
@@ -74,6 +74,8 @@ function getLinkedReviewNumberForProvider(
       return worktree.linkedGitLabMR ?? null
     case 'bitbucket':
       return worktree.linkedBitbucketPR ?? null
+    case 'bitbucket-datacenter':
+      return worktree.linkedBitbucketDataCenterPR ?? null
     case 'azure-devops':
       return worktree.linkedAzureDevOpsPR ?? null
     case 'gitea':

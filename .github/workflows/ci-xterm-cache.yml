@@ -1,7 +1,7 @@
 name: Shared xterm dependency cache
 on:
   push:
-    branches: [main]
+    branches: [develop]
     paths:
       - '.github/workflows/ci-xterm-cache.yml'
       - '.github/actions/prepare-xterm-dependencies/**'
@@ -22,7 +22,7 @@ env:
   ORCA_BACKGROUND_LAUNCH: '1'
 jobs:
   seed:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/develop'
     concurrency:
       group: xterm-cache-seed-${{ github.ref }}
       cancel-in-progress: true

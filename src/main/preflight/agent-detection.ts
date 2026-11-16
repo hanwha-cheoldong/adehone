@@ -9,6 +9,7 @@ import {
 } from '../startup/shell-environment/hydrate-shell-path'
 import { getAzureDevOpsAuthStatus } from '../azure-devops/client'
 import { getBitbucketAuthStatus } from '../bitbucket/client'
+import { getBitbucketDataCenterAuthStatus } from '../bitbucket-datacenter/client'
 import { getGiteaAuthStatus } from '../gitea/client'
 import { _resetKnownHostsCache } from '../gitlab/projects/gitlab-known-host-probe'
 import { mergePersistedWindowsPathAsync } from '../pty/environment/windows-environment-path'
@@ -50,6 +51,12 @@ export type PreflightStatus = {
   // Optional for older git/gh-only clients; GitLab consumers gate on authenticated.
   glab?: { installed: boolean; authenticated: boolean }
   bitbucket?: { configured: boolean; authenticated: boolean; account: string | null }
+  bitbucketDataCenter?: {
+    configured: boolean
+    authenticated: boolean
+    account: string | null
+    serverCount: number
+  }
   azureDevOps?: {
     configured: boolean
     authenticated: boolean
@@ -280,19 +287,22 @@ async function executePreflightCheck(
     detectCommandRuntime('glab', context)
   ])
 
-  const [ghAuthenticated, glabAuthenticated, bitbucket, azureDevOps, gitea] = await Promise.all([
-    ghProbe.installed ? isGhAuthenticated(ghProbe) : Promise.resolve(false),
-    glabProbe.installed ? isGlabAuthenticated(glabProbe) : Promise.resolve(false),
-    getBitbucketAuthStatus(),
-    getAzureDevOpsAuthStatus(),
-    getGiteaAuthStatus()
-  ])
+  const [ghAuthenticated, glabAuthenticated, bitbucket, bitbucketDataCenter, azureDevOps, gitea] =
+    await Promise.all([
+      ghProbe.installed ? isGhAuthenticated(ghProbe) : Promise.resolve(false),
+      glabProbe.installed ? isGlabAuthenticated(glabProbe) : Promise.resolve(false),
+      getBitbucketAuthStatus(),
+      getBitbucketDataCenterAuthStatus(),
+      getAzureDevOpsAuthStatus(),
+      getGiteaAuthStatus()
+    ])
 
   return {
     git: { installed: gitProbe.installed },
     gh: { installed: ghProbe.installed, authenticated: ghAuthenticated },
     glab: { installed: glabProbe.installed, authenticated: glabAuthenticated },
     bitbucket,
+    bitbucketDataCenter,
     azureDevOps,
     gitea
   }

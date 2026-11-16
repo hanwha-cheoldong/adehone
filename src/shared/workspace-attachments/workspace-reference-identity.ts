@@ -135,10 +135,15 @@ function parseReferenceRoute(
   if (
     bitbucket &&
     (url.hostname === 'bitbucket.org' ||
-      /\/projects\/[^/]+\/repos\/[^/]+$/.test(bitbucket[1]) ||
-      providerHint === 'bitbucket')
+      /\/(?:projects|users)\/[^/]+\/repos\/[^/]+$/.test(bitbucket[1]) ||
+      providerHint === 'bitbucket' ||
+      providerHint === 'bitbucket-datacenter')
   ) {
-    return numberedReference(url, 'bitbucket', 'pr', `${bitbucket[1]}/pull-requests`, bitbucket[2])
+    const provider =
+      url.hostname === 'bitbucket.org' || providerHint === 'bitbucket'
+        ? 'bitbucket'
+        : 'bitbucket-datacenter'
+    return numberedReference(url, provider, 'pr', `${bitbucket[1]}/pull-requests`, bitbucket[2])
   }
   const git = /^(\/[^/]+\/[^/]+)\/(pull|pulls|issues)\/(\d+)(?:\/.*)?$/.exec(url.pathname)
   if (git && url.hostname !== 'linear.app' && url.hostname !== 'gitlab.com') {

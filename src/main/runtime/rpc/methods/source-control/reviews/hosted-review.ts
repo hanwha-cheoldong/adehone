@@ -5,7 +5,7 @@ import {
   HostedReviewCreate,
   HostedReviewCreationEligibility,
   HostedReviewForBranch
-} from '../../../../../../shared/rpc-contract/hosted-review-params'
+} from '../../../../../../shared/rpc-contract/source-control/hosted-review-params'
 
 export const HOSTED_REVIEW_METHODS = [
   defineMethod({
@@ -28,6 +28,7 @@ export const HOSTED_REVIEW_METHODS = [
         ...(fallbackGitHubPR !== null ? { fallbackGitHubPR } : {}),
         linkedGitLabMR: params.linkedGitLabMR ?? null,
         linkedBitbucketPR: params.linkedBitbucketPR ?? null,
+        linkedBitbucketDataCenterPR: params.linkedBitbucketDataCenterPR ?? null,
         linkedAzureDevOpsPR: params.linkedAzureDevOpsPR ?? null,
         linkedGiteaPR: params.linkedGiteaPR ?? null
       })
@@ -53,6 +54,7 @@ export const HOSTED_REVIEW_METHODS = [
         ...(fallbackGitHubPR !== null ? { fallbackGitHubPR } : {}),
         linkedGitLabMR: params.linkedGitLabMR ?? null,
         linkedBitbucketPR: params.linkedBitbucketPR ?? null,
+        linkedBitbucketDataCenterPR: params.linkedBitbucketDataCenterPR ?? null,
         linkedAzureDevOpsPR: params.linkedAzureDevOpsPR ?? null,
         linkedGiteaPR: params.linkedGiteaPR ?? null,
         wakeWslDistro: params.wakeWslDistro

@@ -4,6 +4,7 @@ type WorktreeReviewLink = Partial<{
   linkedPR: number
   linkedGitLabMR: number
   linkedBitbucketPR: number
+  linkedBitbucketDataCenterPR: number
   linkedAzureDevOpsPR: number
   linkedGiteaPR: number
 }>
@@ -12,6 +13,7 @@ type HostedReviewLookupLink = Partial<{
   linkedGitHubPR: number
   linkedGitLabMR: number
   linkedBitbucketPR: number
+  linkedBitbucketDataCenterPR: number
   linkedAzureDevOpsPR: number
   linkedGiteaPR: number
 }>
@@ -39,6 +41,11 @@ export function resolveCreatedHostedReviewLink(
       return { worktree: { linkedGiteaPR: number }, lookup: { linkedGiteaPR: number } }
     case 'bitbucket':
       return { worktree: { linkedBitbucketPR: number }, lookup: { linkedBitbucketPR: number } }
+    case 'bitbucket-datacenter':
+      return {
+        worktree: { linkedBitbucketDataCenterPR: number },
+        lookup: { linkedBitbucketDataCenterPR: number }
+      }
     case 'unsupported':
       return { worktree: {}, lookup: {} }
   }

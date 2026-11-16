@@ -12,15 +12,16 @@ export type HostedReviewProvider =
   | 'github'
   | 'gitlab'
   | 'bitbucket'
+  | 'bitbucket-datacenter'
   | 'azure-devops'
   | 'gitea'
   | 'unsupported'
 
 export type HostedReviewState = 'open' | 'closed' | 'merged' | 'draft'
 
-// Bitbucket Cloud has no draft API; offering the toggle would publish live or fail.
+// Bitbucket Cloud and Data Center 8.19 have no draft API; offering the toggle would publish live or fail.
 export function hostedReviewProviderSupportsDraft(provider: HostedReviewProvider): boolean {
-  return provider !== 'bitbucket'
+  return provider !== 'bitbucket' && provider !== 'bitbucket-datacenter'
 }
 
 /** A linked review is identified by a positive integer PR/MR number. */
@@ -67,6 +68,7 @@ export type HostedReviewForBranchArgs = {
   fallbackGitHubPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   // The worktree's checked-out HEAD oid (GitHub merged-at-head visibility).
@@ -256,6 +258,7 @@ export type HostedReviewCreationEligibilityArgs = {
   fallbackGitHubPR?: number | null
   linkedGitLabMR?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   /** The user's Create PR: it may start the repo's stopped WSL distro (E9). */

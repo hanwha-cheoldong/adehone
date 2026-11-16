@@ -1,17 +1,25 @@
-import type { PreflightStatus } from '../../../../../preload/api/preflight-api'
+import type { PreflightStatus } from '../../../../../preload/api/preflight/preflight-api'
 
 export type GhStatus = 'checking' | 'connected' | 'not-installed' | 'not-authenticated'
 export type GlabStatus = GhStatus
 export type BitbucketStatus = 'checking' | 'connected' | 'not-configured' | 'not-authenticated'
 export type AzureDevOpsStatus = 'checking' | 'configured' | 'not-configured' | 'not-authenticated'
 export type GiteaStatus = 'checking' | 'configured' | 'not-configured' | 'not-authenticated'
-export type PreflightRefreshProvider = 'gh' | 'glab' | 'bitbucket' | 'azureDevOps' | 'gitea'
+export type PreflightRefreshProvider =
+  | 'gh'
+  | 'glab'
+  | 'bitbucket'
+  | 'bitbucketDataCenter'
+  | 'azureDevOps'
+  | 'gitea'
 
 export type PreflightIntegrationStatuses = {
   ghStatus: GhStatus
   glabStatus: GlabStatus
   bitbucketStatus: BitbucketStatus
   bitbucketAccount: string | null
+  bitbucketDataCenterStatus: BitbucketStatus
+  bitbucketDataCenterAccount: string | null
   azureDevOpsStatus: AzureDevOpsStatus
   azureDevOpsAccount: string | null
   azureDevOpsBaseUrl: string | null
@@ -100,6 +108,8 @@ export function getPreflightIntegrationStatuses(
       glabStatus: 'checking',
       bitbucketStatus: 'checking',
       bitbucketAccount: null,
+      bitbucketDataCenterStatus: 'checking',
+      bitbucketDataCenterAccount: null,
       azureDevOpsStatus: 'checking',
       azureDevOpsAccount: null,
       azureDevOpsBaseUrl: null,
@@ -110,6 +120,7 @@ export function getPreflightIntegrationStatuses(
   }
 
   const bitbucket = preflightStatus.bitbucket
+  const bitbucketDataCenter = preflightStatus.bitbucketDataCenter
   const azureDevOps = preflightStatus.azureDevOps
   const gitea = preflightStatus.gitea
   return {
@@ -125,6 +136,12 @@ export function getPreflightIntegrationStatuses(
       bitbucketStatusFromPreflight(bitbucket)
     ),
     bitbucketAccount: bitbucket?.account ?? null,
+    bitbucketDataCenterStatus: maybeChecking(
+      'bitbucketDataCenter',
+      refreshingProviders,
+      bitbucketStatusFromPreflight(bitbucketDataCenter)
+    ),
+    bitbucketDataCenterAccount: bitbucketDataCenter?.account ?? null,
     azureDevOpsStatus: maybeChecking(
       'azureDevOps',
       refreshingProviders,

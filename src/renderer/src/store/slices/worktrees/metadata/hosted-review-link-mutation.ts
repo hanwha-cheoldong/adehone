@@ -20,12 +20,12 @@ import {
   HOSTED_REVIEW_LINK_KEYS,
   canonicalHostedReviewBranchIdentity,
   type HostedReviewLinkKey
-} from '../../../../../../shared/worktree/hosted-review-links'
+} from '../../../../../../shared/worktree/hosted-review/hosted-review-links'
 import { deleteDetachedOwners, moveDetachedOwners } from './detached-hosted-review-owners'
 import type {
   HostedReviewClearUpdates,
   HostedReviewContext
-} from '../../../../../../shared/worktree/hosted-review-branch-ownership'
+} from '../../../../../../shared/worktree/hosted-review/hosted-review-branch-ownership'
 
 export const hostedReviewLinkMutationGenerationByWorktreeId = new Map<string, number>()
 export const hostedReviewLinkClearTombstonesByCopy = new Map<
@@ -195,6 +195,7 @@ export function getHostedReviewLinkUpdates(
     linkedPR: worktree.linkedPR ?? null,
     linkedGitLabMR: worktree.linkedGitLabMR ?? null,
     linkedBitbucketPR: worktree.linkedBitbucketPR ?? null,
+    linkedBitbucketDataCenterPR: worktree.linkedBitbucketDataCenterPR ?? null,
     linkedAzureDevOpsPR: worktree.linkedAzureDevOpsPR ?? null,
     linkedGiteaPR: worktree.linkedGiteaPR ?? null,
     pushTarget: worktree.pushTarget

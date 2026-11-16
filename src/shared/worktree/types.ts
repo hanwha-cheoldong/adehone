@@ -1,14 +1,14 @@
 import type { ExecutionHostId } from '../execution-host'
-import type { WorktreeCatalogVersion } from './catalog-version'
+import type { WorktreeCatalogVersion } from './catalog/catalog-version'
 import type { AutomationExecutionTargetType } from '../automations/automation-definition'
 import type { TaskSourceContext } from '../work-items/task-source-context'
 import type { TuiAgent } from '../agent-launch/catalog/tui-agent'
-import type { DiffComment, MobileDiffReviewState } from '../diff-comment-types'
+import type { DiffComment, MobileDiffReviewState } from '../file-review/diff-comment-types'
 import type { EphemeralVmCheckoutMode } from '../orca-yaml-hook-types'
-import type { BuiltInWorktreeVisibilitySourceId } from '../repo-types'
+import type { BuiltInWorktreeVisibilitySourceId } from '../repository/repo-types'
 import type { WorktreeIdentity } from './identity'
-import type { WorktreeScanFailureKind } from '../worktree-scan-failure'
-import type { SmartTier } from '../sidebar-list/sort-stamps'
+import type { WorktreeScanFailureKind } from './catalog/worktree-scan-failure'
+import type { SmartTier } from '../sidebar-list/sorting/sort-stamps'
 
 export type WorkspaceAttachmentOrigin = {
   kind: 'observed'
@@ -21,7 +21,15 @@ export type WorkspaceAttachmentOrigin = {
 }
 
 export type WorkspaceAttachment = {
-  provider: 'github' | 'gitlab' | 'linear' | 'jira' | 'bitbucket' | 'azure-devops' | 'gitea'
+  provider:
+    | 'github'
+    | 'gitlab'
+    | 'linear'
+    | 'jira'
+    | 'bitbucket'
+    | 'bitbucket-datacenter'
+    | 'azure-devops'
+    | 'gitea'
   type: 'issue' | 'pr' | 'mr'
   number: number
   identifier?: string
@@ -124,6 +132,7 @@ export type Worktree = {
   linkedGitLabMR?: number | null
   linkedGitLabIssue?: number | null
   linkedBitbucketPR?: number | null
+  linkedBitbucketDataCenterPR?: number | null
   linkedAzureDevOpsPR?: number | null
   linkedGiteaPR?: number | null
   linkedWorkItem?: WorkspaceLinkedItem | null

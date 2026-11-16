@@ -6,6 +6,7 @@
 
 > [!IMPORTANT]
 > Run `pnpm check:changed` after your last edit/rebase, right before every push. Never `--no-verify`.
+> On the `merge` branch, run `pnpm check:dev` (`--base=origin/merge`) right before push instead of `pnpm check:local` (`--base=HEAD`). During iteration, prefer scoped checks (`pnpm tc`, `pnpm check:code-quality:changed origin/merge`, relevant ratchets, and targeted `pnpm test <path> --maxWorkers=2`) to avoid slow `vitest related` fan-out.
 
 If selection fans out excessively, use scoped checks and report limits. Use the PR base (default `origin/main`; `ORCA_CODE_QUALITY_BASE=<ref>` for stacks). `--base=HEAD` and dirty-only checks provide incremental evidence only.
 
@@ -16,8 +17,8 @@ Use `gh run watch <run-id> --compact --exit-status` or `gh pr checks --watch` to
 # Repo Rules
 
 - Ensure main is always releasable
-- Never break the CI. If it's broken borken, merge fixes.
-- **Do not add tests by default.** Low-value tests cost more than they catch. Add one only when it fails if your change is reverted, hardcodes its expected values (never computed by production code, locale files, or mocks), and runs at the single layer that owns the behavior. Never test copy/translations, CSS classes, constants, third-party libraries, private state, timing, or work counts. If you touch a test like that, delete it instead of updating it. See [anti-patterns](./docs/agents-md-refs/test-antipatterns.md).
+- Never break the CI. If it's broken, merge fixes.
+- **Do not add tests by default.** Low-value tests cost more than they catch. Add one only when it fails if your change is reverted, hardcodes its expected values (never computed by production code, locale files, or mocks), and runs at the single layer that owns the behavior. Never test copy/translations, CSS classes, constants, third-party libraries, private state, timing, or work counts. If you touch a test like that, delete it instead of updating it. If not convinced see [anti-patterns](./docs/agents-md-refs/test-antipatterns.md).
 
 # Design System
 
