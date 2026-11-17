@@ -11,6 +11,7 @@ import {
   discardChanges,
   bulkDiscardChanges
 } from '../../../git/source-control/mutations/discard-changes'
+import { appendPathToGitignore } from '../../../git/source-control/ignores/add-to-gitignore'
 import { resolveRegisteredWorktreePath } from '../../worktrees/removal/registered-worktree-roots-cache'
 import {
   getLocalGitOptionsForRegisteredWorktree,
@@ -73,6 +74,24 @@ export function registerFilesystemGitIndexHandlers(context: FilesystemHandlerCon
         ...gitOptions,
         admissionTier: 'interactive'
       })
+    }
+  )
+
+  ipcMain.handle(
+    'git:addToGitignore',
+    async (
+      _event,
+      args: {
+        worktreePath: string
+        relativePath: string
+        isDirectory: boolean
+        connectionId?: string
+      }
+    ): Promise<boolean> => {
+      requireReachableGitRoute(getConnectionExecutionHostId(args.connectionId))
+      const worktreePath = await resolveRegisteredWorktreePath(args.worktreePath, store)
+      const relativePath = validateGitRelativeFilePath(worktreePath, args.relativePath)
+      return appendPathToGitignore(worktreePath, relativePath, Boolean(args.isDirectory))
     }
   )
 

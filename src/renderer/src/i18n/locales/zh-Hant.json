@@ -13545,7 +13545,8 @@
             "3596b9668d": "複製路徑"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "檢視"
+            "a1f2c8d901": "檢視",
+            "addToGitignore": "新增到 .gitignore"
           },
           "SourceControl": {
             "1406954883": "清除所有備註...",

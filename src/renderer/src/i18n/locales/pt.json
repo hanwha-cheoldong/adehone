@@ -11567,7 +11567,8 @@
             "741ff8a0d2": "Fazer Push e Criar {{value0}}"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "Visualizar"
+            "a1f2c8d901": "Visualizar",
+            "addToGitignore": "Adicionar ao .gitignore"
           },
           "fileExplorerOperationOwner": {
             "unresolved": "Não foi possível determinar qual host possui este espaço de trabalho. Verifique a conexão e tente novamente."

@@ -13724,7 +13724,8 @@
             "3596b9668d": "Pfad kopieren"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "Anzeigen"
+            "a1f2c8d901": "Anzeigen",
+            "addToGitignore": "Zu .gitignore hinzufügen"
           },
           "SourceControl": {
             "1406954883": "Alle Notizen löschen…",

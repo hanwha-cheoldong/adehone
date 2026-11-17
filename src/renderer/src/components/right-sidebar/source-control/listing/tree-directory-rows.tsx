@@ -1,6 +1,12 @@
 import React from 'react'
-import { ChevronDown, Minus, Plus, Trash, Undo2 } from 'lucide-react'
+import { Ban, ChevronDown, Minus, Plus, Trash, Undo2 } from 'lucide-react'
 import { FolderIcon } from '@/components/FileTypeIcon'
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger
+} from '@/components/ui/context-menu'
 import { cn } from '@/lib/class-names'
 import { useTranslate } from '@/i18n/use-translate'
 import type { DiscardAllArea } from '../../../../../../shared/source-control/listing/source-control-discard-all-sequence'
@@ -64,7 +70,8 @@ export function SourceControlTreeDirectoryRow({
   onToggle,
   onRequestDiscardPaths,
   onStagePaths,
-  onUnstagePaths
+  onUnstagePaths,
+  onAddToGitignore
 }: {
   node: SourceControlTreeDirectoryNode
   actionPaths: SourceControlDirectoryActionPaths
@@ -75,6 +82,7 @@ export function SourceControlTreeDirectoryRow({
   onRequestDiscardPaths: (area: DiscardAllArea, paths: readonly string[]) => void
   onStagePaths: (paths: readonly string[]) => Promise<void>
   onUnstagePaths: (paths: readonly string[]) => Promise<void>
+  onAddToGitignore?: (relativePath: string) => Promise<void>
 }): React.JSX.Element {
   const t = useTranslate()
   // Filtered descendants represent only a subset; avoid promising whole-folder actions.
@@ -82,7 +90,7 @@ export function SourceControlTreeDirectoryRow({
   const canUnstage = !hideBulkActions && actionPaths.unstagePaths.length > 0
   const canDiscard = !hideBulkActions && actionPaths.discardPaths.length > 0
 
-  return (
+  const header = (
     <SourceControlTreeDirectoryHeader node={node} isCollapsed={isCollapsed} onToggle={onToggle}>
       {(canDiscard || canStage || canUnstage) && (
         <div className={SOURCE_CONTROL_ROW_ACTION_OVERLAY_CLASS}>
@@ -129,6 +137,25 @@ export function SourceControlTreeDirectoryRow({
         </div>
       )}
     </SourceControlTreeDirectoryHeader>
+  )
+
+  if (!onAddToGitignore) {
+    return header
+  }
+
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger asChild>{header}</ContextMenuTrigger>
+      <ContextMenuContent className="w-52">
+        <ContextMenuItem onSelect={() => void onAddToGitignore(node.path)}>
+          <Ban className="size-3.5" />
+          {t(
+            'auto.components.right.sidebar.SourceControlEntryContextMenu.addToGitignore',
+            'Add to .gitignore'
+          )}
+        </ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
   )
 }
 

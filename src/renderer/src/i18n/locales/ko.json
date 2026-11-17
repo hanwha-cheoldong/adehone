@@ -13114,7 +13114,8 @@
             "3596b9668d": "경로 복사"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "보기"
+            "a1f2c8d901": "보기",
+            "addToGitignore": ".gitignore에 추가"
           },
           "SourceControl": {
             "1406954883": "모든 메모 지우기...",

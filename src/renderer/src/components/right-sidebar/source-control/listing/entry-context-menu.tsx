@@ -1,6 +1,6 @@
 import { useSourceControlScope, useSourceControlState } from '../panel/worktree-scope'
 import React, { useCallback } from 'react'
-import { Copy, ExternalLink, Eye, FolderOpen } from 'lucide-react'
+import { Ban, Copy, ExternalLink, Eye, FolderOpen } from 'lucide-react'
 import {
   ContextMenu,
   ContextMenuContent,
@@ -32,6 +32,7 @@ type SourceControlEntryContextMenuProps = {
   onView?: () => void
   conflictResolutions?: readonly ConflictResolution[]
   onResolveConflict?: (resolution: ConflictResolution) => void
+  onAddToGitignore?: () => void
   onRevealInExplorer: (worktreeId: string, absolutePath: string) => void
   onOpenChange?: (open: boolean) => void
   children: React.ReactNode
@@ -46,6 +47,7 @@ export function SourceControlEntryContextMenu({
   onView,
   conflictResolutions,
   onResolveConflict,
+  onAddToGitignore,
   onRevealInExplorer,
   onOpenChange,
   children
@@ -142,6 +144,18 @@ export function SourceControlEntryContextMenu({
           <FolderOpen className="size-3.5" />
           {t('auto.components.right.sidebar.SourceControl.cc05b2d088', 'Open in File Explorer')}
         </ContextMenuItem>
+        {onAddToGitignore ? (
+          <>
+            <ContextMenuSeparator />
+            <ContextMenuItem onSelect={onAddToGitignore} disabled={!relativePath}>
+              <Ban className="size-3.5" />
+              {t(
+                'auto.components.right.sidebar.SourceControlEntryContextMenu.addToGitignore',
+                'Add to .gitignore'
+              )}
+            </ContextMenuItem>
+          </>
+        ) : null}
       </ContextMenuContent>
     </ContextMenu>
   )

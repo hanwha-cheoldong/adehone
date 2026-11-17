@@ -572,6 +572,7 @@ import {
   SkillsGetInstallProgressParams
 } from './skills/skills-params'
 import {
+  GitAddToGitignore,
   GitBlame,
   GitBranchCompare,
   GitBranchDiff,
@@ -1154,6 +1155,7 @@ export const RPC_PARAMS_BY_METHOD = {
   'folderWorkspace.update': FolderWorkspaceUpdate,
   'git.abortMerge': WorktreeSelectorOfGitParams,
   'git.abortRebase': WorktreeSelectorOfGitParams,
+  'git.addToGitignore': GitAddToGitignore,
   'git.atRiskLocalFiles': WorktreeSelectorOfGitParams,
   'git.blame': GitBlame,
   'git.branchCompare': GitBranchCompare,

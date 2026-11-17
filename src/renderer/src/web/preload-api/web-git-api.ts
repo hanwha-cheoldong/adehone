@@ -44,6 +44,23 @@ export async function callAbortableRuntimeStatus<TResult>(
   }
 }
 
+async function callWorktreeGit<TResult>(
+  method: string,
+  worktreePath: string,
+  params?: Record<string, unknown>,
+  timeoutMs?: number
+): Promise<TResult> {
+  const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
+  return callRuntimeResult<TResult>(
+    method,
+    {
+      worktree: toRuntimeWorktreeSelector(worktree.id),
+      ...params
+    },
+    timeoutMs
+  )
+}
+
 export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
   return {
     status: async ({
@@ -74,49 +91,24 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
       webGitStatusAbortControllers.get(requestToken)?.abort()
     },
     setStatusUpstreamRefWatch: async () => {},
-    submoduleStatus: async ({ worktreePath, submodulePath, area }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.submoduleStatus', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        submodulePath,
-        area
-      })
-    },
-    checkIgnored: async ({ worktreePath, paths }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.checkIgnored', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        paths
-      })
-    },
+    submoduleStatus: async ({ worktreePath, submodulePath, area }) =>
+      callWorktreeGit('git.submoduleStatus', worktreePath, { submodulePath, area }),
+    checkIgnored: async ({ worktreePath, paths }) =>
+      callWorktreeGit('git.checkIgnored', worktreePath, { paths }),
     ...createWebGitAtRiskLocalFilesApi(),
     // Why: the "add huge folder to .gitignore" flow is desktop-only; the web runtime makes no offer, so return no candidates.
     findHugeFoldersToIgnore: async () => [],
     appendGitignore: async () => false,
     ...createGitHistoryApi(),
-    mutationInFlight: async ({ worktreePath }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.mutationInFlight', {
-        worktree: toRuntimeWorktreeSelector(worktree.id)
-      })
-    },
-    conflictOperation: async ({ worktreePath }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.conflictOperation', {
-        worktree: toRuntimeWorktreeSelector(worktree.id)
-      })
-    },
+    mutationInFlight: async ({ worktreePath }) =>
+      callWorktreeGit('git.mutationInFlight', worktreePath),
+    conflictOperation: async ({ worktreePath }) =>
+      callWorktreeGit('git.conflictOperation', worktreePath),
     abortMerge: async ({ worktreePath }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.abortMerge', {
-        worktree: toRuntimeWorktreeSelector(worktree.id)
-      })
+      await callWorktreeGit('git.abortMerge', worktreePath)
     },
     abortRebase: async ({ worktreePath }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.abortRebase', {
-        worktree: toRuntimeWorktreeSelector(worktree.id)
-      })
+      await callWorktreeGit('git.abortRebase', worktreePath)
     },
     diff: async ({ worktreePath, filePath, staged, compareAgainstHead, oldPath }) => {
       const file = await resolveRuntimeFilePath(filePath, worktreePath)
@@ -128,74 +120,31 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
         ...(oldPath ? { oldPath } : {})
       })
     },
-    branchCompare: async ({ worktreePath, baseRef, admissionTier }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.branchCompare', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
+    branchCompare: async ({ worktreePath, baseRef, admissionTier }) =>
+      callWorktreeGit('git.branchCompare', worktreePath, {
         baseRef,
         ...(admissionTier ? { admissionTier } : {})
-      })
-    },
-    commitCompare: async ({ worktreePath, commitId }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.commitCompare', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        commitId
-      })
-    },
-    upstreamStatus: async ({ worktreePath, pushTarget }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.upstreamStatus', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        pushTarget
-      })
-    },
+      }),
+    commitCompare: async ({ worktreePath, commitId }) =>
+      callWorktreeGit('git.commitCompare', worktreePath, { commitId }),
+    upstreamStatus: async ({ worktreePath, pushTarget }) =>
+      callWorktreeGit('git.upstreamStatus', worktreePath, { pushTarget }),
     fetch: async ({ worktreePath, pushTarget }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.fetch', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        pushTarget
-      })
+      await callWorktreeGit('git.fetch', worktreePath, { pushTarget })
     },
-    syncFork: async ({ worktreePath, expectedUpstream }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult(
-        'git.forkSync',
-        {
-          worktree: toRuntimeWorktreeSelector(worktree.id),
-          expectedUpstream
-        },
-        60_000
-      )
-    },
+    syncFork: async ({ worktreePath, expectedUpstream }) =>
+      callWorktreeGit('git.forkSync', worktreePath, { expectedUpstream }, 60_000),
     push: async ({ worktreePath, publish, pushTarget }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.push', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        publish,
-        pushTarget
-      })
+      await callWorktreeGit('git.push', worktreePath, { publish, pushTarget })
     },
     pull: async ({ worktreePath, pushTarget }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.pull', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        pushTarget
-      })
+      await callWorktreeGit('git.pull', worktreePath, { pushTarget })
     },
     fastForward: async ({ worktreePath, pushTarget }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.fastForward', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        pushTarget
-      })
+      await callWorktreeGit('git.fastForward', worktreePath, { pushTarget })
     },
     rebaseFromBase: async ({ worktreePath, baseRef }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      await callRuntimeResult('git.rebaseFromBase', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        baseRef
-      })
+      await callWorktreeGit('git.rebaseFromBase', worktreePath, { baseRef })
     },
     branchDiff: async ({ worktreePath, filePath, compare, oldPath }) => {
       const file = await resolveRuntimeFilePath(filePath, worktreePath)
@@ -216,20 +165,10 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
         oldPath
       })
     },
-    commit: async ({ worktreePath, message }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.commit', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        message
-      })
-    },
+    commit: async ({ worktreePath, message }) =>
+      callWorktreeGit('git.commit', worktreePath, { message }),
     ...createGitCommitActionsApi(),
-    completeMerge: async ({ worktreePath }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.completeMerge', {
-        worktree: toRuntimeWorktreeSelector(worktree.id)
-      })
-    },
+    completeMerge: async ({ worktreePath }) => callWorktreeGit('git.completeMerge', worktreePath),
     generateCommitMessage: async () => ({
       success: false,
       error: translate(
@@ -256,6 +195,13 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
     stage: async ({ worktreePath, filePath }) => mutateGitPath('git.stage', worktreePath, filePath),
     resolveConflict: async ({ worktreePath, filePath, resolution }) =>
       resolveGitConflict(worktreePath, filePath, resolution),
+    addToGitignore: async ({ worktreePath, relativePath, isDirectory }) => {
+      const result = await callWorktreeGit<{ added: boolean }>('git.addToGitignore', worktreePath, {
+        relativePath,
+        isDirectory
+      })
+      return result.added
+    },
     bulkStage: async ({ worktreePath, filePaths, scope }) => {
       if (!scope) {
         return mutateGitPaths('git.bulkStage', worktreePath, filePaths)
@@ -280,21 +226,9 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
         await mutateGitPath('git.discard', worktreePath, filePath)
       }
     },
-    remoteFileUrl: async ({ worktreePath, relativePath, line, endLine }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.remoteFileUrl', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        relativePath,
-        line,
-        endLine
-      })
-    },
-    remoteCommitUrl: async ({ worktreePath, sha }) => {
-      const worktree = await resolveRuntimeWorktreeByPath(worktreePath)
-      return callRuntimeResult('git.remoteCommitUrl', {
-        worktree: toRuntimeWorktreeSelector(worktree.id),
-        sha
-      })
-    }
+    remoteFileUrl: async ({ worktreePath, relativePath, line, endLine }) =>
+      callWorktreeGit('git.remoteFileUrl', worktreePath, { relativePath, line, endLine }),
+    remoteCommitUrl: async ({ worktreePath, sha }) =>
+      callWorktreeGit('git.remoteCommitUrl', worktreePath, { sha })
   }
 }

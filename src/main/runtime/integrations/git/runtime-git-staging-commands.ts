@@ -34,6 +34,21 @@ export class RuntimeGitStagingCommands {
     return { ok: true }
   }
 
+  async addRuntimeGitPathToGitignore(
+    worktreeSelector: string,
+    relativePath: string,
+    isDirectory: boolean
+  ): Promise<{ added: boolean }> {
+    const target = await this.host.resolveRuntimeGitTarget(worktreeSelector)
+    const normalized = normalizeRuntimeGitRelativePath(relativePath)
+    const added = await requireRuntimeGitProvider(target).addToGitignore(
+      target.worktree.path,
+      normalized,
+      isDirectory
+    )
+    return { added }
+  }
+
   async unstageRuntimeGitPath(worktreeSelector: string, filePath: string): Promise<{ ok: true }> {
     const target = await this.host.resolveRuntimeGitTarget(worktreeSelector)
     const relativePath = normalizeRuntimeGitRelativePath(filePath)

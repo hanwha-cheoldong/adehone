@@ -105,6 +105,7 @@ export const EXECUTION_HOST_METHODS = [
   'git.push',
   'git.rebaseFromBase',
   'git.remoteCommitUrl',
+  'git.addToGitignore',
   'git.resolveConflict',
   'git.stage',
   'git.status',

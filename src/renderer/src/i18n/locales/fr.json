@@ -13645,7 +13645,8 @@
             "3596b9668d": "Copier le chemin"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "Affichage"
+            "a1f2c8d901": "Affichage",
+            "addToGitignore": "Ajouter à .gitignore"
           },
           "SourceControl": {
             "1406954883": "Effacer toutes les notes...",

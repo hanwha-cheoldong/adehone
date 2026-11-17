@@ -13847,7 +13847,8 @@
             "3596b9668d": "パスのコピー"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "表示"
+            "a1f2c8d901": "表示",
+            "addToGitignore": ".gitignore に追加"
           },
           "SourceControl": {
             "1406954883": "すべてのメモをクリアします…",

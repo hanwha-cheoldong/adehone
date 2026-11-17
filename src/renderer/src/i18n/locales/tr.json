@@ -13871,7 +13871,8 @@
             "3596b9668d": "Yolu Kopyala"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "Görüntüle"
+            "a1f2c8d901": "Görüntüle",
+            "addToGitignore": ".gitignore'a ekle"
           },
           "SourceControl": {
             "1406954883": "Tüm notları temizle...",

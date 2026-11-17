@@ -14081,7 +14081,8 @@
             "3596b9668d": "Копировать путь"
           },
           "SourceControlEntryContextMenu": {
-            "a1f2c8d901": "Просмотреть"
+            "a1f2c8d901": "Просмотреть",
+            "addToGitignore": "Добавить в .gitignore"
           },
           "SourceControl": {
             "1406954883": "Удалить все заметки…",

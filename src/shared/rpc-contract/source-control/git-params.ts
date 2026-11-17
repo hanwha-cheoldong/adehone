@@ -52,6 +52,14 @@ export const GitResolveConflict = GitFilePath.extend({
   resolution: z.enum(CONFLICT_RESOLUTIONS)
 })
 
+export const GitAddToGitignore = WorktreeSelector.extend({
+  relativePath: z
+    .unknown()
+    .transform((v) => (typeof v === 'string' ? v : ''))
+    .pipe(z.string().min(1, 'Missing path')),
+  isDirectory: z.boolean()
+})
+
 export const GitDiff = GitFilePath.extend({
   staged: z.boolean(),
   compareAgainstHead: z.boolean().optional(),
