@@ -1,14 +1,15 @@
 /** Share settings defaults and per-launch feasibility between renderer tab launches and orchestration workers to prevent drift. */
 
 import { isAgentSessionHandleProvider } from '../../agent-session/lifecycle/provider-handles/agent-session-provider-handle'
-import { parseExecutionHostId } from '../../execution-host'
+import { parseExecutionHostId } from '../../execution-host/execution-host'
 import type { ProjectExecutionRuntimeResolution } from '../../execution-host/project-execution-runtime'
 import {
   STRUCTURED_AGENT_SESSION_CLIENT_LAUNCH_MODE_CAPABILITY,
   STRUCTURED_AGENT_SESSION_RUNTIME_CAPABILITY
-} from '../../agent-session/agent-session-runtime-capabilities'
-import { STRUCTURED_AGENT_SESSION_REGISTERED_AGENTS_RUNTIME_CAPABILITY } from '../../agent-session/structured-agent-session-surface-capabilities'
-import type { AgentDefaultSurface } from '../../native-chat/native-chat-appearance-settings'
+} from '../../agent-session/capabilities/agent-session-runtime-capabilities'
+import { STRUCTURED_AGENT_SESSION_REGISTERED_AGENTS_RUNTIME_CAPABILITY } from '../../agent-session/capabilities/structured-agent-session-surface-capabilities'
+import type { AgentDefaultSurface } from '../../native-chat/settings/native-chat-appearance-settings'
+import { normalizeAgentDefaultSurface } from '../../native-chat/settings/native-chat-providers'
 import type { TuiAgent } from '../catalog/tui-agent'
 import type { WorkspaceLaunchKind } from '../contracts/workspace-launch-kind'
 
@@ -60,7 +61,9 @@ export function nativeChatPreferenceFor(
   agent: string
 ): boolean {
   const override = settings?.nativeChatProviders?.[agent]
-  return typeof override === 'boolean' ? override : settings?.agentDefaultSurface === 'chat'
+  return typeof override === 'boolean'
+    ? override
+    : normalizeAgentDefaultSurface(settings?.agentDefaultSurface) === 'chat'
 }
 
 function clientChoosesStructuredLaunches(capabilities: readonly string[] | undefined): boolean {

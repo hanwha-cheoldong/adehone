@@ -6,12 +6,12 @@
     },
     "claude": {
       "switchSessions": {
-        "body_one": "{{count}} Claude session is still running on {{previous}}. Restarting continues the conversation on {{next}}. Busy sessions wait for idle before restarting.",
-        "body_other": "{{count}} Claude sessions are still running on {{previous}}. Restarting continues each conversation on {{next}}. Busy sessions wait for idle before restarting.",
+        "body_one": "{{count}} Claude session is still running on {{previous}}. Restarting continues the conversation on {{next}}. Busy sessions stop their current work and restart now.",
+        "body_other": "{{count}} Claude sessions are still running on {{previous}}. Restarting continues each conversation on {{next}}. Busy sessions stop their current work and restart now.",
         "restartCount_one": "Restart {{count}} session",
         "restartCount_other": "Restart {{count}} sessions",
-        "reviewBody_one": "{{count}} other Claude session wasn't moved to {{next}}.",
-        "reviewBody_other": "{{count}} other Claude sessions weren't moved to {{next}}."
+        "reviewBody_one": "{{count}} Claude session wasn't moved to {{next}}.",
+        "reviewBody_other": "{{count}} Claude sessions weren't moved to {{next}}."
       },
       "systemDefaultIsSaved": "System default is signed in as {{value0}}, which is also a saved account. An earlier Adehone version may have copied that login there. If it is not your own login, select System default and run claude /login."
     },
@@ -1384,7 +1384,7 @@
           "shownPluginCount_other": "{{count}} matching plugins shown, including this one"
         },
         "PluginConsentDialog": {
-          "fullAccessWarning": "Full access: runs as a normal program and can read your files, use the network, run other programs and control Adehone, including your terminals and agents.",
+          "fullAccessWarning": "Full access: runs as a normal program and can read your files, use your saved logins and SSH keys, use the network, run other programs and control Adehone, including your terminals and agents.",
           "uiWarning": "Runs the publisher's code inside Adehone to draw its view. Adehone shows what it can access and asks before enabling it."
         },
         "PluginConsentProvenance": {
@@ -1453,6 +1453,7 @@
         },
         "PluginUpdateAllDialog": {
           "needsOrca": "Needs Adehone {{value0}} or later",
+          "newHooks": "Can change or stop what Adehone and your agents do",
           "replacesAction": "{{value0}} runs instead of Adehone’s {{value1}}"
         },
         "PluginsSettingsSection": {
@@ -3725,6 +3726,10 @@
         "orcaStopUnnamedServer": "the remote server",
         "orcaStopUpdate": "Adehone on {{machine}} restarted for an update while this response was in progress.",
         "plan": "Plan",
+        "restartContinueRefused": "Orca couldn't continue this chat after the restart. Send a message to continue it.",
+        "restartContinueUnconfirmed": "Orca asked this agent to continue after the restart but couldn't confirm it did. Check its latest reply before sending another message.",
+        "restartContinued": "Orca asked this agent to continue after a restart. Your own prompt was not re-sent.",
+        "restartNotConnected": "Orca couldn't reconnect this chat after the restart, so it didn't ask the agent to continue.",
         "stoppedBeforeStart": "Stopped manually"
       },
       "openedPullRequests": {
@@ -4031,6 +4036,12 @@
       },
       "workspaceCleanup": {
         "activity": {
+          "chatsDeletedCount_one": "1 chat deleted",
+          "chatsDeletedCount_other": "{{count}} chats deleted",
+          "chatsDeleted_one": "Deleted 1 chat from a deleted workspace",
+          "chatsDeleted_other": "Deleted {{count}} chats from deleted workspaces",
+          "chatsFailed_one": "1 chat couldn't be deleted",
+          "chatsFailed_other": "{{count}} chats couldn't be deleted",
           "notListed_one": "1 more kept workspace is not listed.",
           "notListed_other": "{{count}} more kept workspaces are not listed."
         },
@@ -4055,6 +4066,8 @@
           "matchesCount_other": "Matches {{count}} workspaces now"
         },
         "status": {
+          "lastRunChats_one": "Last run {{when}} deleted 1 chat from a deleted workspace.",
+          "lastRunChats_other": "Last run {{when}} deleted {{count}} chats from deleted workspaces.",
           "lastRunFreed_one": "Last run {{when}} removed 1 workspace and freed {{size}}.",
           "lastRunFreed_other": "Last run {{when}} removed {{count}} workspaces and freed {{size}}.",
           "lastRunRemoved_one": "Last run {{when}} removed 1 workspace.",
@@ -4107,6 +4120,12 @@
         }
       },
       "delete": {
+        "ignoredFiles": {
+          "lost_one": "{{count}} ignored file will be lost",
+          "lost_other": "{{count}} ignored files will be lost",
+          "morePaths_one": "and {{count}} more ignored path",
+          "morePaths_other": "and {{count}} more ignored paths"
+        },
         "unsavedEdits": {
           "blocked_one": "Save or close {{count}} unsaved file in {{name}} first",
           "blocked_other": "Save or close {{count}} unsaved files in {{name}} first",
@@ -4282,6 +4301,10 @@
       "linkedCount_one": "{{count}} workspace linked to {{key}}",
       "linkedCount_other": "{{count}} workspaces linked to {{key}}"
     }
+  },
+  "languages": {
+    "pluginsDisabledCount_one": "{{count}} community translation needs plugins turned on.",
+    "pluginsDisabledCount_other": "{{count}} community translations need plugins turned on."
   },
   "localBuild": {
     "chooseTitle": "Choose a Local Adehone Build",
@@ -4684,6 +4707,18 @@
         "closeLocalSessions": "Save your work, close all local terminal sessions, then exit Adehone.",
         "launchAdministrator": "In the Windows Start menu, right-click Adehone and choose Run as administrator. Approve the Windows prompt using your usual account.",
         "launchStandard": "Open Adehone normally from the Windows Start menu."
+      }
+    },
+    "uninstall": {
+      "hookTargets": {
+        "agents_one": "1 agent",
+        "agents_other": "{{count}} agents",
+        "sshHosts_one": "1 SSH host",
+        "sshHosts_other": "{{count}} SSH hosts"
+      },
+      "summary": {
+        "problems_one": "1 item needs you before you delete the app.",
+        "problems_other": "{{count}} items need you before you delete the app."
       }
     },
     "updateDelay": {
@@ -5089,6 +5124,7 @@
   },
   "worktree": {
     "setupTrust": {
+      "alwaysTrustScope": "Always trust runs future <code>adehone.yaml</code> changes in <repo/> without asking.",
       "branchDiffersBody": "The workspace was created, but its setup didn't run: its branch's <code>adehone.yaml</code> differs from what you approved. Run these for this workspace only if you trust <repo/>.",
       "changedAgain": "Setup didn't run: this workspace's adehone.yaml changed again since you reviewed it.",
       "createdBranchSkipped": "Setup didn't run: this workspace's branch has different adehone.yaml setup commands than the ones you approved.",

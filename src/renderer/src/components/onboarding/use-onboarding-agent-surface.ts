@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type Dispatch, type SetStateAction } from 'react'
-import { LOCAL_EXECUTION_HOST_ID } from '../../../../shared/execution-host'
-import type { GlobalSettings } from '../../../../shared/global-settings-types'
+import { LOCAL_EXECUTION_HOST_ID } from '../../../../shared/execution-host/execution-host'
+import type { GlobalSettings } from '../../../../shared/settings/global-settings-types'
+import { normalizeAgentDefaultSurface } from '../../../../shared/native-chat/settings/native-chat-providers'
 import type { TuiAgent } from '../../../../shared/agent-launch/catalog/tui-agent'
 import { nativeChatPreferenceFor } from '../../../../shared/agent-launch/choices/structured-native-chat-launch-route'
 import {
@@ -79,7 +80,7 @@ export function useOnboardingAgentSurface({
   // Unchosen, the page reflects the saved Chat UI setting, including once settings hydrate.
   const [choice, setAgentSurface] = useState<AgentSurface | null>(null)
   const agentSurface: AgentSurface =
-    choice ?? (settings?.agentDefaultSurface === 'chat' ? 'chat' : 'terminal')
+    choice ?? normalizeAgentDefaultSurface(settings?.agentDefaultSurface)
 
   const { chatAgents, chatDetected, refreshDetectedAgents } = useChatAgentDetection()
   const chatSettings = {
