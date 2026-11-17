@@ -38,6 +38,7 @@ export type WorktreeOperationRecord = {
   createPrIntentRun: CreatePrIntentRunToken | null
   createPrIntentNotice: CreatePrIntentNotice | null
   createPrIntentTarget: CreatePrIntentCurrentTarget
+  observedBranchName: string | null
   observedConflictOperation: GitConflictOperation
 }
 
@@ -78,6 +79,7 @@ function createRecord(draftKey: string): WorktreeOperationRecord {
     createPrIntentRun: null,
     createPrIntentNotice: null,
     createPrIntentTarget: {},
+    observedBranchName: null,
     observedConflictOperation: 'unknown'
   }
 }
@@ -186,10 +188,14 @@ export function writeWorktreeCommitDraft(
   }
 }
 
-/** A landed switch clears the last action error, which belonged to the previous branch. */
+/** A landed switch clears errors that belonged to the previous branch. */
 export function clearLandedBranchSwitchError(store: WorktreeOperationStore): void {
-  if (store.getState().remoteActionError) {
-    store.setState({ remoteActionError: null })
+  const { commitError, remoteActionError } = store.getState()
+  if (commitError || remoteActionError) {
+    store.setState({
+      ...(commitError ? { commitError: null } : {}),
+      ...(remoteActionError ? { remoteActionError: null } : {})
+    })
   }
 }
 
