@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getDefaultSettings, getDefaultWorkspaceDir } from './constants'
+import { getDefaultSettings, getDefaultWorkspaceDir } from './orca-profiles/constants'
 
 describe('getDefaultWorkspaceDir', () => {
   it('POSIX 홈 디렉터리에 대해 기본 adehone 워크스페이스 디렉터리를 반환한다', () => {

@@ -1,4 +1,4 @@
-import { DEFAULT_APP_FONT_FAMILY } from '../../../../../../shared/constants'
+import { DEFAULT_APP_FONT_FAMILY } from '../../../../../../shared/app-lifecycle/appearance/app-font-family'
 
 export const RECOMMENDED_APP_FONTS = [
   DEFAULT_APP_FONT_FAMILY,

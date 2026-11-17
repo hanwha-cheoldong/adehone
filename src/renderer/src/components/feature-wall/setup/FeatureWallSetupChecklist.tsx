@@ -1,4 +1,4 @@
-import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/native-chat-providers'
+import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/settings/native-chat-providers'
 import { useCallback, useEffect, useMemo } from 'react'
 import { Check } from 'lucide-react'
 import type {

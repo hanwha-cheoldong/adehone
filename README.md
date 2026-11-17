@@ -236,7 +236,7 @@ yay -S stably-orca-bin
 데스크톱 앱과 페어링해 휴대폰에서 에이전트를 모니터링하고 조종하세요.
 
 - **iOS:** [App Store에서 다운로드](https://apps.apple.com/us/app/orca-ide/id6766130217)
-- **Android:** [APK 다운로드](https://www.onorca.dev/download/android) · [설치 가이드](https://www.onorca.dev/docs/android-apk)
+- **Android:** [Google Play](https://play.google.com/store/apps/details?id=dev.orca.app) · [APK 다운로드](https://www.onorca.dev/download/android) · [설치 가이드](https://www.onorca.dev/docs/android-apk)
 
 ---
 

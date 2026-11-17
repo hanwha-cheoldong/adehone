@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import type { NativeChatDefaultSettings } from '../../../../../shared/agent-launch/choices/structured-native-chat-launch-route'
-import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/native-chat-providers'
+import { normalizeAgentDefaultSurface } from '../../../../../shared/native-chat/settings/native-chat-providers'
 import { isWebClientLocation } from '@/app-shell/platform/web-client-location'
 import { useAppStore } from '@/store/index'
 import { restoreLocalStructuredSessionTabsOnce } from '../../local-structured-session-tabs-sync/inventory-refresh'
