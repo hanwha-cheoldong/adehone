@@ -15,6 +15,7 @@ import {
   parseDraftTime
 } from './automation-draft-model'
 import { saveOrcaAutomation } from './automation-orca-save'
+import { localizeAutomationActionError } from '../hosts/automation-owner-action-runner'
 import type { AutomationSaveContext } from './automation-save-context'
 
 /** Validates editor input then runs the Orca save transaction. */
@@ -148,7 +149,7 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
     } catch (error) {
       toast.error(
         error instanceof Error
-          ? error.message
+          ? localizeAutomationActionError(error.message)
           : translate(
               'auto.components.automations.AutomationsPage.b11170a008',
               'Failed to save automation.'

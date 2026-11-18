@@ -2437,7 +2437,8 @@
           "needsFreshSession": "Aracı başlatma ayarları her çalıştırmada yeni bir oturum gerektirir."
         },
         "ownerAction": {
-          "failed": "Bu otomasyon işlemi tamamlanmadı."
+          "failed": "Bu otomasyon işlemi tamamlanmadı.",
+          "missingAutomationName": "Otomasyon adı eksik"
         },
         "ownerConflict": {
           "dismiss": "Kapat"

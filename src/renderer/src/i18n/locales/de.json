@@ -2437,7 +2437,8 @@
           "needsFreshSession": "Agent-Starteinstellungen erfordern für jeden Durchlauf eine neue Sitzung."
         },
         "ownerAction": {
-          "failed": "Diese Automatisierungsaktion wurde nicht abgeschlossen."
+          "failed": "Diese Automatisierungsaktion wurde nicht abgeschlossen.",
+          "missingAutomationName": "Automatisierungsname fehlt"
         },
         "ownerConflict": {
           "dismiss": "Ausblenden"

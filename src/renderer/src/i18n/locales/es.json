@@ -2482,7 +2482,8 @@
           "needsFreshSession": "La configuración de inicio del agente requiere una sesión nueva en cada ejecución."
         },
         "ownerAction": {
-          "failed": "Esa acción de automatización no se completó."
+          "failed": "Esa acción de automatización no se completó.",
+          "missingAutomationName": "Falta el nombre de la automatización"
         },
         "ownerConflict": {
           "dismiss": "Descartar"

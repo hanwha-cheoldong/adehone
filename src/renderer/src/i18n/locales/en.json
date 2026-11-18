@@ -2519,7 +2519,8 @@
           "paused": "Paused"
         },
         "ownerAction": {
-          "failed": "That automation action did not complete."
+          "failed": "That automation action did not complete.",
+          "missingAutomationName": "Missing automation name"
         },
         "ownerConflict": {
           "dismiss": "Dismiss"

@@ -90,6 +90,18 @@ function conflictOutcome(
   }
 }
 
+export function localizeAutomationActionError(message: string): string {
+  switch (message) {
+    case 'Missing automation name':
+      return translate(
+        'auto.components.automations.ownerAction.missingAutomationName',
+        'Missing automation name'
+      )
+    default:
+      return message
+  }
+}
+
 function classify(error: unknown): AutomationActionOutcome<never> {
   const conflict = matchAutomationOwnerConflict(error)
   if (conflict) {
@@ -109,7 +121,7 @@ function classify(error: unknown): AutomationActionOutcome<never> {
     status: 'failed',
     message:
       error instanceof Error
-        ? stripAutomationOwnerConflictCode(error.message)
+        ? localizeAutomationActionError(stripAutomationOwnerConflictCode(error.message))
         : translate(
             'auto.components.automations.ownerAction.failed',
             'That automation action did not complete.'

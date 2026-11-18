@@ -2399,7 +2399,8 @@
           "needsFreshSession": "代理程式啟動設定要求每次執行都使用新工作階段。"
         },
         "ownerAction": {
-          "failed": "此自動化操作未完成。"
+          "failed": "此自動化操作未完成。",
+          "missingAutomationName": "缺少自動化名稱"
         },
         "ownerConflict": {
           "dismiss": "關閉"

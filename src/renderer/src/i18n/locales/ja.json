@@ -2449,7 +2449,8 @@
           "needsFreshSession": "起動設定を使うには、実行ごとに新しいセッションが必要です。"
         },
         "ownerAction": {
-          "failed": "その自動化操作は完了しませんでした。"
+          "failed": "その自動化操作は完了しませんでした。",
+          "missingAutomationName": "自動化名がありません"
         },
         "ownerConflict": {
           "dismiss": "閉じる"

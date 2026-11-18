@@ -2482,7 +2482,8 @@
           "needsFreshSession": "Les paramètres de lancement de l’agent nécessitent une nouvelle session à chaque exécution."
         },
         "ownerAction": {
-          "failed": "Cette action d’automatisation n’a pas abouti."
+          "failed": "Cette action d’automatisation n’a pas abouti.",
+          "missingAutomationName": "Nom de l'automatisation manquant"
         },
         "ownerConflict": {
           "dismiss": "Rejeter"

@@ -2402,7 +2402,8 @@
           "needsFreshSession": "에이전트 시작 설정을 사용하려면 실행할 때마다 새 세션이 필요합니다."
         },
         "ownerAction": {
-          "failed": "해당 자동화 작업이 완료되지 않았습니다."
+          "failed": "해당 자동화 작업이 완료되지 않았습니다.",
+          "missingAutomationName": "자동화 이름이 없습니다"
         },
         "ownerConflict": {
           "dismiss": "닫기"

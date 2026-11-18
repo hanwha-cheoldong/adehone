@@ -2467,7 +2467,8 @@
           "paused": "已暂停"
         },
         "ownerAction": {
-          "failed": "未能完成该自动化操作"
+          "failed": "未能完成该自动化操作",
+          "missingAutomationName": "缺少自动化名称"
         },
         "ownerConflict": {
           "dismiss": "关闭"
