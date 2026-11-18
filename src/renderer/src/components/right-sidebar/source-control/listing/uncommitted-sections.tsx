@@ -86,6 +86,7 @@ export function SourceControlUncommittedSections(props: {
   handleOpenDiff: (entry: GitStatusEntry, event?: SourceControlRowOpenEvent) => void
   handleStage: (path: string) => Promise<void>
   handleResolveConflict: (entry: GitStatusEntry, resolution: ConflictResolution) => Promise<void>
+  handleAddToGitignore: (relativePath: string, isDirectory: boolean) => Promise<void>
   handleUnstage: (path: string, oldPath?: string) => Promise<void>
   requestDiscardEntry: (entry: GitStatusEntry) => void
   diffCommentCountByPath: Map<string, number>
@@ -204,6 +205,7 @@ export function SourceControlUncommittedSections(props: {
                   handleOpenDiff={props.handleOpenDiff}
                   handleStage={props.handleStage}
                   handleResolveConflict={props.handleResolveConflict}
+                  handleAddToGitignore={props.handleAddToGitignore}
                   handleUnstage={props.handleUnstage}
                   requestDiscardEntry={props.requestDiscardEntry}
                   diffCommentCountByPath={props.diffCommentCountByPath}

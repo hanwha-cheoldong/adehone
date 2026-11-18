@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { leftoverPermissionStatusPath } from './macos-permission-status-leftover-reap'
 
 const HELPER =
-  '/Applications/Orca.app/Contents/Resources/Orca Computer Use.app/Contents/MacOS/orca-computer-use-macos'
+  '/Applications/Adehone.app/Contents/Resources/Adehone Computer Use.app/Contents/MacOS/orca-computer-use-macos'
 const STATUS = '/var/folders/ab/T/orca-computer-use-permissions-Ab12Cd/status.json'
 
 describe('leftoverPermissionStatusPath', () => {

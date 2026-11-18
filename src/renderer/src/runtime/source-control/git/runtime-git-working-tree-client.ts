@@ -65,6 +65,33 @@ export async function resolveRuntimeGitConflict(
   }
 }
 
+export async function addRuntimeGitPathToGitignore(
+  context: RuntimeGitContext,
+  relativePath: string,
+  isDirectory: boolean
+): Promise<boolean> {
+  const target = context.target
+  if (target.kind === 'local' || !context.worktreeId) {
+    return window.api.git.addToGitignore({
+      worktreePath: resolveLocalWorktreePath(context),
+      relativePath,
+      isDirectory,
+      connectionId: context.connectionId
+    })
+  }
+  const result = await callRuntimeRpc<{ added: boolean }>(
+    target,
+    'git.addToGitignore',
+    {
+      worktree: toRuntimeWorktreeSelector(context.worktreeId),
+      relativePath,
+      isDirectory
+    },
+    { timeoutMs: 15_000 }
+  )
+  return result.added
+}
+
 export async function bulkStageRuntimeGitPaths(
   context: RuntimeGitContext,
   filePaths: string[]

@@ -5,6 +5,7 @@ import type { ChecksPanelComposerState } from '../review-actions/use-checks-pane
 import type { ChecksPanelCreateReviewState } from '../review-actions/use-checks-panel-create-review'
 import type { ChecksPanelBranchActionsState } from '../review-actions/use-checks-panel-branch-actions'
 import type { ChecksPanelRefreshState } from '../refresh/use-checks-panel-manual-refresh'
+import type { ChecksPanelEntryRefreshAndTitleActionsState } from '../refresh/use-checks-panel-entry-refresh-and-title-actions'
 import type { ChecksPanelCheckAndReviewActionsState } from '../review-actions/use-checks-panel-check-and-review-actions'
 
 export type ChecksPanelEmptyContentModel = Pick<
@@ -28,10 +29,12 @@ export type ChecksPanelEmptyContentModel = Pick<
     | 'conflictOperation'
     | 'createPrError'
     | 'detachedHeadDisplay'
+    | 'eligibilitySettledContextKey'
     | 'emptyRefreshing'
     | 'gitStatusProbeErrorContextKey'
     | 'hardRefreshError'
     | 'isCreatingPr'
+    | 'isPanelVisible'
     | 'isPublishingBranch'
     | 'isRemoteOperationActive'
     | 'isSyncingBranch'
@@ -51,6 +54,7 @@ export type ChecksPanelEmptyContentModel = Pick<
     | 'hostedReviewCreateProvider'
     | 'hostedReviewCreation'
     | 'isGitHubReviewContext'
+    | 'prFetchedAt'
     | 'publishActionHasUncommittedChanges'
     | 'publishActionRemoteStatus'
     | 'sourceControlAiActionsVisible'
@@ -87,4 +91,5 @@ export type ChecksPanelEmptyContentModel = Pick<
   Pick<ChecksPanelCreateReviewState, 'handleCreatePullRequest'> &
   Pick<ChecksPanelBranchActionsState, 'handlePublishBranch' | 'handleSyncBranch'> &
   Pick<ChecksPanelRefreshState, 'handleRefresh' | 'manualRefreshError'> &
+  Pick<ChecksPanelEntryRefreshAndTitleActionsState, 'entryHostedReviewFetchInFlight'> &
   Pick<ChecksPanelCheckAndReviewActionsState, 'handleLinkSuppressedPullRequest'>

@@ -235,6 +235,12 @@ export const gitApi = {
     resolution: ConflictResolution
     connectionId?: string
   }): Promise<void> => ipcRenderer.invoke('git:resolveConflict', args),
+  addToGitignore: (args: {
+    worktreePath: string
+    relativePath: string
+    isDirectory: boolean
+    connectionId?: string
+  }): Promise<boolean> => ipcRenderer.invoke('git:addToGitignore', args),
   bulkStage: (args: {
     worktreePath: string
     filePaths: string[]

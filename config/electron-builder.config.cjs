@@ -371,9 +371,7 @@ module.exports = {
     'out/main/skills/bundled-skill-install/bundled-skill-local-host.js',
     'out/main/skills/bundled-skill-install/bundled-skill-installation.js',
     'out/main/startup/network-compatibility/http1-compatibility-marker.js',
-    // `orca uninstall` runs the app's cleanup in the CLI process.
-    'out/main/uninstall/orca-{install-identity,uninstall-cleanup}.js',
-    'out/main/cli/cli-installer.js',
+    // `orca agent hooks` gives main hook code an app environment in the CLI process.
     'out/main/backend/node-service-environment.js',
     'out/main/daemon-entry.js',
     'out/main/session-scanner-service-entry.js',
@@ -563,7 +561,10 @@ module.exports = {
     })
     chmodUnixCliLaunchers(resourcesDir, context.electronPlatformName)
     if (context.electronPlatformName === 'darwin') {
-      await signMacComputerUseHelper(join(resourcesDir, 'Orca Computer Use.app'), context.packager)
+      await signMacComputerUseHelper(
+        join(resourcesDir, 'Adehone Computer Use.app'),
+        context.packager
+      )
       await signMacStandaloneHelper(
         join(resourcesDir, '..', 'MacOS', 'orca-notification-status'),
         'orca-notification-status',
@@ -709,8 +710,8 @@ module.exports = {
         to: 'agent-browser-darwin-${arch}'
       },
       {
-        from: 'native/computer-use-macos/.build/release/Orca Computer Use.app',
-        to: 'Orca Computer Use.app'
+        from: 'native/computer-use-macos/.build/release/Adehone Computer Use.app',
+        to: 'Adehone Computer Use.app'
       },
       featureWallResources
     ],
@@ -877,7 +878,7 @@ function chmodUnixCliLaunchers(resourcesDir, electronPlatformName) {
 async function signMacComputerUseHelper(helperAppPath, packager) {
   if (!existsSync(helperAppPath)) {
     if (isMacRelease) {
-      throw new Error(`Missing Orca Computer Use helper app at ${helperAppPath}`)
+      throw new Error(`Missing Adehone Computer Use helper app at ${helperAppPath}`)
     }
     return
   }
@@ -891,7 +892,7 @@ async function signMacComputerUseHelper(helperAppPath, packager) {
     findInstalledMacSigningIdentity(codeSigningInfo?.keychainFile) ??
     (isMacRelease ? null : '-')
   if (!identity) {
-    throw new Error('Missing signing identity for Orca Computer Use helper app')
+    throw new Error('Missing signing identity for Adehone Computer Use helper app')
   }
   // Why: TCC grants attach to this nested app's code identity. Sign it before
   // the outer Orca.app is sealed so production builds preserve that identity.

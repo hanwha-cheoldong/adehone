@@ -5,6 +5,7 @@ import { GIT_COMMIT_MESSAGE_GENERATION_METHODS } from './git-commit-message-gene
 import { GIT_BRANCH_METHODS } from './git-branch-methods'
 import { GIT_DIFF_METHODS } from './git-diff-methods'
 import {
+  GitAddToGitignore,
   GitBranchCompare,
   GitBulkPaths,
   GitBulkStage,
@@ -198,6 +199,13 @@ export const GIT_METHODS = [
     params: GitResolveConflict,
     handler: async (params, { runtime }) =>
       runtime.resolveRuntimeGitConflict(params.worktree, params.filePath, params.resolution)
+  }),
+  defineMethod({
+    name: 'git.addToGitignore',
+    permission: 'workspace',
+    params: GitAddToGitignore,
+    handler: async (params, { runtime }) =>
+      runtime.addRuntimeGitPathToGitignore(params.worktree, params.relativePath, params.isDirectory)
   }),
   defineMethod({
     name: 'git.unstage',

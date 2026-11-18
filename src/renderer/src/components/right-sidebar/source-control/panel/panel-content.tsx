@@ -40,6 +40,7 @@ export function SourceControlPanelContent(props: SourceControlPanelReadyProps) {
     handleResolveConflictsWithAI,
     handleSelect,
     handleResolveConflict,
+    handleAddToGitignore,
     handleStage,
     handleStageAllPaths,
     handleStageSectionPaths,
@@ -191,6 +192,7 @@ export function SourceControlPanelContent(props: SourceControlPanelReadyProps) {
           handleOpenDiff={handleOpenDiff}
           handleStage={handleStage}
           handleResolveConflict={handleResolveConflict}
+          handleAddToGitignore={handleAddToGitignore}
           handleUnstage={handleUnstage}
           requestDiscardEntry={requestDiscardEntry}
           diffCommentCountByPath={diffCommentCountByPath}

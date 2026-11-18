@@ -29,6 +29,7 @@ import {
   unstageFile
 } from '../../git/source-control/mutations/staging'
 import { commitChanges, completeMerge } from '../../git/source-control/mutations/commit-changes'
+import { appendPathToGitignore } from '../../git/source-control/ignores/add-to-gitignore'
 import { getBranchCompare } from '../../git/source-control/comparisons/branch-compare'
 import { getCommitCompare } from '../../git/source-control/comparisons/commit-compare'
 import { getCommitDiff } from '../../git/source-control/comparisons/commit-diff'
@@ -118,6 +119,8 @@ export function createLocalGitProvider(options: LocalGitProviderOptions = {}): L
     discardChanges: (worktreePath, filePath) => discardChanges(worktreePath, filePath, interactive),
     bulkDiscardChanges: (worktreePath, filePaths) =>
       bulkDiscardChanges(worktreePath, filePaths, interactive),
+    addToGitignore: (worktreePath, relativePath, isDirectory) =>
+      appendPathToGitignore(worktreePath, relativePath, isDirectory),
     detectConflictOperation: (worktreePath) => detectConflictOperation(worktreePath, base),
     abortMerge: (worktreePath) => abortMerge(worktreePath, interactive),
     abortRebase: (worktreePath) => abortRebase(worktreePath, interactive),

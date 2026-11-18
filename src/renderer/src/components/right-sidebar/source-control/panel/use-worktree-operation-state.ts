@@ -18,10 +18,12 @@ import {
 export function useSourceControlWorktreeOperationState({
   activeWorktreeId,
   activeWorktreeInstanceId,
+  branchName,
   conflictOperation
 }: {
   activeWorktreeId: string | null
   activeWorktreeInstanceId: string | undefined
+  branchName?: string
   conflictOperation: GitConflictOperation
 }) {
   const scope = useSourceControlScope()
@@ -75,6 +77,20 @@ export function useSourceControlWorktreeOperationState({
         : {})
     })
   }, [conflictOperation, operationStore])
+
+  useEffect(() => {
+    if (!branchName) {
+      return
+    }
+    const { observedBranchName, commitError } = operationStore.getState()
+    if (observedBranchName === branchName) {
+      return
+    }
+    operationStore.setState({
+      observedBranchName: branchName,
+      ...(observedBranchName !== null && commitError ? { commitError: null } : {})
+    })
+  }, [branchName, operationStore])
 
   return {
     activeRemoteActionSequence,

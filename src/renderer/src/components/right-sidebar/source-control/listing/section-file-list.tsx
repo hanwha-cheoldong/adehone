@@ -14,7 +14,7 @@ import { getSourceControlDirectoryActionPaths } from './directory-action-paths'
 import { SourceControlTreeDirectoryRow } from './tree-directory-rows'
 import { SubmodulePlaceholderRow } from './submodule-placeholder-row'
 import { UncommittedEntryRow } from './uncommitted-entry-row'
-import { VirtualizedList } from '../../../virtualized-list'
+import { VirtualizedList } from '../../../ui/virtualized-list'
 
 export function SourceControlSectionFileList({
   sourceControlViewMode,
@@ -41,6 +41,7 @@ export function SourceControlSectionFileList({
   handleOpenDiff,
   handleStage,
   handleResolveConflict,
+  handleAddToGitignore,
   handleUnstage,
   requestDiscardEntry,
   diffCommentCountByPath
@@ -69,6 +70,7 @@ export function SourceControlSectionFileList({
   handleOpenDiff: (entry: GitStatusEntry, event?: SourceControlRowOpenEvent) => void
   handleStage: (path: string) => Promise<void>
   handleResolveConflict: (entry: GitStatusEntry, resolution: ConflictResolution) => Promise<void>
+  handleAddToGitignore: (relativePath: string, isDirectory: boolean) => Promise<void>
   handleUnstage: (path: string, oldPath?: string) => Promise<void>
   requestDiscardEntry: (entry: GitStatusEntry) => void
   diffCommentCountByPath: Map<string, number>
@@ -102,6 +104,7 @@ export function SourceControlSectionFileList({
               onRequestDiscardPaths={requestDiscardPaths}
               onStagePaths={handleStageAllPaths}
               onUnstagePaths={handleUnstagePaths}
+              onAddToGitignore={(relativePath) => handleAddToGitignore(relativePath, true)}
             />
           )
         }
@@ -128,6 +131,7 @@ export function SourceControlSectionFileList({
             onOpen={handleOpenDiff}
             onStage={handleStage}
             onResolveConflict={handleResolveConflict}
+            onAddToGitignore={handleAddToGitignore}
             onUnstage={handleUnstage}
             onDiscard={requestDiscardEntry}
             commentCount={diffCommentCountByPath.get(node.entry.path) ?? 0}
@@ -180,6 +184,7 @@ export function SourceControlSectionFileList({
             onOpen={handleOpenDiff}
             onStage={handleStage}
             onResolveConflict={handleResolveConflict}
+            onAddToGitignore={handleAddToGitignore}
             onUnstage={handleUnstage}
             onDiscard={requestDiscardEntry}
             commentCount={diffCommentCountByPath.get(entry.path) ?? 0}

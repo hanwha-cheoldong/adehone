@@ -52,6 +52,14 @@ export const GitResolveConflict = GitFilePath.extend({
   resolution: z.enum(CONFLICT_RESOLUTIONS)
 })
 
+export const GitAddToGitignore = WorktreeSelector.extend({
+  relativePath: z
+    .unknown()
+    .transform((v) => (typeof v === 'string' ? v : ''))
+    .pipe(z.string().min(1, 'Missing path')),
+  isDirectory: z.boolean()
+})
+
 export const GitDiff = GitFilePath.extend({
   staged: z.boolean(),
   compareAgainstHead: z.boolean().optional(),
@@ -200,7 +208,11 @@ export const GitGenerateCommitMessage = WorktreeSelector.extend({
   sourceControlAi: SourceControlAiSettings.optional(),
   sourceControlAiResolvedParams: ResolvedSourceControlAiGenerationParams.optional(),
   agentCmdOverrides: z.record(z.string(), z.string()).optional(),
-  defaultTuiAgent: OptionalTuiAgent.nullable(),
+  // Why: 'blank' (Blank terminal) picks the same fallback agent as null.
+  defaultTuiAgent: z.preprocess(
+    (value) => (value === 'blank' ? null : value),
+    OptionalTuiAgent.nullable()
+  ),
   commitMessageDiscoveryHostKey: z.string().optional()
 })
 

@@ -142,6 +142,12 @@ export type GitOperationApi = {
     resolution: ConflictResolution
     connectionId?: string
   }) => Promise<void>
+  addToGitignore: (args: {
+    worktreePath: string
+    relativePath: string
+    isDirectory: boolean
+    connectionId?: string
+  }) => Promise<boolean>
   bulkStage: (args: {
     worktreePath: string
     filePaths: string[]

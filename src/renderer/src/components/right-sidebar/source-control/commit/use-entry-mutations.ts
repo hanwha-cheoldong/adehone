@@ -16,6 +16,7 @@ import { sourceControlConnectionId, useSourceControlScope } from '../panel/workt
 import { basename } from '@/lib/path'
 import { useAppStore } from '@/store'
 import {
+  addRuntimeGitPathToGitignore,
   bulkDiscardRuntimeGitPaths,
   bulkUnstageRuntimeGitPaths,
   discardRuntimeGitPath,
@@ -253,10 +254,37 @@ export function useSourceControlEntryMutations({
     [activeRepoTarget, activeWorktreeId, scope, worktreePath]
   )
 
+  const handleAddToGitignore = useCallback(
+    async (relativePath: string, isDirectory: boolean): Promise<void> => {
+      if (!worktreePath) {
+        return
+      }
+      try {
+        const connectionId = sourceControlConnectionId(scope, activeWorktreeId ?? null)
+        await addRuntimeGitPathToGitignore(
+          {
+            target: requireGitOwnerTarget(activeRepoTarget),
+            worktreeId: activeWorktreeId,
+            worktreePath,
+            connectionId
+          },
+          relativePath,
+          isDirectory
+        )
+      } catch (error) {
+        console.error('[SourceControl] addToGitignore failed', error)
+        return
+      }
+      await refreshActiveGitStatusAfterMutation()
+    },
+    [activeRepoTarget, activeWorktreeId, refreshActiveGitStatusAfterMutation, scope, worktreePath]
+  )
+
   return {
     handleStage,
     handleUnstage,
     handleResolveConflict,
+    handleAddToGitignore,
     discardSingle,
     discardMany
   }

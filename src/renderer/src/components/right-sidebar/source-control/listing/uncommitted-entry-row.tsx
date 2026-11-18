@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChevronDown, MessageSquare, Minus, Plus, Trash, Undo2 } from 'lucide-react'
-import { FileTypeIcon } from '@/components/FileTypeIcon'
+import { FileTypeIcon } from '@/components/icons/FileTypeIcon'
 import { basename, dirname, joinPath } from '@/lib/path'
 import { cn } from '@/lib/class-names'
 import { WORKSPACE_FILE_PATH_MIME } from '@/lib/files/drop/workspace-file-drag'
@@ -53,6 +53,7 @@ export const UncommittedEntryRow = React.memo(function UncommittedEntryRow({
   onOpen,
   onStage,
   onResolveConflict,
+  onAddToGitignore,
   onUnstage,
   onDiscard,
   commentCount,
@@ -73,6 +74,7 @@ export const UncommittedEntryRow = React.memo(function UncommittedEntryRow({
   onOpen: (entry: GitStatusEntry, event?: SourceControlRowOpenEvent) => void
   onStage: (filePath: string) => Promise<void>
   onResolveConflict: (entry: GitStatusEntry, resolution: ConflictResolution) => Promise<void>
+  onAddToGitignore?: (relativePath: string, isDirectory: boolean) => Promise<void>
   onUnstage: (filePath: string, oldPath?: string) => Promise<void>
   onDiscard: (entry: GitStatusEntry) => void
   commentCount: number
@@ -107,6 +109,11 @@ export const UncommittedEntryRow = React.memo(function UncommittedEntryRow({
       onView={() => onOpen(entry)}
       conflictResolutions={conflictResolutions}
       onResolveConflict={(resolution) => void onResolveConflict(entry, resolution)}
+      onAddToGitignore={
+        onAddToGitignore
+          ? () => void onAddToGitignore(entry.path, Boolean(entry.submodule))
+          : undefined
+      }
       onRevealInExplorer={onRevealInExplorer}
       onOpenChange={(open) => {
         if (open && onContextMenu) {

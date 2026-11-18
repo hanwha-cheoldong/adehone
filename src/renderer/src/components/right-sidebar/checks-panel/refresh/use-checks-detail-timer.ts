@@ -16,7 +16,8 @@ export function useChecksDetailTimer({
   policyRef,
   requestIdentity,
   fetchChecks,
-  fetchGitLabDetails
+  fetchGitLabDetails,
+  onChecksSettled
 }: {
   model: ChecksPanelPollingInput
   modelRef: RefObject<ChecksPanelPollingInput>
@@ -24,6 +25,7 @@ export function useChecksDetailTimer({
   requestIdentity: string
   fetchChecks: ChecksPanelPollingState['fetchChecks']
   fetchGitLabDetails: ChecksPanelPollingState['fetchGitLabDetails']
+  onChecksSettled?: (identity: string) => void
 }): void {
   const {
     activeGitLabReview,
@@ -81,8 +83,13 @@ export function useChecksDetailTimer({
       )
     }
     // Under a stretched or stopped cadence the window coming back still reads checks older than
-    // Default's delay, never sooner: the cadence slows the timer, not the user's return.
+    // Default's delay, never sooner: the cadence slows the timer, not the user's return. While
+    // GitHub checks are running a return pulls the poll forward (past the cooldown): GitHub shows
+    // a finish at once.
     const returnReadDue = (now: number): boolean => {
+      if (!isGitLabReview && policyRef.current.checksRunning()) {
+        return true
+      }
       const defaultDelay = ownerCadence() === 'default' ? null : policyDelay('default')
       return defaultDelay !== null && now - lastAttemptAtRef.current >= defaultDelay
     }
@@ -136,6 +143,7 @@ export function useChecksDetailTimer({
           if (inFlightRef.current?.token === token) {
             inFlightRef.current = null
             if (lastIdentityRef.current === requestIdentity) {
+              onChecksSettled?.(requestIdentity)
               if (!background && modelRef.current.isPanelVisible) {
                 wakeNextReadRef.current = false
               }
@@ -198,6 +206,7 @@ export function useChecksDetailTimer({
     policyRef,
     fetchChecks,
     fetchGitLabDetails,
+    onChecksSettled,
     isPanelVisible,
     isGitLabReview,
     prNumber,

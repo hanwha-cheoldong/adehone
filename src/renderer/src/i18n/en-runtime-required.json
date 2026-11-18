@@ -395,7 +395,6 @@
             "835037edc9": "Adehone"
           },
           "CrashReportDialogSurface": {
-            "closedNotesPlaceholder": "Optional: what were you doing before Adehone closed?",
             "closedTitle": "Adehone closed unexpectedly",
             "uiErrorTitle": "Adehone hit a recoverable UI error"
           }
@@ -707,23 +706,14 @@
         "routing": {
           "preference": {
             "dialog": {
-              "description": "Use Adehone's browser for terminal links, or keep your system browser.",
               "keep": {
                 "orca": {
                   "button": "Keep Adehone"
-                },
-                "title": "Keep terminal links in Adehone's browser?"
-              },
-              "orca": {
-                "button": "Open in Adehone",
-                "note": "Adehone can use imported cookies for logged-in sites."
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "When links open in Adehone,"
                 }
               },
-              "title": "Open terminal links in Adehone's browser?"
+              "orca": {
+                "button": "Open in Adehone"
+              }
             }
           }
         }
@@ -1743,14 +1733,6 @@
           "runStepTitle": "Adehone starts each run"
         },
         "bitbucket": {
-          "credentials": {
-            "dialog": {
-              "description": "Use a Bitbucket Cloud credential to browse pull requests and build statuses. Adehone verifies it before saving.",
-              "environmentManaged": "Bitbucket is already configured through HADEHONE_BITBUCKET_* environment variables, which take precedence. Unset them to save a credential in Adehone.",
-              "remoteRuntime": "Stored on this machine, not on the active remote runtime — set HADEHONE_BITBUCKET_* there instead. Environment variables always take precedence over what you save here.",
-              "storageNote": "Stored on this machine with encrypted storage when the OS keychain is available. HADEHONE_BITBUCKET_* environment variables always take precedence over what you save here."
-            }
-          },
           "integration": {
             "card": {
               "envManaged": "Configured via environment variables. Unset the HADEHONE_BITBUCKET_* variables to manage this credential in Adehone.",
@@ -1923,14 +1905,9 @@
           "remoteServerCredentialsNewProjects": "Credentials and account checks for this provider are owned by this remote server. To use another host, change Settings > Remote Adehone Servers > New projects open on."
         },
         "recoverServer": {
-          "confirmCheck": "No other machine sharing this home is running Adehone",
-          "description": "Adehone’s server on this host won’t start because a lock from an earlier run is still in place.",
-          "eligible": "Nothing answers on this machine at its old address, but Adehone can’t rule out another machine with the same name that shares this home folder.",
           "manualDeleteWarning": "Only do this if no other machine sharing this home runs Adehone for this profile.",
           "none": "There is no lock to clear any more. Reconnect to start this host’s Adehone server.",
-          "reclaimedNotStarted": "The lock was cleared, but Adehone’s server did not start.",
-          "title": "Recover Adehone’s server",
-          "warning": "Only continue if no other machine sharing this home runs Adehone for this profile."
+          "reclaimedNotStarted": "The lock was cleared, but Adehone’s server did not start."
         },
         "repository": {
           "search": {
@@ -2188,8 +2165,8 @@
         "DeleteWorktreeDialog": {
           "removeBatchFolder_one": "Remove <target>{{count}} workspace</target> from Adehone. Project folders on disk will not be deleted.",
           "removeBatchFolder_other": "Remove <target>{{count}} workspaces</target> from Adehone. Project folders on disk will not be deleted.",
-          "removeBatchGit_one": "Remove <target>{{count}} workspace</target> from git and delete its workspace folder.",
-          "removeBatchGit_other": "Remove <target>{{count}} workspaces</target> from git and delete their workspace folders.",
+          "removeBatchGit_one": "Deletes {{count}} worktree and its branch (kept if unmerged).",
+          "removeBatchGit_other": "Deletes {{count}} worktrees and their branches (kept if unmerged).",
           "removeBatchMixed_one": "Remove <target>{{count}} workspace</target> from Adehone. Git worktrees will also be removed from git and disk; folder workspaces will only remove the Adehone workspace entry.",
           "removeBatchMixed_other": "Remove <target>{{count}} workspaces</target> from Adehone. Git worktrees will also be removed from git and disk; folder workspaces will only remove the Adehone workspace entry.",
           "removeSingleFolderFromOrca": "Removes it from Adehone. The folder on disk is kept.",
@@ -2214,10 +2191,7 @@
           "moreChildren_other": "+{{count}} more"
         },
         "ForgetSshWorkspaceDialog": {
-          "forget": "Remove from Adehone",
-          "ghostBody": "{{host}} is no longer a saved SSH host, so this workspace is no longer connected to a live host. It can only be removed from Adehone — files and branches on the remote are left untouched.",
-          "removeTitle": "Remove “{{name}}” from Adehone?",
-          "savedHostBody": "This workspace’s project isn’t served by Adehone’s server on {{host}}, so Adehone can’t delete it there. You can remove it from Adehone; files, the Git worktree, and branches on {{host}} are left untouched."
+          "forget": "Remove from Adehone"
         },
         "HostRemoveDialog": {
           "4d5e6f7a8b": "This opens the Adehone servers settings where you can remove this server.",
@@ -3909,7 +3883,6 @@
         "hidden": "Adehone won't show turn diffs anymore"
       },
       "usageLimitAutoContinue": {
-        "cancelled": "Adehone won't continue this chat automatically.",
         "scheduled": "Adehone will continue this chat at {{time}}."
       },
       "writeNotice": {
@@ -3972,6 +3945,7 @@
         "runClearWhenDone": "Run /clear when it's done.",
         "runCompactWhenDone": "Run /compact when it's done.",
         "savedByNewerOrca": "Chats were saved by a newer Adehone.",
+        "savedInOtherFolder": "This conversation was saved in another folder.",
         "sendOutcomeLost": "Adehone couldn't confirm your message reached the agent. Check the chat, then send it again if needed.",
         "settleEarlierMessage": "Wait for your earlier message to go through, or retry it.",
         "shortenMessage": "Shorten or split it, then send it again.",
@@ -4132,7 +4106,9 @@
           "closedToast_one": "Closed {{count}} file with unsaved edits from {{workspace}}",
           "closedToast_other": "Closed {{count}} files with unsaved edits from {{workspace}}",
           "discarded_one": "Unsaved edits in {{count}} file will be discarded:",
-          "discarded_other": "Unsaved edits in {{count}} files will be discarded:"
+          "discarded_other": "Unsaved edits in {{count}} files will be discarded:",
+          "line_one": "Unsaved edits in {{count}} file will be discarded: {{files}}",
+          "line_other": "Unsaved edits in {{count}} files will be discarded: {{files}}"
         }
       }
     }
@@ -4533,7 +4509,6 @@
   },
   "sessionSearch": {
     "panel": {
-      "consent": "Enable full-text search? Adehone builds an index on this computer from local agent transcripts, including full conversations. Content is not redacted. Authenticated paired clients can search it.",
       "noService": "Search is unavailable on this computer. It may need an Adehone update or a runtime with search support.",
       "resultCount_one": "{{count}} result",
       "resultCount_other": "{{count}} results",
@@ -4700,8 +4675,6 @@
         "environment": "This Adehone instance has a terminal limit set by its environment. Remove the override on this host to edit it here."
       },
       "windows": {
-        "administratorPromptCancellation": "Canceling Windows’ prompt reopens Adehone with its retained terminals. SSH and WSL permissions stay controlled on their hosts.",
-        "administratorRestartFailed": "Adehone could not restart. Try again or use the manual instructions.",
         "administratorScope": "Permissions for the Adehone app. Existing terminals may differ.",
         "administratorSearchDescription": "See Adehone’s Windows permissions or restart with administrator approval.",
         "closeLocalSessions": "Save your work, close all local terminal sessions, then exit Adehone.",
@@ -4812,6 +4785,11 @@
       },
       "statusDetails": {
         "guestUnanswered": "The distro is running but didn’t answer Adehone’s check.",
+        "installLockWaitGivesUp_one": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca stops waiting in about {{count}} minute.",
+        "installLockWaitGivesUp_other": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca stops waiting in about {{count}} minutes.",
+        "installLockWaitHolderGone": "The other Orca install in this distro stopped. Orca takes over in a few seconds.",
+        "installLockWait_one": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca takes over in about {{count}} minute.",
+        "installLockWait_other": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca takes over in about {{count}} minutes.",
         "orcadUnanswered": "Adehone’s server in the distro didn’t answer.",
         "peerCheckFailed": "Adehone couldn’t ask the WSL host whether another Adehone on this computer still uses it: {{detail}}",
         "removalUnrecorded": "Adehone couldn’t record what this Remove left running: {{detail}}",
@@ -5012,12 +4990,7 @@
       "title": "Match Claude Code to your Adehone theme?"
     },
     "codexSharedServerBanner": {
-      "confirmStopDescription": "This closes any open Codex sessions that share it, including ones outside Adehone.",
-      "dialogDescription": "Codex sessions started directly in a terminal share one background server. Adehone keeps the Codex sessions it starts separate. When sessions share a server, closing one can end the others, and agent status can be wrong.",
-      "openedBeforeUpdateBody": "This terminal was opened before Adehone started giving each Codex its own server.",
-      "step1Note": "This changes your Codex settings, so it also applies outside Adehone.",
-      "stopFailed": "Adehone couldn't stop the server.",
-      "turnOffFailed": "Adehone couldn't turn this off."
+      "openedBeforeUpdateBody": "This terminal was opened before Adehone started giving each Codex its own server."
     },
     "codexSharedSettingsNotice": {
       "description": "Codex may ask again to trust folders or approve commands. Re-add any MCP servers you added only in Adehone.",
@@ -5123,6 +5096,16 @@
     }
   },
   "worktree": {
+    "delete": {
+      "loss": {
+        "changes_one": "{{count}} uncommitted change",
+        "changes_other": "{{count}} uncommitted changes",
+        "unsavedFiles_one": "{{count}} unsaved file",
+        "unsavedFiles_other": "{{count}} unsaved files"
+      },
+      "withChildrenTitle_one": "Delete {{name}} and {{count}} child workspace?",
+      "withChildrenTitle_other": "Delete {{name}} and {{count}} child workspaces?"
+    },
     "setupTrust": {
       "alwaysTrustScope": "Always trust runs future <code>adehone.yaml</code> changes in <repo/> without asking.",
       "branchDiffersBody": "The workspace was created, but its setup didn't run: its branch's <code>adehone.yaml</code> differs from what you approved. Run these for this workspace only if you trust <repo/>.",

@@ -105,6 +105,7 @@ export const EXECUTION_HOST_METHODS = [
   'git.push',
   'git.rebaseFromBase',
   'git.remoteCommitUrl',
+  'git.addToGitignore',
   'git.resolveConflict',
   'git.stage',
   'git.status',
@@ -252,6 +253,7 @@ export const EXECUTION_HOST_METHODS = [
   'worktree.resolveMrBase',
   'worktree.resolvePrBase',
   'worktree.rm',
+  'worktree.runApprovedSetup',
   'worktree.set',
   'worktree.show',
   'worktree.sleep'

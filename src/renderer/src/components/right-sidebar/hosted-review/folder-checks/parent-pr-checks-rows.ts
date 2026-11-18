@@ -109,7 +109,9 @@ function buildParentPrChecksRow(
   const outcome = args.refreshOutcomes?.get(refreshIdentity)
   const reviewSnapshot = getReviewSnapshot(args, branch, outcome)
   const fallbackDisplay = getWorktreeCardPrDisplay(
-    reviewSnapshot.review,
+    outcome?.kind === 'loading' && reviewSnapshot.review === null
+      ? undefined
+      : reviewSnapshot.review,
     args.worktree.linkedPR,
     args.worktree.linkedGitLabMR ?? null,
     args.worktree.linkedBitbucketPR ?? null,

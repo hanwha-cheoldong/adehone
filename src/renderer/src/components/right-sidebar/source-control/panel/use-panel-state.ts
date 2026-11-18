@@ -37,6 +37,7 @@ export function useSourceControlPanelState() {
   const operationState = useSourceControlWorktreeOperationState({
     activeWorktreeId,
     activeWorktreeInstanceId,
+    branchName: context.branchName,
     conflictOperation
   })
   useSourceControlBranchLineTotalGate({

@@ -9,7 +9,7 @@ import { useChecksPanelTerminalWorktree } from '../refresh/use-checks-panel-term
 import { getConnectionId } from '@/lib/workspace/ownership/connection-context'
 import { readDetectedAgentsForWorktree } from '@/lib/agent-session/launch/inventory/agent-detection-target-inventory'
 import { useMountedRef } from '@/hooks/useMountedRef'
-import { useConfirmationDialog } from '@/components/confirmation-dialog-context'
+import { useConfirmationDialog } from '@/components/dismiss/confirmation/confirmation-dialog-context'
 import { getWorktreeGitIdentityDisplay } from '../../../../../../shared/worktree/row-display/git-identity-display'
 import { resolveRepoWorktreeLaunchPlatform } from '@/runtime/hosts/platform/execution-host-facts'
 import { runtimeEnvironmentIdOrLocalUnlessTwin } from '@/lib/workspace/ownership/worktree-runtime-owner'
@@ -164,6 +164,9 @@ export function useChecksPanelControllerState() {
   const [gitStatusRefreshNonce, setGitStatusRefreshNonce] = useState(0)
   // Manual retry must rerun eligibility even without Git changes, for example after fixing authentication.
   const [eligibilityRefreshNonce, setEligibilityRefreshNonce] = useState(0)
+  const [eligibilitySettledContextKey, setEligibilitySettledContextKey] = useState<string | null>(
+    null
+  )
   const [editingTitle, setEditingTitle] = useState(false)
   const [titleDraft, setTitleDraft] = useState('')
   const [titleSaving, setTitleSaving] = useState(false)
@@ -353,6 +356,8 @@ export function useChecksPanelControllerState() {
     setGitStatusRefreshNonce,
     eligibilityRefreshNonce,
     setEligibilityRefreshNonce,
+    eligibilitySettledContextKey,
+    setEligibilitySettledContextKey,
     editingTitle,
     setEditingTitle,
     titleDraft,
