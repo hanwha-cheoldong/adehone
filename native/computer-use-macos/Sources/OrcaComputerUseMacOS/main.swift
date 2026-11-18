@@ -984,7 +984,7 @@ final class Provider {
             // should open macOS privacy prompts/settings; runtime calls stay quiet.
             throw ProviderError.coded(
                 "permission_denied",
-                "Accessibility permission is required for Orca Computer Use. Run `orca computer permissions` or open Settings > Computer Use, grant Accessibility to Orca Computer Use, then retry."
+                "Accessibility permission is required for Adehone Computer Use. Run `orca computer permissions` or open Settings > Computer Use, grant Accessibility to Adehone Computer Use, then retry."
             )
         }
         let appElement = AXUIElementCreateApplication(app.pid)
@@ -1060,7 +1060,7 @@ final class Provider {
         let screenshotStatus: ScreenshotStatus = if screenshot != nil {
             .captured
         } else if includeScreenshot && !canCaptureScreenshot {
-            .failed("Screen Recording permission is required for Orca Computer Use; grant permission or pass --no-screenshot to inspect accessibility state only.")
+            .failed("Screen Recording permission is required for Adehone Computer Use; grant permission or pass --no-screenshot to inspect accessibility state only.")
         } else if includeScreenshot && visibility != .onScreen {
             .failed("the window \(visibility.reason), so it has no pixels to capture; the accessibility tree is still current. Pass --no-screenshot to skip the capture.")
         } else if includeScreenshot {
@@ -1710,7 +1710,7 @@ private func focusedWindow(appElement: AXUIElement, app: AppDescriptor, inventor
         }
         var windows: CFTypeRef?
         if AXUIElementCopyAttributeValue(appElement, kAXWindowsAttribute as CFString, &windows) == .apiDisabled {
-            throw ProviderError.coded("permission_denied", "app '\(app.name)' has visible windows but macOS refuses accessibility reads (AX reads stayed blocked for \(outcome.waitedMs)ms after retries). macOS Accessibility may need Orca Computer Use toggled off and on again in System Settings.")
+            throw ProviderError.coded("permission_denied", "app '\(app.name)' has visible windows but macOS refuses accessibility reads (AX reads stayed blocked for \(outcome.waitedMs)ms after retries). macOS Accessibility may need Adehone Computer Use toggled off and on again in System Settings.")
         }
     }
     let offScreen = observable.filter { $0.element != nil }
@@ -4936,7 +4936,7 @@ private final class DraggableAppTile: NSView, NSDraggingSource {
         icon.imageScaling = .scaleProportionallyUpOrDown
         icon.translatesAutoresizingMaskIntoConstraints = false
 
-        let title = NSTextField(labelWithString: "Orca Computer Use")
+        let title = NSTextField(labelWithString: "Adehone Computer Use")
         title.font = NSFont.systemFont(ofSize: 15, weight: .semibold)
         title.textColor = PermissionPalette.primaryText
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -5341,7 +5341,7 @@ private func becomeSelfResponsible() {
 }
 
 private func runStdio() {
-    fputs("Orca Computer Use provider must be launched by Orca in app-agent mode.\n", stderr)
+    fputs("Adehone Computer Use provider must be launched by Adehone in app-agent mode.\n", stderr)
     exit(13)
 }
 

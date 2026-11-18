@@ -14189,7 +14189,6 @@
           "newContributions": "Features that act for you",
           "allAccess": "See all access",
           "update": "Update",
-          "review": "Review",
           "replacesAction": "{{value0}} runs instead of Adehone’s {{value1}}",
           "newFileTypes": "Changes which files it opens",
           "newHooks": "Can change or stop what Adehone and your agents do",
@@ -24862,7 +24861,6 @@
     "language": {
       "back": "Languages",
       "requestPrompt": "Which language would you like Adehone to support?",
-      "requestSuccess": "Language request recorded. You can continue onboarding.",
       "requestError": "Could not record your request. Try again.",
       "retry": "Retry",
       "requestAction": "Request language",
@@ -25591,7 +25589,6 @@
     "setupTrust": {
       "reviewTitle": "Approve the new setup commands for this automation?",
       "reviewBody": "A run skipped setup because its branch's <code>adehone.yaml</code> setup commands changed. Approving lets later runs use these commands. Only approve if you trust <repo/>.",
-      "approve": "Approve",
       "approved": "Setup approved. Later runs of this automation will run it.",
       "skippedSinceApproved": "Setup didn't run for this run because its branch's adehone.yaml setup commands changed. They've since been approved, so later runs run them.",
       "skippedReview": "Setup didn't run: this run's branch has different adehone.yaml setup commands than the ones approved for this automation. Review them to run setup in later runs.",
