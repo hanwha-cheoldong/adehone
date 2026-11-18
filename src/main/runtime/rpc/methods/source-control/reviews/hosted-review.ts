@@ -57,6 +57,7 @@ export const HOSTED_REVIEW_METHODS = [
         linkedBitbucketDataCenterPR: params.linkedBitbucketDataCenterPR ?? null,
         linkedAzureDevOpsPR: params.linkedAzureDevOpsPR ?? null,
         linkedGiteaPR: params.linkedGiteaPR ?? null,
+        currentHeadOid: params.currentHeadOid ?? null,
         wakeWslDistro: params.wakeWslDistro
       })
     }

@@ -329,7 +329,8 @@ export function useChecksPanelGitStatusEffects(model: ChecksPanelGitStatusEffect
       linkedGitLabMR,
       linkedBitbucketPR,
       linkedAzureDevOpsPR,
-      linkedGiteaPR
+      linkedGiteaPR,
+      currentHeadOid: eligibilityHeadOidRef.current
     })
       .then((result) => {
         if (!stale) {

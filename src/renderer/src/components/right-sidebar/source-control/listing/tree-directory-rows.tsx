@@ -1,6 +1,6 @@
 import React from 'react'
 import { Ban, ChevronDown, Minus, Plus, Trash, Undo2 } from 'lucide-react'
-import { FolderIcon } from '@/components/FileTypeIcon'
+import { FolderIcon } from '@/components/icons/FileTypeIcon'
 import {
   ContextMenu,
   ContextMenuContent,
