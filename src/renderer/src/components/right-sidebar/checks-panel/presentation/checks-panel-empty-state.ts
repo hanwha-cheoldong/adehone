@@ -32,6 +32,7 @@ export function getChecksPanelReviewState(
   if (input.operationLabel) {
     return {
       renderReview: false,
+      isLoading: true,
       title: t(
         'auto.components.right.sidebar.checks.panel.empty.state.d77c513c1e',
         '{{value0}} in progress',
@@ -59,6 +60,25 @@ export function getChecksPanelReviewState(
     }
   }
 
+  // Wait for the initial eligibility/existing-review check before surfacing unconfirmed errors or blockers.
+  if (input.isCheckingExistingReview) {
+    return {
+      renderReview: false,
+      isLoading: true,
+      title: t(
+        'auto.components.right.sidebar.checks.panel.review.git_loading.title',
+        'Checking branch status'
+      ),
+      description: t(
+        'auto.components.right.sidebar.checks.panel.review.git_loading.body',
+        'Orca is checking this branch before showing create or publish actions.'
+      ),
+      composerMode: 'hidden',
+      workflowAction: null,
+      recovery: []
+    }
+  }
+
   const blockedReason = input.eligibilityBlockedReason
 
   // Keep positive-review lookups updating without hiding stronger safety guidance.
@@ -71,6 +91,7 @@ export function getChecksPanelReviewState(
   if (reviewFetchInFlight && hasPendingReviewEvidence && pendingReviewLookupOwnsState) {
     return {
       renderReview: false,
+      isLoading: true,
       title: t(
         'auto.components.right.sidebar.checks.panel.review.active.title',
         'Checking {{reviewLabel}} status',
@@ -164,6 +185,7 @@ export function getChecksPanelReviewState(
     const mode = confirmedComposerMode(input)
     return {
       renderReview: false,
+      isLoading: true,
       title: t(
         'auto.components.right.sidebar.checks.panel.review.active.title',
         'Checking {{reviewLabel}} status',
@@ -180,9 +202,10 @@ export function getChecksPanelReviewState(
     }
   }
 
-  if (input.gitStatusPhase === 'loading' && input.hasUpstream === undefined) {
+  if (input.gitStatusPhase === 'loading') {
     return {
       renderReview: false,
+      isLoading: true,
       title: t(
         'auto.components.right.sidebar.checks.panel.review.git_loading.title',
         'Checking branch status'

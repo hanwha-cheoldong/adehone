@@ -40,6 +40,7 @@ type ChecksPanelGitStatusEffectsInput = Pick<
   | 'setGitStatusProbeErrorContextKey'
   | 'setGitStatusRefreshNonce'
   | 'setGitStatusSnapshot'
+  | 'setEligibilitySettledContextKey'
   | 'setHostedReviewCreationSnapshot'
   | 'sshConnectionStatus'
   | 'updateWorktreeGitIdentity'
@@ -107,6 +108,7 @@ export function useChecksPanelGitStatusEffects(model: ChecksPanelGitStatusEffect
     setGitStatusProbeErrorContextKey,
     setGitStatusRefreshNonce,
     setGitStatusSnapshot,
+    setEligibilitySettledContextKey,
     setHostedReviewCreationSnapshot,
     sshConnectionStatus,
     updateWorktreeGitIdentity
@@ -342,9 +344,13 @@ export function useChecksPanelGitStatusEffects(model: ChecksPanelGitStatusEffect
             gitFingerprint: requestGitFingerprint,
             data: result
           })
+          setEligibilitySettledContextKey(requestContextKey)
         }
       })
       .catch(() => {
+        if (!stale) {
+          setEligibilitySettledContextKey(requestContextKey)
+        }
         // Keep the last confirmed snapshot so transient GitHub outages do not tear down a clean composer.
       })
     return () => {
@@ -376,6 +382,7 @@ export function useChecksPanelGitStatusEffects(model: ChecksPanelGitStatusEffect
     remoteStatus?.hasUpstream,
     repo,
     eligibilityHeadOidRef,
+    setEligibilitySettledContextKey,
     setHostedReviewCreationSnapshot
   ])
 }

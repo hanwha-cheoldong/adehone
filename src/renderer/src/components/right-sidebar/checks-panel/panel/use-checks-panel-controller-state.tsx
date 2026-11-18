@@ -164,6 +164,9 @@ export function useChecksPanelControllerState() {
   const [gitStatusRefreshNonce, setGitStatusRefreshNonce] = useState(0)
   // Manual retry must rerun eligibility even without Git changes, for example after fixing authentication.
   const [eligibilityRefreshNonce, setEligibilityRefreshNonce] = useState(0)
+  const [eligibilitySettledContextKey, setEligibilitySettledContextKey] = useState<string | null>(
+    null
+  )
   const [editingTitle, setEditingTitle] = useState(false)
   const [titleDraft, setTitleDraft] = useState('')
   const [titleSaving, setTitleSaving] = useState(false)
@@ -353,6 +356,8 @@ export function useChecksPanelControllerState() {
     setGitStatusRefreshNonce,
     eligibilityRefreshNonce,
     setEligibilityRefreshNonce,
+    eligibilitySettledContextKey,
+    setEligibilitySettledContextKey,
     editingTitle,
     setEditingTitle,
     titleDraft,

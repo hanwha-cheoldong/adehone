@@ -48,6 +48,7 @@ type ChecksPanelContextStateInput = Pick<
   | 'setConflictDetailsRefreshing'
   | 'setCreatePrError'
   | 'setEditingTitle'
+  | 'setEligibilitySettledContextKey'
   | 'setEmptyRefreshing'
   | 'setGitStatusProbeErrorContextKey'
   | 'setGitStatusRefreshNonce'
@@ -91,6 +92,7 @@ export function useChecksPanelContextState(model: ChecksPanelContextStateInput) 
     setConflictDetailsRefreshing,
     setCreatePrError,
     setEditingTitle,
+    setEligibilitySettledContextKey,
     setEmptyRefreshing,
     setGitStatusProbeErrorContextKey,
     setGitStatusRefreshNonce,
@@ -150,6 +152,7 @@ export function useChecksPanelContextState(model: ChecksPanelContextStateInput) 
       clearPendingPRCommentAiAck()
     }
     setHostedReviewCreationSnapshot(null)
+    setEligibilitySettledContextKey(null)
     setHardRefreshError(null)
     setGitStatusSnapshot(null)
     setGitStatusProbeErrorContextKey(null)

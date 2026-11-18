@@ -34,6 +34,8 @@ export type ChecksPanelPollingInput = Pick<
     | 'asyncResultKeyRef'
     | 'activeWorktree'
     | 'branch'
+    | 'checksLoading'
+    | 'commentsLoading'
     | 'fetchPRChecks'
     | 'isPanelVisible'
     | 'pollIntervalRef'
@@ -73,6 +75,7 @@ export function useChecksPanelPolling(model: ChecksPanelPollingInput) {
     activeGitLabReview ? hostedReviewCacheKey : prCacheKey
   ])
   const gitLabDetailsLoadingGenerationRef = useRef(0)
+  const [settledChecksIdentity, setSettledChecksIdentity] = useState<string | null>(null)
   const fetchChecks = useCallback(
     async ({
       force = false,
@@ -292,10 +295,23 @@ export function useChecksPanelPolling(model: ChecksPanelPollingInput) {
     policyRef,
     requestIdentity,
     fetchChecks,
-    fetchGitLabDetails
+    fetchGitLabDetails,
+    onChecksSettled: setSettledChecksIdentity
   })
 
-  return { fetchChecks, fetchGitLabDetails }
+  const isInitialChecksPending =
+    model.isPanelVisible &&
+    Boolean(repo) &&
+    (activeGitLabReview !== null || prNumber !== null) &&
+    settledChecksIdentity !== requestIdentity
+
+  return {
+    fetchChecks,
+    fetchGitLabDetails,
+    checksLoading: model.checksLoading || isInitialChecksPending,
+    commentsLoading:
+      model.commentsLoading || (activeGitLabReview !== null && isInitialChecksPending)
+  }
 }
 
 export type ChecksPanelPollingState = ReturnType<typeof useChecksPanelPolling>

@@ -1,13 +1,20 @@
 import { githubCreationImageUploadAddress } from '@/components/github/github-creation-image-upload-address'
 import React from 'react'
+import { LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DetachedHeadBadge } from '@/components/DetachedHeadBadge'
 import { CreateHostedReviewComposer } from '../../hosted-review/creation/CreateHostedReviewComposer'
 import {
-  getChecksPanelReviewState,
   checksPanelOperationLabel,
   shouldShowChecksPanelPublishBranchAction
 } from './checks-panel-empty-state'
+import { resolveChecksPanelEmptyViewState } from './checks-panel-empty-view-state'
+import {
+  ChecksPanelFolderNotice,
+  ChecksPanelNoWorkspaceNotice,
+  ChecksPanelUnlinkedPrNotice
+} from './empty-content-notices'
+import { useMinimumLoadingHold } from './use-minimum-loading-hold'
 import { openChecksPanelHostedReviewUrl } from '../review-actions/checks-panel-hosted-review-click-routing'
 import { isRateLimitRefresh } from '../review-state/checks-panel-review-state-model'
 import { isMacPlatform } from '../../../terminal-pane/links/terminal-link-open-hints'
@@ -44,7 +51,9 @@ export function ChecksPanelEmptyContent({
     createPrError,
     createPrPushFirst,
     detachedHeadDisplay,
+    eligibilitySettledContextKey,
     emptyRefreshing,
+    entryHostedReviewFetchInFlight,
     gitStatusInputs,
     gitStatusProbeErrorContextKey,
     handleCancelGeneratePullRequestFields,
@@ -63,6 +72,7 @@ export function ChecksPanelEmptyContent({
     isCreatingPr,
     isFolder,
     isGitHubReviewContext,
+    isPanelVisible,
     isPublishingBranch,
     isRemoteOperationActive,
     isSyncingBranch,
@@ -79,6 +89,7 @@ export function ChecksPanelEmptyContent({
     prBaseSearchPending,
     prBody,
     prDraft,
+    prFetchedAt,
     prGenerateDisabled,
     prGenerateDisabledReason,
     prGenerateError,
@@ -90,6 +101,7 @@ export function ChecksPanelEmptyContent({
     prRefreshState,
     publishActionHasUncommittedChanges,
     publishActionRemoteStatus,
+    repo,
     setEmptyRefreshing,
     setPrBaseQuery,
     setPrBaseResults,
@@ -99,68 +111,78 @@ export function ChecksPanelEmptyContent({
     stackParentReview,
     suppressedGitHubPR
   } = model
-  if (!activeWorktree) {
-    return (
-      <div className="px-4 py-6">
-        <div className="text-sm font-medium text-foreground">
-          {t('auto.components.right.sidebar.ChecksPanel.a4ef4e0832', 'No workspace selected')}
-        </div>
-        <div className="mt-1 text-xs text-muted-foreground">
-          {t(
-            'auto.components.right.sidebar.ChecksPanel.b5dd73a105',
-            'Select a workspace to view checks'
-          )}
-        </div>
-      </div>
+  const emptyReviewIsGitLab = linkedGitLabMR !== null || hostedReviewCreation?.provider === 'gitlab'
+  const emptyReviewCopy = localizedHostedReviewCopy(emptyReviewIsGitLab ? 'gitlab' : 'github', t)
+  const canShowEmptyState =
+    Boolean(activeWorktree) &&
+    !isFolder &&
+    !activeReview &&
+    !(
+      prNumber !== null &&
+      linkedReviewNumber === null &&
+      isGitHubPRSuppressed({ linkedPR, suppressedGitHubPR }, prNumber)
     )
+  const emptyViewState = canShowEmptyState
+    ? resolveChecksPanelEmptyViewState(
+        {
+          operationLabel: checksPanelOperationLabel(conflictOperation, t),
+          reviewLabel: emptyReviewCopy.reviewLabel,
+          reviewShortLabel: emptyReviewCopy.shortLabel,
+          providerName: hostedReviewCreateCopy.providerName,
+          isGitHubProvider: hostedReviewCreateProvider === 'github',
+          reviewLookup: checksPanelReviewLookup,
+          openReviewUrl: checksPanelReviewLookupResult.openReviewUrl,
+          eligibilityBlockedReason: hostedReviewCreation?.blockedReason,
+          confirmedReadiness: confirmedReadiness.confirmed,
+          confirmedNeedsPush: confirmedReadiness.needsPush,
+          hasUpstream: publishActionRemoteStatus?.hasUpstream,
+          branch,
+          isPanelVisible,
+          hasRepo: Boolean(repo),
+          isFolder,
+          prFetchedAt,
+          hasUncommittedChanges: gitStatusInputs.hasUncommittedChanges,
+          gitStatusProbeErrorContextKey,
+          panelContextKey,
+          hasHostedReviewCreation: hostedReviewCreation !== null,
+          eligibilitySettledContextKey,
+          isGitHubReviewContext,
+          entryHostedReviewFetchInFlight,
+          checksPanelHasHardRefreshError,
+          hardRefreshError,
+          prRefreshState
+        },
+        t
+      )
+    : null
+  const minimumLoadingHold = useMinimumLoadingHold({
+    holdKey: isPanelVisible && canShowEmptyState ? panelContextKey : '',
+    isLoading: Boolean(emptyViewState?.reviewState.isLoading),
+    title: emptyViewState?.reviewState.title ?? '',
+    description: emptyViewState?.reviewState.description ?? ''
+  })
+
+  if (!activeWorktree) {
+    return <ChecksPanelNoWorkspaceNotice />
   }
   if (isFolder) {
-    return (
-      <div className="px-4 py-6">
-        <div className="text-sm font-medium text-foreground">
-          {t('auto.components.right.sidebar.ChecksPanel.976cefd02f', 'Checks unavailable')}
-        </div>
-        <div className="mt-1 text-xs text-muted-foreground">
-          {t(
-            'auto.components.right.sidebar.ChecksPanel.dda5924a40',
-            'Checks require a Git branch and hosted review context'
-          )}
-        </div>
-      </div>
-    )
+    return <ChecksPanelFolderNotice />
   }
 
   const currentGitHubPRIsSuppressed =
     prNumber !== null && isGitHubPRSuppressed({ linkedPR, suppressedGitHubPR }, prNumber)
   if (!activeReview && linkedReviewNumber === null && currentGitHubPRIsSuppressed) {
     return (
-      <div className="px-4 py-6">
-        <div className="text-sm font-medium text-foreground">
-          {t('checksPanel.unlinked.title', 'Pull request unlinked')}
-        </div>
-        <div className="mt-1 text-xs text-muted-foreground">
-          {t(
-            'checksPanel.unlinked.description',
-            'PR #{{number}} is hidden for this workspace. Link it again to restore checks and review details.',
-            { number: suppressedGitHubPR }
-          )}
-        </div>
-        <Button size="xs" className="mt-3" onClick={handleLinkSuppressedPullRequest}>
-          {t('checksPanel.unlinked.relink', 'Link PR #{{number}}', {
-            number: suppressedGitHubPR
-          })}
-        </Button>
-      </div>
+      <ChecksPanelUnlinkedPrNotice
+        suppressedGitHubPR={suppressedGitHubPR}
+        onRelink={handleLinkSuppressedPullRequest}
+      />
     )
   }
 
-  if (!activeReview) {
+  if (!activeReview && emptyViewState) {
     // Detached HEAD during Git operations does not mean the original branch lost its PR.
     const operationInProgress = conflictOperation !== 'unknown'
-    const operationLabel = checksPanelOperationLabel(conflictOperation, t)
-    const emptyReviewIsGitLab =
-      linkedGitLabMR !== null || hostedReviewCreation?.provider === 'gitlab'
-    const emptyReviewCopy = localizedHostedReviewCopy(emptyReviewIsGitLab ? 'gitlab' : 'github', t)
     const canPushCreate = hostedReviewCreation?.blockedReason === 'needs_push'
     const shouldPushBeforeCreateReview = createPrPushFirst || canPushCreate
     const canPublishBranch =
@@ -171,49 +193,14 @@ export function ChecksPanelEmptyContent({
           hasUpstream: publishActionRemoteStatus?.hasUpstream,
           hasCurrentBranch: Boolean(branch)
         }))
-    // Keep GitHub hard errors sticky so retry state cannot briefly restore the composer.
-    const emptyRefreshInput = !isGitHubReviewContext
-      ? undefined
-      : checksPanelHasHardRefreshError && hardRefreshError
-        ? { status: 'error' as const, errorType: hardRefreshError.errorType }
-        : prRefreshState
-          ? {
-              status: prRefreshState.status,
-              errorType: prRefreshState.errorType,
-              skippedReason: prRefreshState.skippedReason,
-              nextAutoRetryAt: prRefreshState.nextAutoRetryAt,
-              retryDisabledUntil: prRefreshState.retryDisabledUntil
-            }
-          : undefined
-    const emptyGitStatusPhase: 'loading' | 'ready' | 'error' =
-      gitStatusInputs.hasUncommittedChanges !== undefined
-        ? 'ready'
-        : gitStatusProbeErrorContextKey === panelContextKey
-          ? 'error'
-          : 'loading'
-    const reviewState = getChecksPanelReviewState(
-      {
-        operationLabel,
-        reviewLabel: emptyReviewCopy.reviewLabel,
-        reviewShortLabel: emptyReviewCopy.shortLabel,
-        providerName: hostedReviewCreateCopy.providerName,
-        isGitHubProvider: hostedReviewCreateProvider === 'github',
-        reviewLookup: checksPanelReviewLookup,
-        openReviewUrl: checksPanelReviewLookupResult.openReviewUrl,
-        eligibilityBlockedReason: hostedReviewCreation?.blockedReason,
-        // Preserved-composer mode uses confirmed readiness rather than the live create gate.
-        confirmedReadiness: confirmedReadiness.confirmed,
-        confirmedNeedsPush: confirmedReadiness.needsPush,
-        refresh: emptyRefreshInput,
-        gitStatusPhase: emptyGitStatusPhase,
-        hasUpstream: publishActionRemoteStatus?.hasUpstream,
-        hasCurrentBranch: Boolean(branch)
-      },
-      t
-    )
+    const { emptyRefreshInput, reviewState } = emptyViewState
+    const holdingLoading = minimumLoadingHold.isHolding
+    const showLoadingIndicator = holdingLoading || Boolean(reviewState.isLoading)
     // Classified GitHub states carry the next step (sign in, or wait for the limit), so they win.
     const refreshFailure =
-      emptyRefreshInput?.status === 'error' || isRateLimitRefresh(emptyRefreshInput)
+      holdingLoading ||
+      emptyRefreshInput?.status === 'error' ||
+      isRateLimitRefresh(emptyRefreshInput)
         ? null
         : manualRefreshError
     const emptyStateCopy = refreshFailure
@@ -221,7 +208,7 @@ export function ChecksPanelEmptyContent({
           title: t('auto.components.status.bar.tooltip.e740f92596', 'Refresh failed'),
           description: refreshFailure
         }
-      : { title: reviewState.title, description: reviewState.description }
+      : { title: minimumLoadingHold.title, description: minimumLoadingHold.description }
     const reviewStateAutoRetryText =
       reviewState.autoRetryAt !== undefined && reviewState.autoRetryAt > now
         ? t(
@@ -253,15 +240,20 @@ export function ChecksPanelEmptyContent({
             <DetachedHeadBadge display={detachedHeadDisplay} side="bottom" />
           </div>
         )}
-        <div className="text-sm font-medium text-foreground">{emptyStateCopy.title}</div>
+        <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+          {!refreshFailure && showLoadingIndicator && (
+            <LoaderCircle className="size-3.5 shrink-0 animate-spin text-muted-foreground" />
+          )}
+          <span>{emptyStateCopy.title}</span>
+        </div>
         <div className="mt-1 text-xs text-muted-foreground">{emptyStateCopy.description}</div>
-        {!refreshFailure && reviewState.detail ? (
+        {!holdingLoading && !refreshFailure && reviewState.detail ? (
           <div className="mt-1 text-xs text-muted-foreground">{reviewState.detail}</div>
         ) : null}
-        {!refreshFailure && reviewStateAutoRetryText ? (
+        {!holdingLoading && !refreshFailure && reviewStateAutoRetryText ? (
           <div className="mt-1 text-xs text-muted-foreground">{reviewStateAutoRetryText}</div>
         ) : null}
-        {!operationInProgress && createComposerOpen ? (
+        {!holdingLoading && !operationInProgress && createComposerOpen ? (
           <div className="mt-4 border-t border-border pt-3">
             <CreateHostedReviewComposer
               key={panelContextKey}
@@ -318,7 +310,7 @@ export function ChecksPanelEmptyContent({
             />
           </div>
         ) : null}
-        {!operationInProgress && reviewShowActionRow && (
+        {!holdingLoading && !operationInProgress && reviewShowActionRow && (
           <div className="mt-3 flex flex-wrap gap-2">
             {canPublishBranch && (
               <Button

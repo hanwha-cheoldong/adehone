@@ -1,7 +1,7 @@
 import { getRepoExecutionHostId } from '../../../../../../shared/execution-host/execution-host'
 import { forgeOwnerHostIdForWorkspace } from '@/runtime/source-control/forge/forge-credential-target'
 import { gitLabApiFor } from '@/runtime/repository-gitlab/gitlab-owner-api'
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ENTRY_REFRESH_GRACE_MS, shouldEntryRefresh } from './checks-entry-refresh'
 import { refreshHostedReviewCard } from '@/store/slices/hosted-review/hosted-review-card-refresh'
 import { toast } from 'sonner'
@@ -102,6 +102,7 @@ export function useChecksPanelEntryRefreshAndTitleActions(
     titleInputFocusTimerRef,
     titleInputRef
   } = model
+  const [entryHostedReviewFetchInFlight, setEntryHostedReviewFetchInFlight] = useState(false)
   const handleEntryRefresh = useCallback(
     (options: { refreshChecks: boolean; refreshComments: boolean }) => {
       if (!repo || !branch || !activeWorktreeId) {
@@ -109,6 +110,7 @@ export function useChecksPanelEntryRefreshAndTitleActions(
       }
       // Tab entry is automatic: preserve rate-limit guards and force only panes already known stale.
       if (isGitLabReviewContext) {
+        setEntryHostedReviewFetchInFlight(true)
         void fetchHostedReviewForBranch(repo.path, branch, {
           force: true,
           repoId: repo.id,
@@ -120,6 +122,10 @@ export function useChecksPanelEntryRefreshAndTitleActions(
           linkedBitbucketPR,
           linkedAzureDevOpsPR,
           linkedGiteaPR
+        }).finally(() => {
+          if (mountedRef.current) {
+            setEntryHostedReviewFetchInFlight(false)
+          }
         })
         // Entering the tab is a user act: it may start a stopped WSL distro (E9).
         if (activeGitLabReview) {
@@ -152,6 +158,7 @@ export function useChecksPanelEntryRefreshAndTitleActions(
       linkedGiteaPR,
       linkedGitLabMR,
       linkedPR,
+      mountedRef,
       repo
     ]
   )
@@ -166,6 +173,7 @@ export function useChecksPanelEntryRefreshAndTitleActions(
     if (!entryKey) {
       // Reset on hide so closing/reopening the same PR still reevaluates freshness.
       lastEntryKeyRef.current = ''
+      setEntryHostedReviewFetchInFlight(false)
       return
     }
     if (lastEntryKeyRef.current === entryKey) {
@@ -376,6 +384,7 @@ export function useChecksPanelEntryRefreshAndTitleActions(
     [handleSaveTitle, handleCancelEdit]
   )
   return {
+    entryHostedReviewFetchInFlight,
     refreshHostedReviewAfterMutation,
     handleStartEdit,
     handleCancelEdit,

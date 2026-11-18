@@ -21,6 +21,8 @@ export type ChecksPanelRecoveryAction = 'retry' | 'refresh' | 'open_review'
 export type ChecksPanelReviewState = {
   /** True only for `reviewLookup: found` — the caller renders review chrome. */
   renderReview: boolean
+  /** True while an active branch, review, or git operation check is in progress. */
+  isLoading?: boolean
   title: string
   description: string
   /** One muted sentence appended beneath the body (concurrent lookup failure). */
@@ -63,6 +65,8 @@ export type ChecksPanelReviewStateInput = {
   gitStatusPhase: 'loading' | 'ready' | 'error'
   hasUpstream: boolean | undefined
   hasCurrentBranch: boolean
+  /** True while the initial eligibility/existing-review check for this context has not settled yet. */
+  isCheckingExistingReview?: boolean
 }
 
 export const HARD_REFRESH_ERROR_TYPES = new Set<PRRefreshErrorType>([

@@ -1,5 +1,5 @@
 import { getRepoExecutionHostId } from '../../../../../../shared/execution-host/execution-host'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { checksPanelAsyncResultKey } from '../refresh/checks-panel-async-result-key'
 import { loadGitLabJobLogDetails } from '@/runtime/repository-gitlab/gitlab-job-trace-client'
 import { checksPanelLoadErrorMessage } from './checks-panel-forge-owner'
@@ -18,6 +18,7 @@ type ChecksPanelReviewDataInput = Pick<
   Pick<
     ChecksPanelControllerState,
     | 'branch'
+    | 'commentsLoading'
     | 'fetchPRCheckDetails'
     | 'fetchPRComments'
     | 'gitLabProjectRefRef'
@@ -48,6 +49,11 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
     setCommentsError,
     setCommentsLoading
   } = model
+  const [settledCommentsKey, setSettledCommentsKey] = useState<string | null>(null)
+  const commentsRequestKey =
+    !activeGitLabReview && repo && prNumber
+      ? checksPanelAsyncResultKey(prCacheKey, branch, prNumber, pr?.prRepo, pr?.headSha)
+      : ''
   const fetchComments = useCallback(
     async ({
       force = false,
@@ -180,12 +186,14 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
         if (!cancelled && isCurrentAsyncResult(requestKey)) {
           setComments(result)
           setCommentsLoading(false)
+          setSettledCommentsKey(requestKey)
         }
       },
       () => {
         if (!cancelled && isCurrentAsyncResult(requestKey)) {
           setComments([])
           setCommentsLoading(false)
+          setSettledCommentsKey(requestKey)
         }
       }
     )
@@ -220,7 +228,15 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
       void fetchComments({ force: true, userRefresh: true })
     })
   }, [activeGitLabReview, fetchComments, isPanelVisible, prNumber, repo])
-  return { fetchComments, handleLoadCheckDetails, getGitLabProjectRef }
+  const isInitialCommentsPending =
+    isPanelVisible && Boolean(commentsRequestKey) && settledCommentsKey !== commentsRequestKey
+
+  return {
+    fetchComments,
+    handleLoadCheckDetails,
+    getGitLabProjectRef,
+    commentsLoading: model.commentsLoading || isInitialCommentsPending
+  }
 }
 
 export type ChecksPanelReviewDataState = ReturnType<typeof useChecksPanelReviewData>

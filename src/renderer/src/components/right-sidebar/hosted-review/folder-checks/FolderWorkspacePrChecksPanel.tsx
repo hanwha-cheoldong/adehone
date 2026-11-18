@@ -79,25 +79,48 @@ export default function FolderWorkspacePrChecksPanel({
       crossStoreChildrenByFolderId
     ]
   )
+  const folderWorkspaceId = folderWorkspace?.id ?? null
+  const refreshCandidates = useMemo(
+    () => getParentPrChecksRefreshCandidates({ worktrees: childWorktrees, repos }),
+    [childWorktrees, repos]
+  )
+  const currentRefreshIdentities = useMemo(
+    () => new Set(refreshCandidates.map((candidate) => candidate.identity)),
+    [refreshCandidates]
+  )
+  const effectiveRefreshOutcomes = useMemo(() => {
+    if (!isVisible || !folderWorkspaceId || childWorktrees.length === 0) {
+      return refreshOutcomes
+    }
+    let next: Map<string, ParentPrChecksRefreshOutcome> | null = null
+    for (const identity of currentRefreshIdentities) {
+      if (!refreshOutcomes.has(identity)) {
+        next ??= new Map(refreshOutcomes)
+        next.set(identity, { kind: 'loading' })
+      }
+    }
+    return next ?? refreshOutcomes
+  }, [
+    childWorktrees.length,
+    currentRefreshIdentities,
+    folderWorkspaceId,
+    isVisible,
+    refreshOutcomes
+  ])
   const projectionSelector = useMemo(
     () =>
       createParentPrChecksProjectionSelector({
         worktrees: childWorktrees,
         repos,
         settings,
-        refreshOutcomes
+        refreshOutcomes: effectiveRefreshOutcomes
       }),
-    [childWorktrees, repos, settings, refreshOutcomes]
+    [childWorktrees, repos, settings, effectiveRefreshOutcomes]
   )
   const projection = useAppStore(projectionSelector)
-  const folderWorkspaceId = folderWorkspace?.id ?? null
   const headerSummary = useMemo(
     () => formatReviewChecksHeaderSummary(projection.summary),
     [projection.summary]
-  )
-  const refreshCandidates = useMemo(
-    () => getParentPrChecksRefreshCandidates({ worktrees: childWorktrees, repos }),
-    [childWorktrees, repos]
   )
   const refreshCandidateSignature = useMemo(
     () =>
@@ -160,11 +183,7 @@ export default function FolderWorkspacePrChecksPanel({
     manualRefreshGeneration
   ])
 
-  const currentRefreshIdentities = useMemo(
-    () => new Set(refreshCandidates.map((candidate) => candidate.identity)),
-    [refreshCandidates]
-  )
-  const isRefreshing = [...refreshOutcomes.entries()].some(
+  const isRefreshing = [...effectiveRefreshOutcomes.entries()].some(
     ([identity, outcome]) => currentRefreshIdentities.has(identity) && outcome.kind === 'loading'
   )
 

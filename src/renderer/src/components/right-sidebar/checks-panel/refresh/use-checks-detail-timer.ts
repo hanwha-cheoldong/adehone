@@ -16,7 +16,8 @@ export function useChecksDetailTimer({
   policyRef,
   requestIdentity,
   fetchChecks,
-  fetchGitLabDetails
+  fetchGitLabDetails,
+  onChecksSettled
 }: {
   model: ChecksPanelPollingInput
   modelRef: RefObject<ChecksPanelPollingInput>
@@ -24,6 +25,7 @@ export function useChecksDetailTimer({
   requestIdentity: string
   fetchChecks: ChecksPanelPollingState['fetchChecks']
   fetchGitLabDetails: ChecksPanelPollingState['fetchGitLabDetails']
+  onChecksSettled?: (identity: string) => void
 }): void {
   const {
     activeGitLabReview,
@@ -136,6 +138,7 @@ export function useChecksDetailTimer({
           if (inFlightRef.current?.token === token) {
             inFlightRef.current = null
             if (lastIdentityRef.current === requestIdentity) {
+              onChecksSettled?.(requestIdentity)
               if (!background && modelRef.current.isPanelVisible) {
                 wakeNextReadRef.current = false
               }
@@ -198,6 +201,7 @@ export function useChecksDetailTimer({
     policyRef,
     fetchChecks,
     fetchGitLabDetails,
+    onChecksSettled,
     isPanelVisible,
     isGitLabReview,
     prNumber,
