@@ -4,6 +4,8 @@ title: '[Bug]: '
 type: Bug
 labels:
   - bug
+assignees:
+  - hanwha-cheoldong
 body:
   - type: markdown
     attributes:

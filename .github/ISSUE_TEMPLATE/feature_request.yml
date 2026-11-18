@@ -4,6 +4,8 @@ title: '[Feature]: '
 type: Feature
 labels:
   - enhancement
+assignees:
+  - hanwha-cheoldong
 body:
   - type: markdown
     attributes:

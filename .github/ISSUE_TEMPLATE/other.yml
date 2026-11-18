@@ -1,6 +1,8 @@
 name: Other
 description: Report another Adehone issue type
 title: '[Other]: '
+assignees:
+  - hanwha-cheoldong
 body:
   - type: markdown
     attributes:
