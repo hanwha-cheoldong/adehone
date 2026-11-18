@@ -73,8 +73,8 @@ function supports_packaged_node() {
 	return 0
 }
 
-NODE_CONTENTS="$CONTENTS/Helpers/Orca Agents.app/Contents"
-NODE="$NODE_CONTENTS/MacOS/Orca Agents"
+NODE_CONTENTS="$CONTENTS/Helpers/Adehone Agents.app/Contents"
+NODE="$NODE_CONTENTS/MacOS/Adehone Agents"
 if [ -x "$NODE" ] && supports_packaged_node; then
 	export ORCA_CLI_ELECTRON_EXECUTABLE="$ELECTRON"
 	unset ELECTRON_RUN_AS_NODE

@@ -29,7 +29,7 @@ afterEach(async () => {
   await rm(root, { recursive: true, force: true })
 })
 
-async function copy(name: string, bundle = 'Orca Agents.app'): Promise<string> {
+async function copy(name: string, bundle = 'Adehone Agents.app'): Promise<string> {
   const directory = join(root, name)
   await mkdir(join(directory, 'app.noindex', bundle), { recursive: true })
   return directory
@@ -68,7 +68,7 @@ it.each([
   expect(await exists(directory)).toBe(true)
 })
 
-it.each(['Orca Agents.app', 'Orca Terminal Host.app'])(
+it.each(['Adehone Agents.app', 'Orca Agents.app', 'Orca Terminal Host.app'])(
   'unregisters an unused %s before deleting its copy',
   async (bundle) => {
     const directory = await copy('terminal-host-old', bundle)

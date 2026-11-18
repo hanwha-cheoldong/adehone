@@ -31,7 +31,11 @@ export async function retireUnusedMacDaemonCopy(directory: string): Promise<void
     const parent = join(directory, 'app.noindex')
     const bundles = await readdir(parent).catch(() => [])
     for (const bundle of bundles) {
-      if (bundle !== MAC_TERMINAL_HOST_BUNDLE && bundle !== 'Orca Terminal Host.app') {
+      if (
+        bundle !== MAC_TERMINAL_HOST_BUNDLE &&
+        bundle !== 'Orca Agents.app' &&
+        bundle !== 'Orca Terminal Host.app'
+      ) {
         continue
       }
       await runProcess({
