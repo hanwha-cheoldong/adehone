@@ -217,7 +217,7 @@ it('sends native Plan and Build on fresh turns while a steer keeps its running m
           settings: {
             model: 'retired-model',
             reasoning_effort: 'high',
-            developer_instructions: null
+            developer_instructions: '한국어로 작성해줘'
           }
         }
       })

@@ -2,6 +2,7 @@ import { constants } from 'node:fs'
 import { open, realpath, stat } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 import { z } from 'zod'
+import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../shared/source-control/ai/settings/source-control-ai-settings'
 import { readNodeFileHandleWithinLimit } from '../../shared/file-content/node-bounded-file-reader'
 import type { AcpLaunchSpec } from '../acp/launch/acp-launch-contract'
 import { isDescendantOrEqualExact } from '../filesystem/local-file-io/filesystem-path-containment'
@@ -136,6 +137,11 @@ export const antigravityChatRulesMeta: NonNullable<AcpLaunchSpec['resolveSession
     }
   }
   signal?.throwIfAborted()
-  const append = [...sections, ...pointers, ...(remaining ? [REMAINING_RULES] : [])].join('\n\n')
+  const append = [
+    ...sections,
+    ...pointers,
+    ...(remaining ? [REMAINING_RULES] : []),
+    DEFAULT_KOREAN_AI_INSTRUCTION
+  ].join('\n\n')
   return append ? { antigravity: { systemPrompt: { append } } } : undefined
 }

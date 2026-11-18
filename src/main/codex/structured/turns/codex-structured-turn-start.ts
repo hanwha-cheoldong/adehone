@@ -1,4 +1,5 @@
 import type { CodexTurnHost, CodexTurnInput } from './codex-structured-turn-contract'
+import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../../../shared/source-control/ai/settings/source-control-ai-settings'
 import { captureCodexMessageCompilerInputs } from '../catalog/codex-structured-service-tier'
 import {
   codexMessageInputOptions,
@@ -103,7 +104,7 @@ export async function startCodexTurn(
         model: nativeOptions.model ?? previousApplied?.model ?? host.reportedOptions?.model,
         reasoning_effort:
           nativeOptions.effort ?? previousApplied?.effort ?? host.reportedOptions?.effort ?? null,
-        developer_instructions: null
+        developer_instructions: DEFAULT_KOREAN_AI_INSTRUCTION
       }
     }
     requestControls = {

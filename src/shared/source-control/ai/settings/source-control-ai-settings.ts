@@ -29,6 +29,8 @@ function copyRecord<T>(value: T | undefined): T | undefined {
   return value === undefined ? undefined : structuredClone(value)
 }
 
+export const DEFAULT_KOREAN_AI_INSTRUCTION = '한국어로 작성해줘'
+
 export function getDefaultCommitMessageAiSettings(): CommitMessageAiSettings {
   return {
     enabled: true,
@@ -38,7 +40,7 @@ export function getDefaultCommitMessageAiSettings(): CommitMessageAiSettings {
     selectedModelByAgentByHost: {},
     discoveredModelsByAgentByHost: {},
     selectedThinkingByModel: {},
-    customPrompt: '',
+    customPrompt: DEFAULT_KOREAN_AI_INSTRUCTION,
     customAgentCommand: ''
   }
 }
@@ -60,7 +62,11 @@ export function getDefaultSourceControlAiSettings(): SourceControlAiSettings {
     discoveredModelsByAgentByHost: {},
     selectedThinkingByModel: {},
     customAgentCommand: '',
-    instructionsByOperation: { commitMessage: '', pullRequest: '', branchName: '' },
+    instructionsByOperation: {
+      commitMessage: DEFAULT_KOREAN_AI_INSTRUCTION,
+      pullRequest: DEFAULT_KOREAN_AI_INSTRUCTION,
+      branchName: ''
+    },
     prCreationDefaults: { ...DEFAULT_SOURCE_CONTROL_AI_PR_CREATION_DEFAULTS },
     launchActionDefaults: {}
   }

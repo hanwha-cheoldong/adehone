@@ -1,4 +1,5 @@
 import type { ClaudeAccountRecipe } from '../../../../shared/agent-session/lifecycle/accounts/agent-session-acquired-account'
+import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../../../shared/source-control/ai/settings/source-control-ai-settings'
 import { prepareClaudeLaunchAccount } from './claude-launch-account'
 import { assertStructuredAgentResolutionCurrent } from '../../../native-chat/agent-launch/structured-agent-command-resolution'
 import { activeProviderContext } from '../../../../shared/agent-session/conversation-context/agent-session-provider-context'
@@ -61,7 +62,6 @@ export function withClaudeArtifactDefault(
 }
 
 type ClaudePermissionOptions = Pick<ClaudeAgentSdkOptions, 'permissionMode' | 'extraArgs'>
-
 export type ClaudeStructuredSdkOptions = Pick<
   ClaudeAgentSdkOptions,
   | 'includePartialMessages'
@@ -84,8 +84,7 @@ export type ClaudeStructuredSdkOptions = Pick<
 /** Replay acknowledgements require an explicit flag; the SDK supplies the other transport flags. */
 export const CLAUDE_STRUCTURED_BASE_OPTIONS: ClaudeStructuredSdkOptions = {
   includePartialMessages: true,
-  // Keep the SDK on Claude Code's own system-prompt contract.
-  systemPrompt: { type: 'preset', preset: 'claude_code' },
+  systemPrompt: { type: 'preset', preset: 'claude_code', append: DEFAULT_KOREAN_AI_INSTRUCTION },
   settingSources: [...CLAUDE_DEFAULT_SETTING_SOURCES],
   supportedDialogKinds: [],
   extraArgs: { 'replay-user-messages': null }
@@ -335,9 +334,7 @@ export function claudeStructuredLaunchPart(
 }
 
 /** Until Claude writes the rewind's session, each launch forks it from the kept conversation. */
-function claudeRewindForkOptions(
-  fork: AgentSessionRewindFork
-): Pick<ClaudeStructuredSdkOptions, 'resume' | 'resumeSessionAt' | 'forkSession'> {
+function claudeRewindForkOptions(fork: AgentSessionRewindFork) {
   return fork.throughEntryId
     ? { resume: fork.sourceSessionId, resumeSessionAt: fork.throughEntryId, forkSession: true }
     : {}
