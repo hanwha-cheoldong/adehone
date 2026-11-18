@@ -203,10 +203,6 @@
     "argumentsHint": "CLI での起動にのみ適用されます。",
     "argumentsTerminalHint": "ターミナル（CLI）からの起動にのみ適用",
     "catalogEmpty": "{{agent}}に利用可能なモデルはありません。",
-    "catalogFailed": "{{agent}}のモデルを読み込めませんでした。Agent 選択を閉じて開き直してください。",
-    "catalogInstall": "このホストに{{agent}}をインストールしてモデルを読み込み、Agent 選択を開き直してください。",
-    "catalogSignIn": "{{agent}}にサインインしてモデルを読み込み、Agent 選択を開き直してください。",
-    "catalogUnresolved": "{{agent}}のモデルは読み込まれていません。Agent 選択を閉じて開き直してください。",
     "catalogUnsupportedLaunch": "このホストでは{{agent}}のモデルを利用できません。現在の選択はそのまま適用されます。",
     "chatChoicesNote": "CLI フラグがない {{agent}} のモデルまたは推論レベルの選択はチャットに適用されます。",
     "composedChoicesNote": "{{agent}} の推論レベルと速度の選択はモデルの引数に含まれます。",
@@ -231,8 +227,7 @@
     "disabledReason": {
       "approvalUnseen": "Agent が承認を待っている可能性があります",
       "hostUpdateRequired": "この Agent に送信するには、このホストの Orca を更新してください",
-      "needsPermission": "Agent に許可が必要です",
-      "statusStale": "Agent のステータスが古くなっています"
+      "needsPermission": "Agent に許可が必要です"
     }
   },
   "agentsSidebarIntro": {
@@ -2908,7 +2903,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "キャンセル",
-          "8490e5d36a": "確認する",
           "92bac3217e": "今後表示しない"
         },
         "skip": {
@@ -3068,21 +3062,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "詳細をコピー",
-            "6d3ebe216a": "診断テキスト",
             "765591798d": "クラッシュレポートを確認しています…",
             "835037edc9": "Adehone",
-            "88fea8e84e": "送信しないでください",
             "8b8473c544": "クラッシュレポートがコピーされました。",
             "8e24fe4f75": "クラッシュレポートが送信されました。",
-            "b082f27490": "最近の診断ログを添付",
-            "b4951cd27c": "レポートの送信",
-            "e59f0b9427": "上限を設けて秘匿処理したログをまとめ、レポートと一緒に送信します。",
             "ead6fc0510": "自動のクラッシュレポートは取得されませんでした。詳細を送信し、利用できる場合は最近の診断ログを添付できます。"
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "プライバシーに配慮した診断レポートを送信して、何が起きたかの把握にご協力ください。",
-            "closedNotesPlaceholder": "任意: Adehone が終了する前に何をしていましたか？",
             "closedTitle": "Adehone が予期せず終了しました",
             "renderError": "React レンダリングエラー",
             "renderErrorIn": "{{surface}} で React レンダリングエラー",
@@ -3483,7 +3469,7 @@
           "multipleAssetsFailedNotice": "このドキュメントの {{count}} ファイルをロードできませんでした。",
           "openExternallyControl": "デフォルトのアプリで開く",
           "openExternallyUnknownHostError": "「{{value0}}」を開けません: それを所有するホストはもう不明です。",
-          "openSourceControl": "オープンソースファイル",
+          "openSourceControl": "ソースファイルを開く",
           "previewAriaLabel": "HTMLプレビュー",
           "previewMenuControl": "プレビューオプション",
           "previewUnavailableTitle": "プレビューは利用できません",
@@ -5157,36 +5143,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "ターミナルリンク",
-              "description": "ターミナルのリンクを Adehone のブラウザで開くか、システムブラウザを使い続けます。",
               "keep": {
-                "description": "またはシステムブラウザを既定で使用します。",
                 "orca": {
                   "button": "Adehone のままにする"
-                },
-                "title": "ターミナルのリンクを Adehone のブラウザで開き続けますか？"
-              },
-              "link": {
-                "label": "リンク"
+                }
               },
               "orca": {
-                "button": "Adehone で開く",
-                "note": "Adehone はインポート済み Cookie を使ってログイン済みサイトを開けます。"
-              },
-              "preview": "プレビュー",
-              "settings": {
-                "note": "後で [設定] → [ブラウザ] から変更できます。"
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "リンクを Adehone で開く場合、",
-                  "suffix": "クリックで今回だけシステムブラウザで開きます。"
-                }
+                "button": "Adehone で開く"
               },
               "system": {
                 "button": "システムブラウザを使用"
-              },
-              "title": "ターミナルのリンクを Adehone のブラウザで開きますか？"
+              }
             }
           }
         }
@@ -5928,7 +5895,6 @@
             "fileCount_one": "{{value0}} 個のファイル",
             "fileCount_other": "{{value0}} 個のファイル",
             "historyRefreshed": "履歴を更新しました",
-            "scanned": "{{value0}}をスキャン済み",
             "scanning": "{{value0}}をスキャン中"
           },
           "AiVaultSearchEvidence": {
@@ -8136,13 +8102,6 @@
           "nativeActionToastDescription": "Sonner操作とキャンセルスロットを使用。",
           "notificationPlayground": "通知プレイグラウンド",
           "notificationPlaygroundDescription": "トーストレイアウト、復元操作、長文コピーの折り返しを確認するための開発専用トリガー。",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "プロファイルを接続",
-          "orcaCloudDescription": "ファーストパーティクラウドサインインの開発者限定プレビュー。本番環境では非表示。開発環境では、ORCA_CLOUD_API_URLとORCA_CLOUD_CLIENT_IDを設定するとサイドバーのアカウント切替にも表示されます。",
-          "orcaCloudNotConfigured": "ORCA_CLOUD_API_URLとORCA_CLOUD_CLIENT_IDを設定して、この開発ビルドで Orca Cloudのサインインをプレビューします。",
-          "orcaCloudRefresh": "ステータスを更新",
-          "orcaCloudSignOut": "サインアウト",
-          "orcaCloudStatus": "状態",
           "primaryAction": "プライマリ操作",
           "primaryActionClicked": "プライマリ操作がクリックされました",
           "secondary": "セカンダリ",
@@ -8398,16 +8357,7 @@
           "serverCountOne": "ペアリング済みサーバー 1 台",
           "updating": "サーバーを更新しています…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "スターを付けています…",
-          "511782265b": "GitHub スターでプロジェクトをサポートします。",
-          "55a87e5fd1": "Orca をサポートする",
-          "6922c1fa2b": "GitHub 上のスター Orca",
-          "964acc6bb4": "スター",
-          "af7d9f4396": "サポートありがとうございます!",
-          "cb65c75b11": "開いています…",
-          "f2d4f877b2": "GitHub を開く"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "アップデートのダウンロードを開始できませんでした。",
           "2a48034c4c": "v{{value0}}... {{value1}}% をダウンロード中",
@@ -10047,7 +9997,6 @@
           "6d1a27e193": "テーマ、ズーム、アプリとターミナルの外観、サイドバー、ステータスバー。",
           "7118953f14": "Agent がコンピュータ上の任意のアプリを制御できるようにします。",
           "7210ac09c4": "Agent のアクティビティとターミナルイベントに関するネイティブのデスクトップ通知。",
-          "742ca66ea6": "プライバシーとテレメトリ",
           "7686cb5c36": "このブラウザを保存された Adehone サーバーに接続します。",
           "7807c11c4d": "一般",
           "8acf3f22e0": "Adehone の統計に加え、Claude、Codex、OpenCode、Muse のトークン分析と Grok サブスクリプション使用状況。",
@@ -10063,7 +10012,6 @@
           "b07041697f": "GitHub、GitLab、Linear、およびソースホスティングサービスを接続します。",
           "b79b5b31e9": "シェル、レンダラー、セッション、およびターミナルの動作。",
           "c0900fa64a": "タスクソース",
-          "c1b43dc4e2": "匿名の使用状況データとテレメトリ制御。",
           "c2bb9fc528": "フローティングワークスペース",
           "c2ee313198": "ファイル、ターミナル、Git、ワークスペースに既存のマシンを SSH 経由で使用します。",
           "c40dadaac8": "モバイル",
@@ -11396,30 +11344,19 @@
               "apiToken": "APIトークン",
               "apiTokenPlaceholder": "Atlassian API トークン",
               "authModeLabel": "Bitbucket の認証方法",
-              "baseUrl": "API ベース URL (オプション)",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "アカウントの Atlassian API トークンを作成し、それを所有する電子メールアドレスと組み合わせます。",
               "cancel": "キャンセル",
               "connect": "接続",
               "connectFailed": "接続に失敗しました",
-              "description": "Bitbucket Cloud 認証情報を使用して、PR とビルドステータスを参照します。 Adehone は保存する前にそれを確認します。",
-              "docsLink": "Bitbucket API トークンのドキュメント",
-              "email": "アトラシアンアカウントのメールアドレス",
               "emailPlaceholder": "you@example.com",
-              "environmentManaged": "Bitbucket は ADEHONE_BITBUCKET_* 環境変数によってすでに設定されており、これが優先されます。 Adehone に認証情報を保存するには、これらの設定を解除します。",
               "modeBasic": "メールとAPIトークン",
               "modeToken": "アクセストークン",
-              "remoteRuntime": "アクティブなリモートランタイムではなく、このマシンに保存されます。代わりにリモートランタイムで ADEHONE_BITBUCKET_* を設定してください。環境変数は、ここで保存した内容より常に優先されます。",
               "scopeReadPullRequest": "PR の読み取り",
               "scopeRepository": "ビルドステータスの読み取り",
               "scopeUser": "アカウント名の表示",
               "scopeWritePullRequest": "PR の作成",
-              "scopesTitle": "次の Bitbucket API トークンのスコープを選択してください:",
               "scopesWriteNote": "読み取り専用で使う場合は書き込みスコープを省略してください。書き込みには読み取りが含まれないため、各スコープを個別に選択してください。",
-              "storageNote": "OS キーチェーンが使用可能な場合は、暗号化されたストレージを使用してこのマシンに保存されます。 ADEHONE_BITBUCKET_* 環境変数は、ここで保存したものよりも常に優先されます。",
-              "title": "Bitbucket を接続する",
-              "tokenHint": "リポジトリ、プロジェクト、ワークスペースのアクセストークンは、一致する Bitbucket 設定ページから作成され、PR への読み取りアクセスが必要です。",
-              "verifying": "確認中…"
+              "title": "Bitbucket を接続する"
             }
           },
           "integration": {
@@ -12738,10 +12675,7 @@
           "checking": "ロックを確認中…",
           "close": "閉じる",
           "confirm": "ロックを解除して再起動",
-          "confirmCheck": "このホームフォルダーを共有している他のマシンで Adehone は実行されていません",
           "currentBoot": "現在のブート",
-          "description": "以前の実行時のロックが残っているため、このホストの Adehone サーバーを起動できません。",
-          "eligible": "このマシンの以前のアドレスでは何も応答しませんが、同じ名前でこのホームフォルダーを共有する別のマシンがある可能性を Adehone は否定できません。",
           "host": "ホスト",
           "lockBoot": "書き込み時のブート",
           "manualCommand": "ホストで次を実行するか、詳細に表示されているロックファイルを削除してください:",
@@ -12750,8 +12684,6 @@
           "manualDeleteWarning": "このホームフォルダーを共有する他のマシンでこのプロファイルの Adehone が実行されていない場合にのみ、この操作を行ってください。",
           "none": "解除するロックはもうありません。このホストの Adehone サーバーを起動するには再接続してください。",
           "reclaimedNotStarted": "ロックは解除されましたが、Adehone のサーバーは起動しませんでした。",
-          "title": "Adehone のサーバーを復旧",
-          "warning": "このホームフォルダーを共有する他のマシンでこのプロファイルの Adehone が実行されていない場合にのみ続行してください。",
           "written": "書き込み日時"
         },
         "repository": {
@@ -13736,14 +13668,11 @@
           "80b6ea14cf": "ターミナルクリーンアップが警告付きで完了しました。",
           "922548bc66": "ターミナルサービスを再起動しますか?",
           "993af6052c": "デーモン管理が終了を報告：{{value0}}/{{value1}}；正確なクリーンアップ前にまだ存在：{{value2}}。",
-          "a702d4196e": "これにより、すべてのワークスペースのターミナルタブが閉じられ、現在のターミナルセッションのシャットダウンがリクエストされます。保存されていないターミナル作業は失われます。デーモン自体は実行を続け、新規ターミナルはすぐに開けます。この操作は取り消せません。",
-          "b5954e12d3": "再起動に失敗しました - ログを確認してください。",
           "busyKilling": "終了中…",
           "busyRestarting": "再起動中…",
           "c34fb1098d": "ターミナルタブが閉じられ、シャットダウンリクエストが送信されました。",
           "confirmKillAll": "すべてのセッションを終了",
           "confirmRestart": "再起動",
-          "d762b41f41": "再起動に失敗しました。",
           "d9657ac204": "ターミナルセッションのシャットダウンリクエストが送信されました。",
           "e8f25bd903": "ターミナルクリーンアップを完了できませんでした。"
         }
@@ -13976,7 +13905,6 @@
           "aed1623b1e": "閉じる",
           "ca3b225195": "ブランチの自動名前付けに失敗しました",
           "couldNotGenerateBranchName": "Adehone は最初の Agent メッセージから <name>{{name}}</name> のブランチ名を生成できませんでした。",
-          "dismissError": "エラーを閉じる",
           "dismissing": "閉じています…",
           "eab8b45238": "コピーエラー"
         },
@@ -14005,7 +13933,7 @@
           "deleteSingleWorktreeAndBranch": "ワークツリーとそのブランチを削除します（未マージの場合ブランチは保持）。",
           "gitBlocksMainWorktree": "Git ではメインワークツリーを削除できません。",
           "removeBatchFolder_other": "Adehone から<target>{{count}} 個のワークスペース</target>を削除します。ディスク上のプロジェクトフォルダーは削除されません。",
-          "removeBatchGit_other": "git から<target>{{count}} 個のワークスペース</target>を削除し、そのワークスペースフォルダーも削除します。",
+          "removeBatchGit_other": "{{count}} 個のワークツリーとそのブランチを削除します（未マージのブランチは保持されます）。",
           "removeBatchMixed_other": "Adehone から<target>{{count}} 個のワークスペース</target>を削除します。Git ワークツリーは git とディスクからも削除されます。フォルダーワークスペースは Adehone の登録のみ削除されます。",
           "removeFolderProjectInstead": "このワークスペースを削除する代わりに、フォルダープロジェクトを削除してください。",
           "removeSingleFolderFromOrca": "Adehone から削除します。ディスク上のフォルダーは保持されます。",
@@ -14015,9 +13943,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "キャンセル",
-          "cf95e3b5bb": "閉じる",
-          "deleting": "削除中…",
-          "forceDeleting": "強制削除中…"
+          "cf95e3b5bb": "閉じる"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "未コミットの変更 {{count}} 件が失われます",
@@ -14035,19 +13961,13 @@
           "alsoDeletesChildren_other": "このワークスペースを削除すると、{{count}} 件の子ワークスペースも削除されます。",
           "moreChildren_other": "ほか {{count}} 件"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "これは<strong>メインワークツリー</strong>（元のクローンディレクトリ）です。"
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "ワークスペースを作成",
           "title": "フォルダーワークスペースを作成"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "キャンセル",
-          "forget": "Adehone から削除",
-          "ghostBody": "{{host}} は保存済みの SSH ホストではなくなったため、このワークスペースは稼働中のホストに接続されていません。Adehone から削除することのみ可能です。リモート上のファイルとブランチはそのまま残ります。",
-          "removeTitle": "「{{name}}」を Orca から削除しますか？",
-          "savedHostBody": "このワークスペースのプロジェクトは {{host}} 上の Orca サーバーで提供されていないため、そこで削除することはできません。Orca から削除することはできます。{{host}} 上のファイル、Git ワークツリー、ブランチはそのまま残ります。"
+          "forget": "Adehone から削除"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "ソースを有効にせずに個別に表示します。",
@@ -15340,8 +15260,6 @@
           "opening": "このリンクを開くと…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— 切断されました",
-          "176fef9516": "・ SSH",
           "3677ae58e7": "Adehone がリンクからインストールしたスキルです。再インストール、以前のバージョンへの切り戻し、または削除ができます。",
           "44d118a8f7": "Adehone でインストール済み",
           "64c71cf7b9": "Adehone はまだこのマシンにスキルをインストールしていません。",
@@ -15371,10 +15289,8 @@
           "0e5b43a9e3": "ワークスペース",
           "5845cfe543": "ワークツリーまたはフォルダーを選択してください",
           "63cc9e31fe": "行き先",
-          "71eefd7660": "— 切断されました",
           "7a366323e7": "フォルダー",
           "8562dd1e6e": "このコンピュータ",
-          "85d85880df": "・ SSH",
           "8e6a972229": "このマシンにはワークスペースがありません。",
           "a4dfd33095": "1 つのワークスペース",
           "b8a0b706ad": "機械",
@@ -16965,14 +16881,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "キャンセル",
-            "dont_ask_again": "実行中のターミナルでは今後確認しない",
-            "stop_agent_confirm": "Agent を停止",
-            "stop_agent_description": "このターミナルを閉じると、Agent の現在の作業が停止します。",
-            "stop_agent_title": "この Agent を停止しますか?",
-            "stop_chat_description": "このチャットを閉じると、Agent の現在の作業が停止します。",
-            "stop_command_confirm": "停止して閉じる",
-            "stop_command_description": "このターミナルを閉じると、その中で実行中のコマンドが停止します。",
-            "stop_command_title": "実行中のコマンドを停止しますか?"
+            "stop_agent_title": "この Agent を停止しますか?"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "復元する",
@@ -17594,7 +17503,6 @@
         "2eece16ad1": "通知",
         "31e57d1c70": "ファイル、ターミナル、Git、ワークスペースに既存のマシンを SSH 経由で使用します。",
         "33a5e1d597": "GitHub、GitLab、Linear、およびソースホスティングサービスを接続します。",
-        "3618579df6": "プライバシーとテレメトリ",
         "3d65d3f1b9": "Adehone およびコーディング Agent のモバイルエミュレータのサポートを構成します。",
         "3fc3db144f": "クイックコマンド",
         "40d80bad8a": "ベータ",
@@ -17610,7 +17518,6 @@
         "724c440e72": "はじめる",
         "7682607591": "Agent およびターミナルイベントのネイティブデスクトップ通知。",
         "7c79d3b7bf": "任意",
-        "8400cfe1c1": "匿名の使用状況データとテレメトリ制御。",
         "85f4fd7710": "タスクソース",
         "8ac3de82f5": "オンデバイスモデルを使用したローカルの音声からテキストへのディクテーション。",
         "8c197f74a1": "ブラウザ",
@@ -19263,33 +19170,22 @@
       "deliveryUnconfirmed": "Adehone は {{agent}} がセッションコンテキストを受け取ったことを確認できませんでした。新規セッションを確認し、入力が空の場合は自分で貼り付けてください。",
       "detectingAgents": "このワークスペースホストで Agent を検出中…",
       "detectionFailed": "このワークスペースホストで Agent を検出できませんでした。",
-      "dialogDescription": "この時点から新しい Agent セッションを開始します。元のセッションは変更されません。",
-      "dialogTitle": "別の Agent に引き継ぐ",
       "dialogTitleSentence": "別の Agent に引き継ぐ",
       "handOffToAnotherAgent": "別の Agent に引き継ぐ",
       "launchFailed": "新規 {{agent}} セッションを開始できませんでした。",
       "meta": "{{session}} · 元のセッションは変更されません",
       "metaWithAgent": "{{agent}} から · {{session}} · 元のセッションは変更されません",
-      "modeCapturedDescription": "キャプチャしたテキストと現在のワークスペースを使います。",
-      "modeFocused": "要点を引き継ぐ（推奨）",
-      "modeFocusedDescription": "最新の状態と現在のワークスペースを使い、必要な場合だけ過去の詳細を読みます。",
-      "modeFull": "セッション全文",
       "modeFullCost": "時間がかかり、プランや API クレジットを多く消費します。",
-      "modeFullDescription": "続行前に、保存されたセッション全体を新規 Agent に読ませます。時間がかかり、多くのコンテキスト、プラン使用量、またはAPIクレジットを消費する可能性があります。",
       "modeFullTranscript": "完全なトランスクリプト",
       "modeLatestStatus": "最新の状況（推奨）",
-      "modeLoadedDescription": "このチャットに読み込まれている最近のメッセージと現在のワークスペースを使います。",
-      "noAgents": "このワークスペースホストで有効な Agent が検出されませんでした。",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "新規セッションで続けるためのコンテキストがありません。",
       "onlySourceFamilyDetected": "このワークスペースホストで利用できる Agent は、{{agent}} と利用上限を共有するものだけです。別の Agent を有効にするか、インストールしてください。",
-      "originalAgent": "元の Agent: {{agent}}",
       "preparingContext": "保存されたチャットのコンテキストを準備中…",
       "selectAgent": "Agent を選択",
       "sent": "セッションコンテキストを新規 {{agent}} セッションに送信しました。",
-      "startSession": "新規セッションを開始",
       "startSessionSentence": "セッションを開始",
       "starting": "開始中…",
-      "startsIn": "開始場所:",
       "untitledSession": "現在のセッション"
     },
     "automations": {
@@ -20495,15 +20391,10 @@
       "usageLimitActions": {
         "accountUnavailable": "このチャットは別のアカウントに移せません。別の Agent に引き継いでください。",
         "addAccount": "アカウントを追加…",
-        "continueNow": "今すぐ続ける",
-        "leadIn": "待たずにこのチャットを続ける：",
         "switchAccount": "アカウントを切り替え"
       },
       "usageLimitAutoContinue": {
-        "cancel": "続けない",
         "cancelFailed": "自動続行をキャンセルできませんでした。もう一度お試しください。",
-        "cancelled": "Adehone はこのチャットを自動的には続けません。",
-        "openSetting": "上限がリセットされたら自動的に続ける",
         "scheduled": "Adehone は {{time}} にこのチャットを続けます。"
       },
       "userMessage": {
@@ -22846,7 +22737,6 @@
     "countUnavailable": "ターミナル数を取得できません",
     "killAllLocal": "すべてのローカルセッションを終了",
     "killFailed": "ターミナルを終了できませんでした。最後に観測されたセッションを保持しています。",
-    "localDaemonScope": "これはこのコンピューター上のターミナルに影響します。",
     "metricDetails": "メトリクスの詳細",
     "openToObserve": "リソースを開いてターミナルセッションを監視します。",
     "pty": {
@@ -23012,7 +22902,6 @@
   "sessionSearch": {
     "panel": {
       "changed": "検索中にインデックスが変更されました。現在の結果を再度検索します。",
-      "consent": "全文検索を有効にしますか？Orca は、会話の全文を含むローカルの Agent トランスクリプトから、このコンピュータ上にインデックスを作成します。内容はマスキングされません。ペアリングされた認証済みクライアントは、このインデックスを検索できます。",
       "consentTranscriptIndex": "検索ではセッションの詳細とメッセージのプレビューが照合されます。会話の全文を検索するには、全文検索を有効にしてください（ローカルのトランスクリプトをマスキングせずにインデックス化します）。ペアリングされたデバイスからも検索できます。",
       "enable": "有効化",
       "enableFailed": "検索を有効にできませんでした。再試行。",
@@ -23030,7 +22919,6 @@
       "indexedHistory": "インデックス付き履歴",
       "loadMore": "さらに一致をロードする",
       "loadingMoreSessions": "さらにセッションを読み込んでいます…",
-      "noMatches": "インデックス付けされた履歴に一致するセッションがありません。別のクエリまたはスコープを試してください。",
       "noMatchesToShow": "表示できる一致するセッションはありません。",
       "noService": "このコンピュータでは検索を利用できません。 Adehone アップデートまたは検索サポートを備えたランタイムが必要な場合があります。",
       "notReady": "検索インデックスはまだ準備ができていません。しばらくしてからもう一度お試しください。",
@@ -23823,13 +23711,9 @@
       "optionShortcutHint": "Optionショートカットには「両方」、アクセント付き文字や記号には「オフ」、用途を左右のOptionキーに分けるには「左」または「右」を選んでください。",
       "windows": {
         "10aafff216": "セッションの管理を開く",
-        "administratorApproval": "Windows が承認を求めます。普段お使いのアカウントを使用してください。",
         "administratorDialogScope": "これによりアプリ全体の権限が変更されます。SSH と WSL はそれぞれ独自の権限を保持します。",
         "administratorDocumentation": "ガイドを読む",
         "administratorLabel": "管理者モード",
-        "administratorPromptCancellation": "Windows のプロンプトをキャンセルすると、保持されているターミナルとともに Adehone が再び開きます。SSH と WSL の権限はそれぞれのホストで管理されたままです。",
-        "administratorRestartConsequences": "先に作業を保存してください。承認後、現在のローカルターミナルホスト上のターミナルと Agent が閉じられます。復元されたタブは新規管理者シェルを開きます。",
-        "administratorRestartFailed": "Adehone を再起動できませんでした。もう一度試すか、マニュアルの手順を使用してください。",
         "administratorRestartSummary": "ローカルのターミナルと Agent は閉じられます。Windows が承認を求めます。",
         "administratorScope": "Adehone アプリの権限。既存のターミナルでは異なる場合があります。",
         "administratorSearchDescription": "Adehone の Windows 権限を確認するか、管理者承認で再起動します。",
@@ -23838,7 +23722,6 @@
         "checkingAdministrator": "確認中…",
         "closeAdministratorHelp": "閉じる",
         "closeLocalSessions": "作業を保存し、すべてのローカルターミナルセッションを閉じてから、Adehone を終了してください。",
-        "confirmAdministratorRestart": "管理者として再起動しますか？",
         "confirmOrcaAdministratorRestart": "Orca を管理者として再起動しますか?",
         "keywordAdmin": "管理者",
         "keywordAdministrator": "管理者",
@@ -23848,7 +23731,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "Windows のスタートメニューで Adehone を右クリックし、「管理者として実行」を選択します。普段お使いのアカウントで Windows のプロンプトを承認してください。",
         "launchStandard": "Windows のスタートメニューから Adehone を通常どおり開きます。",
-        "manualAdministratorHelp": "マニュアルの手順",
         "manualAdministratorSteps": "手動の手順",
         "orcaCouldNotRestart": "Orca を再起動できませんでした。",
         "restartAdministrator": "管理者として再起動",
@@ -24585,42 +24467,25 @@
       "alsoStop": "実行中のサーバーも停止する（Orca の外も含め、それを使うすべての Codex セッションが閉じます）",
       "body": "セッションが予期せず終了したり、Agent のステータスが間違ったりする可能性があります。",
       "cancel": "キャンセル",
-      "confirmStopDescription": "これにより、Adehone 外部のものも含め、それを共有している開いている Codex セッションがすべて閉じられます。",
-      "confirmStopTitle": "共有サーバーを停止しますか?",
       "copied": "コピーしました",
-      "copy": "コピー",
       "copyCommand": "コマンドをコピー",
       "couldNotTurnOff": "共有をオフにできませんでした。",
-      "dialogDescription": "ターミナルで直接開始された Codex セッションは、1 つのバックグラウンドサーバーを共有します。 Adehone は、開始する Codex セッションを個別に保持します。セッションがサーバーを共有している場合、1 つを閉じると他のセッションも終了し、Agent のステータスが不正になる可能性があります。",
       "dialogQuestion": "Codex の各タブに専用のサーバーを割り当てますか?",
       "dialogSummary": "Codex のサーバー共有をオフにします（Orca の外でも適用されます）。",
-      "dialogTitle": "各 Codex タブに独自のサーバーを与える",
-      "done": "完了",
       "fix": "修理",
       "howToUndo": "元に戻す方法",
       "oldTerminalDialogCause": "古いターミナルは依然として Codex サーバーを共有しています。新規ターミナルを開いて、別のサーバーで Codex を実行します。",
       "oldTerminalDialogRisk": "サーバーを共有する Codex セッションが同時に終了する可能性があり、Agent のステータスが間違っている可能性があります。",
       "oldTerminalDialogTitle": "この Codex がサーバーを共有する理由",
       "openedBeforeUpdateBody": "このターミナルは、Adehone が各 Codex に独自のサーバーを提供し始める前にオープンされました。",
-      "runs": "実行コマンド",
-      "step1Note": "これにより Codex 設定が変更されるため、Adehone の外部にも適用されます。",
-      "step1Title": "Codex サーバー共有をオフにする",
-      "step2Title": "稼働中の共有サーバーを停止します",
-      "step2Warning": "サーバーを共有している開いている Codex セッションをすべて閉じます。",
-      "stopFailed": "Adehone はサーバーを停止できませんでした。",
       "stopFailedAfterOff": "共有はオフになりましたが、サーバーは停止しませんでした。",
       "stopServer": "サーバーを停止する",
       "stopSummary": "実行中のサーバーを停止し、それを使っているすべての Codex セッションを閉じます。",
-      "stopped": "停止しました",
       "stopping": "停止中…",
       "title": "この Codex は他の Codex タブとサーバーを共有しています",
-      "turnOff": "消す",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone はこれをオフにすることができませんでした。",
       "turnOffSharing": "共有をオフにする",
-      "turnedOff": "オフになっています",
       "turningOff": "オフにしています…",
-      "undo": "元に戻すには、codex features enable daemon_auto_start を実行します。",
       "undoRun": "共有を再度オンにするには、次を実行します:"
     },
     "codexSharedSettingsNotice": {
@@ -24908,15 +24773,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "常に削除",
-    "alwaysDeleteTooltip": "今後の削除ではこの確認をスキップします。",
     "alwaysForceDelete": "常に強制削除",
     "alwaysForceDeleteBranches": "保持したブランチを常に削除する",
     "alwaysForceDeleteBranchesDescription": "将来のワークスペースの削除後に保持されるブランチに適用されます。",
     "alwaysForceDeleteDescription": "今後のすべてのワークスペース削除に適用されます。",
     "moreActions": "その他の強制削除オプション",
     "moreBranchActions": "その他のブランチ削除オプション",
-    "moreDeleteOptions": "その他の削除オプション",
     "preferenceSaveFailed": "削除の設定を保存できませんでした"
   },
   "workspaceSpace": {

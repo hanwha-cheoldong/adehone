@@ -219,19 +219,13 @@
     "argumentsHint": "Applies only to CLI launches.",
     "argumentsTerminalHint": "Only applies to terminal (CLI) launches",
     "catalogEmpty": "{{agent}} has no available models.",
-    "catalogFailed": "Could not load {{agent}} models. Close and reopen the agent picker to try again.",
-    "catalogInstall": "Install {{agent}} on this host to load its models, then close and reopen the agent picker.",
     "catalogInstallToLoad": "Install {{agent}} on this host to load its models.",
     "catalogLoadFailed": "Could not load {{agent}} models.",
     "catalogNotLoaded": "{{agent}} models have not loaded.",
-    "catalogSignIn": "Sign in to {{agent}} to load its models, then close and reopen the agent picker.",
     "catalogSignInToLoad": "Sign in to {{agent}} to load its models.",
-    "catalogUnresolved": "{{agent}} models have not loaded. Close and reopen the agent picker to try again.",
     "catalogUnsupportedLaunch": "{{agent}} models are unavailable on this host. Your current choices still apply.",
-    "chat": "Chat",
     "chatChoicesNote": "{{agent}} model or effort choices without a CLI flag apply to chats.",
     "chatTag": "(Chat)",
-    "cli": "CLI",
     "composedChoicesNote": "{{agent}} effort and speed choices are included in the model argument.",
     "configure": "Configure {{agent}}",
     "effortDefault": "Default",
@@ -244,7 +238,6 @@
     "noTerminal": "No terminal for {{agent}}",
     "openAsChat": "Open as chat",
     "openAsTerminal": "Open as terminal",
-    "openIn": "Open as",
     "promptPlaceholder": "Add a prompt (optional): / for skills, @ for files",
     "promptPlaceholderFilesOnly": "Add a prompt (optional): @ for files",
     "retryModels": "Retry",
@@ -261,8 +254,7 @@
     "disabledReason": {
       "approvalUnseen": "Agent may be waiting for approval",
       "hostUpdateRequired": "Update Orca on this host to send to this agent",
-      "needsPermission": "Agent needs permission",
-      "statusStale": "Agent status is stale"
+      "needsPermission": "Agent needs permission"
     }
   },
   "agentsSidebarIntro": {
@@ -3030,7 +3022,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "Cancel",
-          "8490e5d36a": "Confirm",
           "92bac3217e": "Don't ask again"
         },
         "skip": {
@@ -3190,21 +3181,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "Copy Details",
-            "6d3ebe216a": "Diagnostic text",
             "765591798d": "Checking for crash reports...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "Don't Send",
             "8b8473c544": "Crash report copied.",
             "8e24fe4f75": "Crash report sent.",
-            "b082f27490": "Attach recent diagnostic logs",
-            "b4951cd27c": "Send Report",
-            "e59f0b9427": "Sends a capped redacted log bundle with the report.",
             "ead6fc0510": "No automatic crash report was captured. You can still send details and include recent diagnostic logs when available."
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "Send a privacy-safe diagnostic report to help us understand what happened.",
-            "closedNotesPlaceholder": "Optional: what were you doing before Adehone closed?",
             "closedTitle": "Adehone closed unexpectedly",
             "renderError": "React render error",
             "renderErrorIn": "React render error in {{surface}}",
@@ -5300,36 +5283,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "Terminal link",
-              "description": "Use Adehone's browser for terminal links, or keep your system browser.",
               "keep": {
-                "description": "Or use your system browser by default.",
                 "orca": {
                   "button": "Keep Adehone"
-                },
-                "title": "Keep terminal links in Adehone's browser?"
-              },
-              "link": {
-                "label": "Link"
+                }
               },
               "orca": {
-                "button": "Open in Adehone",
-                "note": "Adehone can use imported cookies for logged-in sites."
-              },
-              "preview": "Preview",
-              "settings": {
-                "note": "Change this later in Settings → Browser."
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "When links open in Adehone,",
-                  "suffix": "click opens system browser once."
-                }
+                "button": "Open in Adehone"
               },
               "system": {
                 "button": "Use system browser"
-              },
-              "title": "Open terminal links in Adehone's browser?"
+              }
             }
           }
         }
@@ -6081,7 +6045,6 @@
             "fileCount_one": "{{value0}} file",
             "fileCount_other": "{{value0}} files",
             "historyRefreshed": "History refreshed",
-            "scanned": "Scanned {{value0}}",
             "scanning": "Scanning {{value0}}"
           },
           "AiVaultSearchEvidence": {
@@ -8323,13 +8286,6 @@
           "nativeActionToastDescription": "Uses Sonner action and cancel slots.",
           "notificationPlayground": "Notification playground",
           "notificationPlaygroundDescription": "Dev-only triggers for checking toast layout, recovery actions, and long-copy wrapping.",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "Connect profile",
-          "orcaCloudDescription": "Dev-only preview of first-party cloud sign-in. Hidden in production; in dev it also appears in the sidebar account switcher once ORCA_CLOUD_API_URL and ORCA_CLOUD_CLIENT_ID are set.",
-          "orcaCloudNotConfigured": "Set ORCA_CLOUD_API_URL and ORCA_CLOUD_CLIENT_ID to preview Orca Cloud sign-in in this dev build.",
-          "orcaCloudRefresh": "Refresh status",
-          "orcaCloudSignOut": "Sign out",
-          "orcaCloudStatus": "Status",
           "primaryAction": "Primary action",
           "primaryActionClicked": "Primary action clicked",
           "secondary": "Secondary",
@@ -8590,16 +8546,7 @@
           "serverCountOne": "1 paired server",
           "updating": "Updating servers…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "Starring...",
-          "511782265b": "Support the project with a GitHub star.",
-          "55a87e5fd1": "Support Orca",
-          "6922c1fa2b": "Star Orca on GitHub",
-          "964acc6bb4": "Star",
-          "af7d9f4396": "Thanks for the support!",
-          "cb65c75b11": "Opening...",
-          "f2d4f877b2": "Open GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "Could not start the update download.",
           "2a48034c4c": "Downloading v{{value0}}... {{value1}}%",
@@ -10254,7 +10201,6 @@
           "6d1a27e193": "Theme, zoom, app and terminal appearance, sidebars, and status bar.",
           "7118953f14": "Enable agents to control any app on your computer.",
           "7210ac09c4": "Native desktop notifications for agent activity and terminal events.",
-          "742ca66ea6": "Privacy & telemetry",
           "7686cb5c36": "Connect this browser to a saved Adehone server.",
           "7807c11c4d": "General",
           "8acf3f22e0": "Adehone stats plus Claude, Codex, OpenCode, Muse token analytics and Grok subscription usage.",
@@ -10270,7 +10216,6 @@
           "b07041697f": "Connect GitHub, GitLab, Linear, and source-hosting services.",
           "b79b5b31e9": "Shells, renderer, sessions, and terminal behavior.",
           "c0900fa64a": "Task sources",
-          "c1b43dc4e2": "Anonymous usage data and telemetry controls.",
           "c2bb9fc528": "Floating workspace",
           "c2ee313198": "Use existing machines over SSH for files, terminals, Git, and workspaces.",
           "c40dadaac8": "Mobile",
@@ -11603,30 +11548,19 @@
               "apiToken": "API token",
               "apiTokenPlaceholder": "Atlassian API token",
               "authModeLabel": "Bitbucket authentication method",
-              "baseUrl": "API base URL (optional)",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "Create an Atlassian API token for your account, then pair it with the email address that owns it.",
               "cancel": "Cancel",
               "connect": "Connect",
               "connectFailed": "Connection failed",
-              "description": "Use a Bitbucket Cloud credential to browse pull requests and build statuses. Adehone verifies it before saving.",
-              "docsLink": "Bitbucket API token docs",
-              "email": "Atlassian account email",
               "emailPlaceholder": "you@example.com",
-              "environmentManaged": "Bitbucket is already configured through HADEHONE_BITBUCKET_* environment variables, which take precedence. Unset them to save a credential in Adehone.",
               "modeBasic": "Email & API token",
               "modeToken": "Access token",
-              "remoteRuntime": "Stored on this machine, not on the active remote runtime — set HADEHONE_BITBUCKET_* there instead. Environment variables always take precedence over what you save here.",
               "scopeReadPullRequest": "Read pull requests",
               "scopeRepository": "Read build statuses",
               "scopeUser": "Show your account name",
               "scopeWritePullRequest": "Create pull requests",
-              "scopesTitle": "Select these Bitbucket API token scopes:",
               "scopesWriteNote": "For read-only use, omit the write scope. Write does not include read; select each scope separately.",
-              "storageNote": "Stored on this machine with encrypted storage when the OS keychain is available. HADEHONE_BITBUCKET_* environment variables always take precedence over what you save here.",
-              "title": "Connect Bitbucket",
-              "tokenHint": "Repository, project, and workspace access tokens are created from the matching Bitbucket settings page and need read access to pull requests.",
-              "verifying": "Verifying..."
+              "title": "Connect Bitbucket"
             }
           },
           "integration": {
@@ -12994,10 +12928,7 @@
           "checking": "Checking the lock…",
           "close": "Close",
           "confirm": "Clear lock and restart",
-          "confirmCheck": "No other machine sharing this home is running Adehone",
           "currentBoot": "Current boot",
-          "description": "Adehone’s server on this host won’t start because a lock from an earlier run is still in place.",
-          "eligible": "Nothing answers on this machine at its old address, but Adehone can’t rule out another machine with the same name that shares this home folder.",
           "host": "Host",
           "lockBoot": "Written during boot",
           "manualCommand": "Run this on the host, or delete the lock file shown in Details:",
@@ -13006,8 +12937,6 @@
           "manualDeleteWarning": "Only do this if no other machine sharing this home runs Adehone for this profile.",
           "none": "There is no lock to clear any more. Reconnect to start this host’s Adehone server.",
           "reclaimedNotStarted": "The lock was cleared, but Adehone’s server did not start.",
-          "title": "Recover Adehone’s server",
-          "warning": "Only continue if no other machine sharing this home runs Adehone for this profile.",
           "written": "Written"
         },
         "repository": {
@@ -13993,14 +13922,11 @@
           "80b6ea14cf": "Terminal cleanup finished with warnings.",
           "922548bc66": "Restart the terminal service?",
           "993af6052c": "Daemon management reported exited: {{value0}}/{{value1}}; still present before exact cleanup: {{value2}}.",
-          "a702d4196e": "This closes every terminal tab across all workspaces and requests shutdown for its current terminal sessions. Any unsaved terminal work is lost. The daemon itself keeps running, and new terminals can be opened immediately. This can't be undone.",
-          "b5954e12d3": "Restart failed — check logs.",
           "busyKilling": "Killing…",
           "busyRestarting": "Restarting…",
           "c34fb1098d": "Terminal tabs closed and shutdown requested.",
           "confirmKillAll": "Kill all sessions",
           "confirmRestart": "Restart",
-          "d762b41f41": "Restart failed.",
           "d9657ac204": "Terminal session shutdown requested.",
           "e8f25bd903": "Couldn’t finish terminal cleanup."
         }
@@ -14237,7 +14163,6 @@
           "ca3b225195": "Branch auto-name failed",
           "couldNotGenerateBranchName": "Adehone couldn't generate a branch name for <name>{{name}}</name> from the first agent message.",
           "dismiss": "Dismiss",
-          "dismissError": "Dismiss error",
           "dismissing": "Dismissing…",
           "eab8b45238": "Copy error",
           "errorDetailsAt": "Error details · {{time}}",
@@ -14283,8 +14208,8 @@
           "gitBlocksMainWorktree": "Git does not allow removing the main worktree.",
           "removeBatchFolder_one": "Remove <target>{{count}} workspace</target> from Adehone. Project folders on disk will not be deleted.",
           "removeBatchFolder_other": "Remove <target>{{count}} workspaces</target> from Adehone. Project folders on disk will not be deleted.",
-          "removeBatchGit_one": "Remove <target>{{count}} workspace</target> from git and delete its workspace folder.",
-          "removeBatchGit_other": "Remove <target>{{count}} workspaces</target> from git and delete their workspace folders.",
+          "removeBatchGit_one": "Deletes {{count}} worktree and its branch (kept if unmerged).",
+          "removeBatchGit_other": "Deletes {{count}} worktrees and their branches (kept if unmerged).",
           "removeBatchMixed_one": "Remove <target>{{count}} workspace</target> from Adehone. Git worktrees will also be removed from git and disk; folder workspaces will only remove the Adehone workspace entry.",
           "removeBatchMixed_other": "Remove <target>{{count}} workspaces</target> from Adehone. Git worktrees will also be removed from git and disk; folder workspaces will only remove the Adehone workspace entry.",
           "removeFolderProjectInstead": "Remove the folder project instead of deleting this workspace.",
@@ -14298,9 +14223,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "Cancel",
-          "cf95e3b5bb": "Close",
-          "deleting": "Deleting...",
-          "forceDeleting": "Force Deleting..."
+          "cf95e3b5bb": "Close"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "{{count}} uncommitted change will be lost",
@@ -14321,19 +14244,13 @@
           "moreChildren_one": "+{{count}} more",
           "moreChildren_other": "+{{count}} more"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "This is the <strong>main worktree</strong> (the original clone directory)."
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "Create workspace",
           "title": "Create Folder Workspace"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "Cancel",
-          "forget": "Remove from Adehone",
-          "ghostBody": "{{host}} is no longer a saved SSH host, so this workspace is no longer connected to a live host. It can only be removed from Adehone — files and branches on the remote are left untouched.",
-          "removeTitle": "Remove “{{name}}” from Adehone?",
-          "savedHostBody": "This workspace’s project isn’t served by Adehone’s server on {{host}}, so Adehone can’t delete it there. You can remove it from Adehone; files, the Git worktree, and branches on {{host}} are left untouched."
+          "forget": "Remove from Adehone"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "Show one without enabling its source.",
@@ -15660,8 +15577,6 @@
           "opening": "Opening this link…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— disconnected",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Skills Adehone installed from a link. Reinstall, go back to an earlier version, or remove them.",
           "44d118a8f7": "Installed by Adehone",
           "64c71cf7b9": "Adehone has not installed any skills on this machine yet.",
@@ -15691,10 +15606,8 @@
           "0e5b43a9e3": "Workspace",
           "5845cfe543": "Choose a worktree or folder",
           "63cc9e31fe": "Destination",
-          "71eefd7660": "— disconnected",
           "7a366323e7": "Folder",
           "8562dd1e6e": "This computer",
-          "85d85880df": "· SSH",
           "8e6a972229": "No workspaces are known on this machine.",
           "a4dfd33095": "One workspace",
           "b8a0b706ad": "Machine",
@@ -17342,14 +17255,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "Cancel",
-            "dont_ask_again": "Don't ask again for running terminals",
-            "stop_agent_confirm": "Stop Agent",
-            "stop_agent_description": "Closing this terminal will stop the agent's current work.",
-            "stop_agent_title": "Stop this agent?",
-            "stop_chat_description": "Closing this chat will stop the agent's current work.",
-            "stop_command_confirm": "Stop and Close",
-            "stop_command_description": "Closing this terminal will stop the command running inside it.",
-            "stop_command_title": "Stop running command?"
+            "stop_agent_title": "Stop this agent?"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "Restore",
@@ -17979,7 +17885,6 @@
         "2eece16ad1": "Notifications",
         "31e57d1c70": "Use existing machines over SSH for files, terminals, Git, and workspaces.",
         "33a5e1d597": "Connect GitHub, GitLab, Linear, and source-hosting services.",
-        "3618579df6": "Privacy & Telemetry",
         "3d65d3f1b9": "Configure mobile emulator support for Adehone and coding agents.",
         "3fc3db144f": "Quick Commands",
         "40d80bad8a": "Beta",
@@ -17995,7 +17900,6 @@
         "724c440e72": "getting started",
         "7682607591": "Native desktop notifications for agent and terminal events.",
         "7c79d3b7bf": "Optional",
-        "8400cfe1c1": "Anonymous usage data and telemetry controls.",
         "85f4fd7710": "Task Sources",
         "8ac3de82f5": "Local speech-to-text dictation with on-device models.",
         "8c197f74a1": "Browser",
@@ -19685,33 +19589,22 @@
       "deliveryUnconfirmed": "Adehone could not confirm {{agent}} received the session context. Check the new session, and paste it yourself if its input is empty.",
       "detectingAgents": "Detecting Agents on this workspace host…",
       "detectionFailed": "Could not detect Agents on this workspace host.",
-      "dialogDescription": "Start a fresh Agent session from this stopping point. The original session stays unchanged.",
-      "dialogTitle": "Hand Off to Another Agent",
       "dialogTitleSentence": "Hand off to another agent",
       "handOffToAnotherAgent": "Hand Off to Another Agent",
       "launchFailed": "Could not start a new {{agent}} session.",
       "meta": "{{session}} · original stays unchanged",
       "metaWithAgent": "From {{agent}} · {{session}} · original stays unchanged",
-      "modeCapturedDescription": "Uses captured text and the current workspace.",
-      "modeFocused": "Focused handoff (Recommended)",
-      "modeFocusedDescription": "Uses the latest status and current workspace, reading older transcript details only when needed.",
-      "modeFull": "Full session transcript",
       "modeFullCost": "Slower, and uses more of your plan or API credits.",
-      "modeFullDescription": "Asks the new Agent to read the complete saved session before continuing. This can take longer and use significant context, plan usage, or API credits.",
       "modeFullTranscript": "Full transcript",
       "modeLatestStatus": "Latest status (recommended)",
-      "modeLoadedDescription": "Uses recent messages currently loaded in this chat and the current workspace.",
-      "noAgents": "No enabled Agents were detected on this workspace host.",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "No session context is available to continue in a new session.",
       "onlySourceFamilyDetected": "Only Agents sharing the usage limit with {{agent}} are available on this workspace host. Enable or install a different Agent.",
-      "originalAgent": "Original Agent: {{agent}}",
       "preparingContext": "Preparing saved chat context…",
       "selectAgent": "Select an Agent",
       "sent": "Session context sent to {{agent}} in a new session.",
-      "startSession": "Start New Session",
       "startSessionSentence": "Start session",
       "starting": "Starting…",
-      "startsIn": "Starts in:",
       "untitledSession": "Current session"
     },
     "automations": {
@@ -21075,19 +20968,17 @@
       },
       "usageLimitActions": {
         "accountUnavailable": "This chat cannot move to another account. Hand it off to another agent instead.",
-        "addAccount": "Add Account…",
+        "addAccount": "Add account…",
         "autoContinueSettings": "Auto-continue settings",
         "autoContinuesAt": "Auto-continues at {{time}}",
         "canContinueAt": "Can continue at {{time}}",
         "cancelAt": "Don't continue at {{time}}",
-        "continueNow": "Continue Now",
         "continuesAt": "Continues at {{time}}",
         "copyError": "Copy error",
         "copyFailed": "Couldn't copy the error.",
         "copyTruncated": "Copied text was shortened to fit {{count}} characters.",
         "handOff": "Hand off to another agent",
         "hideDetails": "Hide details",
-        "leadIn": "Continue this chat without waiting:",
         "more": "More actions",
         "resetUnknown": "Reset time unknown",
         "settingsMenu": "Auto-continue settings…",
@@ -21101,7 +20992,7 @@
         "statusHasUsage": "{{agent}} has usage again.",
         "statusHasUsageAuto": "{{agent}} has usage again. Orca will continue this chat at {{time}}.",
         "statusUnknown": "Reset time unknown.",
-        "switchAccount": "Switch Account",
+        "switchAccount": "Switch account",
         "titleCanContinueNow": "{{agent}} can continue now",
         "titleExtraUsageReached": "{{agent}} extra usage limit reached",
         "titleHasUsage": "{{agent}} has usage again",
@@ -21110,10 +21001,7 @@
         "wontContinue": "Won't continue automatically"
       },
       "usageLimitAutoContinue": {
-        "cancel": "Don't continue",
         "cancelFailed": "Couldn't cancel automatic continuation. Try again.",
-        "cancelled": "Adehone won't continue this chat automatically.",
-        "openSetting": "Continue automatically when limits reset",
         "scheduled": "Adehone will continue this chat at {{time}}."
       },
       "userMessage": {
@@ -21797,15 +21685,8 @@
           "title": "Change {{rule}}?"
         },
         "chatHistory": {
-          "confirmDescription": "Orca will delete Claude Code and Codex chats from workspaces that no longer exist, including ones deleted before today. Chats from workspaces you still have are kept. Deleted chats can't be recovered.",
-          "confirmTitle": "Delete chat history from deleted workspaces?",
-          "deleteWithWorkspace": "Delete chat history with the workspace",
-          "deleteWithWorkspaceDescription": "Claude Code and Codex chats from deleted workspaces are removed automatically to free disk space. They can't be recovered.",
-          "title": "Chat history",
-          "unsupported": "Update Orca on {{host}} to use this setting there.",
-          "updateFailed": "Couldn't update the setting on {{host}}."
+          "title": "Chat history"
         },
-        "cleanUpNow": "Clean up now",
         "description": "Remove workspaces you're done with. Before removing anything, Orca checks again for unsaved work.",
         "disableIgnoredFiles": {
           "description": "For projects using these cleanup rules, ignored files will no longer prevent automatic cleanup. Files such as .env and local config may be deleted and cannot be recovered.",
@@ -21859,7 +21740,6 @@
         "pinFailed": "Couldn't keep {{name}}.",
         "previewFailed": "Couldn't check which workspaces this change matches.",
         "protection": {
-          "alwaysKept": "Always kept: pinned workspaces, running agents or terminals, unsaved editor changes, uncommitted changes, unpushed commits.",
           "alwaysKeptLabel": "Always kept",
           "alwaysKeptList": "Pinned workspaces, running agents or terminals, unsaved editor changes, uncommitted changes, unpushed commits.",
           "keepIgnoredFiles": "Keep workspaces with ignored files",
@@ -21904,7 +21784,6 @@
           "recommended": "Recommended",
           "showMatches": "Show",
           "then": "Then",
-          "title": "Rules",
           "unchanged": "Delete unchanged workspaces",
           "unchangedDescription": "No commits beyond the default branch and no edits."
         },
@@ -21915,13 +21794,11 @@
           "automatic": "automatic",
           "automaticDescription": "Whether automatic cleanup is on, when it runs next, and running the rules now.",
           "automations": "automations",
-          "chat": "chat",
           "cleanUp": "clean up",
           "cleanUpNow": "clean up now",
           "cleanup": "cleanup",
           "days": "days",
           "delete": "delete",
-          "diskSpace": "disk space",
           "envFile": ".env",
           "history": "history",
           "inactiveDescription": "No activity for a number of days.",
@@ -21929,13 +21806,10 @@
           "orchestration": "orchestration",
           "protection": "protection",
           "pullRequest": "PR",
-          "reviewWorkspaces": "review workspaces",
           "runRulesNow": "run rules now",
           "runs": "runs",
           "schedule": "schedule",
-          "stale": "stale",
-          "statusDescription": "Run the cleanup rules now, or review workspaces yourself.",
-          "transcripts": "transcripts"
+          "stale": "stale"
         },
         "status": {
           "inUnderAMinute": "in under a minute",
@@ -21948,13 +21822,7 @@
           "lastRunNothing": "Last run {{when}} removed nothing.",
           "lastRunRemoved_one": "Last run {{when}} removed 1 workspace.",
           "lastRunRemoved_other": "Last run {{when}} removed {{count}} workspaces.",
-          "nextRun": "Next run {{when}}.",
-          "off": "Automatic cleanup is off.",
-          "offDetail": "Nothing is removed until you turn on a rule.",
-          "on": "Automatic cleanup is on.",
-          "review": "Review workspaces",
-          "running": "Cleaning up now…",
-          "turnOnHint": "Turn on a rule to use this."
+          "nextRun": "Next run {{when}}."
         },
         "summary": {
           "automationRuns": "Automation workspaces",
@@ -21969,7 +21837,7 @@
         "trigger": {
           "cli": "From the CLI",
           "hourly": "Hourly",
-          "runNow": "Clean up now",
+          "runNow": "Run rules now",
           "settings": "After a rule change",
           "startup": "On startup"
         },
@@ -22412,8 +22280,6 @@
     "details": "Details",
     "dontSend": "Don’t send",
     "freeze": {
-      "attach": "Attach saved freeze report and diagnostic logs",
-      "attachDescription": "Sends the saved freeze report with a capped, redacted log bundle.",
       "attachmentsOmitted": "The saved freeze report and diagnostic logs were not attached: {{value0}}",
       "description": "Send the saved freeze report to help us understand what happened.",
       "includeRedacted": "Include the saved freeze report and recent logs (redacted)",
@@ -22423,7 +22289,7 @@
       "sentWithoutAttachments": "Details sent without the saved freeze report or diagnostic logs",
       "summary": "Orca stopped responding",
       "title": "Report a freeze",
-      "uncheckAttachments": "Uncheck \"Attach saved freeze report and diagnostic logs\" and try again, or copy the details."
+      "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "Include recent logs (redacted)",
     "sendReport": "Send report",
@@ -23825,7 +23691,6 @@
     "countUnavailable": "terminal count unavailable",
     "killAllLocal": "Kill all local sessions",
     "killFailed": "The terminal could not be ended. Last-observed sessions are retained.",
-    "localDaemonScope": "This affects terminals on this computer.",
     "metricDetails": "Metric details",
     "openToObserve": "Open Resources to observe terminal sessions.",
     "pty": {
@@ -23991,7 +23856,6 @@
   "sessionSearch": {
     "panel": {
       "changed": "The index changed while searching. Search again for current results.",
-      "consent": "Enable full-text search? Adehone builds an index on this computer from local agent transcripts, including full conversations. Content is not redacted. Authenticated paired clients can search it.",
       "consentTranscriptIndex": "Search matches session details and message previews. To search full conversations, enable full-text search (indexes local transcripts, unredacted). Paired devices can search them too.",
       "enable": "Enable",
       "enableFailed": "Could not enable search. Try again.",
@@ -24009,7 +23873,6 @@
       "indexedHistory": "Indexed history",
       "loadMore": "Load more matches",
       "loadingMoreSessions": "Loading more sessions…",
-      "noMatches": "No matching sessions in the indexed history. Try another query or scope.",
       "noMatchesToShow": "No matching sessions to show.",
       "noService": "Search is unavailable on this computer. It may need an Adehone update or a runtime with search support.",
       "notReady": "The search index is not ready yet. Try again shortly.",
@@ -24858,13 +24721,9 @@
       "optionShortcutHint": "Choose Both for Option shortcuts, Off for accents and symbols, or Left/Right to use one Option key for each.",
       "windows": {
         "10aafff216": "Open manage sessions",
-        "administratorApproval": "Windows will ask for approval. Use your usual account.",
         "administratorDialogScope": "This changes permissions for the whole app. SSH and WSL keep their own permissions.",
         "administratorDocumentation": "Read the guide",
         "administratorLabel": "Administrator mode",
-        "administratorPromptCancellation": "Canceling Windows’ prompt reopens Adehone with its retained terminals. SSH and WSL permissions stay controlled on their hosts.",
-        "administratorRestartConsequences": "Save your work first. After approval, terminals and agents on the current local terminal host close. Restored tabs open new administrator shells.",
-        "administratorRestartFailed": "Adehone could not restart. Try again or use the manual instructions.",
         "administratorRestartSummary": "Local terminals and agents will close. Windows will ask you to approve.",
         "administratorScope": "Permissions for the Adehone app. Existing terminals may differ.",
         "administratorSearchDescription": "See Adehone’s Windows permissions or restart with administrator approval.",
@@ -24873,7 +24732,6 @@
         "checkingAdministrator": "Checking…",
         "closeAdministratorHelp": "Close",
         "closeLocalSessions": "Save your work, close all local terminal sessions, then exit Adehone.",
-        "confirmAdministratorRestart": "Restart as administrator?",
         "confirmOrcaAdministratorRestart": "Restart Orca as administrator?",
         "keywordAdmin": "admin",
         "keywordAdministrator": "administrator",
@@ -24883,7 +24741,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "In the Windows Start menu, right-click Adehone and choose Run as administrator. Approve the Windows prompt using your usual account.",
         "launchStandard": "Open Adehone normally from the Windows Start menu.",
-        "manualAdministratorHelp": "Manual instructions",
         "manualAdministratorSteps": "Manual steps",
         "orcaCouldNotRestart": "Orca couldn’t restart.",
         "restartAdministrator": "Restart as administrator",
@@ -24917,7 +24774,6 @@
         "connected": "Connected",
         "notConnected": "Not connected.",
         "notConnectedRetry": "Not connected. Connect this host, then Retry.",
-        "notConnectedRun": "Not connected. Run <cmd>{{command}}</cmd> on the host.",
         "ssh": "SSH"
       },
       "keeps": "Projects, worktrees and Orca settings stay.",
@@ -24950,10 +24806,10 @@
         "cliCommand": "<cmd>{{name}}</cmd> CLI on your PATH",
         "hookScripts": "Hook scripts",
         "hooksIn": "Hooks in {{targets}}",
-        "service": "Background service",
+        "service": "<cmd>orca serve</cmd> server",
         "terminalDaemon": "Terminal background process"
       },
-      "searchDescription": "Remove agent hooks, the orca command, the background service and hooks on SSH hosts.",
+      "searchDescription": "Remove agent hooks, the orca command, the orca serve server and hooks on SSH hosts.",
       "status": {
         "done": "Done",
         "kept": "Kept",
@@ -24970,7 +24826,7 @@
         "nothing": "Nothing outside the app to remove.",
         "problems_one": "1 item needs you before you delete the app.",
         "problems_other": "{{count}} items need you before you delete the app.",
-        "service": "a background service",
+        "service": "the <cmd>orca serve</cmd> server",
         "stillInUse": "Some Orca files are still in use, so they stay for now.",
         "terminalDaemon": "the terminal background process"
       },
@@ -25168,19 +25024,16 @@
     "worktreeCardsIntroNotice": {
       "body": "Agent status, unread dots and child summaries on every card.",
       "classic": "Classic",
-      "classicBody": "Back to your current cards. Flip to New to preview again.",
       "dismiss": "Not now",
-      "experimental": "Experimental",
       "keep": "Keep new",
       "keptBody": "Change it here, under Card style.",
       "keptTitle": "New cards are on",
       "laterToast": "Try the new cards any time from Workspace options › Card style",
       "new": "New",
-      "previewBody": "Agent status, unread dots and child summaries on every card. This is a preview of your list.",
       "saveFailedToast": "Couldn't save the card style. Try again.",
       "switchBack": "Switch back anytime in <path>Workspace options › Card style</path>",
       "switchLabel": "Card style",
-      "title": "New card style",
+      "title": "Try the new cards",
       "useClassic": "Use classic"
     },
     "worktreeCardsUpdateNotice": {
@@ -25633,7 +25486,6 @@
       "hiddenHint": "Hidden items still open from search and their shortcuts.",
       "hiddenLabel": "Hidden",
       "hide": "Hide",
-      "hint": "Drag to reorder, or {{modifier}}↑/↓. Space shows or hides. Hidden items still open from search and their shortcuts.",
       "label": "New tab actions. Left and Right choose; the last one customizes this row.",
       "locked": "Always shown",
       "moreOptions": "More options",
@@ -25776,42 +25628,25 @@
       "alsoStop": "Also stop the running server (closes all Codex sessions using it, including outside Orca)",
       "body": "Sessions may end unexpectedly, and agent status may be wrong.",
       "cancel": "Cancel",
-      "confirmStopDescription": "This closes any open Codex sessions that share it, including ones outside Adehone.",
-      "confirmStopTitle": "Stop the shared server?",
       "copied": "Copied",
-      "copy": "Copy",
       "copyCommand": "Copy command",
       "couldNotTurnOff": "Couldn’t turn off sharing.",
-      "dialogDescription": "Codex sessions started directly in a terminal share one background server. Adehone keeps the Codex sessions it starts separate. When sessions share a server, closing one can end the others, and agent status can be wrong.",
       "dialogQuestion": "Give each Codex tab its own server?",
       "dialogSummary": "Turns off Codex server sharing, also outside Orca.",
-      "dialogTitle": "Give each Codex tab its own server",
-      "done": "Done",
       "fix": "Fix",
       "howToUndo": "How to undo",
       "oldTerminalDialogCause": "Older terminals still share a Codex server. Open a new terminal to run Codex on a separate server.",
       "oldTerminalDialogRisk": "Codex sessions that share a server can end together, and agent status can be wrong.",
       "oldTerminalDialogTitle": "Why this Codex shares a server",
       "openedBeforeUpdateBody": "This terminal was opened before Adehone started giving each Codex its own server.",
-      "runs": "Runs",
-      "step1Note": "This changes your Codex settings, so it also applies outside Adehone.",
-      "step1Title": "Turn off Codex server sharing",
-      "step2Title": "Stop the running shared server",
-      "step2Warning": "Closes any open Codex sessions that share the server",
-      "stopFailed": "Adehone couldn't stop the server.",
       "stopFailedAfterOff": "Sharing is off, but the server didn’t stop.",
       "stopServer": "Stop server",
       "stopSummary": "Stops the running server and closes all Codex sessions using it.",
-      "stopped": "Stopped",
       "stopping": "Stopping…",
       "title": "This Codex is sharing a server with your other Codex tabs",
-      "turnOff": "Turn off",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone couldn't turn this off.",
       "turnOffSharing": "Turn off sharing",
-      "turnedOff": "Turned off",
       "turningOff": "Turning off…",
-      "undo": "To undo, run codex features enable daemon_auto_start.",
       "undoRun": "To turn sharing back on, run:"
     },
     "codexSharedSettingsNotice": {
@@ -26104,15 +25939,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "Always delete",
-    "alwaysDeleteTooltip": "Skip this confirmation for future deletions.",
     "alwaysForceDelete": "Always force delete",
     "alwaysForceDeleteBranches": "Always delete preserved branches",
     "alwaysForceDeleteBranchesDescription": "Applies to branches kept after future workspace deletions.",
     "alwaysForceDeleteDescription": "Applies to all future workspace deletions.",
     "moreActions": "More force delete options",
     "moreBranchActions": "More branch delete options",
-    "moreDeleteOptions": "More delete options",
     "preferenceSaveFailed": "Could not save deletion preference"
   },
   "workspaceSpace": {

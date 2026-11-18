@@ -23,7 +23,6 @@ function resolveFeedbackApiUrl(env: NodeJS.ProcessEnv = process.env): string | n
 
 export type {
   FeedbackDiagnosticBundleAttachment,
-  FeedbackImageAttachment,
   FeedbackRequestFailure,
   FeedbackSubmissionType,
   FeedbackSubmitArgs,

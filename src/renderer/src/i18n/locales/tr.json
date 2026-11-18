@@ -173,10 +173,6 @@
     "argumentsHint": "Yalnızca CLI başlatmaları için geçerlidir.",
     "argumentsTerminalHint": "Yalnızca terminal (CLI) başlatmaları için geçerlidir",
     "catalogEmpty": "{{agent}} için kullanılabilir model yok.",
-    "catalogFailed": "{{agent}} modelleri yüklenemedi. Yeniden denemek için ajan seçiciyi kapatıp açın.",
-    "catalogInstall": "Modelleri yüklemek için bu sunucuya {{agent}} yükleyin, ardından ajan seçiciyi yeniden açın.",
-    "catalogSignIn": "Modelleri yüklemek için {{agent}} oturumu açın, ardından ajan seçiciyi yeniden açın.",
-    "catalogUnresolved": "{{agent}} modelleri yüklenmedi. Yeniden denemek için ajan seçiciyi kapatıp açın.",
     "catalogUnsupportedLaunch": "{{agent}} modelleri bu sunucuda kullanılamıyor. Geçerli seçimleriniz uygulanmaya devam eder.",
     "chatChoicesNote": "CLI bayrağı olmayan {{agent}} modeli veya çaba seçimleri sohbetlere uygulanır.",
     "composedChoicesNote": "{{agent}} için çaba ve hız seçimleri model argümanına dahil edilir.",
@@ -200,8 +196,7 @@
     "disabledReason": {
       "approvalUnseen": "Ajan onay bekliyor olabilir",
       "hostUpdateRequired": "Bu ajana göndermek için bu ana makinedeki Orca’yı güncelleyin",
-      "needsPermission": "Ajan için izin gerekiyor",
-      "statusStale": "Ajan durumu güncel değil"
+      "needsPermission": "Ajan için izin gerekiyor"
     }
   },
   "agentsSidebarIntro": {
@@ -2895,7 +2890,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "İptal",
-          "8490e5d36a": "Onayla",
           "92bac3217e": "Bir daha sorma"
         },
         "skip": {
@@ -3055,21 +3049,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "Ayrıntıları Kopyala",
-            "6d3ebe216a": "Tanılama metni",
             "765591798d": "Çökme raporları kontrol ediliyor...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "Gönderme",
             "8b8473c544": "Çökme raporu kopyalandı.",
             "8e24fe4f75": "Çökme raporu gönderildi.",
-            "b082f27490": "Son tanılama günlüklerini ekle",
-            "b4951cd27c": "Raporu Gönder",
-            "e59f0b9427": "Raporla birlikte sınırlandırılmış, gizli bilgileri çıkarılmış bir günlük paketi gönderir.",
             "ead6fc0510": "Otomatik bir çökme raporu alınmadı. Yine de ayrıntıları gönderebilir ve varsa son tanılama günlüklerini ekleyebilirsiniz."
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "Ne olduğunu anlamamıza yardımcı olmak için gizliliğinizi koruyan bir tanılama raporu gönderin.",
-            "closedNotesPlaceholder": "İsteğe bağlı: Adehone kapanmadan önce ne yapıyordunuz?",
             "closedTitle": "Adehone beklenmedik şekilde kapandı",
             "renderError": "React render hatası",
             "renderErrorIn": "{{surface}} içinde React render hatası",
@@ -5117,36 +5103,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "Terminal bağlantısı",
-              "description": "Terminal bağlantıları için Adehone'nın tarayıcısını kullanın ya da sistem tarayıcınızı koruyun.",
               "keep": {
-                "description": "Ya da varsayılan olarak sistem tarayıcınızı kullanın.",
                 "orca": {
                   "button": "Adehone'da kalsın"
-                },
-                "title": "Terminal bağlantıları Adehone'nın tarayıcısında mı kalsın?"
-              },
-              "link": {
-                "label": "Bağlantı"
+                }
               },
               "orca": {
-                "button": "Adehone'da aç",
-                "note": "Adehone, oturum açılmış siteler için içe aktarılan çerezleri kullanabilir."
-              },
-              "preview": "Önizleme",
-              "settings": {
-                "note": "Bunu daha sonra Ayarlar → Tarayıcı'dan değiştirin."
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "Bağlantılar Adehone'da açıldığında,",
-                  "suffix": "tıklama sistem tarayıcısını bir kez açar."
-                }
+                "button": "Adehone'da aç"
               },
               "system": {
                 "button": "Sistem tarayıcısını kullan"
-              },
-              "title": "Terminal bağlantıları Adehone'nın tarayıcısında mı açılsın?"
+              }
             }
           }
         }
@@ -5835,7 +5802,6 @@
             "fileCount_one": "{{value0}} dosya",
             "fileCount_other": "{{value0}} dosya",
             "historyRefreshed": "Geçmiş yenilendi",
-            "scanned": "{{value0}} tarandı",
             "scanning": "{{value0}} taranıyor"
           },
           "AiVaultSearchEvidence": {
@@ -8024,13 +7990,6 @@
           "nativeActionToastDescription": "Sonner eylem ve iptal yuvalarını kullanır.",
           "notificationPlayground": "Bildirim oyun alanı",
           "notificationPlaygroundDescription": "Toast düzenini, kurtarma eylemlerini ve uzun metin sarmalamasını kontrol etmek için yalnızca geliştirmede kullanılan tetikleyiciler.",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "Profili bağla",
-          "orcaCloudDescription": "Birinci taraf bulut girişinin yalnızca geliştirme için önizlemesi. Üretimde gizlidir; geliştirmede ORCA_CLOUD_API_URL ve ORCA_CLOUD_CLIENT_ID ayarlandığında kenar çubuğu hesap değiştiricisinde de görünür.",
-          "orcaCloudNotConfigured": "Bu geliştirme sürümünde Orca Cloud girişini önizlemek için ORCA_CLOUD_API_URL ve ORCA_CLOUD_CLIENT_ID ayarlayın.",
-          "orcaCloudRefresh": "Durumu yenile",
-          "orcaCloudSignOut": "Çıkış yap",
-          "orcaCloudStatus": "Durum",
           "primaryAction": "Birincil eylem",
           "primaryActionClicked": "Birincil eyleme tıklandı",
           "secondary": "İkincil",
@@ -8275,16 +8234,7 @@
           "serverCountOne": "1 eşleştirilmiş sunucu",
           "updating": "Sunucular güncelleniyor…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "Yıldızlanıyor...",
-          "511782265b": "GitHub'da yıldız vererek projeyi destekleyin.",
-          "55a87e5fd1": "Orca'yı Destekleyin",
-          "6922c1fa2b": "Orca'yı GitHub'da Yıldızlayın",
-          "964acc6bb4": "Yıldızla",
-          "af7d9f4396": "Desteğiniz için teşekkürler!",
-          "cb65c75b11": "Açılıyor...",
-          "f2d4f877b2": "GitHub'ı Aç"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "Güncelleme indirmesi başlatılamadı.",
           "2a48034c4c": "v{{value0}} indiriliyor... %{{value1}}",
@@ -9884,7 +9834,6 @@
           "6d1a27e193": "Tema, yakınlaştırma, uygulama ve terminal görünümü, kenar çubukları ve durum çubuğu.",
           "7118953f14": "Ajanların bilgisayarınızdaki herhangi bir uygulamayı kontrol etmesini sağlayın.",
           "7210ac09c4": "Ajan etkinliği ve terminal olayları için yerel masaüstü bildirimleri.",
-          "742ca66ea6": "Gizlilik ve Telemetri",
           "7686cb5c36": "Bu tarayıcıyı kayıtlı bir Adehone sunucusuna bağlayın.",
           "7807c11c4d": "Genel",
           "8acf3f22e0": "Adehone istatistikleri; Claude, Codex, OpenCode ve Muse token analizleri ile Grok abonelik kullanımı.",
@@ -9900,7 +9849,6 @@
           "b07041697f": "GitHub, GitLab, Linear ve kaynak barındırma hizmetlerine bağlanın.",
           "b79b5b31e9": "Kabuklar, render motoru, oturumlar ve terminal davranışı.",
           "c0900fa64a": "Görev Kaynakları",
-          "c1b43dc4e2": "Anonim kullanım verileri ve telemetri kontrolleri.",
           "c2bb9fc528": "Yüzen Çalışma Alanı",
           "c2ee313198": "Dosyalar, terminaller, Git ve çalışma alanları için SSH üzerinden mevcut makineleri kullanın.",
           "c40dadaac8": "Mobil",
@@ -11186,30 +11134,19 @@
               "apiToken": "API belirteci",
               "apiTokenPlaceholder": "Atlassian API belirteci",
               "authModeLabel": "Bitbucket kimlik doğrulama yöntemi",
-              "baseUrl": "API temel URL'si (isteğe bağlı)",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "Hesabınız için bir Atlassian API belirteci oluşturun, ardından bunu sahibi olan e-posta adresiyle eşleştirin.",
               "cancel": "İptal",
               "connect": "Bağlan",
               "connectFailed": "Bağlantı başarısız oldu",
-              "description": "Pull request'lere ve build durumlarına göz atmak için bir Bitbucket Cloud kimlik bilgisi kullanın. Adehone kaydetmeden önce doğrular.",
-              "docsLink": "Bitbucket API belirteci belgeleri",
-              "email": "Atlassian hesap e-postası",
               "emailPlaceholder": "siz@ornek.com",
-              "environmentManaged": "Bitbucket zaten öncelikli olan ADEHONE_BITBUCKET_* ortam değişkenleri üzerinden yapılandırılmış. Adehone'da bir kimlik bilgisi kaydetmek için bunların ayarını kaldırın.",
               "modeBasic": "E-posta ve API belirteci",
               "modeToken": "Erişim belirteci",
-              "remoteRuntime": "Etkin uzak çalışma ortamında değil, bu makinede saklanır — uzak ortamda ADEHONE_BITBUCKET_* ayarlayın. Ortam değişkenleri her zaman buraya kaydettiğiniz değerlerden önceliklidir.",
               "scopeReadPullRequest": "Pull request'leri okuma",
               "scopeRepository": "Derleme durumlarını okuma",
               "scopeUser": "Hesap adınızı gösterme",
               "scopeWritePullRequest": "Pull request oluşturma",
-              "scopesTitle": "Şu Bitbucket API belirteci kapsamlarını seçin:",
               "scopesWriteNote": "Salt okunur kullanım için yazma kapsamını atlayın. Yazma, okumayı içermez; her kapsamı ayrı ayrı seçin.",
-              "storageNote": "İşletim sistemi anahtarlığı (keychain) kullanılabildiğinde şifrelenmiş depolamayla bu makinede saklanır. ADEHONE_BITBUCKET_* ortam değişkenleri burada kaydettiklerinizden her zaman önceliklidir.",
-              "title": "Bitbucket'ı bağla",
-              "tokenHint": "Repository, proje ve çalışma alanı erişim belirteçleri ilgili Bitbucket ayarlar sayfasından oluşturulur ve pull request'ler için okuma izni gerektirir.",
-              "verifying": "Doğrulanıyor..."
+              "title": "Bitbucket'ı bağla"
             }
           },
           "integration": {
@@ -12520,10 +12457,7 @@
           "checking": "Kilit kontrol ediliyor…",
           "close": "Kapat",
           "confirm": "Kilidi temizle ve yeniden başlat",
-          "confirmCheck": "Bu ana dizini paylaşan başka hiçbir makinede Adehone çalışmıyor",
           "currentBoot": "Mevcut açılış",
-          "description": "Önceki bir çalıştırmadan kalan kilit hâlâ yerinde olduğu için bu sunucudaki Adehone sunucusu başlatılamıyor.",
-          "eligible": "Bu makinenin eski adresinden yanıt gelmiyor, ancak Adehone bu ana dizini paylaşan aynı adlı başka bir makine olasılığını dışlayamıyor.",
           "host": "Sunucu",
           "lockBoot": "Yazıldığı açılış",
           "manualCommand": "Bunu sunucuda çalıştırın veya Ayrıntılar bölümünde gösterilen kilit dosyasını silin:",
@@ -12532,8 +12466,6 @@
           "manualDeleteWarning": "Bu işlemi yalnızca bu ana dizini paylaşan başka hiçbir makinede bu profil için Adehone çalışmıyorsa yapın.",
           "none": "Artık temizlenecek bir kilit yok. Bu sunucunun Adehone sunucusunu başlatmak için yeniden bağlanın.",
           "reclaimedNotStarted": "Kilit temizlendi, ancak Adehone sunucusu başlatılamadı.",
-          "title": "Adehone sunucusunu kurtar",
-          "warning": "Yalnızca bu ana dizini paylaşan başka hiçbir makinede bu profil için Adehone çalışmıyorsa devam edin.",
           "written": "Yazılma zamanı"
         },
         "repository": {
@@ -13508,14 +13440,11 @@
           "80b6ea14cf": "Terminal temizliği uyarılarla tamamlandı.",
           "922548bc66": "Terminal hizmeti yeniden başlatılsın mı?",
           "993af6052c": "Daemon yönetimi çıkış bildirdi: {{value0}}/{{value1}}; kesin temizlikten önce hâlâ mevcuttu: {{value2}}.",
-          "a702d4196e": "Bu, tüm çalışma alanlarındaki her terminal sekmesini kapatır ve mevcut terminal oturumları için kapatma ister. Kaydedilmemiş terminal çalışmaları kaybolur. Daemon'un kendisi çalışmaya devam eder ve yeni terminaller hemen açılabilir. Bu işlem geri alınamaz.",
-          "b5954e12d3": "Yeniden başlatma başarısız oldu, günlükleri kontrol edin.",
           "busyKilling": "Sonlandırılıyor…",
           "busyRestarting": "Yeniden başlatılıyor…",
           "c34fb1098d": "Terminal sekmeleri kapatıldı ve kapatma istendi.",
           "confirmKillAll": "Tüm oturumları sonlandır",
           "confirmRestart": "Yeniden başlat",
-          "d762b41f41": "Yeniden başlatma başarısız oldu.",
           "d9657ac204": "Terminal oturumunun kapatılması istendi.",
           "e8f25bd903": "Terminal temizliği tamamlanamadı."
         }
@@ -13769,8 +13698,8 @@
           "gitBlocksMainWorktree": "Git, ana worktree'nin kaldırılmasına izin vermez.",
           "removeBatchFolder_one": "Adehone'dan <target>{{count}} çalışma alanı</target> kaldır. Diskteki proje klasörleri silinmeyecek.",
           "removeBatchFolder_other": "Adehone'dan <target>{{count}} çalışma alanı</target> kaldır. Diskteki proje klasörleri silinmeyecek.",
-          "removeBatchGit_one": "git'ten <target>{{count}} çalışma alanı</target> kaldır ve çalışma alanı klasörünü sil.",
-          "removeBatchGit_other": "git'ten <target>{{count}} çalışma alanı</target> kaldır ve ilgili çalışma alanı klasörlerini sil.",
+          "removeBatchGit_one": "{{count}} worktree ve branch’ini siler (merge edilmemiş branch korunur).",
+          "removeBatchGit_other": "{{count}} worktree ve branch’lerini siler (merge edilmemiş branch’ler korunur).",
           "removeBatchMixed_one": "Adehone'dan <target>{{count}} çalışma alanı</target> kaldır. Git worktree'leri git'ten ve diskten de kaldırılacak; klasör çalışma alanlarında yalnızca Adehone kaydı kaldırılacak.",
           "removeBatchMixed_other": "Adehone'dan <target>{{count}} çalışma alanı</target> kaldır. Git worktree'leri git'ten ve diskten de kaldırılacak; klasör çalışma alanlarında yalnızca Adehone kaydı kaldırılacak.",
           "removeFolderProjectInstead": "Bu çalışma alanını silmek yerine klasör projesini kaldırın.",
@@ -13784,9 +13713,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "İptal",
-          "cf95e3b5bb": "Kapat",
-          "deleting": "Siliniyor…",
-          "forceDeleting": "Zorla siliniyor…"
+          "cf95e3b5bb": "Kapat"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "{{count}} commit'lenmemiş değişiklik kaybolacak",
@@ -13806,17 +13733,13 @@
           "moreChildren_one": "+{{count}} tane daha",
           "moreChildren_other": "+{{count}} tane daha"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "Bu, <strong>ana worktree</strong> (ilk klonlama dizini)."
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "Çalışma alanı oluştur",
           "title": "Klasör Çalışma Alanı Oluştur"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "İptal",
-          "forget": "Adehone'dan Kaldır",
-          "ghostBody": "{{host}} artık kayıtlı bir SSH sunucusu olmadığı için bu çalışma alanı etkin bir sunucuya bağlı değil. Yalnızca Adehone'dan kaldırılabilir; uzak sunucudaki dosyalar ve branch'ler değiştirilmez."
+          "forget": "Adehone'dan Kaldır"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "Kaynağını etkinleştirmeden birini gösterin.",
@@ -15103,8 +15026,6 @@
           "opening": "Bu bağlantı açılıyor…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "- bağlantı kesildi",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Adehone'nın bir bağlantıdan yüklediği beceriler. Yeniden yükleyin, önceki bir sürüme dönün veya kaldırın.",
           "44d118a8f7": "Adehone tarafından yüklendi",
           "64c71cf7b9": "Adehone bu makineye henüz hiç beceri yüklemedi.",
@@ -15134,10 +15055,8 @@
           "0e5b43a9e3": "Çalışma alanı",
           "5845cfe543": "Bir worktree veya klasör seçin",
           "63cc9e31fe": "Hedef",
-          "71eefd7660": "- bağlantı kesildi",
           "7a366323e7": "Klasör",
           "8562dd1e6e": "Bu bilgisayar",
-          "85d85880df": "· SSH",
           "8e6a972229": "Bu makinede bilinen bir çalışma alanı yok.",
           "a4dfd33095": "Tek çalışma alanı",
           "b8a0b706ad": "Makine",
@@ -16756,14 +16675,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "İptal",
-            "dont_ask_again": "Çalışan terminaller için tekrar sorma",
-            "stop_agent_confirm": "Ajanı Durdur",
-            "stop_agent_description": "Bu terminali kapatmak, ajanın mevcut çalışmasını durduracak.",
-            "stop_agent_title": "Bu ajan durdurulsun mu?",
-            "stop_chat_description": "Bu sohbeti kapatmak, ajanın mevcut çalışmasını durduracak.",
-            "stop_command_confirm": "Durdur ve Kapat",
-            "stop_command_description": "Bu terminali kapatmak, içinde çalışan komutu durduracak.",
-            "stop_command_title": "Çalışan komut durdurulsun mu?"
+            "stop_agent_title": "Bu ajan durdurulsun mu?"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "Geri yükle",
@@ -17336,7 +17248,6 @@
         "2eece16ad1": "Bildirimler",
         "31e57d1c70": "Dosyalar, terminaller, Git ve çalışma alanları için SSH üzerinden mevcut makineleri kullanın.",
         "33a5e1d597": "GitHub, GitLab, Linear ve kaynak barındırma hizmetlerini bağlayın.",
-        "3618579df6": "Gizlilik ve Telemetri",
         "3d65d3f1b9": "Adehone ve kodlama ajanları için mobil emülatör desteğini yapılandırın.",
         "3fc3db144f": "Hızlı Komutlar",
         "40d80bad8a": "Beta",
@@ -17352,7 +17263,6 @@
         "724c440e72": "başlarken",
         "7682607591": "Ajan ve terminal olayları için yerel masaüstü bildirimleri.",
         "7c79d3b7bf": "Opsiyonel",
-        "8400cfe1c1": "Anonim kullanım verisi ve telemetri denetimleri.",
         "85f4fd7710": "Görev Kaynakları",
         "8ac3de82f5": "Cihaz üzerindeki modellerle yerel sesten metne dikte.",
         "8c197f74a1": "Tarayıcı",
@@ -18805,33 +18715,22 @@
       "deliveryUnconfirmed": "Adehone, {{agent}} ajanının oturum bağlamını aldığını doğrulayamadı. Yeni oturumu kontrol edin ve girdi alanı boşsa bağlamı kendiniz yapıştırın.",
       "detectingAgents": "Bu çalışma alanı ana makinesindeki Ajanlar tespit ediliyor…",
       "detectionFailed": "Bu çalışma alanı ana makinesinde Ajanlar tespit edilemedi.",
-      "dialogDescription": "Bu durma noktasından yeni bir Ajan oturumu başlatın. Orijinal oturum değişmeden kalır.",
-      "dialogTitle": "Başka Bir Ajana Devret",
       "dialogTitleSentence": "Başka bir ajana devret",
       "handOffToAnotherAgent": "Başka bir ajana devret",
       "launchFailed": "Yeni bir {{agent}} oturumu başlatılamadı.",
       "meta": "{{session}} · orijinal değişmez",
       "metaWithAgent": "{{agent}} kaynağından · {{session}} · orijinal değişmez",
-      "modeCapturedDescription": "Alınan metni ve mevcut çalışma alanını kullanır.",
-      "modeFocused": "Odaklı devir (Önerilen)",
-      "modeFocusedDescription": "En son durumu ve mevcut çalışma alanını kullanır, eski döküm ayrıntılarını yalnızca gerektiğinde okur.",
-      "modeFull": "Tam oturum dökümü",
       "modeFullCost": "Daha yavaştır ve planınızdan ya da API kredilerinizden daha fazla kullanır.",
-      "modeFullDescription": "Devam etmeden önce yeni Ajandan kaydedilen oturumun tamamını okumasını ister. Bu, daha uzun sürebilir ve önemli miktarda bağlam, plan kullanımı veya API kredisi harcayabilir.",
       "modeFullTranscript": "Tam döküm",
       "modeLatestStatus": "Son durum (önerilen)",
-      "modeLoadedDescription": "Bu sohbette şu anda yüklü olan son mesajları ve mevcut çalışma alanını kullanır.",
-      "noAgents": "Bu çalışma alanı ana makinesinde etkin Ajan tespit edilmedi.",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "Yeni bir oturumda devam etmek için kullanılabilir oturum bağlamı yok.",
       "onlySourceFamilyDetected": "Bu çalışma alanı ana makinesinde yalnızca {{agent}} ile kullanım sınırını paylaşan Ajanlar kullanılabilir. Farklı bir Ajanı etkinleştirin veya yükleyin.",
-      "originalAgent": "Orijinal Ajan: {{agent}}",
       "preparingContext": "Kayıtlı sohbet bağlamı hazırlanıyor…",
       "selectAgent": "Bir Ajan seçin",
       "sent": "Oturum bağlamı yeni bir oturumda {{agent}}'a gönderildi.",
-      "startSession": "Yeni Oturum Başlat",
       "startSessionSentence": "Oturumu başlat",
       "starting": "Başlatılıyor…",
-      "startsIn": "Şurada başlar:",
       "untitledSession": "Mevcut oturum"
     },
     "automations": {
@@ -21951,7 +21850,6 @@
     "countUnavailable": "terminal sayısı alınamıyor",
     "killAllLocal": "Tüm yerel oturumları sonlandır",
     "killFailed": "Terminal sonlandırılamadı. Son gözlemlenen oturumlar korunur.",
-    "localDaemonScope": "Bu işlem bu bilgisayardaki terminalleri etkiler.",
     "metricDetails": "Metrik ayrıntıları",
     "openToObserve": "Terminal oturumlarını izlemek için Kaynaklar bölümünü açın.",
     "pty": {
@@ -22124,7 +22022,6 @@
       "indexedHistory": "Dizinlenmiş geçmiş",
       "loadMore": "Daha fazla eşleşme yükle",
       "loadingMoreSessions": "Daha fazla oturum yükleniyor…",
-      "noMatches": "Dizinlenmiş geçmişte eşleşen oturum yok. Başka bir sorgu veya kapsam deneyin.",
       "noMatchesToShow": "Gösterilecek eşleşen oturum yok.",
       "noService": "Bu bilgisayarda arama kullanılamıyor. Bir Adehone güncellemesi veya arama destekli bir çalışma zamanı gerekebilir.",
       "notReady": "Arama dizini henüz hazır değil. Birazdan tekrar deneyin.",
@@ -22716,13 +22613,9 @@
       "optionShortcutHint": "Option kısayolları için İkisi'ni, aksanlı harfler ve semboller için Kapalı'yı, her işlev için ayrı bir Option tuşu kullanmak üzere Sol/Sağ'ı seçin.",
       "windows": {
         "10aafff216": "Oturumları Yönet'i aç",
-        "administratorApproval": "Windows onay isteyecek. Her zamanki hesabınızı kullanın.",
         "administratorDialogScope": "Bu işlem tüm uygulamanın izinlerini değiştirir. SSH ve WSL kendi izinlerini korur.",
         "administratorDocumentation": "Kılavuzu okuyun",
         "administratorLabel": "Yönetici modu",
-        "administratorPromptCancellation": "Windows istemini iptal etmek, Adehone'yı korunan terminalleriyle yeniden açar. SSH ve WSL izinleri kendi ana makinelerinde denetlenmeye devam eder.",
-        "administratorRestartConsequences": "Önce çalışmanızı kaydedin. Onaydan sonra mevcut yerel terminal ana makinesindeki terminaller ve ajanlar kapanır. Geri yüklenen sekmelerde yeni yönetici kabukları açılır.",
-        "administratorRestartFailed": "Adehone yeniden başlatılamadı. Tekrar deneyin veya manuel yönergeleri kullanın.",
         "administratorRestartSummary": "Yerel terminaller ve ajanlar kapanır. Windows onayınızı ister.",
         "administratorScope": "Adehone uygulamasının izinleri. Mevcut terminallerin izinleri farklı olabilir.",
         "administratorSearchDescription": "Adehone'nın Windows izinlerini görüntüleyin veya yönetici onayıyla yeniden başlatın.",
@@ -22731,7 +22624,6 @@
         "checkingAdministrator": "Kontrol ediliyor…",
         "closeAdministratorHelp": "Kapat",
         "closeLocalSessions": "Çalışmanızı kaydedin, tüm yerel terminal oturumlarını kapatın ve ardından Adehone'dan çıkın.",
-        "confirmAdministratorRestart": "Yönetici olarak yeniden başlatılsın mı?",
         "confirmOrcaAdministratorRestart": "Orca yönetici olarak yeniden başlatılsın mı?",
         "keywordAdmin": "yönetici",
         "keywordAdministrator": "yönetici",
@@ -22741,7 +22633,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "Windows Başlat menüsünde Adehone'ya sağ tıklayın ve Yönetici olarak çalıştır'ı seçin. Windows istemini her zamanki hesabınızla onaylayın.",
         "launchStandard": "Adehone'yı Windows Başlat menüsünden normal şekilde açın.",
-        "manualAdministratorHelp": "Manuel yönergeler",
         "manualAdministratorSteps": "Elle yapılacak adımlar",
         "orcaCouldNotRestart": "Orca yeniden başlatılamadı.",
         "restartAdministrator": "Yönetici olarak yeniden başlat",
@@ -23441,42 +23332,25 @@
       "alsoStop": "Çalışan sunucuyu da durdur (Orca dışındakiler dahil onu kullanan tüm Codex oturumlarını kapatır)",
       "body": "Oturumlar beklenmedik şekilde sona erebilir ve ajan durumu yanlış olabilir.",
       "cancel": "İptal",
-      "confirmStopDescription": "Bu işlem, Adehone dışındakiler de dahil sunucuyu paylaşan tüm açık Codex oturumlarını kapatır.",
-      "confirmStopTitle": "Paylaşılan sunucu durdurulsun mu?",
       "copied": "Kopyalandı",
-      "copy": "Kopyala",
       "copyCommand": "Komutu kopyala",
       "couldNotTurnOff": "Paylaşım kapatılamadı.",
-      "dialogDescription": "Doğrudan bir terminalde başlatılan Codex oturumları aynı arka plan sunucusunu paylaşır. Adehone kendi başlattığı Codex oturumlarını ayrı tutar. Oturumlar bir sunucuyu paylaştığında birini kapatmak diğerlerini de sonlandırabilir ve ajan durumu yanlış olabilir.",
       "dialogQuestion": "Her Codex sekmesine kendi sunucusu verilsin mi?",
       "dialogSummary": "Codex sunucu paylaşımını Orca dışında da kapatır.",
-      "dialogTitle": "Her Codex sekmesine ayrı bir sunucu ver",
-      "done": "Tamam",
       "fix": "Düzelt",
       "howToUndo": "Nasıl geri alınır",
       "oldTerminalDialogCause": "Eski terminaller hâlâ aynı Codex sunucusunu paylaşıyor. Codex'i ayrı bir sunucuda çalıştırmak için yeni bir terminal açın.",
       "oldTerminalDialogRisk": "Aynı sunucuyu paylaşan Codex oturumları birlikte sona erebilir ve ajan durumu yanlış olabilir.",
       "oldTerminalDialogTitle": "Bu Codex neden bir sunucuyu paylaşıyor?",
       "openedBeforeUpdateBody": "Bu terminal, Adehone her Codex'e ayrı bir sunucu vermeye başlamadan önce açıldı.",
-      "runs": "Çalıştırılan komut:",
-      "step1Note": "Bu işlem Codex ayarlarınızı değiştirdiği için Adehone dışında da geçerlidir.",
-      "step1Title": "Codex sunucu paylaşımını kapat",
-      "step2Title": "Çalışan paylaşılan sunucuyu durdur",
-      "step2Warning": "Sunucuyu paylaşan tüm açık Codex oturumlarını kapatır",
-      "stopFailed": "Adehone sunucuyu durduramadı.",
       "stopFailedAfterOff": "Paylaşım kapalı ancak sunucu durmadı.",
       "stopServer": "Sunucuyu durdur",
       "stopSummary": "Çalışan sunucuyu durdurur ve onu kullanan tüm Codex oturumlarını kapatır.",
-      "stopped": "Durduruldu",
       "stopping": "Durduruluyor…",
       "title": "Bu Codex, diğer Codex sekmelerinizle aynı sunucuyu paylaşıyor",
-      "turnOff": "Kapat",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone bu özelliği kapatamadı.",
       "turnOffSharing": "Paylaşımı kapat",
-      "turnedOff": "Kapatıldı",
       "turningOff": "Kapatılıyor…",
-      "undo": "Geri almak için codex features enable daemon_auto_start komutunu çalıştırın.",
       "undoRun": "Paylaşımı yeniden açmak için şunu çalıştırın:"
     },
     "codexSharedSettingsNotice": {
@@ -23723,15 +23597,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "Her zaman sil",
-    "alwaysDeleteTooltip": "Bundan sonraki silme işlemlerinde bu onayı atla.",
     "alwaysForceDelete": "Her zaman zorla sil",
     "alwaysForceDeleteBranches": "Korunan branch'leri her zaman sil",
     "alwaysForceDeleteBranchesDescription": "Bundan sonraki çalışma alanı silme işlemlerinde korunan branch'lere uygulanır.",
     "alwaysForceDeleteDescription": "Bundan sonraki tüm çalışma alanı silme işlemlerine uygulanır.",
     "moreActions": "Diğer zorla silme seçenekleri",
     "moreBranchActions": "Diğer branch silme seçenekleri",
-    "moreDeleteOptions": "Diğer silme seçenekleri",
     "preferenceSaveFailed": "Silme tercihi kaydedilemedi"
   },
   "workspaceSpace": {

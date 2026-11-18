@@ -213,10 +213,6 @@
     "argumentsHint": "仅适用于 CLI 启动。",
     "argumentsTerminalHint": "仅适用于终端（CLI）启动",
     "catalogEmpty": "{{agent}} 没有可用模型。",
-    "catalogFailed": "无法加载 {{agent}} 模型。请关闭并重新打开智能体选择器以重试。",
-    "catalogInstall": "请在此主机上安装 {{agent}} 以加载模型，然后重新打开智能体选择器。",
-    "catalogSignIn": "请登录 {{agent}} 以加载模型，然后重新打开智能体选择器。",
-    "catalogUnresolved": "尚未加载 {{agent}} 模型。请关闭并重新打开智能体选择器以重试。",
     "catalogUnsupportedLaunch": "此主机上无法使用 {{agent}} 模型。当前选择仍会生效。",
     "chatChoicesNote": "没有 CLI 标志的 {{agent}} 模型或推理力度选项适用于聊天。",
     "composedChoicesNote": "{{agent}} 的推理力度和速度选项包含在模型参数中。",
@@ -241,8 +237,7 @@
     "disabledReason": {
       "approvalUnseen": "智能体可能正在等待批准",
       "hostUpdateRequired": "请更新此主机上的 Orca 才能发送给此智能体",
-      "needsPermission": "智能体需要授权",
-      "statusStale": "智能体状态信息已过期"
+      "needsPermission": "智能体需要授权"
     }
   },
   "agentsSidebarIntro": {
@@ -2966,7 +2961,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "取消",
-          "8490e5d36a": "确认",
           "92bac3217e": "不再询问"
         },
         "skip": {
@@ -3126,21 +3120,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "复制详情",
-            "6d3ebe216a": "诊断文本",
             "765591798d": "正在检查错误报告...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "不发送",
             "8b8473c544": "已复制错误报告",
             "8e24fe4f75": "已发送错误报告",
-            "b082f27490": "附加最近的诊断日志",
-            "b4951cd27c": "发送报告",
-            "e59f0b9427": "随报告发送经过删减且有大小限制的日志包",
             "ead6fc0510": "没有捕获到自动崩溃报告，你仍然可以发送详情，并在可用时包含最近的诊断日志"
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "发送一份保护隐私的诊断报告，帮助我们了解发生了什么",
-            "closedNotesPlaceholder": "可选：Adehone 关闭前你在做什么？",
             "closedTitle": "Adehone 意外关闭",
             "renderError": "React 渲染错误",
             "renderErrorIn": "{{surface}} 中的 React 渲染错误",
@@ -5215,36 +5201,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "终端链接",
-              "description": "用 Adehone 浏览器打开终端链接，或继续使用系统浏览器",
               "keep": {
-                "description": "或默认使用系统浏览器",
                 "orca": {
                   "button": "继续使用 Adehone"
-                },
-                "title": "继续在 Adehone 浏览器中打开终端链接？"
-              },
-              "link": {
-                "label": "链接"
+                }
               },
               "orca": {
-                "button": "在 Adehone 中打开",
-                "note": "Adehone 可以使用已导入的 Cookie 打开已登录的网站"
-              },
-              "preview": "预览",
-              "settings": {
-                "note": "之后可在设置 → 浏览器中更改"
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "当链接在 Adehone 中打开时，",
-                  "suffix": "点击可临时改用系统浏览器"
-                }
+                "button": "在 Adehone 中打开"
               },
               "system": {
                 "button": "使用系统浏览器"
-              },
-              "title": "在 Adehone 浏览器中打开终端链接？"
+              }
             }
           }
         }
@@ -5985,7 +5952,6 @@
             "fileCount_one": "{{value0}} 个文件",
             "fileCount_other": "{{value0}} 个文件",
             "historyRefreshed": "历史记录已刷新",
-            "scanned": "已扫描 {{value0}}",
             "scanning": "正在扫描 {{value0}}"
           },
           "AiVaultSearchEvidence": {
@@ -8193,13 +8159,6 @@
           "nativeActionToastDescription": "使用 Sonner 的操作和取消插槽",
           "notificationPlayground": "通知测试面板",
           "notificationPlaygroundDescription": "用于检查提示布局、恢复操作和长文案换行的开发触发器",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "连接配置文件",
-          "orcaCloudDescription": "开发环境云登录预览(生产隐藏)，配置 ORCA_CLOUD_API_URL 与 ORCA_CLOUD_CLIENT_ID 后可出现在账户切换器",
-          "orcaCloudNotConfigured": "设置 ORCA_CLOUD_API_URL 和 ORCA_CLOUD_CLIENT_ID 以在此开发版本中预览 Orca Cloud 登录",
-          "orcaCloudRefresh": "刷新状态",
-          "orcaCloudSignOut": "退出登录",
-          "orcaCloudStatus": "状态",
           "primaryAction": "主操作",
           "primaryActionClicked": "主操作已点击",
           "secondary": "次要",
@@ -8459,16 +8418,7 @@
           "serverCountOne": "1 台已配对服务器",
           "updating": "正在更新服务器…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "正在Star…",
-          "511782265b": "通过 GitHub star 支持该项目",
-          "55a87e5fd1": "支持 Orca",
-          "6922c1fa2b": "点击 Orca Star 支持项目",
-          "964acc6bb4": "加星标",
-          "af7d9f4396": "感谢您的支持！",
-          "cb65c75b11": "正在打开...",
-          "f2d4f877b2": "打开 GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "无法开始更新下载",
           "2a48034c4c": "正在下载 v{{value0}}... {{value1}}%",
@@ -10120,7 +10070,6 @@
           "6d1a27e193": "主题、缩放、应用与终端外观，以及侧边栏和状态栏",
           "7118953f14": "让代理控制本机应用",
           "7210ac09c4": "代理与终端事件的桌面通知",
-          "742ca66ea6": "隐私与遥测",
           "7686cb5c36": "将此浏览器连接到已保存的 Adehone 服务器",
           "7807c11c4d": "通用",
           "8acf3f22e0": "Adehone 统计，以及 Claude、Codex、OpenCode、Muse Token 分析和 Grok 订阅使用量",
@@ -10136,7 +10085,6 @@
           "b07041697f": "连接 GitHub、GitLab、Linear 和代码托管服务",
           "b79b5b31e9": "Shell、渲染器、会话和终端行为",
           "c0900fa64a": "任务来源",
-          "c1b43dc4e2": "匿名使用数据与遥测控制",
           "c2bb9fc528": "浮动工作区",
           "c2ee313198": "通过 SSH 在已有机器上处理文件、终端、Git 和工作区",
           "c40dadaac8": "移动端",
@@ -11469,30 +11417,19 @@
               "apiToken": "API令牌",
               "apiTokenPlaceholder": "Atlassian API 令牌",
               "authModeLabel": "Bitbucket 认证方法",
-              "baseUrl": "API 基本 URL（可选）",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "为您的帐户创建 Atlassian API 令牌，然后将其与拥有它的电子邮件地址配对",
               "cancel": "取消",
               "connect": "连接",
               "connectFailed": "连接失败",
-              "description": "使用 Bitbucket Cloud 凭证浏览拉取请求和构建状态，Adehone 在保存之前会对其进行验证",
-              "docsLink": "Bitbucket API 令牌文档",
-              "email": "Atlassian 帐户电子邮件",
               "emailPlaceholder": "你@example.com",
-              "environmentManaged": "Bitbucket 已通过 ADEHONE_BITBUCKET_* 环境变量进行配置，该环境变量优先，取消设置以在 Adehone 中保存凭证",
               "modeBasic": "电子邮件和 API 令牌",
               "modeToken": "访问令牌",
-              "remoteRuntime": "存储在此计算机上，而不是当前的远程运行时中——请改为在远程运行时上设置 ADEHONE_BITBUCKET_*。环境变量始终优先于此处保存的内容",
               "scopeReadPullRequest": "读取拉取请求",
               "scopeRepository": "读取构建状态",
               "scopeUser": "显示您的帐户名称",
               "scopeWritePullRequest": "创建拉取请求",
-              "scopesTitle": "请选择以下 Bitbucket API 令牌范围：",
               "scopesWriteNote": "如仅需只读访问，请省略写入范围。写入不包含读取；请分别选择每个范围。",
-              "storageNote": "当操作系统钥匙串可用时，通过加密存储存储在本计算机上，ADEHONE_BITBUCKET_* 环境变量始终优先于您在此处保存的内容",
-              "title": "连接 Bitbucket",
-              "tokenHint": "存储库、项目和工作区访问令牌是从匹配的 Bitbucket 设置页面创建的，并且需要读取访问拉取请求的权限",
-              "verifying": "正在验证..."
+              "title": "连接 Bitbucket"
             }
           },
           "integration": {
@@ -12815,10 +12752,7 @@
           "checking": "正在检查锁…",
           "close": "关闭",
           "confirm": "清除锁并重启",
-          "confirmCheck": "没有其他共享此主目录的机器在运行 Adehone",
           "currentBoot": "当前启动",
-          "description": "此主机上的 Adehone 服务器无法启动，因为上一次运行留下的锁仍然存在",
-          "eligible": "此机器的旧地址上没有响应，但 Adehone 无法排除另一台同名机器共享此主目录文件夹的可能",
           "host": "主机",
           "lockBoot": "写入于启动时",
           "manualCommand": "在主机上运行此命令，或删除“详情”中显示的锁文件：",
@@ -12827,8 +12761,6 @@
           "manualDeleteWarning": "仅在没有其他共享此主目录的机器在此配置文件上运行 Adehone 时才这样做",
           "none": "已没有可清除的锁。重新连接以启动此主机上的 Adehone 服务器",
           "reclaimedNotStarted": "锁已清除，但 Adehone 服务器未启动",
-          "title": "恢复 Adehone 服务器",
-          "warning": "仅在没有其他共享此主目录的机器在此配置文件上运行 Adehone 时才继续",
           "written": "写入时间"
         },
         "repository": {
@@ -13813,14 +13745,11 @@
           "80b6ea14cf": "终端清理完成，但有警告",
           "922548bc66": "重新启动终端守护进程？",
           "993af6052c": "守护进程管理报告已退出：{{value0}}/{{value1}}，在精确清理前仍存在：{{value2}}",
-          "a702d4196e": "这将关闭所有工作区中的每个终端标签页，并请求关闭其当前终端会话，任何未保存的终端工作将丢失，守护进程本身将继续运行，可以立即打开新终端，此操作不可撤销",
-          "b5954e12d3": "重新启动失败 - 检查日志",
           "busyKilling": "正在结束…",
           "busyRestarting": "正在重启…",
           "c34fb1098d": "终端标签页已关闭，关闭请求已发送",
           "confirmKillAll": "终止所有会话",
           "confirmRestart": "重启",
-          "d762b41f41": "重启失败",
           "d9657ac204": "终端会话关闭请求已发送",
           "e8f25bd903": "无法完成终端清理"
         }
@@ -14053,7 +13982,6 @@
           "aed1623b1e": "关闭",
           "ca3b225195": "分支自动命名失败",
           "couldNotGenerateBranchName": "Adehone 无法根据智能体的第一条消息为 <name>{{name}}</name> 生成分支名称",
-          "dismissError": "清除错误",
           "dismissing": "正在清除…",
           "eab8b45238": "复制错误"
         },
@@ -14082,7 +14010,7 @@
           "deleteSingleWorktreeAndBranch": "删除工作树及其分支（未合并的分支会保留）。",
           "gitBlocksMainWorktree": "Git 不允许移除主工作树",
           "removeBatchFolder_other": "从 Adehone 移除<target>{{count}} 个工作区</target>。磁盘上的项目文件夹不会被删除",
-          "removeBatchGit_other": "从 git 移除<target>{{count}} 个工作区</target>，并删除其工作区文件夹",
+          "removeBatchGit_other": "删除 {{count}} 个工作树及其分支（未合并的分支会保留）。",
           "removeBatchMixed_other": "从 Adehone 移除<target>{{count}} 个工作区</target>。Git 工作树也会从 git 和磁盘中移除；文件夹工作区只会移除 Adehone 中的工作区条目",
           "removeFolderProjectInstead": "请移除文件夹项目，而不是删除此工作区",
           "removeSingleFolderFromOrca": "将其从 Adehone 中移除。磁盘上的文件夹会保留。",
@@ -14092,9 +14020,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "取消",
-          "cf95e3b5bb": "关闭",
-          "deleting": "正在删除…",
-          "forceDeleting": "正在强制删除…"
+          "cf95e3b5bb": "关闭"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "{{count}} 项未提交的更改将丢失",
@@ -14112,19 +14038,13 @@
           "alsoDeletesChildren_other": "删除此工作区也会删除 {{count}} 个子工作区",
           "moreChildren_other": "另有 {{count}} 个"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "这是<strong>主工作树</strong>（最初的克隆目录）"
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "创建工作区",
           "title": "创建文件夹工作区"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "取消",
-          "forget": "从 Adehone 中移除",
-          "ghostBody": "{{host}} 不再是已保存的 SSH 主机，因此此工作区不再连接到活跃主机，只能从 Adehone 中移除 — 远程文件和分支保持不变",
-          "removeTitle": "从 Orca 中移除“{{name}}”？",
-          "savedHostBody": "此工作区的项目并非由 {{host}} 上的 Orca 服务器托管，因此 Orca 无法在该主机上删除它，你可以将它从 Orca 中移除；{{host}} 上的文件、Git 工作树和分支都会保持不变"
+          "forget": "从 Adehone 中移除"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "无需启用来源即可单独显示一个工作树",
@@ -15417,8 +15337,6 @@
           "opening": "正在打开此链接…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— 已断开连接",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Adehone 通过链接安装的技能。可以重新安装、回退到早期版本或将其删除",
           "44d118a8f7": "由 Adehone 安装",
           "64c71cf7b9": "Adehone 尚未在此计算机上安装任何技能",
@@ -15448,10 +15366,8 @@
           "0e5b43a9e3": "工作区",
           "5845cfe543": "选择工作树或文件夹",
           "63cc9e31fe": "目标位置",
-          "71eefd7660": "— 已断开连接",
           "7a366323e7": "文件夹",
           "8562dd1e6e": "此计算机",
-          "85d85880df": "· SSH",
           "8e6a972229": "此计算机上没有已知的工作区",
           "a4dfd33095": "单个工作区",
           "b8a0b706ad": "计算机",
@@ -17042,14 +16958,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "取消",
-            "dont_ask_again": "对有运行中进程的终端不再询问",
-            "stop_agent_confirm": "停止代理",
-            "stop_agent_description": "关闭此终端将停止代理当前任务",
-            "stop_agent_title": "停止此代理？",
-            "stop_chat_description": "关闭此聊天将停止智能体当前任务",
-            "stop_command_confirm": "停止并关闭",
-            "stop_command_description": "关闭此终端将停止其中正在运行的命令",
-            "stop_command_title": "停止运行中的命令？"
+            "stop_agent_title": "停止此代理？"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "恢复",
@@ -17671,7 +17580,6 @@
         "2eece16ad1": "通知",
         "31e57d1c70": "通过 SSH 在已有机器上处理文件、终端、Git 和工作区",
         "33a5e1d597": "连接 GitHub、GitLab、Linear 和代码托管服务",
-        "3618579df6": "隐私与遥测",
         "3d65d3f1b9": "为 Adehone 与编码代理配置手机模拟器",
         "3fc3db144f": "快捷命令",
         "40d80bad8a": "测试版",
@@ -17687,7 +17595,6 @@
         "724c440e72": "入门",
         "7682607591": "代理与终端事件的桌面通知",
         "7c79d3b7bf": "可选",
-        "8400cfe1c1": "匿名使用数据与遥测控制",
         "85f4fd7710": "任务来源",
         "8ac3de82f5": "设备端模型本地语音转文字",
         "8c197f74a1": "浏览器",
@@ -19363,33 +19270,22 @@
       "deliveryUnconfirmed": "Adehone 无法确认 {{agent}} 已收到会话上下文，请检查新会话，如果其输入为空，请自行粘贴",
       "detectingAgents": "正在此工作区主机上检测代理…",
       "detectionFailed": "无法检测此工作区主机上的代理",
-      "dialogDescription": "从当前进度启动一个新的代理会话，原会话保持不变",
-      "dialogTitle": "移交给另一个代理",
       "dialogTitleSentence": "交给其他代理",
       "handOffToAnotherAgent": "移交给另一个代理",
       "launchFailed": "无法启动新的 {{agent}} 会话",
       "meta": "{{session}} · 原会话保持不变",
       "metaWithAgent": "来自 {{agent}} · {{session}} · 原会话保持不变",
-      "modeCapturedDescription": "使用捕获的文本和当前工作区",
-      "modeFocused": "聚焦续接(推荐)",
-      "modeFocusedDescription": "使用最新进度和当前工作区，仅在需要时读取更早的会话细节",
-      "modeFull": "完整会话记录",
       "modeFullCost": "速度较慢，并会消耗更多套餐额度或 API 额度。",
-      "modeFullDescription": "让新代理在继续前读取完整的已保存会话，这可能需要更长时间，并消耗大量上下文、套餐用量或 API 额度",
       "modeFullTranscript": "完整记录",
       "modeLatestStatus": "最新状态（推荐）",
-      "modeLoadedDescription": "使用此聊天中当前已加载的最近消息和当前工作区",
-      "noAgents": "未在此工作区主机上已检测已启用的代理",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "没有可用于在新会话中继续的上下文",
       "onlySourceFamilyDetected": "此工作区主机上可用的智能体均与 {{agent}} 共享使用限额。请启用或安装其他智能体。",
-      "originalAgent": "原代理：{{agent}}",
       "preparingContext": "正在准备已保存的聊天上下文…",
       "selectAgent": "选择代理",
       "sent": "已将会话上下文发送到新的 {{agent}} 会话",
-      "startSession": "启动新会话",
       "startSessionSentence": "开始会话",
       "starting": "正在启动…",
-      "startsIn": "启动目录：",
       "untitledSession": "当前会话"
     },
     "automations": {
@@ -20681,15 +20577,10 @@
       "usageLimitActions": {
         "accountUnavailable": "此聊天无法切换到其他账户。请将其移交给其他智能体。",
         "addAccount": "添加账号…",
-        "continueNow": "立即继续",
-        "leadIn": "无需等待，继续此聊天：",
         "switchAccount": "切换账号"
       },
       "usageLimitAutoContinue": {
-        "cancel": "不要继续",
         "cancelFailed": "无法取消自动继续。请重试。",
-        "cancelled": "Adehone 不会自动继续此聊天。",
-        "openSetting": "额度重置后自动继续",
         "scheduled": "Adehone 将在 {{time}} 继续此聊天。"
       },
       "userMessage": {
@@ -21340,7 +21231,6 @@
           "description_other": "此更改会让当前多出 {{count}} 个匹配的工作区，应用后几秒内会将其删除",
           "title": "更改“{{rule}}”？"
         },
-        "cleanUpNow": "立即清理",
         "description": "移除你已不再需要的工作区。在移除任何内容之前，Orca 会再次检查是否有未保存的工作",
         "disableIgnoredFiles": {
           "description": "对于使用这些清理规则的项目，被忽略的文件将不再阻止自动清理。.env 和本地配置这类文件可能会被删除，且无法恢复",
@@ -21392,7 +21282,6 @@
         "pinFailed": "无法保留 {{name}}",
         "previewFailed": "无法检查此更改会匹配哪些工作区",
         "protection": {
-          "alwaysKept": "始终保留：已固定的工作区、正在运行的智能体或终端、编辑器中未保存的更改、未提交的更改、未推送的提交",
           "alwaysKeptLabel": "始终保留",
           "alwaysKeptList": "已固定的工作区、正在运行的智能体或终端、编辑器中未保存的更改、未提交的更改、未推送的提交",
           "keepIgnoredFiles": "保留含有被忽略文件的工作区",
@@ -21435,7 +21324,6 @@
           "recommended": "推荐",
           "showMatches": "显示",
           "then": "然后",
-          "title": "规则",
           "unchanged": "删除无改动的工作区",
           "unchangedDescription": "相对默认分支没有新提交，也没有任何编辑"
         },
@@ -21458,12 +21346,10 @@
           "orchestration": "编排",
           "protection": "保护",
           "pullRequest": "PR",
-          "reviewWorkspaces": "检查工作区",
           "runRulesNow": "立即运行规则",
           "runs": "运行记录",
           "schedule": "计划",
-          "stale": "陈旧",
-          "statusDescription": "立即运行清理规则，或自行检查工作区"
+          "stale": "陈旧"
         },
         "status": {
           "inUnderAMinute": "不到一分钟后",
@@ -21472,13 +21358,7 @@
           "lastRunFreed_other": "上次运行（{{when}}）移除了 {{count}} 个工作区，释放了 {{size}}",
           "lastRunNothing": "上次运行（{{when}}）没有移除任何工作区",
           "lastRunRemoved_other": "上次运行（{{when}}）移除了 {{count}} 个工作区",
-          "nextRun": "下次运行：{{when}}",
-          "off": "自动清理已关闭",
-          "offDetail": "开启规则之前不会移除任何内容",
-          "on": "自动清理已开启",
-          "review": "检查工作区",
-          "running": "正在清理…",
-          "turnOnHint": "开启一条规则后即可使用"
+          "nextRun": "下次运行：{{when}}"
         },
         "summary": {
           "automationRuns": "自动化工作区",
@@ -21493,7 +21373,7 @@
         "trigger": {
           "cli": "通过 CLI",
           "hourly": "每小时",
-          "runNow": "立即清理",
+          "runNow": "立即运行规则",
           "settings": "规则更改后",
           "startup": "启动时"
         },
@@ -21914,8 +21794,6 @@
     "details": "详情",
     "dontSend": "不发送",
     "freeze": {
-      "attach": "附加已保存的卡死报告和诊断日志",
-      "attachDescription": "随已保存的卡死报告发送经过脱敏且有大小限制的日志包",
       "attachmentsOmitted": "已保存的卡死报告和诊断日志未附加：{{value0}}",
       "description": "发送已保存的卡死报告，帮助我们了解发生了什么",
       "includeRedacted": "包含已保存的卡顿报告和近期日志（已脱敏）",
@@ -21925,7 +21803,7 @@
       "sentWithoutAttachments": "详情已发送，但未附带已保存的卡死报告或诊断日志",
       "summary": "Orca 停止响应",
       "title": "报告卡死",
-      "uncheckAttachments": "取消勾选“附加已保存的卡死报告和诊断日志”并重试，或复制详细信息"
+      "uncheckAttachments": "取消勾选“包含已保存的卡顿报告和近期日志（已脱敏）”并重试，或复制详细信息"
     },
     "includeRecentLogsRedacted": "包含近期日志（已脱敏）",
     "sendReport": "发送报告",
@@ -23252,7 +23130,6 @@
     "countUnavailable": "终端数量不可用",
     "killAllLocal": "结束所有本地会话",
     "killFailed": "无法结束终端。将保留上次观察到的会话",
-    "localDaemonScope": "这会影响此计算机上的终端",
     "metricDetails": "指标详情",
     "openToObserve": "打开“资源”以查看终端会话",
     "pty": {
@@ -23418,7 +23295,6 @@
   "sessionSearch": {
     "panel": {
       "changed": "搜索期间索引发生了变化，请重新搜索以获取最新结果",
-      "consent": "启用全文搜索？Orca 会根据此计算机上的本地智能体记录创建索引，其中包括完整对话，内容不会被脱敏，已通过身份验证的配对客户端可以搜索这些内容",
       "consentTranscriptIndex": "搜索会匹配会话详情和消息预览，如需搜索完整对话，请启用全文搜索（为本地记录建立索引，内容不会脱敏），配对设备也可以搜索这些内容",
       "enable": "启用",
       "enableFailed": "无法启用搜索，请重试",
@@ -23436,7 +23312,6 @@
       "indexedHistory": "已索引的历史记录 · 最佳匹配",
       "loadMore": "加载更多匹配项",
       "loadingMoreSessions": "正在加载更多会话…",
-      "noMatches": "已索引的历史记录中没有匹配的会话，请尝试其他查询或范围",
       "noMatchesToShow": "没有可显示的匹配会话",
       "noService": "此计算机无法使用搜索，可能需要更新 Adehone，或使用支持搜索的运行时",
       "notReady": "搜索索引尚未就绪，请稍后重试",
@@ -24261,13 +24136,9 @@
       "optionShortcutHint": "选择“两个都”使用 Option 快捷键，选择“关”输入重音字符和符号，或选择“左边”/“右边”让两个 Option 键各司其职",
       "windows": {
         "10aafff216": "打开管理会话",
-        "administratorApproval": "Windows 将请求批准，请使用您常用的账户",
         "administratorDialogScope": "这会更改整个应用的权限，SSH 和 WSL 保留各自的权限",
         "administratorDocumentation": "阅读指南",
         "administratorLabel": "管理员模式",
-        "administratorPromptCancellation": "取消 Windows 的提示后，Adehone 会带着保留的终端重新打开，SSH 和 WSL 的权限仍由其主机控制",
-        "administratorRestartConsequences": "请先保存您的工作，批准后，当前本地终端主机上的终端和代理会关闭，已恢复的标签页会打开新的管理员 shell",
-        "administratorRestartFailed": "Adehone 无法重启，请重试，或使用手动说明",
         "administratorRestartSummary": "本地终端和代理将会关闭。Windows 会请求你批准。",
         "administratorScope": "Adehone 应用的权限，现有终端可能有所不同",
         "administratorSearchDescription": "查看 Adehone 的 Windows 权限，或通过管理员批准进行重启",
@@ -24276,7 +24147,6 @@
         "checkingAdministrator": "检查中…",
         "closeAdministratorHelp": "关闭",
         "closeLocalSessions": "请保存您的工作，关闭所有本地终端会话，然后退出 Adehone",
-        "confirmAdministratorRestart": "以管理员身份重启？",
         "confirmOrcaAdministratorRestart": "以管理员身份重新启动 Orca？",
         "keywordAdmin": "管理员",
         "keywordAdministrator": "管理员",
@@ -24286,7 +24156,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "在 Windows 开始菜单中，右键单击 Adehone，然后选择“以管理员身份运行”，使用您常用的账户批准 Windows 提示",
         "launchStandard": "从 Windows 开始菜单正常打开 Adehone",
-        "manualAdministratorHelp": "手动说明",
         "manualAdministratorSteps": "手动步骤",
         "orcaCouldNotRestart": "Orca 无法重新启动。",
         "restartAdministrator": "以管理员身份重启",
@@ -25048,42 +24917,25 @@
       "alsoStop": "同时停止正在运行的服务器（会关闭所有使用它的 Codex 会话，包括 Orca 之外的）",
       "body": "会话可能会意外结束，并且代理状态可能会错误",
       "cancel": "取消",
-      "confirmStopDescription": "这将关闭所有共享它的开放 Codex 会话，包括 Adehone 之外的会话",
-      "confirmStopTitle": "停止共享服务器？",
       "copied": "已复制",
-      "copy": "复制",
       "copyCommand": "复制命令",
       "couldNotTurnOff": "无法关闭共享。",
-      "dialogDescription": "Codex 会话直接在共享一台后台服务器的终端中启动，Adehone 将其启动的 Codex 会话分开保存，当会话共享一台服务器时，关闭一个服务器可能会结束其他服务器，并且代理状态可能会错误",
       "dialogQuestion": "让每个 Codex 标签页使用自己的服务器？",
       "dialogSummary": "关闭 Codex 服务器共享，在 Orca 之外也会生效。",
-      "dialogTitle": "为每个 Codex 选项卡提供自己的服务器",
-      "done": "完成",
       "fix": "使固定",
       "howToUndo": "如何撤销",
       "oldTerminalDialogCause": "较旧的终端仍然共享 Codex 服务器，打开一个新终端以在单独的服务器上运行 Codex",
       "oldTerminalDialogRisk": "共享服务器的 Codex 会话可能会一起结束，并且代理状态可能会错误",
       "oldTerminalDialogTitle": "为什么此 Codex 共享服务器",
       "openedBeforeUpdateBody": "这个终端是在 Adehone 开始为每个 Codex 提供自己的服务器之前打开的",
-      "runs": "跑步",
-      "step1Note": "这会更改您的 Codex 设置，因此它也适用于 Adehone 外部",
-      "step1Title": "关闭 Codex 服务器共享",
-      "step2Title": "停止正在运行的共享服务器",
-      "step2Warning": "关闭共享服务器的所有打开的 Codex 会话",
-      "stopFailed": "Adehone 无法停止服务器",
       "stopFailedAfterOff": "共享已关闭，但服务器未停止。",
       "stopServer": "停止服务器",
       "stopSummary": "停止正在运行的服务器，并关闭所有使用它的 Codex 会话。",
-      "stopped": "已停止",
       "stopping": "停止…",
       "title": "此 Codex 与您的其他 Codex 选项卡共享服务器",
-      "turnOff": "关",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone 无法关闭此功能",
       "turnOffSharing": "关闭共享",
-      "turnedOff": "已关闭",
       "turningOff": "正在关闭…",
-      "undo": "要撤消，请运行 codex features enable daemon_auto_start",
       "undoRun": "要重新开启共享，请运行："
     },
     "codexSharedSettingsNotice": {
@@ -25371,15 +25223,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "始终删除",
-    "alwaysDeleteTooltip": "今后删除时跳过此确认。",
     "alwaysForceDelete": "始终强制删除",
     "alwaysForceDeleteBranches": "始终删除保留的分支",
     "alwaysForceDeleteBranchesDescription": "适用于将来删除工作区后保留的分支。",
     "alwaysForceDeleteDescription": "适用于今后所有工作区删除操作。",
     "moreActions": "更多强制删除选项",
     "moreBranchActions": "更多分支删除选项",
-    "moreDeleteOptions": "更多删除选项",
     "preferenceSaveFailed": "无法保存删除偏好"
   },
   "workspaceSpace": {

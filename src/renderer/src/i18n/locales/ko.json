@@ -170,10 +170,6 @@
     "argumentsHint": "CLI 실행에만 적용됩니다.",
     "argumentsTerminalHint": "터미널(CLI) 실행에만 적용",
     "catalogEmpty": "{{agent}}에 사용 가능한 모델이 없습니다.",
-    "catalogFailed": "{{agent}} 모델을 불러오지 못했습니다. 에이전트 선택기를 닫았다가 다시 열어 보세요.",
-    "catalogInstall": "이 호스트에 {{agent}}를 설치하여 모델을 불러온 후 에이전트 선택기를 다시 여세요.",
-    "catalogSignIn": "{{agent}}에 로그인하여 모델을 불러온 후 에이전트 선택기를 다시 여세요.",
-    "catalogUnresolved": "{{agent}} 모델이 로드되지 않았습니다. 에이전트 선택기를 닫았다가 다시 열어 보세요.",
     "catalogUnsupportedLaunch": "이 호스트에서는 {{agent}} 모델을 사용할 수 없습니다. 현재 선택은 그대로 적용됩니다.",
     "chatChoicesNote": "CLI 플래그가 없는 {{agent}} 모델 또는 추론 수준 선택은 채팅에 적용됩니다.",
     "composedChoicesNote": "{{agent}}의 추론 수준 및 속도 선택은 모델 인수에 포함됩니다.",
@@ -197,8 +193,7 @@
     "disabledReason": {
       "approvalUnseen": "에이전트가 승인을 기다리고 있을 수 있습니다",
       "hostUpdateRequired": "이 에이전트에 보내려면 이 호스트의 Orca를 업데이트하세요",
-      "needsPermission": "에이전트에 권한이 필요합니다",
-      "statusStale": "에이전트 상태 정보가 오래되었습니다"
+      "needsPermission": "에이전트에 권한이 필요합니다"
     }
   },
   "agentsSidebarIntro": {
@@ -2856,7 +2851,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "취소",
-          "8490e5d36a": "확인",
           "92bac3217e": "다시 묻지 마세요"
         },
         "skip": {
@@ -3016,21 +3010,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "세부정보 복사",
-            "6d3ebe216a": "진단 텍스트",
             "765591798d": "크래시 보고서 확인 중...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "보내지 않음",
             "8b8473c544": "크래시 보고서가 복사되었습니다.",
             "8e24fe4f75": "크래시 보고서가 전송되었습니다.",
-            "b082f27490": "최근 진단 로그 첨부",
-            "b4951cd27c": "보고서 보내기",
-            "e59f0b9427": "보고서와 함께 크기가 제한되고 민감 정보가 제거된 로그 묶음을 보냅니다.",
             "ead6fc0510": "자동 크래시 보고서가 캡처되지 않았습니다. 그래도 세부 정보를 보내고, 가능한 경우 최근 진단 로그를 포함할 수 있습니다."
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "개인정보를 보호하는 진단 보고서를 보내 무슨 일이 있었는지 파악하는 데 도움을 주세요.",
-            "closedNotesPlaceholder": "선택 사항: Adehone가 종료되기 전에 무엇을 하고 있었나요?",
             "closedTitle": "Adehone가 예기치 않게 종료되었습니다",
             "renderError": "React 렌더링 오류",
             "renderErrorIn": "{{surface}}에서 React 렌더링 오류",
@@ -3425,7 +3411,7 @@
           "multipleAssetsFailedNotice": "이 문서의 {{count}} 파일을 로드할 수 없습니다.",
           "openExternallyControl": "기본 앱으로 열기",
           "openExternallyUnknownHostError": "'{{value0}}'을(를) 열 수 없습니다. 해당 항목을 소유한 호스트를 더 이상 알 수 없습니다.",
-          "openSourceControl": "오픈 소스 파일",
+          "openSourceControl": "소스 파일 열기",
           "previewAriaLabel": "HTML 미리보기",
           "previewMenuControl": "미리보기 옵션",
           "previewUnavailableTitle": "미리보기를 사용할 수 없습니다.",
@@ -5059,36 +5045,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "Terminal 링크",
-              "description": "terminal 링크를 Adehone 브라우저에서 열거나 시스템 브라우저를 계속 사용합니다.",
               "keep": {
-                "description": "또는 시스템 브라우저를 기본값으로 사용합니다.",
                 "orca": {
                   "button": "Adehone에서 계속 열기"
-                },
-                "title": "terminal 링크를 Adehone 브라우저에서 계속 열까요?"
-              },
-              "link": {
-                "label": "링크"
+                }
               },
               "orca": {
-                "button": "Adehone에서 열기",
-                "note": "Adehone는 가져온 쿠키를 사용해 로그인된 사이트를 열 수 있습니다."
-              },
-              "preview": "미리보기",
-              "settings": {
-                "note": "나중에 설정 → 브라우저에서 변경할 수 있습니다."
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "링크가 Adehone에서 열릴 때,",
-                  "suffix": "클릭하면 한 번만 시스템 브라우저에서 열립니다."
-                }
+                "button": "Adehone에서 열기"
               },
               "system": {
                 "button": "시스템 브라우저 사용"
-              },
-              "title": "terminal 링크를 Adehone 브라우저에서 열까요?"
+              }
             }
           }
         }
@@ -5768,7 +5735,6 @@
             "fileCount_one": "파일 {{value0}}개",
             "fileCount_other": "파일 {{value0}}개",
             "historyRefreshed": "기록을 새로고침함",
-            "scanned": "{{value0}} 스캔함",
             "scanning": "{{value0}} 스캔 중"
           },
           "AiVaultSearchEvidence": {
@@ -7930,13 +7896,6 @@
           "nativeActionToastDescription": "Sonner 작업 및 취소 슬롯을 사용합니다.",
           "notificationPlayground": "알림 테스트",
           "notificationPlaygroundDescription": "토스트 레이아웃, 복구 액션, 긴 텍스트 줄바꿈을 확인하기 위한 개발 전용 트리거입니다.",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "프로필 연결",
-          "orcaCloudDescription": "자사 클라우드 로그인의 개발자 전용 미리보기. 프로덕션에서는 숨겨집니다. 개발 환경에서는 ORCA_CLOUD_API_URL과 ORCA_CLOUD_CLIENT_ID가 설정되면 사이드바 계정 전환기에도 표시됩니다.",
-          "orcaCloudNotConfigured": "ORCA_CLOUD_API_URL과 ORCA_CLOUD_CLIENT_ID를 설정하여 이 개발 빌드에서 Orca Cloud 로그인을 미리보세요.",
-          "orcaCloudRefresh": "상태 새로고침",
-          "orcaCloudSignOut": "로그아웃",
-          "orcaCloudStatus": "상태",
           "primaryAction": "주 동작",
           "primaryActionClicked": "주 동작을 클릭했습니다.",
           "secondary": "보조 동작",
@@ -8176,16 +8135,7 @@
           "serverCountOne": "페어링된 서버 1개",
           "updating": "서버 업데이트 중…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "스타 표시 중...",
-          "511782265b": "GitHub 스타로 프로젝트를 지원하세요.",
-          "55a87e5fd1": "Orca 지원",
-          "6922c1fa2b": "GitHub에서 Orca 스타 누르기",
-          "964acc6bb4": "스타",
-          "af7d9f4396": "지원해 주셔서 감사합니다!",
-          "cb65c75b11": "여는 중...",
-          "f2d4f877b2": "GitHub 열기"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "업데이트 다운로드를 시작할 수 없습니다.",
           "2a48034c4c": "v{{value0}} 다운로드 중... {{value1}}%",
@@ -9785,7 +9735,6 @@
           "6d1a27e193": "테마, 확대/축소, 앱 및 터미널 모양, 사이드바, 상태 표시줄.",
           "7118953f14": "agents가 컴퓨터의 모든 앱을 제어할 수 있도록 하세요.",
           "7210ac09c4": "에이전트 활동과 터미널 이벤트에 대한 네이티브 데스크톱 알림입니다.",
-          "742ca66ea6": "개인정보 및 텔레메트리",
           "7686cb5c36": "이 브라우저를 저장된 Adehone 서버에 연결하세요.",
           "7807c11c4d": "일반",
           "8acf3f22e0": "Adehone 통계와 Claude, Codex, OpenCode, Muse 토큰 분석 및 Grok 구독 사용량.",
@@ -9801,7 +9750,6 @@
           "b07041697f": "GitHub, GitLab, Linear 및 소스 호스팅 서비스를 연결하세요.",
           "b79b5b31e9": "셸, 렌더러, 세션, 터미널 동작.",
           "c0900fa64a": "작업 소스",
-          "c1b43dc4e2": "익명의 사용 데이터 및 텔레메트리 제어.",
           "c2bb9fc528": "플로팅 워크스페이스",
           "c2ee313198": "SSH를 통해 기존 머신의 파일, 터미널, Git, 워크스페이스를 사용합니다.",
           "c40dadaac8": "모바일",
@@ -11087,30 +11035,19 @@
               "apiToken": "API 토큰",
               "apiTokenPlaceholder": "Atlassian API 토큰",
               "authModeLabel": "Bitbucket 인증 방법",
-              "baseUrl": "API 기본 URL(선택사항)",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "귀하의 계정에 대한 Atlassian API 토큰을 생성한 다음 이를 소유한 이메일 주소와 페어링하세요.",
               "cancel": "취소",
               "connect": "연결",
               "connectFailed": "연결 실패",
-              "description": "Bitbucket Cloud 자격 증명을 사용하여 PR 및 빌드 상태를 찾아보세요. Adehone는 저장하기 전에 이를 확인합니다.",
-              "docsLink": "Bitbucket API 토큰 문서",
-              "email": "Atlassian 계정 이메일",
               "emailPlaceholder": "you@example.com",
-              "environmentManaged": "Bitbucket은 HADEHONE_BITBUCKET_* 환경 변수를 통해 이미 구성되어 있으며 우선 순위가 높습니다. Adehone에 자격 증명을 저장하려면 설정을 해제하세요.",
               "modeBasic": "이메일 및 API 토큰",
               "modeToken": "액세스 토큰",
-              "remoteRuntime": "활성 원격 런타임이 아닌 이 컴퓨터에 저장됩니다. 대신 원격 런타임에서 HADEHONE_BITBUCKET_*을 설정하세요. 환경 변수는 항상 여기에 저장한 값보다 우선합니다.",
               "scopeReadPullRequest": "PR 읽기",
               "scopeRepository": "빌드 상태 읽기",
               "scopeUser": "계정 이름 표시",
               "scopeWritePullRequest": "PR 생성",
-              "scopesTitle": "다음 Bitbucket API 토큰 범위를 선택하세요:",
               "scopesWriteNote": "읽기 전용으로 사용하려면 쓰기 범위를 생략하세요. 쓰기에는 읽기가 포함되지 않으므로 각 범위를 따로 선택하세요.",
-              "storageNote": "OS 키체인을 사용할 수 있는 경우 암호화된 저장소와 함께 이 시스템에 저장됩니다. HADEHONE_BITBUCKET_* 환경 변수는 항상 여기에 저장한 것보다 우선합니다.",
-              "title": "Bitbucket 연결",
-              "tokenHint": "리포지토리, 프로젝트 및 워크스페이스 액세스 토큰은 일치하는 Bitbucket 설정 페이지에서 생성되며 PR에 대한 읽기 액세스 권한이 필요합니다.",
-              "verifying": "확인 중..."
+              "title": "Bitbucket 연결"
             }
           },
           "integration": {
@@ -12429,10 +12366,7 @@
           "checking": "잠금 확인 중…",
           "close": "닫기",
           "confirm": "잠금 해제 후 다시 시작",
-          "confirmCheck": "이 홈 폴더를 공유하는 다른 머신에서 Adehone를 실행하고 있지 않습니다",
           "currentBoot": "현재 부팅",
-          "description": "이전 실행의 잠금이 아직 남아 있어 이 호스트의 Adehone 서버가 시작되지 않습니다.",
-          "eligible": "이 머신의 이전 주소에서 응답하는 항목이 없지만, Adehone는 같은 이름으로 이 홈 폴더를 공유하는 다른 머신이 있을 가능성을 배제할 수 없습니다.",
           "host": "호스트",
           "lockBoot": "기록 시점의 부팅",
           "manualCommand": "호스트에서 다음을 실행하거나 세부 정보에 표시된 잠금 파일을 삭제하세요:",
@@ -12441,8 +12375,6 @@
           "manualDeleteWarning": "이 홈 폴더를 공유하는 다른 머신에서 이 프로필로 Adehone를 실행하고 있지 않은 경우에만 이 작업을 하세요.",
           "none": "더 이상 해제할 잠금이 없습니다. 이 호스트의 Adehone 서버를 시작하려면 다시 연결하세요.",
           "reclaimedNotStarted": "잠금이 해제되었지만 Adehone 서버가 시작되지 않았습니다.",
-          "title": "Adehone 서버 복구",
-          "warning": "이 홈 폴더를 공유하는 다른 머신에서 이 프로필로 Adehone를 실행하고 있지 않은 경우에만 계속하세요.",
           "written": "기록됨"
         },
         "repository": {
@@ -13419,14 +13351,11 @@
           "80b6ea14cf": "터미널 정리가 경고와 함께 완료되었습니다.",
           "922548bc66": "터미널 서비스를 다시 시작하시겠습니까?",
           "993af6052c": "데몬 관리가 종료를 보고함: {{value0}}/{{value1}}; 정확한 정리 전에 아직 존재: {{value2}}.",
-          "a702d4196e": "이 작업은 모든 워크트리의 모든 터미널 탭을 닫고 현재 터미널 세션의 종료를 요청합니다. 저장되지 않은 터미널 작업은 손실됩니다. 데몬 자체는 계속 실행되며 새 터미널은 즉시 열 수 있습니다. 이 작업은 되돌릴 수 없습니다.",
-          "b5954e12d3": "다시 시작하지 못했습니다. 로그를 확인하세요.",
           "busyKilling": "종료 중…",
           "busyRestarting": "다시 시작 중…",
           "c34fb1098d": "터미널 탭이 닫히고 종료 요청이 전송되었습니다.",
           "confirmKillAll": "모든 세션 종료",
           "confirmRestart": "다시 시작",
-          "d762b41f41": "다시 시작하지 못했습니다.",
           "d9657ac204": "터미널 세션 종료 요청이 전송되었습니다.",
           "e8f25bd903": "터미널 정리를 완료할 수 없습니다."
         }
@@ -13678,7 +13607,7 @@
           "deleteSingleWorktreeAndBranch": "워크트리와 해당 브랜치를 삭제합니다(병합되지 않은 브랜치는 유지).",
           "gitBlocksMainWorktree": "Git에서는 메인 워크트리를 제거할 수 없습니다.",
           "removeBatchFolder_other": "Adehone에서 <target>워크스페이스 {{count}}개</target>를 제거합니다. 디스크의 프로젝트 폴더는 삭제되지 않습니다.",
-          "removeBatchGit_other": "git에서 <target>워크스페이스 {{count}}개</target>를 제거하고 해당 워크스페이스 폴더를 삭제합니다.",
+          "removeBatchGit_other": "워크트리 {{count}}개와 해당 브랜치를 삭제합니다(병합되지 않은 브랜치는 유지됩니다).",
           "removeBatchMixed_other": "Adehone에서 <target>워크스페이스 {{count}}개</target>를 제거합니다. Git 워크트리는 git과 디스크에서도 제거됩니다. 폴더 워크스페이스는 Adehone 항목만 제거됩니다.",
           "removeFolderProjectInstead": "이 워크스페이스를 삭제하는 대신 폴더 프로젝트를 제거하세요.",
           "removeSingleFolderFromOrca": "Adehone에서 제거합니다. 디스크의 폴더는 유지됩니다.",
@@ -13688,9 +13617,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "취소",
-          "cf95e3b5bb": "닫기",
-          "deleting": "삭제 중...",
-          "forceDeleting": "강제 삭제 중..."
+          "cf95e3b5bb": "닫기"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "커밋되지 않은 변경 사항 {{count}}개가 손실됩니다",
@@ -13708,17 +13635,13 @@
           "alsoDeletesChildren_other": "이 워크스페이스를 삭제하면 하위 워크스페이스 {{count}}개도 삭제됩니다.",
           "moreChildren_other": "+{{count}}개 더"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "이 워크트리는 <strong>메인 워크트리</strong>(원래 복제 디렉터리)입니다."
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "워크스페이스 만들기",
           "title": "폴더 워크스페이스 만들기"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "취소",
-          "forget": "Adehone에서 제거",
-          "ghostBody": "{{host}}은(는) 더 이상 저장된 SSH 호스트가 아니므로 이 워크스페이스는 라이브 호스트에 연결되어 있지 않습니다. Adehone에서 제거만 할 수 있으며, 원격의 파일과 브랜치는 그대로 유지됩니다."
+          "forget": "Adehone에서 제거"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "소스를 활성화하지 않고 하나만 표시합니다.",
@@ -14981,8 +14904,6 @@
           "opening": "이 링크를 여는 중…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— 연결이 끊어졌습니다",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Adehone가 링크에서 설치한 스킬입니다. 다시 설치하거나, 이전 버전으로 되돌리거나, 제거할 수 있습니다.",
           "44d118a8f7": "Adehone에서 설치함",
           "64c71cf7b9": "Adehone가 아직 이 컴퓨터에 스킬을 설치하지 않았습니다.",
@@ -15012,10 +14933,8 @@
           "0e5b43a9e3": "워크스페이스",
           "5845cfe543": "작업 트리 또는 폴더 선택",
           "63cc9e31fe": "목적지",
-          "71eefd7660": "— 연결이 끊어졌습니다",
           "7a366323e7": "폴더",
           "8562dd1e6e": "이 컴퓨터",
-          "85d85880df": "· SSH",
           "8e6a972229": "이 머신에는 알려진 워크스페이스가 없습니다.",
           "a4dfd33095": "하나의 워크스페이스",
           "b8a0b706ad": "기계",
@@ -16568,14 +16487,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "취소",
-            "dont_ask_again": "실행 중인 terminals에 대해 다시 묻지 않기",
-            "stop_agent_confirm": "Agent 중지",
-            "stop_agent_description": "이 terminal을 닫으면 agent의 현재 작업이 중지됩니다.",
-            "stop_agent_title": "이 agent를 중지할까요?",
-            "stop_chat_description": "이 채팅을 닫으면 에이전트의 현재 작업이 중지됩니다.",
-            "stop_command_confirm": "중지하고 닫기",
-            "stop_command_description": "이 terminal을 닫으면 내부에서 실행 중인 명령이 중지됩니다.",
-            "stop_command_title": "실행 중인 명령을 중지할까요?"
+            "stop_agent_title": "이 agent를 중지할까요?"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "복원",
@@ -17145,7 +17057,6 @@
         "2eece16ad1": "알림",
         "31e57d1c70": "SSH를 통해 기존 머신의 파일, terminals, Git, 워크스페이스를 사용합니다.",
         "33a5e1d597": "GitHub, GitLab, Linear 및 소스 호스팅 서비스를 연결하세요.",
-        "3618579df6": "개인정보 및 텔레메트리",
         "3d65d3f1b9": "Adehone 및 코딩 agents의 모바일 에뮬레이터 지원을 구성합니다.",
         "3fc3db144f": "빠른 명령어",
         "40d80bad8a": "베타",
@@ -17161,7 +17072,6 @@
         "724c440e72": "시작하기",
         "7682607591": "agent 및 terminal 이벤트에 대한 네이티브 데스크톱 알림입니다.",
         "7c79d3b7bf": "선택 사항",
-        "8400cfe1c1": "익명의 사용 데이터 및 텔레메트리 제어.",
         "85f4fd7710": "작업 소스",
         "8ac3de82f5": "온디바이스 모델을 사용한 로컬 음성-텍스트 받아쓰기.",
         "8c197f74a1": "브라우저",
@@ -18620,33 +18530,22 @@
       "deliveryUnconfirmed": "Adehone가 {{agent}}가 세션 컨텍스트를 받았는지 확인하지 못했습니다. 새 세션을 확인하고 입력이 비어 있으면 직접 붙여넣으세요.",
       "detectingAgents": "이 워크스페이스 호스트에서 에이전트를 찾는 중…",
       "detectionFailed": "이 워크스페이스 호스트에서 에이전트를 찾을 수 없습니다.",
-      "dialogDescription": "이 지점부터 새 에이전트 세션을 시작합니다. 원래 세션은 변경되지 않습니다.",
-      "dialogTitle": "다른 에이전트에게 인계",
       "dialogTitleSentence": "다른 agent에게 넘기기",
       "handOffToAnotherAgent": "다른 에이전트에게 인계",
       "launchFailed": "새 {{agent}} 세션을 시작할 수 없습니다.",
       "meta": "{{session}} · 원본은 그대로 유지됩니다",
       "metaWithAgent": "{{agent}}에서 · {{session}} · 원본은 그대로 유지됩니다",
-      "modeCapturedDescription": "캡처한 텍스트와 현재 워크스페이스를 사용합니다.",
-      "modeFocused": "핵심 컨텍스트 전달(권장)",
-      "modeFocusedDescription": "최신 상태와 현재 워크스페이스를 사용하고 필요한 경우에만 이전 세부 정보를 읽습니다.",
-      "modeFull": "전체 세션 기록",
       "modeFullCost": "더 느리고 요금제나 API 크레딧을 더 많이 사용합니다.",
-      "modeFullDescription": "계속하기 전에 새 에이전트가 저장된 전체 세션을 읽도록 합니다. 시간이 더 오래 걸리고 상당한 컨텍스트, 요금제 사용량 또는 API 크레딧을 소모할 수 있습니다.",
       "modeFullTranscript": "전체 기록",
       "modeLatestStatus": "최신 상태(권장)",
-      "modeLoadedDescription": "이 채팅에 현재 로드된 최근 메시지와 현재 워크스페이스를 사용합니다.",
-      "noAgents": "이 워크스페이스 호스트에서 활성화된 에이전트를 찾지 못했습니다.",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "새 세션에서 계속할 세션 컨텍스트가 없습니다.",
       "onlySourceFamilyDetected": "이 워크스페이스 호스트에서 사용할 수 있는 에이전트는 {{agent}}와 사용 한도를 공유하는 에이전트뿐입니다. 다른 에이전트를 활성화하거나 설치하세요.",
-      "originalAgent": "원래 에이전트: {{agent}}",
       "preparingContext": "저장된 채팅 컨텍스트 준비 중…",
       "selectAgent": "에이전트 선택",
       "sent": "세션 컨텍스트를 새 {{agent}} 세션으로 보냈습니다.",
-      "startSession": "새 세션 시작",
       "startSessionSentence": "세션 시작",
       "starting": "시작 중…",
-      "startsIn": "시작 위치:",
       "untitledSession": "현재 세션"
     },
     "automations": {
@@ -19715,15 +19614,10 @@
       "usageLimitActions": {
         "accountUnavailable": "이 채팅을 다른 계정으로 옮길 수 없습니다. 다른 에이전트에게 인계하세요.",
         "addAccount": "계정 추가…",
-        "continueNow": "지금 계속",
-        "leadIn": "기다리지 않고 이 채팅을 계속하세요:",
         "switchAccount": "계정 전환"
       },
       "usageLimitAutoContinue": {
-        "cancel": "계속하지 않기",
         "cancelFailed": "자동 계속을 취소하지 못했습니다. 다시 시도하세요.",
-        "cancelled": "Adehone가 이 채팅을 자동으로 계속하지 않습니다.",
-        "openSetting": "한도가 재설정되면 자동으로 계속하기",
         "scheduled": "Adehone가 {{time}}에 이 채팅을 계속합니다."
       },
       "userMessage": {
@@ -21749,7 +21643,6 @@
     "countUnavailable": "터미널 수를 사용할 수 없음",
     "killAllLocal": "모든 로컬 세션 종료",
     "killFailed": "터미널을 종료할 수 없습니다. 마지막으로 관찰된 세션이 유지됩니다.",
-    "localDaemonScope": "이 컴퓨터의 터미널에 영향을 줍니다.",
     "metricDetails": "지표 세부 정보",
     "openToObserve": "리소스를 열어 터미널 세션을 관찰하세요.",
     "pty": {
@@ -21922,7 +21815,6 @@
       "indexedHistory": "색인된 기록",
       "loadMore": "더 많은 경기 로드",
       "loadingMoreSessions": "추가 세션 로드 중…",
-      "noMatches": "색인화된 기록에 일치하는 세션이 없습니다. 다른 쿼리나 범위를 시도해 보세요.",
       "noMatchesToShow": "표시할 일치하는 세션이 없습니다.",
       "noService": "이 컴퓨터에서는 검색을 사용할 수 없습니다. Adehone 업데이트나 검색 지원이 가능한 런타임이 필요할 수 있습니다.",
       "notReady": "검색 색인이 아직 준비되지 않았습니다. 잠시 후 다시 시도하세요.",
@@ -22431,13 +22323,9 @@
       "optionShortcutHint": "Option 단축키에는 둘 다, 악센트 문자와 기호에는 끄기, 각 Option 키를 다른 용도로 쓰려면 왼쪽 또는 오른쪽을 선택하세요.",
       "windows": {
         "10aafff216": "세션 관리 열기",
-        "administratorApproval": "Windows에서 승인을 요청합니다. 평소 사용하는 계정을 사용하세요.",
         "administratorDialogScope": "이 변경은 앱 전체의 권한에 적용됩니다. SSH와 WSL은 각자의 권한을 유지합니다.",
         "administratorDocumentation": "가이드 읽기",
         "administratorLabel": "관리자 모드",
-        "administratorPromptCancellation": "Windows 프롬프트를 취소하면 Adehone가 유지된 터미널과 함께 다시 열립니다. SSH와 WSL 권한은 각자의 호스트에서 계속 제어됩니다.",
-        "administratorRestartConsequences": "먼저 작업을 저장하세요. 승인 후 현재 로컬 터미널 호스트의 터미널과 에이전트가 닫힙니다. 복원된 탭은 새 관리자 셸을 엽니다.",
-        "administratorRestartFailed": "Adehone를 다시 시작할 수 없습니다. 다시 시도하거나 수동 지침을 사용하세요.",
         "administratorRestartSummary": "로컬 터미널과 agent가 닫힙니다. Windows에서 승인을 요청합니다.",
         "administratorScope": "Adehone 앱의 권한입니다. 기존 터미널은 다를 수 있습니다.",
         "administratorSearchDescription": "Adehone의 Windows 권한을 확인하거나 관리자 승인으로 다시 시작하세요.",
@@ -22446,7 +22334,6 @@
         "checkingAdministrator": "확인 중…",
         "closeAdministratorHelp": "닫기",
         "closeLocalSessions": "작업을 저장하고 모든 로컬 터미널 세션을 닫은 다음 Adehone를 종료하세요.",
-        "confirmAdministratorRestart": "관리자 권한으로 다시 시작하시겠습니까?",
         "confirmOrcaAdministratorRestart": "Orca를 관리자로 다시 시작할까요?",
         "keywordAdmin": "관리자",
         "keywordAdministrator": "관리자",
@@ -22456,7 +22343,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "Windows 시작 메뉴에서 Adehone를 마우스 오른쪽 버튼으로 클릭하고 관리자 권한으로 실행을 선택하세요. 평소 사용하는 계정으로 Windows 프롬프트를 승인하세요.",
         "launchStandard": "Windows 시작 메뉴에서 Adehone를 평소대로 여세요.",
-        "manualAdministratorHelp": "수동 지침",
         "manualAdministratorSteps": "수동 단계",
         "orcaCouldNotRestart": "Orca를 다시 시작하지 못했습니다.",
         "restartAdministrator": "관리자 권한으로 다시 시작",
@@ -23111,42 +22997,25 @@
       "alsoStop": "실행 중인 서버도 중지(Orca 밖을 포함해 이를 사용하는 모든 Codex 세션이 닫힘)",
       "body": "세션이 예기치 않게 종료될 수 있으며 에이전트 상태가 잘못되었을 수 있습니다.",
       "cancel": "취소",
-      "confirmStopDescription": "이는 HADEHONE 외부 세션을 포함하여 이를 공유하는 모든 공개 Codex 세션을 종료합니다.",
-      "confirmStopTitle": "공유 서버를 중지하시겠습니까?",
       "copied": "복사됨",
-      "copy": "복사",
       "copyCommand": "명령 복사",
       "couldNotTurnOff": "공유를 끄지 못했습니다.",
-      "dialogDescription": "Codex 세션은 터미널 공유 백그라운드 서버에서 직접 시작되었습니다. HADEHONE는 시작되는 Codex 세션을 별도로 유지합니다. 세션이 서버를 공유할 때 서버를 닫으면 다른 세션이 종료될 수 있으며 에이전트 상태가 잘못될 수 있습니다.",
       "dialogQuestion": "각 Codex 탭에 자체 서버를 할당할까요?",
       "dialogSummary": "Orca 밖에서도 Codex 서버 공유를 끕니다.",
-      "dialogTitle": "각 Codex 탭에 자체 서버를 제공합니다",
-      "done": "완료",
       "fix": "자물쇠",
       "howToUndo": "되돌리는 방법",
       "oldTerminalDialogCause": "이전 터미널은 여전히 Codex 서버를 공유합니다. 새 터미널을 열어 별도의 서버에서 Codex를 실행합니다.",
       "oldTerminalDialogRisk": "서버를 공유하는 Codex 세션은 함께 종료될 수 있으며 에이전트 상태가 잘못될 수 있습니다.",
       "oldTerminalDialogTitle": "이 Codex가 서버를 공유하는 이유",
       "openedBeforeUpdateBody": "이 터미널은 HADEHONE가 각 Codex에게 자체 서버를 제공하기 전에 열렸습니다.",
-      "runs": "Runs",
-      "step1Note": "이렇게 하면 Codex 설정이 변경되므로 HADEHONE 외부에서도 적용됩니다.",
-      "step1Title": "Codex 서버 공유 끄기",
-      "step2Title": "실행 중인 공유 서버 중지",
-      "step2Warning": "서버를 공유하는 열려 있는 Codex 세션을 닫습니다.",
-      "stopFailed": "Adehone는 서버를 멈출 수 없었다.",
       "stopFailedAfterOff": "공유는 꺼졌지만 서버가 중지되지 않았습니다.",
       "stopServer": "서버 중지",
       "stopSummary": "실행 중인 서버를 중지하고 이를 사용하는 모든 Codex 세션을 닫습니다.",
-      "stopped": "중지됨",
       "stopping": "정지 중",
       "title": "이 Codex는 다른 Codex 탭과 서버를 공유합니다",
-      "turnOff": "끄기",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone는 이 기능을 끌 수 없었다.",
       "turnOffSharing": "공유 끄기",
-      "turnedOff": "껐어요",
       "turningOff": "끄는 중...",
-      "undo": "되돌리려면 codex features enable daemon_auto_start를 실행하세요.",
       "undoRun": "공유를 다시 켜려면 다음을 실행하세요:"
     },
     "codexSharedSettingsNotice": {
@@ -23394,15 +23263,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "항상 삭제",
-    "alwaysDeleteTooltip": "이후 삭제 시 이 확인을 건너뜁니다.",
     "alwaysForceDelete": "항상 강제 삭제",
     "alwaysForceDeleteBranches": "보존된 브랜치 항상 삭제",
     "alwaysForceDeleteBranchesDescription": "향후 워크스페이스 삭제 후 보존되는 브랜치에 적용됩니다.",
     "alwaysForceDeleteDescription": "이후 모든 워크스페이스 삭제에 적용됩니다.",
     "moreActions": "추가 강제 삭제 옵션",
     "moreBranchActions": "브랜치 삭제 옵션 더 보기",
-    "moreDeleteOptions": "추가 삭제 옵션",
     "preferenceSaveFailed": "삭제 환경설정을 저장하지 못했습니다"
   },
   "workspaceSpace": {

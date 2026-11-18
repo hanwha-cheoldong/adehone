@@ -177,10 +177,6 @@
     "argumentsHint": "Aplica-se apenas às inicializações pela CLI.",
     "argumentsTerminalHint": "Aplica-se apenas a inicializações no terminal (CLI)",
     "catalogEmpty": "{{agent}} não tem modelos disponíveis.",
-    "catalogFailed": "Não foi possível carregar os modelos de {{agent}}. Feche e reabra o seletor de agentes para tentar novamente.",
-    "catalogInstall": "Instale {{agent}} neste host para carregar seus modelos e reabra o seletor de agentes.",
-    "catalogSignIn": "Entre em {{agent}} para carregar seus modelos e reabra o seletor de agentes.",
-    "catalogUnresolved": "Os modelos de {{agent}} não foram carregados. Feche e reabra o seletor de agentes para tentar novamente.",
     "catalogUnsupportedLaunch": "Os modelos de {{agent}} não estão disponíveis neste host. Suas escolhas atuais continuam valendo.",
     "chatChoicesNote": "As escolhas de modelo ou esforço de {{agent}} sem uma flag de CLI se aplicam aos chats.",
     "composedChoicesNote": "As escolhas de esforço e velocidade de {{agent}} estão incluídas no argumento do modelo.",
@@ -204,8 +200,7 @@
     "disabledReason": {
       "approvalUnseen": "O agente pode estar aguardando aprovação",
       "hostUpdateRequired": "Atualize o Orca neste host para enviar a este agente",
-      "needsPermission": "O agente precisa de permissão",
-      "statusStale": "O status do agente está desatualizado"
+      "needsPermission": "O agente precisa de permissão"
     }
   },
   "agentsSidebarIntro": {
@@ -2952,7 +2947,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "Cancelar",
-          "8490e5d36a": "Confirmar",
           "92bac3217e": "Não perguntar novamente"
         },
         "skip": {
@@ -3112,21 +3106,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "Copiar Detalhes",
-            "6d3ebe216a": "Texto de diagnóstico",
             "765591798d": "Verificando relatórios de falha...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "Não Enviar",
             "8b8473c544": "Relatório de falha copiado.",
             "8e24fe4f75": "Relatório de falha enviado.",
-            "b082f27490": "Anexar logs de diagnóstico recentes",
-            "b4951cd27c": "Enviar Relatório",
-            "e59f0b9427": "Envia um pacote de logs limitado e com dados sensíveis removidos junto com o relatório.",
             "ead6fc0510": "Nenhum relatório de falha automático foi capturado. Você ainda pode enviar detalhes e incluir logs de diagnóstico recentes quando disponíveis."
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "Envie um relatório de diagnóstico que preserva sua privacidade para nos ajudar a entender o que aconteceu.",
-            "closedNotesPlaceholder": "Opcional: o que você estava fazendo antes de o Adehone fechar?",
             "closedTitle": "O Adehone foi fechado inesperadamente",
             "renderError": "Erro de renderização do React",
             "renderErrorIn": "Erro de renderização do React em {{surface}}",
@@ -5209,36 +5195,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "Link do terminal",
-              "description": "Use o navegador do Adehone para links do terminal, ou mantenha o navegador do seu sistema.",
               "keep": {
-                "description": "Ou use o navegador do seu sistema por padrão.",
                 "orca": {
                   "button": "Manter Adehone"
-                },
-                "title": "Manter os links do terminal no navegador do Adehone?"
-              },
-              "link": {
-                "label": "Link"
+                }
               },
               "orca": {
-                "button": "Abrir no Adehone",
-                "note": "O Adehone pode usar cookies importados para sites com login."
-              },
-              "preview": "Pré-visualização",
-              "settings": {
-                "note": "Altere isso depois em Configurações → Navegador."
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "Quando os links abrem no Adehone,",
-                  "suffix": "um clique abre o navegador do sistema uma vez."
-                }
+                "button": "Abrir no Adehone"
               },
               "system": {
                 "button": "Usar navegador do sistema"
-              },
-              "title": "Abrir links do terminal no navegador do Adehone?"
+              }
             }
           }
         }
@@ -5978,7 +5945,6 @@
             "fileCount_one": "{{value0}} arquivo",
             "fileCount_other": "{{value0}} arquivos",
             "historyRefreshed": "Histórico atualizado",
-            "scanned": "Verificação concluída: {{value0}}",
             "scanning": "Verificando {{value0}}"
           },
           "AiVaultSearchEvidence": {
@@ -8237,13 +8203,6 @@
           "nativeActionToastDescription": "Usa os slots de ação e cancelamento do Sonner.",
           "notificationPlayground": "Playground de notificações",
           "notificationPlaygroundDescription": "Acionadores exclusivos para desenvolvedores verificarem o layout do toast, ações de recuperação e quebra de texto longo.",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "Conectar perfil",
-          "orcaCloudDescription": "Pré-visualização exclusiva para desenvolvedores do login na nuvem próprio. Oculto em produção; em dev também aparece no alternador de conta da barra lateral quando ORCA_CLOUD_API_URL e ORCA_CLOUD_CLIENT_ID estão definidos.",
-          "orcaCloudNotConfigured": "Defina ORCA_CLOUD_API_URL e ORCA_CLOUD_CLIENT_ID para pré-visualizar o login do Orca Cloud nesta versão de dev.",
-          "orcaCloudRefresh": "Atualizar status",
-          "orcaCloudSignOut": "Sair",
-          "orcaCloudStatus": "Status",
           "primaryAction": "Ação primária",
           "primaryActionClicked": "Ação primária clicada",
           "secondary": "Secundária",
@@ -8487,16 +8446,7 @@
           "serverCountOne": "1 servidor pareado",
           "updating": "Atualizando servidores…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "Dando estrela...",
-          "511782265b": "Apoie o projeto com uma estrela no GitHub.",
-          "55a87e5fd1": "Apoiar o Orca",
-          "6922c1fa2b": "Dar estrela ao Orca no GitHub",
-          "964acc6bb4": "Dar Estrela",
-          "af7d9f4396": "Obrigado pelo apoio!",
-          "cb65c75b11": "Abrindo...",
-          "f2d4f877b2": "Abrir GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "Não foi possível iniciar o download da atualização.",
           "2a48034c4c": "Baixando v{{value0}}... {{value1}}%",
@@ -10112,7 +10062,6 @@
           "6d1a27e193": "Tema, zoom, aparência do aplicativo e do terminal, barras laterais e barra de status.",
           "7118953f14": "Permita que agentes controlem qualquer aplicativo no seu computador.",
           "7210ac09c4": "Notificações nativas do desktop para atividade de agente e eventos de terminal.",
-          "742ca66ea6": "Privacidade e Telemetria",
           "7686cb5c36": "Conecte este navegador a um servidor Adehone salvo.",
           "7807c11c4d": "Geral",
           "8acf3f22e0": "Estatísticas do Adehone, além de análises de tokens do Claude, Codex, OpenCode e uso da assinatura do Grok.",
@@ -10128,7 +10077,6 @@
           "b07041697f": "Conecte GitHub, GitLab, Linear e serviços de hospedagem de código.",
           "b79b5b31e9": "Shells, renderização, sessões e comportamento do terminal.",
           "c0900fa64a": "Origens de Tarefas",
-          "c1b43dc4e2": "Controles de dados de uso anônimos e telemetria.",
           "c2bb9fc528": "Espaço de Trabalho Flutuante",
           "c2ee313198": "Use máquinas existentes via SSH para arquivos, terminais, Git e espaços de trabalho.",
           "c40dadaac8": "Mobile",
@@ -11446,30 +11394,19 @@
               "apiToken": "Token de API",
               "apiTokenPlaceholder": "Token de API da Atlassian",
               "authModeLabel": "Método de autenticação do Bitbucket",
-              "baseUrl": "URL base da API (opcional)",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "Crie um token de API da Atlassian para sua conta e depois combine-o com o endereço de e-mail que o possui.",
               "cancel": "Cancelar",
               "connect": "Conectar",
               "connectFailed": "Falha na conexão",
-              "description": "Use uma credencial do Bitbucket Cloud para navegar por pull requests e status de build. O Adehone a verifica antes de salvar.",
-              "docsLink": "Documentação de token de API do Bitbucket",
-              "email": "E-mail da conta Atlassian",
               "emailPlaceholder": "you@example.com",
-              "environmentManaged": "O Bitbucket já está configurado através das variáveis de ambiente ADEHONE_BITBUCKET_*, que têm prioridade. Remova-as para salvar uma credencial no Adehone.",
               "modeBasic": "E-mail e token de API",
               "modeToken": "Token de acesso",
-              "remoteRuntime": "Armazenado nesta máquina, não no runtime remoto ativo — defina ADEHONE_BITBUCKET_* lá. As variáveis de ambiente sempre têm prioridade sobre o que você salvar aqui.",
               "scopeReadPullRequest": "Ler pull requests",
               "scopeRepository": "Ler status de build",
               "scopeUser": "Mostrar o nome da sua conta",
               "scopeWritePullRequest": "Criar pull requests",
-              "scopesTitle": "Selecione estes escopos do token de API do Bitbucket:",
               "scopesWriteNote": "Para uso somente leitura, omita o escopo de escrita. Escrita não inclui leitura; selecione cada escopo separadamente.",
-              "storageNote": "Armazenado nesta máquina com armazenamento criptografado quando o keychain do sistema operacional está disponível. As variáveis de ambiente ADEHONE_BITBUCKET_* sempre têm prioridade sobre o que você salva aqui.",
-              "title": "Conectar Bitbucket",
-              "tokenHint": "Tokens de acesso de repositório, projeto e espaço de trabalho são criados na página de configurações correspondente do Bitbucket e precisam de acesso de leitura a pull requests.",
-              "verifying": "Verificando..."
+              "title": "Conectar Bitbucket"
             }
           },
           "integration": {
@@ -12780,10 +12717,7 @@
           "checking": "Verificando o bloqueio…",
           "close": "Fechar",
           "confirm": "Limpar o bloqueio e reiniciar",
-          "confirmCheck": "Nenhuma outra máquina que compartilha esta pasta pessoal está executando o Adehone",
           "currentBoot": "Inicialização atual",
-          "description": "O servidor do Adehone neste host não inicia porque um bloqueio de uma execução anterior ainda está ativo.",
-          "eligible": "Nada responde nesta máquina no endereço antigo, mas o Adehone não pode descartar outra máquina com o mesmo nome que compartilhe esta pasta pessoal.",
           "host": "Host",
           "lockBoot": "Gravado durante a inicialização",
           "manualCommand": "Execute isto no host ou exclua o arquivo de bloqueio mostrado em Detalhes:",
@@ -12792,8 +12726,6 @@
           "manualDeleteWarning": "Faça isso somente se nenhuma outra máquina que compartilhe esta pasta pessoal executar o Adehone com este perfil.",
           "none": "Não há mais bloqueio para limpar. Reconecte para iniciar o servidor do Adehone deste host.",
           "reclaimedNotStarted": "O bloqueio foi limpo, mas o servidor do Adehone não iniciou.",
-          "title": "Recuperar o servidor do Adehone",
-          "warning": "Continue somente se nenhuma outra máquina que compartilhe esta pasta pessoal executar o Adehone com este perfil.",
           "written": "Gravado"
         },
         "repository": {
@@ -13778,14 +13710,11 @@
           "80b6ea14cf": "A limpeza do terminal terminou com avisos.",
           "922548bc66": "Reiniciar o daemon do terminal?",
           "993af6052c": "O gerenciamento do daemon relatou encerrado: {{value0}}/{{value1}}; ainda presente antes da limpeza exata: {{value2}}.",
-          "a702d4196e": "Isso fecha todas as abas de terminal em todos os espaços de trabalho e solicita o encerramento de suas sessões de terminal atuais. Qualquer trabalho de terminal não salvo será perdido. O daemon continua em execução, e novos terminais podem ser abertos imediatamente. Isso não pode ser desfeito.",
-          "b5954e12d3": "Falha ao reiniciar — verifique os logs.",
           "busyKilling": "Encerrando…",
           "busyRestarting": "Reiniciando…",
           "c34fb1098d": "Abas de terminal fechadas e encerramento solicitado.",
           "confirmKillAll": "Encerrar todas as sessões",
           "confirmRestart": "Reiniciar",
-          "d762b41f41": "Falha ao reiniciar.",
           "d9657ac204": "Encerramento da sessão de terminal solicitado.",
           "e8f25bd903": "Não foi possível concluir a limpeza do terminal."
         }
@@ -14013,7 +13942,6 @@
           "aed1623b1e": "Fechar",
           "ca3b225195": "Falha na renomeação automática da branch",
           "couldNotGenerateBranchName": "O Adehone não conseguiu gerar um nome de branch para <name>{{name}}</name> a partir da primeira mensagem do agente.",
-          "dismissError": "Ignorar erro",
           "dismissing": "Descartando…",
           "eab8b45238": "Copiar erro"
         },
@@ -14044,9 +13972,9 @@
           "removeBatchFolder_many": "Remover <target>{{count}} espaços de trabalho</target> do Adehone. As pastas dos projetos no disco não serão excluídas.",
           "removeBatchFolder_one": "Remover <target>{{count}} espaço de trabalho</target> do Adehone. As pastas dos projetos no disco não serão excluídas.",
           "removeBatchFolder_other": "Remover <target>{{count}} espaços de trabalho</target> do Adehone. As pastas dos projetos no disco não serão excluídas.",
-          "removeBatchGit_many": "Remover <target>{{count}} espaços de trabalho</target> do git e excluir suas pastas de espaço de trabalho.",
-          "removeBatchGit_one": "Remover <target>{{count}} espaço de trabalho</target> do git e excluir sua pasta de espaço de trabalho.",
-          "removeBatchGit_other": "Remover <target>{{count}} espaços de trabalho</target> do git e excluir suas pastas de espaço de trabalho.",
+          "removeBatchGit_many": "Exclui {{count}} worktrees e suas branches (as branches não mescladas são mantidas).",
+          "removeBatchGit_one": "Exclui {{count}} worktree e sua branch (a branch é mantida se não tiver sido mesclada).",
+          "removeBatchGit_other": "Exclui {{count}} worktrees e suas branches (as branches não mescladas são mantidas).",
           "removeBatchMixed_many": "Remover <target>{{count}} espaços de trabalho</target> do Adehone. Os worktrees Git também serão removidos do git e do disco; nos espaços de trabalho de pasta, apenas a entrada no Adehone será removida.",
           "removeBatchMixed_one": "Remover <target>{{count}} espaço de trabalho</target> do Adehone. Os worktrees Git também serão removidos do git e do disco; nos espaços de trabalho de pasta, apenas a entrada no Adehone será removida.",
           "removeBatchMixed_other": "Remover <target>{{count}} espaços de trabalho</target> do Adehone. Os worktrees Git também serão removidos do git e do disco; nos espaços de trabalho de pasta, apenas a entrada no Adehone será removida.",
@@ -14064,9 +13992,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "Cancelar",
-          "cf95e3b5bb": "Fechar",
-          "deleting": "Excluindo...",
-          "forceDeleting": "Forçando exclusão..."
+          "cf95e3b5bb": "Fechar"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_many": "{{count}} alterações não commitadas serão perdidas",
@@ -14090,19 +14016,13 @@
           "moreChildren_one": "+{{count}} a mais",
           "moreChildren_other": "+{{count}} a mais"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "Esta é a <strong>worktree principal</strong> (o diretório do clone original)."
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "Criar espaço de trabalho",
           "title": "Criar Espaço de Trabalho de Pasta"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "Cancelar",
-          "forget": "Remover do Adehone",
-          "ghostBody": "{{host}} não é mais um host SSH salvo, então este espaço de trabalho não está mais conectado a um host ativo. Ele só pode ser removido do Adehone — os arquivos e branches no remoto permanecem intocados.",
-          "removeTitle": "Remover “{{name}}” do Adehone?",
-          "savedHostBody": "O projeto deste espaço de trabalho não é servido pelo servidor do Adehone em {{host}}, então o Adehone não pode excluí-lo lá. Você pode removê-lo do Adehone; os arquivos, o worktree Git e as branches em {{host}} permanecerão intactos."
+          "forget": "Remover do Adehone"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "Mostre uma sem ativar sua origem.",
@@ -15444,8 +15364,6 @@
           "opening": "Abrindo este link…"
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— desconectado",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Skills que o Adehone instalou a partir de um link. Reinstale, volte para uma versão anterior ou remova-as.",
           "44d118a8f7": "Instaladas pelo Adehone",
           "64c71cf7b9": "O Adehone ainda não instalou nenhuma skill nesta máquina.",
@@ -15476,10 +15394,8 @@
           "0e5b43a9e3": "Espaço de Trabalho",
           "5845cfe543": "Escolha uma worktree ou pasta",
           "63cc9e31fe": "Destino",
-          "71eefd7660": "— desconectado",
           "7a366323e7": "Pasta",
           "8562dd1e6e": "Este computador",
-          "85d85880df": "· SSH",
           "8e6a972229": "Nenhum espaço de trabalho conhecido nesta máquina.",
           "a4dfd33095": "Um espaço de trabalho",
           "b8a0b706ad": "Máquina",
@@ -17169,14 +17085,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "Cancelar",
-            "dont_ask_again": "Não perguntar novamente para terminais em execução",
-            "stop_agent_confirm": "Parar Agente",
-            "stop_agent_description": "Fechar este terminal vai parar o trabalho atual do agente.",
-            "stop_agent_title": "Parar este agente?",
-            "stop_chat_description": "Fechar este chat vai parar o trabalho atual do agente.",
-            "stop_command_confirm": "Parar e Fechar",
-            "stop_command_description": "Fechar este terminal vai parar o comando em execução dentro dele.",
-            "stop_command_title": "Parar o comando em execução?"
+            "stop_agent_title": "Parar este agente?"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "Restaurar",
@@ -17771,7 +17680,6 @@
         "2eece16ad1": "Notificações",
         "31e57d1c70": "Use máquinas existentes via SSH para arquivos, terminais, Git e espaços de trabalho.",
         "33a5e1d597": "Conecte GitHub, GitLab, Linear e serviços de hospedagem de código.",
-        "3618579df6": "Privacidade e Telemetria",
         "3d65d3f1b9": "Configure o suporte a emulador mobile para o Adehone e agentes de código.",
         "3fc3db144f": "Comandos Rápidos",
         "40d80bad8a": "Beta",
@@ -17787,7 +17695,6 @@
         "724c440e72": "primeiros passos",
         "7682607591": "Notificações nativas do desktop para eventos de agente e terminal.",
         "7c79d3b7bf": "Opcional",
-        "8400cfe1c1": "Controles de dados de uso anônimos e telemetria.",
         "85f4fd7710": "Origens de Tarefas",
         "8ac3de82f5": "Ditado de voz para texto local com modelos no dispositivo.",
         "8c197f74a1": "Navegador",
@@ -19270,33 +19177,22 @@
       "deliveryUnconfirmed": "O Adehone não conseguiu confirmar se o {{agent}} recebeu o contexto da sessão. Confira a nova sessão e cole o contexto manualmente se o campo de texto estiver vazio.",
       "detectingAgents": "Detectando Agentes neste host do espaço de trabalho…",
       "detectionFailed": "Não foi possível detectar Agentes neste host do espaço de trabalho.",
-      "dialogDescription": "Inicie uma nova sessão de Agente a partir deste ponto de parada. A sessão original permanece inalterada.",
-      "dialogTitle": "Continuar em Nova Sessão",
       "dialogTitleSentence": "Passar para outro agente",
       "handOffToAnotherAgent": "Transferir para outro agente",
       "launchFailed": "Não foi possível iniciar uma nova sessão do {{agent}}.",
       "meta": "{{session}} · o original não muda",
       "metaWithAgent": "De {{agent}} · {{session}} · o original não muda",
-      "modeCapturedDescription": "Usa o texto capturado e o espaço de trabalho atual.",
-      "modeFocused": "Transferência focada (Recomendado)",
-      "modeFocusedDescription": "Usa o status mais recente e o espaço de trabalho atual, lendo detalhes de transcrições mais antigas somente quando necessário.",
-      "modeFull": "Transcrição completa da sessão",
       "modeFullCost": "Mais lento e consome mais do seu plano ou créditos de API.",
-      "modeFullDescription": "Solicita que o novo Agente leia a sessão salva completa antes de continuar. Isso pode levar mais tempo e usar contexto, uso do plano ou créditos de API significativos.",
       "modeFullTranscript": "Transcrição completa",
       "modeLatestStatus": "Status mais recente (recomendado)",
-      "modeLoadedDescription": "Usa as mensagens recentes carregadas neste chat e o espaço de trabalho atual.",
-      "noAgents": "Nenhum Agente ativado foi detectado neste host do espaço de trabalho.",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "Nenhum contexto de sessão está disponível para continuar em uma nova sessão.",
       "onlySourceFamilyDetected": "Neste host do espaço de trabalho só há Agentes disponíveis que compartilham o limite de uso com {{agent}}. Ative ou instale um Agente diferente.",
-      "originalAgent": "Agente Original: {{agent}}",
       "preparingContext": "Preparando o contexto salvo do chat…",
       "selectAgent": "Selecionar um Agente",
       "sent": "Contexto da sessão enviado para {{agent}} em uma nova sessão.",
-      "startSession": "Iniciar Nova Sessão",
       "startSessionSentence": "Iniciar sessão",
       "starting": "Iniciando…",
-      "startsIn": "Inicia em:",
       "untitledSession": "Sessão atual"
     },
     "automations": {
@@ -20509,15 +20405,10 @@
       "usageLimitActions": {
         "accountUnavailable": "Este chat não pode ser transferido para outra conta. Passe-o para outro agente.",
         "addAccount": "Adicionar conta…",
-        "continueNow": "Continuar agora",
-        "leadIn": "Continue este bate-papo sem esperar:",
         "switchAccount": "Trocar de conta"
       },
       "usageLimitAutoContinue": {
-        "cancel": "Não continue",
         "cancelFailed": "Não foi possível cancelar a continuação automática. Tente novamente.",
-        "cancelled": "Orca não continuará este bate-papo automaticamente.",
-        "openSetting": "Continuar automaticamente quando os limites forem redefinidos",
         "scheduled": "Orca continuará este bate-papo às {{time}}."
       },
       "userMessage": {
@@ -22730,7 +22621,6 @@
     "countUnavailable": "contagem de terminais indisponível",
     "killAllLocal": "Encerrar todas as sessões locais",
     "killFailed": "Não foi possível encerrar o terminal. As últimas sessões observadas são mantidas.",
-    "localDaemonScope": "Isso afeta os terminais deste computador.",
     "metricDetails": "Detalhes das métricas",
     "openToObserve": "Abra Recursos para observar as sessões de terminal.",
     "pty": {
@@ -22892,7 +22782,6 @@
   "sessionSearch": {
     "panel": {
       "changed": "O índice foi alterado durante a busca. Pesquise novamente para obter resultados atualizados.",
-      "consent": "Ativar a busca em texto completo? O Adehone cria um índice neste computador a partir das transcrições locais dos agentes, incluindo conversas completas. O conteúdo não é ocultado. Clientes pareados autenticados podem pesquisá-lo.",
       "consentTranscriptIndex": "A busca considera os detalhes das sessões e as prévias das mensagens. Para pesquisar conversas completas, ative a busca em texto completo (indexa as transcrições locais, sem ocultar conteúdo). Dispositivos pareados também podem pesquisá-las.",
       "enable": "Ativar",
       "enableFailed": "Não foi possível ativar a busca. Tente novamente.",
@@ -22910,7 +22799,6 @@
       "indexedHistory": "Histórico indexado · melhores resultados",
       "loadMore": "Carregar mais resultados",
       "loadingMoreSessions": "Carregando mais sessões…",
-      "noMatches": "Nenhuma sessão correspondente no histórico indexado. Tente outra busca ou outro escopo.",
       "noMatchesToShow": "Nenhuma sessão correspondente para mostrar.",
       "noService": "A busca não está disponível neste computador. Pode ser necessário atualizar o Adehone ou usar um runtime com suporte a busca.",
       "notReady": "O índice de busca ainda não está pronto. Tente novamente em breve.",
@@ -23537,13 +23425,9 @@
       "optionShortcutHint": "Escolha Ambas para atalhos com Option, Desativado para acentos e símbolos ou Esquerda/Direita para usar uma tecla Option para cada função.",
       "windows": {
         "10aafff216": "Abrir Gerenciar sessões",
-        "administratorApproval": "O Windows pedirá aprovação. Use sua conta habitual.",
         "administratorDialogScope": "Isso altera as permissões de todo o aplicativo. SSH e WSL mantêm suas próprias permissões.",
         "administratorDocumentation": "Ler o guia",
         "administratorLabel": "Modo administrador",
-        "administratorPromptCancellation": "Cancelar a solicitação do Windows reabre o Adehone com os terminais preservados. As permissões de SSH e WSL continuam sendo controladas nos respectivos hosts.",
-        "administratorRestartConsequences": "Salve seu trabalho antes. Após a aprovação, os terminais e agentes no host de terminal local atual serão fechados. As abas restauradas abrirão novos shells de administrador.",
-        "administratorRestartFailed": "O Adehone não conseguiu reiniciar. Tente novamente ou siga as instruções manuais.",
         "administratorRestartSummary": "Os terminais e agentes locais serão fechados. O Windows pedirá sua aprovação.",
         "administratorScope": "Permissões do aplicativo Adehone. Os terminais existentes podem ter permissões diferentes.",
         "administratorSearchDescription": "Veja as permissões do Adehone no Windows ou reinicie com aprovação de administrador.",
@@ -23552,7 +23436,6 @@
         "checkingAdministrator": "Verificando…",
         "closeAdministratorHelp": "Fechar",
         "closeLocalSessions": "Salve seu trabalho, feche todas as sessões de terminal locais e saia do Adehone.",
-        "confirmAdministratorRestart": "Reiniciar como administrador?",
         "confirmOrcaAdministratorRestart": "Reiniciar o Orca como administrador?",
         "keywordAdmin": "admin",
         "keywordAdministrator": "administrador",
@@ -23562,7 +23445,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "No menu Iniciar do Windows, clique com o botão direito no Adehone e escolha Executar como administrador. Aprove a solicitação do Windows usando sua conta habitual.",
         "launchStandard": "Abra o Adehone normalmente pelo menu Iniciar do Windows.",
-        "manualAdministratorHelp": "Instruções manuais",
         "manualAdministratorSteps": "Passos manuais",
         "orcaCouldNotRestart": "Não foi possível reiniciar o Orca.",
         "restartAdministrator": "Reiniciar como administrador",
@@ -24318,42 +24200,25 @@
       "alsoStop": "Parar também o servidor em execução (fecha todas as sessões do Codex que o usam, inclusive fora do Orca)",
       "body": "As sessões podem encerrar inesperadamente, e o status do agente pode estar incorreto.",
       "cancel": "Cancelar",
-      "confirmStopDescription": "Isso encerra todas as sessões abertas do Codex que o compartilham, inclusive as de fora do Adehone.",
-      "confirmStopTitle": "Parar o servidor compartilhado?",
       "copied": "Copiado",
-      "copy": "Copiar",
       "copyCommand": "Copiar comando",
       "couldNotTurnOff": "Não foi possível desativar o compartilhamento.",
-      "dialogDescription": "Sessões do Codex iniciadas diretamente em um terminal compartilham um servidor em segundo plano. O Adehone mantém separadas as sessões do Codex que ele inicia. Quando sessões compartilham um servidor, fechar uma pode encerrar as outras, e o status do agente pode estar incorreto.",
       "dialogQuestion": "Dar a cada aba do Codex seu próprio servidor?",
       "dialogSummary": "Desativa o compartilhamento do servidor do Codex, também fora do Orca.",
-      "dialogTitle": "Dar a cada aba do Codex seu próprio servidor",
-      "done": "Concluído",
       "fix": "Corrigir",
       "howToUndo": "Como desfazer",
       "oldTerminalDialogCause": "Terminais antigos ainda compartilham um servidor do Codex. Abra um novo terminal para executar o Codex em um servidor separado.",
       "oldTerminalDialogRisk": "Sessões do Codex que compartilham um servidor podem encerrar juntas, e o status do agente pode estar incorreto.",
       "oldTerminalDialogTitle": "Por que este Codex compartilha um servidor",
       "openedBeforeUpdateBody": "Este terminal foi aberto antes de o Adehone começar a fornecer um servidor próprio para cada Codex.",
-      "runs": "Executa",
-      "step1Note": "Isso altera suas configurações do Codex, então também se aplica fora do Adehone.",
-      "step1Title": "Desativar o compartilhamento de servidor do Codex",
-      "step2Title": "Parar o servidor compartilhado em execução",
-      "step2Warning": "Encerra todas as sessões abertas do Codex que compartilham o servidor",
-      "stopFailed": "O Adehone não conseguiu parar o servidor.",
       "stopFailedAfterOff": "O compartilhamento está desativado, mas o servidor não parou.",
       "stopServer": "Parar servidor",
       "stopSummary": "Para o servidor em execução e fecha todas as sessões do Codex que o usam.",
-      "stopped": "Parado",
       "stopping": "Parando…",
       "title": "Este Codex está compartilhando um servidor com suas outras abas do Codex",
-      "turnOff": "Desativar",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "O Adehone não conseguiu desativar isso.",
       "turnOffSharing": "Desativar compartilhamento",
-      "turnedOff": "Desativado",
       "turningOff": "Desativando…",
-      "undo": "Para desfazer, execute codex features enable daemon_auto_start.",
       "undoRun": "Para reativar o compartilhamento, execute:"
     },
     "codexSharedSettingsNotice": {
@@ -24611,15 +24476,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "Sempre excluir",
-    "alwaysDeleteTooltip": "Pular esta confirmação em futuras exclusões.",
     "alwaysForceDelete": "Sempre forçar exclusão",
     "alwaysForceDeleteBranches": "Sempre excluir branches preservadas",
     "alwaysForceDeleteBranchesDescription": "Aplica-se às branches mantidas após futuras exclusões de espaços de trabalho.",
     "alwaysForceDeleteDescription": "Aplica-se a todas as futuras exclusões de espaços de trabalho.",
     "moreActions": "Mais opções de exclusão forçada",
     "moreBranchActions": "Mais opções de exclusão de branches",
-    "moreDeleteOptions": "Mais opções de exclusão",
     "preferenceSaveFailed": "Não foi possível salvar a preferência de exclusão"
   },
   "workspaceSpace": {

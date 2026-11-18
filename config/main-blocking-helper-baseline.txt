@@ -101,6 +101,9 @@
 7 src/main/bitbucket/credential-store.ts
 2 src/main/bitbucket/pull-request-creation.ts
 2 src/main/bitbucket/resolve-auth.ts
+1 src/main/bitbucket-datacenter/configured-servers.ts # bitbucket datacenter credential storage
+6 src/main/bitbucket-datacenter/credential-connection.ts # bitbucket datacenter credential storage
+10 src/main/bitbucket-datacenter/credential-store.ts # bitbucket datacenter credential storage
 4 src/main/browser-passwords/browser-password-chromium-import.ts
 3 src/main/browser-passwords/browser-password-store.ts
 1 src/main/browser-passwords/browser-password-vault-file.ts
@@ -587,7 +590,7 @@
 1 src/main/ipc/filesystem/source-control/filesystem-git-commit-generation-handlers.ts
 4 src/main/ipc/filesystem/source-control/filesystem-git-diff-handlers.ts
 1 src/main/ipc/filesystem/source-control/filesystem-git-history-handlers.ts
-8 src/main/ipc/filesystem/source-control/filesystem-git-index-handlers.ts
+9 src/main/ipc/filesystem/source-control/filesystem-git-index-handlers.ts # git:addToGitignore uses validateGitRelativeFilePath
 1 src/main/ipc/filesystem/source-control/filesystem-git-model-discovery-handlers.ts
 1 src/main/ipc/filesystem/source-control/filesystem-git-pull-request-generation-handlers.ts
 6 src/main/ipc/filesystem/source-control/filesystem-git-status-handlers.ts

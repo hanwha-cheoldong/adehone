@@ -170,10 +170,6 @@
     "argumentsHint": "僅適用於 CLI 啟動。",
     "argumentsTerminalHint": "僅適用於終端機（CLI）啟動",
     "catalogEmpty": "{{agent}} 沒有可用模型。",
-    "catalogFailed": "無法載入 {{agent}} 模型。請關閉並重新開啟代理選擇器以重試。",
-    "catalogInstall": "請在此主機上安裝 {{agent}} 以載入模型，然後重新開啟代理選擇器。",
-    "catalogSignIn": "請登入 {{agent}} 以載入模型，然後重新開啟代理選擇器。",
-    "catalogUnresolved": "尚未載入 {{agent}} 模型。請關閉並重新開啟代理選擇器以重試。",
     "catalogUnsupportedLaunch": "此主機上無法使用 {{agent}} 模型。目前的選擇仍會套用。",
     "chatChoicesNote": "沒有 CLI 旗標的 {{agent}} 模型或推理力度選項適用於聊天。",
     "composedChoicesNote": "{{agent}} 的推理力度和速度選項包含在模型引數中。",
@@ -197,8 +193,7 @@
     "disabledReason": {
       "approvalUnseen": "代理程式可能正在等待核准",
       "hostUpdateRequired": "請更新此主機上的 Orca 才能傳送給此代理程式",
-      "needsPermission": "代理程式需要權限",
-      "statusStale": "代理程式狀態資訊已過期"
+      "needsPermission": "代理程式需要權限"
     }
   },
   "agentsSidebarIntro": {
@@ -2853,7 +2848,6 @@
       "confirmation": {
         "dialog": {
           "56f5c60e0c": "取消",
-          "8490e5d36a": "確認",
           "92bac3217e": "不再詢問"
         },
         "skip": {
@@ -3013,21 +3007,13 @@
       "crash": {
         "report": {
           "CrashReportDialog": {
-            "50b00dc327": "複製詳情",
-            "6d3ebe216a": "診斷文字",
             "765591798d": "正在檢查當機報告...",
             "835037edc9": "Adehone",
-            "88fea8e84e": "不傳送",
             "8b8473c544": "已複製當機報告。",
             "8e24fe4f75": "已傳送當機報告。",
-            "b082f27490": "附加最近的診斷記錄",
-            "b4951cd27c": "傳送報告",
-            "e59f0b9427": "隨報告傳送已遮蔽敏感資訊且有大小限制的一組記錄。",
             "ead6fc0510": "未擷取到自動當機報告。你仍然可以傳送詳情，並在有最近的診斷記錄時一併附上。"
           },
           "CrashReportDialogSurface": {
-            "closedDescription": "傳送保護隱私的診斷報告，協助我們了解發生的情況。",
-            "closedNotesPlaceholder": "選填：Adehone 關閉前，正在進行什麼操作？",
             "closedTitle": "Adehone 意外關閉",
             "renderError": "React 渲染錯誤",
             "renderErrorIn": "{{surface}} 中的 React 渲染錯誤",
@@ -5055,36 +5041,17 @@
         "routing": {
           "preference": {
             "dialog": {
-              "badge": "終端機連結",
-              "description": "用 Adehone 瀏覽器開啟終端機連結，或繼續使用系統瀏覽器。",
               "keep": {
-                "description": "或預設使用系統瀏覽器。",
                 "orca": {
                   "button": "繼續使用 Adehone"
-                },
-                "title": "繼續在 Adehone 瀏覽器中開啟終端機連結？"
-              },
-              "link": {
-                "label": "連結"
+                }
               },
               "orca": {
-                "button": "在 Adehone 中開啟",
-                "note": "Adehone 可以使用已匯入的 Cookie 開啟已登入的網站。"
-              },
-              "preview": "預覽",
-              "settings": {
-                "note": "之後可在設定 → 瀏覽器中變更。"
-              },
-              "shortcut": {
-                "note": {
-                  "prefix": "當連結在 Adehone 中開啟時，",
-                  "suffix": "點選可臨時改用系統瀏覽器。"
-                }
+                "button": "在 Adehone 中開啟"
               },
               "system": {
                 "button": "使用系統瀏覽器"
-              },
-              "title": "在 Adehone 瀏覽器中開啟終端機連結？"
+              }
             }
           }
         }
@@ -5763,7 +5730,6 @@
             "fileCount_one": "{{value0}} 個檔案",
             "fileCount_other": "{{value0}} 個檔案",
             "historyRefreshed": "歷史記錄已重新整理",
-            "scanned": "已掃描 {{value0}}",
             "scanning": "正在掃描 {{value0}}"
           },
           "AiVaultSearchEvidence": {
@@ -7919,13 +7885,6 @@
           "nativeActionToastDescription": "使用 Sonner 的操作和取消插槽。",
           "notificationPlayground": "通知測試面板",
           "notificationPlaygroundDescription": "用於檢查提示版面配置、恢復操作和長文案換行的開發專用觸發器。",
-          "orcaCloud": "Orca Cloud",
-          "orcaCloudConnect": "連線設定檔",
-          "orcaCloudDescription": "僅限開發環境的第一方雲端登入預覽。在正式環境中隱藏；在開發環境中，設定 ORCA_CLOUD_API_URL 和 ORCA_CLOUD_CLIENT_ID 後也會出現在側邊欄帳戶切換器中。",
-          "orcaCloudNotConfigured": "設定 ORCA_CLOUD_API_URL 和 ORCA_CLOUD_CLIENT_ID 以在此開發版本中預覽 Orca Cloud 登入。",
-          "orcaCloudRefresh": "重新整理狀態",
-          "orcaCloudSignOut": "登出",
-          "orcaCloudStatus": "狀態",
           "primaryAction": "主操作",
           "primaryActionClicked": "主操作已點選",
           "secondary": "次要",
@@ -8165,16 +8124,7 @@
           "serverCountOne": "1 台已配對的伺服器",
           "updating": "正在更新伺服器…"
         },
-        "GeneralSupportSection": {
-          "397719bee5": "正在加上星號...",
-          "511782265b": "在 GitHub 上加上星號，支持此專案。",
-          "55a87e5fd1": "支持 Orca",
-          "6922c1fa2b": "在 GitHub 上為 Orca 加上星號",
-          "964acc6bb4": "加上星號",
-          "af7d9f4396": "感謝您的支持！",
-          "cb65c75b11": "正在開啟...",
-          "f2d4f877b2": "開啟 GitHub"
-        },
+        "GeneralSupportSection": {},
         "GeneralUpdateSettingsSection": {
           "02dc082e70": "無法開始更新下載。",
           "2a48034c4c": "正在下載 v{{value0}}... {{value1}}%",
@@ -9774,7 +9724,6 @@
           "6d1a27e193": "主題、縮放、應用程式和終端機外觀、側邊欄和狀態列。",
           "7118953f14": "使代理程式能夠控制您電腦上的任何應用程式。",
           "7210ac09c4": "針對代理程式活動和終端機事件的原生桌面通知。",
-          "742ca66ea6": "隱私與遙測",
           "7686cb5c36": "將此瀏覽器連線到已儲存的 Adehone 伺服器。",
           "7807c11c4d": "一般",
           "8acf3f22e0": "Adehone 統計、Claude／Codex／OpenCode／Muse token 分析及 Grok 訂閱用量。",
@@ -9790,7 +9739,6 @@
           "b07041697f": "連線 GitHub、GitLab、Linear 和原始碼代管服務。",
           "b79b5b31e9": "Shell、算繪器、工作階段和終端機行為。",
           "c0900fa64a": "任務來源",
-          "c1b43dc4e2": "匿名使用資料和遙測控制。",
           "c2bb9fc528": "浮動工作區",
           "c2ee313198": "透過 SSH 使用已有機器處理檔案、終端機、Git 和工作區。",
           "c40dadaac8": "行動版",
@@ -11076,30 +11024,19 @@
               "apiToken": "API 權杖",
               "apiTokenPlaceholder": "Atlassian API 權杖",
               "authModeLabel": "Bitbucket 認證方法",
-              "baseUrl": "API 基底 URL（選填）",
               "baseUrlPlaceholder": "https://api.bitbucket.org/2.0",
-              "basicHint": "為您的帳戶建立 Atlassian API 權杖，再搭配該帳戶的電子郵件地址使用。",
               "cancel": "取消",
               "connect": "連線",
               "connectFailed": "連線失敗",
-              "description": "使用 Bitbucket Cloud 憑證瀏覽 PR 與建置狀態。Adehone 會在儲存前驗證憑證。",
-              "docsLink": "Bitbucket API 權杖文件",
-              "email": "Atlassian 帳戶電子郵件",
               "emailPlaceholder": "you@example.com",
-              "environmentManaged": "Bitbucket 已透過 ADEHONE_BITBUCKET_* 環境變數進行設定，此環境變數優先。取消設定以在 Adehone 中儲存憑證。",
               "modeBasic": "電子郵件和 API 權杖",
               "modeToken": "存取權杖",
-              "remoteRuntime": "儲存在這臺電腦上，而非目前使用的遠端執行環境；請改在該遠端環境設定 ADEHONE_BITBUCKET_*。環境變數一律優先於此處儲存的內容。",
               "scopeReadPullRequest": "讀取 PR",
               "scopeRepository": "讀取建置狀態",
               "scopeUser": "顯示您的帳戶名稱",
               "scopeWritePullRequest": "建立 PR",
-              "scopesTitle": "請選擇下列 Bitbucket API 權杖範圍：",
               "scopesWriteNote": "若僅需唯讀存取，請省略寫入範圍。寫入不包含讀取；請分別選擇每個範圍。",
-              "storageNote": "當作業系統鑰匙圈可用時，會以加密方式儲存在本電腦上。 ADEHONE_BITBUCKET_* 環境變數始終優先於您在此處儲存的內容。",
-              "title": "連線 Bitbucket",
-              "tokenHint": "存放庫、專案與工作區的存取權杖須在對應的 Bitbucket 設定頁面建立，並具備 PR 讀取權限。",
-              "verifying": "正在驗證..."
+              "title": "連線 Bitbucket"
             }
           },
           "integration": {
@@ -12373,10 +12310,7 @@
           "checking": "正在檢查鎖定…",
           "close": "關閉",
           "confirm": "清除鎖定並重新啟動",
-          "confirmCheck": "沒有其他共用此家目錄的電腦正在執行 Adehone",
           "currentBoot": "目前的開機階段",
-          "description": "此主機上的 Adehone 伺服器無法啟動，因為上次執行時留下的鎖定仍存在。",
-          "eligible": "此電腦的舊位址沒有回應，但 Adehone 無法排除有另一台同名電腦共用此家目錄的可能。",
           "host": "主機",
           "lockBoot": "寫入時的開機階段",
           "manualCommand": "在主機上執行此命令，或刪除「詳細資訊」中顯示的鎖定檔：",
@@ -12385,8 +12319,6 @@
           "manualDeleteWarning": "確認沒有其他共用此家目錄的電腦使用此設定檔執行 Adehone 後，才可執行此操作。",
           "none": "已無鎖定可清除。請重新連線，以啟動此主機的 Adehone 伺服器。",
           "reclaimedNotStarted": "已清除鎖定，但 Adehone 伺服器未啟動。",
-          "title": "復原 Adehone 伺服器",
-          "warning": "請確認沒有其他共用此家目錄的電腦使用此設定檔執行 Adehone，再繼續。",
           "written": "寫入時間"
         },
         "repository": {
@@ -13361,14 +13293,11 @@
           "80b6ea14cf": "終端機清理完成，但有警告。",
           "922548bc66": "重新啟動終端機服務？",
           "993af6052c": "守護行程管理報告已退出：{{value0}}/{{value1}}；在精確清理前仍存在：{{value2}}。",
-          "a702d4196e": "這將關閉所有工作區中的每個終端機分頁，並請求關閉其目前的終端機工作階段。終端機中任何未儲存的工作都將遺失。守護行程本身將繼續執行，且可立即開啟新的終端機。此操作不可復原。",
-          "b5954e12d3": "重新啟動失敗 — 檢查記錄。",
           "busyKilling": "正在終止…",
           "busyRestarting": "正在重新啟動…",
           "c34fb1098d": "終端機分頁已關閉，關閉請求已傳送。",
           "confirmKillAll": "終止所有工作階段",
           "confirmRestart": "重新啟動",
-          "d762b41f41": "重新啟動失敗。",
           "d9657ac204": "終端機工作階段關閉請求已傳送。",
           "e8f25bd903": "無法完成終端機清理。"
         }
@@ -13619,7 +13548,7 @@
           "deleteSingleWorktreeAndBranch": "刪除工作樹及其分支（未合併的分支會保留）。",
           "gitBlocksMainWorktree": "Git 不允許移除主工作樹。",
           "removeBatchFolder_other": "從 Adehone 移除 <target>{{count}} 個工作區</target>。磁碟上的專案資料夾不會被刪除。",
-          "removeBatchGit_other": "從 git 移除 <target>{{count}} 個工作區</target>，並刪除其工作區資料夾。",
+          "removeBatchGit_other": "刪除 {{count}} 個工作樹及其分支（未合併的分支會保留）。",
           "removeBatchMixed_other": "從 Adehone 移除 <target>{{count}} 個工作區</target>。Git 工作樹也會從 git 和磁碟中移除；資料夾工作區只會移除 Adehone 中的工作區項目。",
           "removeFolderProjectInstead": "請移除資料夾專案，而非刪除此工作區。",
           "removeSingleFolderFromOrca": "將其從 Adehone 中移除。磁碟上的資料夾會保留。",
@@ -13629,9 +13558,7 @@
         },
         "DeleteWorktreeDialogFooter": {
           "c0e972d726": "取消",
-          "cf95e3b5bb": "關閉",
-          "deleting": "正在刪除...",
-          "forceDeleting": "正在強制刪除..."
+          "cf95e3b5bb": "關閉"
         },
         "DeleteWorktreeDirtyChangeHint": {
           "changesLost_one": "{{count}} 項未提交的變更將遺失",
@@ -13648,17 +13575,13 @@
           "alsoDeletesChildren_other": "刪除此工作區也會刪除 {{count}} 個子工作區。",
           "moreChildren_other": "另有 {{count}} 個"
         },
-        "DeleteWorktreeWarningPanels": {
-          "mainWorktreeNotice": "這是<strong>主工作樹</strong>（原始複製目錄）。"
-        },
         "FolderWorkspaceComposerDialog": {
           "create": "建立工作區",
           "title": "建立資料夾工作區"
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "取消",
-          "forget": "從 Adehone 中移除",
-          "ghostBody": "{{host}} 不再是已儲存的 SSH 主機，因此此工作區不再連線到活躍主機。只能從 Adehone 中移除 — 遠端檔案和分支保持不變。"
+          "forget": "從 Adehone 中移除"
         },
         "HiddenWorktreeRecoveryList": {
           "64e6f53f05": "顯示一個而不啟用其來源。",
@@ -14913,8 +14836,6 @@
           "opening": "打開這個連結..."
         },
         "SkillInstallManagementDialog": {
-          "0900db719a": "— 已斷開連線",
-          "176fef9516": "· SSH",
           "3677ae58e7": "Adehone 透過連結安裝的技能。可重新安裝、還原至較早版本，或移除技能。",
           "44d118a8f7": "由 Adehone 安裝",
           "64c71cf7b9": "Adehone 尚未在這台電腦上安裝任何技能。",
@@ -14944,10 +14865,8 @@
           "0e5b43a9e3": "工作區",
           "5845cfe543": "選擇工作樹或資料夾",
           "63cc9e31fe": "目的地",
-          "71eefd7660": "— 已斷開連線",
           "7a366323e7": "資料夾",
           "8562dd1e6e": "本機",
-          "85d85880df": "· SSH",
           "8e6a972229": "這台機器上沒有已知的工作區。",
           "a4dfd33095": "一個工作區",
           "b8a0b706ad": "機器",
@@ -16499,14 +16418,7 @@
           },
           "CloseTerminalDialog": {
             "1d1a7a9c1f": "取消",
-            "dont_ask_again": "對有執行中行程的終端機不再詢問",
-            "stop_agent_confirm": "停止代理程式",
-            "stop_agent_description": "關閉此終端機將停止代理程式目前的工作。",
-            "stop_agent_title": "停止此代理程式？",
-            "stop_chat_description": "關閉此聊天將停止代理程式目前的工作。",
-            "stop_command_confirm": "停止並關閉",
-            "stop_command_description": "關閉此終端機將停止其中正在執行的命令。",
-            "stop_command_title": "停止執行中的命令？"
+            "stop_agent_title": "停止此代理程式？"
           },
           "MobileDriverOverlay": {
             "1e5c8b7d43": "恢復",
@@ -17074,7 +16986,6 @@
         "2eece16ad1": "通知",
         "31e57d1c70": "透過 SSH 使用已有機器處理檔案、終端機、Git 和工作區。",
         "33a5e1d597": "連線 GitHub、GitLab、Linear 和原始碼代管服務。",
-        "3618579df6": "隱私與遙測",
         "3d65d3f1b9": "設定 Adehone 和程式開發代理程式的手機模擬器支援。",
         "3fc3db144f": "快速命令",
         "40d80bad8a": "Beta",
@@ -17090,7 +17001,6 @@
         "724c440e72": "入門",
         "7682607591": "針對代理程式和終端機事件的原生桌面通知。",
         "7c79d3b7bf": "可選",
-        "8400cfe1c1": "匿名使用資料和遙測控制。",
         "85f4fd7710": "任務來源",
         "8ac3de82f5": "使用裝置端模型進行本機語音轉文字聽寫。",
         "8c197f74a1": "瀏覽器",
@@ -18544,33 +18454,22 @@
       "deliveryUnconfirmed": "Adehone 無法確認 {{agent}} 已收到工作階段上下文。請檢查新工作階段，如果其輸入為空，請自行貼上。",
       "detectingAgents": "正在此工作區主機上偵測代理程式…",
       "detectionFailed": "無法偵測此工作區主機上的代理程式。",
-      "dialogDescription": "從目前進度啟動一個新的代理程式工作階段。原工作階段保持不變。",
-      "dialogTitle": "移交給另一個代理程式",
       "dialogTitleSentence": "交給其他代理程式",
       "handOffToAnotherAgent": "移交給另一個代理程式",
       "launchFailed": "無法啟動新的 {{agent}} 工作階段。",
       "meta": "{{session}} · 原始工作階段保持不變",
       "metaWithAgent": "來自 {{agent}} · {{session}} · 原始工作階段保持不變",
-      "modeCapturedDescription": "使用擷取的文字與目前的工作區。",
-      "modeFocused": "重點移交（推薦）",
-      "modeFocusedDescription": "使用最新進度和目前工作區，僅在需要時讀取更早的工作階段記錄細節。",
-      "modeFull": "完整工作階段記錄",
       "modeFullCost": "速度較慢，且會使用較多的方案額度或 API 點數。",
-      "modeFullDescription": "讓新代理程式在繼續前讀取完整的已儲存工作階段。這可能需要更長時間，並消耗大量上下文、方案用量或 API 額度。",
       "modeFullTranscript": "完整記錄",
       "modeLatestStatus": "最新狀態（建議）",
-      "modeLoadedDescription": "使用此聊天中目前已載入的近期訊息與目前的工作區。",
-      "noAgents": "未在此工作區主機上偵測到已啟用的代理程式。",
+      "noAgents": "No enabled agents were detected on this workspace host.",
       "noContext": "沒有可用於在新工作階段中繼續的上下文。",
       "onlySourceFamilyDetected": "此工作區主機上可用的代理程式均與 {{agent}} 共用使用額度。請啟用或安裝其他代理程式。",
-      "originalAgent": "原代理程式：{{agent}}",
       "preparingContext": "正在準備已儲存的聊天上下文…",
       "selectAgent": "選擇代理程式",
       "sent": "已將工作階段上下文傳送到新的 {{agent}} 工作階段。",
-      "startSession": "啟動新工作階段",
       "startSessionSentence": "開始工作階段",
       "starting": "正在啟動…",
-      "startsIn": "啟動目錄：",
       "untitledSession": "目前工作階段"
     },
     "automations": {
@@ -21638,7 +21537,6 @@
     "countUnavailable": "無法取得終端機數量",
     "killAllLocal": "結束所有本機工作階段",
     "killFailed": "無法結束終端機。將保留上次觀察到的工作階段。",
-    "localDaemonScope": "這會影響這台電腦上的終端機。",
     "metricDetails": "指標詳細資訊",
     "openToObserve": "開啟「資源」以查看終端機工作階段。",
     "pty": {
@@ -21811,7 +21709,6 @@
       "indexedHistory": "已建立索引的歷史記錄",
       "loadMore": "載入更多符合項目",
       "loadingMoreSessions": "正在載入更多工作階段…",
-      "noMatches": "已建立索引的歷史記錄中沒有符合的工作階段。請改用其他查詢或範圍。",
       "noMatchesToShow": "沒有可顯示的符合工作階段。",
       "noService": "此電腦無法使用搜尋。可能需要更新 Adehone，或使用支援搜尋的執行環境。",
       "notReady": "搜尋索引尚未就緒。請稍後重試。",
@@ -22291,13 +22188,9 @@
       "optionShortcutHint": "選擇「兩個都」使用 Option 快速鍵，選擇「關」輸入重音字元和符號，或選擇「左邊」/「右邊」讓兩個 Option 鍵各司其職。",
       "windows": {
         "10aafff216": "開啟管理工作階段",
-        "administratorApproval": "Windows 將要求核准。請使用您常用的帳戶。",
         "administratorDialogScope": "這會變更整個應用程式的權限。SSH 和 WSL 保留各自的權限。",
         "administratorDocumentation": "閱讀指南",
         "administratorLabel": "系統管理員模式",
-        "administratorPromptCancellation": "取消 Windows 的提示後，Adehone 會重新開啟，並保留原有終端機。SSH 和 WSL 的權限仍由其主機控制。",
-        "administratorRestartConsequences": "請先儲存您的工作。核准後，目前本機終端機主機上的終端機和代理程式會關閉。還原的分頁會開啟新的系統管理員殼層。",
-        "administratorRestartFailed": "Adehone 無法重新啟動。請重試，或使用手動說明。",
         "administratorRestartSummary": "本機終端機與代理程式將會關閉。Windows 會要求你核准。",
         "administratorScope": "Adehone 應用程式的權限。現有終端機的權限可能有所不同。",
         "administratorSearchDescription": "檢視 Adehone 的 Windows 權限，或經系統管理員核准後重新啟動。",
@@ -22306,7 +22199,6 @@
         "checkingAdministrator": "檢查中…",
         "closeAdministratorHelp": "關閉",
         "closeLocalSessions": "請儲存您的工作，關閉所有本機終端機工作階段，然後結束 Adehone。",
-        "confirmAdministratorRestart": "以系統管理員身分重新啟動？",
         "confirmOrcaAdministratorRestart": "以系統管理員身分重新啟動 Orca？",
         "keywordAdmin": "系統管理員",
         "keywordAdministrator": "系統管理員",
@@ -22316,7 +22208,6 @@
         "keywordUac": "uac",
         "launchAdministrator": "在 Windows 開始選單中，以滑鼠右鍵按一下 Adehone，然後選擇「以系統管理員身分執行」。使用您常用的帳戶核准 Windows 提示。",
         "launchStandard": "從 Windows 開始選單正常開啟 Adehone。",
-        "manualAdministratorHelp": "手動說明",
         "manualAdministratorSteps": "手動步驟",
         "orcaCouldNotRestart": "Orca 無法重新啟動。",
         "restartAdministrator": "以系統管理員身分重新啟動",
@@ -22969,42 +22860,25 @@
       "alsoStop": "同時停止執行中的伺服器（會關閉所有使用它的 Codex 工作階段，包括 Orca 以外的）",
       "body": "工作階段可能會意外結束，並且代理程式狀態可能不正確。",
       "cancel": "取消",
-      "confirmStopDescription": "這將關閉所有共享此伺服器且已開啟的 Codex 工作階段，包括 Adehone 之外的工作階段。",
-      "confirmStopTitle": "停止共享伺服器？",
       "copied": "已複製",
-      "copy": "複製",
       "copyCommand": "複製指令",
       "couldNotTurnOff": "無法關閉共用。",
-      "dialogDescription": "直接在終端機中啟動的 Codex 工作階段會共享同一個背景伺服器。Adehone 會讓它啟動的 Codex 工作階段保持獨立。當工作階段共享伺服器時，關閉其中一個工作階段可能會導致其他工作階段結束，且代理程式狀態可能不正確。",
       "dialogQuestion": "讓每個 Codex 分頁使用自己的伺服器？",
       "dialogSummary": "關閉 Codex 伺服器共用，在 Orca 以外也會生效。",
-      "dialogTitle": "為每個 Codex 分頁提供自己的伺服器",
-      "done": "完成",
       "fix": "修正",
       "howToUndo": "如何復原",
       "oldTerminalDialogCause": "較舊的終端機仍然共享 Codex 伺服器。開啟一個新終端機以在單獨的伺服器上執行 Codex。",
       "oldTerminalDialogRisk": "共享伺服器的 Codex 工作階段可能會一起結束，並且代理程式狀態可能不正確。",
       "oldTerminalDialogTitle": "為什麼此 Codex 共享伺服器",
       "openedBeforeUpdateBody": "這個終端機是在 Adehone 開始為每個 Codex 提供自己的伺服器之前開啟的。",
-      "runs": "執行",
-      "step1Note": "這會更改您的 Codex 設定，因此它也適用於 Adehone 外部。",
-      "step1Title": "關閉 Codex 伺服器共享",
-      "step2Title": "停止正在執行的共享伺服器",
-      "step2Warning": "關閉共享伺服器的所有開啟的 Codex 工作階段",
-      "stopFailed": "Adehone 無法停止伺服器。",
       "stopFailedAfterOff": "共用已關閉，但伺服器未停止。",
       "stopServer": "停止伺服器",
       "stopSummary": "停止執行中的伺服器，並關閉所有使用它的 Codex 工作階段。",
-      "stopped": "已停止",
       "stopping": "停止…",
       "title": "此 Codex 與您的其他 Codex 分頁共享伺服器",
-      "turnOff": "關",
       "turnOffAndStop": "Turn off and stop server",
-      "turnOffFailed": "Adehone 無法關閉此功能。",
       "turnOffSharing": "關閉共用",
-      "turnedOff": "已關閉",
       "turningOff": "正在關閉…",
-      "undo": "要復原，請執行 codex features enable daemon_auto_start。",
       "undoRun": "若要重新開啟共用，請執行："
     },
     "codexSharedSettingsNotice": {
@@ -23247,15 +23121,12 @@
     }
   },
   "workspaceDeletion": {
-    "alwaysDelete": "始終刪除",
-    "alwaysDeleteTooltip": "日後刪除時略過此確認。",
     "alwaysForceDelete": "始終強制刪除",
     "alwaysForceDeleteBranches": "始終刪除保留的分支",
     "alwaysForceDeleteBranchesDescription": "適用於日後刪除工作區後保留的分支。",
     "alwaysForceDeleteDescription": "適用於今後所有工作區刪除操作。",
     "moreActions": "更多強制刪除選項",
     "moreBranchActions": "更多分支刪除選項",
-    "moreDeleteOptions": "更多刪除選項",
     "preferenceSaveFailed": "無法儲存刪除偏好設定"
   },
   "workspaceSpace": {
