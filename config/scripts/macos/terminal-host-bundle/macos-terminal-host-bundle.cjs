@@ -19,8 +19,8 @@ const {
   giveMacExecutableUniqueUuid
 } = require('../../desktop-distribution/macos/macos-executable-uuid.cjs')
 
-const MAC_TERMINAL_HOST_NAME = 'Orca Agents'
-const MAC_TERMINAL_HOST_EXECUTABLE = 'Orca Agents'
+const MAC_TERMINAL_HOST_NAME = 'Adehone Agents'
+const MAC_TERMINAL_HOST_EXECUTABLE = 'Adehone Agents'
 const macTerminalHostSignIgnore = [`/Contents/Helpers/${MAC_TERMINAL_HOST_NAME}\\.app(/|$)`]
 const NODE_PTY_FILES = [
   'package.json',

@@ -8,8 +8,8 @@ import { ensurePrivateDir } from '../../endpoint/publication/daemon-private-file
 import { inspectMacProcessCodeIdentity } from './daemon-mac-code-identity'
 
 /** Plain Node helper packaged by config/scripts/macos/terminal-host-bundle/macos-terminal-host-bundle.cjs. */
-export const MAC_TERMINAL_HOST_BUNDLE = 'Orca Agents.app'
-export const MAC_TERMINAL_HOST_EXECUTABLE = 'Orca Agents'
+export const MAC_TERMINAL_HOST_BUNDLE = 'Adehone Agents.app'
+export const MAC_TERMINAL_HOST_EXECUTABLE = 'Adehone Agents'
 export const MAC_DAEMON_COPY_PREFIX = 'terminal-host-'
 
 export type MacDaemonBundle = {
