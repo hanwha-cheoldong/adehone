@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an improvement for Orca
+description: Suggest an improvement for Adehone
 title: '[Feature]: '
 type: Feature
 labels:
@@ -9,8 +9,6 @@ body:
     attributes:
       value: |
         Use this form for new features or workflow improvements.
-
-        Please write your issue in English.
 
   - type: textarea
     id: problem

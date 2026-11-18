@@ -1,11 +1,11 @@
 name: Other
-description: Report another Orca issue type
+description: Report another Adehone issue type
 title: '[Other]: '
 body:
   - type: markdown
     attributes:
       value: |
-        Please write your issue in English.
+        Use this form for other issue types.
 
   - type: textarea
     id: details
