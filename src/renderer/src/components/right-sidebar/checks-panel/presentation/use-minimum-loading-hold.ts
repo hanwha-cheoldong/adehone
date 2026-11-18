@@ -1,6 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const MINIMUM_LOADING_HOLD_MS = 1000
+
+type HoldState = {
+  key: string
+  expired: boolean
+  title: string
+  description: string
+}
 
 /** Hold an active loading state for at least 1s per context so brief checks do not flash. */
 export function useMinimumLoadingHold(args: {
@@ -14,19 +21,16 @@ export function useMinimumLoadingHold(args: {
   description: string
 } {
   const { holdKey, isLoading, title, description } = args
-  const [holdState, setHoldState] = useState<{ key: string; expired: boolean } | null>(null)
-  const heldCopyRef = useRef<{ key: string; title: string; description: string } | null>(null)
+  const [holdState, setHoldState] = useState<HoldState | null>(null)
 
   if (!holdKey && holdState !== null) {
     setHoldState(null)
-  } else if (holdKey && isLoading && holdState?.key !== holdKey) {
-    setHoldState({ key: holdKey, expired: false })
-  }
-
-  if (holdKey && isLoading) {
-    heldCopyRef.current = { key: holdKey, title, description }
-  } else if (!holdKey) {
-    heldCopyRef.current = null
+  } else if (holdKey && isLoading) {
+    if (holdState?.key !== holdKey) {
+      setHoldState({ key: holdKey, expired: false, title, description })
+    } else if (holdState.title !== title || holdState.description !== description) {
+      setHoldState({ ...holdState, title, description })
+    }
   }
 
   const activeKey = holdState?.key ?? null
@@ -45,11 +49,10 @@ export function useMinimumLoadingHold(args: {
   }, [activeKey, activeExpired])
 
   const isHolding = Boolean(holdKey) && holdState?.key === holdKey && !holdState.expired
-  const heldCopy = heldCopyRef.current?.key === holdKey ? heldCopyRef.current : null
-  const useHeldCopy = isHolding && !isLoading && heldCopy !== null
+  const useHeldCopy = isHolding && !isLoading
   return {
     isHolding,
-    title: useHeldCopy ? heldCopy.title : title,
-    description: useHeldCopy ? heldCopy.description : description
+    title: useHeldCopy ? holdState.title : title,
+    description: useHeldCopy ? holdState.description : description
   }
 }

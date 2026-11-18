@@ -95,7 +95,9 @@ export default function FolderWorkspacePrChecksPanel({
     let next: Map<string, ParentPrChecksRefreshOutcome> | null = null
     for (const identity of currentRefreshIdentities) {
       if (!refreshOutcomes.has(identity)) {
-        next ??= new Map(refreshOutcomes)
+        if (next == null) {
+          next = new Map(refreshOutcomes)
+        }
         next.set(identity, { kind: 'loading' })
       }
     }
