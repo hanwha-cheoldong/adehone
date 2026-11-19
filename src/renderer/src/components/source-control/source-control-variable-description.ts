@@ -69,5 +69,10 @@ export function sourceControlVariableDescription(
         'sourceControl.variables.linkedIssue',
         'The GitHub issue number linked to this workspace. Empty when no GitHub issue is linked (including GitLab-linked workspaces). Prefer instructional templates: a bare "Fixes #{linkedIssue}" becomes "Fixes #" when unlinked.'
       )
+    case 'allowedTypes':
+      return t(
+        'sourceControl.variables.allowedTypes',
+        'The allowed Conventional Commits types and their descriptions.'
+      )
   }
 }

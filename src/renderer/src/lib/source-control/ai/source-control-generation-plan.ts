@@ -1,4 +1,5 @@
 import { textGenerationErrorText } from '@/lib/text-generation/text-generation-error-copy'
+import { COMMIT_MESSAGE_ALLOWED_TYPES } from '../../../../../shared/source-control/ai/generation/commit-message-generation'
 import { planCommitMessageGeneration } from '../../../../../shared/source-control/ai/generation/commit-message-plan'
 import {
   renderSourceControlActionCommandTemplate,
@@ -26,7 +27,8 @@ const SYNTHETIC_TEXT_GENERATION_CONTEXT: Record<
     branch: 'feature/example',
     stagedFiles: 'M src/example.ts',
     stagedPatch: 'diff --git a/src/example.ts b/src/example.ts',
-    linkedIssue: '123'
+    linkedIssue: '123',
+    allowedTypes: COMMIT_MESSAGE_ALLOWED_TYPES
   },
   pullRequest: {
     basePrompt: SYNTHETIC_PULL_REQUEST_PROMPT,
