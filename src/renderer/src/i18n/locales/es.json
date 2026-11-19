@@ -6114,7 +6114,6 @@
             "7ac885bd2f": "Descargar carpeta",
             "98a79948b3": "Copiar",
             "a06551beee": "Intro",
-            "a4029c996b": "Se descargó la carpeta '{{value0}}'",
             "addc01145f": "Eliminar",
             "b234ab25b4": "No se pudo copiar el archivo en el portapapeles",
             "b3e288bf41": "No se pudo descargar '{{value0}}'.",
@@ -6128,7 +6127,6 @@
             "e26010014a": "Ignorado por .gitignore",
             "e887fa4b2e": "Abrir en terminal",
             "f61af83316": "Nueva carpeta",
-            "f729bcd97d": "No se pudo descargar la carpeta '{{value0}}'.",
             "f9d7ca753d": "Copiar rutas",
             "fc747429bf": "Renombrar",
             "openContainingFolder": "Abrir carpeta contenedora",
@@ -9793,7 +9791,7 @@
           "noActiveLinks": "No hay enlaces activos.",
           "olderPairingMethod": "Usa un método de vinculación antiguo. Actualiza Adehone en el dispositivo que usa este enlace.",
           "revoke": "Revocar",
-          "sshAccessCaveat": "Revocar el acceso aquí no impide que alguien con acceso SSH a este equipo vuelva a emparejarse. Para bloquearlo, retira su acceso SSH."
+          "sshAccessCaveat": "Revocar un enlace también revoca los enlaces creados en los terminales que abrió. Cualquiera con un terminal en este equipo, por SSH o a través de un enlace, puede volver a emparejarse."
         },
         "RuntimeEnvironmentsPane": {
           "05e0fc3ebf": "Cambiar a",
@@ -14096,6 +14094,9 @@
           "4dc5b5065b": "Quitar",
           "b79b39d865": "Quitar proyecto",
           "d36883e046": "Cancelar",
+          "linkedWorkspaceWarning_many": "También se eliminarán de Orca {{count}} espacios de trabajo de este proyecto.",
+          "linkedWorkspaceWarning_one": "También se eliminará de Orca {{count}} espacio de trabajo de este proyecto.",
+          "linkedWorkspaceWarning_other": "También se eliminarán de Orca {{count}} espacios de trabajo de este proyecto.",
           "openTerminalWarning_many": "Se cerrarán {{count}} terminales abiertos en este proyecto.",
           "openTerminalWarning_one": "Se cerrará {{count}} terminal abierto en este proyecto.",
           "openTerminalWarning_other": "Se cerrarán {{count}} terminales abiertos en este proyecto.",
@@ -14116,9 +14117,6 @@
           "wslStoppedTitle": "La distribución WSL {{value0}} está detenida",
           "wslUnverifiableTitle": "No se pudo confirmar que la distribución WSL {{value0}} esté en ejecución",
           "xcodeLicense": "Las herramientas de desarrollo de Apple requieren la aceptación de la licencia antes de que Git pueda ejecutarse."
-        },
-        "ScrollToCurrentWorkspaceToolbarButton": {
-          "23989bb663": "Mostrar espacio de trabajo activo"
         },
         "SetupGuideSidebarEntry": {
           "88d402b71d": "Checklist de onboarding",
@@ -17988,8 +17986,8 @@
         }
       },
       "projectHostSetupOptions": {
-        "hostLocalGitProject": "Este proyecto no tiene remoto de Git coincidente",
-        "hostLocalFolderProject": "Los proyectos de carpeta no pueden vincularse a otros hosts"
+        "hostLocalFolderProject": "Los proyectos de carpeta no pueden vincularse a otros hosts",
+        "hostLocalGitProject": "Este proyecto no tiene remoto de Git coincidente"
       },
       "projectSkillRuntime": {
         "distroMissing": "La distro WSL seleccionada no está disponible. Elige una disponible o cambia este proyecto a Windows.",
@@ -18529,6 +18527,50 @@
       "skippedSinceApproved": "La configuración no se ejecutó en esta ejecución porque cambiaron los comandos de configuración de adehone.yaml de su rama. Ya se aprobaron, así que las ejecuciones posteriores los ejecutarán."
     }
   },
+  "bots": {
+    "deepLink": {
+      "missing": "Esa conversación no está abierta en este equipo."
+    },
+    "activity": {
+      "title": "Actividad"
+    },
+    "connectors": {
+      "tab": "Conectores"
+    },
+    "files": {
+      "tab": "Archivos"
+    },
+    "upcoming": {
+      "tidyNightAfter": "Cada noche a partir de las {{from}}, o en cuanto este ordenador esté activo",
+      "tidyWeekAfter": "Una vez por semana a partir de las {{from}}, o en cuanto este ordenador esté activo",
+      "lookDueNow": "Pendiente ahora · {{every}}"
+    },
+    "palette": {
+      "placeholder": "Busca bots, chats, terminales, espacios de trabajo, tareas, ajustes y acciones...",
+      "description": "Busca bots, chats, terminales, espacios de trabajo, tareas, ajustes y acciones",
+      "scopedPlaceholder": "Buscar bots...",
+      "scopedLabel": "Buscar bots",
+      "scopeHint": "Escribe @ para ver solo bots",
+      "chip": "Bots",
+      "chipLabel": "Bots, mostrar todo",
+      "searchEverything": "Buscar en todo «{{text}}»",
+      "searchBotsFor": "Buscar bots con «{{text}}»",
+      "noMatch": "Ningún bot coincide con «{{text}}»",
+      "noBotsYet": "Aún no hay bots",
+      "filtersPaused": "Los filtros se aplican a espacios de trabajo, no a bots",
+      "showEverything": "Mostrar todo",
+      "footerBots": "Bots",
+      "matchesPurpose": "Coincide con su propósito.",
+      "scopedStatus_one": "Mostrando solo bots. {{count}} resultado encontrado.",
+      "scopedStatus_other": "Mostrando solo bots. {{count}} resultados encontrados.",
+      "scopedStatus_many": "Mostrando solo bots. {{count}} resultados encontrados.",
+      "sidebarSearchLabel": "Buscar bots, espacios de trabajo y pestañas del navegador",
+      "section": "Bots"
+    },
+    "templates": {
+      "browse": "Explorar plantillas"
+    }
+  },
   "browser": {
     "clientHosted": {
       "download": {
@@ -18998,8 +19040,8 @@
     "crash": {
       "report": {
         "CrashReportDialogSurface": {
-          "closedSummary": "Envía un informe que respeta tu privacidad para que podamos solucionarlo.",
-          "closedNotesQuestion": "¿Qué estabas haciendo? (opcional)"
+          "closedNotesQuestion": "¿Qué estabas haciendo? (opcional)",
+          "closedSummary": "Envía un informe que respeta tu privacidad para que podamos solucionarlo."
         }
       }
     },
@@ -19762,7 +19804,7 @@
       },
       "rewind": {
         "action": "Rebobinar hasta aquí",
-        "busy": "Disponible cuando el agente esté inactivo y nada en este chat esté esperándote.",
+        "busy": "Disponible cuando el chat esté inactivo",
         "cancel": "Cancelar",
         "confirm": "Rebobinar",
         "confirmation": "¿Descartar este mensaje y todo lo que viene después? El mensaje vuelve al compositor para que puedas editarlo y reenviarlo. Los cambios de archivos en disco se conservan.",
@@ -20326,14 +20368,14 @@
       "bitbucket": {
         "credentials": {
           "dialog": {
+            "accessTokenNeeds": "Necesita acceso de lectura a las pull requests.",
+            "apiBaseUrl": "URL base de la API",
+            "atlassianEmail": "Correo de Atlassian",
+            "close": "Cerrar",
             "createToken": "Crear uno",
             "environmentManagedLine": "Definido por variables de entorno ORCA_BITBUCKET_*. Quítalas para guardar uno aquí.",
-            "savedLocallyOnly": "Se guarda solo en este equipo.",
-            "accessTokenNeeds": "Necesita acceso de lectura a las pull requests.",
-            "atlassianEmail": "Correo de Atlassian",
             "requiredScopes": "Ámbitos necesarios",
-            "apiBaseUrl": "URL base de la API",
-            "close": "Cerrar",
+            "savedLocallyOnly": "Se guarda solo en este equipo.",
             "verifyingEllipsis": "Verificando…"
           }
         }
@@ -20383,12 +20425,12 @@
         "usageLimitContinueToggleLabel": "Activar o desactivar la continuación de chats al restablecerse un límite de uso"
       },
       "recoverServer": {
-        "titleOnHost": "¿Quitar el bloqueo antiguo en {{host}}?",
-        "titleGeneric": "¿Quitar el bloqueo antiguo?",
-        "summary": "Una ejecución anterior dejó un bloqueo, por lo que el servidor de Orca no puede iniciarse.",
+        "clearing": "Quitando…",
         "confirmCheckHomeFolder": "Ninguna otra máquina que comparta esta carpeta personal está ejecutando Orca",
         "details": "Detalles",
-        "clearing": "Quitando…"
+        "summary": "Una ejecución anterior dejó un bloqueo, por lo que el servidor de Orca no puede iniciarse.",
+        "titleGeneric": "¿Quitar el bloqueo antiguo?",
+        "titleOnHost": "¿Quitar el bloqueo antiguo en {{host}}?"
       },
       "repositoryHooks": {
         "availableEnvVars": "Variables de entorno disponibles"
@@ -20555,17 +20597,17 @@
     },
     "shared": {
       "useDaemonActions": {
-        "restartFailed": "No se pudo reiniciar el servicio de terminal.",
         "killAllSessionsDescription": "Termina todas las sesiones de terminal y sus agentes, incluidas las que no tienen una pestaña abierta. Se pierde el trabajo sin guardar.",
+        "restartFailed": "No se pudo reiniciar el servicio de terminal.",
         "someSessionsUnchecked": "Some sessions couldn’t be checked."
       }
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "¿Quitar {{name}} de Orca?",
-        "ghostHostLine": "{{host}} ya no es un host guardado. Sus archivos se quedan en él.",
         "disconnectedHostLine": "{{host}} no está conectado. Sus archivos se quedan en el host.",
         "filesStayLine": "Sus archivos se quedan en {{host}}.",
+        "ghostHostLine": "{{host}} ya no es un host guardado. Sus archivos se quedan en él.",
+        "removeFromOrcaTitle": "¿Quitar {{name}} de Orca?",
         "removing": "Quitando…"
       }
     },
@@ -20618,13 +20660,13 @@
     "terminal": {
       "pane": {
         "CloseTerminalDialog": {
-          "stopChatAgentTitle": "¿Detener el agente de este chat?",
-          "stopAgentInWorkspaceTitle": "¿Detener el agente de «{{name}}»?",
-          "stopRunningCommandTitle": "¿Detener el comando en ejecución?",
           "agentWorkStops": "Su trabajo actual se detiene y no se reanudará.",
           "sleepWorkspaceInstead": "Poner en reposo el espacio de trabajo",
+          "stopAgentInWorkspaceTitle": "¿Detener el agente de «{{name}}»?",
           "stopAgentSentence": "Detener agente",
-          "stopAndClose": "Detener y cerrar"
+          "stopAndClose": "Detener y cerrar",
+          "stopChatAgentTitle": "¿Detener el agente de este chat?",
+          "stopRunningCommandTitle": "¿Detener el comando en ejecución?"
         }
       }
     },
@@ -20927,16 +20969,16 @@
     }
   },
   "crashReport": {
+    "copyDetails": "Copiar detalles",
+    "details": "Detalles",
+    "dontSend": "No enviar",
     "freeze": {
       "includeRedacted": "Incluir el informe de bloqueo guardado y los registros recientes (anonimizados)",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "Incluir registros recientes (anonimizados)",
-    "details": "Detalles",
-    "copyDetails": "Copiar detalles",
-    "dontSend": "No enviar",
-    "sending": "Enviando…",
-    "sendReport": "Enviar informe"
+    "sendReport": "Enviar informe",
+    "sending": "Enviando…"
   },
   "csv": {
     "columns": "Columnas",
@@ -21800,8 +21842,6 @@
     "whyTitle": "¿Por qué cambia esto?"
   },
   "mediaPreview": {
-    "openDefault": "Abrir en la aplicación predeterminada",
-    "openFailed": "No se pudo abrir el archivo en la aplicación predeterminada.",
     "unavailable": "No se puede reproducir este archivo multimedia. El archivo puede no estar disponible o usar un códec no compatible."
   },
   "menu": {
@@ -21869,6 +21909,7 @@
     }
   },
   "nativeChat": {
+    "linkedMessageMissing": "No se pudo encontrar ese mensaje.",
     "math": {
       "scrollDisplayEquation": "Desplazar ecuación en bloque"
     }
@@ -22578,6 +22619,13 @@
         "zcodeToggleDescription": "Mostrar el uso de la cuota del plan de codificación ZCode."
       }
     },
+    "bots": {
+      "tidyUp": {
+        "everyNightLine": "Cada noche después de las 3 a. m., o en cuanto este ordenador esté activo",
+        "everyWeekLine": "Una vez por semana después de las 3 a. m., o en cuanto este ordenador esté activo",
+        "everyDescriptionAwake": "Si este ordenador está en reposo a esa hora, se ejecuta en cuanto esté activo. Solo después de noches con chats nuevos. Cada limpieza usa tu plan de {{agent}}, como un chat corto."
+      }
+    },
     "browser": {
       "clientHostedRemote": {
         "optionDevice": "Este dispositivo",
@@ -23029,6 +23077,16 @@
         "targetNotFolder": "\"{{name}}\" ya existe en esta ubicación y no es una carpeta."
       }
     },
+    "revealCurrent": {
+      "label": "Mostrar actual",
+      "noWorkspace": "No hay nada abierto",
+      "fullPageView": "Esta página no tiene fila en la barra lateral",
+      "archived": "Los espacios de trabajo archivados no aparecen en la barra lateral",
+      "botsOff": "Los bots están desactivados, así que este bot no aparece",
+      "botHidden": "Este bot está en pausa y oculto por las opciones de bots",
+      "renameBotPage": "La página de un bot o grupo no es un worktree. Para renombrarlo, usa Renombrar en el menú de su fila.",
+      "renameUnlisted": "Este espacio de trabajo no aparece ahora en la barra lateral, así que no se puede renombrar allí."
+    },
     "revealFiltered": {
       "cancel": "Mantener filtros",
       "confirm": "Ajustar filtros y mostrar",
@@ -23039,19 +23097,19 @@
       "loading": "Buscando espacios de trabajo…"
     },
     "worktreeCardsIntroNotice": {
-      "title": "Prueba las nuevas tarjetas",
-      "dismiss": "Ahora no",
       "body": "Estado del agente, puntos de no leído y resúmenes de elementos secundarios en cada tarjeta.",
+      "classic": "Clásico",
+      "dismiss": "Ahora no",
+      "keep": "Mantener nuevo",
+      "keptBody": "Cámbialo aquí, en Estilo de tarjeta.",
+      "keptTitle": "Las nuevas tarjetas están activas",
+      "laterToast": "Prueba las nuevas tarjetas cuando quieras en Opciones de espacio de trabajo › Estilo de tarjeta",
+      "new": "Nuevo",
+      "saveFailedToast": "No se pudo guardar el estilo de tarjeta. Inténtalo de nuevo.",
       "switchBack": "Puedes volver cuando quieras en <path>Opciones de espacio de trabajo › Estilo de tarjeta</path>",
       "switchLabel": "Estilo de tarjeta",
-      "classic": "Clásico",
-      "new": "Nuevo",
-      "keep": "Mantener nuevo",
-      "useClassic": "Usar clásico",
-      "laterToast": "Prueba las nuevas tarjetas cuando quieras en Opciones de espacio de trabajo › Estilo de tarjeta",
-      "saveFailedToast": "No se pudo guardar el estilo de tarjeta. Inténtalo de nuevo.",
-      "keptTitle": "Las nuevas tarjetas están activas",
-      "keptBody": "Cámbialo aquí, en Estilo de tarjeta."
+      "title": "Prueba las nuevas tarjetas",
+      "useClassic": "Usar clásico"
     },
     "wslHostOffer": {
       "accept": "Ejecutar como host",
@@ -23973,38 +24031,38 @@
   },
   "worktree": {
     "delete": {
-      "loss": {
-        "changes_one": "{{count}} cambio sin confirmar",
-        "changes_other": "{{count}} cambios sin confirmar",
-        "changes_many": "{{count}} cambios sin confirmar",
-        "uncountedChanges": "Cambios sin confirmar",
-        "unsavedFiles_one": "{{count}} archivo sin guardar",
-        "unsavedFiles_other": "{{count}} archivos sin guardar",
-        "unsavedFiles_many": "{{count}} archivos sin guardar",
-        "both": "Se perderán {{changes}} y {{files}}",
-        "one": "Se perderá lo siguiente: {{what}}",
-        "all": "Se perderán {{changes}}, {{files}} y los archivos ignorados",
-        "withIgnored": "Se perderán {{what}} y los archivos ignorados",
-        "ignoredOnly": "Se perderán los archivos ignorados"
-      },
-      "showChanges": "Mostrar cambios",
-      "unsavedSuffix": "(sin guardar)",
-      "onHost": "En {{host}}",
-      "forceDeletingEllipsis": "Forzando la eliminación…",
-      "deletingEllipsis": "Eliminando…",
-      "forceDelete": "Forzar eliminación",
+      "allVerb": "Eliminar todo",
       "alwaysForceDelete": "Forzar siempre la eliminación",
       "batchTitle": "¿Eliminar {{count}} espacios de trabajo?",
       "batchVerb": "Eliminar {{count}} espacios de trabajo",
-      "withChildrenTitle_one": "¿Eliminar {{name}} y {{count}} espacio de trabajo secundario?",
-      "withChildrenTitle_other": "¿Eliminar {{name}} y {{count}} espacios de trabajo secundarios?",
-      "withChildrenTitle_many": "¿Eliminar {{name}} y {{count}} espacios de trabajo secundarios?",
-      "allVerb": "Eliminar todo",
+      "changesIncomplete": "Algunos cambios no se pudieron comprobar por completo.",
+      "deletingEllipsis": "Eliminando…",
+      "errorDetails": "Detalles",
+      "forceDelete": "Forzar eliminación",
+      "forceDeletingEllipsis": "Forzando la eliminación…",
+      "forceExplanation": "Git no pudo eliminarlo porque tiene cambios. La eliminación forzada los elimina de todos modos.",
+      "loss": {
+        "all": "Se perderán {{changes}}, {{files}} y los archivos ignorados",
+        "both": "Se perderán {{changes}} y {{files}}",
+        "changes_many": "{{count}} cambios sin confirmar",
+        "changes_one": "{{count}} cambio sin confirmar",
+        "changes_other": "{{count}} cambios sin confirmar",
+        "ignoredOnly": "Se perderán los archivos ignorados",
+        "one": "Se perderá lo siguiente: {{what}}",
+        "uncountedChanges": "Cambios sin confirmar",
+        "unsavedFiles_many": "{{count}} archivos sin guardar",
+        "unsavedFiles_one": "{{count}} archivo sin guardar",
+        "unsavedFiles_other": "{{count}} archivos sin guardar",
+        "withIgnored": "Se perderán {{what}} y los archivos ignorados"
+      },
+      "onHost": "En {{host}}",
+      "showChanges": "Mostrar cambios",
       "singleTitle": "¿Eliminar {{name}}?",
       "singleVerb": "Eliminar espacio de trabajo",
-      "forceExplanation": "Git no pudo eliminarlo porque tiene cambios. La eliminación forzada los elimina de todos modos.",
-      "errorDetails": "Detalles",
-      "changesIncomplete": "Algunos cambios no se pudieron comprobar por completo."
+      "unsavedSuffix": "(sin guardar)",
+      "withChildrenTitle_many": "¿Eliminar {{name}} y {{count}} espacios de trabajo secundarios?",
+      "withChildrenTitle_one": "¿Eliminar {{name}} y {{count}} espacio de trabajo secundario?",
+      "withChildrenTitle_other": "¿Eliminar {{name}} y {{count}} espacios de trabajo secundarios?"
     },
     "nestedRemoval": {
       "cancel": "Cancelar",

@@ -4,7 +4,6 @@
       "active": "アクティブ",
       "authMethod": "サインイン方法",
       "changed": "ネイティブアカウントが変更されました。AGYを起動する前に、保存したアカウントを再度選択してください。",
-      "chatAccount": "チャット用アカウント",
       "chatBadgeSignedIn": "サインイン済み",
       "chatBadgeSignedOut": "未サインイン",
       "chatBadgeSigningIn": "サインイン中",
@@ -68,8 +67,6 @@
       "settingsSaveFailed": "Adehone は Antigravity のサインイン設定を保存できませんでした。もう一度お試しください。",
       "signInEllipsis": "サインイン…",
       "signInHelp": "サインインのヘルプ",
-      "terminalInfo": "agy を実行してサインインしてから、ここでログインを保存してください。別のアカウントを追加するには、agy で /logout を実行してもう一度サインインしてください。新しい agy セッションに適用されます。",
-      "terminalInfoWindows": "agy を実行してサインインしてから、ここでログインを保存してください。別のアカウントを追加するには、agy で /logout を実行してもう一度サインインしてください。選択すると、ホストのデフォルトの agy 認証情報に適用されます。",
       "title": "Antigravity",
       "usage": "使用量を更新",
       "usageReading": "セッション： {{session}} ·毎週： {{weekly}}",
@@ -6113,7 +6110,6 @@
             "7ac885bd2f": "フォルダーをダウンロード",
             "98a79948b3": "コピー",
             "a06551beee": "入力",
-            "a4029c996b": "フォルダー「{{value0}}」をダウンロードしました",
             "addc01145f": "削除",
             "b234ab25b4": "ファイルをクリップボードにコピーできませんでした",
             "b3e288bf41": "「{{value0}}」のダウンロードに失敗しました。",
@@ -6127,7 +6123,6 @@
             "e26010014a": ".gitignore によって無視される",
             "e887fa4b2e": "ターミナルで開く",
             "f61af83316": "新規フォルダー",
-            "f729bcd97d": "フォルダー「{{value0}}」のダウンロードに失敗しました。",
             "f9d7ca753d": "パスのコピー",
             "fc747429bf": "名前を変更する",
             "openContainingFolder": "含まれているフォルダーを開く",
@@ -9818,7 +9813,7 @@
           "noActiveLinks": "有効なリンクはありません。",
           "olderPairingMethod": "古いペアリング方式を使用しています。このリンクを使用しているデバイスの Adehone を更新してください。",
           "revoke": "取り消す",
-          "sshAccessCaveat": "ここで取り消しても、このコンピューターへの SSH アクセスを持つ人は再びペアリングできます。完全に遮断するには、その SSH アクセスを削除してください。"
+          "sshAccessCaveat": "リンクを取り消すと、そのリンクが開いたターミナルで作成されたリンクも取り消されます。このコンピューターでターミナルを使える人（SSH またはリンク経由）は、引き続き再ペアリングできます。"
         },
         "RuntimeEnvironmentsPane": {
           "05e0fc3ebf": "切り替え先",
@@ -14179,6 +14174,7 @@
           "4dc5b5065b": "削除",
           "b79b39d865": "プロジェクトの削除",
           "d36883e046": "キャンセル",
+          "linkedWorkspaceWarning_other": "このプロジェクトの {{count}} 個のワークスペースも Orca から削除されます。",
           "openTerminalWarning_other": "このプロジェクトで開いている {{count}} 個のターミナルが閉じられます。",
           "removeDescriptionLocal": "この操作は {{name}} を Adehone から削除するだけです。ファイルはディスクに残っています。",
           "removeDescriptionSsh": "この操作は {{name}} を Adehone から削除するだけです。ファイルは {{host}} に残っており、その SSH ホストを再追加すれば復元できます。",
@@ -14197,9 +14193,6 @@
           "wslStoppedTitle": "WSL ディストリビューション {{value0}} は停止しています",
           "wslUnverifiableTitle": "WSL ディストリビューション {{value0}} が実行中か確認できませんでした",
           "xcodeLicense": "Apple 開発者ツールは、Git を実行する前にライセンスへの同意が必要です。"
-        },
-        "ScrollToCurrentWorkspaceToolbarButton": {
-          "23989bb663": "アクティブなワークスペースを表示する"
         },
         "SetupGuideSidebarEntry": {
           "88d402b71d": "オンボーディングチェックリスト",
@@ -18717,6 +18710,48 @@
       "skippedSinceApproved": "ブランチの adehone.yaml のセットアップコマンドが変更されたため、この実行ではセットアップが実行されませんでした。その後承認されたため、以降の実行では実行されます。"
     }
   },
+  "bots": {
+    "deepLink": {
+      "missing": "その会話はこのコンピューターで開かれていません。"
+    },
+    "activity": {
+      "title": "アクティビティ"
+    },
+    "connectors": {
+      "tab": "コネクター"
+    },
+    "files": {
+      "tab": "ファイル"
+    },
+    "upcoming": {
+      "tidyNightAfter": "毎晩{{from}}以降、またはこのコンピューターのスリープ解除後",
+      "tidyWeekAfter": "週に1回{{from}}以降、またはこのコンピューターのスリープ解除後",
+      "lookDueNow": "今すぐ実行予定 · {{every}}"
+    },
+    "palette": {
+      "placeholder": "ボット、チャット、ターミナル、ワークスペース、タスク、設定、操作を検索します…",
+      "description": "ボット、チャット、ターミナル、ワークスペース、タスク、設定、操作を検索します",
+      "scopedPlaceholder": "ボットを検索…",
+      "scopedLabel": "ボットを検索",
+      "scopeHint": "@ を入力するとボットだけを表示します",
+      "chip": "ボット",
+      "chipLabel": "ボット、すべて表示に戻す",
+      "searchEverything": "「{{text}}」をすべての項目から検索",
+      "searchBotsFor": "「{{text}}」でボットを検索",
+      "noMatch": "「{{text}}」に一致するボットはありません",
+      "noBotsYet": "ボットはまだありません",
+      "filtersPaused": "フィルターはワークスペースに適用され、ボットには適用されません",
+      "showEverything": "すべて表示",
+      "footerBots": "ボット",
+      "matchesPurpose": "目的が一致しています。",
+      "scopedStatus_other": "ボットのみ表示中。{{count}} 件の結果が見つかりました。",
+      "sidebarSearchLabel": "ボット、ワークスペース、ブラウザタブを検索する",
+      "section": "ボット"
+    },
+    "templates": {
+      "browse": "テンプレートを見る"
+    }
+  },
   "browser": {
     "clientHosted": {
       "download": {
@@ -19235,8 +19270,8 @@
     "crash": {
       "report": {
         "CrashReportDialogSurface": {
-          "closedSummary": "修正に役立つ、プライバシーに配慮したレポートを送信してください。",
-          "closedNotesQuestion": "何をしていましたか?（任意）"
+          "closedNotesQuestion": "何をしていましたか?（任意）",
+          "closedSummary": "修正に役立つ、プライバシーに配慮したレポートを送信してください。"
         }
       }
     },
@@ -20049,7 +20084,7 @@
       },
       "rewind": {
         "action": "ここに巻き戻す",
-        "busy": "Agent がアイドル状態になり、このチャットであなたの対応を待つものがなくなると利用できます。",
+        "busy": "チャットがアイドル状態のときに利用できます",
         "cancel": "キャンセル",
         "confirm": "巻き戻す",
         "confirmation": "このメッセージとそれ以降をすべて破棄しますか? メッセージは入力欄に戻り、編集して再送信できます。ディスク上のファイルの変更は保持されます。",
@@ -20536,7 +20571,8 @@
           "description": "Agent がチャットで返信し、メッセージや差分がレンダリングされて表示されます。",
           "label": "チャット UI",
           "noneDetected": "検出された Agent はいずれもチャット UI に対応していません。",
-          "terminalFallback": "チャットに対応していない Agent や、このコンピューターで SSH または WSL 経由で開いたフォルダーは、引き続きターミナルで開きます。"
+          "recommended": "おすすめ",
+          "terminalFallback": "チャット非対応の Agent はターミナルで開きます。"
         },
         "preview": {
           "agentMessage": "失敗したリクエストは最大 3 回まで再試行されるようになりました。",
@@ -20694,14 +20730,14 @@
       "bitbucket": {
         "credentials": {
           "dialog": {
+            "accessTokenNeeds": "プルリクエストの読み取り権限が必要です。",
+            "apiBaseUrl": "API ベース URL",
+            "atlassianEmail": "Atlassian のメールアドレス",
+            "close": "閉じる",
             "createToken": "作成する",
             "environmentManagedLine": "ORCA_BITBUCKET_* 環境変数で設定されています。ここで保存するには解除してください。",
-            "savedLocallyOnly": "このコンピューターにのみ保存されます。",
-            "accessTokenNeeds": "プルリクエストの読み取り権限が必要です。",
-            "atlassianEmail": "Atlassian のメールアドレス",
             "requiredScopes": "必要なスコープ",
-            "apiBaseUrl": "API ベース URL",
-            "close": "閉じる",
+            "savedLocallyOnly": "このコンピューターにのみ保存されます。",
             "verifyingEllipsis": "確認中…"
           }
         }
@@ -20761,12 +20797,12 @@
         "usageLimitContinueToggleLabel": "使用量の上限リセット時にチャットを続けるかを切り替える"
       },
       "recoverServer": {
-        "titleOnHost": "{{host}} の古いロックを解除しますか?",
-        "titleGeneric": "古いロックを解除しますか?",
-        "summary": "以前の実行でロックが残っているため、Orca のサーバーを起動できません。",
+        "clearing": "解除中…",
         "confirmCheckHomeFolder": "このホームフォルダーを共有する他のマシンで Orca は実行されていません",
         "details": "詳細",
-        "clearing": "解除中…"
+        "summary": "以前の実行でロックが残っているため、Orca のサーバーを起動できません。",
+        "titleGeneric": "古いロックを解除しますか?",
+        "titleOnHost": "{{host}} の古いロックを解除しますか?"
       },
       "repositoryHooks": {
         "availableEnvVars": "利用可能な環境変数"
@@ -21000,17 +21036,17 @@
     },
     "shared": {
       "useDaemonActions": {
-        "restartFailed": "ターミナルサービスを再起動できませんでした。",
         "killAllSessionsDescription": "すべてのターミナルセッションとその Agent を終了します（タブが開いていないものも含む）。未保存の作業は失われます。",
+        "restartFailed": "ターミナルサービスを再起動できませんでした。",
         "someSessionsUnchecked": "Some sessions couldn’t be checked."
       }
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "{{name}} を Orca から削除しますか?",
-        "ghostHostLine": "{{host}} は保存済みのホストではなくなりました。ファイルはそのホストに残ります。",
         "disconnectedHostLine": "{{host}} は接続されていません。ファイルはホストに残ります。",
         "filesStayLine": "ファイルは {{host}} に残ります。",
+        "ghostHostLine": "{{host}} は保存済みのホストではなくなりました。ファイルはそのホストに残ります。",
+        "removeFromOrcaTitle": "{{name}} を Orca から削除しますか?",
         "removing": "削除中…"
       }
     },
@@ -21076,13 +21112,13 @@
     "terminal": {
       "pane": {
         "CloseTerminalDialog": {
-          "stopChatAgentTitle": "このチャットの Agent を停止しますか?",
-          "stopAgentInWorkspaceTitle": "「{{name}}」の Agent を停止しますか?",
-          "stopRunningCommandTitle": "実行中のコマンドを停止しますか?",
           "agentWorkStops": "現在の作業は停止し、再開されません。",
           "sleepWorkspaceInstead": "代わりにワークスペースをスリープ",
+          "stopAgentInWorkspaceTitle": "「{{name}}」の Agent を停止しますか?",
           "stopAgentSentence": "Agent を停止",
-          "stopAndClose": "停止して閉じる"
+          "stopAndClose": "停止して閉じる",
+          "stopChatAgentTitle": "このチャットの Agent を停止しますか?",
+          "stopRunningCommandTitle": "実行中のコマンドを停止しますか?"
         }
       }
     },
@@ -21406,16 +21442,16 @@
     }
   },
   "crashReport": {
+    "copyDetails": "詳細をコピー",
+    "details": "詳細",
+    "dontSend": "送信しない",
     "freeze": {
       "includeRedacted": "保存済みのフリーズレポートと最近のログを含める（秘匿化済み）",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "最近のログを含める（秘匿化済み）",
-    "details": "詳細",
-    "copyDetails": "詳細をコピー",
-    "dontSend": "送信しない",
-    "sending": "送信中…",
-    "sendReport": "レポートを送信"
+    "sendReport": "レポートを送信",
+    "sending": "送信中…"
   },
   "csv": {
     "columns": "列",
@@ -22298,8 +22334,6 @@
     "whyTitle": "なぜ変更されるのですか？"
   },
   "mediaPreview": {
-    "openDefault": "既定のアプリで開く",
-    "openFailed": "既定のアプリでファイルを開けませんでした。",
     "unavailable": "このメディアファイルを再生できません。ファイルが利用できないか、コーデックが対応していない可能性があります。"
   },
   "menu": {
@@ -22382,6 +22416,7 @@
     }
   },
   "nativeChat": {
+    "linkedMessageMissing": "そのメッセージが見つかりませんでした。",
     "math": {
       "scrollDisplayEquation": "数式ブロックをスクロール"
     }
@@ -23162,6 +23197,13 @@
         "zcodeToggleDescription": "ZCode コーディングプランのクォータ使用量を表示します。"
       }
     },
+    "bots": {
+      "tidyUp": {
+        "everyNightLine": "毎晩午前3時以降、またはこのコンピューターのスリープ解除後",
+        "everyWeekLine": "週に1回午前3時以降、またはこのコンピューターのスリープ解除後",
+        "everyDescriptionAwake": "その時間にこのコンピューターがスリープ中なら、スリープ解除後に実行します。新しいチャットがあった夜のあとだけ実行します。整理のたびに、短いチャットと同じように {{agent}} のプランを使います。"
+      }
+    },
     "breadcrumb": {
       "close": "設定を閉じる",
       "label": "設定のパンくずリスト",
@@ -23887,6 +23929,16 @@
       "undo": "元に戻す",
       "undoGone": "{{name}} は Orca から削除されました。"
     },
+    "revealCurrent": {
+      "label": "現在の項目を表示",
+      "noWorkspace": "何も開いていません",
+      "fullPageView": "このページにはサイドバーの行がありません",
+      "archived": "アーカイブされたワークスペースはサイドバーに表示されません",
+      "botsOff": "ボットがオフのため、このボットは表示されません",
+      "botHidden": "このボットは一時停止中で、ボットのオプションにより非表示になっています",
+      "renameBotPage": "ボットやグループのページはワークツリーではありません。名前を変更するには、その行のメニューの「名前を変更」を使ってください。",
+      "renameUnlisted": "このワークスペースは現在サイドバーに表示されていないため、そこで名前を変更できません。"
+    },
     "revealFiltered": {
       "cancel": "フィルタを保持する",
       "confirm": "フィルターを調整して明らかにする",
@@ -23897,19 +23949,19 @@
       "loading": "ワークスペースを検出中…"
     },
     "worktreeCardsIntroNotice": {
-      "title": "新しいカードを試す",
-      "dismiss": "後で",
       "body": "すべてのカードに Agent の状態、未読ドット、子の概要を表示します。",
+      "classic": "クラシック",
+      "dismiss": "後で",
+      "keep": "新しいものを使う",
+      "keptBody": "ここの カードのスタイル で変更できます。",
+      "keptTitle": "新しいカードを使用中です",
+      "laterToast": "ワークスペースのオプション › カードのスタイル からいつでも新しいカードを試せます",
+      "new": "新しい",
+      "saveFailedToast": "カードのスタイルを保存できませんでした。もう一度お試しください。",
       "switchBack": "<path>ワークスペースのオプション › カードのスタイル</path> からいつでも元に戻せます",
       "switchLabel": "カードのスタイル",
-      "classic": "クラシック",
-      "new": "新しい",
-      "keep": "新しいものを使う",
-      "useClassic": "クラシックを使う",
-      "laterToast": "ワークスペースのオプション › カードのスタイル からいつでも新しいカードを試せます",
-      "saveFailedToast": "カードのスタイルを保存できませんでした。もう一度お試しください。",
-      "keptTitle": "新しいカードを使用中です",
-      "keptBody": "ここの カードのスタイル で変更できます。"
+      "title": "新しいカードを試す",
+      "useClassic": "クラシックを使う"
     },
     "wslHostOffer": {
       "accept": "ホストとして実行",
@@ -24862,16 +24914,16 @@
       "forceDeletingEllipsis": "強制削除中…",
       "forceExplanation": "変更があるため、Git で削除できませんでした。強制削除すると、その変更も削除されます。",
       "loss": {
+        "all": "{{changes}}、{{files}}、無視されたファイルが失われます",
+        "both": "{{changes}}と{{files}}が失われます",
         "changes_one": "未コミットの変更 {{count}} 件",
         "changes_other": "未コミットの変更 {{count}} 件",
+        "ignoredOnly": "無視されたファイルが失われます",
+        "one": "{{what}}が失われます",
         "uncountedChanges": "未コミットの変更",
         "unsavedFiles_one": "未保存のファイル {{count}} 個",
         "unsavedFiles_other": "未保存のファイル {{count}} 個",
-        "both": "{{changes}}と{{files}}が失われます",
-        "one": "{{what}}が失われます",
-        "all": "{{changes}}、{{files}}、無視されたファイルが失われます",
-        "withIgnored": "{{what}}と無視されたファイルが失われます",
-        "ignoredOnly": "無視されたファイルが失われます"
+        "withIgnored": "{{what}}と無視されたファイルが失われます"
       },
       "nestedChildrenCannotBeKept": "このワークスペース内にある子ワークスペースのフォルダーは、保持する前にこのワークスペースの外へ移動する必要があります。",
       "onHost": "{{host}} 上",
