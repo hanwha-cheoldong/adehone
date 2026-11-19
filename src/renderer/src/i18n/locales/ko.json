@@ -13929,7 +13929,20 @@
           "imageReadFailed": "첨부된 이미지를 읽을 수 없습니다. 다시 첨부해 보세요.",
           "imagesNotDelivered": "피드백이 전송되었으나 이미지 전송을 확인할 수 없습니다.",
           "imagesNotIncluded": "피드백을 보냈습니다. 스크린샷을 업로드하지 못해 포함되지 않았습니다.",
-          "imagesRejected": "피드백을 보냈습니다. 스크린샷이 너무 커서 업로드하지 못해 포함되지 않았습니다."
+          "imagesRejected": "피드백을 보냈습니다. 스크린샷이 너무 커서 업로드하지 못해 포함되지 않았습니다.",
+          "browserFallbackWithImages": "브라우저에서 GitHub 이슈 작성 페이지를 열었습니다. 제출하기 전에 스크린샷을 직접 첨부해 주세요.",
+          "browserFallbackOpened": "브라우저에서 Adehone GitHub 이슈 작성 페이지를 열었습니다.",
+          "openCreatedIssue": "이슈 열기",
+          "openInGitHub": "GitHub에서 열기",
+          "submitsToAdehoneRepo": "{{repo}} 저장소에 이슈를 생성합니다",
+          "ghNotInstalledTitle": "GitHub CLI (gh)가 설치되어 있지 않습니다",
+          "ghNotInstalledDescription": "스크린샷을 포함해 Adehone에서 바로 피드백을 보내려면 GitHub CLI를 설치하고 로그인하세요. 미설치 시 브라우저에서 GitHub 이슈 작성 페이지가 열립니다.",
+          "installGhCli": "GitHub CLI 설치",
+          "recheckGhCli": "다시 확인",
+          "ghNotAuthenticatedTitle": "GitHub CLI에 로그인되어 있지 않습니다",
+          "ghNotAuthenticatedDescription": "터미널에서 아래 명령어를 실행해 로그인하면 바로 제출할 수 있으며, 브라우저로 계속할 수도 있습니다:",
+          "ghAuthGuide": "인증 가이드",
+          "ghUnavailable": "GitHub CLI 상태를 확인할 수 없습니다. 전송 시 브라우저에서 GitHub 이슈 작성 페이지가 열립니다."
         },
         "SidebarFeedbackImageAttachments": {
           "attachImages": "Attach",

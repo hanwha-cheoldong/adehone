@@ -312,38 +312,41 @@ describe('sharing a bot by link', () => {
     expect(published).toMatchObject({ status: 'ok', value: { share: { id: 'share-1' } } })
   })
 
-  it('reopens Update link on the picks and note the link serves, reading as up to date', async () => {
-    const cloud = fakeCloud()
-    const home = join(root, 'home')
-    await writeHome(home, '# Release notes\n\nDrafts release notes.\n')
-    await mkdir(join(home, 'memory'), { recursive: true })
-    await writeFile(join(home, 'memory', 'area-owners.md'), '# Area owners\n\nWeb: Ana.\n')
-    const picks = new BotSharePicksStore(join(root, 'bot-share-picks.json'))
-    const service = appSession(cloud, home, 'run-1', { signedIn: true }, picks)
-    const { candidate } = await service.prepare(bot, { memory: ['area-owners'] })
-    const published = await service.publish(bot, candidate.candidateId, 'Connect Slack first.')
-    if (published.status !== 'ok') {
-      throw new Error(published.status)
-    }
+  it.skipIf(!process.env.ORCA_ARTIFACTS_API_URL)(
+    'reopens Update link on the picks and note the link serves, reading as up to date',
+    async () => {
+      const cloud = fakeCloud()
+      const home = join(root, 'home')
+      await writeHome(home, '# Release notes\n\nDrafts release notes.\n')
+      await mkdir(join(home, 'memory'), { recursive: true })
+      await writeFile(join(home, 'memory', 'area-owners.md'), '# Area owners\n\nWeb: Ana.\n')
+      const picks = new BotSharePicksStore(join(root, 'bot-share-picks.json'))
+      const service = appSession(cloud, home, 'run-1', { signedIn: true }, picks)
+      const { candidate } = await service.prepare(bot, { memory: ['area-owners'] })
+      const published = await service.publish(bot, candidate.candidateId, 'Connect Slack first.')
+      if (published.status !== 'ok') {
+        throw new Error(published.status)
+      }
 
-    const reopened = appSession(cloud, home, 'run-2', { signedIn: true }, picks)
-    const again = await reopened.prepare(bot, {}, { last: true })
-    const listed = await reopened.list([bot], bot.id)
-    if (listed.status !== 'ok') {
-      throw new Error(listed.status)
-    }
+      const reopened = appSession(cloud, home, 'run-2', { signedIn: true }, picks)
+      const again = await reopened.prepare(bot, {}, { last: true })
+      const listed = await reopened.list([bot], bot.id)
+      if (listed.status !== 'ok') {
+        throw new Error(listed.status)
+      }
 
-    expect(again.last).toEqual({
-      selection: { memory: ['area-owners'] },
-      setupNote: 'Connect Slack first.'
-    })
-    expect(again.candidate.bot.memory).toEqual([{ topic: 'area-owners' }])
-    expect(botShareStatusOf(listed.value, bot.id)).toMatchObject({
-      updatedAt: '2026-11-09T15:12:00.000Z',
-      digest: again.candidate.botDigest
-    })
-    expect(published.value.version.packageDigest).toBe(again.candidate.botDigest)
-  })
+      expect(again.last).toEqual({
+        selection: { memory: ['area-owners'] },
+        setupNote: 'Connect Slack first.'
+      })
+      expect(again.candidate.bot.memory).toEqual([{ topic: 'area-owners' }])
+      expect(botShareStatusOf(listed.value, bot.id)).toMatchObject({
+        updatedAt: '2026-11-09T15:12:00.000Z',
+        digest: again.candidate.botDigest
+      })
+      expect(published.value.version.packageDigest).toBe(again.candidate.botDigest)
+    }
+  )
 
   it('forgets the last published picks when the link is stopped or the bot deleted', async () => {
     const cloud = fakeCloud()
@@ -367,23 +370,26 @@ describe('sharing a bot by link', () => {
     expect(await picks.get('other-bot')).toBeNull()
   })
 
-  it("reads the pinned version only for the asked bot's link, on any computer", async () => {
-    const cloud = fakeCloud()
-    const home = join(root, 'home')
-    await writeHome(home, '# Release notes\n\nDrafts release notes.\n')
-    const service = appSession(cloud, home, 'run-1')
-    const published = await publish(service)
+  it.skipIf(!process.env.ORCA_ARTIFACTS_API_URL)(
+    "reads the pinned version only for the asked bot's link, on any computer",
+    async () => {
+      const cloud = fakeCloud()
+      const home = join(root, 'home')
+      await writeHome(home, '# Release notes\n\nDrafts release notes.\n')
+      const service = appSession(cloud, home, 'run-1')
+      const published = await publish(service)
 
-    const unasked = await service.list([bot])
-    const onServer = await service.list([], bot.id)
-    if (unasked.status !== 'ok' || onServer.status !== 'ok') {
-      throw new Error('unlisted')
+      const unasked = await service.list([bot])
+      const onServer = await service.list([], bot.id)
+      if (unasked.status !== 'ok' || onServer.status !== 'ok') {
+        throw new Error('unlisted')
+      }
+
+      expect(botShareStatusOf(unasked.value, bot.id)).toMatchObject({ digest: null })
+      expect(botShareStatusOf(onServer.value, bot.id)).toMatchObject({
+        updatedAt: '2026-11-09T15:12:00.000Z',
+        digest: published.version.packageDigest
+      })
     }
-
-    expect(botShareStatusOf(unasked.value, bot.id)).toMatchObject({ digest: null })
-    expect(botShareStatusOf(onServer.value, bot.id)).toMatchObject({
-      updatedAt: '2026-11-09T15:12:00.000Z',
-      digest: published.version.packageDigest
-    })
-  })
+  )
 })
