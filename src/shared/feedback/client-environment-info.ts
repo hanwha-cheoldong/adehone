@@ -1,3 +1,5 @@
+import { ADEHONE_VERSION, formatAdehoneDisplayVersion } from '../app-display-version'
+
 /** Copy-pasteable client environment fields for bug reports and feedback. */
 export type ClientEnvironmentInfo = {
   appVersion: string
@@ -19,8 +21,19 @@ function normalizeEnvironmentValue(value: string): string {
   return value.trim().replace(/[\r\n]+/g, ' ')
 }
 
+function formatEnvironmentAppVersion(appVersion: string): string {
+  const normalized = normalizeEnvironmentValue(appVersion)
+  if (!normalized || normalized === 'unknown') {
+    return 'unknown'
+  }
+  if (normalized.startsWith(`${ADEHONE_VERSION} (`)) {
+    return normalized
+  }
+  return formatAdehoneDisplayVersion(normalized)
+}
+
 export function formatClientEnvironmentInfo(info: ClientEnvironmentInfo): string {
-  const version = normalizeEnvironmentValue(info.appVersion) || 'unknown'
+  const version = formatEnvironmentAppVersion(info.appVersion)
   const platform = normalizeEnvironmentValue(info.platform) || 'unknown'
   const osRelease = normalizeEnvironmentValue(info.osRelease)
   const arch = normalizeEnvironmentValue(info.arch)
