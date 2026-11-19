@@ -11,6 +11,7 @@ import {
 
 const GH_CLI_INSTALL_URL = 'https://cli.github.com'
 const GH_AUTH_LOGIN_DOCS_URL = 'https://cli.github.com/manual/gh_auth_login'
+const GH_AUTH_LOGIN_COMMAND = 'gh auth login'
 
 export type FeedbackGhCliStatus =
   | 'checking'
@@ -126,7 +127,7 @@ export function SidebarFeedbackGitHubStatus({
         </p>
         <div className="flex items-center gap-2 rounded border border-border/70 bg-background px-2.5 py-1.5 font-mono text-xs text-foreground">
           <Terminal className="size-3.5 shrink-0 text-muted-foreground" />
-          <span>gh auth login</span>
+          <span>{GH_AUTH_LOGIN_COMMAND}</span>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <Button
