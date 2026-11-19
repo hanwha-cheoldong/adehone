@@ -25,10 +25,10 @@ function executable(path: string, body: string): string {
 // Each launcher in an app layout whose Electron just names itself, so a run says which CLI answered.
 const LAUNCHERS = {
   darwin: (() => {
-    const app = join(root, 'Orca.app', 'Contents')
+    const app = join(root, 'Adehone.app', 'Contents')
     mkdirSync(join(app, 'MacOS'), { recursive: true })
     mkdirSync(join(app, 'Resources', 'bin'), { recursive: true })
-    executable(join(app, 'MacOS', 'Orca'), 'shift; echo "installed $*"')
+    executable(join(app, 'MacOS', 'Adehone'), 'shift; echo "installed $*"')
     const launcher = join(app, 'Resources', 'bin', 'orca')
     copyFileSync(join(RESOURCES, 'darwin', 'bin', 'orca'), launcher)
     chmodSync(launcher, 0o755)

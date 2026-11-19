@@ -55,6 +55,7 @@ const CHANGELOG_URL = 'https://orca.dev/changelog'
 const GITHUB_URL = 'https://github.com/stablyai/orca'
 const DISCORD_URL = 'https://discord.gg/fzjDKHxv8Q'
 const X_URL = 'https://x.com/orca_build'
+const SHOW_ORCA_HELP_MENU_ITEMS = false
 const NO_UPDATE_CHECK_MODIFIERS = {
   altKey: false,
   ctrlKey: false,
@@ -94,7 +95,7 @@ export function SidebarSettingsHelpMenu(): React.JSX.Element {
   const openSettingsPage = useAppStore((s) => s.openSettingsPage)
   const openSettingsTarget = useAppStore((s) => s.openSettingsTarget)
   const updateStatus = useAppStore((s) => s.updateStatus)
-  const setupProgress = useSetupGuideProgress(true, false, false)
+  const setupProgress = useSetupGuideProgress(SHOW_ORCA_HELP_MENU_ITEMS, false, false)
 
   const settingsShortcut = useShortcutKeyDetails('app.settings')
   const [menuOpen, setMenuOpen] = useState(false)
@@ -248,57 +249,64 @@ export function SidebarSettingsHelpMenu(): React.JSX.Element {
               <MessageSquareText className="size-3.5" />
               {t('auto.components.sidebar.SidebarSettingsHelpMenu.4cf5b868d7', 'Send Feedback')}
             </DropdownMenuItem>
-            {showMilestones ? (
-              <DropdownMenuItem onSelect={openMilestones}>
-                <img
-                  src={logo}
-                  alt=""
-                  aria-hidden="true"
-                  className="size-3.5 object-contain opacity-90"
+            {SHOW_ORCA_HELP_MENU_ITEMS ? (
+              <>
+                {showMilestones ? (
+                  <DropdownMenuItem onSelect={openMilestones}>
+                    <img
+                      src={logo}
+                      alt=""
+                      aria-hidden="true"
+                      className="size-3.5 object-contain opacity-90"
+                    />
+                    {t('auto.components.sidebar.SidebarSettingsHelpMenu.f8a2c91d4e', 'Milestones')}
+                    <SetupGuideProgressRing
+                      done={setupProgress.coreDoneCount}
+                      total={setupProgress.coreTotal}
+                      sizeClassName="size-4"
+                      className="ml-auto"
+                    />
+                  </DropdownMenuItem>
+                ) : null}
+                <DropdownMenuItem
+                  className="whitespace-nowrap"
+                  onClick={handleShowOnboarding}
+                  onSelect={handleShowOnboarding}
+                >
+                  <School className="size-3.5" />
+                  {t('auto.components.sidebar.SidebarSettingsHelpMenu.b7e4d2a19c', 'Onboarding')}
+                </DropdownMenuItem>
+                <ExternalMenuItem
+                  label={t('auto.components.sidebar.SidebarSettingsHelpMenu.cdc87f897e', 'Docs')}
+                  url={DOCS_URL}
+                  icon={<BookOpen className="size-3.5" />}
                 />
-                {t('auto.components.sidebar.SidebarSettingsHelpMenu.f8a2c91d4e', 'Milestones')}
-                <SetupGuideProgressRing
-                  done={setupProgress.coreDoneCount}
-                  total={setupProgress.coreTotal}
-                  sizeClassName="size-4"
-                  className="ml-auto"
+                <ExternalMenuItem
+                  label={t(
+                    'auto.components.sidebar.SidebarSettingsHelpMenu.5f83d86d92',
+                    'Changelog'
+                  )}
+                  url={CHANGELOG_URL}
+                  icon={<ScrollText className="size-3.5" />}
                 />
-              </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <ExternalMenuItem
+                  label={t('auto.components.sidebar.SidebarSettingsHelpMenu.5687ab246a', 'GitHub')}
+                  url={GITHUB_URL}
+                  icon={<Github className="size-3.5" />}
+                />
+                <DropdownMenuItem onSelect={() => openAppHttpLink(DISCORD_URL)}>
+                  <DiscordIcon className="size-3.5" />
+                  {t('auto.components.sidebar.SidebarSettingsHelpMenu.eb9884e55b', 'Discord')}
+                  <ExternalLink className="ml-auto size-3 text-muted-foreground" />
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={() => openAppHttpLink(X_URL)}>
+                  <XIcon />
+                  {t('auto.components.sidebar.SidebarSettingsHelpMenu.c4f8e1b72a', 'X')}
+                  <ExternalLink className="ml-auto size-3 text-muted-foreground" />
+                </DropdownMenuItem>
+              </>
             ) : null}
-            <DropdownMenuItem
-              className="whitespace-nowrap"
-              onClick={handleShowOnboarding}
-              onSelect={handleShowOnboarding}
-            >
-              <School className="size-3.5" />
-              {t('auto.components.sidebar.SidebarSettingsHelpMenu.b7e4d2a19c', 'Onboarding')}
-            </DropdownMenuItem>
-            <ExternalMenuItem
-              label={t('auto.components.sidebar.SidebarSettingsHelpMenu.cdc87f897e', 'Docs')}
-              url={DOCS_URL}
-              icon={<BookOpen className="size-3.5" />}
-            />
-            <ExternalMenuItem
-              label={t('auto.components.sidebar.SidebarSettingsHelpMenu.5f83d86d92', 'Changelog')}
-              url={CHANGELOG_URL}
-              icon={<ScrollText className="size-3.5" />}
-            />
-            <DropdownMenuSeparator />
-            <ExternalMenuItem
-              label={t('auto.components.sidebar.SidebarSettingsHelpMenu.5687ab246a', 'GitHub')}
-              url={GITHUB_URL}
-              icon={<Github className="size-3.5" />}
-            />
-            <DropdownMenuItem onSelect={() => openAppHttpLink(DISCORD_URL)}>
-              <DiscordIcon className="size-3.5" />
-              {t('auto.components.sidebar.SidebarSettingsHelpMenu.eb9884e55b', 'Discord')}
-              <ExternalLink className="ml-auto size-3 text-muted-foreground" />
-            </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => openAppHttpLink(X_URL)}>
-              <XIcon />
-              {t('auto.components.sidebar.SidebarSettingsHelpMenu.c4f8e1b72a', 'X')}
-              <ExternalLink className="ml-auto size-3 text-muted-foreground" />
-            </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem
               disabled={updateStatus.state === 'checking' || updateStatus.state === 'downloading'}
