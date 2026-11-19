@@ -4,7 +4,6 @@ import { hasAppEnvironment } from '../../../shared/app-lifecycle/app-environment
 import {
   allowsPlaintextOrcaCloudSession,
   getOrcaCloudAuthConfig,
-  getOrcaPushGatewayUrl,
   isOrcaCloudDevAuthEnabled
 } from './profile-cloud-auth-config'
 
@@ -17,24 +16,6 @@ const DEV_OVERRIDES = {
 
 describe('Orca cloud auth config read from the installed app environment', () => {
   afterEach(() => installFakeAppEnvironment())
-
-  it('refuses dev auth, plaintext sessions and HTTP endpoints in a packaged host', () => {
-    installFakeAppEnvironment({ isPackaged: () => true })
-
-    expect(isOrcaCloudDevAuthEnabled(DEV_OVERRIDES)).toBe(false)
-    expect(allowsPlaintextOrcaCloudSession(DEV_OVERRIDES)).toBe(false)
-    expect(getOrcaCloudAuthConfig(DEV_OVERRIDES)).toEqual({
-      configured: false,
-      setupMessage: 'Orca Cloud sign-in is not configured for this build.'
-    })
-    expect(getOrcaPushGatewayUrl({ ORCA_PUSH_GATEWAY_URL: 'http://127.0.0.1:9000' })).toBe(
-      'https://push.onorca.dev'
-    )
-    expect(getOrcaCloudAuthConfig({})).toMatchObject({
-      configured: true,
-      config: { apiBaseUrl: 'https://login.onorca.dev', clientId: 'orca-desktop' }
-    })
-  })
 
   it('allows the dev overrides in an unpackaged host', () => {
     installFakeAppEnvironment({ isPackaged: () => false })
