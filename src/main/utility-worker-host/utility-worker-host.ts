@@ -97,10 +97,7 @@ export class UtilityWorkerHost {
           }
         }
       },
-      outOfMemory: () => {
-        this.recordWorkerOutOfMemory(host, worker)
-        this.recordCrashUnlessLost(host)
-      },
+      outOfMemory: () => this.workerOutOfMemory(host, worker),
       // A lost host keeps its workers listed for the exit breadcrumb; retiring it clears them.
       exited: (exited) => {
         if (!host.lossCounted && host.workers.get(id) === exited) {
@@ -231,8 +228,7 @@ export class UtilityWorkerHost {
   ): void {
     host.workers.delete(worker.id)
     if (error?.code && RESOURCE_START_FAILURES.has(error.code)) {
-      this.recordWorkerOutOfMemory(host, worker, error.code)
-      this.recordCrashUnlessLost(host)
+      this.workerOutOfMemory(host, worker, error.code)
       worker.fail(error, 1)
     } else {
       this.neverHost.add(worker.spawn.filename)
@@ -263,15 +259,12 @@ export class UtilityWorkerHost {
   }
 
   /** The host outlives a worker's own OOM, so no exit breadcrumb would name what it was doing. */
-  private recordWorkerOutOfMemory(host: Host, worker: HostedWorker, code?: string): void {
+  private workerOutOfMemory(host: Host, worker: HostedWorker, code?: string): void {
     // A lost host's exit breadcrumb already names its workers' reads.
     if (!quitting && !host.lossCounted) {
       recordWorkerOutOfMemoryBreadcrumb(this.serviceName, host, worker, code, this.exitContext)
     }
-  }
-
-  /** A worker's own failure, heard while its host drains, is part of the host loss already counted. */
-  private recordCrashUnlessLost(host: Host): void {
+    // A worker's own failure, heard while its host drains, is part of the host loss already counted.
     if (!host.lossCounted) {
       this.crashLoop?.record()
     }
