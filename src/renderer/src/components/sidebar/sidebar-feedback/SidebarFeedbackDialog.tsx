@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -55,7 +55,7 @@ export function SidebarFeedbackDialog({
   const { viewer, ghStatus, isRecheckingGh, setViewer, setGhStatus, refreshGhStatus } =
     useSidebarFeedbackGhStatus({ open, mountedRef })
   const isViewerLoading = ghStatus === 'checking'
-  const isSubmittingRef = useRef(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const {
     images,
     pendingImageReadCount,
@@ -67,8 +67,8 @@ export function SidebarFeedbackDialog({
     clearImages,
     hasPendingImageReads,
     getReservedImageCapacity
-  } = useSidebarFeedbackImages({ open, isSubmitting: isSubmittingRef.current, mountedRef })
-  const { isSubmitting, handleSubmit } = useSidebarFeedbackSubmit({
+  } = useSidebarFeedbackImages({ open, isSubmitting, mountedRef })
+  const { handleSubmit } = useSidebarFeedbackSubmit({
     useGitHubIssueFeedback: USE_GITHUB_ISSUE_FEEDBACK,
     feedback,
     submitAnonymously,
@@ -80,10 +80,11 @@ export function SidebarFeedbackDialog({
     clearFeedbackDraft,
     clearImages,
     onOpenChange,
+    isSubmitting,
+    setIsSubmitting,
     setViewer,
     setGhStatus
   })
-  isSubmittingRef.current = isSubmitting
 
   // Read committed text at call time so late prefill cannot overwrite typing.
   const setFeedback = React.useCallback(

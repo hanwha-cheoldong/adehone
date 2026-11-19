@@ -1,4 +1,4 @@
-import { useCallback, useState, type RefObject } from 'react'
+import { useCallback, type Dispatch, type RefObject, type SetStateAction } from 'react'
 import { toast } from 'sonner'
 import { translate } from '@/i18n/i18n'
 import { useAppStore } from '@/store/index'
@@ -41,10 +41,11 @@ export function useSidebarFeedbackSubmit(params: {
   clearFeedbackDraft: () => void
   clearImages: () => void
   onOpenChange: (open: boolean) => void
+  isSubmitting: boolean
+  setIsSubmitting: Dispatch<SetStateAction<boolean>>
   setViewer: (viewer: GitHubViewer | null) => void
   setGhStatus: (status: FeedbackGhCliStatus) => void
 }): {
-  isSubmitting: boolean
   handleSubmit: () => Promise<void>
 } {
   const {
@@ -59,10 +60,11 @@ export function useSidebarFeedbackSubmit(params: {
     clearFeedbackDraft,
     clearImages,
     onOpenChange,
+    isSubmitting,
+    setIsSubmitting,
     setViewer,
     setGhStatus
   } = params
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = useCallback(async (): Promise<void> => {
     if (isSubmitting || hasPendingImageReads()) {
@@ -239,11 +241,12 @@ export function useSidebarFeedbackSubmit(params: {
     mountedRef,
     onOpenChange,
     setGhStatus,
+    setIsSubmitting,
     setViewer,
     submitAnonymously,
     useGitHubIssueFeedback,
     viewer
   ])
 
-  return { isSubmitting, handleSubmit }
+  return { handleSubmit }
 }
