@@ -14562,7 +14562,20 @@
           "imageReadFailed": "Could not read the attached images. Try attaching them again.",
           "imagesNotDelivered": "Feedback sent, but image delivery could not be confirmed.",
           "imagesNotIncluded": "Feedback sent. Your screenshots could not be uploaded and were not included.",
-          "imagesRejected": "Feedback sent. Your screenshots were too large to upload and were not included."
+          "imagesRejected": "Feedback sent. Your screenshots were too large to upload and were not included.",
+          "openInGitHub": "Open in GitHub",
+          "submitsToAdehoneRepo": "Creates an issue in {{repo}}",
+          "ghNotInstalledTitle": "GitHub CLI (gh) is not installed",
+          "ghNotInstalledDescription": "Install GitHub CLI and sign in to submit feedback with screenshots directly to Adehone. Without it, sending opens the GitHub issue form in your browser.",
+          "installGhCli": "Install GitHub CLI",
+          "recheckGhCli": "Re-check",
+          "ghNotAuthenticatedTitle": "GitHub CLI is not signed in",
+          "ghNotAuthenticatedDescription": "Run this command in a terminal to submit directly from Adehone, or continue in your browser:",
+          "ghAuthGuide": "Auth guide",
+          "ghUnavailable": "GitHub CLI status is unavailable. Sending will open the GitHub issue form in your browser.",
+          "browserFallbackWithImages": "Opened GitHub in your browser. Please attach your screenshots there before submitting.",
+          "browserFallbackOpened": "Opened the Adehone GitHub issue form in your browser.",
+          "openCreatedIssue": "Open issue"
         },
         "SidebarFeedbackImageAttachments": {
           "attachImages": "Attach",
