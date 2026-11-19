@@ -6024,7 +6024,6 @@
             "7ac885bd2f": "Klasörü İndir",
             "98a79948b3": "Kopyala",
             "a06551beee": "Enter",
-            "a4029c996b": "'{{value0}}' klasörü indirildi",
             "addc01145f": "Sil",
             "b234ab25b4": "Dosya panoya kopyalanamadı",
             "b3e288bf41": "'{{value0}}' indirilemedi.",
@@ -6038,7 +6037,6 @@
             "e26010014a": ".gitignore tarafından yok sayılıyor",
             "e887fa4b2e": "Terminal'de Aç",
             "f61af83316": "Yeni Klasör",
-            "f729bcd97d": "'{{value0}}' klasörü indirilemedi.",
             "f9d7ca753d": "Yolları Kopyala",
             "fc747429bf": "Yeniden Adlandır",
             "openContainingFolder": "İçeren Klasörü Aç",
@@ -9655,7 +9653,7 @@
           "noActiveLinks": "Etkin bağlantı yok.",
           "olderPairingMethod": "Eski bir eşleştirme yöntemi kullanıyor. Bu bağlantıyı kullanan cihazda Adehone'yı güncelleyin.",
           "revoke": "İptal et",
-          "sshAccessCaveat": "Buradan erişimi iptal etmek, bu bilgisayara SSH erişimi olan birinin yeniden eşleştirme yapmasını engellemez. Bağlantısını kesmek için SSH erişimini kaldırın."
+          "sshAccessCaveat": "Bir bağlantıyı iptal etmek, açtığı terminallerde oluşturulan bağlantıları da iptal eder. Bu bilgisayarda SSH ya da bir bağlantı üzerinden terminali olan herkes yine yeniden eşleştirme yapabilir."
         },
         "RuntimeEnvironmentsPane": {
           "05e0fc3ebf": "Şuna geç:",
@@ -13960,6 +13958,8 @@
           "4dc5b5065b": "Kaldır",
           "b79b39d865": "Projeyi Kaldır",
           "d36883e046": "İptal",
+          "linkedWorkspaceWarning_one": "Bu projedeki {{count}} çalışma alanı da Orca'dan kaldırılacak.",
+          "linkedWorkspaceWarning_other": "Bu projedeki {{count}} çalışma alanı da Orca'dan kaldırılacak.",
           "openTerminalWarning_one": "Bu projedeki {{count}} açık terminal kapatılacak.",
           "openTerminalWarning_other": "Bu projedeki {{count}} açık terminal kapatılacak.",
           "removeDescriptionLocal": "Bu işlem yalnızca {{name}} öğesini Adehone'dan kaldırır. Hâlâ diskinizde bulunur.",
@@ -13979,9 +13979,6 @@
           "wslStoppedTitle": "WSL dağıtımı {{value0}} durduruldu",
           "wslUnverifiableTitle": "WSL dağıtımı {{value0}} öğesinin çalıştığı doğrulanamadı",
           "xcodeLicense": "Git'in çalışabilmesi için önce Apple geliştirici araçlarının lisansını kabul etmeniz gerekir."
-        },
-        "ScrollToCurrentWorkspaceToolbarButton": {
-          "23989bb663": "Etkin çalışma alanını göster"
         },
         "SetupGuideSidebarEntry": {
           "88d402b71d": "Başlangıç kontrol listesi",
@@ -17754,8 +17751,8 @@
         }
       },
       "projectHostSetupOptions": {
-        "hostLocalGitProject": "Bu projenin eşleşen bir Git uzak deposu yok",
-        "hostLocalFolderProject": "Klasör projeleri diğer sunuculara bağlanamaz"
+        "hostLocalFolderProject": "Klasör projeleri diğer sunuculara bağlanamaz",
+        "hostLocalGitProject": "Bu projenin eşleşen bir Git uzak deposu yok"
       },
       "projectSkillRuntime": {
         "distroMissing": "Seçilen WSL dağıtımı kullanılamıyor. Kullanılabilir bir dağıtım seçin veya bu projeyi Windows'a geçirin.",
@@ -18295,6 +18292,46 @@
       "skippedSinceApproved": "Dalının adehone.yaml kurulum komutları değiştiği için bu çalıştırmada kurulum çalışmadı. Komutlar o zamandan beri onaylandı; sonraki çalıştırmalar onları çalıştıracak."
     }
   },
+  "bots": {
+    "activity": {
+      "title": "Etkinlik"
+    },
+    "connectors": {
+      "tab": "Bağlayıcılar"
+    },
+    "files": {
+      "tab": "Dosyalar"
+    },
+    "upcoming": {
+      "tidyNightAfter": "Her gece {{from}} sonrasında veya bu bilgisayar uyandığında",
+      "tidyWeekAfter": "Haftada bir, {{from}} sonrasında veya bu bilgisayar uyandığında",
+      "lookDueNow": "Şimdi zamanı · {{every}}"
+    },
+    "palette": {
+      "placeholder": "Botlarda, sohbetlerde, terminallerde, çalışma alanlarında, görevlerde, ayarlarda ve işlemlerde ara...",
+      "description": "Botlarda, sohbetlerde, terminallerde, çalışma alanlarında, görevlerde, ayarlarda ve işlemlerde ara",
+      "scopedPlaceholder": "Botlarda ara...",
+      "scopedLabel": "Botlarda ara",
+      "scopeHint": "Yalnızca botları göstermek için @ yazın",
+      "chip": "Botlar",
+      "chipLabel": "Botlar, her şeyi göster",
+      "searchEverything": "Her yerde \"{{text}}\" ara",
+      "searchBotsFor": "Botlarda \"{{text}}\" ara",
+      "noMatch": "\"{{text}}\" ile eşleşen bot yok",
+      "noBotsYet": "Henüz bot yok",
+      "filtersPaused": "Filtreler botlara değil çalışma alanlarına uygulanır",
+      "showEverything": "Her şeyi göster",
+      "footerBots": "Botlar",
+      "matchesPurpose": "Amacıyla eşleşiyor.",
+      "scopedStatus_one": "Yalnızca botlar gösteriliyor. {{count}} sonuç bulundu.",
+      "scopedStatus_other": "Yalnızca botlar gösteriliyor. {{count}} sonuç bulundu.",
+      "sidebarSearchLabel": "Botlarda, çalışma alanlarında ve tarayıcı sekmelerinde ara",
+      "section": "Botlar"
+    },
+    "templates": {
+      "browse": "Şablonlara göz at"
+    }
+  },
   "browser": {
     "clientHosted": {
       "download": {
@@ -18760,8 +18797,8 @@
     "crash": {
       "report": {
         "CrashReportDialogSurface": {
-          "closedSummary": "Bunu düzeltebilmemiz için gizliliği koruyan bir rapor gönderin.",
-          "closedNotesQuestion": "Ne yapıyordunuz? (isteğe bağlı)"
+          "closedNotesQuestion": "Ne yapıyordunuz? (isteğe bağlı)",
+          "closedSummary": "Bunu düzeltebilmemiz için gizliliği koruyan bir rapor gönderin."
         }
       }
     },
@@ -19496,7 +19533,7 @@
       },
       "rewind": {
         "action": "Buraya geri dön",
-        "busy": "Ajan boşta olduğunda ve sohbette sizden yanıt bekleyen bir işlem kalmadığında kullanılabilir.",
+        "busy": "Sohbet boştayken kullanılabilir",
         "cancel": "İptal",
         "confirm": "Geri dön",
         "confirmation": "Bu mesaj ve sonrasındaki her şey silinsin mi? Mesaj, düzenleyip yeniden gönderebilmeniz için yazma kutusuna geri getirilir. Diskteki dosya değişiklikleri korunur.",
@@ -20013,14 +20050,14 @@
       "bitbucket": {
         "credentials": {
           "dialog": {
+            "accessTokenNeeds": "Pull request'lere okuma erişimi gerekir.",
+            "apiBaseUrl": "API temel URL'si",
+            "atlassianEmail": "Atlassian e-postası",
+            "close": "Kapat",
             "createToken": "Oluştur",
             "environmentManagedLine": "ORCA_BITBUCKET_* ortam değişkenleriyle ayarlandı. Burada kaydetmek için bunları kaldırın.",
-            "savedLocallyOnly": "Yalnızca bu bilgisayara kaydedilir.",
-            "accessTokenNeeds": "Pull request'lere okuma erişimi gerekir.",
-            "atlassianEmail": "Atlassian e-postası",
             "requiredScopes": "Gerekli kapsamlar",
-            "apiBaseUrl": "API temel URL'si",
-            "close": "Kapat",
+            "savedLocallyOnly": "Yalnızca bu bilgisayara kaydedilir.",
             "verifyingEllipsis": "Doğrulanıyor…"
           }
         }
@@ -20065,12 +20102,12 @@
         "turnDiffsTitle": "Tur farkları"
       },
       "recoverServer": {
-        "titleOnHost": "{{host}} üzerindeki eski kilit kaldırılsın mı?",
-        "titleGeneric": "Eski kilit kaldırılsın mı?",
-        "summary": "Önceki bir çalıştırma kilit bıraktığı için Orca'nın sunucusu başlatılamıyor.",
+        "clearing": "Kaldırılıyor…",
         "confirmCheckHomeFolder": "Bu ana klasörü paylaşan başka hiçbir makine Orca çalıştırmıyor",
         "details": "Ayrıntılar",
-        "clearing": "Kaldırılıyor…"
+        "summary": "Önceki bir çalıştırma kilit bıraktığı için Orca'nın sunucusu başlatılamıyor.",
+        "titleGeneric": "Eski kilit kaldırılsın mı?",
+        "titleOnHost": "{{host}} üzerindeki eski kilit kaldırılsın mı?"
       },
       "repositoryHooks": {
         "availableEnvVars": "Kullanılabilir ortam değişkenleri"
@@ -20237,17 +20274,17 @@
     },
     "shared": {
       "useDaemonActions": {
-        "restartFailed": "Terminal hizmeti yeniden başlatılamadı.",
         "killAllSessionsDescription": "Açık sekmesi olmayanlar dahil her terminal oturumunu ve ajanlarını sonlandırır. Kaydedilmemiş çalışmalar kaybolur.",
+        "restartFailed": "Terminal hizmeti yeniden başlatılamadı.",
         "someSessionsUnchecked": "Some sessions couldn’t be checked."
       }
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "{{name}} Orca'dan kaldırılsın mı?",
-        "ghostHostLine": "{{host}} artık kayıtlı bir ana makine değil. Dosyalar orada kalır.",
         "disconnectedHostLine": "{{host}} bağlı değil. Dosyalar ana makinede kalır.",
         "filesStayLine": "Dosyalar {{host}} üzerinde kalır.",
+        "ghostHostLine": "{{host}} artık kayıtlı bir ana makine değil. Dosyalar orada kalır.",
+        "removeFromOrcaTitle": "{{name}} Orca'dan kaldırılsın mı?",
         "removing": "Kaldırılıyor…"
       }
     },
@@ -20300,13 +20337,13 @@
     "terminal": {
       "pane": {
         "CloseTerminalDialog": {
-          "stopChatAgentTitle": "Bu sohbetteki ajan durdurulsun mu?",
-          "stopAgentInWorkspaceTitle": "“{{name}}” içindeki ajan durdurulsun mu?",
-          "stopRunningCommandTitle": "Çalışan komut durdurulsun mu?",
           "agentWorkStops": "Mevcut çalışması durur ve devam etmez.",
           "sleepWorkspaceInstead": "Bunun yerine çalışma alanını uyut",
+          "stopAgentInWorkspaceTitle": "“{{name}}” içindeki ajan durdurulsun mu?",
           "stopAgentSentence": "Ajanı durdur",
-          "stopAndClose": "Durdur ve kapat"
+          "stopAndClose": "Durdur ve kapat",
+          "stopChatAgentTitle": "Bu sohbetteki ajan durdurulsun mu?",
+          "stopRunningCommandTitle": "Çalışan komut durdurulsun mu?"
         }
       }
     },
@@ -20598,16 +20635,16 @@
     }
   },
   "crashReport": {
+    "copyDetails": "Ayrıntıları kopyala",
+    "details": "Ayrıntılar",
+    "dontSend": "Gönderme",
     "freeze": {
       "includeRedacted": "Kaydedilmiş donma raporunu ve son günlükleri ekle (maskelenmiş)",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "Son günlükleri ekle (maskelenmiş)",
-    "details": "Ayrıntılar",
-    "copyDetails": "Ayrıntıları kopyala",
-    "dontSend": "Gönderme",
-    "sending": "Gönderiliyor…",
-    "sendReport": "Raporu gönder"
+    "sendReport": "Raporu gönder",
+    "sending": "Gönderiliyor…"
   },
   "csv": {
     "columns": "Sütunlar",
@@ -21466,8 +21503,6 @@
     "whyTitle": "Bu neden değişiyor?"
   },
   "mediaPreview": {
-    "openDefault": "Varsayılan uygulamada aç",
-    "openFailed": "Bu dosya varsayılan uygulamada açılamadı.",
     "unavailable": "Bu medya dosyası oynatılamıyor. Dosya kullanılamıyor olabilir veya desteklenmeyen bir codec kullanıyor olabilir."
   },
   "menu": {
@@ -21535,6 +21570,7 @@
     }
   },
   "nativeChat": {
+    "linkedMessageMissing": "Bu mesaj bulunamadı.",
     "math": {
       "scrollDisplayEquation": "Denklemi kaydır"
     }
@@ -22234,6 +22270,13 @@
         "zcodeToggleDescription": "ZCode Coding Plan kota kullanımını göster."
       }
     },
+    "bots": {
+      "tidyUp": {
+        "everyNightLine": "Her gece 03.00'ten sonra veya bu bilgisayar uyandığında",
+        "everyWeekLine": "Haftada bir, 03.00'ten sonra veya bu bilgisayar uyandığında",
+        "everyDescriptionAwake": "Bilgisayar o saatte uykudaysa, uyandığında çalışır. Yalnızca yeni sohbet olan gecelerin ardından. Her düzenleme, kısa bir sohbet gibi {{agent}} planını kullanır."
+      }
+    },
     "browser": {
       "clientHostedRemote": {
         "optionDevice": "Bu cihaz",
@@ -22760,6 +22803,16 @@
         "targetNotFolder": "\"{{name}}\" bu konumda zaten var ve bir klasör değil."
       }
     },
+    "revealCurrent": {
+      "label": "Geçerli olanı göster",
+      "noWorkspace": "Açık bir şey yok",
+      "fullPageView": "Bu sayfanın kenar çubuğunda satırı yok",
+      "archived": "Arşivlenmiş çalışma alanları kenar çubuğunda listelenmez",
+      "botsOff": "Botlar kapalı, bu yüzden bu bot listelenmiyor",
+      "botHidden": "Bu bot duraklatıldı ve Bot seçenekleriyle gizlendi",
+      "renameBotPage": "Bir botun veya grubun sayfası bir worktree değildir. Yeniden adlandırmak için satırının menüsündeki Yeniden Adlandır’ı kullanın.",
+      "renameUnlisted": "Bu çalışma alanı şu anda kenar çubuğunda listelenmiyor, bu yüzden orada yeniden adlandırılamaz."
+    },
     "revealFiltered": {
       "cancel": "Filtreleri koru",
       "confirm": "Filtreleri ayarla ve göster",
@@ -22770,19 +22823,19 @@
       "loading": "Çalışma alanları bulunuyor…"
     },
     "worktreeCardsIntroNotice": {
-      "title": "Yeni kartları deneyin",
-      "dismiss": "Şimdi değil",
       "body": "Her kartta ajan durumu, okunmamış noktaları ve alt öğe özetleri.",
+      "classic": "Klasik",
+      "dismiss": "Şimdi değil",
+      "keep": "Yeniyi koru",
+      "keptBody": "Buradan, Kart stili altında değiştirin.",
+      "keptTitle": "Yeni kartlar açık",
+      "laterToast": "Yeni kartları istediğiniz zaman deneyin: Çalışma alanı seçenekleri › Kart stili",
+      "new": "Yeni",
+      "saveFailedToast": "Kart stili kaydedilemedi. Tekrar deneyin.",
       "switchBack": "İstediğiniz zaman geri dönün: <path>Çalışma alanı seçenekleri › Kart stili</path>",
       "switchLabel": "Kart stili",
-      "classic": "Klasik",
-      "new": "Yeni",
-      "keep": "Yeniyi koru",
-      "useClassic": "Klasiği kullan",
-      "laterToast": "Yeni kartları istediğiniz zaman deneyin: Çalışma alanı seçenekleri › Kart stili",
-      "saveFailedToast": "Kart stili kaydedilemedi. Tekrar deneyin.",
-      "keptTitle": "Yeni kartlar açık",
-      "keptBody": "Buradan, Kart stili altında değiştirin."
+      "title": "Yeni kartları deneyin",
+      "useClassic": "Klasiği kullan"
     },
     "wslHostOffer": {
       "accept": "Ana makine olarak çalıştır",
@@ -23668,35 +23721,35 @@
   },
   "worktree": {
     "delete": {
-      "loss": {
-        "changes_one": "{{count}} commit edilmemiş değişiklik",
-        "changes_other": "{{count}} commit edilmemiş değişiklik",
-        "uncountedChanges": "Commit edilmemiş değişiklikler",
-        "unsavedFiles_one": "{{count}} kaydedilmemiş dosya",
-        "unsavedFiles_other": "{{count}} kaydedilmemiş dosya",
-        "both": "{{changes}} ve {{files}} kaybolacak",
-        "one": "{{what}} kaybolacak",
-        "all": "{{changes}}, {{files}} ve yok sayılan dosyalar kaybolacak",
-        "withIgnored": "{{what}} ve yok sayılan dosyalar kaybolacak",
-        "ignoredOnly": "Yok sayılan dosyalar kaybolacak"
-      },
-      "showChanges": "Değişiklikleri göster",
-      "unsavedSuffix": "(kaydedilmedi)",
-      "onHost": "{{host}} üzerinde",
-      "forceDeletingEllipsis": "Zorla siliniyor…",
-      "deletingEllipsis": "Siliniyor…",
-      "forceDelete": "Zorla sil",
+      "allVerb": "Tümünü sil",
       "alwaysForceDelete": "Her zaman zorla sil",
       "batchTitle": "{{count}} çalışma alanı silinsin mi?",
       "batchVerb": "{{count}} çalışma alanını sil",
-      "withChildrenTitle_one": "{{name}} ve {{count}} alt çalışma alanı silinsin mi?",
-      "withChildrenTitle_other": "{{name}} ve {{count}} alt çalışma alanı silinsin mi?",
-      "allVerb": "Tümünü sil",
+      "changesIncomplete": "Bazı değişiklikler tam olarak kontrol edilemedi.",
+      "deletingEllipsis": "Siliniyor…",
+      "errorDetails": "Ayrıntılar",
+      "forceDelete": "Zorla sil",
+      "forceDeletingEllipsis": "Zorla siliniyor…",
+      "forceExplanation": "Git, değişiklikler olduğu için silemedi. Zorla silme işlemi bu değişiklikleri de siler.",
+      "loss": {
+        "all": "{{changes}}, {{files}} ve yok sayılan dosyalar kaybolacak",
+        "both": "{{changes}} ve {{files}} kaybolacak",
+        "changes_one": "{{count}} commit edilmemiş değişiklik",
+        "changes_other": "{{count}} commit edilmemiş değişiklik",
+        "ignoredOnly": "Yok sayılan dosyalar kaybolacak",
+        "one": "{{what}} kaybolacak",
+        "uncountedChanges": "Commit edilmemiş değişiklikler",
+        "unsavedFiles_one": "{{count}} kaydedilmemiş dosya",
+        "unsavedFiles_other": "{{count}} kaydedilmemiş dosya",
+        "withIgnored": "{{what}} ve yok sayılan dosyalar kaybolacak"
+      },
+      "onHost": "{{host}} üzerinde",
+      "showChanges": "Değişiklikleri göster",
       "singleTitle": "{{name}} silinsin mi?",
       "singleVerb": "Çalışma alanını sil",
-      "forceExplanation": "Git, değişiklikler olduğu için silemedi. Zorla silme işlemi bu değişiklikleri de siler.",
-      "errorDetails": "Ayrıntılar",
-      "changesIncomplete": "Bazı değişiklikler tam olarak kontrol edilemedi."
+      "unsavedSuffix": "(kaydedilmedi)",
+      "withChildrenTitle_one": "{{name}} ve {{count}} alt çalışma alanı silinsin mi?",
+      "withChildrenTitle_other": "{{name}} ve {{count}} alt çalışma alanı silinsin mi?"
     },
     "nestedRemoval": {
       "cancel": "İptal",

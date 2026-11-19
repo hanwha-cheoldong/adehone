@@ -28,17 +28,8 @@ import {
 import type { SettingsNavigationBuildOptions } from './settings-navigation-build-options'
 
 export function buildRemoteSettingsSections(
-  {
-    isMac,
-    isWindowsTerminalHost,
-    isWebClient,
-    isDev,
-    repos,
-    projectGroups = [],
-    projectGrouping
-  }: SettingsNavigationBuildOptions,
+  { isMac, isWebClient, isDev }: SettingsNavigationBuildOptions,
   runtimeEnvironmentsSearchEntry: SettingsNavSection['searchEntries'][number],
-  reposById: ReadonlyMap<string, Repo>,
   t: Translate = translate
 ): SettingsNavSection[] {
   const showDesktopOnlySettings = !isWebClient
@@ -142,7 +133,23 @@ export function buildRemoteSettingsSections(
             badge: getPluginsSectionPresentation(t).badge
           }
         ]
-      : []),
+      : [])
+  ]
+}
+
+/** One page per project, last in Settings as projects are last in the sidebar. */
+export function buildProjectSettingsSections(
+  {
+    isWindowsTerminalHost,
+    repos,
+    projectGroups = [],
+    projectGrouping
+  }: SettingsNavigationBuildOptions,
+  reposById: ReadonlyMap<string, Repo>,
+  t: Translate = translate
+): SettingsNavSection[] {
+  // Collapse host-specific repo rows to one project entry using the same inputs as settings panes.
+  return [
     ...projectGroups.flatMap((group) => {
       const owner = projectGroupHookOwner(group)
       return owner
@@ -160,7 +167,6 @@ export function buildRemoteSettingsSections(
           ]
         : []
     }),
-    // Collapse host-specific repo rows to one project entry using the same inputs as settings panes.
     ...buildSettingsProjectList(repos, projectGrouping).map((settingsProject) => {
       const { project, representativeRepoId, setups, checkoutLabel } = settingsProject
       const representativeRepo = reposById.get(representativeRepoId) ?? repos[0]

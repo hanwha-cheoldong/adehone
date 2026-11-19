@@ -2520,7 +2520,7 @@
             "27d863542c": "Browser-Anmerkungen",
             "2a4c4b8e1f": "Kopieren",
             "2fdca7df09": "Ausblenden",
-            "366bf5d62c": "Neuen Tab öffnen",
+            "366bf5d62c": "Neuer Tab",
             "397d9dc923": "Die heruntergeladene Datei konnte nicht angezeigt werden. Möglicherweise wurde sie verschoben oder gelöscht.",
             "39c04fed61": "Download pausiert",
             "40edfa75cb": "Zurück",
@@ -6024,7 +6024,6 @@
             "7ac885bd2f": "Ordner herunterladen",
             "98a79948b3": "Kopieren",
             "a06551beee": "Enter",
-            "a4029c996b": "Ordner „{{value0}}“ heruntergeladen",
             "addc01145f": "Löschen",
             "b234ab25b4": "Die Datei konnte nicht in die Zwischenablage kopiert werden",
             "b3e288bf41": "„{{value0}}“ konnte nicht heruntergeladen werden.",
@@ -6038,7 +6037,6 @@
             "e26010014a": "Durch .gitignore ignoriert",
             "e887fa4b2e": "Im Terminal öffnen",
             "f61af83316": "Ordner erstellen",
-            "f729bcd97d": "Der Ordner „{{value0}}“ konnte nicht heruntergeladen werden.",
             "f9d7ca753d": "Pfade kopieren",
             "fc747429bf": "Umbenennen",
             "openContainingFolder": "Übergeordneten Ordner öffnen",
@@ -9650,7 +9648,7 @@
           "noActiveLinks": "Keine aktiven Links.",
           "olderPairingMethod": "Verwendet eine ältere Kopplungsmethode. Aktualisiere Adehone auf dem Gerät, das diesen Link verwendet.",
           "revoke": "Widerrufen",
-          "sshAccessCaveat": "Ein Widerruf hier verhindert nicht, dass sich jemand mit SSH-Zugriff auf diesen Computer erneut koppelt. Um den Zugriff vollständig zu entziehen, muss der SSH-Zugriff entfernt werden."
+          "sshAccessCaveat": "Wenn du einen Link widerrufst, werden auch Links widerrufen, die in von ihm geöffneten Terminals erstellt wurden. Wer auf diesem Computer ein Terminal nutzen kann, per SSH oder über einen Link, kann sich weiterhin erneut koppeln."
         },
         "RuntimeEnvironmentsPane": {
           "05e0fc3ebf": "Wechseln zu",
@@ -13918,6 +13916,8 @@
           "4dc5b5065b": "Entfernen",
           "b79b39d865": "Projekt entfernen",
           "d36883e046": "Abbrechen",
+          "linkedWorkspaceWarning_one": "{{count}} Arbeitsbereich in diesem Projekt wird ebenfalls aus Orca entfernt.",
+          "linkedWorkspaceWarning_other": "{{count}} Arbeitsbereiche in diesem Projekt werden ebenfalls aus Orca entfernt.",
           "openTerminalWarning_one": "{{count}} offenes Terminal in diesem Projekt wird geschlossen.",
           "openTerminalWarning_other": "{{count}} offene Terminals in diesem Projekt werden geschlossen.",
           "removeDescriptionLocal": "Dies entfernt {{name}} nur aus Adehone. Es bleibt auf dem Datenträger erhalten.",
@@ -13937,9 +13937,6 @@
           "wslStoppedTitle": "WSL-Distribution {{value0}} ist gestoppt",
           "wslUnverifiableTitle": "Konnte nicht bestätigen, dass die WSL-Distribution {{value0}} läuft",
           "xcodeLicense": "Die Apple-Entwicklerwerkzeuge erfordern die Annahme der Lizenz, bevor Git ausgeführt werden kann."
-        },
-        "ScrollToCurrentWorkspaceToolbarButton": {
-          "23989bb663": "Aktiven Arbeitsbereich anzeigen"
         },
         "SetupGuideSidebarEntry": {
           "88d402b71d": "Checkliste für den Einstieg",
@@ -18250,6 +18247,46 @@
       "skippedSinceApproved": "Die Einrichtung wurde bei dieser Ausführung nicht ausgeführt, weil sich die adehone.yaml-Einrichtungsbefehle ihres Branches geändert haben. Sie wurden inzwischen genehmigt, daher führen spätere Ausführungen sie aus."
     }
   },
+  "bots": {
+    "activity": {
+      "title": "Aktivität"
+    },
+    "connectors": {
+      "tab": "Konnektoren"
+    },
+    "files": {
+      "tab": "Dateien"
+    },
+    "upcoming": {
+      "tidyNightAfter": "Jede Nacht ab {{from}} oder sobald dieser Computer wach ist",
+      "tidyWeekAfter": "Einmal pro Woche ab {{from}} oder sobald dieser Computer wach ist",
+      "lookDueNow": "Jetzt fällig · {{every}}"
+    },
+    "palette": {
+      "placeholder": "Bots, Chats, Terminals, Arbeitsbereiche, Aufgaben, Einstellungen und Aktionen suchen…",
+      "description": "Bots, Chats, Terminals, Arbeitsbereiche, Aufgaben, Einstellungen und Aktionen suchen",
+      "scopedPlaceholder": "Bots suchen…",
+      "scopedLabel": "Bots suchen",
+      "scopeHint": "@ eingeben, um nur Bots anzuzeigen",
+      "chip": "Bots",
+      "chipLabel": "Bots, alles anzeigen",
+      "searchEverything": "Überall nach „{{text}}“ suchen",
+      "searchBotsFor": "Bots nach „{{text}}“ durchsuchen",
+      "noMatch": "Keine Bots passen zu „{{text}}“",
+      "noBotsYet": "Noch keine Bots",
+      "filtersPaused": "Filter gelten für Arbeitsbereiche, nicht für Bots",
+      "showEverything": "Alles anzeigen",
+      "footerBots": "Bots",
+      "matchesPurpose": "Passt zum Zweck.",
+      "scopedStatus_one": "Nur Bots werden angezeigt. {{count}} Ergebnis gefunden.",
+      "scopedStatus_other": "Nur Bots werden angezeigt. {{count}} Ergebnisse gefunden.",
+      "sidebarSearchLabel": "Bots, Arbeitsbereiche und Browser-Tabs durchsuchen",
+      "section": "Bots"
+    },
+    "templates": {
+      "browse": "Vorlagen durchsuchen"
+    }
+  },
   "browser": {
     "clientHosted": {
       "download": {
@@ -18718,8 +18755,8 @@
     "crash": {
       "report": {
         "CrashReportDialogSurface": {
-          "closedSummary": "Sende einen datenschutzfreundlichen Bericht, damit wir das beheben können.",
-          "closedNotesQuestion": "Was hast du gerade gemacht? (optional)"
+          "closedNotesQuestion": "Was hast du gerade gemacht? (optional)",
+          "closedSummary": "Sende einen datenschutzfreundlichen Bericht, damit wir das beheben können."
         }
       }
     },
@@ -19457,7 +19494,7 @@
       },
       "rewind": {
         "action": "Bis hierher zurücksetzen",
-        "busy": "Verfügbar, sobald der Agent inaktiv ist und im Chat keine Aktion mehr aussteht.",
+        "busy": "Verfügbar, wenn der Chat inaktiv ist",
         "cancel": "Abbrechen",
         "confirm": "Zurücksetzen",
         "confirmation": "Diese Nachricht und alle folgenden verwerfen? Die Nachricht steht danach wieder im Eingabefeld und kann bearbeitet und erneut gesendet werden. Dateiänderungen auf dem Datenträger bleiben erhalten.",
@@ -19973,14 +20010,14 @@
       "bitbucket": {
         "credentials": {
           "dialog": {
+            "accessTokenNeeds": "Benötigt Lesezugriff auf Pull-Requests.",
+            "apiBaseUrl": "API-Basis-URL",
+            "atlassianEmail": "Atlassian-E-Mail",
+            "close": "Schließen",
             "createToken": "Token erstellen",
             "environmentManagedLine": "Durch ORCA_BITBUCKET_*-Umgebungsvariablen festgelegt. Entferne sie, um hier eines zu speichern.",
-            "savedLocallyOnly": "Wird nur auf diesem Computer gespeichert.",
-            "accessTokenNeeds": "Benötigt Lesezugriff auf Pull-Requests.",
-            "atlassianEmail": "Atlassian-E-Mail",
             "requiredScopes": "Erforderliche Bereiche",
-            "apiBaseUrl": "API-Basis-URL",
-            "close": "Schließen",
+            "savedLocallyOnly": "Wird nur auf diesem Computer gespeichert.",
             "verifyingEllipsis": "Wird geprüft…"
           }
         }
@@ -20025,12 +20062,12 @@
         "turnDiffsTitle": "Durchgangsänderungen"
       },
       "recoverServer": {
-        "titleOnHost": "Alte Sperre auf {{host}} aufheben?",
-        "titleGeneric": "Alte Sperre aufheben?",
-        "summary": "Ein früherer Lauf hat eine Sperre hinterlassen, daher kann Orcas Server nicht starten.",
+        "clearing": "Wird aufgehoben…",
         "confirmCheckHomeFolder": "Kein anderer Rechner, der diesen Home-Ordner teilt, führt Orca aus",
         "details": "Details",
-        "clearing": "Wird aufgehoben…"
+        "summary": "Ein früherer Lauf hat eine Sperre hinterlassen, daher kann Orcas Server nicht starten.",
+        "titleGeneric": "Alte Sperre aufheben?",
+        "titleOnHost": "Alte Sperre auf {{host}} aufheben?"
       },
       "repositoryHooks": {
         "availableEnvVars": "Verfügbare Umgebungsvariablen"
@@ -20197,17 +20234,17 @@
     },
     "shared": {
       "useDaemonActions": {
-        "restartFailed": "Der Terminaldienst konnte nicht neu gestartet werden.",
         "killAllSessionsDescription": "Beendet jede Terminalsitzung und ihre Agenten, auch solche ohne geöffneten Tab. Nicht gespeicherte Arbeit geht verloren.",
+        "restartFailed": "Der Terminaldienst konnte nicht neu gestartet werden.",
         "someSessionsUnchecked": "Some sessions couldn’t be checked."
       }
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "{{name}} aus Orca entfernen?",
-        "ghostHostLine": "{{host}} ist kein gespeicherter Host mehr. Die Dateien bleiben dort.",
         "disconnectedHostLine": "{{host}} ist nicht verbunden. Die Dateien bleiben auf dem Host.",
         "filesStayLine": "Die Dateien bleiben auf {{host}}.",
+        "ghostHostLine": "{{host}} ist kein gespeicherter Host mehr. Die Dateien bleiben dort.",
+        "removeFromOrcaTitle": "{{name}} aus Orca entfernen?",
         "removing": "Wird entfernt…"
       }
     },
@@ -20260,13 +20297,13 @@
     "terminal": {
       "pane": {
         "CloseTerminalDialog": {
-          "stopChatAgentTitle": "Den Agenten in diesem Chat stoppen?",
-          "stopAgentInWorkspaceTitle": "Den Agenten in „{{name}}“ stoppen?",
-          "stopRunningCommandTitle": "Laufenden Befehl stoppen?",
           "agentWorkStops": "Die aktuelle Arbeit wird gestoppt und nicht fortgesetzt.",
           "sleepWorkspaceInstead": "Stattdessen Arbeitsbereich ruhen lassen",
+          "stopAgentInWorkspaceTitle": "Den Agenten in „{{name}}“ stoppen?",
           "stopAgentSentence": "Agenten stoppen",
-          "stopAndClose": "Stoppen und schließen"
+          "stopAndClose": "Stoppen und schließen",
+          "stopChatAgentTitle": "Den Agenten in diesem Chat stoppen?",
+          "stopRunningCommandTitle": "Laufenden Befehl stoppen?"
         }
       }
     },
@@ -20562,16 +20599,16 @@
     }
   },
   "crashReport": {
+    "copyDetails": "Details kopieren",
+    "details": "Details",
+    "dontSend": "Nicht senden",
     "freeze": {
       "includeRedacted": "Gespeicherten Freeze-Bericht und aktuelle Protokolle anhängen (bereinigt)",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "Aktuelle Protokolle anhängen (bereinigt)",
-    "details": "Details",
-    "copyDetails": "Details kopieren",
-    "dontSend": "Nicht senden",
-    "sending": "Wird gesendet…",
-    "sendReport": "Bericht senden"
+    "sendReport": "Bericht senden",
+    "sending": "Wird gesendet…"
   },
   "csv": {
     "columns": "Spalten",
@@ -21435,8 +21472,6 @@
     "whyTitle": "Warum ändert sich das?"
   },
   "mediaPreview": {
-    "openDefault": "In Standard-App öffnen",
-    "openFailed": "Diese Datei konnte nicht in der Standard-App geöffnet werden.",
     "unavailable": "Diese Mediendatei kann nicht wiedergegeben werden. Die Datei ist möglicherweise nicht verfügbar oder verwendet einen nicht unterstützten Codec."
   },
   "menu": {
@@ -21504,6 +21539,7 @@
     }
   },
   "nativeChat": {
+    "linkedMessageMissing": "Diese Nachricht wurde nicht gefunden.",
     "math": {
       "scrollDisplayEquation": "Abgesetzte Gleichung scrollen"
     }
@@ -22203,6 +22239,13 @@
         "zcodeToggleDescription": "Kontingentnutzung des ZCode Coding Plan anzeigen."
       }
     },
+    "bots": {
+      "tidyUp": {
+        "everyNightLine": "Jede Nacht nach 3 Uhr oder sobald dieser Computer wach ist",
+        "everyWeekLine": "Einmal pro Woche nach 3 Uhr oder sobald dieser Computer wach ist",
+        "everyDescriptionAwake": "Schläft dieser Computer zu dieser Zeit, läuft es, sobald er wach ist. Nur nach Nächten mit neuen Chats. Jedes Aufräumen nutzt deinen {{agent}}-Tarif wie ein kurzer Chat."
+      }
+    },
     "browser": {
       "clientHostedRemote": {
         "optionDevice": "Dieses Gerät",
@@ -22621,6 +22664,16 @@
         "targetNotFolder": "„{{name}}“ existiert bereits an diesem Ort und ist kein Ordner."
       }
     },
+    "revealCurrent": {
+      "label": "Aktuelles anzeigen",
+      "noWorkspace": "Nichts ist geöffnet",
+      "fullPageView": "Diese Seite hat keine Zeile in der Seitenleiste",
+      "archived": "Archivierte Arbeitsbereiche werden in der Seitenleiste nicht aufgeführt",
+      "botsOff": "Bots sind ausgeschaltet, daher wird dieser Bot nicht aufgeführt",
+      "botHidden": "Dieser Bot ist pausiert und durch die Bot-Optionen ausgeblendet",
+      "renameBotPage": "Die Seite eines Bots oder einer Gruppe ist kein Worktree. Zum Umbenennen „Umbenennen“ im Menü der Zeile verwenden.",
+      "renameUnlisted": "Dieser Arbeitsbereich wird gerade nicht in der Seitenleiste aufgeführt und kann dort daher nicht umbenannt werden."
+    },
     "revealFiltered": {
       "cancel": "Filter beibehalten",
       "confirm": "Filter anpassen und anzeigen",
@@ -22631,19 +22684,19 @@
       "loading": "Arbeitsbereiche werden gesucht…"
     },
     "worktreeCardsIntroNotice": {
-      "title": "Probiere die neuen Karten aus",
-      "dismiss": "Nicht jetzt",
       "body": "Agentenstatus, Ungelesen-Punkte und Zusammenfassungen untergeordneter Elemente auf jeder Karte.",
+      "classic": "Klassisch",
+      "dismiss": "Nicht jetzt",
+      "keep": "Neue behalten",
+      "keptBody": "Hier unter Kartenstil änderbar.",
+      "keptTitle": "Neue Karten sind aktiv",
+      "laterToast": "Die neuen Karten jederzeit ausprobieren unter Arbeitsbereichsoptionen › Kartenstil",
+      "new": "Neu",
+      "saveFailedToast": "Kartenstil konnte nicht gespeichert werden. Versuche es erneut.",
       "switchBack": "Jederzeit zurückwechseln unter <path>Arbeitsbereichsoptionen › Kartenstil</path>",
       "switchLabel": "Kartenstil",
-      "classic": "Klassisch",
-      "new": "Neu",
-      "keep": "Neue behalten",
-      "useClassic": "Klassisch verwenden",
-      "laterToast": "Die neuen Karten jederzeit ausprobieren unter Arbeitsbereichsoptionen › Kartenstil",
-      "saveFailedToast": "Kartenstil konnte nicht gespeichert werden. Versuche es erneut.",
-      "keptTitle": "Neue Karten sind aktiv",
-      "keptBody": "Hier unter Kartenstil änderbar."
+      "title": "Probiere die neuen Karten aus",
+      "useClassic": "Klassisch verwenden"
     },
     "wslHostOffer": {
       "accept": "Als Host ausführen",
@@ -23529,35 +23582,35 @@
   },
   "worktree": {
     "delete": {
-      "loss": {
-        "changes_one": "{{count}} nicht committete Änderung",
-        "changes_other": "{{count}} nicht committete Änderungen",
-        "uncountedChanges": "Nicht committete Änderungen",
-        "unsavedFiles_one": "{{count}} nicht gespeicherte Datei",
-        "unsavedFiles_other": "{{count}} nicht gespeicherte Dateien",
-        "both": "{{changes}} und {{files}} gehen verloren",
-        "one": "Folgendes geht verloren: {{what}}",
-        "all": "{{changes}}, {{files}} und ignorierte Dateien gehen verloren",
-        "withIgnored": "{{what}} und ignorierte Dateien gehen verloren",
-        "ignoredOnly": "Ignorierte Dateien gehen verloren"
-      },
-      "showChanges": "Änderungen anzeigen",
-      "unsavedSuffix": "(nicht gespeichert)",
-      "onHost": "Auf {{host}}",
-      "forceDeletingEllipsis": "Löschen wird erzwungen…",
-      "deletingEllipsis": "Wird gelöscht…",
-      "forceDelete": "Löschen erzwingen",
+      "allVerb": "Alle löschen",
       "alwaysForceDelete": "Löschen immer erzwingen",
       "batchTitle": "{{count}} Arbeitsbereiche löschen?",
       "batchVerb": "{{count}} Arbeitsbereiche löschen",
-      "withChildrenTitle_one": "{{name}} und {{count}} untergeordneten Arbeitsbereich löschen?",
-      "withChildrenTitle_other": "{{name}} und {{count}} untergeordnete Arbeitsbereiche löschen?",
-      "allVerb": "Alle löschen",
+      "changesIncomplete": "Einige Änderungen konnten nicht vollständig geprüft werden.",
+      "deletingEllipsis": "Wird gelöscht…",
+      "errorDetails": "Details",
+      "forceDelete": "Löschen erzwingen",
+      "forceDeletingEllipsis": "Löschen wird erzwungen…",
+      "forceExplanation": "Git konnte ihn wegen vorhandener Änderungen nicht löschen. Erzwungenes Löschen entfernt diese Änderungen trotzdem.",
+      "loss": {
+        "all": "{{changes}}, {{files}} und ignorierte Dateien gehen verloren",
+        "both": "{{changes}} und {{files}} gehen verloren",
+        "changes_one": "{{count}} nicht committete Änderung",
+        "changes_other": "{{count}} nicht committete Änderungen",
+        "ignoredOnly": "Ignorierte Dateien gehen verloren",
+        "one": "Folgendes geht verloren: {{what}}",
+        "uncountedChanges": "Nicht committete Änderungen",
+        "unsavedFiles_one": "{{count}} nicht gespeicherte Datei",
+        "unsavedFiles_other": "{{count}} nicht gespeicherte Dateien",
+        "withIgnored": "{{what}} und ignorierte Dateien gehen verloren"
+      },
+      "onHost": "Auf {{host}}",
+      "showChanges": "Änderungen anzeigen",
       "singleTitle": "{{name}} löschen?",
       "singleVerb": "Arbeitsbereich löschen",
-      "forceExplanation": "Git konnte ihn wegen vorhandener Änderungen nicht löschen. Erzwungenes Löschen entfernt diese Änderungen trotzdem.",
-      "errorDetails": "Details",
-      "changesIncomplete": "Einige Änderungen konnten nicht vollständig geprüft werden."
+      "unsavedSuffix": "(nicht gespeichert)",
+      "withChildrenTitle_one": "{{name}} und {{count}} untergeordneten Arbeitsbereich löschen?",
+      "withChildrenTitle_other": "{{name}} und {{count}} untergeordnete Arbeitsbereiche löschen?"
     },
     "nestedRemoval": {
       "cancel": "Abbrechen",

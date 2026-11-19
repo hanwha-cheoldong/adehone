@@ -6104,7 +6104,7 @@
           },
           "FileExplorerRow": {
             "0df0e5abac": "Rechercher dans le dossier",
-            "0fec99bfd7": "Doublon",
+            "0fec99bfd7": "Dupliquer",
             "1a3df04ae1": "Ouvert",
             "1bb9be455c": "Ajouter comme projet...",
             "1d8e182c32": "Afficher le fichier",
@@ -6114,7 +6114,6 @@
             "7ac885bd2f": "Télécharger le dossier",
             "98a79948b3": "Copier",
             "a06551beee": "Enter",
-            "a4029c996b": "Dossier « {{value0}} » téléchargé",
             "addc01145f": "Supprimer",
             "b234ab25b4": "Impossible de copier le fichier dans le presse-papiers",
             "b3e288bf41": "Échec du téléchargement de « {{value0}} ».",
@@ -6128,7 +6127,6 @@
             "e26010014a": "Ignoré par .gitignore",
             "e887fa4b2e": "Ouvrir dans le terminal",
             "f61af83316": "Nouveau dossier",
-            "f729bcd97d": "Échec du téléchargement du dossier « {{value0}} ».",
             "f9d7ca753d": "Copier les chemins",
             "fc747429bf": "Renommer",
             "openContainingFolder": "Ouvrir le dossier contenant",
@@ -9793,7 +9791,7 @@
           "noActiveLinks": "Aucun lien actif.",
           "olderPairingMethod": "Utilise une ancienne méthode d’association. Mettez à jour Adehone sur l’appareil qui utilise ce lien.",
           "revoke": "Révoquer",
-          "sshAccessCaveat": "Révoquer l'accès ici n'empêche pas une personne ayant un accès SSH à cet ordinateur de s'associer de nouveau. Pour la bloquer, retirez son accès SSH."
+          "sshAccessCaveat": "Révoquer un lien révoque aussi les liens créés dans les terminaux qu'il a ouverts. Toute personne ayant un terminal sur cet ordinateur, via SSH ou un lien, peut toujours s'associer de nouveau."
         },
         "RuntimeEnvironmentsPane": {
           "05e0fc3ebf": "Basculer vers",
@@ -14096,6 +14094,9 @@
           "4dc5b5065b": "Supprimer",
           "b79b39d865": "Retirer le projet",
           "d36883e046": "Annuler",
+          "linkedWorkspaceWarning_many": "{{count}} espaces de travail de ce projet seront aussi retirés d'Orca.",
+          "linkedWorkspaceWarning_one": "{{count}} espace de travail de ce projet sera aussi retiré d'Orca.",
+          "linkedWorkspaceWarning_other": "{{count}} espaces de travail de ce projet seront aussi retirés d'Orca.",
           "openTerminalWarning_many": "{{count}} terminaux ouverts dans ce projet seront fermés.",
           "openTerminalWarning_one": "{{count}} terminal ouvert dans ce projet sera fermé.",
           "openTerminalWarning_other": "{{count}} terminaux ouverts dans ce projet seront fermés.",
@@ -14116,9 +14117,6 @@
           "wslStoppedTitle": "La distribution WSL {{value0}} est arrêtée",
           "wslUnverifiableTitle": "Impossible de confirmer que la distribution WSL {{value0}} est en cours d'exécution",
           "xcodeLicense": "Les outils de développement Apple nécessitent l’acceptation d’une licence avant que Git puisse s’exécuter."
-        },
-        "ScrollToCurrentWorkspaceToolbarButton": {
-          "23989bb663": "Révéler l'espace de travail actif"
         },
         "SetupGuideSidebarEntry": {
           "88d402b71d": "Checklist d'intégration",
@@ -18546,6 +18544,50 @@
       "skippedSinceApproved": "La configuration n’a pas été exécutée pour cette exécution, car les commandes de configuration adehone.yaml de sa branche ont changé. Elles ont depuis été approuvées : les exécutions suivantes les exécuteront."
     }
   },
+  "bots": {
+    "deepLink": {
+      "missing": "Cette conversation n'est pas ouverte sur cet ordinateur."
+    },
+    "activity": {
+      "title": "Activité"
+    },
+    "connectors": {
+      "tab": "Connecteurs"
+    },
+    "files": {
+      "tab": "Fichiers"
+    },
+    "upcoming": {
+      "tidyNightAfter": "Chaque nuit après {{from}}, ou dès que cet ordinateur est réveillé",
+      "tidyWeekAfter": "Une fois par semaine après {{from}}, ou dès que cet ordinateur est réveillé",
+      "lookDueNow": "Prévu maintenant · {{every}}"
+    },
+    "palette": {
+      "placeholder": "Rechercher bots, chats, terminaux, espaces de travail, tâches, paramètres et actions...",
+      "description": "Rechercher bots, chats, terminaux, espaces de travail, tâches, paramètres et actions",
+      "scopedPlaceholder": "Rechercher des bots...",
+      "scopedLabel": "Rechercher des bots",
+      "scopeHint": "Tapez @ pour n’afficher que les bots",
+      "chip": "Bots",
+      "chipLabel": "Bots, tout afficher",
+      "searchEverything": "Tout rechercher pour « {{text}} »",
+      "searchBotsFor": "Rechercher des bots pour « {{text}} »",
+      "noMatch": "Aucun bot ne correspond à « {{text}} »",
+      "noBotsYet": "Aucun bot pour l’instant",
+      "filtersPaused": "Les filtres s’appliquent aux espaces de travail, pas aux bots",
+      "showEverything": "Tout afficher",
+      "footerBots": "Bots",
+      "matchesPurpose": "Correspond à son rôle.",
+      "scopedStatus_one": "Bots uniquement. {{count}} résultat trouvé.",
+      "scopedStatus_other": "Bots uniquement. {{count}} résultats trouvés.",
+      "scopedStatus_many": "Bots uniquement. {{count}} résultats trouvés.",
+      "sidebarSearchLabel": "Rechercher parmi les bots, les espaces de travail et les onglets du navigateur",
+      "section": "Bots"
+    },
+    "templates": {
+      "browse": "Parcourir les modèles"
+    }
+  },
   "browser": {
     "clientHosted": {
       "download": {
@@ -19018,8 +19060,8 @@
     "crash": {
       "report": {
         "CrashReportDialogSurface": {
-          "closedSummary": "Envoyez un rapport respectueux de la confidentialité pour que nous puissions corriger le problème.",
-          "closedNotesQuestion": "Que faisiez-vous ? (facultatif)"
+          "closedNotesQuestion": "Que faisiez-vous ? (facultatif)",
+          "closedSummary": "Envoyez un rapport respectueux de la confidentialité pour que nous puissions corriger le problème."
         }
       }
     },
@@ -19782,7 +19824,7 @@
       },
       "rewind": {
         "action": "Revenir ici",
-        "busy": "Disponible une fois que l'agent est inactif et que plus rien dans ce chat n'attend votre action.",
+        "busy": "Disponible lorsque le chat est inactif",
         "cancel": "Annuler",
         "confirm": "Revenir",
         "confirmation": "Abandonner ce message et tout ce qui suit ? Le message revient dans le composer pour que vous puissiez le modifier et le renvoyer. Les modifications de fichiers sur le disque sont conservées.",
@@ -20346,14 +20388,14 @@
       "bitbucket": {
         "credentials": {
           "dialog": {
+            "accessTokenNeeds": "Nécessite un accès en lecture aux pull requests.",
+            "apiBaseUrl": "URL de base de l'API",
+            "atlassianEmail": "E-mail Atlassian",
+            "close": "Fermer",
             "createToken": "En créer un",
             "environmentManagedLine": "Défini par les variables d'environnement ORCA_BITBUCKET_*. Supprimez-les pour en enregistrer un ici.",
-            "savedLocallyOnly": "Enregistré uniquement sur cet ordinateur.",
-            "accessTokenNeeds": "Nécessite un accès en lecture aux pull requests.",
-            "atlassianEmail": "E-mail Atlassian",
             "requiredScopes": "Portées requises",
-            "apiBaseUrl": "URL de base de l'API",
-            "close": "Fermer",
+            "savedLocallyOnly": "Enregistré uniquement sur cet ordinateur.",
             "verifyingEllipsis": "Vérification…"
           }
         }
@@ -20403,12 +20445,12 @@
         "usageLimitContinueToggleLabel": "Activer ou désactiver la reprise des chats à la réinitialisation d’une limite"
       },
       "recoverServer": {
-        "titleOnHost": "Supprimer l'ancien verrou sur {{host}} ?",
-        "titleGeneric": "Supprimer l'ancien verrou ?",
-        "summary": "Une exécution précédente a laissé un verrou, le serveur d'Orca ne peut donc pas démarrer.",
+        "clearing": "Suppression…",
         "confirmCheckHomeFolder": "Aucune autre machine partageant ce dossier personnel n'exécute Orca",
         "details": "Détails",
-        "clearing": "Suppression…"
+        "summary": "Une exécution précédente a laissé un verrou, le serveur d'Orca ne peut donc pas démarrer.",
+        "titleGeneric": "Supprimer l'ancien verrou ?",
+        "titleOnHost": "Supprimer l'ancien verrou sur {{host}} ?"
       },
       "repositoryHooks": {
         "availableEnvVars": "Variables d'environnement disponibles"
@@ -20575,17 +20617,17 @@
     },
     "shared": {
       "useDaemonActions": {
-        "restartFailed": "Impossible de redémarrer le service du terminal.",
         "killAllSessionsDescription": "Termine chaque session de terminal et ses agents, y compris ceux sans onglet ouvert. Le travail non enregistré est perdu.",
+        "restartFailed": "Impossible de redémarrer le service du terminal.",
         "someSessionsUnchecked": "Some sessions couldn’t be checked."
       }
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "Retirer {{name}} d'Orca ?",
-        "ghostHostLine": "{{host}} n'est plus un hôte enregistré. Ses fichiers y restent.",
         "disconnectedHostLine": "{{host}} n'est pas connecté. Ses fichiers restent sur l'hôte.",
         "filesStayLine": "Ses fichiers restent sur {{host}}.",
+        "ghostHostLine": "{{host}} n'est plus un hôte enregistré. Ses fichiers y restent.",
+        "removeFromOrcaTitle": "Retirer {{name}} d'Orca ?",
         "removing": "Retrait…"
       }
     },
@@ -20638,13 +20680,13 @@
     "terminal": {
       "pane": {
         "CloseTerminalDialog": {
-          "stopChatAgentTitle": "Arrêter l'agent de cette discussion ?",
-          "stopAgentInWorkspaceTitle": "Arrêter l'agent dans « {{name}} » ?",
-          "stopRunningCommandTitle": "Arrêter la commande en cours ?",
           "agentWorkStops": "Son travail en cours s'arrête et ne reprendra pas.",
           "sleepWorkspaceInstead": "Mettre l'espace de travail en veille à la place",
+          "stopAgentInWorkspaceTitle": "Arrêter l'agent dans « {{name}} » ?",
           "stopAgentSentence": "Arrêter l'agent",
-          "stopAndClose": "Arrêter et fermer"
+          "stopAndClose": "Arrêter et fermer",
+          "stopChatAgentTitle": "Arrêter l'agent de cette discussion ?",
+          "stopRunningCommandTitle": "Arrêter la commande en cours ?"
         }
       }
     },
@@ -20951,16 +20993,16 @@
     }
   },
   "crashReport": {
+    "copyDetails": "Copier les détails",
+    "details": "Détails",
+    "dontSend": "Ne pas envoyer",
     "freeze": {
       "includeRedacted": "Inclure le rapport de blocage enregistré et les journaux récents (expurgés)",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
     },
     "includeRecentLogsRedacted": "Inclure les journaux récents (expurgés)",
-    "details": "Détails",
-    "copyDetails": "Copier les détails",
-    "dontSend": "Ne pas envoyer",
-    "sending": "Envoi…",
-    "sendReport": "Envoyer le rapport"
+    "sendReport": "Envoyer le rapport",
+    "sending": "Envoi…"
   },
   "csv": {
     "columns": "Colonnes",
@@ -21824,8 +21866,6 @@
     "whyTitle": "Pourquoi ce changement ?"
   },
   "mediaPreview": {
-    "openDefault": "Ouvrir dans l’application par défaut",
-    "openFailed": "Impossible d’ouvrir ce fichier dans l’application par défaut.",
     "unavailable": "Impossible de lire ce fichier multimédia. Le fichier peut être indisponible ou utiliser un codec non pris en charge."
   },
   "menu": {
@@ -21893,6 +21933,7 @@
     }
   },
   "nativeChat": {
+    "linkedMessageMissing": "Impossible de trouver ce message.",
     "math": {
       "scrollDisplayEquation": "Faire défiler l'équation affichée"
     }
@@ -22602,6 +22643,13 @@
         "zcodeToggleDescription": "Afficher l'utilisation du quota du plan de codage ZCode."
       }
     },
+    "bots": {
+      "tidyUp": {
+        "everyNightLine": "Chaque nuit après 3 h, ou dès que cet ordinateur est réveillé",
+        "everyWeekLine": "Une fois par semaine après 3 h, ou dès que cet ordinateur est réveillé",
+        "everyDescriptionAwake": "Si cet ordinateur est en veille à ce moment-là, le rangement a lieu dès qu’il est réveillé. Uniquement après les nuits avec de nouvelles discussions. Chaque rangement utilise ton forfait {{agent}}, comme une courte discussion."
+      }
+    },
     "browser": {
       "clientHostedRemote": {
         "optionDevice": "Cet appareil",
@@ -23053,6 +23101,16 @@
         "targetNotFolder": "« {{name}} » existe déjà à cet emplacement et n’est pas un dossier."
       }
     },
+    "revealCurrent": {
+      "label": "Afficher l’élément actuel",
+      "noWorkspace": "Rien n’est ouvert",
+      "fullPageView": "Cette page n’a pas de ligne dans la barre latérale",
+      "archived": "Les espaces de travail archivés ne sont pas listés dans la barre latérale",
+      "botsOff": "Les bots sont désactivés, ce bot n’est donc pas listé",
+      "botHidden": "Ce bot est en pause et masqué par les options des bots",
+      "renameBotPage": "La page d’un bot ou d’un groupe n’est pas un worktree. Pour le renommer, utilisez Renommer dans le menu de sa ligne.",
+      "renameUnlisted": "Cet espace de travail n’est pas listé dans la barre latérale pour le moment, il ne peut donc pas y être renommé."
+    },
     "revealFiltered": {
       "cancel": "Conserver les filtres",
       "confirm": "Ajustez les filtres et révélez",
@@ -23063,19 +23121,19 @@
       "loading": "Recherche des espaces de travail…"
     },
     "worktreeCardsIntroNotice": {
-      "title": "Essayez les nouvelles cartes",
-      "dismiss": "Pas maintenant",
       "body": "Statut des agents, points non lus et résumés des enfants sur chaque carte.",
+      "classic": "Classique",
+      "dismiss": "Pas maintenant",
+      "keep": "Garder le nouveau",
+      "keptBody": "Modifiez-le ici, sous Style des cartes.",
+      "keptTitle": "Les nouvelles cartes sont activées",
+      "laterToast": "Essayez les nouvelles cartes à tout moment depuis Options des espaces de travail › Style des cartes",
+      "new": "Nouveau",
+      "saveFailedToast": "Impossible d'enregistrer le style des cartes. Réessayez.",
       "switchBack": "Revenez en arrière à tout moment dans <path>Options des espaces de travail › Style des cartes</path>",
       "switchLabel": "Style des cartes",
-      "classic": "Classique",
-      "new": "Nouveau",
-      "keep": "Garder le nouveau",
-      "useClassic": "Utiliser le classique",
-      "laterToast": "Essayez les nouvelles cartes à tout moment depuis Options des espaces de travail › Style des cartes",
-      "saveFailedToast": "Impossible d'enregistrer le style des cartes. Réessayez.",
-      "keptTitle": "Les nouvelles cartes sont activées",
-      "keptBody": "Modifiez-le ici, sous Style des cartes."
+      "title": "Essayez les nouvelles cartes",
+      "useClassic": "Utiliser le classique"
     },
     "wslHostOffer": {
       "accept": "Exécuter comme hôte",
@@ -23988,38 +24046,38 @@
   },
   "worktree": {
     "delete": {
-      "loss": {
-        "changes_one": "{{count}} modification non validée",
-        "changes_other": "{{count}} modifications non validées",
-        "changes_many": "{{count}} modifications non validées",
-        "uncountedChanges": "Modifications non validées",
-        "unsavedFiles_one": "{{count}} fichier non enregistré",
-        "unsavedFiles_other": "{{count}} fichiers non enregistrés",
-        "unsavedFiles_many": "{{count}} fichiers non enregistrés",
-        "both": "{{changes}} et {{files}} seront perdus",
-        "one": "Ce qui sera perdu : {{what}}",
-        "all": "{{changes}}, {{files}} et les fichiers ignorés seront perdus",
-        "withIgnored": "{{what}} et les fichiers ignorés seront perdus",
-        "ignoredOnly": "Les fichiers ignorés seront perdus"
-      },
-      "showChanges": "Afficher les modifications",
-      "unsavedSuffix": "(non enregistré)",
-      "onHost": "Sur {{host}}",
-      "forceDeletingEllipsis": "Suppression forcée…",
-      "deletingEllipsis": "Suppression…",
-      "forceDelete": "Forcer la suppression",
+      "allVerb": "Tout supprimer",
       "alwaysForceDelete": "Toujours forcer la suppression",
       "batchTitle": "Supprimer {{count}} espaces de travail ?",
       "batchVerb": "Supprimer {{count}} espaces de travail",
-      "withChildrenTitle_one": "Supprimer {{name}} et {{count}} espace de travail enfant ?",
-      "withChildrenTitle_other": "Supprimer {{name}} et {{count}} espaces de travail enfants ?",
-      "withChildrenTitle_many": "Supprimer {{name}} et {{count}} espaces de travail enfants ?",
-      "allVerb": "Tout supprimer",
+      "changesIncomplete": "Certaines modifications n’ont pas pu être entièrement vérifiées.",
+      "deletingEllipsis": "Suppression…",
+      "errorDetails": "Détails",
+      "forceDelete": "Forcer la suppression",
+      "forceDeletingEllipsis": "Suppression forcée…",
+      "forceExplanation": "Git n’a pas pu le supprimer car il contient des modifications. La suppression forcée les supprime quand même.",
+      "loss": {
+        "all": "{{changes}}, {{files}} et les fichiers ignorés seront perdus",
+        "both": "{{changes}} et {{files}} seront perdus",
+        "changes_many": "{{count}} modifications non validées",
+        "changes_one": "{{count}} modification non validée",
+        "changes_other": "{{count}} modifications non validées",
+        "ignoredOnly": "Les fichiers ignorés seront perdus",
+        "one": "Ce qui sera perdu : {{what}}",
+        "uncountedChanges": "Modifications non validées",
+        "unsavedFiles_many": "{{count}} fichiers non enregistrés",
+        "unsavedFiles_one": "{{count}} fichier non enregistré",
+        "unsavedFiles_other": "{{count}} fichiers non enregistrés",
+        "withIgnored": "{{what}} et les fichiers ignorés seront perdus"
+      },
+      "onHost": "Sur {{host}}",
+      "showChanges": "Afficher les modifications",
       "singleTitle": "Supprimer {{name}} ?",
       "singleVerb": "Supprimer l'espace de travail",
-      "forceExplanation": "Git n’a pas pu le supprimer car il contient des modifications. La suppression forcée les supprime quand même.",
-      "errorDetails": "Détails",
-      "changesIncomplete": "Certaines modifications n’ont pas pu être entièrement vérifiées."
+      "unsavedSuffix": "(non enregistré)",
+      "withChildrenTitle_many": "Supprimer {{name}} et {{count}} espaces de travail enfants ?",
+      "withChildrenTitle_one": "Supprimer {{name}} et {{count}} espace de travail enfant ?",
+      "withChildrenTitle_other": "Supprimer {{name}} et {{count}} espaces de travail enfants ?"
     },
     "nestedRemoval": {
       "cancel": "Annuler",
