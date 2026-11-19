@@ -30,3 +30,28 @@ export type FeedbackSubmitResult =
   | ({ ok: false } & FeedbackRequestFailure & {
         diagnosticBundleFailure?: FeedbackRequestFailure
       })
+
+export type FeedbackGitHubIssueSubmitArgs = {
+  feedback: string
+  images?: FeedbackImageAttachment[]
+}
+
+export type FeedbackGitHubIssueSubmitFailureReason =
+  | 'gh-not-installed'
+  | 'gh-not-authenticated'
+  | 'validation'
+  | 'request-failed'
+
+export type FeedbackGitHubIssueSubmitResult =
+  | {
+      ok: true
+      issueUrl: string
+      issueNumber: number
+      imagesUploaded: number
+      imagesFailedCount: number
+    }
+  | {
+      ok: false
+      error: string
+      reason: FeedbackGitHubIssueSubmitFailureReason
+    }

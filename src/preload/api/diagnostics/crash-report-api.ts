@@ -8,6 +8,8 @@ import type {
   ReactErrorBoundaryReportResult
 } from '../../../shared/crash-reporting/crash-reporting'
 import type {
+  FeedbackGitHubIssueSubmitArgs,
+  FeedbackGitHubIssueSubmitResult,
   FeedbackSubmitArgs,
   FeedbackSubmitResult
 } from '../../../shared/feedback/feedback-submit-contract'
@@ -32,4 +34,7 @@ export type CrashReportsApi = {
 
 export type FeedbackApi = {
   submit: (args: FeedbackSubmitArgs) => Promise<FeedbackSubmitResult>
+  submitGitHubIssue: (
+    args: FeedbackGitHubIssueSubmitArgs
+  ) => Promise<FeedbackGitHubIssueSubmitResult>
 }

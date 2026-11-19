@@ -2267,9 +2267,6 @@
           "descriptionWithSource": "From <file>{{source}}</file>. Saving runs this whenever Adehone creates a worktree for {{repo}}.",
           "notImportedHint": "These settings have no Adehone equivalent and won't be saved."
         },
-        "SidebarFeedbackDialog": {
-          "a828fa4aee": "Share what's working, what's broken, or what Adehone should do next."
-        },
         "SidebarNav": {
           "1b5c41caee": "Adehone Mobile"
         },
