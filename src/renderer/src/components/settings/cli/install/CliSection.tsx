@@ -26,7 +26,7 @@ import { GENERAL_SETTING_ANCHORS } from '../../general/general-setting-anchors'
 import { useCliRegistrationActions } from './use-cli-registration-actions'
 import { useLocalCliSkillFreshnessName } from '../../../../hooks/skills/freshness/use-local-cli-skill-freshness-name'
 import { translate } from '@/i18n/i18n'
-import { useTranslate } from '@/i18n/use-translate'
+import { useTranslate, type Translate } from '@/i18n/use-translate'
 import { formatCliUserFacingDetail } from '@/lib/cli/cli-user-facing-detail'
 import { getShowInFileManagerLabel } from '@/lib/files/os-open/local-file-manager-label'
 
@@ -38,17 +38,29 @@ type CliSectionProps = {
   wslCapabilitiesLoading?: boolean
 }
 
-function getInstallDescription(platform: string): string {
+function getInstallDescription(platform: string, t: Translate): string {
   if (platform === 'darwin') {
-    return 'Register `orca` in /usr/local/bin.'
+    return t(
+      'auto.components.settings.CliSection.installDescriptionDarwin',
+      'Register `orca` in /usr/local/bin.'
+    )
   }
   if (platform === 'linux') {
-    return 'Register `orca-ide` in ~/.local/bin.'
+    return t(
+      'auto.components.settings.CliSection.installDescriptionLinux',
+      'Register `orca-ide` in ~/.local/bin.'
+    )
   }
   if (platform === 'win32') {
-    return 'Register `orca` in your user PATH.'
+    return t(
+      'auto.components.settings.CliSection.installDescriptionWin32',
+      'Register `orca` in your user PATH.'
+    )
   }
-  return 'CLI registration is not yet available on this platform.'
+  return t(
+    'auto.components.settings.CliSection.installDescriptionOther',
+    'CLI registration is not yet available on this platform.'
+  )
 }
 
 function getFallbackCommandName(platform: string): string {
@@ -176,7 +188,7 @@ export function CliSection({
                     )
                   : showDiagnostics
                     ? formatCliUserFacingDetail(status?.detail) ||
-                      getInstallDescription(currentPlatform)
+                      getInstallDescription(currentPlatform, t)
                     : t(
                         'settings.general.cli.description',
                         'Orca’s own terminals already have it.'
