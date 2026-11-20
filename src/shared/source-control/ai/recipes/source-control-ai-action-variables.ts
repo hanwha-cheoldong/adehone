@@ -41,7 +41,7 @@ export const SOURCE_CONTROL_ACTION_VARIABLE_INFO = {
     description:
       'Orca’s built-in prompt for this action, including the context Orca knows how to gather safely.',
     example:
-      'Commit messages include staged diff guidance; PR details include branch comparison guidance; fix actions include the failure summary.'
+      'Commit messages use Conventional Commits with staged diff guidance; PR details output JSON with Problem/Solution and branch comparison; fix actions include the failure summary.'
   },
   branch: {
     description: 'The current source-control branch name.',

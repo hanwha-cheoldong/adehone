@@ -21416,7 +21416,8 @@
       "linkedIssue": "Bu çalışma alanına bağlı GitHub sorun numarası. GitHub sorunu bağlı değilse boştur (GitLab'a bağlı çalışma alanları dahil). Talimat içeren şablonları tercih edin: tek başına \"Fixes #{linkedIssue}\", bağlantı olmadığında \"Fixes #\" olur.",
       "patch": "PR ayrıntılarını oluşturmak için kullanılan, branch'in temel branch'e göre diff'i.",
       "stagedFiles": "Commit mesajı oluşturmak için hazırlama alanına alınmış dosyaların satır sonlarıyla ayrılmış listesi.",
-      "stagedPatch": "Commit mesajı oluşturmak için kullanılan, hazırlama alanına alınmış git yaması."
+      "stagedPatch": "Commit mesajı oluşturmak için kullanılan, hazırlama alanına alınmış git yaması.",
+      "allowedTypes": "İzin verilen Conventional Commits türleri ve açıklamaları."
     },
     "textGeneration": {
       "errors": {
@@ -21611,6 +21612,33 @@
       "switchedIn": "{{workspace}} içinde",
       "thisComputer": "bu bilgisayar",
       "updateHost": "Buradan dal değiştirmek için {{host}} üzerindeki Adehone'yı güncelleyin."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Conventional Commits belirtimine uygun tek bir git commit mesajı oluşturuyorsunuz.\nBiçim: <type>[isteğe bağlı (scope)][isteğe bağlı !]: <description>\nİzin verilen türleri, başlık/gövde/altbilgi kurallarını, dalı, isteğe bağlı bağlı sorunu, hazırlanan dosyaları ve hazırlanan yamayı içerir.",
+        "pullRequest": "Pull request ayrıntılarını oluşturuyorsunuz.\nSıkıştırılmış JSON döndürür: {\"base\",\"title\",\"body\",\"draft\"}\nKuralları (## Problem, ## Solution, bağlı sorun, mevcut bölümler), dal/temel/taslak durumunu, commitleri, değişen dosyaları ve dal diffini içerir.",
+        "branchName": "Kodlama görevini veya kod değişikliklerini özetleyen kısa bir git dal adı oluşturun.\nTek satırda YALNIZCA dal adını yazdırın.\nİlk kullanıcı isteğini (veya şu ana kadarki değişiklikleri) ve ilk ajan yanıtını içerir.",
+        "conversationName": "İlk kullanıcı isteğine dayanarak bu konuşma için kısa ve açıklayıcı bir başlık oluşturun.",
+        "dictationCleanup": "Konuşmacının anlamını değiştirmeden dikte edilen metni (noktalama, büyük/küçük harf ve bariz yazıya dökme hataları) temizleyin.",
+        "fixCommitFailure": "Başarısız git commit işlemini teşhis edin ve düzeltin.\nBaşarısız commit komutunu, hata çıktısını ve stage/çalışma ağacı bağlamını içerir.",
+        "fixPushFailure": "Başarısız git push işlemini teşhis edin ve çözün.\nBaşarısız push komutunu, hata çıktısını ve dal/uzak depo durumunu içerir.",
+        "fixChecks": "Başarısız CI kontrollerini inceleyin ve düzeltin.\nBaşarısız kontrol adlarını, özetleri ve mevcut günlükleri veya açıklamaları içerir.",
+        "resolveConflicts": "Git merge veya rebase çakışmalarını çözün.\nÇakışan dosyaları, mevcut depo durumunu ve çakışma çözme yönergelerini içerir.",
+        "resolveComments": "Seçilen PR inceleme yorumlarını ele alın.\nİnceleme yorum dizilerini, dosya/satır bağlamını ve istenen değişiklikleri uygulama talimatlarını içerir."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "Kaynak Kontrolü Yapay Zeka özelleştirmesini iyileştir",
+      "currentBody": "Kaynak Kontrolü eylemleri için yapılandırılabilir ajanlar ve komut şablonları ekler.",
+      "commitSummary": "a1b2c3d Eylem tarifi varsayılanlarını ekle\nd4e5f6a Komut şablonlarını işle",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "CI'yi düzelt ve sonucu commit et",
+      "assistantMessage": "Başarısız kontrolü inceleyip sorunu düzelteceğim ve testleri çalıştıracağım.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: yeni özellik\n- fix: hata düzeltmesi\n- docs: dokümantasyon değişiklikleri\n- refactor: özellik eklemeden veya hata düzeltmeden kod düzenleme"
     }
   },
   "agentsSidebarIntro": {

@@ -21068,7 +21068,8 @@
       "patch": "PR 세부 정보 생성에 사용할 현재 브랜치와 기준 브랜치 간의 diff입니다.",
       "firstPrompt": "이 워크스페이스 또는 채팅의 첫 번째 사용자 요청입니다.",
       "assistantMessage": "Adehone에서 사용할 수 있는 경우 에이전트의 첫 번째 응답입니다.",
-      "linkedIssue": "이 워크스페이스에 연결된 GitHub 이슈 번호입니다. GitHub 이슈가 연결되지 않으면 비어 있습니다(GitLab에 연결된 워크스페이스 포함). 지시문이 있는 템플릿을 사용하세요. 연결이 없으면 단독 \"Fixes #{linkedIssue}\"는 \"Fixes #\"가 됩니다."
+      "linkedIssue": "이 워크스페이스에 연결된 GitHub 이슈 번호입니다. GitHub 이슈가 연결되지 않으면 비어 있습니다(GitLab에 연결된 워크스페이스 포함). 지시문이 있는 템플릿을 사용하세요. 연결이 없으면 단독 \"Fixes #{linkedIssue}\"는 \"Fixes #\"가 됩니다.",
+      "allowedTypes": "허용된 Conventional Commits 타입과 설명입니다."
     },
     "textGeneration": {
       "errors": {
@@ -21263,6 +21264,33 @@
       "switchedIn": "{{workspace}}에서",
       "thisComputer": "이 컴퓨터",
       "updateHost": "여기서 브랜치를 전환하려면 {{host}}의 Adehone를 업데이트하세요."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Conventional Commits 명세에 따라 단일 git 커밋 메시지를 생성합니다.\n형식: <type>[선택적 (scope)][선택적 !]: <description>\n허용된 타입, 헤더/본문/푸터 규칙, 브랜치, 연결된 이슈(있는 경우), 스테이징된 파일 및 스테이징된 패치를 포함합니다.",
+        "pullRequest": "Pull Request 세부 정보를 생성합니다.\n압축 JSON 반환: {\"base\",\"title\",\"body\",\"draft\"}\n규칙(## Problem, ## Solution, 연결된 이슈, 기존 섹션 유지), 브랜치/기준/초안 상태, 커밋, 변경된 파일 및 브랜치 diff를 포함합니다.",
+        "branchName": "코딩 작업 또는 코드 변경 사항을 요약하는 짧은 git 브랜치 이름을 생성합니다.\n한 줄에 브랜치 이름만 출력합니다.\n첫 번째 사용자 요청(또는 지금까지의 변경 사항)과 에이전트의 첫 응답을 포함합니다.",
+        "conversationName": "첫 번째 사용자 요청을 바탕으로 이 대화의 짧고 설명적인 제목을 생성합니다.",
+        "dictationCleanup": "화자의 의미를 바꾸지 않고 받아쓰기 텍스트의 문장 부호, 대소문자 및 명백한 전사 오류를 정리합니다.",
+        "fixCommitFailure": "실패한 git 커밋을 진단하고 수정합니다.\n실패한 커밋 명령, 오류 출력 및 스테이징/작업 트리 컨텍스트를 포함합니다.",
+        "fixPushFailure": "실패한 git push를 진단하고 해결합니다.\n실패한 push 명령, 오류 출력 및 브랜치/원격 상태를 포함합니다.",
+        "fixChecks": "실패한 CI 체크를 조사하고 수정합니다.\n실패한 체크 이름, 요약 및 사용 가능한 로그 또는 주석을 포함합니다.",
+        "resolveConflicts": "git 병합 또는 리베이스 충돌을 해결합니다.\n충돌 파일, 현재 저장소 상태 및 충돌 해결 안내를 포함합니다.",
+        "resolveComments": "선택한 PR 리뷰 코멘트를 처리합니다.\n리뷰 코멘트 스레드, 파일/줄 컨텍스트 및 요청된 변경 사항 적용 안내를 포함합니다."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "소스 제어 AI 사용자 지정 개선",
+      "currentBody": "소스 제어 작업에 대해 에이전트와 명령 템플릿을 설정할 수 있도록 합니다.",
+      "commitSummary": "a1b2c3d 작업 레시피 기본값 추가\nd4e5f6a 명령 템플릿 렌더링",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "CI 오류를 수정하고 결과를 커밋해줘",
+      "assistantMessage": "실패한 체크를 확인하고 문제를 수정한 뒤 테스트를 실행하겠습니다.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: 새로운 기능\n- fix: 버그 수정\n- docs: 문서 변경\n- refactor: 기능 추가나 버그 수정 없는 코드 리팩터링"
     }
   },
   "rendererRecovery": {

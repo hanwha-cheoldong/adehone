@@ -21274,7 +21274,8 @@
       "linkedIssue": "Die Nummer des mit diesem Arbeitsbereich verknüpften GitHub-Issues. Leer, wenn kein GitHub-Issue verknüpft ist (auch bei mit GitLab verknüpften Arbeitsbereichen). Vorlagen mit Anweisungen bevorzugen: Ein bloßes „Fixes #{linkedIssue}“ wird ohne Verknüpfung zu „Fixes #“.",
       "patch": "Der Diff zwischen dem Branch und dem Basis-Branch für die Generierung der PR-Details.",
       "stagedFiles": "Eine durch Zeilenumbrüche getrennte Liste der vorgemerkten Dateien für die Generierung der Commit-Nachricht.",
-      "stagedPatch": "Der vorgemerkte Git-Patch für die Generierung der Commit-Nachricht."
+      "stagedPatch": "Der vorgemerkte Git-Patch für die Generierung der Commit-Nachricht.",
+      "allowedTypes": "Die zulässigen Conventional-Commits-Typen und ihre Beschreibungen."
     },
     "textGeneration": {
       "errors": {
@@ -21469,6 +21470,33 @@
       "switchedIn": "In {{workspace}}",
       "thisComputer": "diesem Computer",
       "updateHost": "Aktualisiere Adehone auf {{host}}, um von hier aus Branches zu wechseln."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Sie erstellen eine einzelne Git-Commit-Nachricht gemäß der Conventional-Commits-Spezifikation.\nFormat: <type>[optional (scope)][optional !]: <description>\nEnthält zulässige Typen, Regeln für Header/Body/Footer, Branch, optional verknüpftes Issue, gestagte Dateien und gestagten Patch.",
+        "pullRequest": "Sie erstellen Pull-Request-Details.\nGibt kompaktes JSON zurück: {\"base\",\"title\",\"body\",\"draft\"}\nEnthält Regeln (## Problem, ## Solution, verknüpftes Issue, bestehende Abschnitte), Branch-/Basis-/Entwurfsstatus, Commits, geänderte Dateien und Branch-Diff.",
+        "branchName": "Erstellen Sie einen kurzen Git-Branch-Namen, der die Programmieraufgabe oder Codeänderungen zusammenfasst.\nGeben Sie NUR den Branch-Namen in einer einzigen Zeile aus.\nEnthält die erste Benutzeranfrage (oder bisherige Änderungen) und die erste Agentenantwort.",
+        "conversationName": "Erstellen Sie basierend auf der ersten Benutzeranfrage einen kurzen, beschreibenden Titel für diese Unterhaltung.",
+        "dictationCleanup": "Bereinigen Sie das diktierte Transkript (Zeichensetzung, Groß-/Kleinschreibung und offensichtliche Transkriptionsfehler), ohne die Bedeutung zu verändern.",
+        "fixCommitFailure": "Diagnostizieren und beheben Sie den fehlgeschlagenen Git-Commit.\nEnthält den fehlgeschlagenen Commit-Befehl, die Fehlerausgabe sowie den Staging-/Arbeitsbaum-Kontext.",
+        "fixPushFailure": "Diagnostizieren und beheben Sie den fehlgeschlagenen Git-Push.\nEnthält den fehlgeschlagenen Push-Befehl, die Fehlerausgabe sowie den Branch-/Remote-Status.",
+        "fixChecks": "Untersuchen und beheben Sie die fehlgeschlagenen CI-Checks.\nEnthält die Namen der fehlgeschlagenen Checks, Zusammenfassungen und verfügbare Logs oder Anmerkungen.",
+        "resolveConflicts": "Lösen Sie die Git-Merge- oder Rebase-Konflikte.\nEnthält die Konfliktdateien, den aktuellen Repository-Status und Hinweise zur Konfliktlösung.",
+        "resolveComments": "Bearbeiten Sie die ausgewählten PR-Review-Kommentare.\nEnthält die Kommentar-Threads, Datei-/Zeilenkontext und Anweisungen zur Umsetzung der gewünschten Änderungen."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "KI-Anpassung für die Quellcodeverwaltung verbessern",
+      "currentBody": "Fügt konfigurierbare Agenten und Befehlsvorlagen für Quellcodeverwaltungs-Aktionen hinzu.",
+      "commitSummary": "a1b2c3d Standardwerte für Aktionsrezepte hinzufügen\nd4e5f6a Befehlsvorlagen rendern",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "CI beheben und das Ergebnis committen",
+      "assistantMessage": "Ich werde den fehlgeschlagenen Check prüfen, das Problem beheben und Tests ausführen.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: neue Funktion\n- fix: Fehlerbehebung\n- docs: Dokumentationsänderungen\n- refactor: Code-Refactoring ohne neue Funktionen oder Fehlerbehebungen"
     }
   },
   "agentsSidebarIntro": {

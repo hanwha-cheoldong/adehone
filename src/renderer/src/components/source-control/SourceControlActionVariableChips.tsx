@@ -1,8 +1,8 @@
 import type React from 'react'
 import { sourceControlVariableDescription } from './source-control-variable-description'
+import { sourceControlVariableExample } from './source-control-variable-examples'
 import { Braces } from 'lucide-react'
 import {
-  SOURCE_CONTROL_ACTION_VARIABLE_INFO,
   SOURCE_CONTROL_ACTION_VARIABLES,
   type SourceControlActionVariable
 } from '../../../../shared/source-control/ai/recipes/source-control-ai-action-variables'
@@ -55,9 +55,11 @@ function SourceControlVariableSample({
 }
 
 function SourceControlVariableDetails({
+  actionId,
   variable,
   preview
 }: {
+  actionId: AiActionId
   variable: SourceControlActionVariable
   preview?: string
 }): React.JSX.Element {
@@ -75,7 +77,6 @@ function SourceControlVariableDetails({
     )
   }
 
-  const info = SOURCE_CONTROL_ACTION_VARIABLE_INFO[variable]
   return (
     <div className="max-w-80 space-y-2 text-left leading-relaxed">
       <div className="space-y-0.5">
@@ -87,7 +88,7 @@ function SourceControlVariableDetails({
           'auto.components.source.control.SourceControlActionVariableChips.6b921a0ac2',
           'Example'
         )}
-        value={info.example}
+        value={sourceControlVariableExample(variable, actionId, t)}
       />
       {/* Previews supplement the warning that missing linkedIssue turns Fixes #{linkedIssue} into Fixes #. */}
       {preview !== undefined ? (
@@ -145,7 +146,11 @@ export function SourceControlActionVariableChips({
               collisionPadding={12}
               className="scrollbar-sleek max-h-[min(18rem,calc(100vh-2rem))] w-[min(32rem,calc(100vw-2rem))] overflow-y-auto p-2 text-left text-xs"
             >
-              <SourceControlVariableDetails variable={variable} preview={preview} />
+              <SourceControlVariableDetails
+                actionId={actionId}
+                variable={variable}
+                preview={preview}
+              />
             </HoverCardContent>
           </HoverCard>
         )
