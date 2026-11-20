@@ -20,6 +20,7 @@ import {
   deleteOwnedAutomation,
   listOwnedAutomationRuns,
   listOwnedAutomationRunsPage,
+  localizeAutomationActionError,
   runOwnedAutomationNow,
   showOwnedAutomation,
   updateOwnedAutomation,
@@ -96,7 +97,9 @@ async function dispatch<TValue>(
     return {
       ok: false,
       notice: {
-        message: error instanceof Error ? error.message : String(error),
+        message: localizeAutomationActionError(
+          error instanceof Error ? error.message : String(error)
+        ),
         recovery: 'retry',
         severity: 'failure'
       }

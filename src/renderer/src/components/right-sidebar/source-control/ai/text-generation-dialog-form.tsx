@@ -23,6 +23,7 @@ import {
   listCommitMessageAgentCapabilities
 } from '../../../../../../shared/source-control/ai/generation/commit-message-agent-spec'
 import type { ResolvedSourceControlAiGenerationParams } from '../../../../../../shared/source-control/ai/source-control-ai-operation-resolution'
+import { COMMIT_MESSAGE_ALLOWED_TYPES } from '../../../../../../shared/source-control/ai/generation/commit-message-generation'
 import { formatLinkedIssueTemplateValue } from '../../../../../../shared/source-control/ai/recipes/source-control-ai-action-variables'
 import type { SourceControlTextActionId } from '../../../../../../shared/source-control/ai/recipes/source-control-ai-actions'
 import type { SourceControlAiWriteTarget } from '../../../../../../shared/source-control/ai/settings/source-control-ai-recipe-save'
@@ -143,15 +144,15 @@ export function SourceControlTextGenerationDialogForm({
   const params = buildParams(settings)
   // Only chips use workspace previews; synthetic planning keeps empty linkedIssue from blocking repo/global recipe saves.
   const variablePreviews = useMemo(() => {
-    const previews: Record<string, string> = {}
-    if (basePromptPreview) {
-      previews.basePrompt = basePromptPreview
-    }
-    if (linkedIssue !== undefined) {
-      previews.linkedIssue = formatLinkedIssueTemplateValue(linkedIssue)
+    const previews: Record<string, string> = {
+      ...(basePromptPreview ? { basePrompt: basePromptPreview } : {}),
+      ...(linkedIssue !== undefined
+        ? { linkedIssue: formatLinkedIssueTemplateValue(linkedIssue) }
+        : {}),
+      ...(actionId === 'commitMessage' ? { allowedTypes: COMMIT_MESSAGE_ALLOWED_TYPES } : {})
     }
     return Object.keys(previews).length > 0 ? previews : undefined
-  }, [basePromptPreview, linkedIssue])
+  }, [actionId, basePromptPreview, linkedIssue])
   const paramsPlanResult = params ? planSourceControlTextGeneration(actionId, params, t) : null
   const canRunGeneration = Boolean(params && paramsPlanResult?.ok)
   const saving = savingTargetKey !== null

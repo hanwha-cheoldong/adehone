@@ -46,8 +46,9 @@ function git(root, args, options = {}) {
   return execFileSync('git', args, {
     cwd: root,
     encoding: 'utf8',
-    maxBuffer: 64 * 1024 * 1024,
     stdio: ['ignore', 'pipe', 'ignore'],
+    // A sync-sized diff (thousands of renames) overflows the 1 MB default with ENOBUFS.
+    maxBuffer: 256 * 1024 * 1024,
     ...options
   })
 }

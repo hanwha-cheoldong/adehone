@@ -1,3 +1,5 @@
+import { ADEHONE_VERSION, formatAdehoneDisplayVersion } from '../app-display-version'
+
 /** Copy-pasteable client environment fields for bug reports and feedback. */
 export type ClientEnvironmentInfo = {
   appVersion: string
@@ -9,23 +11,34 @@ export type ClientEnvironmentInfo = {
 }
 
 const FOOTER_MARKER = '---'
-const ORCA_LINE_PREFIX = 'Orca:'
+const ADEHONE_LINE_PREFIX = 'Adehone:'
 
 // Strip the whole prefilled footer including optional Shell while retaining user-authored text above and below it.
 const CLIENT_ENVIRONMENT_FOOTER_BLOCK =
-  /(^|\r?\n)---\r?\nOrca:[^\r\n]*\r?\nOS:[^\r\n]*(?:\r?\nShell:[^\r\n]*)?/
+  /(^|\r?\n)---\r?\n(?:Adehone|Orca):[^\r\n]*\r?\nOS:[^\r\n]*(?:\r?\nShell:[^\r\n]*)?/
 
 function normalizeEnvironmentValue(value: string): string {
   return value.trim().replace(/[\r\n]+/g, ' ')
 }
 
+function formatEnvironmentAppVersion(appVersion: string): string {
+  const normalized = normalizeEnvironmentValue(appVersion)
+  if (!normalized || normalized === 'unknown') {
+    return 'unknown'
+  }
+  if (normalized.startsWith(`${ADEHONE_VERSION} (`)) {
+    return normalized
+  }
+  return formatAdehoneDisplayVersion(normalized)
+}
+
 export function formatClientEnvironmentInfo(info: ClientEnvironmentInfo): string {
-  const version = normalizeEnvironmentValue(info.appVersion) || 'unknown'
+  const version = formatEnvironmentAppVersion(info.appVersion)
   const platform = normalizeEnvironmentValue(info.platform) || 'unknown'
   const osRelease = normalizeEnvironmentValue(info.osRelease)
   const arch = normalizeEnvironmentValue(info.arch)
   const osParts = [platform, osRelease, arch ? `(${arch})` : ''].filter(Boolean)
-  const lines = [`${ORCA_LINE_PREFIX} ${version}`, `OS: ${osParts.join(' ')}`]
+  const lines = [`${ADEHONE_LINE_PREFIX} ${version}`, `OS: ${osParts.join(' ')}`]
   const shell = info.shell ? normalizeEnvironmentValue(info.shell) : ''
   if (shell) {
     lines.push(`Shell: ${shell}`)

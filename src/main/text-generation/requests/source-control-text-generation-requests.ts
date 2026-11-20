@@ -1,5 +1,6 @@
 import {
   buildCommitMessagePrompt,
+  COMMIT_MESSAGE_ALLOWED_TYPES,
   splitGeneratedCommitMessage,
   type CommitMessageDraftContext
 } from '../../../shared/source-control/ai/generation/commit-message-generation'
@@ -107,7 +108,8 @@ export async function generateCommitMessage(input: {
           branch: context.branch ?? '(detached)',
           stagedFiles: context.stagedSummary,
           stagedPatch: context.stagedPatch,
-          linkedIssue: formatLinkedIssueTemplateValue(context.linkedIssue)
+          linkedIssue: formatLinkedIssueTemplateValue(context.linkedIssue),
+          allowedTypes: COMMIT_MESSAGE_ALLOWED_TYPES
         })
       : buildCommitMessagePrompt(context, params.customPrompt ?? '', diffBudget)
   )

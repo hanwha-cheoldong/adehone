@@ -33,22 +33,24 @@ export function LinkRoutingPreferenceDialogProvider({
 }): React.JSX.Element {
   const t = useTranslate()
   const nextIdRef = useRef(0)
-  const [queue, setQueue] = useState<LinkRoutingPreferenceDialogRequest[]>([])
+  const [{ queue, lastDisplayedRequest }, setDialogState] = useState<{
+    queue: LinkRoutingPreferenceDialogRequest[]
+    lastDisplayedRequest: LinkRoutingPreferenceDialogRequest | null
+  }>({ queue: [], lastDisplayedRequest: null })
   const activeRequest = queue[0] ?? null
   const activeRequestRef = useRef<LinkRoutingPreferenceDialogRequest | null>(activeRequest)
   const setContextualToursBlockingSurfaceVisible = useAppStore(
     (s) => s.setContextualToursBlockingSurfaceVisible
   )
-  const lastDisplayedRequestRef = useRef<LinkRoutingPreferenceDialogRequest | null>(activeRequest)
-  activeRequestRef.current = activeRequest
-  if (activeRequest) {
-    lastDisplayedRequestRef.current = activeRequest
-  }
   // Why: Radix keeps dialog content mounted while closing; keep copy stable during exit animation.
-  const displayedRequest = activeRequest ?? lastDisplayedRequestRef.current
+  const displayedRequest = activeRequest ?? lastDisplayedRequest
   const openLinksInAppDefault = displayedRequest?.options.openLinksInAppDefault === true
   const isMac = navigator.userAgent.includes('Mac')
   const systemBrowserShortcut = isMac ? '⇧⌘' : 'Shift+Ctrl'
+
+  useEffect(() => {
+    activeRequestRef.current = activeRequest
+  }, [activeRequest])
 
   useEffect(() => {
     setContextualToursBlockingSurfaceVisible(activeRequest !== null)
@@ -63,7 +65,13 @@ export function LinkRoutingPreferenceDialogProvider({
         resolve
       }
       nextIdRef.current += 1
-      setQueue((currentQueue) => [...currentQueue, request])
+      setDialogState((current) => {
+        const nextQueue = [...current.queue, request]
+        return {
+          queue: nextQueue,
+          lastDisplayedRequest: nextQueue[0] ?? current.lastDisplayedRequest
+        }
+      })
     })
   }, [])
 
@@ -90,11 +98,15 @@ export function LinkRoutingPreferenceDialogProvider({
       return
     }
     request.resolve(openInOrca)
-    setQueue((currentQueue) => {
-      if (currentQueue[0]?.id === request.id) {
-        return currentQueue.slice(1)
+    setDialogState((current) => {
+      const nextQueue =
+        current.queue[0]?.id === request.id
+          ? current.queue.slice(1)
+          : current.queue.filter((queuedRequest) => queuedRequest.id !== request.id)
+      return {
+        queue: nextQueue,
+        lastDisplayedRequest: nextQueue[0] ?? current.lastDisplayedRequest
       }
-      return currentQueue.filter((queuedRequest) => queuedRequest.id !== request.id)
     })
   }, [])
 

@@ -29,6 +29,12 @@
       "description": "Agents there use the distro's default Claude and Codex accounts until Adehone in WSL is updated."
     }
   },
+  "agentCliUpdate": {
+    "heading_one": "{{count}} CLI update available",
+    "heading_other": "{{count}} CLI updates available",
+    "statusCount_one": "{{count}} CLI update",
+    "statusCount_other": "{{count}} CLI updates"
+  },
   "agentLaunch": {
     "opencode": {
       "invalidConfig": "OpenCode could not apply this model choice to the launch configuration. Check the OpenCode launch configuration and try again, or omit the model choice.",
@@ -110,43 +116,31 @@
         "aa57fa4f80": "Command copied. Quit Adehone, run it in a system terminal to install {{value0}}, then reopen Adehone.",
         "b7e7c5bc95": "Adehone checks the downloaded file against the release metadata at the moment it builds this command. The system package itself is not signature-checked, and Adehone cannot vouch for the file after that point."
       },
-      "NativeChatResumeFailureGuidance": {
-        "conflict": "This chat is open in another Adehone window or terminal. Close it there, then retry.",
-        "fallback": "Adehone couldn’t resume this chat. Open it to continue manually.",
-        "superseded": "Open the chat and reply. New work arrived in it right after the restart, so Adehone didn’t send its “continue” message.",
-        "unconfirmed": "Adehone couldn’t confirm the “continue” message was delivered. Open the chat and check before sending another.",
-        "unsupported": "This chat can’t be resumed by Adehone. Open it to see where it stopped."
-      },
       "NativeChatResumeOnRestartModal": {
         "activityMonitorCount_one": "Monitoring {{count}} background task",
         "activityMonitorCount_other": "Monitoring {{count}} background tasks",
         "activitySubagentCount_one": "{{count}} subagent running",
-        "activitySubagentCount_other": "{{count}} subagents running",
-        "body": "These chats were working when Adehone closed. Resuming restores each one where it stopped, with its full context, and asks the agent to check what it was doing before carrying on. Your own prompt is not re-sent.",
-        "continuedCount_one": "Resumed {{count}} chat",
-        "continuedCount_other": "Resumed {{count}} chats",
-        "notConfirmedCount_one": "Couldn’t confirm {{count}} chat was resumed",
-        "notConfirmedCount_other": "Couldn’t confirm {{count}} chats were resumed",
-        "notConfirmedOtherCount_one": "Couldn’t confirm {{count}} other chat was resumed",
-        "notConfirmedOtherCount_other": "Couldn’t confirm {{count}} other chats were resumed",
-        "notContinuedCount_one": "{{count}} chat couldn’t be resumed",
-        "notContinuedCount_other": "{{count}} chats couldn’t be resumed",
-        "resumeChats_one": "Resume {{count}} chat",
-        "resumeChats_other": "Resume {{count}} chats",
-        "serverBody": "These chats were working when Adehone on {{machine}} restarted. Resuming restores each one where it stopped and asks the agent to carry on. Your own prompt is not re-sent.",
-        "serverResumeHereCount_one": "Resume {{count}} chat started here",
-        "serverResumeHereCount_other": "Resume {{count}} chats started here",
-        "updateBody": "These chats were working when Adehone installed an update. Resuming restores each one where it stopped, with its full context, and asks the agent to check what it was doing before carrying on. Your own prompt is not re-sent."
+        "activitySubagentCount_other": "{{count}} subagents running"
       },
-      "NativeChatResumeRunPanel": {
-        "finished": "These chats were working when Adehone closed. Adehone restored each one where it stopped, with its full context, and asked the agent to check what it was doing before carrying on. Your own prompts weren’t re-sent.",
-        "finishedPartial": "These chats were working when Adehone closed. The ones Adehone resumed were restored where they stopped, with their full context, and asked to check what they were doing before carrying on. Your own prompts weren’t re-sent. Check the list for chats that still need attention or can be resumed.",
-        "finishedPartialUpdate": "These chats were working when Adehone installed an update. The ones Adehone resumed were restored where they stopped, with their full context, and asked to check what they were doing before carrying on. Your own prompts weren’t re-sent. Check the list for chats that still need attention or can be resumed.",
-        "finishedUpdate": "These chats were working when Adehone installed an update. Adehone restored each one where it stopped, with its full context, and asked the agent to check what it was doing before carrying on. Your own prompts weren’t re-sent.",
-        "resumedOfTotal_one": "Resumed {{resumed}} of {{count}} chat",
-        "resumedOfTotal_other": "Resumed {{resumed}} of {{count}} chats",
-        "resumingCount_one": "Resuming {{count}} chat",
-        "resumingCount_other": "Resuming {{count}} chats"
+      "NativeChatResumeToast": {
+        "partial_one": "Resumed {{resumed}} of {{total}} chats. {{count}} needs you.",
+        "partial_other": "Resumed {{resumed}} of {{total}} chats. {{count}} need you.",
+        "resumedOn_one": "Resumed {{count}} chat on {{machine}}.",
+        "resumedOn_other": "Resumed {{count}} chats on {{machine}}.",
+        "resumedRestart_one": "Resumed {{count}} chat after the restart.",
+        "resumedRestart_other": "Resumed {{count}} chats after the restart.",
+        "resumedUpdate_one": "Resumed {{count}} chat after the update.",
+        "resumedUpdate_other": "Resumed {{count}} chats after the update.",
+        "resumingOn_one": "Resuming {{count}} chat on {{machine}}…",
+        "resumingOn_other": "Resuming {{count}} chats on {{machine}}…",
+        "resuming_one": "Resuming {{count}} chat…",
+        "resuming_other": "Resuming {{count}} chats…",
+        "stoppedOn_one": "{{count}} chat stopped on {{machine}}.",
+        "stoppedOn_other": "{{count}} chats stopped on {{machine}}.",
+        "stoppedRestart_one": "{{count}} chat stopped when Orca closed.",
+        "stoppedRestart_other": "{{count}} chats stopped when Orca closed.",
+        "stoppedUpdate_one": "{{count}} chat stopped when Orca updated.",
+        "stoppedUpdate_other": "{{count}} chats stopped when Orca updated."
       },
       "NewWorkspaceComposerCard": {
         "addRemoteOrcaServer": "Add Remote Adehone Server",
@@ -1182,9 +1176,6 @@
         "AgentSkillSetupPanel": {
           "hostUnavailable": "Adehone can't install skills on this workspace's machine yet.",
           "replaceWithOrcaCopy": "Replace with Adehone's copy"
-        },
-        "AgentsPane": {
-          "codexSessionSourceTooltip": "Adehone runs Codex in an isolated home. Point this at your existing Codex home to import that session history. Empty uses ~/.codex."
         },
         "AppearancePane": {
           "61d842eca0": "Show the Adehone Mobile shortcut in the sidebar. It remains available from Toolbox.",
@@ -2236,6 +2227,8 @@
           "removeContainedProjects_other": "Remove {{count}} contained projects"
         },
         "RemoveFolderDialog": {
+          "linkedWorkspaceWarning_one": "{{count}} workspace in this project will also be removed from Orca.",
+          "linkedWorkspaceWarning_other": "{{count}} workspaces in this project will also be removed from Orca.",
           "openTerminalWarning_one": "{{count}} open terminal in this project will be closed.",
           "openTerminalWarning_other": "{{count}} open terminals in this project will be closed.",
           "removeDescriptionLocal": "This only removes {{name}} from Adehone. It is still on your disk.",
@@ -2260,9 +2253,6 @@
           "description": "Saving runs this whenever Adehone creates a worktree for {{repo}}.",
           "descriptionWithSource": "From <file>{{source}}</file>. Saving runs this whenever Adehone creates a worktree for {{repo}}.",
           "notImportedHint": "These settings have no Adehone equivalent and won't be saved."
-        },
-        "SidebarFeedbackDialog": {
-          "a828fa4aee": "Share what's working, what's broken, or what Adehone should do next."
         },
         "SidebarNav": {
           "1b5c41caee": "Adehone Mobile"
@@ -3193,6 +3183,25 @@
     }
   },
   "automations": {
+    "botEvents": {
+      "orMore": "{{names}} or {{count}} others",
+      "orMore_one": "{{names}} or {{count}} other",
+      "orMore_other": "{{names}} or {{count}} others",
+      "unnamed": {
+        "githubRepo": "{{count}} repositories",
+        "githubRepo_one": "a repository",
+        "githubRepo_other": "{{count}} repositories",
+        "linearTeam": "{{count}} Linear teams",
+        "linearTeam_one": "a Linear team",
+        "linearTeam_other": "{{count}} Linear teams",
+        "people": "{{count}} people",
+        "people_one": "{{count}} person",
+        "people_other": "{{count}} people",
+        "slackChannel": "{{count}} Slack channels",
+        "slackChannel_one": "a Slack channel",
+        "slackChannel_other": "{{count}} Slack channels"
+      }
+    },
     "extraAgentArgs": {
       "errors": {
         "controlCharacters": "Extra arguments cannot contain control characters or line breaks.",
@@ -3242,6 +3251,231 @@
       "reviewBody": "A run skipped setup because its branch's <code>adehone.yaml</code> setup commands changed. Approving lets later runs use these commands. Only approve if you trust <repo/>.",
       "skippedReview": "Setup didn't run: this run's branch has different adehone.yaml setup commands than the ones approved for this automation. Review them to run setup in later runs.",
       "skippedSinceApproved": "Setup didn't run for this run because its branch's adehone.yaml setup commands changed. They've since been approved, so later runs run them."
+    }
+  },
+  "bots": {
+    "access": {
+      "adviceHeading": "Before you share",
+      "codexAsk": "Codex sandbox: read-only until a request is approved.",
+      "codexNoSandbox": "No Codex sandbox.",
+      "codexOwnSandbox": "Codex uses its configured sandbox.",
+      "confirm": "Give access",
+      "confirmApproveMany": "They can approve its prompts",
+      "confirmApproveOne": "{{person}} can approve its prompts",
+      "confirmComputer": "Run commands and change files",
+      "confirmGitHub": "Comment and push on GitHub as you",
+      "confirmGoogle": "Use your Google account",
+      "confirmLinear": "Update Linear issues as you",
+      "confirmMaySkipApprovals": "May act without asking first",
+      "confirmNoApprovals": "Acts without asking first",
+      "confirmWarning": "They’ll act as you on {{computer}}.",
+      "controlMany": "They can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
+      "controlNone": "Anyone you add can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
+      "controlOne": "{{person}} can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
+      "executionComputer": "the computer this agent runs on",
+      "fixAsk": "Start new conversations in Ask for approval",
+      "fixAskAction": "Switch",
+      "fixAskConfirm": "Start new conversations in Ask for approval?",
+      "fixAskDetail": "{{name}} asks before more of its work. Whoever asked can still approve. Conversations already open keep their permission.",
+      "fixAskDetailCodex": "Codex then works read-only until a request is approved. Whoever asked can still approve. Conversations already open keep their permission.",
+      "fixAskDone": "New conversations start in Ask for approval.",
+      "fixGoogle": "Turn off Google for {{name}}",
+      "fixGoogleAction": "Turn off",
+      "fixGoogleDetail": "For everyone, you included, from its next Google request.",
+      "fixGoogleDone": "Google is off for {{name}}.",
+      "fixOnlyMe": "Keep {{name}} to yourself",
+      "fixOnlyMeAction": "Keep only me",
+      "fixOnlyMeConfirm": "Keep {{name}} to yourself?",
+      "fixOnlyMeConfirmDetail": "{{people}} can no longer ask {{name}}. Giving them access again asks you first.",
+      "fixOnlyMeDetail": "Removes the people you added here.",
+      "fixOnlyMeFailed": "Couldn’t remove {{names}}. Try again.",
+      "here": "here",
+      "newBot": "New bot…",
+      "permissionFellBack": "{{agent}} has no {{mode}} mode, so {{name}} uses Ask for approval.",
+      "place": "{{connector}} ({{workspace}})",
+      "reachComputer": "Your files, commands and accounts on {{computer}}",
+      "reachComputerDetail": "As you, as far as the permission below allows.",
+      "reachGitHub": "Comment, review and push on GitHub as you",
+      "reachGoogleCalendar": "Use your calendar",
+      "reachGoogleDocs": "Read and edit your Docs",
+      "reachGoogleDrive": "Use your Drive files",
+      "reachGoogleEmail": "Read and send your email",
+      "reachGoogleSheets": "Read and edit your Sheets",
+      "reachGoogleUnknown": "Your Google account, as far as you allowed it when you signed in",
+      "reachHeading": "What {{name}} can reach",
+      "reachLinear": "Comment on, update and create Linear issues as you",
+      "reachPermission": "New conversations start in {{mode}}",
+      "reachPermissionUnknown": "New conversations start from your chat permission setting",
+      "reachSlack": "Post in Slack as @{{name}}",
+      "separateBot": "A separate bot for the team gets its own permission, Google switch and tools. It still runs on {{computer}} as you.",
+      "summaryMany": "You and {{count}} other people can ask {{name}}.",
+      "summaryOne": "You and {{person}} can ask {{name}}.",
+      "summaryOnlyYou": "Only you can ask {{name}}.",
+      "summarySome": "You, {{people}} and {{last}} can ask {{name}}.",
+      "there": "there",
+      "thisComputer": "this computer",
+      "thisServer": "this server",
+      "titleMany": "Give {{count}} people access to {{name}}?",
+      "titleOne": "Give {{person}} access to {{name}}?",
+      "trust": "Add only people you’d trust at your keyboard.",
+      "undo": "Undo",
+      "whoCanAsk": "Who can ask {{name}}",
+      "whoeverAskedApproves": "If it asks, whoever asked can approve."
+    },
+    "accessRequest": {
+      "decideFailed": "Couldn’t save your answer. Try again.",
+      "decline": "Decline",
+      "expired": "This request was already opened or has expired. Open the bot’s settings to see what is waiting.",
+      "failed": "Couldn’t open this request. Check your connection, then try again.",
+      "full": "Remove someone before adding {{person}}.",
+      "heading": "Asking for access",
+      "notHere": "This request is for a bot on another computer. Open the link on the computer that runs it.",
+      "notOwner": "This request is for another Orca account. Sign in as the bot’s owner to review it.",
+      "reviewButton": "Review…"
+    },
+    "chats": {
+      "moreMatches_one": "{{count}} more match. Search for more of a name to narrow it.",
+      "moreMatches_other": "{{count}} more matches. Search for more of a name to narrow it.",
+      "showEightMoreWorkers": "Show 8 more workers",
+      "showMoreWorkers_one": "Show {{count}} more worker",
+      "showMoreWorkers_other": "Show {{count}} more workers"
+    },
+    "connectors": {
+      "needYou_one": "{{count}} needs you",
+      "needYou_other": "{{count}} need you"
+    },
+    "github": {
+      "pill": {
+        "addedRepositories_one": "Added {{count}} repository",
+        "addedRepositories_other": "Added {{count}} repositories"
+      },
+      "repositoryCount_one": "{{count}} repository in {{accounts}}",
+      "repositoryCount_other": "{{count}} repositories in {{accounts}}"
+    },
+    "google": {
+      "headline": {
+        "toFix_one": "Almost there: 1 thing to fix",
+        "toFix_other": "Almost there: {{count}} things to fix"
+      }
+    },
+    "groups": {
+      "allBotsCount": "All bots · {{count}}",
+      "correctMention": "Correct mention",
+      "items": {
+        "outsideRoom_one": "{{count}} more outside this room",
+        "outsideRoom_other": "{{count}} more outside this room",
+        "outsideThread_one": "{{count}} more outside this thread",
+        "outsideThread_other": "{{count}} more outside this thread",
+        "outside_one": "{{count}} more outside this group",
+        "outside_other": "{{count}} more outside this group"
+      },
+      "mentionedCount": "{{count}} mentioned",
+      "unavailableBot": "Unavailable bot"
+    },
+    "hover": {
+      "itemsNeedYou_one": "{{count}} item it flagged for you",
+      "itemsNeedYou_other": "{{count}} items it flagged for you",
+      "moreAsks_one": "+{{count}} more ask",
+      "moreAsks_other": "+{{count}} more asks",
+      "needsYouHeading_one": "1 thing needs you",
+      "needsYouHeading_other": "{{count}} things need you"
+    },
+    "items": {
+      "pill": {
+        "moveCount_one": "Move {{count}} item to",
+        "moveCount_other": "Move {{count}} items to"
+      },
+      "snooze": {
+        "inHours_one": "In {{count}} hours",
+        "inHours_other": "In {{count}} hours",
+        "later": "Later today",
+        "monday": "Monday",
+        "tomorrow": "Tomorrow",
+        "week": "In a week"
+      },
+      "stale": {
+        "confirm_one": "Cancel {{count}} stale item?",
+        "confirm_other": "Cancel {{count}} stale items?"
+      }
+    },
+    "options": {
+      "activeFilters_one": "Bot options ({{count}} filter active)",
+      "activeFilters_other": "Bot options ({{count}} filters active)"
+    },
+    "palette": {
+      "scopedStatus_one": "Showing only bots. {{count}} result found.",
+      "scopedStatus_other": "Showing only bots. {{count}} results found.",
+      "upNext_one": "{{count}} new suggestion",
+      "upNext_other": "{{count}} new suggestions"
+    },
+    "panel": {
+      "needYou_one": "{{count}} needs you",
+      "needYou_other": "{{count}} need you",
+      "showNeedYou_one": "Show panel · {{count}} needs you",
+      "showNeedYou_other": "Show panel · {{count}} need you",
+      "working": "{{count}} working",
+      "working_one": "{{count}} working",
+      "working_other": "{{count}} working"
+    },
+    "row": {
+      "reading": "Reading your message",
+      "replying": "Replying",
+      "replyingIn": "Replying in {{place}}",
+      "replyingOn": "Replying on {{place}}",
+      "waitingCount": "Waiting on {{count}} events",
+      "waitingFor": "Waiting for {{label}}",
+      "waitingForUntil": "Waiting for {{label}} · until {{time}}"
+    },
+    "search": {
+      "matchCount_one": "{{count}} match",
+      "matchCount_other": "{{count}} matches",
+      "pausedMatches_one": "{{count}} paused match",
+      "pausedMatches_other": "{{count}} paused matches"
+    },
+    "section": {
+      "showMore_one": "Show {{count}} more bot",
+      "showMore_other": "Show {{count}} more bots"
+    },
+    "settingsPage": {
+      "memoryFiles_one": "MEMORY.md and {{count}} topic file",
+      "memoryFiles_other": "MEMORY.md and {{count}} topic files"
+    },
+    "slack": {
+      "postAs": {
+        "line": "When you reply to a Slack thread from Orca, it posts as <picker>{{name}}</picker>"
+      }
+    },
+    "upNext": {
+      "newSuggestions": "{{count}} new suggestions · click to see",
+      "newSuggestions_one": "{{count}} new suggestion · click to see",
+      "newSuggestions_other": "{{count}} new suggestions · click to see"
+    },
+    "webhooks": {
+      "card": {
+        "starts": "Webhook · starts “{{automation}}”",
+        "title": "Webhook"
+      },
+      "hookCount": "{{count}} hooks",
+      "hookCount_one": "{{count}} hook",
+      "hookCount_other": "{{count}} hooks",
+      "rotate": {
+        "stopCancels": "For a leaked key. {{count}} waiting calls it let in are cancelled.",
+        "stopCancels_one": "For a leaked key. {{count}} waiting call it let in is cancelled.",
+        "stopCancels_other": "For a leaked key. {{count}} waiting calls it let in are cancelled."
+      },
+      "sample": {
+        "note": "A sample starts a real run.",
+        "send": "Send a sample call"
+      },
+      "secret": {
+        "add": "Add signing secret…",
+        "change": "Signing secret: {{sender}} · Change…"
+      }
+    },
+    "workspaces": {
+      "moreAgents": "{{count}} more agents",
+      "moreAgents_one": "{{count}} more agent",
+      "moreAgents_other": "{{count}} more agents"
     }
   },
   "browser": {
@@ -3440,6 +3674,128 @@
         "questionCount_one": "{{count}} question",
         "questionCount_other": "{{count}} questions"
       },
+      "automationResult": {
+        "cleared": "Arrived before the chat was cleared. It won't go to {{name}}.",
+        "notRead": "{{name}} hasn't read this yet. It goes with your next message.",
+        "openRun": "Open run",
+        "read": "{{name}} read this with your next message.",
+        "sentWithMany": "Sent with {{count}} automation results",
+        "sentWithOne": "Sent with 1 automation result"
+      },
+      "automationRun": {
+        "accessibleName": "Automation run. {{label}}: {{name}}. {{reason}}.",
+        "accessibleNameAt": "Automation run. {{label}}: {{name}}. {{reason}}. {{time}}.",
+        "accessibleNameNoReason": "Automation run. {{label}}: {{name}}.",
+        "accessibleNameNoReasonAt": "Automation run. {{label}}: {{name}}. {{time}}.",
+        "afterThirtyDays": "After 30 days",
+        "calendar": "Calendar",
+        "callerSent": "The caller sent",
+        "cancel": "Cancel",
+        "cancelled": "Cancelled",
+        "copyEvent": "Copy event",
+        "copyInstructions": "Copy instructions",
+        "couldNotFinish": "Couldn't finish",
+        "couldNotStart": "Couldn't start",
+        "createdAutomation": "Created automation",
+        "deadlineReached": "Deadline reached",
+        "due": "Due {{time}}",
+        "dueRan": "due {{due}}, ran {{ran}}",
+        "event": "Event",
+        "external": "External content · sent to the bot as information, not instructions",
+        "factsAt": "{{facts}} · {{time}}",
+        "finished": "Finished",
+        "firstCall": "First call",
+        "github": "GitHub",
+        "gmail": "Gmail",
+        "happened": "Happened",
+        "instructions": "Instructions",
+        "linear": "Linear",
+        "memberAccess": "{{name}} was on Who can ask when this ran.",
+        "noDeadline": "No deadline",
+        "noReplyBy": "No reply by {{time}}",
+        "nothingBy": "Nothing by {{time}}",
+        "openAutomation": "Open automation",
+        "openInLinear": "Open in Linear",
+        "openInSlack": "Open in Slack",
+        "openLink": "Open link",
+        "openOnGitHub": "Open on GitHub",
+        "otherAccess": "Not on Who can ask, or access unknown.",
+        "ownerAccess": "From the bot's owner.",
+        "paused": "Paused",
+        "personWrote": "{{name}} wrote",
+        "queued": "Queued",
+        "replied": "{{actor}} replied",
+        "reused": "Reused {{what}}",
+        "reusedFrom": "Reused event: {{what}} · from {{time}}",
+        "rowAccessibleName": "{{label}}: {{name}}. {{details}}",
+        "runNow": "Run now",
+        "sampleCall": "Sample call",
+        "scheduled": "Scheduled",
+        "sendAgain": "Send again",
+        "sentAgain": "Sent again",
+        "shortened": "Shortened to 4,096 characters, as sent to the bot.",
+        "showAll": "Show all",
+        "showLess": "Show less",
+        "slack": "Slack",
+        "someMemberAccess": "Someone on Who can ask sent this when it ran.",
+        "someoneWrote": "Someone wrote",
+        "startError": "Error",
+        "thenLine": "Then",
+        "thenOnce": "Runs once, when it happens",
+        "thenOnceBy": "Runs once; at {{time}} if nothing came",
+        "until": "Until {{time}}",
+        "updatedAutomation": "Updated automation",
+        "waitOver": "Wait over",
+        "waiting": "Waiting",
+        "waitsFor": "Waits for",
+        "webhook": "Webhook",
+        "webhookCall": "Webhook call",
+        "what": {
+          "calendar": {
+            "starting_soon": "Meeting starting soon"
+          },
+          "github": {
+            "assigned": "Assigned",
+            "ci_failed": "CI failed",
+            "ci_passed": "CI passed",
+            "comment": "Comment",
+            "deploy_finished": "Deploy finished",
+            "issue_closed": "Issue closed",
+            "issue_opened": "Issue opened",
+            "labeled": "Labeled",
+            "mentioned": "Mention",
+            "pr_closed": "Closed",
+            "pr_conflicted": "Conflicts",
+            "pr_merged": "Merged",
+            "pr_opened": "Pull request opened",
+            "pr_pushed": "Push",
+            "pr_ready": "Ready for review",
+            "review": "Review",
+            "review_comment": "Review comment",
+            "review_requested": "Review requested",
+            "security_alert": "Security alert",
+            "workflow_finished": "Workflow run finished"
+          },
+          "gmail": {
+            "new_email": "New email"
+          },
+          "linear": {
+            "assigned": "Assigned",
+            "issue_created": "Issue created",
+            "issue_moved": "Issue moved",
+            "mentioned": "Mention"
+          },
+          "other": "Event",
+          "slack": {
+            "mentioned": "Mention",
+            "message": "Message",
+            "reaction": "Reaction"
+          }
+        },
+        "whatAt": "{{what}} · {{where}}",
+        "whatIn": "{{what}} in {{where}}",
+        "whatOn": "{{what}} on {{where}}"
+      },
       "backgroundTasks": {
         "agent": "Background agent",
         "command": "Background command",
@@ -3502,6 +3858,42 @@
         "task": "Background task",
         "workflow": "Background workflow"
       },
+      "botContext": {
+        "memory": "Memory edited outside this chat",
+        "soul": "Updated soul applied"
+      },
+      "botCreateOffer": {
+        "create": "Create bot",
+        "created": "Created",
+        "createdAskedMany": "Created · asked to take over {{count}} workspaces",
+        "createdAskedOne": "Created · asked to take over 1 workspace",
+        "createdTookOverMany": "Created · took over {{count}} workspaces",
+        "createdTookOverOne": "Created · took over 1 workspace",
+        "createdTookOverSome": "Created · took over {{taken}} of {{count}} workspaces",
+        "deleted": "Created, then deleted",
+        "does": "Does",
+        "edit": "Edit",
+        "nameTaken": "You already have a bot named {{name}}.",
+        "open": "Open",
+        "origin": "Proposed by {{bot}}",
+        "originTemplate": "From {{template}}, proposed by {{bot}}",
+        "rename": "Rename",
+        "reports": "Reports",
+        "takesOver": "Takes over",
+        "takesOverMany": "Takes over {{count}} workspaces",
+        "takesOverOne": "Takes over 1 workspace",
+        "template": "Template",
+        "watches": "Watches",
+        "willPropose": "Will propose"
+      },
+      "botRequest": {
+        "asked": "Asked",
+        "botsOff": "Bots are off.",
+        "couldNotTake": "{{bot}} couldn't take it.",
+        "handedTo": "Handed to",
+        "notSentTo": "Not sent to",
+        "paused": "{{bot}} is paused."
+      },
       "ciResultLine": {
         "hidden": "Adehone won't show CI result lines anymore"
       },
@@ -3518,6 +3910,11 @@
         "goalObjectiveMissing": "Describe the goal after /goal.",
         "modelApplyFailed": "Could not apply model {{value}}.",
         "modelPickerFailed": "Could not open the model picker."
+      },
+      "connectorAsker": {
+        "earlierMessages": "{{count}} earlier messages in the thread",
+        "earlierMessages_one": "{{count}} earlier message in the thread",
+        "earlierMessages_other": "{{count}} earlier messages in the thread"
       },
       "contextMenu": {
         "copyOrcaSessionId": "Copy Adehone Session ID",
@@ -3565,7 +3962,7 @@
         "claudeSystemNotSignedIn": "Claude isn't signed in. Run `{{loginCommand}}`, or choose an account in Claude Accounts settings.",
         "cliMissing": "{{agent}} wasn't found on the computer running this chat. Install it, or check its Command in Settings → Agents.",
         "cliMissingInWslDistro": "{{agent}} isn't installed in the WSL distro {{distro}}. Install it inside {{distro}}, or check its Command in Settings → Agents.",
-        "cliTooOld": "{{agent}} {{installedVersion}} is too old for chats. Update to {{minimumVersion}} or newer.",
+        "cliTooOld": "Your {{agent}} CLI on {{host}} is {{installedVersion}}. Chats need {{minimumVersion}} or newer.",
         "codexManagedNotSignedIn": "This Codex account isn't signed in. Sign in again in Codex Accounts settings.",
         "codexSystemNotSignedIn": "Codex isn't signed in. Run `{{loginCommand}}`.",
         "commandAfterAnswer": "Answer the agent's question or approval, then run /{{command}}.",
@@ -3617,6 +4014,7 @@
         "providerRejected": "{{agent}} didn't accept this message.",
         "providerRejectedQuoted": "{{agent}} didn't accept this message: {{detail}}.",
         "providerResponseFailed": "{{agent}} couldn't finish this response. Open Details for more information.",
+        "providerResponseFailedQuoted": "{{agent}} couldn't finish this response: {{detail}}.",
         "providerRetryLastError": "Last error: {{detail}}.",
         "providerRetryNumber": "Retry {{attempt}}.",
         "providerRetryNumberOf": "Retry {{attempt}} of {{maxRetries}}.",
@@ -3682,6 +4080,13 @@
           "needsAuth_one": "{{count}} needs sign-in",
           "needsAuth_other": "{{count}} need sign-in"
         }
+      },
+      "memoryUpdated": {
+        "added": "Added",
+        "indexChanged": "MEMORY.md changed",
+        "noteChanged": "Note changed",
+        "openMemory": "Open memory",
+        "removed": "Removed"
       },
       "notices": {
         "compaction": "Context compacted",
@@ -3755,6 +4160,37 @@
         "unknownOption": "Unknown session option: {{id}}",
         "valueRequired": "This option requires a value."
       },
+      "slackMirror": {
+        "channel": "Also posts to {{channel}} thread",
+        "detailChannel": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them. Tool calls and workers stay in Orca.",
+        "detailExternal": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them, including people outside your workspace. Tool calls and workers stay in Orca.",
+        "detailFallback": "Posts as {{bot}} with your name. Update in Slack to post under your name.",
+        "detailOwnDm": "Your messages and {{bot}}'s replies. Only you see this DM. Tool calls and workers stay in Orca.",
+        "detailRemoved": "{{bot}} was removed from the channel.",
+        "detailRemovedFrom": "{{bot}} was removed from {{channel}}.",
+        "detailSomeonesDm": "Your messages and {{bot}}'s replies. The person in this DM sees them. Tool calls and workers stay in Orca.",
+        "detailTheirDm": "Your messages and {{bot}}'s replies. {{name}} sees them in their DM. Tool calls and workers stay in Orca.",
+        "detailThread": "Your messages and {{bot}}'s replies. Everyone in the channel can see them. Tool calls and workers stay in Orca.",
+        "detailUnavailable": "This Slack thread was deleted or its channel archived.",
+        "failed": "Not posted to Slack",
+        "failedEmpty": "Not posted to Slack · nothing to post",
+        "failedFile": "Not posted to Slack · file too large",
+        "failedTooLong": "Not posted to Slack · message too long",
+        "headingChannel": "Slack thread in {{channel}}",
+        "headingDm": "Slack DM",
+        "headingThread": "Slack thread",
+        "off": "Only in Orca",
+        "offNotInChannel": "Only in Orca · not in channel",
+        "offUnavailable": "Only in Orca · thread unavailable",
+        "ownDm": "Also posts to your DM with {{bot}}",
+        "posting": "Posting to Slack…",
+        "shortChannel": "{{channel}} thread",
+        "shortDm": "Slack DM",
+        "shortThread": "Slack thread",
+        "someonesDm": "Also posts to a DM with {{bot}}",
+        "theirDm": "Also posts to {{name}}'s DM with {{bot}}",
+        "thread": "Also posts to the Slack thread"
+      },
       "state": {
         "empty": {
           "subtitle": "Ask {{value0}} to inspect code, explain output, or make a change.",
@@ -3823,6 +4259,12 @@
       "textAttachmentPreview": {
         "hostUpdate": "This host cannot open text attachments yet. Update Adehone on that host, then retry."
       },
+      "tidyUp": {
+        "changes_one": "{{count}} change",
+        "changes_other": "{{count}} changes",
+        "reviewChanges_one": "Review {{count}} change",
+        "reviewChanges_other": "Review {{count}} changes"
+      },
       "tool": {
         "callCount_one": "{{count}} tool call",
         "callCount_other": "{{count}} tool calls",
@@ -3876,6 +4318,11 @@
         "runTool_other": "Used {{count}} tools",
         "runWebSearch_one": "Searched the web {{count}} time",
         "runWebSearch_other": "Searched the web {{count}} times"
+      },
+      "toolAdded": {
+        "heading": "Added a tool",
+        "remove": "Remove",
+        "removed": "Removed"
       },
       "turnDiff": {
         "changedFiles_one": "{{count}} changed file",
@@ -4552,6 +4999,15 @@
         "sshToggleDescription": "Show configured SSH and remote Adehone hosts when any are available."
       }
     },
+    "bots": {
+      "connectorRequests": "{{count}} requests",
+      "connectorRequests_one": "{{count}} request",
+      "connectorRequests_other": "{{count}} requests",
+      "skills": {
+        "count_one": "{{count}} skill",
+        "count_other": "{{count}} skills"
+      }
+    },
     "browser": {
       "extensions": {
         "desktopOnly": "Browser extensions run only in the Adehone desktop app.",
@@ -4628,6 +5084,7 @@
       },
       "groups": {
         "agents": "Agents",
+        "bots": "Bots",
         "browser": "Browser",
         "chat": "Chat",
         "editors": "Editors",
@@ -5028,6 +5485,8 @@
   },
   "updates": {
     "failure": {
+      "automaticInstallCheckpointFailed": "Orca could not save the current window before restarting. Try installing the update again.",
+      "automaticInstallTerminalBusy": "Some terminals would end on restart. Orca will try again on a later update check.",
       "channelUnsupportedPlatform": "{{channel}} builds are produced only for macOS and Windows.",
       "invalidReleaseTag": "\"{{tag}}\" is not a valid release tag.",
       "linuxPackageExternallyManaged": "This copy of Adehone is managed by your system package manager, so Adehone cannot install updates itself. Update Adehone through your distribution instead.",
@@ -5041,6 +5500,7 @@
       "linuxPackageNoSudo": "No sudo command was found in the system directories, so Adehone cannot build a safe install command. Show the package and install it with your package manager.",
       "linuxPackageNotRegular": "The downloaded package is no longer a valid file in the update cache. Download the update again, or get it from the official release page.",
       "linuxPackageReadFailed": "Adehone could not read the downloaded package. Download the update again, or get it from the official release page.",
+      "macStagingTimeout": "macOS is still preparing the update. If this persists, quit and reopen Orca.",
       "rateLimitedInMinute": "GitHub rate limit reached. Try again in about a minute.",
       "rateLimitedInMinuteSignedOut": "GitHub rate limit reached. Try again in about a minute, or run `gh auth login` so Adehone can use your account's higher limit.",
       "rateLimitedInMinutesSignedOut_one": "GitHub rate limit reached. Try again in about {{count}} minute, or run `gh auth login` so Adehone can use your account's higher limit.",

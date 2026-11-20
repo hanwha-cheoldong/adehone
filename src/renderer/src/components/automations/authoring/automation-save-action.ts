@@ -15,6 +15,8 @@ import {
   parseDraftTime
 } from './automation-draft-model'
 import { saveOrcaAutomation } from './automation-orca-save'
+import { localizeAutomationActionError } from '../hosts/automation-owner-action-runner'
+import { botTargetError, saveBotAutomation } from './automation-bot-save'
 import type { AutomationSaveContext } from './automation-save-context'
 
 /** Validates editor input then runs the Orca save transaction. */
@@ -41,10 +43,16 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
       draft.reuseSession !== draftAtOpen.reuseSession ||
       draft.workspaceMode !== draftAtOpen.workspaceMode
     const { hour, minute } = parseDraftTime(draft.time)
+    const botTarget = draft.bot
+    if (botTarget && !draft.prompt.trim()) {
+      toast.error(translate('automations.botTarget.promptMissing', 'Enter what it should do.'))
+      return
+    }
     if (
-      (targetEdited &&
+      !botTarget &&
+      ((targetEdited &&
         (!draft.projectId || (draft.workspaceMode === 'existing' && !draft.workspaceId))) ||
-      !draft.prompt.trim()
+        !draft.prompt.trim())
     ) {
       toast.error(
         translate(
@@ -54,7 +62,8 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
       )
       return
     }
-    if (scheduleEdited && draft.scheduleWarning) {
+    // Only on events: the schedule fields are hidden and not saved.
+    if (scheduleEdited && draft.scheduleWarning && !draft.eventsOnly) {
       toast.error(
         translate(
           'auto.components.automations.AutomationsPage.64bdb2304f',
@@ -64,6 +73,7 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
       return
     }
     if (
+      !draft.eventsOnly &&
       scheduleEdited &&
       draft.preset === 'custom' &&
       !acceptsAutomationDraftSchedule({
@@ -78,6 +88,29 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
           'Enter a valid advanced schedule before saving.'
         )
       )
+      return
+    }
+    if (botTarget) {
+      const targetError = botTargetError(botTarget)
+      if (targetError) {
+        toast.error(targetError)
+        return
+      }
+      setIsSaving(true)
+      try {
+        await saveBotAutomation(context, botTarget, { hour, minute, now })
+      } catch (error) {
+        toast.error(
+          error instanceof Error
+            ? error.message
+            : translate(
+                'auto.components.automations.AutomationsPage.b11170a008',
+                'Failed to save automation.'
+              )
+        )
+      } finally {
+        setIsSaving(false)
+      }
       return
     }
     if (
@@ -148,7 +181,7 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
     } catch (error) {
       toast.error(
         error instanceof Error
-          ? error.message
+          ? localizeAutomationActionError(error.message)
           : translate(
               'auto.components.automations.AutomationsPage.b11170a008',
               'Failed to save automation.'

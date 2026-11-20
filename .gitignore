@@ -171,3 +171,4 @@ mac-build.sh
 win-build.sh
 asset-build.sh
 .gradle/
+electron.vite.config.ts.*.mjs

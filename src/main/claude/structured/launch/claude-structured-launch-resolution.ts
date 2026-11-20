@@ -1,5 +1,8 @@
+import { claudeBotSessionOptions } from './claude-bot-session-options'
+import { withBotLaunchToolsEnv } from '../../../bots/bot-launch-tools'
 import type { ClaudeAccountRecipe } from '../../../../shared/agent-session/lifecycle/accounts/agent-session-acquired-account'
-import { prepareClaudeLaunchAccount } from './claude-launch-account'
+import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../../../shared/source-control/ai/settings/source-control-ai-settings'
+import { prepareClaudeLaunchAccount, withClaudeLaunchAccountPin } from './claude-launch-account'
 import { assertStructuredAgentResolutionCurrent } from '../../../native-chat/agent-launch/structured-agent-command-resolution'
 import { activeProviderContext } from '../../../../shared/agent-session/conversation-context/agent-session-provider-context'
 import { getClaudeProfileRouter } from '../../../claude-accounts/profiles/routing/claude-profile-installed-router'
@@ -25,7 +28,8 @@ import {
   type ClaudeChildEnvSources,
   type ClaudeEnvDeps
 } from './claude-structured-child-env'
-import { claudeStructuredLaunchArgs } from './claude-structured-launch-args'
+import { withClaudeArtifactDefault } from './claude-artifact-env'
+import { CLAUDE_DEFAULT_SETTING_SOURCES, claudeDiscoveryOptions } from './claude-discovery-options'
 import { claudeInChromeDefaultArgs } from '../../configuration/claude-in-chrome-default'
 import { claudeConfigDirEnvPatch } from './claude-config-dir-pin'
 import type {
@@ -42,26 +46,8 @@ import {
   type AgentSessionRewindFork
 } from '../../../../shared/agent-session/lifecycle/rewind/agent-session-rewind'
 
-export const CLAUDE_DEFAULT_SETTING_SOURCES = ['user', 'project', 'local'] as const
 export const CLAUDE_SESSION_STATE_EVENTS_ENV = 'CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS'
-const CLAUDE_ARTIFACT_ENV = 'CLAUDE_CODE_ARTIFACT'
-
-// SDK entrypoints hide Claude's Artifact tools unless this is set; a user value still wins,
-// matched case-insensitively on Windows, where claude_code_artifact=0 is the same opt-out.
-export function withClaudeArtifactDefault(
-  env: Record<string, string>,
-  platform: NodeJS.Platform = process.platform
-): Record<string, string> {
-  const chosen = Object.keys(env).some(
-    (key) =>
-      key === CLAUDE_ARTIFACT_ENV ||
-      (platform === 'win32' && key.toUpperCase() === CLAUDE_ARTIFACT_ENV)
-  )
-  return chosen ? env : { ...env, [CLAUDE_ARTIFACT_ENV]: '1' }
-}
-
 type ClaudePermissionOptions = Pick<ClaudeAgentSdkOptions, 'permissionMode' | 'extraArgs'>
-
 export type ClaudeStructuredSdkOptions = Pick<
   ClaudeAgentSdkOptions,
   | 'includePartialMessages'
@@ -79,13 +65,14 @@ export type ClaudeStructuredSdkOptions = Pick<
   | 'resumeSessionAt'
   | 'forkSession'
 > &
-  ClaudePermissionOptions & { promptSuggestions?: boolean }
+  ClaudePermissionOptions & { promptSuggestions?: boolean } & Awaited<
+    ReturnType<typeof claudeBotSessionOptions>
+  >
 
 /** Replay acknowledgements require an explicit flag; the SDK supplies the other transport flags. */
 export const CLAUDE_STRUCTURED_BASE_OPTIONS: ClaudeStructuredSdkOptions = {
   includePartialMessages: true,
-  // Keep the SDK on Claude Code's own system-prompt contract.
-  systemPrompt: { type: 'preset', preset: 'claude_code' },
+  systemPrompt: { type: 'preset', preset: 'claude_code', append: DEFAULT_KOREAN_AI_INSTRUCTION },
   settingSources: [...CLAUDE_DEFAULT_SETTING_SOURCES],
   supportedDialogKinds: [],
   extraArgs: { 'replay-user-messages': null }
@@ -225,7 +212,7 @@ export function claudeStructuredLaunchPart(
       command: sources.command,
       prefixArgs: sources.prefixArgs,
       cwd,
-      env: claudeProbeEnv(sources)
+      env: await withClaudeLaunchAccountPin(router, claudeProbeEnv(sources), accountHome.path)
     }
     const launchFlags = resolveClaudeLaunchFlags(
       { ...deps, prepareVisuals: basis.visuals },
@@ -233,13 +220,17 @@ export function claudeStructuredLaunchPart(
       probeLaunch
     )
     const launchArgs = await deps.resolveLaunchArgs()
-    const configured = claudeStructuredLaunchArgs(launchArgs)
     const { thinkingDisplayArgs, visuals, promptSuggestions } = await launchFlags
-    const additionalDirectories = [
-      ...configured.additionalDirectories,
-      ...(deps.attachmentDirectory ? [deps.attachmentDirectory] : []),
-      ...(visuals ? [visuals.visuals.folder] : [])
-    ]
+    const linked = await basis.linkedSkills()
+    const discovery = claudeDiscoveryOptions({
+      configuredArgs: launchArgs,
+      ...(deps.attachmentDirectory ? { attachmentDirectory: deps.attachmentDirectory } : {}),
+      visuals: visuals && {
+        pluginDir: visuals.pluginDir,
+        scratchDirectory: visuals.visuals.folder
+      },
+      linkedRoot: linked.root
+    })
     const permission = claudeStructuredPermissionOptions(basis.permissionMode ?? 'ask')
     // --resume fails without a transcript; --session-id collides with an existing one.
     const leafUuid = head && continuesChain ? claudeProviderHandleLeafUuid(head) : null
@@ -257,15 +248,19 @@ export function claudeStructuredLaunchPart(
     // Fixed homes can be checked before the final account-routing recheck.
     const resumedWithoutRouter = router ? undefined : await resumes(accountHome.path)
     // Resolve auth after awaited launch preparation; account routing is rechecked below.
+    const tools = await basis.toolServers()
     const { command, prefixArgs, env } = await resolveClaudeStructuredInvocation(
       envDeps,
       (base) =>
         withNativeChatVisualsEnv(
-          {
-            ...withClaudeArtifactDefault(base),
-            // The turn translator relies on Claude's authoritative idle frame when no result arrives.
-            [CLAUDE_SESSION_STATE_EVENTS_ENV]: '1'
-          },
+          withBotLaunchToolsEnv(
+            {
+              ...withClaudeArtifactDefault(base),
+              // The turn translator relies on Claude's authoritative idle frame when no result arrives.
+              [CLAUDE_SESSION_STATE_EVENTS_ENV]: '1'
+            },
+            tools
+          ),
           visuals?.visuals ?? null
         ),
       sources,
@@ -300,11 +295,11 @@ export function claudeStructuredLaunchPart(
         options: {
           ...CLAUDE_STRUCTURED_BASE_OPTIONS,
           ...permission,
-          ...(additionalDirectories.length ? { additionalDirectories } : {}),
-          ...(visuals?.pluginDir ? { plugins: [{ type: 'local', path: visuals.pluginDir }] } : {}),
+          ...discovery,
+          ...(await claudeBotSessionOptions(basis, linked.projects, tools)),
           ...(promptSuggestions ? { promptSuggestions } : {}),
           extraArgs: {
-            ...configured.extraArgs,
+            ...discovery.extraArgs,
             ...CLAUDE_STRUCTURED_BASE_OPTIONS.extraArgs,
             ...permission.extraArgs,
             ...thinkingDisplayArgs,
@@ -335,9 +330,7 @@ export function claudeStructuredLaunchPart(
 }
 
 /** Until Claude writes the rewind's session, each launch forks it from the kept conversation. */
-function claudeRewindForkOptions(
-  fork: AgentSessionRewindFork
-): Pick<ClaudeStructuredSdkOptions, 'resume' | 'resumeSessionAt' | 'forkSession'> {
+function claudeRewindForkOptions(fork: AgentSessionRewindFork) {
   return fork.throughEntryId
     ? { resume: fork.sourceSessionId, resumeSessionAt: fork.throughEntryId, forkSession: true }
     : {}

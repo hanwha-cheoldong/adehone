@@ -51,7 +51,7 @@ export async function resolvePRRepositoryCandidates(
   const seen = new Set<string>()
   const candidates: OwnerRepo[] = []
 
-  for (const candidate of [upstream, origin]) {
+  for (const candidate of [origin, upstream]) {
     if (!candidate) {
       continue
     }

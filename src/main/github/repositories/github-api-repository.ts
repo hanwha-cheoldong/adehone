@@ -73,7 +73,7 @@ export type GitHubApiRepositoryCandidates = {
   headRepo: GitHubApiRepository | null
 }
 
-/** Hosted mirror of resolvePRRepositoryCandidates: upstream first, then origin. */
+/** Hosted mirror of resolvePRRepositoryCandidates: origin first, then upstream. */
 export async function resolveGitHubApiRepositoryCandidates(
   repoPath: string,
   connectionId?: string | null,
@@ -106,7 +106,7 @@ export async function resolveGitHubApiRepositoryCandidates(
     const origin = originResult.value
     const seen = new Set<string>()
     const candidates: GitHubApiRepository[] = []
-    for (const candidate of [upstream, origin]) {
+    for (const candidate of [origin, upstream]) {
       if (!candidate) {
         continue
       }

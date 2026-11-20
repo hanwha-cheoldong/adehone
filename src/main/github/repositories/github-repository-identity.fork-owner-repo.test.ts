@@ -26,6 +26,9 @@ vi.mock('./local-git-config-signature', () => ({
 
 import { _resetRemoteNameListingCache } from '../../git/remotes/remote-name-listing'
 import { _resetOwnerRepoCache } from './github-repository-identity'
+import { resolveGitHubApiRepositoryCandidates } from './github-api-repository'
+import { _resetOriginGitHubApiRepositoryCache } from './github-api-repository-remote-probe'
+import { resolvePRRepositoryCandidates } from './github-owner-repo-selection'
 import { probeRepoUpstream } from '../client/fetch/repo-slug-upstream'
 
 import { acquire, release } from '../execution/github-operation-slots'
@@ -33,13 +36,19 @@ import { acquire, release } from '../execution/github-operation-slots'
 afterEach(() => vi.useRealTimers())
 
 const NON_FORK_PATH = '/tmp/plain-checkout'
+const FORK_PATH = '/tmp/fork-checkout'
 
 const REMOTE_URLS_BY_REPO: Record<string, Record<string, string>> = {
-  [NON_FORK_PATH]: { origin: 'https://github.com/stablyai/orca.git' }
+  [NON_FORK_PATH]: { origin: 'https://github.com/stablyai/orca.git' },
+  [FORK_PATH]: {
+    origin: 'https://github.com/hanwha-cheoldong/adehone.git',
+    upstream: 'https://github.com/stablyai/orca.git'
+  }
 }
 
 beforeEach(() => {
   _resetOwnerRepoCache()
+  _resetOriginGitHubApiRepositoryCache()
   _resetRemoteNameListingCache()
   gitExecFileAsyncMock.mockReset()
   ghExecFileAsyncMock.mockReset()
@@ -93,5 +102,21 @@ describe('optional parent evidence', () => {
       }
       throw error
     }
+  })
+
+  it('prefers origin before upstream in PR repository candidates for forks', async () => {
+    const expectedOriginApi = { owner: 'hanwha-cheoldong', repo: 'adehone', host: 'github.com' }
+    const expectedUpstreamApi = { owner: 'stablyai', repo: 'orca', host: 'github.com' }
+    const expectedOrigin = { owner: 'hanwha-cheoldong', repo: 'adehone' }
+    const expectedUpstream = { owner: 'stablyai', repo: 'orca' }
+
+    await expect(resolveGitHubApiRepositoryCandidates(FORK_PATH)).resolves.toEqual({
+      candidates: [expectedOriginApi, expectedUpstreamApi],
+      headRepo: expectedOriginApi
+    })
+    await expect(resolvePRRepositoryCandidates(FORK_PATH)).resolves.toEqual({
+      candidates: [expectedOrigin, expectedUpstream],
+      headRepo: expectedOrigin
+    })
   })
 })

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import { ExternalLink, Github } from 'lucide-react'
-import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -13,45 +12,32 @@ import {
 import { useMountedRef } from '@/hooks/useMountedRef'
 import { useAppStore } from '@/store/index'
 import { cn } from '@/lib/class-names'
-import type { GitHubViewer } from '../../../../../shared/github/pull-requests/pull-request-types'
 import { useTranslate } from '@/i18n/use-translate'
 import {
   extractImageFilesFromDataTransfer,
   hasAttachableFeedbackImage
 } from '@/components/sidebar/sidebar-feedback/feedback-image-attachments'
 import { stripClientEnvironmentFooter } from '../../../../../shared/feedback/client-environment-info'
-import { FEEDBACK_PAYLOAD_TOO_LARGE_STATUS } from '../../../../../shared/feedback/feedback-image-limits'
+import { ADEHONE_GITHUB_ISSUES_URL } from '../../../../../shared/feedback/adehone-feedback-issue'
 import { SidebarFeedbackImageAttachments } from './SidebarFeedbackImageAttachments'
+import { SidebarFeedbackGitHubStatus } from './SidebarFeedbackGitHubStatus'
 import { useSidebarFeedbackEnvironmentPrefill } from './use-sidebar-feedback-environment-prefill'
+import { useSidebarFeedbackGhStatus } from './use-sidebar-feedback-gh-status'
 import { useSidebarFeedbackImages } from './use-sidebar-feedback-images'
+import { useSidebarFeedbackSubmit } from './use-sidebar-feedback-submit'
 import { openAppHttpLink } from '@/lib/browser/navigation/app-http-link-open'
 
-const GITHUB_ISSUES_URL = 'https://github.com/stablyai/orca/issues/'
+const GITHUB_ISSUES_URL = ADEHONE_GITHUB_ISSUES_URL
 const DISCORD_URL = 'https://discord.gg/fzjDKHxv8Q'
 const X_URL = 'https://x.com/orca_build'
 
-type SubmitIdentity = {
-  githubLogin: string | null
-  githubEmail: string | null
-}
+// Keep upstream social links and legacy feedback API code intact to minimize merge conflicts.
+const SHOW_LEGACY_SOCIAL_LINKS: boolean = false
+const USE_GITHUB_ISSUE_FEEDBACK: boolean = true
 
 type SidebarFeedbackDialogProps = {
   open: boolean
   onOpenChange: (open: boolean) => void
-}
-
-function getSubmitIdentity(viewer: GitHubViewer | null, anonymous: boolean): SubmitIdentity {
-  if (anonymous || !viewer) {
-    return {
-      githubLogin: null,
-      githubEmail: null
-    }
-  }
-
-  return {
-    githubLogin: viewer.login,
-    githubEmail: viewer.email
-  }
 }
 
 export function SidebarFeedbackDialog({
@@ -64,11 +50,12 @@ export function SidebarFeedbackDialog({
   const submitAnonymously = useAppStore((s) => s.feedbackDraft.submitAnonymously)
   const setFeedbackDraft = useAppStore((s) => s.setFeedbackDraft)
   const clearFeedbackDraft = useAppStore((s) => s.clearFeedbackDraft)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [viewer, setViewer] = useState<GitHubViewer | null>(null)
-  const [isViewerLoading, setIsViewerLoading] = useState(false)
   const mountedRef = useMountedRef()
   const feedbackTextareaRef = useRef<HTMLTextAreaElement>(null)
+  const { viewer, ghStatus, isRecheckingGh, setViewer, setGhStatus, refreshGhStatus } =
+    useSidebarFeedbackGhStatus({ open, mountedRef })
+  const isViewerLoading = ghStatus === 'checking'
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const {
     images,
     pendingImageReadCount,
@@ -81,6 +68,23 @@ export function SidebarFeedbackDialog({
     hasPendingImageReads,
     getReservedImageCapacity
   } = useSidebarFeedbackImages({ open, isSubmitting, mountedRef })
+  const { handleSubmit } = useSidebarFeedbackSubmit({
+    useGitHubIssueFeedback: USE_GITHUB_ISSUE_FEEDBACK,
+    feedback,
+    submitAnonymously,
+    viewer,
+    ghStatus,
+    images,
+    hasPendingImageReads,
+    mountedRef,
+    clearFeedbackDraft,
+    clearImages,
+    onOpenChange,
+    isSubmitting,
+    setIsSubmitting,
+    setViewer,
+    setGhStatus
+  })
 
   // Read committed text at call time so late prefill cannot overwrite typing.
   const setFeedback = React.useCallback(
@@ -98,129 +102,8 @@ export function SidebarFeedbackDialog({
     mountedRef
   })
 
-  React.useEffect(() => {
-    if (!open) {
-      return
-    }
-
-    let cancelled = false
-    setIsViewerLoading(true)
-    void window.api.gh
-      .viewer()
-      .then((nextViewer) => {
-        if (!cancelled) {
-          setViewer(nextViewer)
-        }
-      })
-      .catch((err) => {
-        if (!cancelled) {
-          setViewer(null)
-          console.error('Failed to load GitHub viewer:', err)
-        }
-      })
-      .finally(() => {
-        if (!cancelled) {
-          setIsViewerLoading(false)
-        }
-      })
-
-    return () => {
-      cancelled = true
-    }
-  }, [open])
-
-  const handleSubmit = async (): Promise<void> => {
-    if (isSubmitting || hasPendingImageReads()) {
-      return
-    }
-    const trimmed = feedback.trim()
-    const userText = stripClientEnvironmentFooter(feedback).trim()
-    if (!trimmed || !userText) {
-      toast.warning(
-        t(
-          'auto.components.sidebar.SidebarFeedbackDialog.a2fd890d9e',
-          'Please enter feedback before submitting.'
-        )
-      )
-      return
-    }
-
-    setIsSubmitting(true)
-    try {
-      const identity = getSubmitIdentity(viewer, submitAnonymously)
-      // Main-process IPC avoids packaged file-renderer CORS restrictions during submission.
-      const result = await window.api.feedback.submit({
-        feedback: trimmed,
-        submitAnonymously,
-        githubLogin: identity.githubLogin,
-        githubEmail: identity.githubEmail,
-        images: images.map((image) => ({
-          contentType: image.contentType,
-          data: image.data
-        }))
-      })
-
-      if (!result.ok) {
-        throw new Error(`Feedback request failed: ${result.error}`)
-      }
-
-      // Clear delivered text even after unmount, but preserve newer drafts; strip regenerated environment footers before comparing.
-      if (
-        stripClientEnvironmentFooter(useAppStore.getState().feedbackDraft.feedback).trim() ===
-        userText
-      ) {
-        clearFeedbackDraft()
-      }
-
-      if (mountedRef.current) {
-        // The dialog closes after delivery; report lost screenshots without implying they remain recoverable here.
-        if (result.imagesFailure) {
-          toast.warning(
-            // Only 413 proves the size limit; other attachment refusals need different explanations.
-            result.imagesFailure.status === FEEDBACK_PAYLOAD_TOO_LARGE_STATUS
-              ? t(
-                  'auto.components.sidebar.SidebarFeedbackDialog.imagesRejected',
-                  'Feedback sent. Your screenshots were too large to upload and were not included.'
-                )
-              : t(
-                  'auto.components.sidebar.SidebarFeedbackDialog.imagesNotIncluded',
-                  'Feedback sent. Your screenshots could not be uploaded and were not included.'
-                )
-          )
-        } else if (result.imagesDelivered === false) {
-          toast.warning(
-            t(
-              'auto.components.sidebar.SidebarFeedbackDialog.imagesNotDelivered',
-              'Feedback sent, but image delivery could not be confirmed.'
-            )
-          )
-        } else {
-          toast.success(
-            t(
-              'auto.components.sidebar.SidebarFeedbackDialog.7a46c228b8',
-              'Thanks for the feedback.'
-            )
-          )
-        }
-        clearImages()
-        onOpenChange(false)
-      }
-    } catch (err) {
-      if (mountedRef.current) {
-        toast.error(
-          t(
-            'auto.components.sidebar.SidebarFeedbackDialog.60b721e857',
-            'Failed to submit feedback. Please try again.'
-          )
-        )
-      }
-      console.error('Failed to submit feedback:', err)
-    } finally {
-      if (mountedRef.current) {
-        setIsSubmitting(false)
-      }
-    }
-  }
+  const usesBrowserFallback =
+    USE_GITHUB_ISSUE_FEEDBACK && ghStatus !== 'connected' && ghStatus !== 'checking'
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -259,7 +142,7 @@ export function SidebarFeedbackDialog({
           <DialogDescription className="text-xs">
             {t(
               'auto.components.sidebar.SidebarFeedbackDialog.a828fa4aee',
-              "Share what's working, what's broken, or what Orca should do next."
+              "Share what's working, what's broken, or what Adehone should do next."
             )}
           </DialogDescription>
         </DialogHeader>
@@ -283,32 +166,36 @@ export function SidebarFeedbackDialog({
               {t('auto.components.sidebar.SidebarFeedbackDialog.d245c4ef6c', 'GitHub issues')}
               <ExternalLink className="size-3.5" />
             </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="h-8 text-xs"
-              onClick={(event) => openAppHttpLink(DISCORD_URL, { event })}
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5 fill-current">
-                <path d="M20.317 4.369A19.791 19.791 0 0 0 15.885 3c-.191.328-.403.77-.553 1.116a18.27 18.27 0 0 0-5.098 0A12.64 12.64 0 0 0 9.68 3a19.736 19.736 0 0 0-4.433 1.369C2.444 8.479 1.69 12.488 2.067 16.44a19.912 19.912 0 0 0 5.427 2.744c.438-.598.828-1.23 1.164-1.89a12.95 12.95 0 0 1-1.833-.877c.154-.113.305-.231.45-.352a14.294 14.294 0 0 0 12.45 0c.146.12.296.239.45.352-.585.34-1.2.634-1.835.878.337.659.727 1.29 1.165 1.888a19.84 19.84 0 0 0 5.43-2.744c.442-4.579-.755-8.551-3.932-12.07ZM9.955 14.005c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.176 1.095 2.157 2.418 0 1.334-.955 2.419-2.157 2.419Zm4.09 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.176 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z" />
-              </svg>
-              {t('auto.components.sidebar.SidebarFeedbackDialog.26108d3699', 'Join Discord')}
-              <ExternalLink className="size-3.5" />
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="h-8 text-xs"
-              onClick={(event) => openAppHttpLink(X_URL, { event })}
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5 fill-current">
-                <path d="M18.901 1.153h3.68l-8.041 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.493h2.04L6.486 3.24H4.298l13.313 17.406Z" />
-              </svg>
-              {t('auto.components.sidebar.SidebarFeedbackDialog.3460258a54', 'Follow on X')}
-              <ExternalLink className="size-3.5" />
-            </Button>
+            {SHOW_LEGACY_SOCIAL_LINKS ? (
+              <>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-8 text-xs"
+                  onClick={(event) => openAppHttpLink(DISCORD_URL, { event })}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5 fill-current">
+                    <path d="M20.317 4.369A19.791 19.791 0 0 0 15.885 3c-.191.328-.403.77-.553 1.116a18.27 18.27 0 0 0-5.098 0A12.64 12.64 0 0 0 9.68 3a19.736 19.736 0 0 0-4.433 1.369C2.444 8.479 1.69 12.488 2.067 16.44a19.912 19.912 0 0 0 5.427 2.744c.438-.598.828-1.23 1.164-1.89a12.95 12.95 0 0 1-1.833-.877c.154-.113.305-.231.45-.352a14.294 14.294 0 0 0 12.45 0c.146.12.296.239.45.352-.585.34-1.2.634-1.835.878.337.659.727 1.29 1.165 1.888a19.84 19.84 0 0 0 5.43-2.744c.442-4.579-.755-8.551-3.932-12.07ZM9.955 14.005c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.176 1.095 2.157 2.418 0 1.334-.955 2.419-2.157 2.419Zm4.09 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.176 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z" />
+                  </svg>
+                  {t('auto.components.sidebar.SidebarFeedbackDialog.26108d3699', 'Join Discord')}
+                  <ExternalLink className="size-3.5" />
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-8 text-xs"
+                  onClick={(event) => openAppHttpLink(X_URL, { event })}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5 fill-current">
+                    <path d="M18.901 1.153h3.68l-8.041 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.493h2.04L6.486 3.24H4.298l13.313 17.406Z" />
+                  </svg>
+                  {t('auto.components.sidebar.SidebarFeedbackDialog.3460258a54', 'Follow on X')}
+                  <ExternalLink className="size-3.5" />
+                </Button>
+              </>
+            ) : null}
           </div>
         </div>
 
@@ -333,50 +220,59 @@ export function SidebarFeedbackDialog({
           onRemove={handleRemoveImage}
         />
 
-        <div className="min-h-9 rounded-md border border-border/70 bg-muted/30 px-3 py-2">
-          {viewer ? (
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-              <span>
-                {t('auto.components.sidebar.SidebarFeedbackDialog.c9e5ea0791', 'GitHub:')}{' '}
-                <span className="font-mono text-foreground">
-                  {viewer.login}
-                  {viewer.email ? ` (${viewer.email})` : ''}
+        {USE_GITHUB_ISSUE_FEEDBACK ? (
+          <SidebarFeedbackGitHubStatus
+            status={ghStatus}
+            viewer={viewer}
+            isRechecking={isRecheckingGh}
+            onRecheck={() => void refreshGhStatus(true)}
+          />
+        ) : (
+          <div className="min-h-9 rounded-md border border-border/70 bg-muted/30 px-3 py-2">
+            {viewer ? (
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+                <span>
+                  {t('auto.components.sidebar.SidebarFeedbackDialog.c9e5ea0791', 'GitHub:')}{' '}
+                  <span className="font-mono text-foreground">
+                    {viewer.login}
+                    {viewer.email ? ` (${viewer.email})` : ''}
+                  </span>
                 </span>
-              </span>
-              <label className="flex cursor-pointer items-center gap-2 text-foreground">
-                <input
-                  type="checkbox"
-                  checked={submitAnonymously}
-                  onChange={(event) =>
-                    setFeedbackDraft({ submitAnonymously: event.target.checked })
-                  }
-                  className={cn(
-                    'size-3.5 rounded border border-border bg-background align-middle',
-                    'accent-foreground'
+                <label className="flex cursor-pointer items-center gap-2 text-foreground">
+                  <input
+                    type="checkbox"
+                    checked={submitAnonymously}
+                    onChange={(event) =>
+                      setFeedbackDraft({ submitAnonymously: event.target.checked })
+                    }
+                    className={cn(
+                      'size-3.5 rounded border border-border bg-background align-middle',
+                      'accent-foreground'
+                    )}
+                  />
+                  {t(
+                    'auto.components.sidebar.SidebarFeedbackDialog.5b120b9634',
+                    'Submit anonymously'
                   )}
-                />
+                </label>
+              </div>
+            ) : isViewerLoading ? (
+              <div className="text-xs text-muted-foreground">
                 {t(
-                  'auto.components.sidebar.SidebarFeedbackDialog.5b120b9634',
-                  'Submit anonymously'
+                  'auto.components.sidebar.SidebarFeedbackDialog.d20439c560',
+                  'Checking GitHub identity…'
                 )}
-              </label>
-            </div>
-          ) : isViewerLoading ? (
-            <div className="text-xs text-muted-foreground">
-              {t(
-                'auto.components.sidebar.SidebarFeedbackDialog.d20439c560',
-                'Checking GitHub identity…'
-              )}
-            </div>
-          ) : (
-            <div className="text-xs text-muted-foreground">
-              {t(
-                'auto.components.sidebar.SidebarFeedbackDialog.8de03e23c5',
-                'Submit with your typed feedback only, or connect `gh` to include GitHub identity.'
-              )}
-            </div>
-          )}
-        </div>
+              </div>
+            ) : (
+              <div className="text-xs text-muted-foreground">
+                {t(
+                  'auto.components.sidebar.SidebarFeedbackDialog.8de03e23c5',
+                  'Submit with your typed feedback only, or connect `gh` to include GitHub identity.'
+                )}
+              </div>
+            )}
+          </div>
+        )}
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)} disabled={isSubmitting}>
             {t('auto.components.sidebar.SidebarFeedbackDialog.8bf619e4cf', 'Cancel')}
@@ -391,7 +287,9 @@ export function SidebarFeedbackDialog({
           >
             {isSubmitting
               ? t('auto.components.sidebar.SidebarFeedbackDialog.69969ba364', 'Sending…')
-              : t('auto.components.sidebar.SidebarFeedbackDialog.f2e42e1307', 'Send')}
+              : usesBrowserFallback
+                ? t('auto.components.sidebar.SidebarFeedbackDialog.openInGitHub', 'Open in GitHub')
+                : t('auto.components.sidebar.SidebarFeedbackDialog.f2e42e1307', 'Send')}
           </Button>
         </DialogFooter>
       </DialogContent>

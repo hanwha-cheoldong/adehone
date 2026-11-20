@@ -2,7 +2,14 @@ import type { AiActionId } from './source-control-ai-actions'
 
 /** Key the registry off hover descriptions so an undocumented chip fails compilation. */
 export const SOURCE_CONTROL_ACTION_VARIABLES: Record<AiActionId, SourceControlActionVariable[]> = {
-  commitMessage: ['basePrompt', 'branch', 'stagedFiles', 'stagedPatch', 'linkedIssue'],
+  commitMessage: [
+    'basePrompt',
+    'branch',
+    'stagedFiles',
+    'stagedPatch',
+    'linkedIssue',
+    'allowedTypes'
+  ],
   pullRequest: [
     'basePrompt',
     'branch',
@@ -85,6 +92,11 @@ export const SOURCE_CONTROL_ACTION_VARIABLE_INFO = {
     description:
       'The GitHub issue number linked to this workspace. Empty when no GitHub issue is linked (including GitLab-linked workspaces). Prefer instructional templates: a bare "Fixes #{linkedIssue}" becomes "Fixes #" when unlinked.',
     example: '123'
+  },
+  allowedTypes: {
+    description: 'The allowed Conventional Commits types and their descriptions.',
+    example:
+      '- feat: new feature\n- fix: bug fix\n- refactor: code refactoring without adding features or fixing bugs'
   }
 } satisfies Record<string, SourceControlActionVariableInfo>
 

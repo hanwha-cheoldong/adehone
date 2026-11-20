@@ -2,10 +2,12 @@ import os from 'node:os'
 import { app, ipcMain } from 'electron'
 import { readFeedbackImagesDelivered, validateFeedbackImages } from './feedback-image-attachments'
 import type {
+  FeedbackGitHubIssueSubmitArgs,
   FeedbackRequestFailure,
   FeedbackSubmitArgs,
   FeedbackSubmitResult
 } from '../../../shared/feedback/feedback-submit-contract'
+import { submitFeedbackToGitHubIssue } from './feedback-github-issue'
 import {
   errorFailure,
   messageFromError,
@@ -251,4 +253,8 @@ export function registerFeedbackHandlers(): void {
       submissionType: 'feedback'
     })
   })
+  ipcMain.removeHandler('feedback:submitGitHubIssue')
+  ipcMain.handle('feedback:submitGitHubIssue', (_event, args: FeedbackGitHubIssueSubmitArgs) =>
+    submitFeedbackToGitHubIssue(args)
+  )
 }
