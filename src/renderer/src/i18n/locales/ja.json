@@ -22630,7 +22630,7 @@
       "basePrompt": {
         "commitMessage": "Conventional Commits 仕様に従って単一の git コミットメッセージを生成します。\n形式: <type>[任意の (scope)][任意の !]: <description>\n許可されたタイプ、ヘッダー/本文/フッターのルール、ブランチ、関連イシュー（ある場合）、ステージされたファイル、ステージされたパッチを含みます。",
         "pullRequest": "Pull Request の詳細を生成します。\nコンパクトな JSON を返します: {\"base\",\"title\",\"body\",\"draft\"}\nルール（## Problem、## Solution、関連イシュー、既存セクションの維持）、ブランチ/ベース/ドラフト状態、コミット、変更ファイル、ブランチ diff を含みます。",
-        "branchName": "コーディング作業またはコード変更を要約する短い git ブランチ名を生成します。\nブランチ名のみを1行で出力します。\n最初のユーザーリクエスト（またはこれまでの変更）と最初のエージェント応答を含みます。",
+        "branchName": "コーディング作業またはコード変更を要約する短い git ブランチ名を生成します。\nブランチ名のみを1行で出力します。\n最初のユーザーリクエスト（またはこれまでの変更）と最初の Agent 応答を含みます。",
         "conversationName": "最初のユーザーリクエストに基づいて、この会話の短く分かりやすいタイトルを生成します。",
         "dictationCleanup": "話者の意味を変えずに、音声入力テキストの句読点、大文字/小文字、明らかな誤認識を修正します。",
         "fixCommitFailure": "失敗した git コミットを診断して修正します。\n失敗したコミットコマンド、エラー出力、ステージ/作業ツリーのコンテキストを含みます。",
@@ -22644,7 +22644,7 @@
       "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
       "baseBranch": "main",
       "currentTitle": "ソース管理 AI カスタマイズの改善",
-      "currentBody": "ソース管理アクションのエージェントとコマンドテンプレートを設定できるようにします。",
+      "currentBody": "ソース管理アクションの Agent とコマンドテンプレートを設定できるようにします。",
       "commitSummary": "a1b2c3d アクションレシピのデフォルトを追加\nd4e5f6a コマンドテンプレートをレンダリング",
       "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
       "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
