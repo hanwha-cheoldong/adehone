@@ -122,7 +122,8 @@
       "patch": "O diff da branch em relação à base usado para gerar os detalhes do PR.",
       "firstPrompt": "A primeira solicitação do usuário neste espaço de trabalho ou chat.",
       "assistantMessage": "A resposta inicial do agente, quando disponível no Adehone.",
-      "linkedIssue": "O número da issue do GitHub vinculada a este espaço de trabalho. Fica vazio quando não há issue do GitHub vinculada (incluindo espaços vinculados ao GitLab). Prefira modelos com instruções: \"Fixes #{linkedIssue}\" isolado vira \"Fixes #\" quando não há vínculo."
+      "linkedIssue": "O número da issue do GitHub vinculada a este espaço de trabalho. Fica vazio quando não há issue do GitHub vinculada (incluindo espaços vinculados ao GitLab). Prefira modelos com instruções: \"Fixes #{linkedIssue}\" isolado vira \"Fixes #\" quando não há vínculo.",
+      "allowedTypes": "Os tipos permitidos do Conventional Commits e suas descrições."
     },
     "textGeneration": {
       "errors": {
@@ -318,6 +319,33 @@
       "switchedIn": "Em {{workspace}}",
       "thisComputer": "este computador",
       "updateHost": "Atualize o Adehone em {{host}} para trocar de branch daqui."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Você está gerando uma única mensagem de commit git seguindo a especificação Conventional Commits.\nFormato: <type>[opcional (scope)][opcional !]: <description>\nInclui tipos permitidos, regras de cabeçalho/corpo/rodapé, branch, issue vinculada opcional, arquivos em stage e patch em stage.",
+        "pullRequest": "Você está gerando os detalhes do pull request.\nRetorna JSON compacto: {\"base\",\"title\",\"body\",\"draft\"}\nInclui regras (## Problem, ## Solution, issue vinculada, seções existentes), estado de branch/base/rascunho, commits, arquivos alterados e diff da branch.",
+        "branchName": "Gere um nome curto de branch git que resuma a tarefa de programação ou as alterações de código.\nExiba APENAS o nome da branch em uma única linha.\nInclui a primeira solicitação do usuário (ou alterações até agora) e a resposta inicial do agente.",
+        "conversationName": "Gere um título curto e descritivo para esta conversa com base na primeira solicitação do usuário.",
+        "dictationCleanup": "Limpe a transcrição ditada (pontuação, maiúsculas/minúsculas e erros óbvios de transcrição) sem alterar o significado do locutor.",
+        "fixCommitFailure": "Diagnostique e corrija o commit git que falhou.\nInclui o comando de commit com falha, saída de erro e contexto de stage/árvore de trabalho.",
+        "fixPushFailure": "Diagnostique e resolva o push git que falhou.\nInclui o comando push com falha, saída de erro e status da branch/remoto.",
+        "fixChecks": "Investigue e corrija as verificações de CI com falha.\nInclui nomes das verificações com falha, resumos e logs ou anotações disponíveis.",
+        "resolveConflicts": "Resolva os conflitos de merge ou rebase do git.\nInclui os arquivos em conflito, o estado atual do repositório e orientações de resolução.",
+        "resolveComments": "Atenda aos comentários de revisão de PR selecionados.\nInclui os tópicos de comentários, contexto de arquivo/linha e instruções para aplicar as alterações solicitadas."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "Melhorar a personalização de IA do controle de versão",
+      "currentBody": "Adiciona agentes configuráveis e modelos de comando para ações do controle de versão.",
+      "commitSummary": "a1b2c3d Adicionar padrões de receitas de ação\nd4e5f6a Renderizar modelos de comando",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "Corrija o CI e faça commit do resultado",
+      "assistantMessage": "Vou inspecionar a verificação com falha, corrigir o problema e executar os testes.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: novo recurso\n- fix: correção de bug\n- docs: alterações de documentação\n- refactor: refatoração de código sem adicionar recursos ou corrigir bugs"
     }
   },
   "githubChecks": {

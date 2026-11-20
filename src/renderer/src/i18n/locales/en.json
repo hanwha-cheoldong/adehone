@@ -24426,6 +24426,33 @@
       "switchedIn": "In {{workspace}}",
       "thisComputer": "this computer",
       "updateHost": "Update Adehone on {{host}} to switch branches from here."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "You are generating a single git commit message following the Conventional Commits specification.\nFormat: <type>[optional (scope)][optional !]: <description>\nIncludes allowed types, header/body/footer rules, branch, optional linked issue, staged files, and staged patch.",
+        "pullRequest": "You are generating pull request details.\nReturns compact JSON: {\"base\",\"title\",\"body\",\"draft\"}\nIncludes rules (## Problem, ## Solution, linked issue, existing sections), branch/base/draft state, commits, changed files, and branch diff.",
+        "branchName": "Generate a short git branch name that summarizes the coding task or code changes.\nOutput ONLY the branch name on a single line.\nIncludes the first user request (or changes so far) and initial agent response.",
+        "conversationName": "Generate a short, descriptive title for this conversation based on the first user request.",
+        "dictationCleanup": "Clean up the dictated transcript (punctuation, capitalization, and obvious transcription errors) without changing the speaker's meaning.",
+        "fixCommitFailure": "Diagnose and fix the failed git commit.\nIncludes the failed commit command, error output, and staged/working tree context.",
+        "fixPushFailure": "Diagnose and resolve the failed git push.\nIncludes the failed push command, error output, and branch/remote status.",
+        "fixChecks": "Investigate and fix the failing CI checks.\nIncludes failing check names, summaries, and available logs or annotations.",
+        "resolveConflicts": "Resolve the git merge or rebase conflicts.\nIncludes the conflicted files, current repository state, and conflict resolution guidance.",
+        "resolveComments": "Address the selected PR review comments.\nIncludes the review comment threads, file/line context, and instructions to apply the requested changes."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "Improve Source Control AI customization",
+      "currentBody": "Adds configurable agents and command templates for Source Control actions.",
+      "commitSummary": "a1b2c3d Add action recipe defaults\nd4e5f6a Render command templates",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "Fix CI and commit the result",
+      "assistantMessage": "I will inspect the failing check, patch the issue, and run tests.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: new feature\n- fix: bug fix\n- docs: documentation changes\n- refactor: code refactoring without adding features or fixing bugs"
     }
   },
   "agentsSidebarIntro": {

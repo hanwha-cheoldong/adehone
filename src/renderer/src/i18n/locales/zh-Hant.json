@@ -20950,7 +20950,8 @@
       "linkedIssue": "與此工作區連結的 GitHub 議題編號。未連結 GitHub 議題時為空白（包括連結至 GitLab 的工作區）。建議使用包含指示的範本：未連結時，單獨使用「Fixes #{linkedIssue}」會變成「Fixes #」。",
       "patch": "此分支相較於基底分支的差異，用於產生 PR 詳細資訊。",
       "stagedFiles": "以換行分隔的已暫存檔案清單，用於產生提交訊息。",
-      "stagedPatch": "用於產生提交訊息的已暫存 Git 修補檔。"
+      "stagedPatch": "用於產生提交訊息的已暫存 Git 修補檔。",
+      "allowedTypes": "允許的 Conventional Commits 類型及其說明。"
     },
     "textGeneration": {
       "errors": {
@@ -21145,6 +21146,33 @@
       "switchedIn": "在 {{workspace}} 中",
       "thisComputer": "這台電腦",
       "updateHost": "請在 {{host}} 上更新 Adehone，以便從這裡切換分支。"
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "依照 Conventional Commits 規範產生單一 git 提交訊息。\n格式: <type>[選填 (scope)][選填 !]: <description>\n包含允許的類型、標題/內文/頁尾規則、分支、關聯議題（若有）、已暫存檔案與已暫存修補檔。",
+        "pullRequest": "產生 Pull Request 詳細資訊。\n傳回精簡 JSON: {\"base\",\"title\",\"body\",\"draft\"}\n包含規則（## Problem、## Solution、關聯議題、保留現有章節）、分支/基準/草稿狀態、提交紀錄、變更檔案與分支 diff。",
+        "branchName": "產生一個簡短的 git 分支名稱，摘要編碼任務或程式碼變更。\n僅在單行輸出分支名稱。\n包含第一個使用者請求（或目前的變更）與代理程式的首次回覆。",
+        "conversationName": "根據第一個使用者請求為此對話產生簡短且具描述性的標題。",
+        "dictationCleanup": "在不改變說話者原意的情況下，整理聽寫文字的標點符號、大小寫與明顯的轉錄錯誤。",
+        "fixCommitFailure": "診斷並修復失敗的 git commit。\n包含失敗的提交命令、錯誤輸出以及暫存區/工作目錄上下文。",
+        "fixPushFailure": "診斷並解決失敗的 git push。\n包含失敗的推送命令、錯誤輸出以及分支/遠端狀態。",
+        "fixChecks": "調查並修復失敗的 CI 檢查。\n包含失敗的檢查名稱、摘要以及可用的日誌或註解。",
+        "resolveConflicts": "解決 git 合併或變基衝突。\n包含衝突檔案、目前儲存庫狀態以及衝突解決指南。",
+        "resolveComments": "處理選取的 PR 審查評論。\n包含審查評論討論串、檔案/行上下文以及套用所要求變更的說明。"
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "改進原始碼控制 AI 自訂功能",
+      "currentBody": "為原始碼控制操作新增可設定的代理程式與命令範本。",
+      "commitSummary": "a1b2c3d 新增操作配方預設值\nd4e5f6a 轉譯命令範本",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "修復 CI 並提交結果",
+      "assistantMessage": "我將檢查失敗的檢查項目，修復問題並執行測試。",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: 新功能\n- fix: 錯誤修復\n- docs: 文件變更\n- refactor: 不新增功能或修復錯誤的程式碼重構"
     }
   },
   "agentsSidebarIntro": {

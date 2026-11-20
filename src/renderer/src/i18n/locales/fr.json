@@ -21669,7 +21669,8 @@
       "patch": "Le diff de la branche par rapport à sa base utilisé pour générer les détails du PR.",
       "firstPrompt": "La première demande de l’utilisateur dans cet espace de travail ou ce chat.",
       "assistantMessage": "La réponse initiale de l’agent, lorsqu’Adehone en dispose.",
-      "linkedIssue": "Le numéro de l’issue GitHub liée à cet espace de travail. Vide si aucune issue GitHub n’est liée (y compris pour les espaces liés à GitLab). Préférez les modèles avec instructions : « Fixes #{linkedIssue} » seul devient « Fixes # » sans lien."
+      "linkedIssue": "Le numéro de l’issue GitHub liée à cet espace de travail. Vide si aucune issue GitHub n’est liée (y compris pour les espaces liés à GitLab). Préférez les modèles avec instructions : « Fixes #{linkedIssue} » seul devient « Fixes # » sans lien.",
+      "allowedTypes": "Les types Conventional Commits autorisés et leurs descriptions."
     },
     "model": {
       "configDefault": "Valeur par défaut de la configuration",
@@ -21869,6 +21870,33 @@
       "switchedIn": "Dans {{workspace}}",
       "thisComputer": "cet ordinateur",
       "updateHost": "Mettez à jour Adehone sur {{host}} pour changer de branche d’ici."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Vous générez un seul message de commit git conforme à la spécification Conventional Commits.\nFormat : <type>[optionnel (scope)][optionnel !]: <description>\nInclut les types autorisés, les règles d'en-tête/corps/pied de page, la branche, le ticket lié optionnel, les fichiers indexés et le patch indexé.",
+        "pullRequest": "Vous générez les détails de la pull request.\nRenvoie un JSON compact : {\"base\",\"title\",\"body\",\"draft\"}\nInclut les règles (## Problem, ## Solution, ticket lié, sections existantes), l'état branche/base/brouillon, les commits, les fichiers modifiés et le diff de branche.",
+        "branchName": "Générez un nom de branche git court résumant la tâche de développement ou les modifications de code.\nAffichez UNIQUEMENT le nom de la branche sur une seule ligne.\nInclut la première demande de l'utilisateur (ou les modifications actuelles) et la réponse initiale de l'agent.",
+        "conversationName": "Générez un titre court et descriptif pour cette conversation à partir de la première demande de l'utilisateur.",
+        "dictationCleanup": "Nettoyez la transcription dictée (ponctuation, majuscules et erreurs de transcription évidentes) sans modifier le sens du propos.",
+        "fixCommitFailure": "Diagnostiquez et corrigez l'échec du commit git.\nInclut la commande de commit en échec, la sortie d'erreur et le contexte d'index/copie de travail.",
+        "fixPushFailure": "Diagnostiquez et résolvez l'échec du push git.\nInclut la commande push en échec, la sortie d'erreur et l'état de la branche/du dépôt distant.",
+        "fixChecks": "Analysez et corrigez les vérifications CI en échec.\nInclut les noms des vérifications en échec, les résumés et les journaux ou annotations disponibles.",
+        "resolveConflicts": "Résolvez les conflits de merge ou de rebase git.\nInclut les fichiers en conflit, l'état actuel du dépôt et les instructions de résolution.",
+        "resolveComments": "Traitez les commentaires de revue de PR sélectionnés.\nInclut les fils de commentaires, le contexte fichier/ligne et les instructions pour appliquer les modifications demandées."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "Améliorer la personnalisation IA du contrôle de code source",
+      "currentBody": "Ajoute des agents configurables et des modèles de commande pour les actions de contrôle de code source.",
+      "commitSummary": "a1b2c3d Ajouter les valeurs par défaut des recettes d'action\nd4e5f6a Générer les modèles de commande",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "Corrige la CI et commite le résultat",
+      "assistantMessage": "Je vais inspecter la vérification en échec, corriger le problème et lancer les tests.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: nouvelle fonctionnalité\n- fix: correction de bug\n- docs: modifications de documentation\n- refactor: refactorisation du code sans ajout de fonctionnalité ni correction de bug"
     }
   },
   "agentsSidebarIntro": {
