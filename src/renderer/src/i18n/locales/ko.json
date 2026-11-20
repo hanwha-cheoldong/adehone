@@ -3275,6 +3275,8 @@
             "4c2990886e": "{{value0}}/{{value1}}개 삭제됨",
             "86ba852118": "{{value0}}, {{value1}}개 실패",
             "archivedStatus": "보관됨",
+            "mergedStatus": "병합됨",
+            "unchangedStatus": "새 커밋 없음",
             "74f6c16279": "뒤로"
           },
           "backgroundRemoval": {
@@ -19690,7 +19692,17 @@
           "selectionVanishedCount_other": "선택한 워크스페이스 {{count}}개가 더 이상 존재하지 않습니다.",
           "selectionWithheldCount_other": "선택한 워크스페이스 {{count}}개가 현재 필터에 의해 숨겨져 선택 해제되었습니다.",
           "selectAllSafetyChecked_other": "안전성 검사를 마친 워크스페이스 {{count}}개 모두 선택",
-          "lastActive": "마지막 활동: {{value0}}"
+          "lastActive": "마지막 활동: {{value0}}",
+          "projectNamed": "프로젝트: {{value0}}",
+          "moreFlags": "플래그 {{value0}}개 더 보기",
+          "pathLabel": "경로",
+          "copyPath": "경로 복사",
+          "gitNotChecked": "확인되지 않음",
+          "workspaceCount_other": "워크스페이스 {{count}}개",
+          "restoreFailed": "{{value0}} 무시 해제를 수행하지 못했습니다",
+          "ignoreTooltip": "무시: 일괄 삭제에서 건너뜀",
+          "stopIgnoring": "무시 해제",
+          "stopIgnoringNamed": "{{value0}} 무시 해제"
         },
         "scan": {
           "progress": "워크스페이스 스캔 중({{value0}}/{{value1}})",
@@ -19731,7 +19743,13 @@
             "dirty": "변경 있음",
             "unpushed": "푸시되지 않음",
             "unknown": "알 수 없음"
-          }
+          },
+          "ignoredFilesBlocker": "무시된 로컬 파일",
+          "ignoredFilesNamed": "무시된 파일: {{value0}}",
+          "ignoredFilesUnchecked": "무시된 파일이 완전히 확인되지 않음"
+        },
+        "confirm": {
+          "deletingTitle_other": "워크스페이스 {{count}}개 삭제 중"
         }
       },
       "creation": {
@@ -19764,6 +19782,10 @@
         },
         "ignoredFilesLost": "무시된 파일이 사라집니다: {{names}}",
         "ignoredFilesUnchecked": "무시된 파일을 모두 확인하지 못했습니다"
+      },
+      "atRiskLocalFiles": {
+        "namesWithCount": "{{names}} 외 {{value0}}개",
+        "namesAndMore": "{{names}} 등"
       }
     },
     "agentSessionContinuation": {
@@ -20040,6 +20062,212 @@
       },
       "repositoryHooks": {
         "availableEnvVars": "사용 가능한 환경 변수"
+      },
+      "workspaceCleanup": {
+        "title": "워크스페이스 정리",
+        "description": "더 이상 필요하지 않은 워크스페이스를 제거합니다. Adehone는 항목을 제거하기 전에 저장되지 않은 작업이 있는지 다시 확인합니다.",
+        "unsupportedHost": "이 호스트에는 자동 정리를 지원하지 않는 Adehone 버전이 실행 중입니다. 이 설정을 사용하려면 해당 호스트의 Adehone를 업데이트하세요.",
+        "previewFailed": "이 변경 사항이 어떤 워크스페이스와 일치하는지 확인하지 못했습니다.",
+        "pinFailed": "{{name}}을(를) 유지하지 못했습니다.",
+        "rules": {
+          "branchNote": "병합된 브랜치는 워크스페이스와 함께 삭제됩니다. 병합되지 않은 브랜치는 유지됩니다.",
+          "recommended": "권장",
+          "inactiveDescription": "{{count}}일 동안 활동 없음.",
+          "advancedDescription": "자동화 및 오케스트레이션 워커 워크스페이스",
+          "inactiveFor": "비활성 기간",
+          "days": "일",
+          "then": "이후 작업",
+          "archiveDescription": "보관은 디스크 공간을 확보하면서 워크스페이스를 사이드바에 유지합니다.",
+          "deleteDescription": "삭제는 워크스페이스와 해당 폴더를 제거합니다.",
+          "archive": "보관",
+          "delete": "삭제",
+          "matchesCount": "현재 워크스페이스 {{count}}개 일치",
+          "hideMatches": "숨기기",
+          "showMatches": "보기",
+          "merged": "병합된 워크스페이스 삭제",
+          "mergedDescription": "풀 리퀘스트가 병합되었고 워크스페이스의 모든 내용이 포함되어 있습니다.",
+          "unchanged": "변경 없는 워크스페이스 삭제",
+          "unchangedDescription": "기본 브랜치 이후 커밋과 편집 내용이 없습니다.",
+          "inactiveCleanUp": "비활성 워크스페이스 정리",
+          "inactive": "비활성 워크스페이스 삭제",
+          "automationRuns": "완료된 자동화 워크스페이스 삭제",
+          "automationRunsDescription": "자동화 실행이 만든 워크스페이스를 실행이 완료된 후 삭제합니다.",
+          "orchestrationWorkers": "해제된 오케스트레이션 워커 워크스페이스 삭제",
+          "orchestrationWorkersDescription": "오케스트레이션 워커가 사용한 워크스페이스를 코디네이터가 해제한 후 삭제합니다.",
+          "inactiveDescription_other": "{{count}}일 동안 활동 없음.",
+          "matchesCount_other": "현재 워크스페이스 {{count}}개 일치",
+          "checking": "일치하는 워크스페이스를 확인하는 중…",
+          "checkFailed": "일치하는 워크스페이스를 확인하지 못했습니다."
+        },
+        "protection": {
+          "title": "보호",
+          "keepIgnoredFiles": "무시된 파일이 있는 워크스페이스 유지",
+          "keepIgnoredFilesDescription": ".env 및 로컬 구성 같은 파일은 복구할 수 없습니다. node_modules와 빌드 결과물은 제외됩니다.",
+          "alwaysKeptLabel": "항상 유지",
+          "alwaysKeptList": "고정된 워크스페이스, 실행 중인 에이전트 또는 터미널, 저장되지 않은 편집기 변경 사항, 커밋되지 않은 변경 사항, 푸시되지 않은 커밋."
+        },
+        "activity": {
+          "loadFailed": "활동을 불러오지 못했습니다: {{error}}",
+          "empty": "아직 정리가 실행되지 않았습니다.",
+          "unfinished": "완료하지 못함",
+          "nothingRemoved": "정리할 항목 없음",
+          "removedCount": "{{count}}개 제거됨",
+          "keptCount": "{{count}}개 유지됨",
+          "failedCount": "{{count}}개 실패",
+          "removed": "제거됨 · {{count}}",
+          "failed": "실패 · {{count}}",
+          "archived": "보관됨",
+          "deleted": "삭제됨",
+          "kept": "유지됨 · {{count}}",
+          "showMore": "{{count}}개 더 보기",
+          "waiting": "비활성 {{elapsed}} / {{after}}일",
+          "title": "활동 기록",
+          "notListed_other": "표시되지 않은 유지 워크스페이스 {{count}}개가 더 있습니다.",
+          "chatsDeletedCount_other": "채팅 {{count}}개 삭제됨",
+          "chatsDeleted_other": "삭제된 워크스페이스에서 채팅 {{count}}개 삭제됨",
+          "chatsFailed_other": "채팅 {{count}}개를 삭제하지 못했습니다"
+        },
+        "runFailed": "정리를 실행하지 못했습니다.",
+        "updateFailed": "정리 규칙을 저장하지 못했습니다.",
+        "enable": {
+          "title": "\"{{rule}}\"을(를) 켤까요?",
+          "description_other": "현재 워크스페이스 {{count}}개가 일치합니다. 켜면 몇 초 후에 삭제됩니다.",
+          "summary": "{{count}}개 삭제 예정",
+          "cancel": "취소",
+          "turnOn": "켜기"
+        },
+        "reason": {
+          "merged": "병합됨",
+          "unchanged": "변경 없음",
+          "inactive": "비활성",
+          "automationRun": "자동화 실행",
+          "orchestrationWorker": "오케스트레이션 워커",
+          "mergedNumber": "{{label}} · #{{number}}"
+        },
+        "keep": {
+          "pinned": "고정됨",
+          "noRuleMatched": "일치하는 규칙 없음",
+          "recentlyActive": "최근 1시간 이내 사용됨",
+          "activeWorkspace": "현재 열려 있음",
+          "agentRunning": "에이전트 실행 중",
+          "terminalRunning": "터미널에서 프로세스 실행 중",
+          "terminalUnknown": "터미널 상태 알 수 없음",
+          "unsavedEditorChanges": "저장되지 않은 편집기 변경 사항",
+          "uncommittedChanges": "커밋되지 않은 변경 사항",
+          "unpushedCommits": "푸시되지 않은 커밋",
+          "ignoredFiles": "무시된 파일",
+          "gitUnknown": "Git 상태를 읽을 수 없음",
+          "archiveUnavailable": "보관할 수 없음",
+          "archiveScript": "보관 스크립트가 있음",
+          "removing": "이미 제거 중",
+          "folderWorkspaceSibling": "이 워크스페이스의 다른 저장소가 아직 사용 중임",
+          "waiting": "대기 중",
+          "notRemovable": "기본 워크스페이스 또는 폴더 프로젝트",
+          "projectOff": "이 프로젝트에서 정리 꺼짐",
+          "rulesOff": "켜진 규칙 없음",
+          "withDetail": "{{cause}} · {{detail}}"
+        },
+        "trigger": {
+          "startup": "시작 시",
+          "hourly": "매시간",
+          "settings": "규칙 변경 후",
+          "runNow": "지금 규칙 실행",
+          "cli": "CLI에서 실행"
+        },
+        "search": {
+          "cleanup": "정리",
+          "cleanUp": "정리",
+          "delete": "삭제",
+          "automatic": "자동",
+          "pullRequest": "PR",
+          "inactiveDescription": "일정 기간 동안 활동이 없습니다.",
+          "stale": "비활성",
+          "days": "일",
+          "automations": "자동화",
+          "orchestration": "오케스트레이션",
+          "protection": "보호",
+          "activityDescription": "각 정리 실행에서 제거되거나 유지된 항목입니다.",
+          "history": "기록",
+          "runs": "실행",
+          "envFile": ".env",
+          "manual": "수동",
+          "automaticDescription": "자동 정리 사용 여부, 다음 실행 시간 및 지금 규칙 실행.",
+          "runRulesNow": "지금 규칙 실행",
+          "cleanUpNow": "지금 정리",
+          "schedule": "일정"
+        },
+        "status": {
+          "lastRunFailed": "마지막 실행({{when}})을 완료하지 못했습니다: {{error}}",
+          "lastRunNothing": "마지막 실행({{when}})에서 제거된 항목이 없습니다.",
+          "lastRunFreed_other": "마지막 실행({{when}})에서 워크스페이스 {{count}}개를 제거하고 {{size}}를 확보했습니다.",
+          "lastRunRemoved_other": "마지막 실행({{when}})에서 워크스페이스 {{count}}개를 제거했습니다.",
+          "nextRun": "다음 실행: {{when}}.",
+          "justNow": "방금 전",
+          "inUnderAMinute": "1분 이내",
+          "lastRunChats_other": "마지막 실행({{when}})에서 삭제된 워크스페이스의 채팅 {{count}}개를 삭제했습니다."
+        },
+        "change": {
+          "title": "\"{{rule}}\"을(를) 변경할까요?",
+          "description_other": "이 변경으로 현재 워크스페이스 {{count}}개가 추가로 일치합니다. 적용하면 몇 초 후에 삭제됩니다.",
+          "apply": "적용"
+        },
+        "rulesLoadFailed": "이 호스트의 정리 규칙을 불러오지 못했습니다: {{error}}",
+        "retry": "다시 시도",
+        "summary": {
+          "merged": "병합됨 삭제",
+          "unchanged": "변경 없음 삭제",
+          "inactiveCleanUp": "비활성 정리",
+          "inactive": "비활성 삭제",
+          "automationRuns": "자동화 워크스페이스",
+          "orchestrationWorkers": "오케스트레이션 워커",
+          "off": "꺼짐"
+        },
+        "disableIgnoredFiles": {
+          "title": "무시된 파일 보호를 끌까요?",
+          "description": "이 정리 규칙을 사용하는 프로젝트에서 무시된 파일이 더 이상 자동 정리를 막지 않습니다. .env 및 로컬 구성 같은 파일이 삭제될 수 있으며 복구할 수 없습니다.",
+          "matches_other": "고정하지 않으면 보호를 끈 지 몇 초 후에 워크스페이스 {{count}}개가 추가로 삭제됩니다.",
+          "noMatches": "현재 추가로 일치하는 워크스페이스가 없습니다. 이 설정은 이 규칙을 사용하는 프로젝트의 향후 정리에 적용됩니다.",
+          "turnOff": "보호 끄기"
+        },
+        "pinAndKeep": {
+          "description": "확인하면 선택한 워크스페이스가 고정됩니다. 고정된 워크스페이스는 고정을 해제할 때까지 자동 정리에서 제외됩니다.",
+          "named": "{{name}} 고정 및 유지",
+          "label": "고정 및 유지"
+        },
+        "chatHistory": {
+          "title": "채팅 기록"
+        },
+        "manual": {
+          "title": "수동 정리",
+          "label": "선택한 워크스페이스 삭제",
+          "review": "워크스페이스 검토",
+          "description": "모든 워크스페이스를 확인하고 삭제할 항목을 선택하세요."
+        },
+        "automatic": {
+          "offDetail": "일정에 따라 워크스페이스를 제거하려면 규칙을 켜세요.",
+          "running": "규칙과 일치하는 워크스페이스를 제거하는 중…",
+          "title": "자동 정리",
+          "on": "켜짐",
+          "off": "꺼짐",
+          "runningButton": "실행 중…",
+          "runNow": "지금 규칙 실행"
+        }
+      },
+      "repository": {
+        "workspaceCleanup": {
+          "title": "워크스페이스 정리",
+          "description": "{{name}}에만 적용되는 규칙입니다. 전역 설정 사용 시 설정 / 워크스페이스 정리를 따릅니다.",
+          "usingGlobal": "전역 설정 사용 중: {{rules}}",
+          "globalDefault": "전역 기본값: {{rules}}",
+          "useGlobal": "전역 설정 사용",
+          "off": "꺼짐",
+          "custom": "사용자 지정",
+          "rules": "정리 규칙",
+          "rulesDescription": "이 프로젝트에 적용할 워크스페이스 정리 규칙입니다.",
+          "keywordCleanup": "정리",
+          "keywordDelete": "삭제",
+          "keywordMerged": "병합됨"
+        }
       },
       "bitbucket": {
         "credentials": {
