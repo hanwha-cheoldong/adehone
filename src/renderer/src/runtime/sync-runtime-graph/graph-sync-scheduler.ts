@@ -2,6 +2,7 @@ import type { AppState } from '@/store/types'
 import { syncRuntimeGraph, setTrailingGraphSyncScheduler } from './graph-publication'
 import { graphState, RUNTIME_GRAPH_SYNC_COALESCE_MS } from './graph-state'
 import { subscribeMountedTerminalTabChanges } from '../hosted-terminals/mounted-surfaces/mounted-terminal-tab-registry'
+import { DEFAULT_TERMINAL_FONT_SIZE } from '../../../../shared/terminal/appearance/terminal-fonts'
 import { measureTerminalGroupGridSizes } from './terminal-group-grid-sizes'
 export function setRuntimeGraphStoreStateGetter(getter: (() => AppState) | null): void {
   graphState.getStoreState = getter
@@ -48,7 +49,9 @@ export function scheduleRuntimeGraphSyncIfGroupGridSizesChanged(): void {
   if (!state) {
     return
   }
-  const sizes = measureTerminalGroupGridSizes(state.settings?.terminalFontSize ?? 14)
+  const sizes = measureTerminalGroupGridSizes(
+    state.settings?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE
+  )
   if (JSON.stringify(sizes ?? null) !== graphState.publishedTerminalGroupGridSizesKey) {
     scheduleRuntimeGraphSync()
   }
