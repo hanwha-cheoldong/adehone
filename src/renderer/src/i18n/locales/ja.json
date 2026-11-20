@@ -22426,7 +22426,8 @@
       "patch": "PR の詳細の生成に使う、このブランチとベースブランチの差分です。",
       "firstPrompt": "このワークスペースまたはチャットでの最初のユーザーの依頼です。",
       "assistantMessage": "Adehone が取得できる場合の、Agent の最初の応答です。",
-      "linkedIssue": "このワークスペースにリンクされた GitHub Issue の番号です。GitHub Issue がリンクされていない場合は空です（GitLab にリンクされたワークスペースを含む）。指示を含むテンプレートを使ってください。リンクがない場合、単独の「Fixes #{linkedIssue}」は「Fixes #」になります。"
+      "linkedIssue": "このワークスペースにリンクされた GitHub Issue の番号です。GitHub Issue がリンクされていない場合は空です（GitLab にリンクされたワークスペースを含む）。指示を含むテンプレートを使ってください。リンクがない場合、単独の「Fixes #{linkedIssue}」は「Fixes #」になります。",
+      "allowedTypes": "許可されている Conventional Commits のタイプとその説明です。"
     },
     "textGeneration": {
       "errors": {
@@ -22624,6 +22625,33 @@
       "switchedIn": "{{workspace}} で",
       "thisComputer": "このコンピューター",
       "updateHost": "ここからブランチを切り替えるには、{{host}} の Adehone を更新してください。"
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Conventional Commits 仕様に従って単一の git コミットメッセージを生成します。\n形式: <type>[任意の (scope)][任意の !]: <description>\n許可されたタイプ、ヘッダー/本文/フッターのルール、ブランチ、関連イシュー（ある場合）、ステージされたファイル、ステージされたパッチを含みます。",
+        "pullRequest": "Pull Request の詳細を生成します。\nコンパクトな JSON を返します: {\"base\",\"title\",\"body\",\"draft\"}\nルール（## Problem、## Solution、関連イシュー、既存セクションの維持）、ブランチ/ベース/ドラフト状態、コミット、変更ファイル、ブランチ diff を含みます。",
+        "branchName": "コーディング作業またはコード変更を要約する短い git ブランチ名を生成します。\nブランチ名のみを1行で出力します。\n最初のユーザーリクエスト（またはこれまでの変更）と最初の Agent 応答を含みます。",
+        "conversationName": "最初のユーザーリクエストに基づいて、この会話の短く分かりやすいタイトルを生成します。",
+        "dictationCleanup": "話者の意味を変えずに、音声入力テキストの句読点、大文字/小文字、明らかな誤認識を修正します。",
+        "fixCommitFailure": "失敗した git コミットを診断して修正します。\n失敗したコミットコマンド、エラー出力、ステージ/作業ツリーのコンテキストを含みます。",
+        "fixPushFailure": "失敗した git push を診断して解決します。\n失敗した push コマンド、エラー出力、ブランチ/リモート状態を含みます。",
+        "fixChecks": "失敗した CI チェックを調査して修正します。\n失敗したチェック名、概要、利用可能なログまたは注釈を含みます。",
+        "resolveConflicts": "git のマージまたはリベースの競合を解決します。\n競合ファイル、現在のリポジトリ状態、競合解決のガイダンスを含みます。",
+        "resolveComments": "選択した PR レビューコメントに対応します。\nレビューコメントのスレッド、ファイル/行のコンテキスト、変更適用の指示を含みます。"
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "ソース管理 AI カスタマイズの改善",
+      "currentBody": "ソース管理アクションの Agent とコマンドテンプレートを設定できるようにします。",
+      "commitSummary": "a1b2c3d アクションレシピのデフォルトを追加\nd4e5f6a コマンドテンプレートをレンダリング",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "CI を修正して結果をコミットして",
+      "assistantMessage": "失敗したチェックを確認し、問題を修正してテストを実行します。",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: 新機能\n- fix: バグ修正\n- docs: ドキュメントの変更\n- refactor: 機能追加やバグ修正を伴わないリファクタリング"
     }
   },
   "rendererRecovery": {

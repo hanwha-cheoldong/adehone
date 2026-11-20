@@ -22104,7 +22104,8 @@
       "patch": "El diff de la rama respecto a su base usado para generar los detalles del PR.",
       "firstPrompt": "La primera solicitud del usuario en este espacio de trabajo o chat.",
       "assistantMessage": "La respuesta inicial del agente, cuando Adehone dispone de ella.",
-      "linkedIssue": "El número del issue de GitHub vinculado a este espacio de trabajo. Vacío si no hay un issue de GitHub vinculado (también en espacios vinculados a GitLab). Usa plantillas con instrucciones: \"Fixes #{linkedIssue}\" por sí solo se convierte en \"Fixes #\" si no hay vínculo."
+      "linkedIssue": "El número del issue de GitHub vinculado a este espacio de trabajo. Vacío si no hay un issue de GitHub vinculado (también en espacios vinculados a GitLab). Usa plantillas con instrucciones: \"Fixes #{linkedIssue}\" por sí solo se convierte en \"Fixes #\" si no hay vínculo.",
+      "allowedTypes": "Los tipos permitidos de Conventional Commits y sus descripciones."
     },
     "textGeneration": {
       "errors": {
@@ -22300,6 +22301,33 @@
       "switchedIn": "En {{workspace}}",
       "thisComputer": "este equipo",
       "updateHost": "Actualiza Adehone en {{host}} para cambiar de rama desde aquí."
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "Estás generando un único mensaje de commit de git siguiendo la especificación Conventional Commits.\nFormato: <type>[opcional (scope)][opcional !]: <description>\nIncluye tipos permitidos, reglas de encabezado/cuerpo/pie, rama, issue vinculado opcional, archivos en staging y parche en staging.",
+        "pullRequest": "Estás generando los detalles del pull request.\nDevuelve JSON compacto: {\"base\",\"title\",\"body\",\"draft\"}\nIncluye reglas (## Problem, ## Solution, issue vinculado, secciones existentes), estado de rama/base/borrador, commits, archivos modificados y diff de la rama.",
+        "branchName": "Genera un nombre corto de rama git que resuma la tarea de programación o los cambios de código.\nImprime SOLO el nombre de la rama en una sola línea.\nIncluye la primera solicitud del usuario (o cambios hasta ahora) y la respuesta inicial del agente.",
+        "conversationName": "Genera un título corto y descriptivo para esta conversación basado en la primera solicitud del usuario.",
+        "dictationCleanup": "Limpia la transcripción dictada (puntuación, mayúsculas y errores obvios de transcripción) sin cambiar el significado del hablante.",
+        "fixCommitFailure": "Diagnostica y corrige el commit de git fallido.\nIncluye el comando de commit fallido, la salida de error y el contexto de staging/árbol de trabajo.",
+        "fixPushFailure": "Diagnostica y resuelve el push de git fallido.\nIncluye el comando de push fallido, la salida de error y el estado de la rama/remoto.",
+        "fixChecks": "Investiga y corrige las comprobaciones de CI fallidas.\nIncluye los nombres de las comprobaciones fallidas, resúmenes y registros o anotaciones disponibles.",
+        "resolveConflicts": "Resuelve los conflictos de merge o rebase de git.\nIncluye los archivos en conflicto, el estado actual del repositorio y la guía para resolver conflictos.",
+        "resolveComments": "Atiende los comentarios de revisión del PR seleccionados.\nIncluye los hilos de comentarios, contexto de archivo/línea e instrucciones para aplicar los cambios solicitados."
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "Mejorar la personalización de IA del control de código fuente",
+      "currentBody": "Agrega agentes configurables y plantillas de comandos para las acciones de control de código fuente.",
+      "commitSummary": "a1b2c3d Agregar valores predeterminados de recetas de acción\nd4e5f6a Renderizar plantillas de comandos",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "Corrige el CI y haz commit del resultado",
+      "assistantMessage": "Inspeccionaré la comprobación fallida, corregiré el problema y ejecutaré las pruebas.",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: nueva funcionalidad\n- fix: corrección de error\n- docs: cambios en la documentación\n- refactor: refactorización de código sin agregar funciones ni corregir errores"
     }
   },
   "aiVault": {

@@ -6,6 +6,7 @@ import {
   DEFAULT_NATIVE_CHAT_FONT_SIZE,
   resolveNativeChatAppearanceSettings
 } from '../../../../../shared/native-chat/settings/native-chat-appearance-settings'
+import { DEFAULT_TERMINAL_FONT_SIZE } from '../../../../../shared/terminal/appearance/terminal-fonts'
 import { DEFAULT_APP_FONT_FAMILY } from '../../../../../shared/app-lifecycle/appearance/app-font-family'
 import { resolveConfiguredTerminalColors } from '../../../../../shared/terminal-themes/terminal-theme-selection'
 import { MATCH_TERMINAL_APP_THEME } from '../../../../../shared/plugins/appearance/plugin-theme-settings'
@@ -184,7 +185,7 @@ export function nativeChatAppearanceStyle(
   const appearance = resolveNativeChatAppearanceSettings(settings?.nativeChatAppearance)
   const { width } = appearance
   const matching = appearance.matchTerminalInterface
-  const terminalFontSize = settings?.terminalFontSize ?? 14
+  const terminalFontSize = settings?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE
   const fontSize = matching ? terminalFontSize : appearance.fontSize
   const codeFontSize = matching ? terminalFontSize : appearance.codeFontSize
   // Message text follows the terminal (10-24); labels, controls and spacing stay in the chat's 12-20.

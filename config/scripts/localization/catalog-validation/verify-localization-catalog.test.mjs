@@ -42,16 +42,20 @@ function makeProject({ sourceText, enCatalog = {}, esCatalog = {} }) {
 }
 
 describe('verify-localization-catalog', () => {
-  it('bootstraps English entries without fabricating target translations', async () => {
+  it('bootstraps English entries and syncs ko.json without fabricating other target translations', async () => {
     const { root, localesDir } = makeProject({
       sourceText:
         "import { translate } from '@/i18n/i18n'\nexport const label = translate('auto.example.greeting', 'Hello {{name}}', { name: 'Orca' })\n"
     })
+    writeFileSync(path.join(localesDir, 'ko.json'), '{}\n', 'utf8')
 
     await expect(verifyLocalizationCatalog(root, { fix: false })).resolves.toBe(1)
     await expect(verifyLocalizationCatalog(root, { fix: true })).resolves.toBe(0)
 
     expect(readJson(path.join(localesDir, 'en.json'))).toEqual({
+      auto: { example: { greeting: 'Hello {{name}}' } }
+    })
+    expect(readJson(path.join(localesDir, 'ko.json'))).toEqual({
       auto: { example: { greeting: 'Hello {{name}}' } }
     })
     expect(readJson(path.join(localesDir, 'es.json'))).toEqual({})

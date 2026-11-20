@@ -22846,7 +22846,8 @@
       "patch": "用于生成 PR 详情的当前分支与基准分支的差异",
       "firstPrompt": "此工作区或聊天中的第一个用户请求",
       "assistantMessage": "Adehone 可获取的智能体初始回复",
-      "linkedIssue": "与此工作区关联的 GitHub issue 编号。未关联 GitHub issue 时为空（包括关联 GitLab 的工作区）。优先使用带指示的模板：未关联时，单独的“Fixes #{linkedIssue}”会变成“Fixes #”"
+      "linkedIssue": "与此工作区关联的 GitHub issue 编号。未关联 GitHub issue 时为空（包括关联 GitLab 的工作区）。优先使用带指示的模板：未关联时，单独的“Fixes #{linkedIssue}”会变成“Fixes #”",
+      "allowedTypes": "允许的 Conventional Commits 类型及其说明。"
     },
     "textGeneration": {
       "errors": {
@@ -23044,6 +23045,33 @@
       "switchedIn": "在 {{workspace}} 中",
       "thisComputer": "此电脑",
       "updateHost": "请在 {{host}} 上更新 Adehone，以便从这里切换分支。"
+    },
+    "variableExamples": {
+      "basePrompt": {
+        "commitMessage": "按照 Conventional Commits 规范生成单个 git 提交信息。\n格式: <type>[可选 (scope)][可选 !]: <description>\n包含允许的类型、标题/正文/页脚规则、分支、关联的议题（如有）、暂存文件列表和暂存补丁。",
+        "pullRequest": "生成 Pull Request 详细信息。\n返回紧凑 JSON: {\"base\",\"title\",\"body\",\"draft\"}\n包含规则（## Problem、## Solution、关联议题、保留现有章节）、分支/基准/草稿状态、提交记录、变更文件和分支 diff。",
+        "branchName": "生成一个简短的 git 分支名称来总结编码任务或代码更改。\n仅在单行中输出分支名称。\n包含首个用户请求（或目前的更改）和代理的首次回复。",
+        "conversationName": "根据首个用户请求为该对话生成一个简短且具描述性的标题。",
+        "dictationCleanup": "在不改变说话者原意的情况下，整理听写文本的标点、大小写和明显的转录错误。",
+        "fixCommitFailure": "诊断并修复失败的 git commit。\n包含失败的提交命令、错误输出以及暂存区/工作区上下文。",
+        "fixPushFailure": "诊断并解决失败的 git push。\n包含失败的推送命令、错误输出以及分支/远程状态。",
+        "fixChecks": "调查并修复失败的 CI 检查。\n包含失败的检查名称、摘要以及可用的日志或注释。",
+        "resolveConflicts": "解决 git 合并或变基冲突。\n包含冲突文件、当前仓库状态以及冲突解决指南。",
+        "resolveComments": "处理选定的 PR 评审评论。\n包含评审评论上下文、文件/行位置以及应用所请求更改的说明。"
+      },
+      "branch": "feature/conventional-commits",
+      "stagedFiles": "M src/app.ts\nA src/commit-message.ts",
+      "stagedPatch": "diff --git a/src/app.ts b/src/app.ts\n+addActionRecipeDefaults()",
+      "baseBranch": "main",
+      "currentTitle": "改进源代码管理 AI 自定义功能",
+      "currentBody": "为源代码管理操作添加可配置的代理和命令模板。",
+      "commitSummary": "a1b2c3d 添加操作配方默认值\nd4e5f6a 渲染命令模板",
+      "changedFiles": "src/app.ts | 24 +++++\nsrc/commit-message.ts | 8 +-",
+      "patch": "diff --git a/src/app.ts b/src/app.ts\n+renderSourceControlActionCommandTemplate()",
+      "firstPrompt": "修复 CI 并提交结果",
+      "assistantMessage": "我将检查失败的检查项，修复问题并运行测试。",
+      "linkedIssue": "123",
+      "allowedTypes": "- feat: 新功能\n- fix: 错误修复\n- docs: 文档更改\n- refactor: 不添加功能或修复错误的代码重构"
     }
   },
   "rendererRecovery": {

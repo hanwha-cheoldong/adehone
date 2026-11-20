@@ -3,7 +3,10 @@ import { FLOATING_TERMINAL_WORKTREE_ID } from '../../../../../shared/workspace/i
 import type { PaneManagerOptions } from '@/lib/pane-manager/pane-manager-types'
 import { useAppStore } from '@/store/index'
 import { resolveTerminalLigaturesEnabled } from '../../../../../shared/terminal/appearance/terminal-ligatures'
-import { resolveTerminalFontWeights } from '../../../../../shared/terminal/appearance/terminal-fonts'
+import {
+  DEFAULT_TERMINAL_FONT_SIZE,
+  resolveTerminalFontWeights
+} from '../../../../../shared/terminal/appearance/terminal-fonts'
 import { normalizeTerminalLineHeight } from '../../../../../shared/terminal/appearance/terminal-line-height-settings'
 import { normalizeDesktopTerminalScrollbackRows } from '../../../../../shared/terminal/replay/terminal-scrollback-policy'
 import { normalizeTerminalTuiMouseWheelMultiplier } from '@/lib/pane-manager/terminal-input/pane-terminal-tui-wheel-reports'
@@ -153,7 +156,7 @@ export function createTerminalPaneManagerOptions(
       return {
         ...buildWindowsPtyCompatibilityOptions(ptyBackendContext),
         ...buildTerminalKeyboardProtocolOptions(ptyBackendContext),
-        fontSize: currentSettings?.terminalFontSize ?? 14,
+        fontSize: currentSettings?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE,
         fontFamily: buildFontFamily(
           pluginFontFamilyWhenLoaded(currentSettings?.terminalFontFamily ?? '')
         ),
