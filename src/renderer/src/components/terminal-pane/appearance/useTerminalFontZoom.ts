@@ -1,3 +1,4 @@
+import { DEFAULT_TERMINAL_FONT_SIZE } from '../../../../../shared/terminal/appearance/terminal-fonts'
 import { useEffect } from 'react'
 import type { PaneManager } from '@/lib/pane-manager/pane-manager'
 import { dispatchZoomLevelChanged } from '@/app-shell/chrome/zoom-events'
@@ -46,7 +47,7 @@ export function useTerminalFontZoom({
         return
       }
 
-      const globalSize = settingsRef.current?.terminalFontSize ?? 14
+      const globalSize = settingsRef.current?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE
       const currentSize = getTerminalFontSizeOverride(pane.leafId) ?? globalSize
 
       let nextSize: number

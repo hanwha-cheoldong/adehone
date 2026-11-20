@@ -7,6 +7,7 @@ import {
 } from '@/components/terminal-pane/parking/output-watchers/terminal-parked-watcher-registry'
 import { serializePaneTree } from '@/components/terminal-pane/layout/terminal-layout-dom-serialization'
 import { getSystemPrefersDark } from '@/lib/terminal/appearance/terminal-theme'
+import { DEFAULT_TERMINAL_FONT_SIZE } from '../../../../shared/terminal/appearance/terminal-fonts'
 import { isTerminalLeafId } from '../../../../shared/workspace-layout/stable-pane-id'
 import { applyNativeChatLaunchDraftResolved } from '../native-chat/launch-drafts/native-chat-launch-draft-runtime-resolution'
 import { resolveTerminalLayoutRoot } from '../hosted-terminals/actions/remote-terminal-layout-resolution'
@@ -63,7 +64,9 @@ export async function syncRuntimeGraph(): Promise<void> {
     ambiguousTerminalTabIds
   )
   const publication = partitionMobileSessionPublication(mobileSessionTabs)
-  const gridSizes = measureTerminalGroupGridSizes(state.settings?.terminalFontSize ?? 14)
+  const gridSizes = measureTerminalGroupGridSizes(
+    state.settings?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE
+  )
   // Switch point: main answers mobileRelay.projectSections from its own catalog.
   const projectSectionCatalog = ORCA_SIDEBAR_INPUTS_IS_MAIN
     ? null

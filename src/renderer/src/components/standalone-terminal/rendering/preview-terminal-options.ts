@@ -1,7 +1,10 @@
 import type { ITerminalInitOnlyOptions, ITerminalOptions, ITheme } from '@xterm/xterm'
 import type { GlobalSettings } from '../../../../../shared/settings/global-settings-types'
 import type { DashboardCardTerminalInput } from '../../../../../shared/agent-status/presentation/dashboard-snapshot'
-import { resolveTerminalFontWeights } from '../../../../../shared/terminal/appearance/terminal-fonts'
+import {
+  DEFAULT_TERMINAL_FONT_SIZE,
+  resolveTerminalFontWeights
+} from '../../../../../shared/terminal/appearance/terminal-fonts'
 import { normalizeTerminalLineHeight } from '../../../../../shared/terminal/appearance/terminal-line-height-settings'
 import {
   buildDefaultTerminalOptions,
@@ -26,7 +29,7 @@ export function buildPreviewAppearanceOptions(
     settings?.terminalFontWeightBold
   )
   return {
-    fontSize: settings?.terminalFontSize ?? 14,
+    fontSize: settings?.terminalFontSize ?? DEFAULT_TERMINAL_FONT_SIZE,
     fontFamily: buildFontFamily(pluginFontFamilyWhenLoaded(settings?.terminalFontFamily ?? '')),
     fontWeight: fontWeights.fontWeight,
     fontWeightBold: fontWeights.fontWeightBold,

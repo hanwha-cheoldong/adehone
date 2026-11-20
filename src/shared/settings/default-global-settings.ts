@@ -1,7 +1,10 @@
 import type { GlobalSettings } from './global-settings-types'
 import type { NotificationSettings } from '../notifications/notification-settings-types'
 import type { VoiceSettings } from '../speech/speech-types'
-import { DEFAULT_TERMINAL_FONT_WEIGHT_BOLD } from '../terminal/appearance/terminal-fonts'
+import {
+  DEFAULT_TERMINAL_FONT_SIZE,
+  DEFAULT_TERMINAL_FONT_WEIGHT_BOLD
+} from '../terminal/appearance/terminal-fonts'
 import { getDefaultTerminalQuickCommands } from '../terminal/quick-commands/terminal-quick-commands'
 import { TASK_PROVIDERS } from '../work-items/task-providers'
 import {
@@ -81,7 +84,7 @@ export function buildDefaultSettings(args: {
     primarySelectionMiddleClickPasteDefaultedForLinux: args.primarySelectionDefaultedForLinux,
     primarySelectionMiddleClickPasteDefaultedForTerminalDefaults:
       args.primarySelectionMiddleClickPaste,
-    terminalFontSize: 14,
+    terminalFontSize: DEFAULT_TERMINAL_FONT_SIZE,
     terminalFontFamily: args.terminalFontFamily,
     terminalFontWeight: args.terminalFontWeight,
     terminalFontWeightWindowsRegular: args.terminalFontWeightWindowsRegular,
