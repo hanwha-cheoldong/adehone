@@ -106,8 +106,8 @@ export function registerWorkspaceShortcutIpcBridge(unsubs: (() => void)[]): void
   unsubs.push(
     window.api.ui.onWorktreeHistoryNavigate((direction) => {
       const store = useAppStore.getState()
-      // Why: mirror button visibility — worktree history nav is only meaningful in the terminal view, so no-op elsewhere.
-      if (store.activeView !== 'terminal' || !canNavigateWorktreeHistory(store)) {
+      // Why: mirror titlebar button visibility so the chord also works from tasks and detail pages.
+      if (!canNavigateWorktreeHistory(store)) {
         return
       }
       if (direction === 'back') {

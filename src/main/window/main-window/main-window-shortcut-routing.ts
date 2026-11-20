@@ -115,6 +115,18 @@ export function installMainWindowShortcutRouting(args: {
     return true
   }
 
+  // Why: macOS delivers mouse side buttons and trackpad swipes as 'swipe', never as DOM mouse or key events.
+  mainWindow.on('swipe', (_event, direction) => {
+    if ((direction !== 'left' && direction !== 'right') || focus.isShortcutRecorderFocused()) {
+      return
+    }
+    sendResolvedWindowShortcutAction(
+      mainWindow,
+      { type: 'worktreeHistoryNavigate', direction: direction === 'left' ? 'back' : 'forward' },
+      opts?.onBeforeReload
+    )
+  })
+
   mainWindow.webContents.on('before-input-event', (event, input) => {
     if (focus.isShortcutRecorderFocused()) {
       return
