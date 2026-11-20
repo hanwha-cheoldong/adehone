@@ -9007,7 +9007,11 @@
           "installFailureConflictRemedy": "Remove {{value0}} and register again if it is no longer needed.",
           "6f894ef9c2": "Show in Finder",
           "cbe55e4d48": "Show in Explorer",
-          "71e5d9feae": "Show in file manager"
+          "71e5d9feae": "Show in file manager",
+          "installDescriptionDarwin": "Register `orca` in /usr/local/bin.",
+          "installDescriptionLinux": "Register `orca-ide` in ~/.local/bin.",
+          "installDescriptionWin32": "Register `orca` in your user PATH.",
+          "installDescriptionOther": "CLI registration is not yet available on this platform."
         },
         "CliSkillRuntimeSetup": {
           "c47127f222": "WSL default"
@@ -13491,7 +13495,12 @@
           "devChannelUnsupportedAria": "{{value0}} ({{value1}} only)",
           "devChannelUnsupported": "{{value0}} builds are produced only for {{value1}}. Linux stays on Stable or RC.",
           "downloadInstaller": "Download installer",
-          "manualInstallHint": "{{value0}} builds are unsigned on Windows, so the in-app updater cannot install one over a signed build. Run the downloaded installer once — Windows will warn about an unknown publisher — and every later switch, including back to Stable, works from here."
+          "manualInstallHint": "{{value0}} builds are unsigned on Windows, so the in-app updater cannot install one over a signed build. Run the downloaded installer once — Windows will warn about an unknown publisher — and every later switch, including back to Stable, works from here.",
+          "channelDescStable": "Shipped releases. What everyone else is running.",
+          "channelDescRc": "Release candidates cut ahead of each stable.",
+          "channelDescHourly": "macOS and Windows. Unvetted builds from main, built every hour. No tests.",
+          "channelDescDaily": "macOS and Windows. Unvetted builds from main, cut once a day at 14:15 UTC (early morning Pacific). No tests.",
+          "channelDescAdhoc": "macOS and Windows. One-off builds cut from a branch to try a feature before it lands."
         },
         "VoiceMicrophoneSetting": {
           "systemDefault": "System default",

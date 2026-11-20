@@ -10,7 +10,7 @@ import {
   SettingsSubsectionHeader
 } from '../form-controls/SettingsFormControls'
 import { Badge } from '../../ui/badge'
-import { useTranslate } from '@/i18n/use-translate'
+import { useTranslate, type Translate } from '@/i18n/use-translate'
 import { updaterMessageText } from '@/app-shell/updates/updater-message-copy'
 import { errorMessage } from '../../../../../shared/errors/error-message'
 import type { UpdaterCodedMessage } from '../../../../../shared/updater/updater-failure-copy'
@@ -28,13 +28,34 @@ import {
   type ReleaseChannel
 } from '../../../../../shared/updater/release-channel'
 
-const CHANNEL_DESCRIPTIONS: Record<ReleaseChannel, string> = {
-  stable: 'Shipped releases. What everyone else is running.',
-  rc: 'Release candidates cut ahead of each stable.',
-  hourly: 'macOS and Windows. Unvetted builds from main, built every hour. No tests.',
-  daily:
-    'macOS and Windows. Unvetted builds from main, cut once a day at 14:15 UTC (early morning Pacific). No tests.',
-  adhoc: 'macOS and Windows. One-off builds cut from a branch to try a feature before it lands.'
+function getChannelDescription(channel: ReleaseChannel, t: Translate): string {
+  switch (channel) {
+    case 'stable':
+      return t(
+        'auto.components.settings.ReleaseChannelSection.channelDescStable',
+        'Shipped releases. What everyone else is running.'
+      )
+    case 'rc':
+      return t(
+        'auto.components.settings.ReleaseChannelSection.channelDescRc',
+        'Release candidates cut ahead of each stable.'
+      )
+    case 'hourly':
+      return t(
+        'auto.components.settings.ReleaseChannelSection.channelDescHourly',
+        'macOS and Windows. Unvetted builds from main, built every hour. No tests.'
+      )
+    case 'daily':
+      return t(
+        'auto.components.settings.ReleaseChannelSection.channelDescDaily',
+        'macOS and Windows. Unvetted builds from main, cut once a day at 14:15 UTC (early morning Pacific). No tests.'
+      )
+    case 'adhoc':
+      return t(
+        'auto.components.settings.ReleaseChannelSection.channelDescAdhoc',
+        'macOS and Windows. One-off builds cut from a branch to try a feature before it lands.'
+      )
+  }
 }
 
 const DEDICATED_CHANNEL_WARNINGS: Record<DedicatedRepoChannel, { key: string; fallback: string }> =
@@ -221,7 +242,7 @@ export function ReleaseChannelSection(): React.JSX.Element {
             }
           })}
         />
-        <p className="text-xs text-muted-foreground">{CHANNEL_DESCRIPTIONS[activeChannel]}</p>
+        <p className="text-xs text-muted-foreground">{getChannelDescription(activeChannel, t)}</p>
       </div>
 
       {hasDedicatedReleaseRepo(activeChannel) ? (
