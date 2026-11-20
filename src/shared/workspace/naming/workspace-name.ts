@@ -23,6 +23,8 @@ function stripDanglingDisplayApostrophes(input: string): string {
 
 export const MAX_WORKSPACE_NAME_SLUG_LENGTH = 48
 
+const HANGUL_PATTERN = /\p{Script=Hangul}/u
+
 function buildFullWorkspaceNameSlug(input: string): string {
   const normalized = removeIntraWordApostrophes(input)
     .trim()
@@ -39,13 +41,12 @@ function buildFullWorkspaceNameSlug(input: string): string {
 }
 
 export function slugifyForWorkspaceName(input: string): string {
-  return buildFullWorkspaceNameSlug(input)
-    .slice(0, MAX_WORKSPACE_NAME_SLUG_LENGTH)
-    .replace(/[-._]+$/g, '')
-}
-
-export function isWorkspaceNameTruncated(input: string): boolean {
-  return buildFullWorkspaceNameSlug(input).length > MAX_WORKSPACE_NAME_SLUG_LENGTH
+  const fullSlug = buildFullWorkspaceNameSlug(input)
+  // Keep Hangul issue/workspace names untruncated instead of slicing mid-phrase at 48 chars.
+  const bounded = HANGUL_PATTERN.test(fullSlug)
+    ? fullSlug
+    : fullSlug.slice(0, MAX_WORKSPACE_NAME_SLUG_LENGTH)
+  return bounded.replace(/[-._]+$/g, '')
 }
 
 export function getLinkedWorkItemSuggestedName(item: { title: string }): string {
