@@ -4,6 +4,7 @@ import { addAppKeyListener, removeAppKeyListener } from '@/lib/keyboard/app-keyb
 export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationModel) {
   const {
     closeTaskPage,
+    closeTaskDetailPage,
     activeModal,
     linearStatusContextKey,
     preflightStatusChecked,
@@ -85,6 +86,22 @@ export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationMod
     selectedLinearIssue,
     selectedJiraIssue
   ])
+  const taskDetailOpen = Boolean(dialogWorkItem || selectedJiraIssue || selectedLinearIssue)
+  useEffect(() => {
+    if (!taskDetailOpen || activeModal !== 'none') {
+      return
+    }
+    const onMouseUp = (event: MouseEvent): void => {
+      // Why: button 3 is the mouse "Back" side button; Electron gives it no default navigation.
+      if (event.button !== 3) {
+        return
+      }
+      event.preventDefault()
+      closeTaskDetailPage()
+    }
+    window.addEventListener('mouseup', onMouseUp)
+    return () => window.removeEventListener('mouseup', onMouseUp)
+  }, [activeModal, closeTaskDetailPage, taskDetailOpen])
   useEffect(() => {
     if (!preflightStatusCurrent || !preflightStatusChecked) {
       void refreshPreflightStatus()
