@@ -199,6 +199,8 @@ export const gitApi = {
     sourceControlAi?: unknown
     agentCmdOverrides?: Record<string, string>
   }) => ipcRenderer.invoke('git:generateCommitMessage', args),
+  generateBranchName: (args: { title: string; repoId?: string; connectionId?: string }) =>
+    ipcRenderer.invoke('git:generateBranchName', args),
   discoverCommitMessageModels: (args: {
     agentId: string
     worktreePath?: string

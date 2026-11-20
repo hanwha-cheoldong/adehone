@@ -21,21 +21,31 @@ function stripDanglingDisplayApostrophes(input: string): string {
     .replace(/([\p{L}\p{N}])'(?=$|[^\p{L}\p{N}])/gu, '$1')
 }
 
-export function slugifyForWorkspaceName(input: string): string {
+export const MAX_WORKSPACE_NAME_SLUG_LENGTH = 48
+
+function buildFullWorkspaceNameSlug(input: string): string {
   const normalized = removeIntraWordApostrophes(input)
     .trim()
     .toLowerCase()
     .replace(/[\\/]+/g, '-')
   return (
     foldWorkspaceNameWhitespaceToHyphen(normalized)
-      .replace(/[^a-z0-9._-]+/g, '-')
+      .replace(/[^\p{L}\p{N}._-]+/gu, '-')
       .replace(/-+/g, '-')
       // Match main’s sanitizer: git check-ref-format rejects repeated dots.
       .replace(/\.{2,}/g, '.')
       .replace(/^[.-]+|[.-]+$/g, '')
-      .slice(0, 48)
-      .replace(/[-._]+$/g, '')
   )
+}
+
+export function slugifyForWorkspaceName(input: string): string {
+  return buildFullWorkspaceNameSlug(input)
+    .slice(0, MAX_WORKSPACE_NAME_SLUG_LENGTH)
+    .replace(/[-._]+$/g, '')
+}
+
+export function isWorkspaceNameTruncated(input: string): boolean {
+  return buildFullWorkspaceNameSlug(input).length > MAX_WORKSPACE_NAME_SLUG_LENGTH
 }
 
 export function getLinkedWorkItemSuggestedName(item: { title: string }): string {

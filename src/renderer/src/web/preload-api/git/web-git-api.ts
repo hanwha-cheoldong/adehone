@@ -179,6 +179,13 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
         'Commit message generation is unavailable in the web client.'
       )
     }),
+    generateBranchName: async () => ({
+      success: false,
+      error: translate(
+        'auto.web.web.preload.api.9fc90740b6',
+        'Commit message generation is unavailable in the web client.'
+      )
+    }),
     discoverCommitMessageModels: async () => ({
       success: false,
       error: translate(

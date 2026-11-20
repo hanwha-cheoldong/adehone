@@ -45,6 +45,7 @@ export const checkIgnoredPathsMock: IpcMock = vi.fn()
 export const listWorktreesMock: IpcMock = vi.fn()
 export const resolveCommitMessageSettingsMock: IpcMock = vi.fn()
 export const generateCommitMessageFromContextMock: IpcMock = vi.fn()
+export const generateBranchNameFromContextMock: IpcMock = vi.fn()
 export const generatePullRequestFieldsFromContextMock: IpcMock = vi.fn()
 export const discoverCommitMessageModelsLocalMock: IpcMock = vi.fn()
 export const cancelGenerateCommitMessageLocalMock: IpcMock = vi.fn()
@@ -109,6 +110,7 @@ export const gitWorktreeMock = {
 export const textGenerationModuleMock = {
   resolveCommitMessageSettings: resolveCommitMessageSettingsMock,
   generateCommitMessageFromContext: generateCommitMessageFromContextMock,
+  generateBranchNameFromContext: generateBranchNameFromContextMock,
   generatePullRequestFieldsFromContext: generatePullRequestFieldsFromContextMock,
   discoverCommitMessageModelsLocal: discoverCommitMessageModelsLocalMock,
   cancelGenerateCommitMessageLocal: cancelGenerateCommitMessageLocalMock,

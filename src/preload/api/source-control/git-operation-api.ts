@@ -87,8 +87,8 @@ export type GitOperationApi = {
     connectionId?: string
   }) => Promise<{ success: boolean; error?: string }>
   generateCommitMessage: (args: {
-    worktreePath: string
     /** Raw (unstripped) worktree meta key; validated against worktreePath in main. */
+    worktreePath: string
     worktreeId?: string
     repoId?: string
     connectionId?: string
@@ -97,6 +97,14 @@ export type GitOperationApi = {
     agentCmdOverrides?: Partial<Record<TuiAgent, string>>
   }) => Promise<
     | { success: true; message: string; agentLabel?: string }
+    | ({ success: false; canceled?: boolean } & TextGenerationFailureFields)
+  >
+  generateBranchName: (args: {
+    title: string
+    repoId?: string
+    connectionId?: string
+  }) => Promise<
+    | { success: true; slug: string; agentLabel?: string }
     | ({ success: false; canceled?: boolean } & TextGenerationFailureFields)
   >
   cancelGenerateCommitMessage: (args: {
