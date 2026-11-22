@@ -8,6 +8,7 @@ import { Button } from '../../ui/button'
 import { SearchableSetting } from '../section-layout/SearchableSetting'
 import { SettingsGroup } from '../section-layout/SettingsGroup'
 import { useIntlLocale, useTranslate } from '@/i18n/use-translate'
+import { translateSearchKeyword } from '../search/settings-search-keywords'
 import { updaterMessageText } from '@/app-shell/updates/updater-message-copy'
 import {
   getUpdateCheckClickOptions,
@@ -89,7 +90,38 @@ export function GeneralUpdateSettingsSection({
           'auto.components.settings.GeneralUpdateSettingsSection.ceb579abaf',
           'Check for app updates and install a newer Orca version.'
         )}
-        keywords={['about', 'update', 'version', 'release notes', 'download']}
+        keywords={[
+          ...translateSearchKeyword(
+            'settings.general.search.keywords.about',
+            'about',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.f89a94773c',
+            'update',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.9e86ccd05c',
+            'version',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.c9d8c1ce66',
+            'release notes',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.e49e739a59',
+            'download',
+            undefined,
+            t
+          )
+        ]}
         className="space-y-3 py-3"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">

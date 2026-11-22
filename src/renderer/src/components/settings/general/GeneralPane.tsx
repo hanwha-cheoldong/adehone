@@ -18,6 +18,7 @@ import { getGeneralSupportSearchEntries } from './general-support-search'
 import { getGeneralProjectRuntimeSearchEntries } from './project-runtime/general-project-runtime-search'
 import { RecentTabOrderControl } from '../appearance/RecentTabOrderControl'
 import { matchesSettingsSearch, type SettingsSearchEntry } from '../search/settings-search'
+import { translateSearchKeyword } from '../search/settings-search-keywords'
 import { SearchableSetting } from '../section-layout/SearchableSetting'
 import { SettingsSwitchRow } from '../form-controls/SettingsFormControls'
 import { SettingsNavigationRow } from '../form-controls/SettingsNavigationRow'
@@ -53,6 +54,13 @@ export function getTabOrderControlSearchKeywords(
 ): string[] {
   const entry = entries[0]
   return entry ? [entry.title, entry.description ?? '', ...(entry.keywords ?? [])] : []
+}
+
+export function getPreviewTabSearchKeywords(
+  entries = getGeneralNavigationSearchEntries()
+): string[] {
+  const entry = entries[1]
+  return entry ? [...(entry.keywords ?? [])] : []
 }
 
 const EMPTY_WSL_DISTROS: string[] = []
@@ -181,16 +189,12 @@ function GeneralRootSettings({
               'Single-clicking a file reuses one preview tab until you edit or pin it.'
             )}
             keywords={[
-              'preview',
-              'tab',
-              'editor',
-              'explorer',
-              'reuse',
-              'replace',
-              'italic',
-              t(
-                'auto.components.settings.GeneralPane.editor_preview_tabs',
-                'Reuse a preview tab when browsing files'
+              ...getPreviewTabSearchKeywords(tabsEntries),
+              ...translateSearchKeyword(
+                'auto.components.settings.general.search.e1ee631696',
+                'editor',
+                undefined,
+                t
               )
             ]}
           >
