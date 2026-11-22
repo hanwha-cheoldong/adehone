@@ -12403,6 +12403,7 @@
         "SettingsHostScopePicker": {
           "label": "호스트",
           "unavailable": "{{value0}} (사용 불가)",
+          "loading": "호스트를 불러오는 중…",
           "unavailableNotice": "이 서버는 더 이상 저장되어 있지 않아 정보를 표시할 수 없습니다. 설정 상단에서 다른 호스트를 선택하세요."
         },
         "wslHostsExperimental": {
@@ -12993,7 +12994,8 @@
           "create": "만들기"
         },
         "SettingsSearchableSelect": {
-          "noMatches": "일치하는 항목이 없습니다."
+          "noMatches": "일치하는 항목이 없습니다.",
+          "searchHosts": "호스트 검색…"
         },
         "PluginAuthor": {
           "publisher": "게시자",
