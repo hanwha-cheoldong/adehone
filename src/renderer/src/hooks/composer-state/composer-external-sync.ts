@@ -4,7 +4,6 @@ import { useHostRuntimeEffects } from './workspace-target/host-runtime-effects'
 import { useLinkedItemLookupEffects } from './linked-work-items/linked-item-lookup-effects'
 import { useGitHubSourceApplication } from './linked-work-items/github-source-application'
 import { useGitHubSubmitResolution } from './linked-work-items/github-submit-resolution'
-import { useTruncatedWorkItemAiName } from './linked-work-items/use-truncated-work-item-ai-name'
 
 export function useComposerExternalSync(target: ComposerTargetState): ComposerExternalSyncState {
   const hostRuntimeEffects = useHostRuntimeEffects({
@@ -99,15 +98,6 @@ export function useComposerExternalSync(target: ComposerTargetState): ComposerEx
     setStartFromResetHint: target.workspaceIdentityState.setStartFromResetHint,
     settings: target.composerTargetStore.settings,
     smartSourceSelectionRef: target.asyncComposerState.smartSourceSelectionRef
-  })
-  useTruncatedWorkItemAiName({
-    linkedWorkItem: target.sourceContextState.linkedWorkItem,
-    name: target.sourceContextState.name,
-    setName: target.sourceContextState.setName,
-    lastAutoNameRef: target.asyncComposerState.lastAutoNameRef,
-    selectedRepoId: target.runtimeTargetSelection.selectedRepo?.id,
-    selectedRepoConnectionId: target.runtimeTargetSelection.selectedRepoConnectionId,
-    settings: target.composerTargetStore.settings
   })
   return {
     hostRuntimeEffects,

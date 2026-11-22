@@ -99,14 +99,6 @@ export type GitOperationApi = {
     | { success: true; message: string; agentLabel?: string }
     | ({ success: false; canceled?: boolean } & TextGenerationFailureFields)
   >
-  generateBranchName: (args: {
-    title: string
-    repoId?: string
-    connectionId?: string
-  }) => Promise<
-    | { success: true; slug: string; agentLabel?: string }
-    | ({ success: false; canceled?: boolean } & TextGenerationFailureFields)
-  >
   cancelGenerateCommitMessage: (args: {
     worktreePath: string
     connectionId?: string
