@@ -8,6 +8,7 @@ import { Button } from '../../ui/button'
 import { SearchableSetting } from '../section-layout/SearchableSetting'
 import { SettingsGroup } from '../section-layout/SettingsGroup'
 import { useIntlLocale, useTranslate } from '@/i18n/use-translate'
+import { translateSearchKeyword } from '../search/settings-search-keywords'
 import { updaterMessageText } from '@/app-shell/updates/updater-message-copy'
 import {
   getUpdateCheckClickOptions,
@@ -89,7 +90,38 @@ export function GeneralUpdateSettingsSection({
           'auto.components.settings.GeneralUpdateSettingsSection.ceb579abaf',
           'Check for app updates and install a newer Orca version.'
         )}
-        keywords={['about', 'update', 'version', 'release notes', 'download']}
+        keywords={[
+          ...translateSearchKeyword(
+            'settings.general.search.keywords.about',
+            'about',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.f89a94773c',
+            'update',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.9e86ccd05c',
+            'version',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.c9d8c1ce66',
+            'release notes',
+            undefined,
+            t
+          ),
+          ...translateSearchKeyword(
+            'auto.components.settings.general.search.e49e739a59',
+            'download',
+            undefined,
+            t
+          )
+        ]}
         className="space-y-3 py-3"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -145,10 +177,9 @@ export function GeneralUpdateSettingsSection({
             >
               <Download className="size-3.5" />
               {t(
-                'auto.components.settings.GeneralUpdateSettingsSection.857ca887da',
-                'Download update ('
+                'auto.components.settings.GeneralUpdateSettingsSection.downloadUpdate',
+                'Download update'
               )}
-              {updateStatus.version})
             </Button>
           ) : updateStatus.state === 'error' &&
             updateStatus.retryAction === 'install' &&
@@ -168,10 +199,9 @@ export function GeneralUpdateSettingsSection({
             >
               <Download className="size-3.5" />
               {t(
-                'auto.components.settings.GeneralUpdateSettingsSection.c0a8f827c7',
-                'Restart to update ('
+                'auto.components.settings.GeneralUpdateSettingsSection.restartToUpdate',
+                'Restart to update'
               )}
-              {updateStatus.version})
             </Button>
           ) : null}
         </div>
@@ -189,17 +219,17 @@ export function GeneralUpdateSettingsSection({
             )}
           {updateStatus.state === 'available' && (
             <>
-              {t('auto.components.settings.GeneralUpdateSettingsSection.a6b37929dc', 'Version')}{' '}
-              {updateStatus.version}{' '}
               {updateStatus.externallyManaged
                 ? t(
-                    'auto.components.settings.GeneralUpdateSettingsSection.e3b9d21c07',
-                    'is available. Update Orca through your system package manager — Orca cannot install this release itself.'
+                    'auto.components.settings.GeneralUpdateSettingsSection.externallyManagedVersionAvailable',
+                    'Version {{version}} is available. Update Orca through your system package manager — Orca cannot install this release itself.',
+                    { version: updateStatus.version }
                   )
                 : t(
-                    'auto.components.settings.GeneralUpdateSettingsSection.8311da27ba',
-                    'is available.'
-                  )}{' '}
+                    'auto.components.settings.GeneralUpdateSettingsSection.versionAvailable',
+                    'Version {{version}} is available.',
+                    { version: updateStatus.version }
+                  )}
               {updateStatus.source !== 'local' && (
                 <a
                   href={
@@ -208,7 +238,7 @@ export function GeneralUpdateSettingsSection({
                   target="_blank"
                   onClick={openAppHttpLinkFromAnchor}
                   rel="noopener noreferrer"
-                  className="underline hover:text-foreground"
+                  className="ms-1 whitespace-nowrap underline hover:text-foreground"
                 >
                   {t(
                     'auto.components.settings.GeneralUpdateSettingsSection.8a52ca1d02',
@@ -250,20 +280,23 @@ export function GeneralUpdateSettingsSection({
                   ))}
           {updateStatus.state === 'downloading' &&
             t(
-              'auto.components.settings.GeneralUpdateSettingsSection.2a48034c4c',
-              'Downloading v{{value0}}... {{value1}}%',
-              { value0: updateStatus.version, value1: updateStatus.percent }
+              'auto.components.settings.GeneralUpdateSettingsSection.downloadingVersion',
+              'Downloading version {{version}} ({{percent}}%)…',
+              { version: updateStatus.version, percent: updateStatus.percent }
             )}
           {updateStatus.state === 'downloaded' && (
             <>
-              {t('auto.components.settings.GeneralUpdateSettingsSection.a6b37929dc', 'Version')}{' '}
-              {updateStatus.version}{' '}
               {updateStatus.installing
-                ? t('settings.automaticUpdates.installingStatus', 'is being installed.')
+                ? t(
+                    'auto.components.settings.GeneralUpdateSettingsSection.versionInstalling',
+                    'Version {{version}} is being installed.',
+                    { version: updateStatus.version }
+                  )
                 : t(
-                    'auto.components.settings.GeneralUpdateSettingsSection.d89806cc89',
-                    'is ready to install.'
-                  )}{' '}
+                    'auto.components.settings.GeneralUpdateSettingsSection.versionReadyToInstall',
+                    'Version {{version}} is ready to install.',
+                    { version: updateStatus.version }
+                  )}
               {updateStatus.source !== 'local' && (
                 <a
                   href={
@@ -272,7 +305,7 @@ export function GeneralUpdateSettingsSection({
                   target="_blank"
                   onClick={openAppHttpLinkFromAnchor}
                   rel="noopener noreferrer"
-                  className="underline hover:text-foreground"
+                  className="ms-1 whitespace-nowrap underline hover:text-foreground"
                 >
                   {t(
                     'auto.components.settings.GeneralUpdateSettingsSection.8a52ca1d02',

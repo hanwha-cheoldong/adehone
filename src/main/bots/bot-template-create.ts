@@ -1,8 +1,8 @@
 // Create from a built-in template: the bot is made from the owner's reviewed seed (SOUL.md), then gets the
 // template's package from this host's own catalog: the skills the owner kept, schedules turned off, and
 // a setup note offering its event automations and connectors in its first chat.
-import type { Bot, BotAgent } from '../../shared/bot-types'
-import { skillsFolderFor } from '../../shared/bots/bot-package'
+import type { Bot } from '../../shared/bot-types'
+import { BOT_OWN_SKILLS_FOLDER } from '../../shared/bots/bot-package'
 import { botTemplate, type BotTemplate } from '../../shared/bots/bot-templates'
 import type { BotCreateParams } from '../../shared/rpc-contract/bots-params'
 import type { BotController, BotOrigin } from './bot-controller'
@@ -11,7 +11,28 @@ import {
   type BotPackageApply,
   type BotPackageApplyDeps
 } from './bot-package-apply'
-import { BOT_TEMPLATE_SKILL_TEXT } from './bot-template-skill-text'
+import { ANDROID_DEV_AUTOMATIONS_DOC, ANDROID_DEV_MEMORY_SEED } from './bot-template-android-files'
+import { IOS_DEV_AUTOMATIONS_DOC, IOS_DEV_MEMORY_SEED } from './bot-template-ios-files'
+import {
+  MOBILE_WEB_DEV_AUTOMATIONS_DOC,
+  MOBILE_WEB_DEV_MEMORY_SEED
+} from './bot-template-mobile-web-files'
+import { botTemplateSkillFiles } from './bot-template-skill-text'
+
+const TEMPLATE_EXTRA_FILES: Partial<Record<string, readonly { to: string; text: string }[]>> = {
+  'android-dev': [
+    { to: 'MEMORY.md', text: ANDROID_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: ANDROID_DEV_AUTOMATIONS_DOC }
+  ],
+  'ios-dev': [
+    { to: 'MEMORY.md', text: IOS_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: IOS_DEV_AUTOMATIONS_DOC }
+  ],
+  'mobile-web-dev': [
+    { to: 'MEMORY.md', text: MOBILE_WEB_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: MOBILE_WEB_DEV_AUTOMATIONS_DOC }
+  ]
+}
 
 export type BotTemplateCreateParams = BotCreateParams & {
   fromTemplate: NonNullable<BotCreateParams['fromTemplate']>
@@ -23,17 +44,22 @@ export type BotTemplateCreateDeps = BotPackageApplyDeps & {
 
 export function templatePackage(
   template: BotTemplate,
-  agent: BotAgent,
   keptSkills: readonly string[]
 ): BotPackageApply {
   const kept = new Set(keptSkills)
+  const extraFiles = TEMPLATE_EXTRA_FILES[template.id] ?? []
   return {
-    files: template.skills
-      .filter((skill) => kept.has(skill))
-      .map((skill) => ({
-        to: `${skillsFolderFor(agent)}/${skill}/SKILL.md`,
-        text: BOT_TEMPLATE_SKILL_TEXT[skill]
-      })),
+    files: [
+      ...extraFiles,
+      ...template.skills
+        .filter((skill) => kept.has(skill))
+        .flatMap((skill) =>
+          botTemplateSkillFiles(skill).map((file) => ({
+            to: `${BOT_OWN_SKILLS_FOLDER}/${skill}/${file.path}`,
+            text: file.text
+          }))
+        )
+    ],
     tools: [],
     schedules: template.schedules.map((schedule) => ({
       name: `${template.name}: ${schedule.what}`,
@@ -72,8 +98,7 @@ export function botTemplateCreation(
   return {
     params: { ...params, agent },
     origin: { templateId: template.id },
-    finish: (bot) =>
-      applyBotPackage(deps, bot, templatePackage(template, agent, fromTemplate.skills))
+    finish: (bot) => applyBotPackage(deps, bot, templatePackage(template, fromTemplate.skills))
   }
 }
 

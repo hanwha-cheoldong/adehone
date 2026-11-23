@@ -21,6 +21,9 @@ import Q1 from '../../../../shared/bot-mascots/Q1.svg?url'
 import R3 from '../../../../shared/bot-mascots/R3.svg?url'
 import S2 from '../../../../shared/bot-mascots/S2.svg?url'
 import T1 from '../../../../shared/bot-mascots/T1.svg?url'
+import AND from '../../../../shared/bot-mascots/AND.svg?url'
+import APL from '../../../../shared/bot-mascots/APL.svg?url'
+import MWB from '../../../../shared/bot-mascots/MWB.svg?url'
 
 export const BOT_MASCOT_URLS: Record<BotMascotId, string> = {
   A1,
@@ -42,5 +45,8 @@ export const BOT_MASCOT_URLS: Record<BotMascotId, string> = {
   Q1,
   R3,
   S2,
-  T1
+  T1,
+  AND,
+  APL,
+  MWB
 }

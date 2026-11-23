@@ -10,7 +10,11 @@ import { searchKeywords, translateSearchKeyword } from '../search/settings-searc
 import { createLocalizedCatalog } from '@/i18n/localized-catalog'
 import { getGeneralProjectRuntimeSearchEntries } from './project-runtime/general-project-runtime-search'
 import { getGeneralSupportSearchEntries } from './general-support-search'
-import { getUpdateDelayDescription, getUpdateDelayTitle } from '../updates/update-delay-copy'
+import {
+  getUpdateDelayDescription,
+  getUpdateDelaySearchKeywords,
+  getUpdateDelayTitle
+} from '../updates/update-delay-copy'
 
 export const getGeneralWorkspaceSearchDescriptors = createLocalizedCatalog(() => [
   generalSetting(GENERAL_SETTING_ANCHORS.folder, {
@@ -205,11 +209,7 @@ export const getGeneralUpdateSearchEntries = createLocalizedCatalog(() => [
   {
     title: getUpdateDelayTitle(),
     description: getUpdateDelayDescription(),
-    keywords: [
-      ...translateSearchKeyword('settings.updateDelay.keywordDelay', 'delay'),
-      ...translateSearchKeyword('settings.updateDelay.keywordCooldown', 'cooldown'),
-      ...translateSearchKeyword('settings.updateDelay.keywordSecurity', 'security')
-    ]
+    keywords: getUpdateDelaySearchKeywords()
   }
 ])
 

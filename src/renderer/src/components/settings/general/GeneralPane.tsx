@@ -7,7 +7,12 @@ import { GeneralEditorSettingsSection } from '../editor/GeneralEditorSettingsSec
 import { GeneralAutoSaveSetting } from '../editor/GeneralAutoSaveSetting'
 import { GeneralSupportSection } from './GeneralSupportSection'
 import { GeneralUpdateSettingsSection } from '../updates/GeneralUpdateSettingsSection'
-import { GeneralWorkspaceSettingsSection } from './GeneralWorkspaceSettingsSection'
+import {
+  GeneralWorkspaceSettingsSection,
+  useNestWorkspacesSetting
+} from './GeneralWorkspaceSettingsSection'
+import type { SettingsHostScope } from '../host-scope/settings-host-scope'
+import { LOCAL_SETTINGS_HOST_SCOPE } from '../host-scope/settings-host-scope'
 import {
   getGeneralCliSearchEntries,
   getGeneralNavigationSearchEntries,
@@ -18,6 +23,7 @@ import { getGeneralSupportSearchEntries } from './general-support-search'
 import { getGeneralProjectRuntimeSearchEntries } from './project-runtime/general-project-runtime-search'
 import { RecentTabOrderControl } from '../appearance/RecentTabOrderControl'
 import { matchesSettingsSearch, type SettingsSearchEntry } from '../search/settings-search'
+import { translateSearchKeyword } from '../search/settings-search-keywords'
 import { SearchableSetting } from '../section-layout/SearchableSetting'
 import { SettingsSwitchRow } from '../form-controls/SettingsFormControls'
 import { SettingsNavigationRow } from '../form-controls/SettingsNavigationRow'
@@ -55,6 +61,13 @@ export function getTabOrderControlSearchKeywords(
   return entry ? [entry.title, entry.description ?? '', ...(entry.keywords ?? [])] : []
 }
 
+export function getPreviewTabSearchKeywords(
+  entries = getGeneralNavigationSearchEntries()
+): string[] {
+  const entry = entries[1]
+  return entry ? [...(entry.keywords ?? [])] : []
+}
+
 const EMPTY_WSL_DISTROS: string[] = []
 
 type GeneralPaneProps = {
@@ -69,6 +82,8 @@ type GeneralPaneProps = {
   wslCapabilitiesLoading?: boolean
   subPage?: GeneralSubPage | null
   onSelectSubPage: (page: GeneralSubPage, sectionId?: string) => void
+  /** The host whose workspace creates read Folder per project. */
+  hostScope?: SettingsHostScope
 }
 
 export function GeneralPane(props: GeneralPaneProps): React.JSX.Element {
@@ -143,9 +158,11 @@ function GeneralRootSettings({
   wslSupportedPlatform,
   wslAvailable,
   wslCapabilitiesLoading,
-  wslDistros = EMPTY_WSL_DISTROS
+  wslDistros = EMPTY_WSL_DISTROS,
+  hostScope = LOCAL_SETTINGS_HOST_SCOPE
 }: GeneralPaneProps & { query: string; showNavigation: boolean }): React.JSX.Element {
   const t = useTranslate()
+  const nestWorkspaces = useNestWorkspacesSetting(hostScope, settings, updateSettings)
   const tabsEntries = getGeneralNavigationSearchEntries()
   const runtimeEntries = getGeneralProjectRuntimeSearchEntries()
   const showRuntime = shouldShowProjectRuntimeSection(wslSupportedPlatform, query, runtimeEntries)
@@ -181,16 +198,12 @@ function GeneralRootSettings({
               'Single-clicking a file reuses one preview tab until you edit or pin it.'
             )}
             keywords={[
-              'preview',
-              'tab',
-              'editor',
-              'explorer',
-              'reuse',
-              'replace',
-              'italic',
-              t(
-                'auto.components.settings.GeneralPane.editor_preview_tabs',
-                'Reuse a preview tab when browsing files'
+              ...getPreviewTabSearchKeywords(tabsEntries),
+              ...translateSearchKeyword(
+                'auto.components.settings.general.search.e1ee631696',
+                'editor',
+                undefined,
+                t
               )
             ]}
           >
@@ -218,9 +231,11 @@ function GeneralRootSettings({
                 title={getGeneralSubPageTitle('folder', t)}
                 description={settings.workspaceDir}
                 value={
-                  settings.nestWorkspaces
-                    ? t('settings.general.folder.perProject', 'Folder per project')
-                    : t('settings.general.folder.oneFolder', 'One folder')
+                  nestWorkspaces.setting.state !== 'ready'
+                    ? undefined
+                    : nestWorkspaces.setting.value
+                      ? t('settings.general.folder.perProject', 'Folder per project')
+                      : t('settings.general.folder.oneFolder', 'One folder')
                 }
                 onClick={() => onSelectSubPage('folder')}
               />

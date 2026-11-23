@@ -6,8 +6,8 @@ import type { GitHubRepositoryIdentity as GitHubApiRepository } from '../../../.
 import { noteRepositoryRateLimitSpend } from '../../api/rate-limit'
 import type { GhExecOptions } from '../github-exec-scope'
 import { assertRateLimitBudget } from '../lookup/pr-lookup-rate-limit'
-import { isPendingApprovalSuiteWithoutRuns } from './pr-checks-response-mapping'
-import { PENDING_APPROVAL_ROLLUP_ROW } from './pr-check-rollup'
+import { dedupeLatestCheckRuns } from './dedupe-latest-check-runs'
+import { isPendingApprovalSuiteWithoutRuns, PENDING_APPROVAL_ROLLUP_ROW } from './pr-check-rollup'
 
 const checkRunSchema = z.object({
   id: z.number().optional(),
@@ -38,6 +38,9 @@ const checkSuiteSchema = z.object({
   conclusion: z.string().nullable(),
   app: z.object({ name: z.string().nullish(), slug: z.string().nullish() }).nullish()
 })
+
+export type RestCheckRun = z.infer<typeof checkRunSchema>
+export type RestCommitStatus = z.infer<typeof commitStatusSchema>
 
 async function readPages<T>(
   repository: GitHubApiRepository,
@@ -226,8 +229,14 @@ export function restPRCheckRollupRows(
   const representedSuites = new Set(
     runs.flatMap((run) => (run.check_suite ? [run.check_suite.id] : []))
   )
+  const latestRuns = dedupeLatestCheckRuns(runs, (run) => ({
+    name: run.name,
+    id: run.id,
+    startedAt: run.started_at,
+    completedAt: run.completed_at
+  }))
   return [
-    ...runs.map((run) => ({
+    ...latestRuns.map((run) => ({
       __typename: 'CheckRun',
       name: run.name,
       databaseId: run.id,

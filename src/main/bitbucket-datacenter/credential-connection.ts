@@ -109,7 +109,7 @@ export async function getBitbucketDataCenterConnectionStatus(): Promise<Bitbucke
   const env = getEnvAuthConfig()
   const metadata = await getStoredBitbucketDataCenterMetadata()
   const hasStored = hasStoredBitbucketDataCenterCredential()
-  const protection = hasStored ? getBitbucketDataCenterCredentialProtection() : null
+  const protection = hasStored ? await getBitbucketDataCenterCredentialProtection() : null
   const storedServers = hasStored && metadata ? metadata.servers : []
 
   if (env) {

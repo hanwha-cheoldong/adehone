@@ -1,4 +1,5 @@
 import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
+import { DEFAULT_TERMINAL_FONT_SIZE } from '../../../../shared/terminal/appearance/terminal-fonts'
 import { DESKTOP_TERMINAL_SCROLLBACK_ROWS_DEFAULT } from '../../../../shared/terminal/replay/terminal-scrollback-policy'
 import { LIGHT_BG_MIN_CONTRAST } from '../../../../shared/terminal-themes/terminal-contrast-correction'
 
@@ -44,7 +45,7 @@ export function buildDefaultTerminalOptions(): ITerminalOptions & ITerminalInitO
     cursorInactiveStyle: resolveTerminalCursorInactiveStyle(cursorStyle),
     // Why: xterm draws no cursor until its textarea gets a focus event or keystroke. Remounted panes keep DOM focus (no event), so TUIs on the hardware cursor (agy) lost it until the next keypress; let ?25h/?25l alone decide.
     showCursorImmediately: true,
-    fontSize: 14,
+    fontSize: DEFAULT_TERMINAL_FONT_SIZE,
     // Cross-platform fallback chain; keep in sync with FALLBACK_FONTS in layout-serialization.ts.
     fontFamily:
       '"SF Mono", "Menlo", "Monaco", "Cascadia Mono", "Consolas", "DejaVu Sans Mono", "Liberation Mono", "Symbols Nerd Font Mono", "MesloLGS Nerd Font", "JetBrainsMono Nerd Font", "Hack Nerd Font", monospace',

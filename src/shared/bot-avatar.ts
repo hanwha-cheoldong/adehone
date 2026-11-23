@@ -22,7 +22,10 @@ export const BOT_MASCOT_IDS = [
   'Q1',
   'R3',
   'S2',
-  'T1'
+  'T1',
+  'AND',
+  'APL',
+  'MWB'
 ] as const
 
 export type BotMascotId = (typeof BOT_MASCOT_IDS)[number]

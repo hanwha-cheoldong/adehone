@@ -24,6 +24,7 @@ import {
 import {
   formatUpdateDelayDate,
   getUpdateDelayDescription,
+  getUpdateDelaySearchKeywords,
   getUpdateDelayTitle
 } from './update-delay-copy'
 
@@ -99,16 +100,7 @@ export function UpdateDelaySetting(): React.JSX.Element {
     <SearchableSetting
       title={title}
       description={description}
-      keywords={[
-        'update',
-        'delay',
-        'cooldown',
-        'defer',
-        'wait',
-        'stable',
-        'security',
-        'supply chain'
-      ]}
+      keywords={getUpdateDelaySearchKeywords(t)}
       className="space-y-3 py-3"
     >
       <div className="space-y-2">

@@ -7,6 +7,11 @@ import process from 'node:process'
 import ts from 'typescript-api'
 
 import { canonicalGenericRenderings } from '../../locale-catalog/locale-generic-ui-terms.mjs'
+import {
+  applyMissingCatalogEntries,
+  flattenCatalogEntries,
+  syncKoreanCatalogFromEnglish
+} from './catalog-entry-sync.mjs'
 import { LOCALIZATION_SURFACES, readLocalizationSurface } from './localization-surfaces.mjs'
 import { repairTranslatedValue } from '../../locale-catalog/locale-translation-policy.mjs'
 import {
@@ -259,36 +264,6 @@ function collectInterpolationVariables(value) {
   return Object.values(value).flatMap((child) => collectInterpolationVariables(child))
 }
 
-function flattenCatalogEntries(value, prefix = '', entries = new Map()) {
-  if (typeof value === 'string') {
-    entries.set(prefix, value)
-    return entries
-  }
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-    return entries
-  }
-  for (const [key, child] of Object.entries(value)) {
-    flattenCatalogEntries(child, prefix ? `${prefix}.${key}` : key, entries)
-  }
-  return entries
-}
-
-function getCatalogEntry(catalog, key) {
-  return key.split('.').reduce((cursor, part) => cursor?.[part], catalog)
-}
-
-function setCatalogEntry(catalog, key, value) {
-  const parts = key.split('.')
-  let cursor = catalog
-  for (const part of parts.slice(0, -1)) {
-    if (typeof cursor[part] !== 'object' || cursor[part] === null || Array.isArray(cursor[part])) {
-      cursor[part] = {}
-    }
-    cursor = cursor[part]
-  }
-  cursor[parts.at(-1)] = value
-}
-
 function collectLocaleParityIssues(enCatalog, localeCatalog, localeName) {
   const enEntries = flattenCatalogEntries(enCatalog)
   const localeEntries = flattenCatalogEntries(localeCatalog)
@@ -333,18 +308,7 @@ function collectMissingCatalogEntries(missing) {
 }
 
 function applyMissingEnglishEntries(catalog, missing) {
-  const entries = collectMissingCatalogEntries(missing)
-  let changed = 0
-
-  for (const [key, fallback] of entries) {
-    if (getCatalogEntry(catalog, key) !== undefined) {
-      continue
-    }
-    setCatalogEntry(catalog, key, fallback)
-    changed += 1
-  }
-
-  return changed
+  return applyMissingCatalogEntries(catalog, collectMissingCatalogEntries(missing))
 }
 
 // Check repair policy too: parity passed while repair rewrote translated generic terms into English (#12113).
@@ -648,6 +612,9 @@ export async function main(
     let localeCatalog = await readCatalogFile(localeCatalogPath)
     if (localeCatalog === undefined || reportDottedCatalogKeys(fileName, localeCatalog) !== 0) {
       return 1
+    }
+    if (options.fix) {
+      await syncKoreanCatalogFromEnglish(catalog, localeCatalog, localeCatalogPath, fileName)
     }
     if (surface.fillsPluralForms) {
       const plural = await syncLocalePluralForms(localeCatalogPath, localeCatalog, options.fix)

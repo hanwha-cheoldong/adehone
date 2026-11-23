@@ -9,4 +9,5 @@ RUN sed -i -E \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     build-essential libwayland-dev python3 libgtk-3-0 xvfb xclip \
     $(if [ "$TARGETARCH" = arm64 ]; then echo gcc-x86-64-linux-gnu libc6-dev-amd64-cross; else echo gcc-aarch64-linux-gnu libc6-dev-arm64-cross; fi) \
+    && mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix \
     && rm -rf /var/lib/apt/lists/*

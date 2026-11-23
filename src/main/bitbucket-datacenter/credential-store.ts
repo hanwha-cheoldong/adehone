@@ -61,6 +61,7 @@ export type BitbucketDataCenterCredentialSaveInput =
 
 let cachedMetadata: BitbucketDataCenterStoredMetadata | null = null
 let metadataLoadedFromDisk = false
+let secretFilePresent = false
 let cachedSecret: BitbucketDataCenterStoredSecret | null = null
 let credentialError: string | null = null
 
@@ -125,6 +126,7 @@ async function readMetadataFromDisk(): Promise<BitbucketDataCenterStoredMetadata
 export async function getStoredBitbucketDataCenterMetadata(): Promise<BitbucketDataCenterStoredMetadata | null> {
   if (!metadataLoadedFromDisk) {
     cachedMetadata = await readMetadataFromDisk()
+    secretFilePresent = await credentialFileHasContent(getSecretPath())
     metadataLoadedFromDisk = true
   }
   return cachedMetadata
@@ -135,12 +137,10 @@ export function getCachedStoredBitbucketDataCenterMetadata(): BitbucketDataCente
 }
 
 export function hasStoredBitbucketDataCenterCredential(): boolean {
-  return Boolean(
-    cachedMetadata && cachedMetadata.servers.length > 0 && credentialFileHasContent(getSecretPath())
-  )
+  return Boolean(cachedMetadata && cachedMetadata.servers.length > 0 && secretFilePresent)
 }
 
-export function getBitbucketDataCenterCredentialProtection(): SecretAtRestProtection | null {
+export async function getBitbucketDataCenterCredentialProtection(): Promise<SecretAtRestProtection | null> {
   return readCredentialFileProtection(getSecretPath())
 }
 
@@ -175,7 +175,8 @@ export async function loadStoredBitbucketDataCenterSecret(options?: {
     return cachedSecret
   }
   const secretPath = getSecretPath()
-  if (!credentialFileHasContent(secretPath)) {
+  secretFilePresent = await credentialFileHasContent(secretPath)
+  if (!secretFilePresent) {
     cachedSecret = null
     return null
   }
@@ -216,18 +217,23 @@ export async function loadStoredBitbucketDataCenterSecret(options?: {
   }
 }
 
-function persistCredentials(
+async function persistCredentials(
   nextSecret: BitbucketDataCenterStoredSecret,
   nextServers: BitbucketDataCenterStoredServerMetadata[]
-): void {
-  writeEncryptedCredential('Bitbucket Data Center', getSecretPath(), JSON.stringify(nextSecret))
+): Promise<void> {
+  await writeEncryptedCredential(
+    'Bitbucket Data Center',
+    getSecretPath(),
+    JSON.stringify(nextSecret)
+  )
   const metadata: BitbucketDataCenterStoredMetadata = { version: 1, servers: nextServers }
-  writeCredentialFileAtomic(
+  await writeCredentialFileAtomic(
     getMetadataPath(),
     Buffer.from(JSON.stringify(metadata, null, 2), 'utf-8')
   )
   cachedMetadata = metadata
   metadataLoadedFromDisk = true
+  secretFilePresent = true
   cachedSecret = nextSecret
   credentialError = null
 }
@@ -261,10 +267,10 @@ export async function upsertBitbucketDataCenterCredential(
     serverVersion: input.serverVersion,
     updatedAt: new Date().toISOString()
   }
-  persistCredentials({ servers: { ...existingSecret.servers, [normalizedUrl]: secretEntry } }, [
-    ...existingServers.filter((server) => server.baseUrl !== normalizedUrl),
-    nextEntry
-  ])
+  await persistCredentials(
+    { servers: { ...existingSecret.servers, [normalizedUrl]: secretEntry } },
+    [...existingServers.filter((server) => server.baseUrl !== normalizedUrl), nextEntry]
+  )
 }
 
 export async function removeBitbucketDataCenterCredential(baseUrl: string): Promise<void> {
@@ -282,7 +288,7 @@ export async function removeBitbucketDataCenterCredential(baseUrl: string): Prom
   const nextSecretServers = { ...existingSecret.servers }
   delete nextSecretServers[normalizedUrl]
   await ensureOrcaDir()
-  persistCredentials({ servers: nextSecretServers }, nextServers)
+  await persistCredentials({ servers: nextSecretServers }, nextServers)
 }
 
 export async function clearStoredBitbucketDataCenterCredentials(): Promise<void> {
@@ -293,6 +299,7 @@ export async function clearStoredBitbucketDataCenterCredentials(): Promise<void>
   }
   cachedMetadata = null
   metadataLoadedFromDisk = true
+  secretFilePresent = false
   cachedSecret = null
   credentialError = null
 }
@@ -301,6 +308,7 @@ export async function clearStoredBitbucketDataCenterCredentials(): Promise<void>
 export function _resetBitbucketDataCenterCredentialCache(): void {
   cachedMetadata = null
   metadataLoadedFromDisk = false
+  secretFilePresent = false
   cachedSecret = null
   credentialError = null
 }

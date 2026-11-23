@@ -1,3 +1,4 @@
+import { BOT_NAME_MAX_LENGTH } from '../bot-types'
 import {
   BOT_CONNECTOR_NAMES,
   BOT_TEMPLATE_CATEGORIES,
@@ -28,7 +29,48 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'spec-format': 'A one-page spec: problem, decision, scope, open questions.',
   'incident-timeline': 'Keep a timestamped timeline, then draft a blameless write-up.',
   'workspace-hygiene':
-    'When a workspace is done or abandoned, and what to check before removing it.'
+    'When a workspace is done or abandoned, and what to check before removing it.',
+  'android-intake':
+    'Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'android-worker-brief':
+    'Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.',
+  'android-close-out':
+    'Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.',
+  'android-desk-brief':
+    'Daily morning build/lint brief and weekly Android tech-debt report formats.',
+  'android-development':
+    'Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.',
+  'android-webview-bridge':
+    'WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.',
+  'android-gradle-r8':
+    'Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.',
+  'ios-intake':
+    'Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'ios-worker-brief':
+    'Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.',
+  'ios-close-out':
+    'Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.',
+  'ios-desk-brief': 'Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.',
+  'ios-development':
+    'Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.',
+  'ios-wkwebview-bridge':
+    'WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.',
+  'ios-xcode-signing':
+    'Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.',
+  'mobile-web-intake':
+    'Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'mobile-web-worker-brief':
+    'Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.',
+  'mobile-web-close-out':
+    'Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.',
+  'mobile-web-desk-brief':
+    'Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.',
+  'mobile-web-development':
+    'Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.',
+  'mobile-web-webview-bridge':
+    'Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.',
+  'mobile-web-performance-pwa':
+    'Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */
@@ -45,7 +87,9 @@ export function botTemplateEventParts(name: string): { trigger: string; action: 
 export function botTemplateMatches(
   template: BotTemplate,
   query: string,
-  categoryLabel: (category: BotTemplateCategory) => string
+  categoryLabel: (category: BotTemplateCategory) => string,
+  // Why: translated pages still find a template by the words they show, and by its English.
+  shownText: (english: string) => string = (english) => english
 ): boolean {
   const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean)
   if (words.length === 0) {
@@ -54,6 +98,8 @@ export function botTemplateMatches(
   const text = [
     template.name,
     template.line,
+    shownText(template.name),
+    shownText(template.line),
     categoryLabel(template.category),
     ...template.connectors.map((kind) => BOT_CONNECTOR_NAMES[kind]),
     ...template.skills
@@ -82,7 +128,8 @@ export function freeBotName(name: string, taken: readonly string[]): string {
     return name
   }
   for (let index = 2; ; index++) {
-    const candidate = `${name} ${index}`
+    // Kept within the name limit, so a long name still makes a bot.
+    const candidate = `${name.slice(0, BOT_NAME_MAX_LENGTH - ` ${index}`.length)} ${index}`
     if (!used.has(candidate.toLowerCase())) {
       return candidate
     }
