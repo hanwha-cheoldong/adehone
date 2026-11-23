@@ -116,6 +116,11 @@ describe('bot folder names', () => {
     expect(botFolderName(name)).toBe(folder)
   })
 
+  it('uses the template fallback slug for non-Latin bot names', () => {
+    expect(botFolderName('안드로이드 개발', 'Android development')).toBe('android-development')
+    expect(botFolderName('안드로이드 개발 2', 'Android development')).toBe('android-development-2')
+  })
+
   it('caps long names without a trailing dash', () => {
     const folder = botFolderName(`${'a'.repeat(39)} tail`)
     expect(folder).toBe('a'.repeat(39))

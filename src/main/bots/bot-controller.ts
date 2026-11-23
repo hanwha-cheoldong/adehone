@@ -9,6 +9,7 @@ import {
   uploadAvatar
 } from '../../shared/bot-avatar'
 import { type Bot, botFolderName } from '../../shared/bot-types'
+import { botTemplate } from '../../shared/bots/bot-templates'
 import { assertBotNameFree, freeBotName } from './bot-free-name'
 import { BotsDisabledError, isBotsEnabled } from '../../shared/bots-switch'
 import { type BotRosterEntry, botRosterFields, soulSpecialty } from '../../shared/bot-roster'
@@ -168,13 +169,14 @@ export class BotController {
     origin: BotOrigin = {}
   ): Promise<Bot> {
     const name = freeBotName(store.getBots(), input.name)
+    const fallbackName = origin.templateId ? botTemplate(origin.templateId)?.name : undefined
     const draft = { ...newBotRecord({ ...input, name }, Date.now()), ...origin }
     const bot: Bot = {
       ...draft,
       ...(await makeBotsHome(
         this.deps,
         store,
-        botFolderName(name),
+        botFolderName(name, fallbackName),
         name,
         draft.agent,
         (path, folder) =>

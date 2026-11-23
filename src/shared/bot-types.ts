@@ -392,19 +392,4 @@ export function normalizePersistedBots(value: unknown): Bot[] {
   return bots
 }
 
-const WINDOWS_RESERVED_NAME = /^(con|prn|aux|nul|com\d|lpt\d)$/
-
-/** A folder name every supported filesystem accepts. */
-export function botFolderName(botName: string): string {
-  const slug = botName
-    .normalize('NFKD')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 40)
-    .replace(/-+$/, '')
-  if (!slug) {
-    return 'bot'
-  }
-  return WINDOWS_RESERVED_NAME.test(slug) ? `${slug}-bot` : slug
-}
+export { botFolderName } from './bots/bot-folder-name'
