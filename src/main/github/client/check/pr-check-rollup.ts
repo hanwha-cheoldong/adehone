@@ -4,6 +4,7 @@ import { githubHostExecOptions } from '../../repositories/github-repository-host
 import type { GitHubRepositoryIdentity as GitHubApiRepository } from '../../../../shared/github/repositories/repository-identity'
 import { noteRepositoryRateLimitSpend } from '../../api/rate-limit'
 import type { GhExecOptions } from '../github-exec-scope'
+import { dedupeLatestCheckRuns } from './dedupe-latest-check-runs'
 
 type ConnectionKind = 'contexts' | 'suites'
 
@@ -199,8 +200,18 @@ export function prCheckRollupRows({ contexts, suites }: PRCheckPages): unknown[]
       context.__typename === 'CheckRun' ? [context.checkSuite.databaseId] : []
     )
   )
+  const latestContexts = dedupeLatestCheckRuns(contexts, (context) =>
+    context.__typename === 'CheckRun'
+      ? {
+          name: context.name,
+          id: context.databaseId,
+          startedAt: context.startedAt,
+          completedAt: context.completedAt
+        }
+      : null
+  )
   return [
-    ...contexts,
+    ...latestContexts,
     ...suites
       .filter((suite) =>
         isPendingApprovalSuiteWithoutRuns(suite.conclusion, representedSuites.has(suite.databaseId))

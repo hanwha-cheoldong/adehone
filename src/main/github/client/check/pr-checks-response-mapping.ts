@@ -8,6 +8,7 @@ import {
   mapCommitStatusRESTStatus,
   mapCommitStatusRESTConclusion
 } from '../../api/github-read-response'
+import { dedupeLatestCheckRuns } from './dedupe-latest-check-runs'
 import {
   isPendingApprovalSuiteWithoutRuns,
   type PRCheckContext,
@@ -114,13 +115,19 @@ export function mapGraphQLPRCheckPages(
   { contexts, suites, headSha }: PRCheckPages
 ): PRCheckDetail[] {
   const checkRunContexts = contexts.filter((context) => context.__typename === 'CheckRun')
-  const checkRuns = checkRunContexts
-    .map(mapGraphQLCheckRunContext)
-    .filter((check): check is PRCheckDetail => check !== null)
-  const checkRunNames = new Set(checkRuns.map((check) => check.name))
   const checkSuiteIdsWithRuns = new Set(
     checkRunContexts.map((context) => context.checkSuite.databaseId)
   )
+  const latestCheckRunContexts = dedupeLatestCheckRuns(checkRunContexts, (context) => ({
+    name: context.name,
+    id: context.databaseId,
+    startedAt: context.startedAt,
+    completedAt: context.completedAt
+  }))
+  const checkRuns = latestCheckRunContexts
+    .map(mapGraphQLCheckRunContext)
+    .filter((check): check is PRCheckDetail => check !== null)
+  const checkRunNames = new Set(checkRuns.map((check) => check.name))
   // Include legacy statuses, but preserve richer check-run metadata on name collisions.
   const legacyStatuses = contexts
     .filter((context) => context.__typename === 'StatusContext')
