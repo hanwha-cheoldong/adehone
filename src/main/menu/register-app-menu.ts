@@ -289,7 +289,7 @@ function buildAndApplyMenu(options: RegisterAppMenuOptions): void {
         ? []
         : ([
             { type: 'separator' },
-            labeledAppMenuRole('about', 'menu.about', 'About Orca'),
+            labeledAppMenuRole('about', 'menu.about', 'About Adehone'),
             checkForUpdatesItem
           ] satisfies Electron.MenuItemConstructorOptions[]))
     ]
