@@ -39,7 +39,14 @@ export const BOT_TEMPLATE_SKILLS = [
   'status-brief',
   'spec-format',
   'incident-timeline',
-  'workspace-hygiene'
+  'workspace-hygiene',
+  'android-intake',
+  'android-worker-brief',
+  'android-close-out',
+  'android-desk-brief',
+  'android-development',
+  'android-webview-bridge',
+  'android-gradle-r8'
 ] as const
 export type BotTemplateSkill = (typeof BOT_TEMPLATE_SKILLS)[number]
 

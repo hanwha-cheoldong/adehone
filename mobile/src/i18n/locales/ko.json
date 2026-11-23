@@ -4573,6 +4573,28 @@
       "category": {
         "support": "지원 및 분류",
         "personal": "개인 비서"
+      },
+      "android-dev": {
+        "name": "안드로이드 개발",
+        "line": "공식 Android Skills와 모바일 보안 가이드를 기반으로 안드로이드 기능을 구현하고 리뷰합니다.",
+        "firstChat": "안드로이드 워크스페이스를 지정하거나 작업을 전달하세요. 구글 공식 Android Skills와 구간 암호화, 네이티브/JS 디바이스 API, MDM/MAM, 보안 키패드, 푸시 가이드를 따릅니다.",
+        "watches": "전달한 안드로이드 워크스페이스, 작업 및 풀 리퀘스트",
+        "does": "안드로이드 네이티브, WebView JS 브리지, 보안, MDM/MAM 및 디바이스 API 코드를 구현하고 리뷰합니다.",
+        "reports": "여기, 평일 오전 9시 및 워커 검증 완료 후",
+        "example1": "CryptoObject 기반 BiometricPrompt와 강화된 생체 인증 WebView 브리지를 추가했습니다.",
+        "example2": "PIN 화면에서 FLAG_SECURE 및 Play Integrity 검증 누락을 발견했습니다.",
+        "schedules": {
+          "daily-morning-check": {
+            "when": "평일 오전 9시",
+            "what": "일일 빌드 및 린트 헬스체크"
+          }
+        },
+        "events": {
+          "pr-verify": {
+            "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
+            "action": "Gradle 테스트 및 브리지/R8 검증 실행"
+          }
+        }
       }
     },
     "tidyUp": {
@@ -4985,6 +5007,24 @@
     },
     "panel": {
       "backTo": "{{name}}(으)로 돌아가기"
+    },
+    "templateSkills": {
+      "lines": {
+        "android-development": "공식 Android Skills 및 구간 암호화, 네이티브/JS 디바이스 API, MDM, MAM, 보안 키패드, 푸시 가이드.",
+        "android-webview-bridge": "WebView ↔ Native JS 브리지 계약, Origin 제한, WebSettings 보안 및 R8 Keep 규칙.",
+        "android-gradle-r8": "Gradle/AGP 버전 정책, SDK 가드레일, R8/ProGuard 규칙 및 키스토어/시크릿 보안.",
+        "android-intake": "들어온 안드로이드 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
+        "android-worker-brief": "타겟 모듈, 브리지 규격, 보안/R8 체크, 완료 조건(DoD)을 담은 안드로이드 작업 지시서 양식.",
+        "android-close-out": "Gradle 빌드·테스트, Manifest/R8 Diff 점검, adb 스모크 테스트를 직접 확인하고 보고합니다.",
+        "android-desk-brief": "일일 아침 빌드·린트 브리핑 및 주간 기술 부채 리포트 양식."
+      },
+      "androidDevelopment": "안드로이드 개발",
+      "androidWebviewBridge": "WebView JS 브리지",
+      "androidGradleR8": "Gradle 및 R8 규칙",
+      "androidIntake": "요청 분류 (Intake)",
+      "androidWorkerBrief": "작업 지시서 (Worker Brief)",
+      "androidCloseOut": "직접 검증 및 마감 (Close-out)",
+      "androidDeskBrief": "아침·주간 브리핑 (Desk Brief)"
     }
   }
 }

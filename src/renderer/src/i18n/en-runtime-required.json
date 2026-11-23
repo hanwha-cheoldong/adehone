@@ -3498,8 +3498,22 @@
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
         "spec-format": "A one-page spec: problem, decision, scope, open questions.",
         "status-brief": "Changed, blocked, needs a decision: a brief in under ten lines.",
-        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it."
-      }
+        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
+        "android-development": "Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.",
+        "android-webview-bridge": "WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.",
+        "android-gradle-r8": "Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.",
+        "android-intake": "Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
+        "android-worker-brief": "Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.",
+        "android-close-out": "Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.",
+        "android-desk-brief": "Daily morning build/lint brief and weekly Android tech-debt report formats."
+      },
+      "androidDevelopment": "android-development",
+      "androidWebviewBridge": "android-webview-bridge",
+      "androidGradleR8": "android-gradle-r8",
+      "androidIntake": "android-intake",
+      "androidWorkerBrief": "android-worker-brief",
+      "androidCloseOut": "android-close-out",
+      "androidDeskBrief": "android-desk-brief"
     },
     "templates": {
       "backlog-cleanup": {
@@ -3892,6 +3906,28 @@
           }
         },
         "watches": "Your Orca workspaces and their pull requests"
+      },
+      "android-dev": {
+        "name": "Android development",
+        "line": "Builds and reviews Android features with official Android skills and mobile security guides.",
+        "firstChat": "Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.",
+        "watches": "Android workspaces, tasks, and pull requests you hand it",
+        "does": "Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.",
+        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "example1": "Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.",
+        "example2": "Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.",
+        "schedules": {
+          "daily-morning-check": {
+            "when": "Weekdays at 9 AM",
+            "what": "Daily build & lint healthcheck"
+          }
+        },
+        "events": {
+          "pr-verify": {
+            "trigger": "When a pull request is opened or updated",
+            "action": "Run Gradle tests and bridge/R8 checks"
+          }
+        }
       }
     },
     "upNext": {

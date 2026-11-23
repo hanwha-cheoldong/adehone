@@ -29,7 +29,21 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'spec-format': 'A one-page spec: problem, decision, scope, open questions.',
   'incident-timeline': 'Keep a timestamped timeline, then draft a blameless write-up.',
   'workspace-hygiene':
-    'When a workspace is done or abandoned, and what to check before removing it.'
+    'When a workspace is done or abandoned, and what to check before removing it.',
+  'android-intake':
+    'Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'android-worker-brief':
+    'Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.',
+  'android-close-out':
+    'Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.',
+  'android-desk-brief':
+    'Daily morning build/lint brief and weekly Android tech-debt report formats.',
+  'android-development':
+    'Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.',
+  'android-webview-bridge':
+    'WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.',
+  'android-gradle-r8':
+    'Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */
