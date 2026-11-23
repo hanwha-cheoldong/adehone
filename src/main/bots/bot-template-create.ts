@@ -11,6 +11,11 @@ import {
   type BotPackageApply,
   type BotPackageApplyDeps
 } from './bot-package-apply'
+import {
+  ANDROID_DEV_AUTOMATIONS_DOC,
+  ANDROID_DEV_MEMORY_SEED,
+  ANDROID_DEV_SOUL_RULES
+} from './bot-template-android-files'
 import { BOT_TEMPLATE_SKILL_TEXT } from './bot-template-skill-text'
 
 export type BotTemplateCreateParams = BotCreateParams & {
@@ -26,13 +31,23 @@ export function templatePackage(
   keptSkills: readonly string[]
 ): BotPackageApply {
   const kept = new Set(keptSkills)
+  const extraFiles =
+    template.id === 'android-dev'
+      ? [
+          { to: 'MEMORY.md', text: ANDROID_DEV_MEMORY_SEED },
+          { to: 'AUTOMATIONS.md', text: ANDROID_DEV_AUTOMATIONS_DOC }
+        ]
+      : []
   return {
-    files: template.skills
-      .filter((skill) => kept.has(skill))
-      .map((skill) => ({
-        to: `${BOT_OWN_SKILLS_FOLDER}/${skill}/SKILL.md`,
-        text: BOT_TEMPLATE_SKILL_TEXT[skill]
-      })),
+    files: [
+      ...extraFiles,
+      ...template.skills
+        .filter((skill) => kept.has(skill))
+        .map((skill) => ({
+          to: `${BOT_OWN_SKILLS_FOLDER}/${skill}/SKILL.md`,
+          text: BOT_TEMPLATE_SKILL_TEXT[skill]
+        }))
+    ],
     tools: [],
     schedules: template.schedules.map((schedule) => ({
       name: `${template.name}: ${schedule.what}`,
@@ -68,8 +83,18 @@ export function botTemplateCreation(
     return { params, finish: async (bot) => bot }
   }
   const agent = params.agent ?? 'claude'
+  const seed =
+    template.id === 'android-dev' && params.seed
+      ? {
+          ...params.seed,
+          purpose:
+            params.seed.purpose && !params.seed.purpose.includes(ANDROID_DEV_SOUL_RULES)
+              ? `${params.seed.purpose.trimEnd()}\n\n${ANDROID_DEV_SOUL_RULES}`
+              : (params.seed.purpose ?? ANDROID_DEV_SOUL_RULES)
+        }
+      : params.seed
   return {
-    params: { ...params, agent },
+    params: { ...params, agent, seed },
     origin: { templateId: template.id },
     finish: (bot) => applyBotPackage(deps, bot, templatePackage(template, fromTemplate.skills))
   }

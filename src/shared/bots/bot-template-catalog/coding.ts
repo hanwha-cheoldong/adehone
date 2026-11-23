@@ -183,5 +183,51 @@ export const BOT_TEMPLATES_CODING: readonly BotTemplate[] = [
       '#4133 logs the full request headers, including the auth token.',
       'Nothing else this week.'
     ]
+  },
+  {
+    id: 'android-dev',
+    category: 'coding',
+    name: 'Android development',
+    line: 'Builds and reviews Android features with official Android skills and mobile security guides.',
+    firstChat:
+      'Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.',
+    mascot: 'D1',
+    watches: 'Android workspaces, tasks, and pull requests you hand it',
+    does: 'Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.',
+    reports: 'Here, weekdays at 9 AM and after worker verification',
+    connectors: ['github'],
+    schedules: [
+      {
+        id: 'daily-morning-check',
+        when: 'Weekdays at 9 AM',
+        what: 'Daily build & lint healthcheck',
+        rrule: '0 9 * * 1-5',
+        prompt:
+          'Run git fetch, ./gradlew assembleDebug, and ./gradlew lintDebug on the active Android workspace, then post a morning summary using the android-desk-brief skill.'
+      }
+    ],
+    events: [
+      {
+        id: 'pr-verify',
+        name: 'When a pull request is opened or updated: run Gradle tests and bridge/R8 checks',
+        source: 'github',
+        event: 'pull_request',
+        prompt:
+          'Verify the Android pull request with the android-close-out skill: run ./gradlew testDebugUnitTest, check R8/ProGuard rules and WebView bridge diffs, and report the checklist here.'
+      }
+    ],
+    skills: [
+      'android-intake',
+      'android-worker-brief',
+      'android-close-out',
+      'android-desk-brief',
+      'android-development',
+      'android-webview-bridge',
+      'android-gradle-r8'
+    ],
+    example: [
+      'Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.',
+      'Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.'
+    ]
   }
 ]
