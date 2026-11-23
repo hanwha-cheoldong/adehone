@@ -2,22 +2,26 @@ import type { TaskPageJiraSummaryGenerationModel } from './jira/creation/use-tas
 import { useEffect } from 'react'
 import { addAppKeyListener, removeAppKeyListener } from '@/lib/keyboard/app-keyboard-router'
 import { getShortcutPlatform } from '@/lib/keyboard/shortcut-platform'
+import { hasVisibleOverlay } from '@/lib/overlay-interaction/visible-overlay'
 import { isEditableTarget } from '@/lib/text-input/focus/editable-target'
 import { isImeOwnedKeyboardEvent } from '@/lib/text-input/ime/ime-composition-keyboard-event'
 import { useAppStore } from '@/store'
 import { keybindingMatchesAction } from '../../../../shared/keybindings/matching'
 
-function hasOpenFloatingMenu(): boolean {
-  return Boolean(
-    document.querySelector(
-      '[data-slot="dropdown-menu-content"], [data-slot="popover-content"], [data-slot="select-content"], [role="menu"]'
-    )
+function isTextEntryTarget(target: HTMLElement): boolean {
+  return (
+    target instanceof HTMLInputElement ||
+    target instanceof HTMLTextAreaElement ||
+    target instanceof HTMLSelectElement ||
+    target.isContentEditable
   )
 }
+
 export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationModel) {
   const {
     closeTaskPage,
     closeTaskDetailPage,
+    taskSource,
     activeModal,
     linearStatusContextKey,
     preflightStatusChecked,
@@ -44,9 +48,13 @@ export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationMod
   const githubTasksBusy = githubListPending || tasksRefreshing || tasksFiltering
   const taskDetailOpen = Boolean(dialogWorkItem || selectedJiraIssue || selectedLinearIssue)
   const creationModalOpen = Boolean(newIssueOpen || newLinearIssueOpen || newJiraIssueOpen)
+  // GitHub and Linear details replace the list in-page; the Jira detail is a Sheet that owns Esc.
+  const detailPageOpen =
+    (taskSource === 'github' && Boolean(dialogWorkItem)) ||
+    (taskSource === 'linear' && Boolean(selectedLinearIssue))
   useEffect(() => {
     // Why: when a modal is open, let it own Esc dismissal.
-    if (taskDetailOpen || creationModalOpen || activeModal !== 'none') {
+    if (selectedJiraIssue || creationModalOpen || activeModal !== 'none') {
       return
     }
     const onKeyDown = (event: KeyboardEvent): void => {
@@ -58,18 +66,24 @@ export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationMod
         return
       }
 
+      if (detailPageOpen) {
+        // Why: fields (reply, description, mentions) and overlays on the detail own Esc; the
+        // router runs first in capture, so blurring here would also trigger their cancel.
+        if (event.defaultPrevented || isTextEntryTarget(target) || hasVisibleOverlay()) {
+          return
+        }
+        event.preventDefault()
+        closeTaskDetailPage()
+        return
+      }
+
       // Why: open menus/popovers/selects own Esc; capture-phase leave would steal it from Radix.
-      if (hasOpenFloatingMenu()) {
+      if (hasVisibleOverlay()) {
         return
       }
 
       // Esc first blurs input; leave the page only when focus is outside one.
-      if (
-        target instanceof HTMLInputElement ||
-        target instanceof HTMLTextAreaElement ||
-        target instanceof HTMLSelectElement ||
-        target.isContentEditable
-      ) {
+      if (isTextEntryTarget(target)) {
         event.preventDefault()
         target.blur()
         return
@@ -79,7 +93,14 @@ export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationMod
     }
     addAppKeyListener('keydown', onKeyDown)
     return () => removeAppKeyListener('keydown', onKeyDown)
-  }, [activeModal, closeTaskPage, creationModalOpen, taskDetailOpen])
+  }, [
+    activeModal,
+    closeTaskDetailPage,
+    closeTaskPage,
+    creationModalOpen,
+    detailPageOpen,
+    selectedJiraIssue
+  ])
   useEffect(() => {
     if (!taskDetailOpen || creationModalOpen || activeModal !== 'none') {
       return
@@ -111,7 +132,7 @@ export function useTaskPageGlobalEffects(model: TaskPageJiraSummaryGenerationMod
 
     // Why: macOS mouse utilities (e.g. Logi Options+) remap side-buttons to browser.back chords, and some platforms emit BrowserBack.
     const onKeyDown = (event: KeyboardEvent): void => {
-      if (event.defaultPrevented || isImeOwnedKeyboardEvent(event) || hasOpenFloatingMenu()) {
+      if (event.defaultPrevented || isImeOwnedKeyboardEvent(event) || hasVisibleOverlay()) {
         return
       }
       const isBrowserBackKey = event.key === 'BrowserBack'

@@ -123,24 +123,24 @@
         "activitySubagentCount_other": "{{count}} subagents running"
       },
       "NativeChatResumeToast": {
-        "partial_one": "Resumed {{resumed}} of {{total}} chats. {{count}} needs you.",
-        "partial_other": "Resumed {{resumed}} of {{total}} chats. {{count}} need you.",
-        "resumedOn_one": "Resumed {{count}} chat on {{machine}}.",
-        "resumedOn_other": "Resumed {{count}} chats on {{machine}}.",
-        "resumedRestart_one": "Resumed {{count}} chat after the restart.",
-        "resumedRestart_other": "Resumed {{count}} chats after the restart.",
-        "resumedUpdate_one": "Resumed {{count}} chat after the update.",
-        "resumedUpdate_other": "Resumed {{count}} chats after the update.",
-        "resumingOn_one": "Resuming {{count}} chat on {{machine}}…",
-        "resumingOn_other": "Resuming {{count}} chats on {{machine}}…",
-        "resuming_one": "Resuming {{count}} chat…",
-        "resuming_other": "Resuming {{count}} chats…",
-        "stoppedOn_one": "{{count}} chat stopped on {{machine}}.",
-        "stoppedOn_other": "{{count}} chats stopped on {{machine}}.",
-        "stoppedRestart_one": "{{count}} chat stopped when Orca closed.",
-        "stoppedRestart_other": "{{count}} chats stopped when Orca closed.",
-        "stoppedUpdate_one": "{{count}} chat stopped when Orca updated.",
-        "stoppedUpdate_other": "{{count}} chats stopped when Orca updated."
+        "partial_one": "Resumed {{resumed}} of {{total}} agents. {{count}} needs you.",
+        "partial_other": "Resumed {{resumed}} of {{total}} agents. {{count}} need you.",
+        "resumedOn_one": "Resumed {{count}} agent on {{machine}}.",
+        "resumedOn_other": "Resumed {{count}} agents on {{machine}}.",
+        "resumedRestart_one": "Resumed {{count}} agent after the restart.",
+        "resumedRestart_other": "Resumed {{count}} agents after the restart.",
+        "resumedUpdate_one": "Resumed {{count}} agent after the update.",
+        "resumedUpdate_other": "Resumed {{count}} agents after the update.",
+        "resumingOn_one": "Resuming {{count}} agent on {{machine}}…",
+        "resumingOn_other": "Resuming {{count}} agents on {{machine}}…",
+        "resuming_one": "Resuming {{count}} agent…",
+        "resuming_other": "Resuming {{count}} agents…",
+        "stoppedOn_one": "{{count}} agent stopped on {{machine}}.",
+        "stoppedOn_other": "{{count}} agents stopped on {{machine}}.",
+        "stoppedRestart_one": "{{count}} agent stopped when Orca closed.",
+        "stoppedRestart_other": "{{count}} agents stopped when Orca closed.",
+        "stoppedUpdate_one": "{{count}} agent stopped when Orca updated.",
+        "stoppedUpdate_other": "{{count}} agents stopped when Orca updated."
       },
       "NewWorkspaceComposerCard": {
         "addRemoteOrcaServer": "Add Remote Adehone Server",
@@ -272,6 +272,7 @@
           "local": "Local",
           "remote": "Remote",
           "runs": "Runs",
+          "trigger": "Trigger",
           "triggered": "Triggered"
         },
         "AutomationSchedulePicker": {
@@ -339,7 +340,9 @@
         },
         "usage": {
           "tokensAndCost_one": "{{tokens}} token · {{cost}}",
-          "tokensAndCost_other": "{{tokens}} tokens · {{cost}}"
+          "tokensAndCost_other": "{{tokens}} tokens · {{cost}}",
+          "tokens_one": "{{tokens}} token",
+          "tokens_other": "{{tokens}} tokens"
         }
       },
       "browser-pane": {
@@ -1175,7 +1178,7 @@
         },
         "AgentSkillSetupPanel": {
           "hostUnavailable": "Adehone can't install skills on this workspace's machine yet.",
-          "replaceWithOrcaCopy": "Replace with Adehone's copy"
+          "replaceWithOrcaCopy": "Replace with Adehone’s"
         },
         "AppearancePane": {
           "61d842eca0": "Show the Adehone Mobile shortcut in the sidebar. It remains available from Toolbox.",
@@ -1270,8 +1273,7 @@
           "fdd271abf0": "Remote Adehone servers"
         },
         "GeneralUpdateSettingsSection": {
-          "ceb579abaf": "Check for app updates and install a newer Adehone version.",
-          "e3b9d21c07": "is available. Update Adehone through your system package manager — Adehone cannot install this release itself."
+          "ceb579abaf": "Check for app updates and install a newer Adehone version."
         },
         "GeneralWorkspaceSettingsSection": {
           "externalWorktreesDescription": "Choose which worktrees created outside Adehone appear by default on this host."
@@ -1466,9 +1468,7 @@
           "d59bd333c3": "Update this Adehone server to manage its quick commands."
         },
         "ReleaseChannelSection": {
-          "adhocWarning": "Adhoc builds come from a branch that has not landed, and the Windows ones are unsigned. Whoever cut one may abandon it — keep a stable build handy.",
-          "dailyWarning": "Daily builds ship straight from main with no test gate, and the Windows ones are unsigned. Keep a stable build handy.",
-          "hourlyWarning": "Hourly builds ship straight from main with no test gate, and the Windows ones are unsigned. Keep a stable build handy."
+          "devChannelPlatforms": "macOS and Windows"
         },
         "RemoteServerUpdateDialog": {
           "dca6780b3a": "Update remote Adehone servers",
@@ -2020,7 +2020,6 @@
           "windowsNoExtractor": "This Windows host has neither tar.exe nor PowerShell’s Expand-Archive, so Adehone can’t unpack its server there. Install Windows PowerShell 5.1 on the host, then connect again."
         },
         "sshManagedHostRemove": {
-          "2ca95e9fd7": "Open remote Adehone servers",
           "descriptionServerHost": "Adehone runs on {{label}}. In Remote Adehone Servers, open the ⋯ menu on {{label}} and choose Stop… to remove Adehone from the host, or Forget… if the host is gone. Then you can remove this SSH host."
         },
         "task": {
@@ -2118,7 +2117,6 @@
           "pairingHelpShareComputer": "Create this under Settings → Remote Adehone Servers → Share this computer on the other computer.",
           "serverDescription": "Pair with Adehone running on another computer.",
           "sshAlreadyExists": "That SSH host is already in Adehone.",
-          "sshConfigPickerAddAll": "Add all {{value0}} to Adehone",
           "sshConfigPickerAddAllEmpty": "Add all to Adehone",
           "sshConfigPickerImportDescription": "Pick a host to fill the form, or add every new host to Adehone’s host list.",
           "sshConfigPickerInOrca": "In Adehone",
@@ -2147,7 +2145,6 @@
         },
         "AddWslHostFormPanel": {
           "addingHint": "Installing and starting the Adehone server in the distro. The first time can take a minute.",
-          "description": "Adehone runs its server inside the distro, so git, files and terminals run natively in Linux. Projects in this distro that you opened through \\\\wsl.localhost move to this host automatically once their terminals are idle; projects on a Windows drive (/mnt/…) stay on this computer. You can bring a moved project back from the sidebar.",
           "wsl1Reason": "WSL 1 can’t run an Adehone host; convert with {{command}}"
         },
         "AutoRenameFailedDialog": {
@@ -2270,9 +2267,6 @@
           "optionsActiveFilters_other": "Workspace options ({{count}} filters active)",
           "optionsFilterCount_one": "Workspace options ({{count}} filter)",
           "optionsFilterCount_other": "Workspace options ({{count}} filters)"
-        },
-        "SuppressExternalWorktreeInboxDialog": {
-          "8c0b2e7a41": "Open Non-Adehone worktrees settings"
         },
         "WorkspaceKanbanDrawerHeader": {
           "selectedCount_one": "{{count}} selected",
@@ -2586,25 +2580,25 @@
       "status": {
         "bar": {
           "NativeChatResumeStatusSegment": {
-            "ariaLabelCount_one": "{{count}} chat available to resume",
-            "ariaLabelCount_other": "{{count}} chats available to resume",
-            "chatsFailedAria_one": "{{count}} chat failed to resume. Click for details.",
-            "chatsFailedAria_other": "{{count}} chats failed to resume. Click for details.",
-            "chatsFailedLabel_one": "{{count}} chat failed to resume",
-            "chatsFailedLabel_other": "{{count}} chats failed to resume",
-            "checkAriaCount_one": "{{count}} chat to check after resuming. Click for details.",
-            "checkAriaCount_other": "{{count}} chats to check after resuming. Click for details.",
-            "checkLabelCount_one": "{{count}} chat to check",
-            "checkLabelCount_other": "{{count}} chats to check",
-            "checkTooltip": "Chats Adehone couldn’t resume, or couldn’t confirm it resumed, after the restart. Click for details.",
-            "failedTooltip": "Chats Adehone could not resume after the restart. Click for details.",
-            "labelCount_one": "{{count}} chat to resume",
-            "labelCount_other": "{{count}} chats to resume",
-            "resumedAriaCount_one": "{{count}} chat resumed. Click to see it.",
-            "resumedAriaCount_other": "{{count}} chats resumed. Click to see them.",
-            "resumedLabelCount_one": "{{count}} chat resumed",
-            "resumedLabelCount_other": "{{count}} chats resumed",
-            "resumedTooltip": "Chats Adehone resumed after the restart. Click to see them."
+            "ariaLabelCount_one": "{{count}} agent available to resume",
+            "ariaLabelCount_other": "{{count}} agents available to resume",
+            "chatsFailedAria_one": "{{count}} agent failed to resume. Click for details.",
+            "chatsFailedAria_other": "{{count}} agents failed to resume. Click for details.",
+            "chatsFailedLabel_one": "{{count}} agent failed to resume",
+            "chatsFailedLabel_other": "{{count}} agents failed to resume",
+            "checkAriaCount_one": "{{count}} agent to check after resuming. Click for details.",
+            "checkAriaCount_other": "{{count}} agents to check after resuming. Click for details.",
+            "checkLabelCount_one": "{{count}} agent to check",
+            "checkLabelCount_other": "{{count}} agents to check",
+            "checkTooltip": "Agents Adehone couldn’t resume, or couldn’t confirm it resumed, after the restart. Click for details.",
+            "failedTooltip": "Agents Adehone could not resume after the restart. Click for details.",
+            "labelCount_one": "{{count}} agent to resume",
+            "labelCount_other": "{{count}} agents to resume",
+            "resumedAriaCount_one": "{{count}} agent resumed. Click to see it.",
+            "resumedAriaCount_other": "{{count}} agents resumed. Click to see them.",
+            "resumedLabelCount_one": "{{count}} agent resumed",
+            "resumedLabelCount_other": "{{count}} agents resumed",
+            "resumedTooltip": "Agents Adehone resumed after the restart. Click to see them."
           },
           "PortsStatusSegment": {
             "portsAria_one": "Ports, {{count}} workspace port",
@@ -2662,6 +2656,8 @@
             "codexSignInError": "Codex sign-in failed. Please try again.",
             "rateLimitResetsAvailable_one": "{{count}} rate-limit reset available",
             "rateLimitResetsAvailable_other": "{{count}} rate-limit resets available",
+            "rateLimitResetsUnsupportedWsl_one": "{{count}} reset available · not in WSL yet",
+            "rateLimitResetsUnsupportedWsl_other": "{{count}} resets available · not in WSL yet",
             "staleCodexSessions_one": "{{count}} Codex session is still on the old account.",
             "staleCodexSessions_other": "{{count}} Codex sessions are still on the old account."
           },
@@ -3269,6 +3265,10 @@
       "confirmMaySkipApprovals": "May act without asking first",
       "confirmNoApprovals": "Acts without asking first",
       "confirmWarning": "They’ll act as you on {{computer}}.",
+      "controlBrief": "They can act as you here.",
+      "controlBriefIfAdded": "Anyone you add can act as you here.",
+      "controlBriefIfAddedOnHost": "Anyone you add can act as you on {{computer}}.",
+      "controlBriefOnHost": "They can act as you on {{computer}}.",
       "controlMany": "They can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
       "controlNone": "Anyone you add can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
       "controlOne": "{{person}} can use {{name}} to work on {{computer}} as you: run commands, open and change files, and use your connected accounts.",
@@ -3307,6 +3307,7 @@
       "reachPermission": "New conversations start in {{mode}}",
       "reachPermissionUnknown": "New conversations start from your chat permission setting",
       "reachSlack": "Post in Slack as @{{name}}",
+      "reject": "Reject",
       "separateBot": "A separate bot for the team gets its own permission, Google switch and tools. It still runs on {{computer}} as you.",
       "summaryMany": "You and {{count}} other people can ask {{name}}.",
       "summaryOne": "You and {{person}} can ask {{name}}.",
@@ -3370,6 +3371,15 @@
         "outside_other": "{{count}} more outside this group"
       },
       "mentionedCount": "{{count}} mentioned",
+      "remoteAsked": "Asked on {{computer}}",
+      "remoteMayAnswer": "May still answer on {{computer}}.",
+      "remoteNotSent": "Not sent to {{computer}}",
+      "remoteNotice": "Didn't answer on {{computer}}",
+      "remoteReplied": "Replied on {{computer}}",
+      "remoteSending": "Asking on {{computer}}…",
+      "remoteShortened": "Shortened. Full answer is on {{computer}}.",
+      "remoteStopped": "Stopped here",
+      "remoteUnknown": "Delivery unknown",
       "unavailableBot": "Unavailable bot"
     },
     "hover": {
@@ -3381,6 +3391,10 @@
       "needsYouHeading_other": "{{count}} things need you"
     },
     "items": {
+      "ask": {
+        "heldCount_one": "{{count}} answer not sent yet",
+        "heldCount_other": "{{count}} answers not sent yet"
+      },
       "pill": {
         "moveCount_one": "Move {{count}} item to",
         "moveCount_other": "Move {{count}} items to"
@@ -3396,6 +3410,20 @@
       "stale": {
         "confirm_one": "Cancel {{count}} stale item?",
         "confirm_other": "Cancel {{count}} stale items?"
+      }
+    },
+    "new": {
+      "parts": {
+        "automations_one": "{{count}} automation",
+        "automations_other": "{{count}} automations",
+        "needsApps_one": "Needs {{count}} app",
+        "needsApps_other": "Needs {{count}} apps",
+        "schedules_one": "{{count}} schedule",
+        "schedules_other": "{{count}} schedules",
+        "skillsKept_one": "{{kept}}/{{count}} skill",
+        "skillsKept_other": "{{kept}}/{{count}} skills",
+        "skills_one": "{{count}} skill",
+        "skills_other": "{{count}} skills"
       }
     },
     "options": {
@@ -3436,13 +3464,20 @@
       "showMore_one": "Show {{count}} more bot",
       "showMore_other": "Show {{count}} more bots"
     },
-    "settingsPage": {
-      "memoryFiles_one": "MEMORY.md and {{count}} topic file",
-      "memoryFiles_other": "MEMORY.md and {{count}} topic files"
+    "settingsView": {
+      "memoryFiles_one": "{{count}} file",
+      "memoryFiles_other": "{{count}} files",
+      "youAndOthers_one": "You and {{count}} other",
+      "youAndOthers_other": "You and {{count}} others"
     },
     "slack": {
       "postAs": {
         "line": "When you reply to a Slack thread from Orca, it posts as <picker>{{name}}</picker>"
+      },
+      "setup": {
+        "preview": {
+          "ask": "<mention/> summarize this thread"
+        }
       }
     },
     "upNext": {
@@ -3502,10 +3537,12 @@
         "noCookies": "No cookies found in {{browser}}.",
         "noValidCookies": "No valid cookies found in {{browser}}.",
         "notAuthorized": "Not authorized",
+        "pageChanged": "This page closed or changed profile during the import. Try again.",
         "profileNotFound": "Session profile not found.",
         "readFailed": "Could not read {{browser}} cookies.",
         "safariFullDiskAccess": "macOS denied access to Safari cookies. Grant Full Disk Access to Adehone in System Settings → Privacy & Security → Full Disk Access.",
-        "serverRepaired": "This server was re-paired during the import. Try again."
+        "serverRepaired": "This server was re-paired during the import. Try again.",
+        "sshHostDisconnected": "This page is no longer connected through its SSH host. Reconnect and try again."
       },
       "notice": {
         "importedMore_one": "Imported {{count}} cookie for {{domains}} +{{more}} more. Reload the page to use them.",
@@ -3821,6 +3858,8 @@
         "headerTotal_other": "{{count}} background tasks",
         "monitor": "Background monitor",
         "monitoring": "Monitoring background tasks",
+        "needsAttention_one": "{{count}} needs attention",
+        "needsAttention_other": "{{count}} need attention",
         "outputFile": "Output: {{value0}}",
         "reasonBlocked": "failed",
         "reasonWaiting": "needs approval",
@@ -3863,6 +3902,8 @@
         "soul": "Updated soul applied"
       },
       "botCreateOffer": {
+        "askedMany": "Asked to take over {{count}} workspaces",
+        "askedOne": "Asked to take over 1 workspace",
         "create": "Create bot",
         "created": "Created",
         "createdAskedMany": "Created · asked to take over {{count}} workspaces",
@@ -3883,6 +3924,9 @@
         "takesOverMany": "Takes over {{count}} workspaces",
         "takesOverOne": "Takes over 1 workspace",
         "template": "Template",
+        "tookOverMany": "Took over {{count}} workspaces",
+        "tookOverOne": "Took over 1 workspace",
+        "tookOverSome": "Took over {{taken}} of {{count}} workspaces",
         "watches": "Watches",
         "willPropose": "Will propose"
       },
@@ -3898,7 +3942,11 @@
         "hidden": "Adehone won't show CI result lines anymore"
       },
       "composer": {
+        "botCount_one": "{{count}} bot",
+        "botCount_other": "{{count}} bots",
         "draftNotSaved": "This draft couldn't be saved yet. Adehone keeps trying.",
+        "fileCount_one": "{{count}} file",
+        "fileCount_other": "{{count}} files",
         "placeholder": "Ask anything, @ to mention files, / for commands"
       },
       "composerErrors": {
@@ -3924,6 +3972,7 @@
       },
       "failureWords": {
         "accountSwitchInProgress": "{{agent}}'s setup is changing on this host. Try again after it finishes.",
+        "agentCommandFailed": "{{agent}}'s Command in Settings → Agents didn't start {{agent}}: {{detail}}. Change it or reset it.",
         "agentCommandNotRunnable": "{{agent}}'s Command in Settings → Agents must start with a program Adehone can find. Variables, pipes and other shell syntax aren't supported; use the Environment setting for variables. Change it or reset it.",
         "agentCommandNotSignedIn": "Sign in to {{agent}} with `{{loginCommand}}` on the computer running this chat.",
         "agentNotSignedIn": "Sign in to {{agent}}.",
@@ -4055,6 +4104,10 @@
       "fork": {
         "hostUnsupported": "This host runs an older Adehone. Update Adehone on the host, then try again."
       },
+      "goal": {
+        "checks_one": "{{count}} check",
+        "checks_other": "{{count}} checks"
+      },
       "goalControl": {
         "noGoal": "Codex has no goal to change in this chat. Set one with /goal followed by the objective.",
         "pauseUnconfirmed": "Codex stopped running, but its goal pause was not confirmed. Check the goal before continuing.",
@@ -4129,7 +4182,9 @@
         "editGonePrompt": "This message was already sent or removed. Your edit will be in the chat box after you answer the agent.",
         "imageCount": "{{count}} images",
         "imageCount_one": "{{count}} image",
-        "imageCount_other": "{{count}} images"
+        "imageCount_other": "{{count}} images",
+        "queuedCount_one": "{{count}} queued",
+        "queuedCount_other": "{{count}} queued"
       },
       "receipt": {
         "cancelled": "Cancelled",
@@ -4775,6 +4830,14 @@
       "requestPrompt": "Which language would you like Adehone to support?"
     }
   },
+  "perfNotices": {
+    "hiddenTabs": {
+      "descriptionOneHour_one": "You have {{count}} tab you haven't viewed in over an hour. Turn on Memory Saver to free up its memory.",
+      "descriptionOneHour_other": "You have {{count}} tabs you haven't viewed in over an hour. Turn on Memory Saver to free up their memory.",
+      "description_one": "You have {{count}} tab you haven't viewed in over {{hours}} hours. Turn on Memory Saver to free up its memory.",
+      "description_other": "You have {{count}} tabs you haven't viewed in over {{hours}} hours. Turn on Memory Saver to free up their memory."
+    }
+  },
   "pet": {
     "defaultLabels": {
       "bundle": "Pet bundle",
@@ -5003,6 +5066,26 @@
       "connectorRequests": "{{count}} requests",
       "connectorRequests_one": "{{count}} request",
       "connectorRequests_other": "{{count}} requests",
+      "memoryHistory": {
+        "aChat": "A chat",
+        "added": "Added: {{fact}}",
+        "addedMany": "Added {{count}} lines",
+        "bot": "Forget, from {{chat}}",
+        "changedMany": "Changed {{count}} lines",
+        "chat": "Chat \"{{title}}\"",
+        "chatFrom": "{{chat}} · from {{source}}",
+        "edited": "Edited: {{fact}}",
+        "forgot": "Forgot: {{fact}}",
+        "forgotMany": "Forgot {{count}} lines",
+        "kept": "Orca · {{chat}} wrote over it",
+        "keptMany": "Kept {{count}} lines other chats wrote over",
+        "keptOne": "Kept a line another chat wrote over",
+        "owner": "You, in Settings",
+        "secret": "{{author}} · Can’t be undone: it held a secret",
+        "tidied": "Tidied {{count}} lines",
+        "tidyUp": "Tidy-up · Undo puts back all of its MEMORY.md changes",
+        "undo": "Undo"
+      },
       "skills": {
         "count_one": "{{count}} skill",
         "count_other": "{{count}} skills"

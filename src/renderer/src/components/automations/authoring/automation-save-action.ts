@@ -24,7 +24,7 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
   return async function saveAutomation(now = Date.now()): Promise<void> {
     const { store, local, destinationForm, destination } = context
     const { settings } = store
-    const { draft, editingAutomationId, setIsSaving, setEditorNotice } = local
+    const { draft, editingAutomationId, setIsSaving, setEditorNotice, setEditorNoticeHost } = local
     const { draftAtOpen } = local
     const targetEdited = editingAutomationId === null || local.targetEdited
     const scheduleEdited =
@@ -96,6 +96,8 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
         toast.error(targetError)
         return
       }
+      setEditorNotice(null)
+      setEditorNoticeHost(null)
       setIsSaving(true)
       try {
         await saveBotAutomation(context, botTarget, { hour, minute, now })
@@ -155,6 +157,7 @@ export function createAutomationSaveAction(context: AutomationSaveContext) {
       return
     }
     setEditorNotice(null)
+    setEditorNoticeHost(null)
     setIsSaving(true)
     try {
       if (editingAutomationId === null) {
