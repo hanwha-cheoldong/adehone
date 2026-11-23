@@ -143,8 +143,17 @@ export function proposalIdentity({
 const READ_ONLY_START =
   '- Change anything (comments, labels, pull requests, posts anywhere but here) until my owner says I can. I start by reading and reporting only.'
 
+export type ProposalSoulExtras = {
+  how?: readonly string[]
+  never?: readonly string[]
+}
+
 /** SOUL.md for a bot made from a proposal: the purpose first, then how it works; it starts read-only. */
-export function proposalSoul(name: string, seed: BotProposalSeed): string {
+export function proposalSoul(
+  name: string,
+  seed: BotProposalSeed,
+  extras?: ProposalSoulExtras
+): string {
   const template = botTemplate(seed.templateId)
   const how = [
     seed.watches ? `- Watches: ${oneLine(seed.watches)}` : null,
@@ -153,13 +162,15 @@ export function proposalSoul(name: string, seed: BotProposalSeed): string {
     seed.automations?.length
       ? `- Automations to set up once my owner agrees: ${seed.automations.map(oneLine).join('; ')}`
       : null,
-    template ? `- Started from the ${template.name} template.` : null
+    template ? `- Started from the ${template.name} template.` : null,
+    ...(extras?.how ?? [])
   ].filter((entry): entry is string => entry !== null)
+  const never = [READ_ONLY_START, ...(extras?.never ?? [])]
   return `${[
     `# ${name}`,
     oneLine(seed.purpose),
     ...(how.length ? [`## How I work\n\n${how.join('\n')}`] : []),
-    `## Never\n\n${READ_ONLY_START}`
+    `## Never\n\n${never.join('\n')}`
   ].join('\n\n')}\n`
 }
 

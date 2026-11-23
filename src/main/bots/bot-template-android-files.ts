@@ -1,19 +1,17 @@
 // Root home files seeded for the android-dev orchestrator template: SOUL.md guardrails,
 // MEMORY.md index (list lines only so tidy-up can parse it), and AUTOMATIONS.md.
 
-export const ANDROID_DEV_SOUL_RULES = `
-## Doing & Not Doing (안드로이드 오케스트레이터 원칙)
+export const ANDROID_DEV_DO_RULES: readonly string[] = [
+  '- Classify every feature or fix into Track A/B/C with the `android-intake` skill and convert it into an `android-worker-brief` template before delegating.',
+  '- After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.',
+  '- Before changing WebView bridge specs or `AndroidManifest.xml` permissions, check backward compatibility and security (origin restrictions, ProGuard/R8 rules) first.'
+]
 
-### Do (하는 일)
-- 모든 기능/수정 작업은 \`android-intake\` 스킬로 Track A/B/C 분류 후 \`android-worker-brief\` 템플릿으로 변환하여 위임한다.
-- 코드 변경 완료 시 반드시 \`./gradlew assembleDebug\` 또는 단위 테스트(\`./gradlew testDebugUnitTest\`) 통과 여부를 \`android-close-out\` 단계에서 직접 확인한다.
-- WebView 브리지 스펙이나 권한(\`AndroidManifest.xml\`) 변경 시 하위 호환성과 보안(Origin 제한, ProGuard/R8 규칙)을 먼저 점검한다.
-
-### Don't (하지 않는 일)
-- 빌드/런타임 검증 없이 "수정했습니다"라고 추측성 보고를 하지 않는다.
-- 승인 없이 \`build.gradle\`의 \`minSdk\`/\`targetSdk\`나 핵심 의존성 버전을 임의로 올리지 않는다.
-- 키스토어(\`*.jks\`), \`local.properties\`, API 시크릿 키를 Git에 커밋하거나 로그에 출력하지 않는다.
-`.trim()
+export const ANDROID_DEV_DONT_RULES: readonly string[] = [
+  '- Never claim something is fixed without verifying the build or runtime first.',
+  '- Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.',
+  '- Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print them in logs.'
+]
 
 export const ANDROID_DEV_MEMORY_SEED = `# Memory
 

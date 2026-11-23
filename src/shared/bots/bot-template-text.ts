@@ -166,6 +166,34 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.androidWebviewBridge', 'android-webview-bridge')
     case 'android-gradle-r8':
       return t('bots.templateSkills.androidGradleR8', 'android-gradle-r8')
+    case 'ios-intake':
+      return t('bots.templateSkills.iosIntake', 'ios-intake')
+    case 'ios-worker-brief':
+      return t('bots.templateSkills.iosWorkerBrief', 'ios-worker-brief')
+    case 'ios-close-out':
+      return t('bots.templateSkills.iosCloseOut', 'ios-close-out')
+    case 'ios-desk-brief':
+      return t('bots.templateSkills.iosDeskBrief', 'ios-desk-brief')
+    case 'ios-development':
+      return t('bots.templateSkills.iosDevelopment', 'ios-development')
+    case 'ios-wkwebview-bridge':
+      return t('bots.templateSkills.iosWkwebviewBridge', 'ios-wkwebview-bridge')
+    case 'ios-xcode-signing':
+      return t('bots.templateSkills.iosXcodeSigning', 'ios-xcode-signing')
+    case 'mobile-web-intake':
+      return t('bots.templateSkills.mobileWebIntake', 'mobile-web-intake')
+    case 'mobile-web-worker-brief':
+      return t('bots.templateSkills.mobileWebWorkerBrief', 'mobile-web-worker-brief')
+    case 'mobile-web-close-out':
+      return t('bots.templateSkills.mobileWebCloseOut', 'mobile-web-close-out')
+    case 'mobile-web-desk-brief':
+      return t('bots.templateSkills.mobileWebDeskBrief', 'mobile-web-desk-brief')
+    case 'mobile-web-development':
+      return t('bots.templateSkills.mobileWebDevelopment', 'mobile-web-development')
+    case 'mobile-web-webview-bridge':
+      return t('bots.templateSkills.mobileWebWebviewBridge', 'mobile-web-webview-bridge')
+    case 'mobile-web-performance-pwa':
+      return t('bots.templateSkills.mobileWebPerformancePwa', 'mobile-web-performance-pwa')
   }
 }
 

@@ -43,7 +43,34 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'android-webview-bridge':
     'WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.',
   'android-gradle-r8':
-    'Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.'
+    'Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.',
+  'ios-intake':
+    'Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'ios-worker-brief':
+    'Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.',
+  'ios-close-out':
+    'Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.',
+  'ios-desk-brief': 'Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.',
+  'ios-development':
+    'Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.',
+  'ios-wkwebview-bridge':
+    'WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.',
+  'ios-xcode-signing':
+    'Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.',
+  'mobile-web-intake':
+    'Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
+  'mobile-web-worker-brief':
+    'Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.',
+  'mobile-web-close-out':
+    'Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.',
+  'mobile-web-desk-brief':
+    'Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.',
+  'mobile-web-development':
+    'Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.',
+  'mobile-web-webview-bridge':
+    'Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.',
+  'mobile-web-performance-pwa':
+    'Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */

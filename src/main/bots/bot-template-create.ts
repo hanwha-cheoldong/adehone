@@ -11,12 +11,28 @@ import {
   type BotPackageApply,
   type BotPackageApplyDeps
 } from './bot-package-apply'
+import { ANDROID_DEV_AUTOMATIONS_DOC, ANDROID_DEV_MEMORY_SEED } from './bot-template-android-files'
+import { IOS_DEV_AUTOMATIONS_DOC, IOS_DEV_MEMORY_SEED } from './bot-template-ios-files'
 import {
-  ANDROID_DEV_AUTOMATIONS_DOC,
-  ANDROID_DEV_MEMORY_SEED,
-  ANDROID_DEV_SOUL_RULES
-} from './bot-template-android-files'
-import { BOT_TEMPLATE_SKILL_TEXT } from './bot-template-skill-text'
+  MOBILE_WEB_DEV_AUTOMATIONS_DOC,
+  MOBILE_WEB_DEV_MEMORY_SEED
+} from './bot-template-mobile-web-files'
+import { botTemplateSkillFiles } from './bot-template-skill-text'
+
+const TEMPLATE_EXTRA_FILES: Partial<Record<string, readonly { to: string; text: string }[]>> = {
+  'android-dev': [
+    { to: 'MEMORY.md', text: ANDROID_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: ANDROID_DEV_AUTOMATIONS_DOC }
+  ],
+  'ios-dev': [
+    { to: 'MEMORY.md', text: IOS_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: IOS_DEV_AUTOMATIONS_DOC }
+  ],
+  'mobile-web-dev': [
+    { to: 'MEMORY.md', text: MOBILE_WEB_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: MOBILE_WEB_DEV_AUTOMATIONS_DOC }
+  ]
+}
 
 export type BotTemplateCreateParams = BotCreateParams & {
   fromTemplate: NonNullable<BotCreateParams['fromTemplate']>
@@ -31,22 +47,18 @@ export function templatePackage(
   keptSkills: readonly string[]
 ): BotPackageApply {
   const kept = new Set(keptSkills)
-  const extraFiles =
-    template.id === 'android-dev'
-      ? [
-          { to: 'MEMORY.md', text: ANDROID_DEV_MEMORY_SEED },
-          { to: 'AUTOMATIONS.md', text: ANDROID_DEV_AUTOMATIONS_DOC }
-        ]
-      : []
+  const extraFiles = TEMPLATE_EXTRA_FILES[template.id] ?? []
   return {
     files: [
       ...extraFiles,
       ...template.skills
         .filter((skill) => kept.has(skill))
-        .map((skill) => ({
-          to: `${BOT_OWN_SKILLS_FOLDER}/${skill}/SKILL.md`,
-          text: BOT_TEMPLATE_SKILL_TEXT[skill]
-        }))
+        .flatMap((skill) =>
+          botTemplateSkillFiles(skill).map((file) => ({
+            to: `${BOT_OWN_SKILLS_FOLDER}/${skill}/${file.path}`,
+            text: file.text
+          }))
+        )
     ],
     tools: [],
     schedules: template.schedules.map((schedule) => ({
@@ -83,18 +95,8 @@ export function botTemplateCreation(
     return { params, finish: async (bot) => bot }
   }
   const agent = params.agent ?? 'claude'
-  const seed =
-    template.id === 'android-dev' && params.seed
-      ? {
-          ...params.seed,
-          purpose:
-            params.seed.purpose && !params.seed.purpose.includes(ANDROID_DEV_SOUL_RULES)
-              ? `${params.seed.purpose.trimEnd()}\n\n${ANDROID_DEV_SOUL_RULES}`
-              : (params.seed.purpose ?? ANDROID_DEV_SOUL_RULES)
-        }
-      : params.seed
   return {
-    params: { ...params, agent, seed },
+    params: { ...params, agent },
     origin: { templateId: template.id },
     finish: (bot) => applyBotPackage(deps, bot, templatePackage(template, fromTemplate.skills))
   }

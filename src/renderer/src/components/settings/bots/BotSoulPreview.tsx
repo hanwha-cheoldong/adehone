@@ -1,6 +1,11 @@
 // Editorial Markdown block preview for a bot's SOUL.md in Settings.
 import type { ReactNode } from 'react'
 import { useTranslate } from '@/i18n/use-translate'
+import {
+  translateSoulHeading,
+  translateSoulListItem,
+  translateSoulParagraph
+} from './bot-soul-preview-text'
 
 function withKeys(items: readonly string[]): { key: string; value: string }[] {
   const counts = new Map<string, number>()
@@ -138,7 +143,7 @@ export function BotSoulPreview({ content }: { content: string }): React.JSX.Elem
           case 'h1':
             return (
               <h1 key={key} className="text-[16px] font-semibold tracking-tight text-foreground">
-                {renderInline(block.text)}
+                {renderInline(translateSoulHeading(block.text, 1, t))}
               </h1>
             )
           case 'h2':
@@ -147,13 +152,13 @@ export function BotSoulPreview({ content }: { content: string }): React.JSX.Elem
                 key={key}
                 className="pt-1 text-2xs font-semibold tracking-wider text-muted-foreground uppercase"
               >
-                {renderInline(block.text)}
+                {renderInline(translateSoulHeading(block.text, 2, t))}
               </h2>
             )
           case 'h3':
             return (
               <h3 key={key} className="pt-0.5 text-[13px] font-semibold text-foreground">
-                {renderInline(block.text)}
+                {renderInline(translateSoulHeading(block.text, 3, t))}
               </h3>
             )
           case 'ul':
@@ -165,7 +170,9 @@ export function BotSoulPreview({ content }: { content: string }): React.JSX.Elem
                       aria-hidden
                       className="mt-[8px] size-1 shrink-0 rounded-full bg-muted-foreground/70"
                     />
-                    <span className="min-w-0 flex-1">{renderInline(line)}</span>
+                    <span className="min-w-0 flex-1">
+                      {renderInline(translateSoulListItem(line, t))}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -195,7 +202,7 @@ export function BotSoulPreview({ content }: { content: string }): React.JSX.Elem
           case 'p':
             return (
               <p key={key} className="whitespace-pre-wrap text-foreground/90">
-                {renderInline(block.lines.join('\n'))}
+                {renderInline(translateSoulParagraph(block.lines.join('\n'), t))}
               </p>
             )
         }

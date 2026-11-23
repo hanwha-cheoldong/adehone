@@ -3484,38 +3484,86 @@
         }
       }
     },
+    "soul": {
+      "labels": {
+        "automations": "Automations to set up once my owner agrees",
+        "does": "Does",
+        "reports": "Reports",
+        "watches": "Watches"
+      },
+      "readOnlyStart": "Change anything (comments, labels, pull requests, posts anywhere but here) until my owner says I can. I start by reading and reporting only."
+    },
     "templateSkills": {
       "lines": {
+        "android-close-out": "Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.",
+        "android-desk-brief": "Daily morning build/lint brief and weekly Android tech-debt report formats.",
+        "android-development": "Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.",
+        "android-gradle-r8": "Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.",
+        "android-intake": "Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
+        "android-webview-bridge": "WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.",
+        "android-worker-brief": "Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.",
         "bug-reproduction": "Write down the exact steps that show the bug before looking for its cause.",
         "ci-failure-triage": "Tell a flaky check from a real failure or broken infrastructure, and find the commit that started it.",
         "dependency-upgrade": "Upgrade one group at a time, read the changelog, run the tests, one pull request each.",
         "feedback-themes": "Group feedback into themes with counts and short quotes; link existing issues.",
         "incident-timeline": "Keep a timestamped timeline, then draft a blameless write-up.",
+        "ios-close-out": "Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.",
+        "ios-desk-brief": "Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.",
+        "ios-development": "Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.",
+        "ios-intake": "Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
+        "ios-wkwebview-bridge": "WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.",
+        "ios-worker-brief": "Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.",
+        "ios-xcode-signing": "Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.",
         "issue-triage": "Label, find duplicates, ask for missing repro details in one comment.",
+        "mobile-web-close-out": "Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.",
+        "mobile-web-desk-brief": "Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.",
+        "mobile-web-development": "Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.",
+        "mobile-web-intake": "Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
+        "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.",
+        "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
+        "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
         "pr-review-checklist": "Read a diff for behaviour changes, missing tests and risky edits; cite each finding.",
         "release-notes-style": "Notes for users: new, fixed, changed; leave out refactors and code names.",
         "release-readiness": "What blocks a release and how to list it: checks, reviews, open blockers.",
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
         "spec-format": "A one-page spec: problem, decision, scope, open questions.",
         "status-brief": "Changed, blocked, needs a decision: a brief in under ten lines.",
-        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
-        "android-development": "Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.",
-        "android-webview-bridge": "WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.",
-        "android-gradle-r8": "Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.",
-        "android-intake": "Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "android-worker-brief": "Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.",
-        "android-close-out": "Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.",
-        "android-desk-brief": "Daily morning build/lint brief and weekly Android tech-debt report formats."
-      },
-      "androidDevelopment": "android-development",
-      "androidWebviewBridge": "android-webview-bridge",
-      "androidGradleR8": "android-gradle-r8",
-      "androidIntake": "android-intake",
-      "androidWorkerBrief": "android-worker-brief",
-      "androidCloseOut": "android-close-out",
-      "androidDeskBrief": "android-desk-brief"
+        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it."
+      }
     },
     "templates": {
+      "android-dev": {
+        "does": "Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.",
+        "events": {
+          "pr-verify": {
+            "action": "Run Gradle tests and bridge/R8 checks",
+            "trigger": "When a pull request is opened or updated"
+          }
+        },
+        "example1": "Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.",
+        "example2": "Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.",
+        "firstChat": "Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.",
+        "line": "Builds and reviews Android features with official Android skills and mobile security guides.",
+        "name": "Android development",
+        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "schedules": {
+          "daily-morning-check": {
+            "what": "Daily build & lint healthcheck",
+            "when": "Weekdays at 9 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Classify every feature or fix into Track A/B/C with the `android-intake` skill and convert it into an `android-worker-brief` template before delegating.",
+          "1": "After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.",
+          "2": "Before changing WebView bridge specs or `AndroidManifest.xml` permissions, check backward compatibility and security (origin restrictions, ProGuard/R8 rules) first."
+        },
+        "soulDont": {
+          "0": "Never claim something is fixed without verifying the build or runtime first.",
+          "1": "Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.",
+          "2": "Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print them in logs."
+        },
+        "watches": "Android workspaces, tasks, and pull requests you hand it"
+      },
       "backlog-cleanup": {
         "does": "Lists stale issues, likely duplicates and issues with no owner.",
         "example1": "14 issues untouched since August.",
@@ -3720,6 +3768,38 @@
         "reports": "Here, during and after an incident",
         "watches": "The incident channel you pick, and its threads"
       },
+      "ios-dev": {
+        "does": "Implements and reviews Swift/UIKit/SwiftUI, WKWebView JS bridge, security, MDM/MAM, and Apple device API code.",
+        "events": {
+          "pr-verify": {
+            "action": "Run Xcode tests and bridge/entitlements checks",
+            "trigger": "When a pull request is opened or updated"
+          }
+        },
+        "example1": "Added Keychain-backed Face ID (LAContext) auth and a hardened WKScriptMessageHandler bridge.",
+        "example2": "Flagged missing App Transport Security restriction and unpinned URLSession delegate.",
+        "firstChat": "Point it at an iOS workspace or give it a task. It follows modern Swift/SwiftUI best practices along with transport encryption, native/WKWebView JS bridge, Keychain/Biometrics, MDM/MAM, and APNs push guides.",
+        "line": "Builds and reviews iPhone/iOS features with Swift, SwiftUI, and mobile security guides.",
+        "name": "iOS development",
+        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "schedules": {
+          "daily-morning-check": {
+            "what": "Daily build & SwiftLint healthcheck",
+            "when": "Weekdays at 9 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Classify every feature or fix into Track A/B/C with the `ios-intake` skill and convert it into an `ios-worker-brief` template before delegating.",
+          "1": "After code changes, verify `xcodebuild` build or unit tests (`xcodebuild test` / `swift test`) pass directly in the `ios-close-out` step.",
+          "2": "Before changing WKWebView bridge specs, `Info.plist`, or Entitlements, check backward compatibility and security (origin restrictions, ATS, Keychain access groups) first."
+        },
+        "soulDont": {
+          "0": "Never claim something is fixed without verifying the build or simulator/test run first.",
+          "1": "Never bump iOS deployment target, Xcode project settings, or SwiftPM/CocoaPods dependency versions without approval.",
+          "2": "Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print them in logs."
+        },
+        "watches": "iOS workspaces, tasks, and pull requests you hand it"
+      },
       "issue-triage": {
         "does": "Proposes labels and duplicates, and lists missing details, for each new issue.",
         "events": {
@@ -3751,6 +3831,38 @@
         "name": "Meeting prep",
         "reports": "Here, before each meeting",
         "watches": "Your calendar"
+      },
+      "mobile-web-dev": {
+        "does": "Implements and reviews responsive mobile UI, touch interactions, PWA/caching, WebView JS bridge client, and frontend security code.",
+        "events": {
+          "pr-verify": {
+            "action": "Run build, tests, and mobile viewport/security checks",
+            "trigger": "When a pull request is opened or updated"
+          }
+        },
+        "example1": "Fixed iOS Safari 100dvh keyboard overlap and added safe-area-inset-bottom padding.",
+        "example2": "Flagged unsanitized postMessage origin check and missing CSP frame-ancestors.",
+        "firstChat": "Point it at a mobile web workspace or give it a task. It follows mobile-first responsive UI, touch/viewport ergonomics, Core Web Vitals, hybrid WebView bridge, and frontend security guides.",
+        "line": "Builds and reviews responsive mobile web, PWA, and hybrid WebView frontend features.",
+        "name": "Mobile web development",
+        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "schedules": {
+          "daily-morning-check": {
+            "what": "Daily build & lint/typecheck healthcheck",
+            "when": "Weekdays at 9 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Classify every feature or fix into Track A/B/C with the `mobile-web-intake` skill and convert it into a `mobile-web-worker-brief` template before delegating.",
+          "1": "After code changes, verify build, typecheck, lint, and unit/E2E tests pass directly in the `mobile-web-close-out` step.",
+          "2": "Before changing responsive layouts, WebView JS bridge clients, or CSP/cookie policies, check iOS Safari/Android WebView compatibility, safe-area insets, and XSS/origin security first."
+        },
+        "soulDont": {
+          "0": "Never claim something is fixed without verifying the production build and mobile viewport behavior first.",
+          "1": "Never upgrade framework/bundler major versions or alter CSP/CORS/cookie security headers without approval.",
+          "2": "Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs."
+        },
+        "watches": "Mobile web workspaces, tasks, and pull requests you hand it"
       },
       "oncall-handoff": {
         "does": "Summarizes the week’s alerts and incidents, and lists open follow-ups.",
@@ -3906,28 +4018,6 @@
           }
         },
         "watches": "Your Orca workspaces and their pull requests"
-      },
-      "android-dev": {
-        "name": "Android development",
-        "line": "Builds and reviews Android features with official Android skills and mobile security guides.",
-        "firstChat": "Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.",
-        "watches": "Android workspaces, tasks, and pull requests you hand it",
-        "does": "Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
-        "example1": "Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.",
-        "example2": "Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.",
-        "schedules": {
-          "daily-morning-check": {
-            "when": "Weekdays at 9 AM",
-            "what": "Daily build & lint healthcheck"
-          }
-        },
-        "events": {
-          "pr-verify": {
-            "trigger": "When a pull request is opened or updated",
-            "action": "Run Gradle tests and bridge/R8 checks"
-          }
-        }
       }
     },
     "upNext": {

@@ -20,7 +20,16 @@ import {
   type BotHostUpdates
 } from '../../shared/rpc-contract/bots-params'
 import type { RuntimeStore } from '../runtime/construction/runtime-store-contract'
-import { proposalSoul } from '../../shared/bots/bot-proposal'
+import { proposalSoul, type ProposalSoulExtras } from '../../shared/bots/bot-proposal'
+import { ANDROID_DEV_DO_RULES, ANDROID_DEV_DONT_RULES } from './bot-template-android-files'
+import { IOS_DEV_DO_RULES, IOS_DEV_DONT_RULES } from './bot-template-ios-files'
+import { MOBILE_WEB_DEV_DO_RULES, MOBILE_WEB_DEV_DONT_RULES } from './bot-template-mobile-web-files'
+
+const TEMPLATE_SOUL_EXTRAS: Partial<Record<string, ProposalSoulExtras>> = {
+  'android-dev': { how: ANDROID_DEV_DO_RULES, never: ANDROID_DEV_DONT_RULES },
+  'ios-dev': { how: IOS_DEV_DO_RULES, never: IOS_DEV_DONT_RULES },
+  'mobile-web-dev': { how: MOBILE_WEB_DEV_DO_RULES, never: MOBILE_WEB_DEV_DONT_RULES }
+}
 import { botOfferCreation } from './bot-offer-creation'
 import { assertBotOwnsHome, type BotHomeFilesystem, botHomeFolder, writeBotHome } from './bot-home'
 import { type BotMemoryRecord, hostBotMemoryRecord } from './bot-memory-record'
@@ -169,7 +178,9 @@ export class BotController {
     origin: BotOrigin = {}
   ): Promise<Bot> {
     const name = freeBotName(store.getBots(), input.name)
-    const fallbackName = origin.templateId ? botTemplate(origin.templateId)?.name : undefined
+    const templateId = origin.templateId ?? input.seed?.templateId
+    const fallbackName = templateId ? botTemplate(templateId)?.name : undefined
+    const soulExtras = templateId ? TEMPLATE_SOUL_EXTRAS[templateId] : undefined
     const draft = { ...newBotRecord({ ...input, name }, Date.now()), ...origin }
     const bot: Bot = {
       ...draft,
@@ -184,7 +195,7 @@ export class BotController {
             this.deps.filesystem,
             path,
             { ...draft, folder, folderWorkspaceId: '' },
-            input.seed ? proposalSoul(name, input.seed) : undefined
+            input.seed ? proposalSoul(name, input.seed, soulExtras) : undefined
           )
       ))
     }

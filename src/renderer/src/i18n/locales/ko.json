@@ -27858,8 +27858,96 @@
             "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
             "action": "Gradle 테스트 및 브리지/R8 검증 실행"
           }
+        },
+        "soulDo": {
+          "0": "모든 기능/수정 작업은 `android-intake` 스킬로 Track A/B/C 분류 후 `android-worker-brief` 템플릿으로 변환하여 위임합니다.",
+          "1": "코드 변경 완료 시 반드시 `./gradlew assembleDebug` 또는 단위 테스트(`./gradlew testDebugUnitTest`) 통과 여부를 `android-close-out` 단계에서 직접 확인합니다.",
+          "2": "WebView 브리지 스펙이나 권한(`AndroidManifest.xml`) 변경 시 하위 호환성과 보안(Origin 제한, ProGuard/R8 규칙)을 먼저 점검합니다."
+        },
+        "soulDont": {
+          "0": "빌드/런타임 검증 없이 \"수정했습니다\"라고 추측성 보고를 하지 않습니다.",
+          "1": "승인 없이 `build.gradle`의 `minSdk`/`targetSdk`나 핵심 의존성 버전을 임의로 올리지 않습니다.",
+          "2": "키스토어(`*.jks`), `local.properties`, API 시크릿 키를 Git에 커밋하거나 로그에 출력하지 않습니다."
+        }
+      },
+      "ios-dev": {
+        "name": "아이폰(iOS) 개발",
+        "line": "Swift, SwiftUI 및 모바일 보안 가이드를 기반으로 아이폰/iOS 기능을 구현하고 리뷰합니다.",
+        "firstChat": "iOS 워크스페이스를 지정하거나 작업을 전달하세요. 최신 Swift/SwiftUI 모범 사례와 구간 암호화, 네이티브/WKWebView JS 브리지, Keychain/Face ID, MDM/MAM, APNs 푸시 가이드를 따릅니다.",
+        "watches": "전달한 iOS 워크스페이스, 작업 및 풀 리퀘스트",
+        "does": "Swift/UIKit/SwiftUI, WKWebView JS 브리지, 보안, MDM/MAM 및 Apple 디바이스 API 코드를 구현하고 리뷰합니다.",
+        "reports": "여기, 평일 오전 9시 및 워커 검증 완료 후",
+        "example1": "Keychain 기반 Face ID(LAContext) 인증과 강화된 WKScriptMessageHandler 브리지를 추가했습니다.",
+        "example2": "App Transport Security 제한 누락과 피닝되지 않은 URLSession delegate를 발견했습니다.",
+        "schedules": {
+          "daily-morning-check": {
+            "when": "평일 오전 9시",
+            "what": "일일 빌드 및 SwiftLint 헬스체크"
+          }
+        },
+        "events": {
+          "pr-verify": {
+            "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
+            "action": "Xcode 테스트 및 브리지/Entitlements 검증 실행"
+          }
+        },
+        "soulDo": {
+          "0": "모든 기능/수정 작업은 `ios-intake` 스킬로 Track A/B/C 분류 후 `ios-worker-brief` 템플릿으로 변환하여 위임합니다.",
+          "1": "코드 변경 완료 시 반드시 `xcodebuild` 빌드 또는 단위 테스트(`xcodebuild test` / `swift test`) 통과 여부를 `ios-close-out` 단계에서 직접 확인합니다.",
+          "2": "WKWebView 브리지 스펙이나 `Info.plist`, Entitlements 변경 시 하위 호환성과 보안(Origin 제한, ATS, Keychain access group)을 먼저 점검합니다."
+        },
+        "soulDont": {
+          "0": "빌드나 시뮬레이터/테스트 실행 검증 없이 \"수정했습니다\"라고 추측성 보고를 하지 않습니다.",
+          "1": "승인 없이 iOS Deployment Target, Xcode 프로젝트 설정, SwiftPM/CocoaPods 의존성 버전을 임의로 올리지 않습니다.",
+          "2": "인증서(`.p12`, `.mobileprovision`, `AuthKey_*.p8`)나 API 시크릿 키를 Git에 커밋하거나 로그에 출력하지 않습니다."
+        }
+      },
+      "mobile-web-dev": {
+        "name": "모바일 웹 개발",
+        "line": "반응형 모바일 웹, PWA 및 하이브리드 WebView 프론트엔드 기능을 구현하고 리뷰합니다.",
+        "firstChat": "모바일 웹 워크스페이스를 지정하거나 작업을 전달하세요. 모바일 우선 반응형 UI, 터치/뷰포트 인체공학, Core Web Vitals, 하이브리드 WebView 브리지, 프론트엔드 보안 가이드를 따릅니다.",
+        "watches": "전달한 모바일 웹 워크스페이스, 작업 및 풀 리퀘스트",
+        "does": "반응형 모바일 UI, 터치 인터랙션, PWA/캐싱, WebView JS 브리지 클라이언트 및 프론트엔드 보안 코드를 구현하고 리뷰합니다.",
+        "reports": "여기, 평일 오전 9시 및 워커 검증 완료 후",
+        "example1": "iOS Safari 100dvh 키보드 겹침 문제를 수정하고 safe-area-inset-bottom 패딩을 적용했습니다.",
+        "example2": "postMessage Origin 검증 누락과 CSP frame-ancestors 미설정을 발견했습니다.",
+        "schedules": {
+          "daily-morning-check": {
+            "when": "평일 오전 9시",
+            "what": "일일 빌드 및 린트/타입체크 헬스체크"
+          }
+        },
+        "events": {
+          "pr-verify": {
+            "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
+            "action": "빌드, 테스트 및 모바일 뷰포트/보안 검증 실행"
+          }
+        },
+        "soulDo": {
+          "0": "모든 기능/수정 작업은 `mobile-web-intake` 스킬로 Track A/B/C 분류 후 `mobile-web-worker-brief` 템플릿으로 변환하여 위임합니다.",
+          "1": "코드 변경 완료 시 반드시 빌드, 타입체크, 린트 및 단위/E2E 테스트 통과 여부를 `mobile-web-close-out` 단계에서 직접 확인합니다.",
+          "2": "반응형 레이아웃, WebView JS 브리지 클라이언트, CSP/쿠키 정책 변경 시 iOS Safari/Android WebView 호환성과 safe-area, XSS/Origin 보안을 먼저 점검합니다."
+        },
+        "soulDont": {
+          "0": "프로덕션 빌드와 모바일 뷰포트 동작 검증 없이 \"수정했습니다\"라고 추측성 보고를 하지 않습니다.",
+          "1": "승인 없이 프레임워크/번들러 메이저 버전을 올리거나 CSP/CORS/쿠키 보안 헤더를 임의로 변경하지 않습니다.",
+          "2": "`.env*` 시크릿, API 토큰, 개인키를 Git에 커밋하거나 클라이언트 번들/로그에 노출하지 않습니다."
         }
       }
+    },
+    "soul": {
+      "sections": {
+        "howIWork": "작업 방식",
+        "never": "금지 사항"
+      },
+      "labels": {
+        "watches": "감시 대상",
+        "does": "역할",
+        "reports": "보고",
+        "automations": "소유자 동의 후 설정할 자동화"
+      },
+      "startedFromTemplate": "{{template}} 템플릿으로 시작했습니다.",
+      "readOnlyStart": "소유자가 허용하기 전까지는 여기 외의 어떤 곳에도 변경(댓글, 라벨, 풀 리퀘스트, 게시물 등)을 가하지 않습니다. 처음에는 읽기와 보고만 수행합니다."
     },
     "new": {
       "fromTemplate": "템플릿",
@@ -30265,7 +30353,21 @@
         "android-intake": "들어온 안드로이드 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
         "android-worker-brief": "타겟 모듈, 브리지 규격, 보안/R8 체크, 완료 조건(DoD)을 담은 안드로이드 작업 지시서 양식.",
         "android-close-out": "Gradle 빌드·테스트, Manifest/R8 Diff 점검, adb 스모크 테스트를 직접 확인하고 보고합니다.",
-        "android-desk-brief": "일일 아침 빌드·린트 브리핑 및 주간 기술 부채 리포트 양식."
+        "android-desk-brief": "일일 아침 빌드·린트 브리핑 및 주간 기술 부채 리포트 양식.",
+        "ios-intake": "들어온 iOS 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
+        "ios-worker-brief": "타겟 모듈, WKWebView 브리지 규격, Xcode 완료 조건(DoD)을 담은 iOS 작업 지시서 양식.",
+        "ios-close-out": "Xcode 빌드·테스트, Info.plist/Entitlements Diff 점검, 시뮬레이터 스모크 테스트를 직접 확인하고 보고합니다.",
+        "ios-desk-brief": "일일 아침 Xcode 빌드·린트 브리핑 및 주간 iOS 기술 부채 리포트 양식.",
+        "ios-development": "Swift, SwiftUI, Swift Concurrency, 구간 암호화, Keychain/Face ID, MDM/MAM, APNs 푸시 가이드.",
+        "ios-wkwebview-bridge": "WKWebView ↔ Native JS 브리지 계약, Origin 제한, 설정 보안 및 핸들러 정리 가이드.",
+        "ios-xcode-signing": "Deployment Target 정책, Info.plist/Entitlements 가드레일, SPM/Pods 및 서명/시크릿 보안.",
+        "mobile-web-intake": "들어온 모바일 웹 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
+        "mobile-web-worker-brief": "타겟 뷰포트, 브리지 규격, 빌드/테스트 완료 조건(DoD)을 담은 모바일 웹 작업 지시서 양식.",
+        "mobile-web-close-out": "빌드·타입체크·린트·테스트 실행, safe-area/뷰포트 확인 및 XSS/CSP/브리지 Diff 점검.",
+        "mobile-web-desk-brief": "일일 아침 모바일 웹 빌드·린트 브리핑 및 주간 번들/웹 바이탈 기술 부채 리포트 양식.",
+        "mobile-web-development": "반응형 100dvh/safe-area 레이아웃, 터치 인체공학, iOS/Android WebView 대응 및 프론트엔드 보안.",
+        "mobile-web-webview-bridge": "iOS WKWebView 및 Android JavascriptInterface용 프론트엔드 JS 브리지 클라이언트와 Origin 검증.",
+        "mobile-web-performance-pwa": "Core Web Vitals, 번들 분할, 불안정한 네트워크 복원력 및 PWA 서비스 워커 캐시 안전성."
       },
       "androidDevelopment": "안드로이드 개발",
       "androidWebviewBridge": "WebView JS 브리지",
@@ -30273,7 +30375,21 @@
       "androidIntake": "요청 분류 (Intake)",
       "androidWorkerBrief": "작업 지시서 (Worker Brief)",
       "androidCloseOut": "직접 검증 및 마감 (Close-out)",
-      "androidDeskBrief": "아침·주간 브리핑 (Desk Brief)"
+      "androidDeskBrief": "아침·주간 브리핑 (Desk Brief)",
+      "iosIntake": "요청 분류 (Intake)",
+      "iosWorkerBrief": "작업 지시서 (Worker Brief)",
+      "iosCloseOut": "직접 검증 및 마감 (Close-out)",
+      "iosDeskBrief": "아침·주간 브리핑 (Desk Brief)",
+      "iosDevelopment": "iOS 개발 가이드",
+      "iosWkwebviewBridge": "WKWebView JS 브리지",
+      "iosXcodeSigning": "Xcode 및 서명 규칙",
+      "mobileWebIntake": "요청 분류 (Intake)",
+      "mobileWebWorkerBrief": "작업 지시서 (Worker Brief)",
+      "mobileWebCloseOut": "직접 검증 및 마감 (Close-out)",
+      "mobileWebDeskBrief": "아침·주간 브리핑 (Desk Brief)",
+      "mobileWebDevelopment": "모바일 웹 개발 가이드",
+      "mobileWebWebviewBridge": "WebView JS 브리지 클라이언트",
+      "mobileWebPerformancePwa": "성능 및 PWA 규칙"
     }
   },
   "plugins": {
