@@ -1,13 +1,16 @@
 const WINDOWS_RESERVED_NAME = /^(con|prn|aux|nul|com\d|lpt\d)$/
 
 function toFolderSlug(value: string): string {
-  return value
-    .normalize('NFKD')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 40)
-    .replace(/-+$/, '')
+  return (
+    value
+      .normalize('NFKD')
+      .toLowerCase()
+      // Why: NFKD leaves an accent as a combining mark; drop it so it doesn't split the word.
+      .replace(/(\p{M}+)|[^a-z0-9]+/gu, (_run, marks) => (marks ? '' : '-'))
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 40)
+      .replace(/-+$/, '')
+  )
 }
 
 /** A folder name every supported filesystem accepts. */

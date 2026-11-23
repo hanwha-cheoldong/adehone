@@ -16,6 +16,7 @@ import type { BotItemEventRecord, BotItemRecord } from './bot-items-schema'
 const STATUS_WORDS: Record<BotItemStatus, string> = {
   planned: 'Planned',
   working: 'In progress',
+  waiting: 'Waiting',
   needs_you: 'Needs you',
   done: 'Done',
   canceled: 'Canceled'
@@ -96,15 +97,18 @@ export function botItemChangeMail(
   const answered = lines.some(({ event }) => isAnswer(event))
   const next = [
     answered
-      ? "Your owner answered your question, and the item is In progress again: carry on with that answer. If your question still stands, set it to Needs you again with only what's left."
+      ? 'Your owner answered your question, and the item is In progress again: carry on with that answer. A new set of questions replaces any earlier ones still unanswered, so include an earlier question again only if it still matters.'
       : null,
     replied
-      ? "Your owner replied to your question, so the item moved to In progress. If your question still stands, set it to Needs you again with only what's left."
+      ? 'Your owner replied to your question, so the item moved to In progress. A new set of questions replaces any earlier ones still unanswered, so include an earlier question again only if it still matters.'
       : null,
     tos.some(isClosed)
       ? 'If something linked to a closed item is still running, stop or redirect it.'
       : null,
-    tos.some((to) => !isClosed(to)) ? 'Pick a moved item up from there.' : null
+    tos.includes('waiting')
+      ? "A Waiting item waits on what its note says: leave it until that happens, and don't start work on it."
+      : null,
+    tos.some((to) => !isClosed(to) && to !== 'waiting') ? 'Pick a moved item up from there.' : null
   ].filter((line) => line !== null)
   const subjectWhat = lines.length === 1 ? first.what : items.size === 1 ? 'updated' : 'changed'
   return {

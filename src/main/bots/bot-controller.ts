@@ -11,7 +11,7 @@ import {
 import { type Bot, botFolderName } from '../../shared/bot-types'
 import { botTemplate } from '../../shared/bots/bot-templates'
 import { assertBotNameFree, freeBotName } from './bot-free-name'
-import { BotsDisabledError, isBotsEnabled } from '../../shared/bots-switch'
+import { areHostBotsEnabled, assertHostBotsEnabled } from './bot-team-policy'
 import { type BotRosterEntry, botRosterFields, soulSpecialty } from '../../shared/bot-roster'
 import {
   applyBotUpdates,
@@ -21,6 +21,7 @@ import {
 } from '../../shared/rpc-contract/bots-params'
 import type { RuntimeStore } from '../runtime/construction/runtime-store-contract'
 import { proposalSoul, type ProposalSoulExtras } from '../../shared/bots/bot-proposal'
+import { templateBotFolderName } from '../../shared/bots/bot-template-view'
 import { ANDROID_DEV_DO_RULES, ANDROID_DEV_DONT_RULES } from './bot-template-android-files'
 import { IOS_DEV_DO_RULES, IOS_DEV_DONT_RULES } from './bot-template-ios-files'
 import { MOBILE_WEB_DEV_DO_RULES, MOBILE_WEB_DEV_DONT_RULES } from './bot-template-mobile-web-files'
@@ -114,13 +115,11 @@ export class BotController {
 
   /** Off, bots take no conversations or runs, and nothing creates or opens one; their homes stay. */
   enabled(): boolean {
-    return isBotsEnabled(this.deps.getStore()?.getSettings())
+    return areHostBotsEnabled(this.deps.getStore()?.getSettings())
   }
 
   assertEnabled(): void {
-    if (!this.enabled()) {
-      throw new BotsDisabledError()
-    }
+    assertHostBotsEnabled(this.deps.getStore()?.getSettings())
   }
 
   list(): Bot[] {
@@ -179,7 +178,7 @@ export class BotController {
   ): Promise<Bot> {
     const name = freeBotName(store.getBots(), input.name)
     const templateId = origin.templateId ?? input.seed?.templateId
-    const fallbackName = templateId ? botTemplate(templateId)?.name : undefined
+    const template = templateId ? botTemplate(templateId) : null
     const soulExtras = templateId ? TEMPLATE_SOUL_EXTRAS[templateId] : undefined
     const draft = { ...newBotRecord({ ...input, name }, Date.now()), ...origin }
     const bot: Bot = {
@@ -187,7 +186,7 @@ export class BotController {
       ...(await makeBotsHome(
         this.deps,
         store,
-        botFolderName(name, fallbackName),
+        templateBotFolderName(name, template, input.templateNameShown),
         name,
         draft.agent,
         (path, folder) =>
