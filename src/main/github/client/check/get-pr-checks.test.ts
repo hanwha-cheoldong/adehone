@@ -105,3 +105,78 @@ it('returns detailed rows and a complete summary when checks and suites span mul
     neutral: 0
   })
 })
+
+it('keeps only the latest check run per name across superseded runs', async () => {
+  vi.mocked(ghExecFileAsync).mockResolvedValueOnce(
+    response({
+      oid: headSha,
+      statusCheckRollup: {
+        contexts: connection(
+          [
+            {
+              __typename: 'CheckRun',
+              databaseId: 101,
+              name: 'Performance section',
+              status: 'COMPLETED',
+              conclusion: 'FAILURE',
+              startedAt: '2026-11-23T03:01:36Z',
+              completedAt: '2026-11-23T03:01:45Z',
+              checkSuite: { databaseId: 10 }
+            },
+            {
+              __typename: 'CheckRun',
+              databaseId: 103,
+              name: 'Performance section',
+              status: 'COMPLETED',
+              conclusion: 'SUCCESS',
+              startedAt: '2026-11-23T03:22:28Z',
+              completedAt: '2026-11-23T03:22:35Z',
+              checkSuite: { databaseId: 12 }
+            },
+            {
+              __typename: 'CheckRun',
+              databaseId: 102,
+              name: 'Performance section',
+              status: 'COMPLETED',
+              conclusion: 'FAILURE',
+              startedAt: '2026-11-23T03:20:37Z',
+              completedAt: '2026-11-23T03:20:46Z',
+              checkSuite: { databaseId: 11 }
+            }
+          ],
+          null
+        )
+      },
+      checkSuites: connection(
+        [
+          { databaseId: 10, conclusion: 'FAILURE' },
+          { databaseId: 11, conclusion: 'FAILURE' },
+          { databaseId: 12, conclusion: 'SUCCESS' }
+        ],
+        null
+      )
+    })
+  )
+
+  const result = await getPRChecksObservation('/repo', 42, headSha, {
+    owner: 'acme',
+    repo: 'widgets',
+    host: 'github.com'
+  })
+  expect(result.checks).toMatchObject([
+    {
+      name: 'Performance section',
+      conclusion: 'success',
+      checkRunId: 103
+    }
+  ])
+  expect(result.summary?.value).toEqual({
+    state: 'success',
+    total: 1,
+    passed: 1,
+    failed: 0,
+    cancelled: 0,
+    pending: 0,
+    neutral: 0
+  })
+})

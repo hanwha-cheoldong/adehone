@@ -4,6 +4,7 @@ import type { GitHubRepositoryIdentity as GitHubApiRepository } from '../../../.
 import { summarizePRCheckRollup } from '../../../../shared/source-control/checks/pr-check-status'
 import { acquire, release } from '../../execution/github-operation-slots'
 import type { GhExecOptions } from '../github-exec-scope'
+import { dedupeLatestCheckRuns } from './dedupe-latest-check-runs'
 import { isPendingApprovalSuiteWithoutRuns } from './pr-check-rollup'
 import type { PRChecksObservation } from './pr-checks-last-outcome'
 import {
@@ -31,7 +32,13 @@ export async function readRestPRCheckObservation(
   await acquire()
   try {
     const runs = await readRestPRCheckRuns(ownerRepo, headSha, ghOptions, Boolean(noCache))
-    const checks = runs.map(mapRestCheckRun)
+    const latestRuns = dedupeLatestCheckRuns(runs, (run) => ({
+      name: run.name,
+      id: run.id,
+      startedAt: run.started_at,
+      completedAt: run.completed_at
+    }))
+    const checks = latestRuns.map(mapRestCheckRun)
     const checkRunNames = new Set(checks.map((check) => check.name))
     const statuses = await readRestPRCommitStatuses(
       ownerRepo,
