@@ -15,6 +15,14 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     }
   ],
   [
+    'Plan every non-trivial feature or refactor with `android-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.',
+    {
+      key: 'bots.templates.android-dev.soulDo.0',
+      fallback:
+        'Plan every non-trivial feature or refactor with `android-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.'
+    }
+  ],
+  [
     'Classify every feature or fix into Track A/B/C with the `android-intake` skill and convert it into an `android-worker-brief` template before delegating.',
     {
       key: 'bots.templates.android-dev.soulDo.0',
@@ -23,19 +31,51 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     }
   ],
   [
-    'After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.',
+    'Follow `android-clean-architecture` (`domain` pure Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).',
     {
       key: 'bots.templates.android-dev.soulDo.1',
+      fallback:
+        'Follow `android-clean-architecture` (`domain` pure Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).'
+    }
+  ],
+  [
+    'Before reporting done or opening a PR, run the 6-phase `android-verification-loop` (`assembleDebug`, `lintDebug`, `ktlintCheck`/`detekt`, `testDebugUnitTest`, security scan, `adb` acceptance) and `kotlin-code-review`.',
+    {
+      key: 'bots.templates.android-dev.soulDo.2',
+      fallback:
+        'Before reporting done or opening a PR, run the 6-phase `android-verification-loop` (`assembleDebug`, `lintDebug`, `ktlintCheck`/`detekt`, `testDebugUnitTest`, security scan, `adb` acceptance) and `kotlin-code-review`.'
+    }
+  ],
+  [
+    'After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.',
+    {
+      key: 'bots.templates.android-dev.soulDo.2',
       fallback:
         'After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.'
     }
   ],
   [
+    'Before changing WebView bridge specs, encryption, or `AndroidManifest.xml` permissions, verify backward compatibility and `android-security-webview` + `gradle-build-resolver` R8 keep rules.',
+    {
+      key: 'bots.templates.android-dev.soulDo.3',
+      fallback:
+        'Before changing WebView bridge specs, encryption, or `AndroidManifest.xml` permissions, verify backward compatibility and `android-security-webview` + `gradle-build-resolver` R8 keep rules.'
+    }
+  ],
+  [
     'Before changing WebView bridge specs or `AndroidManifest.xml` permissions, check backward compatibility and security (origin restrictions, ProGuard/R8 rules) first.',
     {
-      key: 'bots.templates.android-dev.soulDo.2',
+      key: 'bots.templates.android-dev.soulDo.3',
       fallback:
         'Before changing WebView bridge specs or `AndroidManifest.xml` permissions, check backward compatibility and security (origin restrictions, ProGuard/R8 rules) first.'
+    }
+  ],
+  [
+    'Never claim something is fixed without passing `android-verification-loop` build/test checks first.',
+    {
+      key: 'bots.templates.android-dev.soulDont.0',
+      fallback:
+        'Never claim something is fixed without passing `android-verification-loop` build/test checks first.'
     }
   ],
   [
@@ -46,17 +86,41 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     }
   ],
   [
-    'Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.',
+    'Never use `GlobalScope`, swallow `CancellationException`, add `!!` assertions, or import Android/DB/network frameworks inside `domain`.',
     {
       key: 'bots.templates.android-dev.soulDont.1',
+      fallback:
+        'Never use `GlobalScope`, swallow `CancellationException`, add `!!` assertions, or import Android/DB/network frameworks inside `domain`.'
+    }
+  ],
+  [
+    'Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without explicit owner approval.',
+    {
+      key: 'bots.templates.android-dev.soulDont.2',
+      fallback:
+        'Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without explicit owner approval.'
+    }
+  ],
+  [
+    'Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.',
+    {
+      key: 'bots.templates.android-dev.soulDont.2',
       fallback:
         'Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.'
     }
   ],
   [
+    'Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print sensitive values in logs.',
+    {
+      key: 'bots.templates.android-dev.soulDont.3',
+      fallback:
+        'Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print sensitive values in logs.'
+    }
+  ],
+  [
     'Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print them in logs.',
     {
-      key: 'bots.templates.android-dev.soulDont.2',
+      key: 'bots.templates.android-dev.soulDont.3',
       fallback:
         'Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print them in logs.'
     }

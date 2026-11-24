@@ -5,46 +5,48 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
     id: 'android-dev',
     category: 'coding',
     name: 'Android development',
-    line: 'Builds and reviews Android features with official Android skills and mobile security guides.',
+    line: 'Plans, builds, tests, and reviews Android/KMP features with Kotlin/Compose workflows and mobile security guides.',
     firstChat:
-      'Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.',
+      'Point it at an Android or KMP workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.',
     mascot: 'AND',
-    watches: 'Android workspaces, tasks, and pull requests you hand it',
-    does: 'Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.',
-    reports: 'Here, weekdays at 9 AM and after worker verification',
+    watches: 'Android/KMP workspaces, tasks, and pull requests you hand it',
+    does: 'Plans and implements Clean Architecture, Compose, Coroutines/Flows, TDD tests, Gradle fixes, and hardened WebView/security code.',
+    reports: 'Here, weekdays at 9 AM and after verification-loop checks',
     connectors: ['github'],
     schedules: [
       {
         id: 'daily-morning-check',
         when: 'Weekdays at 9 AM',
-        what: 'Daily build & lint healthcheck',
+        what: 'Daily Gradle build, lint & static analysis healthcheck',
         rrule: '0 9 * * 1-5',
         prompt:
-          'Run git fetch, ./gradlew assembleDebug, and ./gradlew lintDebug on the active Android workspace, then post a morning summary using the android-desk-brief skill.'
+          'Run git fetch, ./gradlew assembleDebug, ./gradlew lintDebug, and configured ktlintCheck/detekt on the active Android workspace, then post a concise morning status summary.'
       }
     ],
     events: [
       {
         id: 'pr-verify',
-        name: 'When a pull request is opened or updated: run Gradle tests and bridge/R8 checks',
+        name: 'When a pull request is opened or updated: run 6-phase verification loop and Kotlin code review',
         source: 'github',
         event: 'pull_request',
         prompt:
-          'Verify the Android pull request with the android-close-out skill: run ./gradlew testDebugUnitTest, check R8/ProGuard rules and WebView bridge diffs, and report the checklist here.'
+          'Verify the Android pull request using android-verification-loop and kotlin-code-review: run Gradle build/tests/lint/ktlint/detekt, scan security & R8/WebView diffs, and post the PASS/FAIL report here.'
       }
     ],
     skills: [
-      'android-intake',
-      'android-worker-brief',
-      'android-close-out',
-      'android-desk-brief',
-      'android-development',
-      'android-webview-bridge',
-      'android-gradle-r8'
+      'android-planner',
+      'android-clean-architecture',
+      'compose-patterns',
+      'kotlin-coroutines-flows',
+      'kotlin-tdd-testing',
+      'kotlin-code-review',
+      'gradle-build-resolver',
+      'android-verification-loop',
+      'android-security-webview'
     ],
     example: [
-      'Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.',
-      'Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.'
+      'Planned phased Clean Architecture feature, wrote Turbine/MockK tests first, and passed 6-phase verification.',
+      'Flagged domain Android import, swallowed CancellationException, and missing FLAG_SECURE on PIN screen.'
     ]
   },
   {

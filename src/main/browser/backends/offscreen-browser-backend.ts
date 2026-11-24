@@ -2,12 +2,12 @@ import { randomUUID } from 'node:crypto'
 import { join } from 'node:path'
 import { BrowserWindow } from 'electron'
 import '../../../shared/orca-profiles/constants'
-import { ORCA_BROWSER_PARTITION } from '../../../shared/browser/browser-session-partition'
 import { ORCA_BROWSER_GUEST_WEB_PREFERENCES } from '../../../shared/browser/guest-lifecycle/browser-guest-web-preferences'
 import { mapSettledWithConcurrency } from '../../../shared/concurrency/map-with-concurrency'
 import type { BrowserBackend, BrowserBackendCreateTab } from '../browser-backend'
 import type { BrowserManager } from '../guest-lifecycle/manager/browser-manager'
 import type { AgentBrowserBridge } from '../agent-browser/agent-browser-bridge'
+import { BrowserError } from '../browser-error'
 import { browserSessionRegistry } from '../sessions/profiles/browser-session-registry'
 import { installBrowserJavaScriptDialogs } from '../guest-lifecycle/prompts/browser-javascript-dialogs'
 import {
@@ -70,12 +70,17 @@ export class OffscreenBrowserBackend implements BrowserBackend {
     const profile = params.profileId
       ? browserSessionRegistry.getProfile(params.profileId)
       : browserSessionRegistry.getDefaultProfile()
-    const partition = profile?.partition ?? ORCA_BROWSER_PARTITION
-    if (profile) {
-      // A server page starts its profile's extensions, as a desktop tab does.
-      browserSessionRegistry.attachExtensions(profile.id)
+    // A deleted profile must not fall back to Default's cookie jar, as on desktop.
+    if (!profile) {
+      throw new BrowserError(
+        'invalid_argument',
+        `Browser profile ${params.profileId} was not found`
+      )
     }
-    const extensionsReady = profile ? whenBrowserExtensionsStartFor(profile.id) : null
+    const { partition } = profile
+    // A server page starts its profile's extensions, as a desktop tab does.
+    browserSessionRegistry.attachExtensions(profile.id)
+    const extensionsReady = whenBrowserExtensionsStartFor(profile.id)
 
     const win = new BrowserWindow({
       show: false,
@@ -111,7 +116,7 @@ export class OffscreenBrowserBackend implements BrowserBackend {
     const registered = this.browserManager.registerOffscreenGuest({
       browserPageId,
       worktreeId: params.worktreeId,
-      sessionProfileId: profile?.id ?? null,
+      sessionProfileId: profile.id,
       webContentsId: win.webContents.id
     })
     if (!registered) {
@@ -190,6 +195,10 @@ export class OffscreenBrowserBackend implements BrowserBackend {
     const win = this.windowsByPageId.get(browserPageId)
     if (!win || win.isDestroyed()) {
       throw new Error(`Browser page ${browserPageId} is not running`)
+    }
+    // Deleted while the switch waited: refuse it, or the page would reopen in the default session.
+    if (!browserSessionRegistry.getProfile(profileId)) {
+      throw new BrowserError('invalid_argument', `Browser profile ${profileId} was not found`)
     }
     const previousWebContentsId = win.webContents.id
     const worktreeId = this.browserManager.getWorktreeIdForTab(browserPageId)
@@ -285,6 +294,13 @@ export class OffscreenBrowserBackend implements BrowserBackend {
         win.destroy()
       }
     }
+  }
+
+  /** Running pages in this profile. */
+  pageIdsInProfile(profileId: string): string[] {
+    return [...this.windowsByPageId.keys()].filter(
+      (pageId) => this.browserManager.getSessionProfileIdForTab(pageId) === profileId
+    )
   }
 
   ownsTab(browserPageId: string): boolean {

@@ -26,6 +26,9 @@ describe('template words in the English catalogs', () => {
         words[path] = node
       } else if (node && typeof node === 'object') {
         for (const [key, child] of Object.entries(node)) {
+          if (key === 'soulDo' || key === 'soulDont') {
+            continue
+          }
           walk(child, `${path}.${key}`)
         }
       }

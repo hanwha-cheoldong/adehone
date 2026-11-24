@@ -253,7 +253,7 @@ const azureDevOpsForgeProvider = {
       input.branch,
       input.linkedReviewNumber ?? null,
       forgeConnectionId(input),
-      ...hostedReviewExecutionArgs(input)
+      input
     )
     return pr ? mapAzureDevOpsReview(pr) : null
   },
