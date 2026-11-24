@@ -1018,7 +1018,7 @@ jobs:
         run: |
           if [ "$PACKAGE_PRIOR_SUCCESS" != true ]; then exit 0; fi
           node config/scripts/runtime-verification/daemon-lifecycle/run-headless-serve-shutdown-docker.mjs \
-            --appimage dist/orca-linux.AppImage --all-entrypoints
+            --appimage dist/adehone-linux.AppImage --all-entrypoints
 
       - name: Verify root-package marker payloads
         run: |
