@@ -188,6 +188,14 @@ export function writeWorktreeCommitDraft(
   }
 }
 
+/** Clears an idle PR-intent notice once a separate git action or branch change supersedes it. */
+export function clearIdleCreatePrIntentNotice(store: WorktreeOperationStore): void {
+  const { createPrIntentRun, createPrIntentNotice } = store.getState()
+  if (createPrIntentRun === null && createPrIntentNotice !== null) {
+    store.setState({ createPrIntentNotice: null })
+  }
+}
+
 /** A landed switch clears errors that belonged to the previous branch. */
 export function clearLandedBranchSwitchError(store: WorktreeOperationStore): void {
   const { commitError, remoteActionError } = store.getState()
@@ -197,6 +205,7 @@ export function clearLandedBranchSwitchError(store: WorktreeOperationStore): voi
       ...(remoteActionError ? { remoteActionError: null } : {})
     })
   }
+  clearIdleCreatePrIntentNotice(store)
 }
 
 export function setCreatePrIntentNotice(
