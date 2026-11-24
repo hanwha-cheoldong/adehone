@@ -29523,34 +29523,36 @@
       },
       "android-dev": {
         "name": "Android development",
-        "line": "Builds and reviews Android features with official Android skills and mobile security guides.",
-        "firstChat": "Point it at an Android workspace or give it a task. It follows official Android skills along with transport encryption, native/JS device API, MDM/MAM, secure keypad, and push guides.",
-        "watches": "Android workspaces, tasks, and pull requests you hand it",
-        "does": "Implements and reviews Android native, WebView JS bridge, security, MDM/MAM, and device API code.",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
-        "example1": "Added BiometricPrompt with CryptoObject and a hardened WebView bridge for biometric auth.",
-        "example2": "Flagged missing FLAG_SECURE and Play Integrity check on the PIN screen.",
+        "line": "Plans, builds, tests, and reviews Android/KMP features with Kotlin/Compose workflows and mobile security guides.",
+        "firstChat": "Point it at an Android or KMP workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.",
+        "watches": "Android/KMP workspaces, tasks, and pull requests you hand it",
+        "does": "Plans and implements Clean Architecture, Compose, Coroutines/Flows, TDD tests, Gradle fixes, and hardened WebView/security code.",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
+        "example1": "Planned phased Clean Architecture feature, wrote Turbine/MockK tests first, and passed 6-phase verification.",
+        "example2": "Flagged domain Android import, swallowed CancellationException, and missing FLAG_SECURE on PIN screen.",
         "schedules": {
           "daily-morning-check": {
             "when": "Weekdays at 9 AM",
-            "what": "Daily build & lint healthcheck"
+            "what": "Daily Gradle build, lint & static analysis healthcheck"
           }
         },
         "events": {
           "pr-verify": {
             "trigger": "When a pull request is opened or updated",
-            "action": "Run Gradle tests and bridge/R8 checks"
+            "action": "Run 6-phase verification loop and Kotlin code review"
           }
         },
         "soulDo": {
-          "0": "Classify every feature or fix into Track A/B/C with the `android-intake` skill and convert it into an `android-worker-brief` template before delegating.",
-          "1": "After code changes, verify `./gradlew assembleDebug` or unit tests (`./gradlew testDebugUnitTest`) pass directly in the `android-close-out` step.",
-          "2": "Before changing WebView bridge specs or `AndroidManifest.xml` permissions, check backward compatibility and security (origin restrictions, ProGuard/R8 rules) first."
+          "0": "Plan every non-trivial feature or refactor with `android-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.",
+          "1": "Follow `android-clean-architecture` (`domain` pure Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).",
+          "2": "Before reporting done or opening a PR, run the 6-phase `android-verification-loop` (`assembleDebug`, `lintDebug`, `ktlintCheck`/`detekt`, `testDebugUnitTest`, security scan, `adb` acceptance) and `kotlin-code-review`.",
+          "3": "Before changing WebView bridge specs, encryption, or `AndroidManifest.xml` permissions, verify backward compatibility and `android-security-webview` + `gradle-build-resolver` R8 keep rules."
         },
         "soulDont": {
-          "0": "Never claim something is fixed without verifying the build or runtime first.",
-          "1": "Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without approval.",
-          "2": "Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print them in logs."
+          "0": "Never claim something is fixed without passing `android-verification-loop` build/test checks first.",
+          "1": "Never use `GlobalScope`, swallow `CancellationException`, add `!!` assertions, or import Android/DB/network frameworks inside `domain`.",
+          "2": "Never bump `minSdk`/`targetSdk` in `build.gradle` or core dependency versions without explicit owner approval.",
+          "3": "Never commit keystores (`*.jks`), `local.properties`, or API secret keys to Git, or print sensitive values in logs."
         }
       },
       "ios-dev": {
@@ -30655,13 +30657,15 @@
         "spec-format": "A one-page spec: problem, decision, scope, open questions.",
         "incident-timeline": "Keep a timestamped timeline, then draft a blameless write-up.",
         "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
-        "android-development": "Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.",
-        "android-webview-bridge": "WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.",
-        "android-gradle-r8": "Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.",
-        "android-intake": "Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "android-worker-brief": "Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.",
-        "android-close-out": "Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.",
-        "android-desk-brief": "Daily morning build/lint brief and weekly Android tech-debt report formats.",
+        "android-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
+        "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt/Koin DI.",
+        "compose-patterns": "Jetpack Compose & KMP state management, Event Sink, Type-Safe Navigation, recomposition, and TalkBack a11y.",
+        "kotlin-coroutines-flows": "Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.",
+        "kotlin-tdd-testing": "TDD workflow with JUnit/Kotest, MockK, Fake repositories, runTest, Turbine Flow testing, and Kover coverage.",
+        "kotlin-code-review": "Severity-ranked Kotlin/Android code review for architecture, security, coroutines, Compose, and Gradle.",
+        "gradle-build-resolver": "Surgical Gradle/Kotlin build error resolution, dependency conflict debugging, SDK guardrails, and R8 rules.",
+        "android-verification-loop": "6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).",
+        "android-security-webview": "Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.",
         "ios-intake": "Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
         "ios-worker-brief": "Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.",
         "ios-close-out": "Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.",
@@ -30677,13 +30681,15 @@
         "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
         "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety."
       },
-      "androidDevelopment": "android-development",
-      "androidWebviewBridge": "android-webview-bridge",
-      "androidGradleR8": "android-gradle-r8",
-      "androidIntake": "android-intake",
-      "androidWorkerBrief": "android-worker-brief",
-      "androidCloseOut": "android-close-out",
-      "androidDeskBrief": "android-desk-brief",
+      "androidPlanner": "android-planner",
+      "androidCleanArchitecture": "android-clean-architecture",
+      "composePatterns": "compose-patterns",
+      "kotlinCoroutinesFlows": "kotlin-coroutines-flows",
+      "kotlinTddTesting": "kotlin-tdd-testing",
+      "kotlinCodeReview": "kotlin-code-review",
+      "gradleBuildResolver": "gradle-build-resolver",
+      "androidVerificationLoop": "android-verification-loop",
+      "androidSecurityWebview": "android-security-webview",
       "iosIntake": "ios-intake",
       "iosWorkerBrief": "ios-worker-brief",
       "iosCloseOut": "ios-close-out",

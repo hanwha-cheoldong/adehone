@@ -1,16 +1,15 @@
 // Our own SKILL.md and optional extra files (e.g. references/) for each template skill.
 import type { BotTemplateSkill } from '../../shared/bots/bot-templates'
-import * as androidCloseOut from './bot-template-skills/android-close-out'
-import * as androidDeskBrief from './bot-template-skills/android-desk-brief'
-import * as androidDevelopment from './bot-template-skills/android-development'
-import * as androidGradleR8 from './bot-template-skills/android-gradle-r8'
-import * as androidIntake from './bot-template-skills/android-intake'
-import * as androidWebviewBridge from './bot-template-skills/android-webview-bridge'
-import * as androidWorkerBrief from './bot-template-skills/android-worker-brief'
+import * as androidCleanArchitecture from './bot-template-skills/android-clean-architecture'
+import * as androidPlanner from './bot-template-skills/android-planner'
+import * as androidSecurityWebview from './bot-template-skills/android-security-webview'
+import * as androidVerificationLoop from './bot-template-skills/android-verification-loop'
 import * as bugReproduction from './bot-template-skills/bug-reproduction'
 import * as ciFailureTriage from './bot-template-skills/ci-failure-triage'
+import * as composePatterns from './bot-template-skills/compose-patterns'
 import * as dependencyUpgrade from './bot-template-skills/dependency-upgrade'
 import * as feedbackThemes from './bot-template-skills/feedback-themes'
+import * as gradleBuildResolver from './bot-template-skills/gradle-build-resolver'
 import * as incidentTimeline from './bot-template-skills/incident-timeline'
 import * as iosCloseOut from './bot-template-skills/ios-close-out'
 import * as iosDeskBrief from './bot-template-skills/ios-desk-brief'
@@ -20,6 +19,9 @@ import * as iosWkwebviewBridge from './bot-template-skills/ios-wkwebview-bridge'
 import * as iosWorkerBrief from './bot-template-skills/ios-worker-brief'
 import * as iosXcodeSigning from './bot-template-skills/ios-xcode-signing'
 import * as issueTriage from './bot-template-skills/issue-triage'
+import * as kotlinCodeReview from './bot-template-skills/kotlin-code-review'
+import * as kotlinCoroutinesFlows from './bot-template-skills/kotlin-coroutines-flows'
+import * as kotlinTddTesting from './bot-template-skills/kotlin-tdd-testing'
 import * as mobileWebCloseOut from './bot-template-skills/mobile-web-close-out'
 import * as mobileWebDeskBrief from './bot-template-skills/mobile-web-desk-brief'
 import * as mobileWebDevelopment from './bot-template-skills/mobile-web-development'
@@ -43,13 +45,15 @@ type SkillModule = {
 }
 
 const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
-  'android-close-out': androidCloseOut,
-  'android-desk-brief': androidDeskBrief,
-  'android-development': androidDevelopment,
-  'android-gradle-r8': androidGradleR8,
-  'android-intake': androidIntake,
-  'android-webview-bridge': androidWebviewBridge,
-  'android-worker-brief': androidWorkerBrief,
+  'android-planner': androidPlanner,
+  'android-clean-architecture': androidCleanArchitecture,
+  'compose-patterns': composePatterns,
+  'kotlin-coroutines-flows': kotlinCoroutinesFlows,
+  'kotlin-tdd-testing': kotlinTddTesting,
+  'kotlin-code-review': kotlinCodeReview,
+  'gradle-build-resolver': gradleBuildResolver,
+  'android-verification-loop': androidVerificationLoop,
+  'android-security-webview': androidSecurityWebview,
   'bug-reproduction': bugReproduction,
   'ci-failure-triage': ciFailureTriage,
   'dependency-upgrade': dependencyUpgrade,

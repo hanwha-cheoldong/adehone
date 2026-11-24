@@ -30,20 +30,24 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'incident-timeline': 'Keep a timestamped timeline, then draft a blameless write-up.',
   'workspace-hygiene':
     'When a workspace is done or abandoned, and what to check before removing it.',
-  'android-intake':
-    'Classify incoming Android requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
-  'android-worker-brief':
-    'Standard Android BRIEF.md template with target modules, bridge contracts, and DoD.',
-  'android-close-out':
-    'Direct Gradle build/test, Manifest/R8 diff, and adb smoke-test verification before reporting.',
-  'android-desk-brief':
-    'Daily morning build/lint brief and weekly Android tech-debt report formats.',
-  'android-development':
-    'Official Android skills plus transport encryption, native/JS device APIs, MDM, MAM, secure keypad, and push guides.',
-  'android-webview-bridge':
-    'WebView ↔ Native JS bridge contracts, origin allowlists, WebSettings hardening, and R8 keep rules.',
-  'android-gradle-r8':
-    'Gradle/AGP version policy, SDK guardrails, R8/ProGuard keep rules, and signing/secret hygiene.',
+  'android-planner':
+    '4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.',
+  'android-clean-architecture':
+    'Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt/Koin DI.',
+  'compose-patterns':
+    'Jetpack Compose & KMP state management, Event Sink, Type-Safe Navigation, recomposition, and TalkBack a11y.',
+  'kotlin-coroutines-flows':
+    'Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.',
+  'kotlin-tdd-testing':
+    'TDD workflow with JUnit/Kotest, MockK, Fake repositories, runTest, Turbine Flow testing, and Kover coverage.',
+  'kotlin-code-review':
+    'Severity-ranked Kotlin/Android code review for architecture, security, coroutines, Compose, and Gradle.',
+  'gradle-build-resolver':
+    'Surgical Gradle/Kotlin build error resolution, dependency conflict debugging, SDK guardrails, and R8 rules.',
+  'android-verification-loop':
+    '6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).',
+  'android-security-webview':
+    'Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.',
   'ios-intake':
     'Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
   'ios-worker-brief':

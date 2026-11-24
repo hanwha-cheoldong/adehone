@@ -28047,34 +28047,36 @@
       "paletteLine": "봇 템플릿",
       "android-dev": {
         "name": "안드로이드 개발",
-        "line": "공식 Android Skills와 모바일 보안 가이드를 기반으로 안드로이드 기능을 구현하고 리뷰합니다.",
-        "firstChat": "안드로이드 워크스페이스를 지정하거나 작업을 전달하세요. 구글 공식 Android Skills와 구간 암호화, 네이티브/JS 디바이스 API, MDM/MAM, 보안 키패드, 푸시 가이드를 따릅니다.",
-        "watches": "전달한 안드로이드 워크스페이스, 작업 및 풀 리퀘스트",
-        "does": "안드로이드 네이티브, WebView JS 브리지, 보안, MDM/MAM 및 디바이스 API 코드를 구현하고 리뷰합니다.",
-        "reports": "여기, 평일 오전 9시 및 워커 검증 완료 후",
-        "example1": "CryptoObject 기반 BiometricPrompt와 강화된 생체 인증 WebView 브리지를 추가했습니다.",
-        "example2": "PIN 화면에서 FLAG_SECURE 및 Play Integrity 검증 누락을 발견했습니다.",
+        "line": "Kotlin/Compose 워크플로우와 모바일 보안 가이드를 기반으로 안드로이드/KMP 기능을 기획·구현·테스트·리뷰합니다.",
+        "firstChat": "안드로이드 또는 KMP 워크스페이스를 지정하거나 작업을 전달하세요. 체계적인 안드로이드 워크플로우(플래너, 클린 아키텍처, Compose, Coroutines/Flows, TDD/Turbine, 코드 리뷰, 검증 루프)와 엔터프라이즈 WebView/보안 가이드를 따릅니다.",
+        "watches": "전달한 안드로이드/KMP 워크스페이스, 작업 및 풀 리퀘스트",
+        "does": "클린 아키텍처, Compose, Coroutines/Flows, TDD 테스트, Gradle 오류 수정 및 보안 WebView/디바이스 API 코드를 기획하고 구현합니다.",
+        "reports": "여기, 평일 오전 9시 및 검증 루프 완료 후",
+        "example1": "단계별 클린 아키텍처 계획을 수립하고 Turbine/MockK 테스트를 선작성한 뒤 6단계 검증을 통과했습니다.",
+        "example2": "domain 모듈의 Android import, CancellationException 삼킴, PIN 화면 FLAG_SECURE 누락을 발견했습니다.",
         "schedules": {
           "daily-morning-check": {
             "when": "평일 오전 9시",
-            "what": "일일 빌드 및 린트 헬스체크"
+            "what": "일일 Gradle 빌드·린트 및 정적 분석 헬스체크"
           }
         },
         "events": {
           "pr-verify": {
             "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
-            "action": "Gradle 테스트 및 브리지/R8 검증 실행"
+            "action": "6단계 검증 루프 및 Kotlin 코드 리뷰 실행"
           }
         },
         "soulDo": {
-          "0": "모든 기능/수정 작업은 `android-intake` 스킬로 Track A/B/C 분류 후 `android-worker-brief` 템플릿으로 변환하여 위임합니다.",
-          "1": "코드 변경 완료 시 반드시 `./gradlew assembleDebug` 또는 단위 테스트(`./gradlew testDebugUnitTest`) 통과 여부를 `android-close-out` 단계에서 직접 확인합니다.",
-          "2": "WebView 브리지 스펙이나 권한(`AndroidManifest.xml`) 변경 시 하위 호환성과 보안(Origin 제한, ProGuard/R8 규칙)을 먼저 점검합니다."
+          "0": "비자명한 기능이나 리팩토링은 코드 편집 전 `android-planner`(요구사항 → Search-First & 아키텍처 검토 → Phase별 단계 → 테스트 전략 및 리스크)로 계획을 수립합니다.",
+          "1": "`android-clean-architecture`(`domain` 순수 Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, `kotlin-tdd-testing`(테스트 선작성, Turbine/MockK, 도메인 커버리지 80%+)을 준수합니다.",
+          "2": "완료 보고나 PR 생성 전 6단계 `android-verification-loop`(`assembleDebug`, `lintDebug`, `ktlintCheck`/`detekt`, `testDebugUnitTest`, 보안 스캔, `adb` 검증)와 `kotlin-code-review`를 실행합니다.",
+          "3": "WebView 브리지 스펙, 암호화 또는 `AndroidManifest.xml` 권한 변경 전 하위 호환성과 `android-security-webview` 및 `gradle-build-resolver` R8 규칙을 확인합니다."
         },
         "soulDont": {
-          "0": "빌드/런타임 검증 없이 \"수정했습니다\"라고 추측성 보고를 하지 않습니다.",
-          "1": "승인 없이 `build.gradle`의 `minSdk`/`targetSdk`나 핵심 의존성 버전을 임의로 올리지 않습니다.",
-          "2": "키스토어(`*.jks`), `local.properties`, API 시크릿 키를 Git에 커밋하거나 로그에 출력하지 않습니다."
+          "0": "`android-verification-loop` 빌드/테스트 통과 없이 \"수정했습니다\"라고 보고하지 않습니다.",
+          "1": "`GlobalScope` 사용, `CancellationException` 삼키기, `!!` 단언, 또는 `domain` 모듈 내 Android/DB/네트워크 프레임워크 import를 하지 않습니다.",
+          "2": "명시적 승인 없이 `build.gradle`의 `minSdk`/`targetSdk`나 핵심 의존성 버전을 올리지 않습니다.",
+          "3": "키스토어(`*.jks`), `local.properties`, API 시크릿 키를 Git에 커밋하거나 민감한 값을 로그에 출력하지 않습니다."
         }
       },
       "ios-dev": {
@@ -29735,13 +29737,15 @@
         "spec-format": "1페이지 사양서: 문제, 결정 사항, 범위, 미해결 질문.",
         "incident-timeline": "시간순 타임라인을 기록한 뒤 비난 없는 사후 분석(postmortem) 초안을 작성합니다.",
         "workspace-hygiene": "워크스페이스가 완료되었거나 중단된 시점과 삭제 전에 확인할 사항을 정리합니다.",
-        "android-development": "공식 Android Skills 및 구간 암호화, 네이티브/JS 디바이스 API, MDM, MAM, 보안 키패드, 푸시 가이드.",
-        "android-webview-bridge": "WebView ↔ Native JS 브리지 계약, Origin 제한, WebSettings 보안 및 R8 Keep 규칙.",
-        "android-gradle-r8": "Gradle/AGP 버전 정책, SDK 가드레일, R8/ProGuard 규칙 및 키스토어/시크릿 보안.",
-        "android-intake": "들어온 안드로이드 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
-        "android-worker-brief": "타겟 모듈, 브리지 규격, 보안/R8 체크, 완료 조건(DoD)을 담은 안드로이드 작업 지시서 양식.",
-        "android-close-out": "Gradle 빌드·테스트, Manifest/R8 Diff 점검, adb 스모크 테스트를 직접 확인하고 보고합니다.",
-        "android-desk-brief": "일일 아침 빌드·린트 브리핑 및 주간 기술 부채 리포트 양식.",
+        "android-planner": "4단계 기획 프로세스, Search-First 재사용, Phase별 구현 계획, 테스트 전략 및 리스크 대응.",
+        "android-clean-architecture": "클린 아키텍처 모듈 경계, 순수 Kotlin domain, UseCase, 저장소 계층, Mapper 및 Hilt/Koin DI.",
+        "compose-patterns": "Jetpack Compose 및 KMP 상태 관리, Event Sink, Type-Safe 내비게이션, 리컴포지션 및 TalkBack 접근성.",
+        "kotlin-coroutines-flows": "관용적 Kotlin, 구조적 동시성, StateFlow/SharedFlow, Dispatcher 주입 및 취소 안전성.",
+        "kotlin-tdd-testing": "JUnit/Kotest, MockK, Fake 저장소, runTest, Turbine Flow 테스트 및 Kover 커버리지 기반 TDD.",
+        "kotlin-code-review": "아키텍처, 보안, 코루틴, Compose, Gradle을 다루는 심각도별 Kotlin/Android 코드 리뷰.",
+        "gradle-build-resolver": "최소 변경 Gradle/Kotlin 빌드 오류 해결, 의존성 충돌 디버깅, SDK 가드레일 및 R8 규칙.",
+        "android-verification-loop": "6단계 품질 게이트(빌드, 린트/정적 분석, 테스트/Kover, 보안 스캔, Diff 리뷰, adb 검증).",
+        "android-security-webview": "구간/E2EE 암호화, 보안 WebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 FCM 푸시.",
         "ios-intake": "들어온 iOS 요청을 난이도와 리스크에 따라 Track A/B/C로 분류합니다.",
         "ios-worker-brief": "타겟 모듈, WKWebView 브리지 규격, Xcode 완료 조건(DoD)을 담은 iOS 작업 지시서 양식.",
         "ios-close-out": "Xcode 빌드·테스트, Info.plist/Entitlements Diff 점검, 시뮬레이터 스모크 테스트를 직접 확인하고 보고합니다.",
@@ -29757,13 +29761,15 @@
         "mobile-web-webview-bridge": "iOS WKWebView 및 Android JavascriptInterface용 프론트엔드 JS 브리지 클라이언트와 Origin 검증.",
         "mobile-web-performance-pwa": "Core Web Vitals, 번들 분할, 불안정한 네트워크 복원력 및 PWA 서비스 워커 캐시 안전성."
       },
-      "androidDevelopment": "안드로이드 개발",
-      "androidWebviewBridge": "WebView JS 브리지",
-      "androidGradleR8": "Gradle 및 R8 규칙",
-      "androidIntake": "요청 분류 (Intake)",
-      "androidWorkerBrief": "작업 지시서 (Worker Brief)",
-      "androidCloseOut": "직접 검증 및 마감 (Close-out)",
-      "androidDeskBrief": "아침·주간 브리핑 (Desk Brief)",
+      "androidPlanner": "안드로이드 플래너",
+      "androidCleanArchitecture": "클린 아키텍처",
+      "composePatterns": "Compose 패턴",
+      "kotlinCoroutinesFlows": "코루틴 및 Flow",
+      "kotlinTddTesting": "Kotlin TDD 테스트",
+      "kotlinCodeReview": "Kotlin 코드 리뷰",
+      "gradleBuildResolver": "Gradle 빌드 및 R8 해결",
+      "androidVerificationLoop": "6단계 검증 루프",
+      "androidSecurityWebview": "보안 · WebView · 디바이스 API",
       "iosIntake": "요청 분류 (Intake)",
       "iosWorkerBrief": "작업 지시서 (Worker Brief)",
       "iosCloseOut": "직접 검증 및 마감 (Close-out)",

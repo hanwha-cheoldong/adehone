@@ -152,20 +152,24 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.incidentTimeline', 'incident-timeline')
     case 'workspace-hygiene':
       return t('bots.templateSkills.workspaceHygiene', 'workspace-hygiene')
-    case 'android-intake':
-      return t('bots.templateSkills.androidIntake', 'android-intake')
-    case 'android-worker-brief':
-      return t('bots.templateSkills.androidWorkerBrief', 'android-worker-brief')
-    case 'android-close-out':
-      return t('bots.templateSkills.androidCloseOut', 'android-close-out')
-    case 'android-desk-brief':
-      return t('bots.templateSkills.androidDeskBrief', 'android-desk-brief')
-    case 'android-development':
-      return t('bots.templateSkills.androidDevelopment', 'android-development')
-    case 'android-webview-bridge':
-      return t('bots.templateSkills.androidWebviewBridge', 'android-webview-bridge')
-    case 'android-gradle-r8':
-      return t('bots.templateSkills.androidGradleR8', 'android-gradle-r8')
+    case 'android-planner':
+      return t('bots.templateSkills.androidPlanner', 'android-planner')
+    case 'android-clean-architecture':
+      return t('bots.templateSkills.androidCleanArchitecture', 'android-clean-architecture')
+    case 'compose-patterns':
+      return t('bots.templateSkills.composePatterns', 'compose-patterns')
+    case 'kotlin-coroutines-flows':
+      return t('bots.templateSkills.kotlinCoroutinesFlows', 'kotlin-coroutines-flows')
+    case 'kotlin-tdd-testing':
+      return t('bots.templateSkills.kotlinTddTesting', 'kotlin-tdd-testing')
+    case 'kotlin-code-review':
+      return t('bots.templateSkills.kotlinCodeReview', 'kotlin-code-review')
+    case 'gradle-build-resolver':
+      return t('bots.templateSkills.gradleBuildResolver', 'gradle-build-resolver')
+    case 'android-verification-loop':
+      return t('bots.templateSkills.androidVerificationLoop', 'android-verification-loop')
+    case 'android-security-webview':
+      return t('bots.templateSkills.androidSecurityWebview', 'android-security-webview')
     case 'ios-intake':
       return t('bots.templateSkills.iosIntake', 'ios-intake')
     case 'ios-worker-brief':
