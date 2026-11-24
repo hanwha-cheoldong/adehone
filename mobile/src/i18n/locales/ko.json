@@ -5110,7 +5110,17 @@
         "kotlin-code-review": "아키텍처, 보안, 코루틴, Compose, Gradle을 다루는 심각도별 Kotlin/Android 코드 리뷰.",
         "gradle-build-resolver": "최소 변경 Gradle/Kotlin 빌드 오류 해결, 의존성 충돌 디버깅, SDK 가드레일 및 R8 규칙.",
         "android-verification-loop": "6단계 품질 게이트(빌드, 린트/정적 분석, 테스트/Kover, 보안 스캔, Diff 리뷰, adb 검증).",
-        "android-security-webview": "구간/E2EE 암호화, 보안 WebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 FCM 푸시."
+        "android-security-webview": "구간/E2EE 암호화, 보안 WebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 FCM 푸시.",
+        "android-java-legacy": "레거시 Android Java 유지보수, Java-Kotlin 상호운용성, 메모리 누수 수정, JUnit+Mockito 테스트 및 Desugaring.",
+        "ios-planner": "4단계 기획 프로세스, Search-First 재사용, Phase별 구현 계획, 테스트 전략 및 리스크 대응.",
+        "ios-clean-architecture": "클린 아키텍처 레이어 경계, 순수 Swift Domain, UseCase, 저장소 계층, ObjC 어댑터 및 프로토콜 DI.",
+        "ios-swiftui-patterns": "최신 SwiftUI @Observable 상태 관리, @Environment DI, NavigationStack, WKWebView/UIKit 생명주기 및 VoiceOver 접근성.",
+        "swift-concurrency-actors": "관용적 Swift, Swift 6/6.2 엄격한 동시성(@MainActor, Sendable, @concurrent), ObjC 연동 및 Actor 영속성.",
+        "swift-tdd-testing": "Swift Testing(@Test, #expect), XCTest(Swift/ObjC), 프로토콜 DI 목/페이크 및 80%+ 커버리지 기반 TDD.",
+        "swift-code-review": "안전성, 동시성, ARC 메모리, 프로토콜, SwiftUI, Xcode를 다루는 심각도별 Swift/ObjC iOS 코드 리뷰.",
+        "xcode-build-resolver": "최소 변경 Xcode/SwiftPM 빌드 오류 해결, Bridging Header/Sendable/SPM 수정, 배포 타깃 및 서명 가드레일.",
+        "ios-verification-loop": "6단계 품질 게이트(빌드, SwiftLint/포맷, 테스트/커버리지, 보안 스캔, Diff 리뷰, simctl 검증).",
+        "ios-security-webview": "구간/E2EE 암호화, 보안 WKWebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 APNs 푸시."
       },
       "androidPlanner": "안드로이드 플래너",
       "androidCleanArchitecture": "클린 아키텍처",
@@ -5120,7 +5130,17 @@
       "kotlinCodeReview": "Kotlin 코드 리뷰",
       "gradleBuildResolver": "Gradle 빌드 및 R8 해결",
       "androidVerificationLoop": "6단계 검증 루프",
-      "androidSecurityWebview": "보안 · WebView · 디바이스 API"
+      "androidSecurityWebview": "보안 · WebView · 디바이스 API",
+      "androidJavaLegacy": "레거시 Java 유지보수",
+      "iosPlanner": "iOS 플래너",
+      "iosCleanArchitecture": "클린 아키텍처",
+      "iosSwiftuiPatterns": "SwiftUI 패턴",
+      "swiftConcurrencyActors": "Swift 동시성 및 Actor",
+      "swiftTddTesting": "Swift TDD 테스트",
+      "swiftCodeReview": "Swift 코드 리뷰",
+      "xcodeBuildResolver": "Xcode 빌드 및 서명 해결",
+      "iosVerificationLoop": "6단계 검증 루프",
+      "iosSecurityWebview": "보안 · WKWebView · 디바이스 API"
     },
     "waits": {
       "cancel": "취소",

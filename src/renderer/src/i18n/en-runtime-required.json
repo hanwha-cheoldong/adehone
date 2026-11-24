@@ -3637,6 +3637,7 @@
       "lines": {
         "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.",
         "android-compose-patterns": "Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.",
+        "android-java-legacy": "Legacy Android Java maintenance, Java-Kotlin interop, memory leak fixes, JUnit+Mockito tests, and Desugaring.",
         "android-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
         "android-security-webview": "Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.",
         "android-verification-loop": "6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).",
@@ -3646,13 +3647,11 @@
         "feedback-themes": "Group feedback into themes with counts and short quotes; link existing issues.",
         "gradle-build-resolver": "Surgical Gradle/Kotlin build error resolution, dependency conflict debugging, SDK guardrails, and R8 rules.",
         "incident-timeline": "Keep a timestamped timeline, then draft a blameless write-up.",
-        "ios-close-out": "Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.",
-        "ios-desk-brief": "Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.",
-        "ios-development": "Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.",
-        "ios-intake": "Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "ios-wkwebview-bridge": "WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.",
-        "ios-worker-brief": "Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.",
-        "ios-xcode-signing": "Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.",
+        "ios-clean-architecture": "Clean Architecture layer boundaries, pure-Swift Domain, UseCases, Repositories, ObjC adapters, and Protocol DI.",
+        "ios-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
+        "ios-security-webview": "Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.",
+        "ios-swiftui-patterns": "Modern SwiftUI @Observable state, @Environment DI, NavigationStack, WKWebView/UIKit lifecycle, and VoiceOver a11y.",
+        "ios-verification-loop": "6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).",
         "issue-triage": "Label, find duplicates, ask for missing repro details in one comment.",
         "kotlin-code-review": "Severity-ranked Kotlin/Android code review for architecture, security, coroutines, Compose, and Gradle.",
         "kotlin-coroutines-flows": "Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.",
@@ -3670,7 +3669,11 @@
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
         "spec-format": "A one-page spec: problem, decision, scope, open questions.",
         "status-brief": "Changed, blocked, needs a decision: a brief in under ten lines.",
-        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it."
+        "swift-code-review": "Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.",
+        "swift-concurrency-actors": "Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.",
+        "swift-tdd-testing": "TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.",
+        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
+        "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails."
       }
     },
     "templates": {
@@ -3913,34 +3916,36 @@
         "watches": "The incident channel you pick, and its threads"
       },
       "ios-dev": {
-        "does": "Implements and reviews Swift/UIKit/SwiftUI, WKWebView JS bridge, security, MDM/MAM, and Apple device API code.",
+        "does": "Plans and implements Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, TDD tests, Xcode build fixes, and hardened WKWebView/security code.",
         "events": {
           "pr-verify": {
-            "action": "Run Xcode tests and bridge/entitlements checks",
+            "action": "Run 6-phase verification loop and Swift code review",
             "trigger": "When a pull request is opened or updated"
           }
         },
-        "example1": "Added Keychain-backed Face ID (LAContext) auth and a hardened WKScriptMessageHandler bridge.",
-        "example2": "Flagged missing App Transport Security restriction and unpinned URLSession delegate.",
-        "firstChat": "Point it at an iOS workspace or give it a task. It follows modern Swift/SwiftUI best practices along with transport encryption, native/WKWebView JS bridge, Keychain/Biometrics, MDM/MAM, and APNs push guides.",
-        "line": "Builds and reviews iPhone/iOS features with Swift, SwiftUI, and mobile security guides.",
+        "example1": "Planned phased Clean Architecture feature, wrote Swift Testing mocks first, and passed 6-phase verification.",
+        "example2": "Flagged domain SwiftUI import, force-unwrap (!), and missing origin check on WKScriptMessageHandler.",
+        "firstChat": "Point it at an iOS workspace or give it a task. It follows structured iOS workflows (planner, Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, Swift Testing TDD, code review, verification loop) plus enterprise WKWebView/security guides.",
+        "line": "Plans, builds, tests, and reviews iOS features with Swift/SwiftUI, Objective-C interop, and mobile security guides.",
         "name": "iOS development",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
         "schedules": {
           "daily-morning-check": {
-            "what": "Daily build & SwiftLint healthcheck",
+            "what": "Daily Xcode/Swift build, SwiftLint & static analysis healthcheck",
             "when": "Weekdays at 9 AM"
           }
         },
         "soulDo": {
-          "0": "Classify every feature or fix into Track A/B/C with the `ios-intake` skill and convert it into an `ios-worker-brief` template before delegating.",
-          "1": "After code changes, verify `xcodebuild` build or unit tests (`xcodebuild test` / `swift test`) pass directly in the `ios-close-out` step.",
-          "2": "Before changing WKWebView bridge specs, `Info.plist`, or Entitlements, check backward compatibility and security (origin restrictions, ATS, Keychain access groups) first."
+          "0": "Plan every non-trivial feature or refactor with `ios-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.",
+          "1": "Follow `ios-clean-architecture` (`Domain` pure Swift), `ios-swiftui-patterns` (`@Observable`), `swift-concurrency-actors` (`Sendable`/actors), and `swift-tdd-testing` (tests before code, Swift Testing, 80%+ domain coverage).",
+          "2": "Before reporting done or opening a PR, run the 6-phase `ios-verification-loop` (`xcodebuild`/`swift build`, `swiftlint`, `xcodebuild test`, security scan, `simctl` acceptance) and `swift-code-review`.",
+          "3": "Before changing WKWebView bridge specs, encryption, `Info.plist`, or `*.entitlements`, verify backward compatibility and `ios-security-webview` + `xcode-build-resolver` guardrails."
         },
         "soulDont": {
-          "0": "Never claim something is fixed without verifying the build or simulator/test run first.",
-          "1": "Never bump iOS deployment target, Xcode project settings, or SwiftPM/CocoaPods dependency versions without approval.",
-          "2": "Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print them in logs."
+          "0": "Never claim something is fixed without passing `ios-verification-loop` build/test checks first.",
+          "1": "Never use force unwraps (`!`, `try!`, `as!`), store secrets in `UserDefaults`, block `@MainActor` with sync I/O, or import UI/DB/WebKit frameworks inside `Domain`.",
+          "2": "Never bump `IPHONEOS_DEPLOYMENT_TARGET`, `SWIFT_VERSION`, or major SPM/CocoaPods dependency versions without explicit owner approval.",
+          "3": "Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print sensitive values in logs."
         },
         "watches": "iOS workspaces, tasks, and pull requests you hand it"
       },

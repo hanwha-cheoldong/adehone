@@ -170,20 +170,26 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.androidVerificationLoop', 'android-verification-loop')
     case 'android-security-webview':
       return t('bots.templateSkills.androidSecurityWebview', 'android-security-webview')
-    case 'ios-intake':
-      return t('bots.templateSkills.iosIntake', 'ios-intake')
-    case 'ios-worker-brief':
-      return t('bots.templateSkills.iosWorkerBrief', 'ios-worker-brief')
-    case 'ios-close-out':
-      return t('bots.templateSkills.iosCloseOut', 'ios-close-out')
-    case 'ios-desk-brief':
-      return t('bots.templateSkills.iosDeskBrief', 'ios-desk-brief')
-    case 'ios-development':
-      return t('bots.templateSkills.iosDevelopment', 'ios-development')
-    case 'ios-wkwebview-bridge':
-      return t('bots.templateSkills.iosWkwebviewBridge', 'ios-wkwebview-bridge')
-    case 'ios-xcode-signing':
-      return t('bots.templateSkills.iosXcodeSigning', 'ios-xcode-signing')
+    case 'android-java-legacy':
+      return t('bots.templateSkills.androidJavaLegacy', 'android-java-legacy')
+    case 'ios-planner':
+      return t('bots.templateSkills.iosPlanner', 'ios-planner')
+    case 'ios-clean-architecture':
+      return t('bots.templateSkills.iosCleanArchitecture', 'ios-clean-architecture')
+    case 'ios-swiftui-patterns':
+      return t('bots.templateSkills.iosSwiftuiPatterns', 'ios-swiftui-patterns')
+    case 'swift-concurrency-actors':
+      return t('bots.templateSkills.swiftConcurrencyActors', 'swift-concurrency-actors')
+    case 'swift-tdd-testing':
+      return t('bots.templateSkills.swiftTddTesting', 'swift-tdd-testing')
+    case 'swift-code-review':
+      return t('bots.templateSkills.swiftCodeReview', 'swift-code-review')
+    case 'xcode-build-resolver':
+      return t('bots.templateSkills.xcodeBuildResolver', 'xcode-build-resolver')
+    case 'ios-verification-loop':
+      return t('bots.templateSkills.iosVerificationLoop', 'ios-verification-loop')
+    case 'ios-security-webview':
+      return t('bots.templateSkills.iosSecurityWebview', 'ios-security-webview')
     case 'mobile-web-intake':
       return t('bots.templateSkills.mobileWebIntake', 'mobile-web-intake')
     case 'mobile-web-worker-brief':
