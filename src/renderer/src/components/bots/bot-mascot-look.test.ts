@@ -49,7 +49,10 @@ describe('the reviewer on the bundled mascots', () => {
   it.each(worn)('$id takes its looking-down face and body lines', ({ id, layer }) => {
     const svg = readFileSync(new URL(`${id}.svg`, mascots), 'utf8')
     const faced = faceMascotSvg(svg, layer)
-    expect(faced).toContain(`<g id="face">${layer.face}</g>`)
+    if (layer.face) {
+      expect(svg).toContain('<g id="face">')
+      expect(faced).toContain(`<g id="face">${layer.face}</g>`)
+    }
     const body = faced.slice(faced.indexOf('</defs>'))
     for (const [from, to] of layer.redraw ?? []) {
       expect(body).not.toContain(`d="${from}"`)

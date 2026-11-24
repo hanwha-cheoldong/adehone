@@ -3,7 +3,7 @@
 
 export const ANDROID_DEV_DO_RULES: readonly string[] = [
   '- Plan every non-trivial feature or refactor with `android-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.',
-  '- Follow `android-clean-architecture` (`domain` pure Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).',
+  '- Follow `android-clean-architecture` (`domain` pure Kotlin), `android-compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).',
   '- Before reporting done or opening a PR, run the 6-phase `android-verification-loop` (`assembleDebug`, `lintDebug`, `ktlintCheck`/`detekt`, `testDebugUnitTest`, security scan, `adb` acceptance) and `kotlin-code-review`.',
   '- Before changing WebView bridge specs, encryption, or `AndroidManifest.xml` permissions, verify backward compatibility and `android-security-webview` + `gradle-build-resolver` R8 keep rules.'
 ]
@@ -20,7 +20,7 @@ export const ANDROID_DEV_MEMORY_SEED = `# Memory
 ## Project Fixed Specs
 - Architecture pattern: (e.g. Clean Architecture — app / presentation / domain / data / core)
 - UI stack: (e.g. Jetpack Compose / Material 3 / Compose Navigation 2.8+ / WebView hybrid)
-- DI & async: (e.g. Hilt or Koin / Coroutines + StateFlow / WhileSubscribed(5_000))
+- DI & async: (e.g. Hilt / Coroutines + StateFlow / WhileSubscribed(5_000))
 - Testing & static analysis: (e.g. JUnit or Kotest / MockK / Turbine / ktlint / detekt / Kover)
 - SDK & Gradle: (e.g. minSdk / targetSdk / compileSdk / AGP version / libs.versions.toml)
 

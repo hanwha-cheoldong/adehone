@@ -31,6 +31,14 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     }
   ],
   [
+    'Follow `android-clean-architecture` (`domain` pure Kotlin), `android-compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).',
+    {
+      key: 'bots.templates.android-dev.soulDo.1',
+      fallback:
+        'Follow `android-clean-architecture` (`domain` pure Kotlin), `android-compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).'
+    }
+  ],
+  [
     'Follow `android-clean-architecture` (`domain` pure Kotlin), `compose-patterns`, `kotlin-coroutines-flows`, and `kotlin-tdd-testing` (tests before code, Turbine/MockK, 80%+ domain coverage).',
     {
       key: 'bots.templates.android-dev.soulDo.1',

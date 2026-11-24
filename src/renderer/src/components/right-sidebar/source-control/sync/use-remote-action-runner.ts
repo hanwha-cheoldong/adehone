@@ -12,6 +12,7 @@ import type { SourceControlOperationTarget } from '../listing/operation-target'
 import type { SourceControlFileListing } from '../listing/use-file-listing'
 import type { SourceControlStoreActions } from '../listing/use-store-actions'
 import type { SourceControlWorktreeContext } from '../listing/use-worktree-context'
+import { clearIdleCreatePrIntentNotice } from '../panel/worktree-operation-store'
 import type { SourceControlWorktreeOperationState } from '../panel/use-worktree-operation-state'
 import { refreshSourceControlAfterRemoteAction, resolveRemoteActionError } from './remote-refresh'
 import type { SourceControlStatusRefresh } from './use-status-refresh'
@@ -101,6 +102,7 @@ export function useSourceControlRemoteActionRunner({
         return { status: 'skipped' }
       }
       const sequence = operationStore.getState().remoteActionSequence + 1
+      clearIdleCreatePrIntentNotice(operationStore)
       operationStore.setState({ remoteActionSequence: sequence, remoteActionError: null })
       const targetIsActiveWorktree = target.worktreeId === activeWorktreeId
       const recoveryEntrySnapshot = captureSourceControlRecoveryEntrySnapshot(

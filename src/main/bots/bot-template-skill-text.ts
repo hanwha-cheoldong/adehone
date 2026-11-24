@@ -1,12 +1,12 @@
 // Our own SKILL.md and optional extra files (e.g. references/) for each template skill.
 import type { BotTemplateSkill } from '../../shared/bots/bot-templates'
 import * as androidCleanArchitecture from './bot-template-skills/android-clean-architecture'
+import * as androidComposePatterns from './bot-template-skills/android-compose-patterns'
 import * as androidPlanner from './bot-template-skills/android-planner'
 import * as androidSecurityWebview from './bot-template-skills/android-security-webview'
 import * as androidVerificationLoop from './bot-template-skills/android-verification-loop'
 import * as bugReproduction from './bot-template-skills/bug-reproduction'
 import * as ciFailureTriage from './bot-template-skills/ci-failure-triage'
-import * as composePatterns from './bot-template-skills/compose-patterns'
 import * as dependencyUpgrade from './bot-template-skills/dependency-upgrade'
 import * as feedbackThemes from './bot-template-skills/feedback-themes'
 import * as gradleBuildResolver from './bot-template-skills/gradle-build-resolver'
@@ -47,7 +47,7 @@ type SkillModule = {
 const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'android-planner': androidPlanner,
   'android-clean-architecture': androidCleanArchitecture,
-  'compose-patterns': composePatterns,
+  'android-compose-patterns': androidComposePatterns,
   'kotlin-coroutines-flows': kotlinCoroutinesFlows,
   'kotlin-tdd-testing': kotlinTddTesting,
   'kotlin-code-review': kotlinCodeReview,

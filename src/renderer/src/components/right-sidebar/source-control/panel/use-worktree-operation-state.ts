@@ -9,6 +9,7 @@ import { worktreeGitCopyHostId } from '@/lib/workspace/ownership/worktree-git-co
 import type { GitConflictOperation } from '../../../../../../shared/git/status/git-status-types'
 import { remoteActionErrorSettledByConflictOperation } from '../sync/remote-refresh'
 import {
+  clearIdleCreatePrIntentNotice,
   clearLandedBranchSwitchError,
   getWorktreeOperationStore,
   writeWorktreeCommitDraft
@@ -90,6 +91,9 @@ export function useSourceControlWorktreeOperationState({
       observedBranchName: branchName,
       ...(observedBranchName !== null && commitError ? { commitError: null } : {})
     })
+    if (observedBranchName !== null) {
+      clearIdleCreatePrIntentNotice(operationStore)
+    }
   }, [branchName, operationStore])
 
   return {

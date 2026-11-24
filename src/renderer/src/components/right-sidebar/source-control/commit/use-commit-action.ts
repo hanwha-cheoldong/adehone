@@ -12,6 +12,7 @@ import {
 import type { SourceControlOperationTarget } from '../listing/operation-target'
 import type { SourceControlStoreActions } from '../listing/use-store-actions'
 import type { SourceControlWorktreeContext } from '../listing/use-worktree-context'
+import { clearIdleCreatePrIntentNotice } from '../panel/worktree-operation-store'
 import type { SourceControlWorktreeOperationState } from '../panel/use-worktree-operation-state'
 import type { SourceControlStatusRefresh } from '../sync/use-status-refresh'
 
@@ -84,6 +85,7 @@ export function useSourceControlCommitAction({
       if (operationStore.getState().isCommitting) {
         return false
       }
+      clearIdleCreatePrIntentNotice(operationStore)
       operationStore.setState({ isCommitting: true, commitError: null })
       try {
         const commitResult = await commitRuntimeGit(
@@ -158,6 +160,7 @@ export function useSourceControlCommitAction({
     if (operationStore.getState().isCommitting) {
       return
     }
+    clearIdleCreatePrIntentNotice(operationStore)
     operationStore.setState({ isCommitting: true })
     let result: { success: boolean; error?: string }
     try {

@@ -1,6 +1,6 @@
 export const SKILL = `---
 name: kotlin-code-review
-description: Kotlin and Android/KMP code reviewer — severity-ranked checks for Clean Architecture, security, coroutines/Flows, Compose performance, Kotlin idioms, and Android pitfalls.
+description: Kotlin and Android code reviewer — severity-ranked checks for Clean Architecture, security, coroutines/Flows, Compose performance, Kotlin idioms, and Android pitfalls.
 ---
 
 # Kotlin & Android Code Review

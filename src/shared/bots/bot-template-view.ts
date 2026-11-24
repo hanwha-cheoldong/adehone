@@ -33,9 +33,9 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'android-planner':
     '4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.',
   'android-clean-architecture':
-    'Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt/Koin DI.',
-  'compose-patterns':
-    'Jetpack Compose & KMP state management, Event Sink, Type-Safe Navigation, recomposition, and TalkBack a11y.',
+    'Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.',
+  'android-compose-patterns':
+    'Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.',
   'kotlin-coroutines-flows':
     'Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.',
   'kotlin-tdd-testing':

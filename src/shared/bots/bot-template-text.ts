@@ -156,8 +156,8 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.androidPlanner', 'android-planner')
     case 'android-clean-architecture':
       return t('bots.templateSkills.androidCleanArchitecture', 'android-clean-architecture')
-    case 'compose-patterns':
-      return t('bots.templateSkills.composePatterns', 'compose-patterns')
+    case 'android-compose-patterns':
+      return t('bots.templateSkills.androidComposePatterns', 'android-compose-patterns')
     case 'kotlin-coroutines-flows':
       return t('bots.templateSkills.kotlinCoroutinesFlows', 'kotlin-coroutines-flows')
     case 'kotlin-tdd-testing':
