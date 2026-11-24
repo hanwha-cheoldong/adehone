@@ -74,11 +74,9 @@ describe('adehone build version patterns', () => {
 
   it('formats display version cleanly without redundant adehone prefix in orca portion', () => {
     expect(ADEHONE_VERSION).toBe('0.1')
-    expect(formatAdehoneDisplayVersion('0.1-1.4.214-daily.202611160530', '51d3496dc2fa')).toBe(
-      '0.1 (Orca 1.4.214-daily.202611160530, commit 51d3496)'
+    expect(formatAdehoneDisplayVersion('0.1-1.4.214-daily.202611160530')).toBe(
+      '0.1 (Orca 1.4.214-daily.202611160530)'
     )
-    expect(formatAdehoneDisplayVersion('1.4.214', '51d3496dc2fa')).toBe(
-      '0.1 (Orca 1.4.214, commit 51d3496)'
-    )
+    expect(formatAdehoneDisplayVersion('1.4.214')).toBe('0.1 (Orca 1.4.214)')
   })
 })
