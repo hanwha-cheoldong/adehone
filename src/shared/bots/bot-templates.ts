@@ -42,7 +42,7 @@ export const BOT_TEMPLATE_SKILLS = [
   'workspace-hygiene',
   'android-planner',
   'android-clean-architecture',
-  'compose-patterns',
+  'android-compose-patterns',
   'kotlin-coroutines-flows',
   'kotlin-tdd-testing',
   'kotlin-code-review',

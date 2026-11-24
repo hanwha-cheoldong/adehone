@@ -1,6 +1,6 @@
 export const SKILL = `---
 name: android-clean-architecture
-description: Clean Architecture patterns for Android and KMP — module structure, dependency inversion, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt/Koin DI.
+description: Clean Architecture patterns for Android — module structure, dependency inversion, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.
 ---
 
 # Android Clean Architecture
@@ -54,9 +54,8 @@ core -> (nothing)
 - Coordinate local (Room/SQLDelight) and remote (Ktor/Retrofit) data sources inside \`RepositoryImpl\`.
 - Keep mappers (\`Entity.toDomain()\`, \`Dto.toEntity()\`) as extension functions in \`data\`; never leak DB entities or network DTOs into \`domain\` or \`presentation\`.
 
-## Dependency Injection (Hilt / Koin)
+## Dependency Injection (Hilt)
 
 - Prefer constructor injection everywhere.
-- **Android-only (Hilt)**: \`@HiltViewModel\`, \`@Inject constructor(...)\`, \`@Module\` / \`@InstallIn\`.
-- **KMP (Koin)**: \`module { single<ItemRepository> { ItemRepositoryImpl(get(), get()) }; factory { GetItemsUseCase(get()) }; viewModelOf(::ItemListViewModel) }\`.
+- Use \`@HiltViewModel\` + \`@Inject constructor(...)\` for ViewModels, and \`@Module\` / \`@InstallIn(SingletonComponent::class)\` with \`@Binds\` for repository interfaces and \`@Provides\` for Room/OkHttp/Retrofit instances.
 `

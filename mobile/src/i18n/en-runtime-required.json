@@ -454,13 +454,13 @@
     },
     "templateSkills": {
       "lines": {
-        "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt/Koin DI.",
+        "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.",
+        "android-compose-patterns": "Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.",
         "android-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
         "android-security-webview": "Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.",
         "android-verification-loop": "6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).",
         "bug-reproduction": "Write down the exact steps that show the bug before looking for its cause.",
         "ci-failure-triage": "Tell a flaky check from a real failure or broken infrastructure, and find the commit that started it.",
-        "compose-patterns": "Jetpack Compose & KMP state management, Event Sink, Type-Safe Navigation, recomposition, and TalkBack a11y.",
         "dependency-upgrade": "Upgrade one group at a time, read the changelog, run the tests, one pull request each.",
         "feedback-themes": "Group feedback into themes with counts and short quotes; link existing issues.",
         "gradle-build-resolver": "Surgical Gradle/Kotlin build error resolution, dependency conflict debugging, SDK guardrails, and R8 rules.",
@@ -503,8 +503,8 @@
         },
         "example1": "Planned phased Clean Architecture feature, wrote Turbine/MockK tests first, and passed 6-phase verification.",
         "example2": "Flagged domain Android import, swallowed CancellationException, and missing FLAG_SECURE on PIN screen.",
-        "firstChat": "Point it at an Android or KMP workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.",
-        "line": "Plans, builds, tests, and reviews Android/KMP features with Kotlin/Compose workflows and mobile security guides.",
+        "firstChat": "Point it at an Android workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Jetpack Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.",
+        "line": "Plans, builds, tests, and reviews Android features with Kotlin/Compose workflows and mobile security guides.",
         "name": "Android development",
         "reports": "Here, weekdays at 9 AM and after verification-loop checks",
         "schedules": {
@@ -513,7 +513,7 @@
             "when": "Weekdays at 9 AM"
           }
         },
-        "watches": "Android/KMP workspaces, tasks, and pull requests you hand it"
+        "watches": "Android workspaces, tasks, and pull requests you hand it"
       },
       "backlog-cleanup": {
         "does": "Lists stale issues, likely duplicates and issues with no owner.",

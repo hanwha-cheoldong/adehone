@@ -5,11 +5,11 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
     id: 'android-dev',
     category: 'coding',
     name: 'Android development',
-    line: 'Plans, builds, tests, and reviews Android/KMP features with Kotlin/Compose workflows and mobile security guides.',
+    line: 'Plans, builds, tests, and reviews Android features with Kotlin/Compose workflows and mobile security guides.',
     firstChat:
-      'Point it at an Android or KMP workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.',
+      'Point it at an Android workspace or give it a task. It follows structured Android workflows (planner, Clean Architecture, Jetpack Compose, Coroutines/Flows, TDD/Turbine, code review, verification loop) plus enterprise WebView/security guides.',
     mascot: 'AND',
-    watches: 'Android/KMP workspaces, tasks, and pull requests you hand it',
+    watches: 'Android workspaces, tasks, and pull requests you hand it',
     does: 'Plans and implements Clean Architecture, Compose, Coroutines/Flows, TDD tests, Gradle fixes, and hardened WebView/security code.',
     reports: 'Here, weekdays at 9 AM and after verification-loop checks',
     connectors: ['github'],
@@ -36,7 +36,7 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
     skills: [
       'android-planner',
       'android-clean-architecture',
-      'compose-patterns',
+      'android-compose-patterns',
       'kotlin-coroutines-flows',
       'kotlin-tdd-testing',
       'kotlin-code-review',

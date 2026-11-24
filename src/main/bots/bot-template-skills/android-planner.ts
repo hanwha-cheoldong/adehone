@@ -1,6 +1,6 @@
 export const SKILL = `---
 name: android-planner
-description: Planning specialist for Android and KMP features and refactors — 4-step planning process, Search-First reuse, phased implementation plans, testing strategy, risks, and Red Flags.
+description: Planning specialist for Android features and refactors — 4-step planning process, Search-First reuse, phased implementation plans, testing strategy, risks, and Red Flags.
 ---
 
 # Android Implementation Planner

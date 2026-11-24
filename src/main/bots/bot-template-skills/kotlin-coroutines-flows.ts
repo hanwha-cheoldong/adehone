@@ -1,6 +1,6 @@
 export const SKILL = `---
 name: kotlin-coroutines-flows
-description: Idiomatic Kotlin, structured concurrency, Coroutines, Flow/StateFlow/SharedFlow patterns, dispatcher injection, and cancellation-safe error handling for Android and KMP.
+description: Idiomatic Kotlin, structured concurrency, Coroutines, Flow/StateFlow/SharedFlow patterns, dispatcher injection, and cancellation-safe error handling for Android.
 ---
 
 # Kotlin Idioms, Coroutines & Flows

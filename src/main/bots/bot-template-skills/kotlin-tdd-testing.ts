@@ -14,7 +14,7 @@ description: TDD workflow and Kotlin/Android testing patterns using JUnit 4/5, K
 
 ## Test Stack
 
-- **Unit Tests**: JUnit 4/5 (Android) or \`kotlin.test\` / **Kotest** (\`StringSpec\`, \`FunSpec\`, \`BehaviorSpec\`)
+- **Unit Tests**: JUnit 4/5 or **Kotest** (\`StringSpec\`, \`FunSpec\`, \`BehaviorSpec\`)
 - **Test Doubles**: Prefer lightweight **Fake** repositories for domain/ViewModel tests; use **MockK** (\`mockk()\`, \`coEvery\`, \`coVerify\`) for external boundaries.
 - **Coroutines**: \`kotlinx-coroutines-test\` (\`runTest\`, \`StandardTestDispatcher\`, \`UnconfinedTestDispatcher\`) with injected dispatchers.
 - **Flows / StateFlow**: **Turbine** (\`flow.test { awaitItem(); cancelAndIgnoreRemainingEvents() }\`).
