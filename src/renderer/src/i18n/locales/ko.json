@@ -22217,7 +22217,6 @@
       },
       "googleOffer": {
         "useAccount": "Use {{email}} for Google.",
-        "useAnother": "Use another account",
         "reconnect": "Reconnect {{email}}",
         "use": "Use {{email}}",
         "staysDefault": "{{email}} stays the default"
@@ -28659,7 +28658,8 @@
         "previous": "이전 질문",
         "recommended": "추천",
         "step": "{{n}} / {{total}}",
-        "typeAnswer": "답변 입력"
+        "typeAnswer": "답변 입력",
+        "skipped": "건너뜀"
       },
       "readMoreClosedFailed": "닫힌 항목을 더 읽지 못했습니다",
       "cancel": {
@@ -29959,7 +29959,14 @@
       "setDefault": "Set as default",
       "accountActions": "{{email}} actions",
       "addServiceMenu": "Add a service…",
-      "updateToAdd": "Update Orca on {{host}} to add another Google account."
+      "updateToAdd": "Update Orca on {{host}} to add another Google account.",
+      "accessBlocked": "Seeing ‘Access blocked’?",
+      "setUpNewApp": "Set up a new Google app",
+      "useAnother": "Use another account",
+      "useAnotherSignIn": "Sign in with Google",
+      "useAnotherSignInDetail": "Uses your current Google app",
+      "setUpNewAppDetail": "If your current app doesn’t work for this account or organization",
+      "updateToSetUpNewApp": "Update Orca on {{host}} to set up a new Google app."
     },
     "notices": {
       "couldNotFinish": "{{bot}}이(가) 끝내지 못했습니다",
