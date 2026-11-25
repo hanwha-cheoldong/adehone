@@ -55,5 +55,5 @@ export function readPublishedVersionsFromEnv(value = process.env.ORCA_PUBLISHED_
 }
 
 export function readAdehoneVersion(packageJson) {
-  return packageJson?.adehoneVersion ?? '0.1'
+  return packageJson?.adehoneVersion ?? '0.1.0'
 }

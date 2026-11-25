@@ -10,6 +10,7 @@
 
 - Ensure main is always releasable
 - Never break the CI. If it's broken, merge fixes.
+- **Pull Requests**: Follow [`.github/pull_request_template.md`](.github/pull_request_template.md) when creating a PR (e.g. via `gh pr create`), and always include a completed `## Performance` section with a reason (such as `None, because <reason>`, never a bare `None`/`N/A`/`TODO`).
 - **Tests are the exception.** Prove a change by running it (app via CDP screenshot, CLI, script), not by committing a test. Commit one only for logic where a silent regression is costly: parsers/codecs/round-trips, security boundaries (escaping, path traversal, auth, crypto), persistence/migrations/data loss, concurrency or state-machine invariants, cross-platform paths. It must call real code with minimal mocks, hardcode its expectations, and fail if the fix is reverted; prefer one invariant over many examples. Never test UI behavior ("button does X"), wiring/IPC glue, mock calls, copy, constants, or timing. Critical user flows belong in the golden E2E journeys (`tests/e2e/golden-journeys`), not unit tests. Delete low-value tests you touch instead of updating them. Perf contracts: `*.performance.test.*` only ([rules](./docs/agents-md-refs/test-antipatterns.md#perf-contracts)); more in [anti-patterns](./docs/agents-md-refs/test-antipatterns.md).
 
 # Design System
