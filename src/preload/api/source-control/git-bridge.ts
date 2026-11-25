@@ -8,7 +8,14 @@ import type {
   GitForkSyncExpectedUpstream,
   GitForkSyncResult
 } from '../../../shared/git/remotes/git-fork-sync'
-import type { GitStagingArea, GitUpstreamStatus } from '../../../shared/git/status/git-status-types'
+import type {
+  ContinueRebaseAction,
+  ContinueRebaseRequest,
+  ContinueRebaseResult,
+  GitStagingArea,
+  RebaseFromBaseResult,
+  GitUpstreamStatus
+} from '../../../shared/git/status/git-status-types'
 import type { ConflictResolution } from '../../../shared/source-control/listing/source-control-entry-actions'
 import type { GitPushTarget } from '../../../shared/worktree/types'
 import type { WorktreeAtRiskLocalFiles } from '../../../shared/worktree/removal/at-risk-local-files'
@@ -19,6 +26,11 @@ import type {
   GitHistoryResult
 } from '../../../shared/git/history/git-history-types'
 import type { PreloadApi } from '../../api-types'
+
+type WorktreeArgs = { worktreePath: string; connectionId?: string }
+type WorktreePushTargetArgs = WorktreeArgs & { worktreeId?: string; pushTarget?: GitPushTarget }
+type WorktreeFileArgs = WorktreeArgs & { filePath: string }
+type WorktreeFilesArgs = WorktreeArgs & { filePaths: string[] }
 
 export const gitApi = {
   status: (args: {
@@ -75,14 +87,15 @@ export const gitApi = {
       wakeWslDistro?: boolean
     } & GitHistoryOptions
   ): Promise<GitHistoryResult> => ipcRenderer.invoke('git:history', args),
-  conflictOperation: (args: { worktreePath: string; connectionId?: string }) =>
-    ipcRenderer.invoke('git:conflictOperation', args),
-  mutationInFlight: (args: { worktreePath: string; connectionId?: string }) =>
-    ipcRenderer.invoke('git:mutationInFlight', args),
-  abortMerge: (args: { worktreePath: string; connectionId?: string }): Promise<void> =>
-    ipcRenderer.invoke('git:abortMerge', args),
-  abortRebase: (args: { worktreePath: string; connectionId?: string }): Promise<void> =>
-    ipcRenderer.invoke('git:abortRebase', args),
+  conflictOperation: (args: WorktreeArgs) => ipcRenderer.invoke('git:conflictOperation', args),
+  mutationInFlight: (args: WorktreeArgs) => ipcRenderer.invoke('git:mutationInFlight', args),
+  abortMerge: (args: WorktreeArgs): Promise<void> => ipcRenderer.invoke('git:abortMerge', args),
+  abortRebase: (args: WorktreeArgs): Promise<void> => ipcRenderer.invoke('git:abortRebase', args),
+  continueRebase: (
+    args: WorktreeArgs & { action?: ContinueRebaseAction } & ContinueRebaseRequest
+  ): Promise<ContinueRebaseResult> => ipcRenderer.invoke('git:continueRebase', args),
+  rebaseAutoStash: (args: WorktreeArgs): Promise<boolean> =>
+    ipcRenderer.invoke('git:rebaseAutoStash', args),
   diff: (args: {
     worktreePath: string
     filePath: string
@@ -101,42 +114,26 @@ export const gitApi = {
     connectionId?: string
     pushTarget?: GitPushTarget
   }): Promise<GitUpstreamStatus> => ipcRenderer.invoke('git:upstreamStatus', args),
-  fetch: (args: {
-    worktreePath: string
-    worktreeId?: string
-    connectionId?: string
-    pushTarget?: GitPushTarget
-  }): Promise<void> => ipcRenderer.invoke('git:fetch', args),
-  syncFork: (args: {
-    worktreePath: string
-    connectionId?: string
-    expectedUpstream: GitForkSyncExpectedUpstream
-  }): Promise<GitForkSyncResult> => ipcRenderer.invoke('git:syncFork', args),
-  push: (args: {
-    worktreePath: string
-    worktreeId?: string
-    publish?: boolean
-    forceWithLease?: boolean
-    connectionId?: string
-    pushTarget?: unknown
-  }): Promise<void> => ipcRenderer.invoke('git:push', args),
-  pull: (args: {
-    worktreePath: string
-    worktreeId?: string
-    connectionId?: string
-    pushTarget?: GitPushTarget
-  }): Promise<void> => ipcRenderer.invoke('git:pull', args),
-  fastForward: (args: {
-    worktreePath: string
-    worktreeId?: string
-    connectionId?: string
-    pushTarget?: GitPushTarget
-  }): Promise<void> => ipcRenderer.invoke('git:fastForward', args),
+  fetch: (args: WorktreePushTargetArgs): Promise<void> => ipcRenderer.invoke('git:fetch', args),
+  syncFork: (
+    args: WorktreeArgs & { expectedUpstream: GitForkSyncExpectedUpstream }
+  ): Promise<GitForkSyncResult> => ipcRenderer.invoke('git:syncFork', args),
+  push: (
+    args: WorktreeArgs & {
+      worktreeId?: string
+      publish?: boolean
+      forceWithLease?: boolean
+      pushTarget?: unknown
+    }
+  ): Promise<void> => ipcRenderer.invoke('git:push', args),
+  pull: (args: WorktreePushTargetArgs): Promise<void> => ipcRenderer.invoke('git:pull', args),
+  fastForward: (args: WorktreePushTargetArgs): Promise<void> =>
+    ipcRenderer.invoke('git:fastForward', args),
   rebaseFromBase: (args: {
     worktreePath: string
     baseRef: string
     connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:rebaseFromBase', args),
+  }): Promise<RebaseFromBaseResult> => ipcRenderer.invoke('git:rebaseFromBase', args),
   branchDiff: (args: {
     worktreePath: string
     compare: { baseRef: string; baseOid: string; headOid: string; mergeBase: string }
@@ -227,46 +224,20 @@ export const gitApi = {
     worktreePath: string
     connectionId?: string
   }): Promise<void> => ipcRenderer.invoke('git:cancelGeneratePullRequestFields', args),
-  stage: (args: { worktreePath: string; filePath: string; connectionId?: string }): Promise<void> =>
-    ipcRenderer.invoke('git:stage', args),
-  resolveConflict: (args: {
-    worktreePath: string
-    filePath: string
-    resolution: ConflictResolution
-    connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:resolveConflict', args),
-  addToGitignore: (args: {
-    worktreePath: string
-    relativePath: string
-    isDirectory: boolean
-    connectionId?: string
-  }): Promise<boolean> => ipcRenderer.invoke('git:addToGitignore', args),
-  bulkStage: (args: {
-    worktreePath: string
-    filePaths: string[]
-    connectionId?: string
-    scope?: GitStageWorktreeScope
-  }): Promise<void> => ipcRenderer.invoke('git:bulkStage', args),
-  unstage: (args: {
-    worktreePath: string
-    filePath: string
-    connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:unstage', args),
-  bulkUnstage: (args: {
-    worktreePath: string
-    filePaths: string[]
-    connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:bulkUnstage', args),
-  discard: (args: {
-    worktreePath: string
-    filePath: string
-    connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:discard', args),
-  bulkDiscard: (args: {
-    worktreePath: string
-    filePaths: string[]
-    connectionId?: string
-  }): Promise<void> => ipcRenderer.invoke('git:bulkDiscard', args),
+  stage: (args: WorktreeFileArgs): Promise<void> => ipcRenderer.invoke('git:stage', args),
+  resolveConflict: (args: WorktreeFileArgs & { resolution: ConflictResolution }): Promise<void> =>
+    ipcRenderer.invoke('git:resolveConflict', args),
+  addToGitignore: (
+    args: WorktreeArgs & { relativePath: string; isDirectory: boolean }
+  ): Promise<boolean> => ipcRenderer.invoke('git:addToGitignore', args),
+  bulkStage: (args: WorktreeFilesArgs & { scope?: GitStageWorktreeScope }): Promise<void> =>
+    ipcRenderer.invoke('git:bulkStage', args),
+  unstage: (args: WorktreeFileArgs): Promise<void> => ipcRenderer.invoke('git:unstage', args),
+  bulkUnstage: (args: WorktreeFilesArgs): Promise<void> =>
+    ipcRenderer.invoke('git:bulkUnstage', args),
+  discard: (args: WorktreeFileArgs): Promise<void> => ipcRenderer.invoke('git:discard', args),
+  bulkDiscard: (args: WorktreeFilesArgs): Promise<void> =>
+    ipcRenderer.invoke('git:bulkDiscard', args),
   remoteFileUrl: (args: {
     worktreePath: string
     relativePath: string

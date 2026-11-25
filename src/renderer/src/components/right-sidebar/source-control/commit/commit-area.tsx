@@ -62,6 +62,7 @@ export function CommitArea({
   isGenerating,
   generateError,
   stagedCount,
+  stageCompletionSeq = 0,
   hasPartiallyStagedChanges,
   hasUnresolvedConflicts,
   isRemoteOperationActive,
@@ -220,6 +221,7 @@ export function CommitArea({
     <div className="px-3 pb-2">
       {showComposer ? (
         <CommitMessageComposer
+          worktreeId={worktreeId}
           rows={rows}
           commitMessage={commitMessage}
           disabled={isCommitMessageDisabled}
@@ -231,6 +233,7 @@ export function CommitArea({
           isGenerateDisabled={isGenerateDisabled}
           onGenerate={onGenerate}
           generateTooltip={generateTooltip}
+          stageCompletionSeq={stageCompletionSeq}
         />
       ) : null}
       <CommitActionMenu

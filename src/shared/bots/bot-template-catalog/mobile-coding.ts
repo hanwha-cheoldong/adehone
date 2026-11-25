@@ -42,7 +42,8 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
       'kotlin-code-review',
       'gradle-build-resolver',
       'android-verification-loop',
-      'android-security-webview'
+      'android-security-webview',
+      'android-java-legacy'
     ],
     example: [
       'Planned phased Clean Architecture feature, wrote Turbine/MockK tests first, and passed 6-phase verification.',
@@ -53,46 +54,48 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
     id: 'ios-dev',
     category: 'coding',
     name: 'iOS development',
-    line: 'Builds and reviews iPhone/iOS features with Swift, SwiftUI, and mobile security guides.',
+    line: 'Plans, builds, tests, and reviews iOS features with Swift/SwiftUI, Objective-C interop, and mobile security guides.',
     firstChat:
-      'Point it at an iOS workspace or give it a task. It follows modern Swift/SwiftUI best practices along with transport encryption, native/WKWebView JS bridge, Keychain/Biometrics, MDM/MAM, and APNs push guides.',
+      'Point it at an iOS workspace or give it a task. It follows structured iOS workflows (planner, Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, Swift Testing TDD, code review, verification loop) plus enterprise WKWebView/security guides.',
     mascot: 'APL',
     watches: 'iOS workspaces, tasks, and pull requests you hand it',
-    does: 'Implements and reviews Swift/UIKit/SwiftUI, WKWebView JS bridge, security, MDM/MAM, and Apple device API code.',
-    reports: 'Here, weekdays at 9 AM and after worker verification',
+    does: 'Plans and implements Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, TDD tests, Xcode build fixes, and hardened WKWebView/security code.',
+    reports: 'Here, weekdays at 9 AM and after verification-loop checks',
     connectors: ['github'],
     schedules: [
       {
         id: 'daily-morning-check',
         when: 'Weekdays at 9 AM',
-        what: 'Daily build & SwiftLint healthcheck',
+        what: 'Daily Xcode/Swift build, SwiftLint & static analysis healthcheck',
         rrule: '0 9 * * 1-5',
         prompt:
-          'Run git fetch, xcodebuild build-for-testing (or swift build), and swiftlint on the active iOS workspace, then post a morning summary using the ios-desk-brief skill.'
+          'Run git fetch, xcodebuild build-for-testing (or swift build), and swiftlint/swift-format on the active iOS workspace, then post a concise morning status summary.'
       }
     ],
     events: [
       {
         id: 'pr-verify',
-        name: 'When a pull request is opened or updated: run Xcode tests and bridge/entitlements checks',
+        name: 'When a pull request is opened or updated: run 6-phase verification loop and Swift code review',
         source: 'github',
         event: 'pull_request',
         prompt:
-          'Verify the iOS pull request with the ios-close-out skill: run xcodebuild test, check Info.plist, Entitlements, and WKWebView bridge diffs, and report the checklist here.'
+          'Verify the iOS pull request using ios-verification-loop and swift-code-review: run Xcode/SwiftPM build, tests, SwiftLint, scan security & Info.plist/Entitlements/WKWebView diffs, and post the PASS/FAIL report here.'
       }
     ],
     skills: [
-      'ios-intake',
-      'ios-worker-brief',
-      'ios-close-out',
-      'ios-desk-brief',
-      'ios-development',
-      'ios-wkwebview-bridge',
-      'ios-xcode-signing'
+      'ios-planner',
+      'ios-clean-architecture',
+      'ios-swiftui-patterns',
+      'swift-concurrency-actors',
+      'swift-tdd-testing',
+      'swift-code-review',
+      'xcode-build-resolver',
+      'ios-verification-loop',
+      'ios-security-webview'
     ],
     example: [
-      'Added Keychain-backed Face ID (LAContext) auth and a hardened WKScriptMessageHandler bridge.',
-      'Flagged missing App Transport Security restriction and unpinned URLSession delegate.'
+      'Planned phased Clean Architecture feature, wrote Swift Testing mocks first, and passed 6-phase verification.',
+      'Flagged domain SwiftUI import, force-unwrap (!), and missing origin check on WKScriptMessageHandler.'
     ]
   },
   {

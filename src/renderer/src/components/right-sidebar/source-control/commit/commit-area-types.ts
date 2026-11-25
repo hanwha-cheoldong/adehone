@@ -39,6 +39,7 @@ export type CommitAreaProps = {
   isGenerating: boolean
   generateError: string | null
   stagedCount: number
+  stageCompletionSeq?: number
   hasPartiallyStagedChanges: boolean
   hasUnresolvedConflicts: boolean
   isRemoteOperationActive: boolean

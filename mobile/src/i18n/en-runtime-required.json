@@ -230,7 +230,7 @@
       "reachLinear": "Comment on, update and create Linear issues as you",
       "reachPermission": "New conversations start in {{mode}}",
       "reachPermissionUnknown": "New conversations start from your chat permission setting",
-      "reachSlack": "Post in Slack as @{{name}}",
+      "reachSlack": "Post in Slack as {{name}}",
       "reject": "Reject",
       "removeAnyTime": "You can remove them from Who can ask at any time.",
       "review": "Review…",
@@ -314,6 +314,7 @@
       "commentImageNotStored": "Only pasted or attached images can go on a comment.",
       "commentImagesTooLarge": "These images add up to {{totalMb}} MB. A comment takes up to {{maxMb}} MB.",
       "commentImagesTooMany": "Comments take up to {{max}} images.",
+      "googleAccountsChanged": "Its Google accounts changed since you opened them. Check them and save again.",
       "groupAttachFailed": "Couldn't attach the files. Try sending again in a moment.",
       "groupAttachmentsUnavailable": "This computer can't take attachments right now. Try sending again in a moment.",
       "groupBotGone": "A selected bot is no longer available.",
@@ -396,25 +397,23 @@
       "items": {
         "needsYouCount_one": "{{count}} needs you",
         "needsYouCount_other": "{{count}} needs you",
-        "outsideRoom_one": "{{count}} more outside this room",
-        "outsideRoom_other": "{{count}} more outside this room",
-        "outsideThread_one": "{{count}} more outside this thread",
-        "outsideThread_other": "{{count}} more outside this thread",
-        "outside_one": "{{count}} more outside this group",
-        "outside_other": "{{count}} more outside this group",
         "workingCount_one": "{{count}} working",
         "workingCount_other": "{{count}} working"
-      }
+      },
+      "memberCount_one": "{{count}} bot",
+      "memberCount_other": "{{count}} bots",
+      "membersHere_one": "{{names}} is here.",
+      "membersHere_other": "{{names}} are here.",
+      "moreCount_one": "{{count}} more",
+      "moreCount_other": "{{count}} more",
+      "workingCount_one": "{{count}} working",
+      "workingCount_other": "{{count}} working"
     },
     "import": {
       "folderItems_one": "{{count}} item",
       "folderItems_other": "{{count}} items"
     },
     "items": {
-      "ask": {
-        "heldCount_one": "{{count}} answer not sent yet, <send>send anyway</send>",
-        "heldCount_other": "{{count}} answers not sent yet, <send>send anyway</send>"
-      },
       "needYouCount_one": "{{count}} item needs you",
       "needYouCount_other": "{{count}} items need you",
       "pill": {
@@ -456,6 +455,7 @@
       "lines": {
         "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.",
         "android-compose-patterns": "Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.",
+        "android-java-legacy": "Legacy Android Java maintenance, Java-Kotlin interop, memory leak fixes, JUnit+Mockito tests, and Desugaring.",
         "android-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
         "android-security-webview": "Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.",
         "android-verification-loop": "6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).",
@@ -465,13 +465,11 @@
         "feedback-themes": "Group feedback into themes with counts and short quotes; link existing issues.",
         "gradle-build-resolver": "Surgical Gradle/Kotlin build error resolution, dependency conflict debugging, SDK guardrails, and R8 rules.",
         "incident-timeline": "Keep a timestamped timeline, then draft a blameless write-up.",
-        "ios-close-out": "Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.",
-        "ios-desk-brief": "Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.",
-        "ios-development": "Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.",
-        "ios-intake": "Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "ios-wkwebview-bridge": "WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.",
-        "ios-worker-brief": "Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.",
-        "ios-xcode-signing": "Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.",
+        "ios-clean-architecture": "Clean Architecture layer boundaries, pure-Swift Domain, UseCases, Repositories, ObjC adapters, and Protocol DI.",
+        "ios-planner": "4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.",
+        "ios-security-webview": "Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.",
+        "ios-swiftui-patterns": "Modern SwiftUI @Observable state, @Environment DI, NavigationStack, WKWebView/UIKit lifecycle, and VoiceOver a11y.",
+        "ios-verification-loop": "6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).",
         "issue-triage": "Label, find duplicates, ask for missing repro details in one comment.",
         "kotlin-code-review": "Severity-ranked Kotlin/Android code review for architecture, security, coroutines, Compose, and Gradle.",
         "kotlin-coroutines-flows": "Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.",
@@ -489,7 +487,11 @@
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
         "spec-format": "A one-page spec: problem, decision, scope, open questions.",
         "status-brief": "Changed, blocked, needs a decision: a brief in under ten lines.",
-        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it."
+        "swift-code-review": "Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.",
+        "swift-concurrency-actors": "Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.",
+        "swift-tdd-testing": "TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.",
+        "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
+        "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails."
       }
     },
     "templates": {
@@ -720,22 +722,22 @@
         "watches": "The incident channel you pick, and its threads"
       },
       "ios-dev": {
-        "does": "Implements and reviews Swift/UIKit/SwiftUI, WKWebView JS bridge, security, MDM/MAM, and Apple device API code.",
+        "does": "Plans and implements Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, TDD tests, Xcode build fixes, and hardened WKWebView/security code.",
         "events": {
           "pr-verify": {
-            "action": "Run Xcode tests and bridge/entitlements checks",
+            "action": "Run 6-phase verification loop and Swift code review",
             "trigger": "When a pull request is opened or updated"
           }
         },
-        "example1": "Added Keychain-backed Face ID (LAContext) auth and a hardened WKScriptMessageHandler bridge.",
-        "example2": "Flagged missing App Transport Security restriction and unpinned URLSession delegate.",
-        "firstChat": "Point it at an iOS workspace or give it a task. It follows modern Swift/SwiftUI best practices along with transport encryption, native/WKWebView JS bridge, Keychain/Biometrics, MDM/MAM, and APNs push guides.",
-        "line": "Builds and reviews iPhone/iOS features with Swift, SwiftUI, and mobile security guides.",
+        "example1": "Planned phased Clean Architecture feature, wrote Swift Testing mocks first, and passed 6-phase verification.",
+        "example2": "Flagged domain SwiftUI import, force-unwrap (!), and missing origin check on WKScriptMessageHandler.",
+        "firstChat": "Point it at an iOS workspace or give it a task. It follows structured iOS workflows (planner, Clean Architecture, SwiftUI/UIKit, Swift Concurrency/Actors, Objective-C interop, Swift Testing TDD, code review, verification loop) plus enterprise WKWebView/security guides.",
+        "line": "Plans, builds, tests, and reviews iOS features with Swift/SwiftUI, Objective-C interop, and mobile security guides.",
         "name": "iOS development",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
         "schedules": {
           "daily-morning-check": {
-            "what": "Daily build & SwiftLint healthcheck",
+            "what": "Daily Xcode/Swift build, SwiftLint & static analysis healthcheck",
             "when": "Weekdays at 9 AM"
           }
         },
@@ -988,6 +990,7 @@
         "edit": "Edit",
         "nameTaken": "You already have a bot named {{name}}.",
         "open": "Open",
+        "openBot": "Open {{name}}",
         "origin": "Proposed by {{bot}}",
         "originTemplate": "From {{template}}, proposed by {{bot}}",
         "rename": "Rename",
@@ -1046,6 +1049,10 @@
       "moreCount_other": "{{count}} more",
       "queuedCount_one": "{{count}} queued message",
       "queuedCount_other": "{{count}} queued messages"
+    },
+    "receipt": {
+      "answeredCount_one": "You answered <answer>{{count}} question</answer>",
+      "answeredCount_other": "You answered <answer>{{count}} questions</answer>"
     },
     "restartNote": {
       "continued": "Orca asked this agent to continue after a restart. Your own prompt was not re-sent.",
@@ -1153,6 +1160,12 @@
       "turnDiff": {
         "changedFiles_one": "{{count}} changed file",
         "changedFiles_other": "{{count}} changed files"
+      },
+      "workerDock": {
+        "taskCount_one": "{{count}} task",
+        "taskCount_other": "{{count}} tasks",
+        "workerCount_one": "{{count}} worker",
+        "workerCount_other": "{{count}} workers"
       }
     },
     "worktreeAgentList": {
@@ -1179,6 +1192,20 @@
       "repairRequired": "Re-pair this phone with the computer to use dictation.",
       "sessionLimit": "Too many devices are dictating on this computer. Try again when one finishes.",
       "sessionLost": "Dictation lost its connection to the computer. Try again."
+    }
+  },
+  "home": {
+    "bots": {
+      "waits": {
+        "access_one": "access request",
+        "access_other": "{{count}} access requests",
+        "items_one": "item",
+        "items_other": "{{count}} items",
+        "questions_one": "question",
+        "questions_other": "{{count}} questions",
+        "workers_one": "worker",
+        "workers_other": "{{count}} workers"
+      }
     }
   },
   "hostScreen": {

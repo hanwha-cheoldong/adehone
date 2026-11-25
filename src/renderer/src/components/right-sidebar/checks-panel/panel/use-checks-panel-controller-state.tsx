@@ -1,9 +1,5 @@
-import { useCallback, useMemo, useRef, useState, type SetStateAction } from 'react'
-import { useWorktreeGitOwnerTarget } from '../../source-control/sync/worktree-git-owner-target'
-import { useWorktreeGitCopyHostId } from '@/lib/workspace/ownership/worktree-git-copy'
+import { useCallback, useRef, useState, type SetStateAction } from 'react'
 import { useAppStore } from '@/store/index'
-import { readRuntimeStatuses } from '@/store/slices/runtime-status/views/runtime-status-owner'
-import type { AppState } from '@/store/types'
 import { useActiveWorktree } from '@/store/workspaces/selection/use-selected-worktree'
 import { selectReviewRepositoryForWorkspace } from '@/store/slices/hosted-review/workspace-review-repository'
 import { useChecksPanelTerminalWorktree } from '../refresh/use-checks-panel-terminal-worktree'
@@ -12,9 +8,6 @@ import { readDetectedAgentsForWorktree } from '@/lib/agent-session/launch/invent
 import { useMountedRef } from '@/hooks/useMountedRef'
 import { useConfirmationDialog } from '@/components/dismiss/confirmation/confirmation-dialog-context'
 import { getWorktreeGitIdentityDisplay } from '../../../../../../shared/worktree/row-display/git-identity-display'
-import { resolveRepoWorktreeLaunchPlatform } from '@/runtime/hosts/platform/execution-host-facts'
-import { runtimeEnvironmentIdOrLocalUnlessTwin } from '@/lib/workspace/ownership/worktree-runtime-owner'
-import { normalizeGlobalWindowsRuntimeDefault } from '../../../../../../shared/execution-host/project-runtime-preference'
 import type { SourceControlAiWriteTarget } from '../../../../../../shared/source-control/ai/settings/source-control-ai-recipe-save'
 import { saveSourceControlAiActionRecipeForTarget } from '../../source-control/ai/recipe-persistence'
 import type {
@@ -26,11 +19,12 @@ import type { PRComment } from '../../../../../../shared/github/comments/comment
 import type { PRRefreshErrorType } from '../../../../../../shared/github/pull-requests/refresh/pull-request-refresh-types'
 import type { GitLabProjectRef } from '../../../../../../shared/gitlab/gitlab-types'
 import type { PRCommentsListSelectionClearRequest } from '../comments/pr-comments-list-selection'
-import {
-  buildChecksPanelGitStatusContextKey,
-  type ChecksPanelGitStatusSnapshot
-} from '../refresh/checks-panel-git-status-snapshot'
+import type { ChecksPanelGitStatusSnapshot } from '../refresh/checks-panel-git-status-snapshot'
 import type { ChecksAgentComposerState, HostedReviewCreationSnapshot } from './panel-state-types'
+import { useChecksPanelOwnerScope } from './use-checks-panel-owner-scope'
+
+const EMPTY_CHECKS: PRCheckDetail[] = []
+const EMPTY_COMMENTS: PRComment[] = []
 
 export function useChecksPanelControllerState() {
   // The sidebar remains mounted while closed; stop hidden checks/comments/cwd polling.
@@ -83,7 +77,7 @@ export function useChecksPanelControllerState() {
 
   const fetchPRChecks = useAppStore((s) => s.fetchPRChecks)
   const fetchPRCheckDetails = useAppStore((s) => s.fetchPRCheckDetails)
-  const fetchPRComments = useAppStore((s) => s.fetchPRComments)
+  const fetchPRComments = useAppStore((s) => s.readPRComments)
   const addPRConversationComment = useAppStore((s) => s.addPRConversationComment)
   const addPRReviewCommentReply = useAppStore((s) => s.addPRReviewCommentReply)
   const setPRCommentReaction = useAppStore((s) => s.setPRCommentReaction)
@@ -92,13 +86,14 @@ export function useChecksPanelControllerState() {
     activeWorktreeId ? readDetectedAgentsForWorktree(s, activeWorktreeId) : s.detectedAgentIds
   )
 
-  const [checks, setChecksState] = useState<PRCheckDetail[]>([])
+  const [checksState, setChecksState] = useState<PRCheckDetail[] | null>(null)
+  const checks = checksState ?? EMPTY_CHECKS
   // The GitLab parent pipeline from the same reply as its jobs; every other checks write clears it.
   const [gitLabPipelineCheck, setGitLabPipelineCheck] = useState<PRCheckDetail | null>(null)
   // Distinguish failed reads from No checks configured.
   const [checksError, setChecksError] = useState<string | null>(null)
   const setChecks = useCallback(
-    (next: SetStateAction<PRCheckDetail[]>, pipelineCheck: PRCheckDetail | null = null) => {
+    (next: PRCheckDetail[] | null, pipelineCheck: PRCheckDetail | null = null) => {
       setChecksError(null)
       setChecksState(next)
       setGitLabPipelineCheck(pipelineCheck)
@@ -106,11 +101,22 @@ export function useChecksPanelControllerState() {
     []
   )
   const [checksLoading, setChecksLoading] = useState(false)
-  const [comments, setCommentsState] = useState<PRComment[]>([])
-  const [commentsError, setCommentsError] = useState<string | null>(null)
-  const setComments = useCallback((next: SetStateAction<PRComment[]>) => {
-    setCommentsError(null)
-    setCommentsState(next)
+  const [{ data: commentsState, error: commentsError }, setCommentsRead] = useState<{
+    data: PRComment[] | null | undefined
+    error: string | null
+  }>({ data: undefined, error: null })
+  const comments = commentsState ?? EMPTY_COMMENTS
+  const setCommentsError = useCallback((error: string | null) => {
+    setCommentsRead((current) => (current.error === error ? current : { ...current, error }))
+  }, [])
+  const setComments = useCallback((next: SetStateAction<PRComment[]> | null | undefined) => {
+    setCommentsRead((current) => {
+      if (typeof next !== 'function') {
+        return { data: next, error: null }
+      }
+      const data = next(current.data ?? EMPTY_COMMENTS)
+      return current.data == null && data.length === 0 ? current : { data, error: null }
+    })
   }, [])
   const [commentsLoading, setCommentsLoading] = useState(false)
   const commentsRef = useRef<PRComment[]>([])
@@ -212,62 +218,13 @@ export function useChecksPanelControllerState() {
   const gitIdentityDisplay = activeWorktree ? getWorktreeGitIdentityDisplay(activeWorktree) : null
   const detachedHeadDisplay = gitIdentityDisplay?.kind === 'detached' ? gitIdentityDisplay : null
   const branch = gitIdentityDisplay?.kind === 'branch' ? gitIdentityDisplay.branchName : ''
-  const activeWorktreePath = activeWorktree?.path ?? null
-  const activeWorktreePushTarget = activeWorktree?.pushTarget ?? null
-  // Quote for the workspace owner's OS, where the agent actually runs (#27971).
-  const activeSourceControlLaunchPlatform =
-    activeWorktree && repo
-      ? resolveRepoWorktreeLaunchPlatform(
-          useAppStore.getState(),
-          readRuntimeStatuses(),
-          repo,
-          activeWorktree
-        )
-      : undefined
-  const runtimeEnvironmentId = useAppStore((s) =>
-    runtimeEnvironmentIdOrLocalUnlessTwin(s, activeWorktreeId)
-  )
-  const ownerSettings = useMemo<AppState['settings']>(
-    () =>
-      !settings
-        ? settings
-        : runtimeEnvironmentId
-          ? { ...settings, activeRuntimeEnvironmentId: runtimeEnvironmentId }
-          : { ...settings, activeRuntimeEnvironmentId: null },
-    [runtimeEnvironmentId, settings]
-  )
-  // Route Git by workspace ownership rather than focused server.
-  const ownerTarget = useWorktreeGitOwnerTarget(activeWorktreeId)
-  const ownerCopyHostId = useWorktreeGitCopyHostId(activeWorktreeId)
-  const repoConnectionId = repo?.connectionId?.trim() || null
-  // Separate local host/WSL distros; remote IDs already scope SSH/runtime contexts.
-  const localExecutionScope = useMemo<string | null>(() => {
-    if (runtimeEnvironmentId != null || repoConnectionId != null) {
-      return null
-    }
-    const localRuntime = normalizeGlobalWindowsRuntimeDefault(settings?.localWindowsRuntimeDefault)
-    return localRuntime.kind === 'wsl' ? `wsl:${localRuntime.distro ?? ''}` : 'host'
-  }, [runtimeEnvironmentId, repoConnectionId, settings?.localWindowsRuntimeDefault])
-  const sshConnectionStatus = useAppStore((s) =>
-    repoConnectionId ? s.sshConnectionStates.get(repoConnectionId)?.status : undefined
-  )
-  const panelContextKey = buildChecksPanelGitStatusContextKey({
-    repoId: repo?.id,
-    worktreeId: activeWorktreeId,
-    worktreePath: activeWorktreePath,
+  const ownerScope = useChecksPanelOwnerScope({
+    activeWorktree,
+    activeWorktreeId,
+    repo,
     branch,
-    linkedGitHubPR: activeWorktree?.linkedPR ?? null,
-    linkedGitLabMR: activeWorktree?.linkedGitLabMR ?? null,
-    linkedBitbucketPR: activeWorktree?.linkedBitbucketPR ?? null,
-    linkedAzureDevOpsPR: activeWorktree?.linkedAzureDevOpsPR ?? null,
-    linkedGiteaPR: activeWorktree?.linkedGiteaPR ?? null,
-    runtimeEnvironmentId,
-    repoConnectionId,
-    localExecutionScope,
-    pushTarget: activeWorktreePushTarget
+    settings
   })
-  const panelContextKeyRef = useRef(panelContextKey)
-  panelContextKeyRef.current = panelContextKey
   return {
     rightSidebarOpen,
     rightSidebarTab,
@@ -307,6 +264,7 @@ export function useChecksPanelControllerState() {
     resolveReviewThread,
     detectedAgentIds,
     checks,
+    checksLoaded: checksState !== null,
     gitLabPipelineCheck,
     setChecks,
     checksLoading,
@@ -314,6 +272,8 @@ export function useChecksPanelControllerState() {
     checksError,
     setChecksError,
     comments,
+    commentsLoaded: commentsState != null,
+    commentsUnavailable: commentsState === null,
     setComments,
     commentsError,
     setCommentsError,
@@ -390,18 +350,7 @@ export function useChecksPanelControllerState() {
     gitIdentityDisplay,
     detachedHeadDisplay,
     branch,
-    activeWorktreePath,
-    activeWorktreePushTarget,
-    activeSourceControlLaunchPlatform,
-    runtimeEnvironmentId,
-    ownerSettings,
-    ownerTarget,
-    ownerCopyHostId,
-    repoConnectionId,
-    localExecutionScope,
-    sshConnectionStatus,
-    panelContextKey,
-    panelContextKeyRef
+    ...ownerScope
   }
 }
 

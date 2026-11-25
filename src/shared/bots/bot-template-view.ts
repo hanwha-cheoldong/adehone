@@ -48,19 +48,26 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
     '6-phase verification gate (build, lint/static, tests/Kover, security grep, diff review, adb acceptance).',
   'android-security-webview':
     'Transport/E2EE encryption, hardened WebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and FCM push.',
-  'ios-intake':
-    'Classify incoming iOS requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
-  'ios-worker-brief':
-    'Standard iOS BRIEF.md template with target modules, WKWebView bridge contracts, and Xcode DoD.',
-  'ios-close-out':
-    'Direct Xcode build/test, Info.plist/Entitlements diff, and simulator smoke-test verification before reporting.',
-  'ios-desk-brief': 'Daily morning Xcode build/lint brief and weekly iOS tech-debt report formats.',
-  'ios-development':
-    'Swift, SwiftUI, Swift Concurrency, transport encryption, Keychain/Face ID, MDM/MAM, and APNs guides.',
-  'ios-wkwebview-bridge':
-    'WKWebView ↔ Native JS bridge contracts, origin allowlists, configuration hardening, and handler hygiene.',
-  'ios-xcode-signing':
-    'Deployment target policy, Info.plist/Entitlements guardrails, SPM/Pods, and signing/secret hygiene.',
+  'android-java-legacy':
+    'Legacy Android Java maintenance, Java-Kotlin interop, memory leak fixes, JUnit+Mockito tests, and Desugaring.',
+  'ios-planner':
+    '4-step planning process, Search-First reuse, phased steps, testing strategy, and risk mitigations.',
+  'ios-clean-architecture':
+    'Clean Architecture layer boundaries, pure-Swift Domain, UseCases, Repositories, ObjC adapters, and Protocol DI.',
+  'ios-swiftui-patterns':
+    'Modern SwiftUI @Observable state, @Environment DI, NavigationStack, WKWebView/UIKit lifecycle, and VoiceOver a11y.',
+  'swift-concurrency-actors':
+    'Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.',
+  'swift-tdd-testing':
+    'TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.',
+  'swift-code-review':
+    'Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.',
+  'xcode-build-resolver':
+    'Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails.',
+  'ios-verification-loop':
+    '6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).',
+  'ios-security-webview':
+    'Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.',
   'mobile-web-intake':
     'Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
   'mobile-web-worker-brief':

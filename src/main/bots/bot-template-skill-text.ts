@@ -2,6 +2,7 @@
 import type { BotTemplateSkill } from '../../shared/bots/bot-templates'
 import * as androidCleanArchitecture from './bot-template-skills/android-clean-architecture'
 import * as androidComposePatterns from './bot-template-skills/android-compose-patterns'
+import * as androidJavaLegacy from './bot-template-skills/android-java-legacy'
 import * as androidPlanner from './bot-template-skills/android-planner'
 import * as androidSecurityWebview from './bot-template-skills/android-security-webview'
 import * as androidVerificationLoop from './bot-template-skills/android-verification-loop'
@@ -11,13 +12,11 @@ import * as dependencyUpgrade from './bot-template-skills/dependency-upgrade'
 import * as feedbackThemes from './bot-template-skills/feedback-themes'
 import * as gradleBuildResolver from './bot-template-skills/gradle-build-resolver'
 import * as incidentTimeline from './bot-template-skills/incident-timeline'
-import * as iosCloseOut from './bot-template-skills/ios-close-out'
-import * as iosDeskBrief from './bot-template-skills/ios-desk-brief'
-import * as iosDevelopment from './bot-template-skills/ios-development'
-import * as iosIntake from './bot-template-skills/ios-intake'
-import * as iosWkwebviewBridge from './bot-template-skills/ios-wkwebview-bridge'
-import * as iosWorkerBrief from './bot-template-skills/ios-worker-brief'
-import * as iosXcodeSigning from './bot-template-skills/ios-xcode-signing'
+import * as iosCleanArchitecture from './bot-template-skills/ios-clean-architecture'
+import * as iosPlanner from './bot-template-skills/ios-planner'
+import * as iosSecurityWebview from './bot-template-skills/ios-security-webview'
+import * as iosSwiftuiPatterns from './bot-template-skills/ios-swiftui-patterns'
+import * as iosVerificationLoop from './bot-template-skills/ios-verification-loop'
 import * as issueTriage from './bot-template-skills/issue-triage'
 import * as kotlinCodeReview from './bot-template-skills/kotlin-code-review'
 import * as kotlinCoroutinesFlows from './bot-template-skills/kotlin-coroutines-flows'
@@ -35,7 +34,11 @@ import * as releaseReadiness from './bot-template-skills/release-readiness'
 import * as securityChecklist from './bot-template-skills/security-checklist'
 import * as specFormat from './bot-template-skills/spec-format'
 import * as statusBrief from './bot-template-skills/status-brief'
+import * as swiftCodeReview from './bot-template-skills/swift-code-review'
+import * as swiftConcurrencyActors from './bot-template-skills/swift-concurrency-actors'
+import * as swiftTddTesting from './bot-template-skills/swift-tdd-testing'
 import * as workspaceHygiene from './bot-template-skills/workspace-hygiene'
+import * as xcodeBuildResolver from './bot-template-skills/xcode-build-resolver'
 
 export type BotTemplateSkillFile = { path: string; text: string }
 
@@ -54,6 +57,7 @@ const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'gradle-build-resolver': gradleBuildResolver,
   'android-verification-loop': androidVerificationLoop,
   'android-security-webview': androidSecurityWebview,
+  'android-java-legacy': androidJavaLegacy,
   'bug-reproduction': bugReproduction,
   'ci-failure-triage': ciFailureTriage,
   'dependency-upgrade': dependencyUpgrade,
@@ -67,13 +71,15 @@ const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'spec-format': specFormat,
   'status-brief': statusBrief,
   'workspace-hygiene': workspaceHygiene,
-  'ios-intake': iosIntake,
-  'ios-worker-brief': iosWorkerBrief,
-  'ios-close-out': iosCloseOut,
-  'ios-desk-brief': iosDeskBrief,
-  'ios-development': iosDevelopment,
-  'ios-wkwebview-bridge': iosWkwebviewBridge,
-  'ios-xcode-signing': iosXcodeSigning,
+  'ios-planner': iosPlanner,
+  'ios-clean-architecture': iosCleanArchitecture,
+  'ios-swiftui-patterns': iosSwiftuiPatterns,
+  'swift-concurrency-actors': swiftConcurrencyActors,
+  'swift-tdd-testing': swiftTddTesting,
+  'swift-code-review': swiftCodeReview,
+  'xcode-build-resolver': xcodeBuildResolver,
+  'ios-verification-loop': iosVerificationLoop,
+  'ios-security-webview': iosSecurityWebview,
   'mobile-web-intake': mobileWebIntake,
   'mobile-web-worker-brief': mobileWebWorkerBrief,
   'mobile-web-close-out': mobileWebCloseOut,

@@ -1,49 +1,52 @@
-// Root home files seeded for the ios-dev orchestrator template: SOUL.md guardrails,
-// MEMORY.md index (list lines only so tidy-up can parse it), and AUTOMATIONS.md.
+// Root home files seeded for the ios-dev template:
+// SOUL.md guardrails, MEMORY.md index (list lines only so tidy-up can parse it), and AUTOMATIONS.md.
 
 export const IOS_DEV_DO_RULES: readonly string[] = [
-  '- Classify every feature or fix into Track A/B/C with the `ios-intake` skill and convert it into an `ios-worker-brief` template before delegating.',
-  '- After code changes, verify `xcodebuild` build or unit tests (`xcodebuild test` / `swift test`) pass directly in the `ios-close-out` step.',
-  '- Before changing WKWebView bridge specs, `Info.plist`, or Entitlements, check backward compatibility and security (origin restrictions, ATS, Keychain access groups) first.'
+  '- Plan every non-trivial feature or refactor with `ios-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.',
+  '- Follow `ios-clean-architecture` (`Domain` pure Swift), `ios-swiftui-patterns` (`@Observable`), `swift-concurrency-actors` (`Sendable`/actors), and `swift-tdd-testing` (tests before code, Swift Testing, 80%+ domain coverage).',
+  '- Before reporting done or opening a PR, run the 6-phase `ios-verification-loop` (`xcodebuild`/`swift build`, `swiftlint`, `xcodebuild test`, security scan, `simctl` acceptance) and `swift-code-review`.',
+  '- Before changing WKWebView bridge specs, encryption, `Info.plist`, or `*.entitlements`, verify backward compatibility and `ios-security-webview` + `xcode-build-resolver` guardrails.'
 ]
 
 export const IOS_DEV_DONT_RULES: readonly string[] = [
-  '- Never claim something is fixed without verifying the build or simulator/test run first.',
-  '- Never bump iOS deployment target, Xcode project settings, or SwiftPM/CocoaPods dependency versions without approval.',
-  '- Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print them in logs.'
+  '- Never claim something is fixed without passing `ios-verification-loop` build/test checks first.',
+  '- Never use force unwraps (`!`, `try!`, `as!`), store secrets in `UserDefaults`, block `@MainActor` with sync I/O, or import UI/DB/WebKit frameworks inside `Domain`.',
+  '- Never bump `IPHONEOS_DEPLOYMENT_TARGET`, `SWIFT_VERSION`, or major SPM/CocoaPods dependency versions without explicit owner approval.',
+  '- Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print sensitive values in logs.'
 ]
 
 export const IOS_DEV_MEMORY_SEED = `# Memory
 
-## 프로젝트 고정 스펙
-- 아키텍처 패턴: (예: MVVM + Clean Architecture / TCA)
-- UI 스택: (예: SwiftUI / UIKit / WKWebView 하이브리드 브리지)
-- DI & 비동기: (예: Swift Concurrency async/await + Observation)
-- 배포 타깃 & 패키지: (예: iOS Deployment Target / Xcode / SwiftPM or CocoaPods)
+## Project Fixed Specs
+- Architecture pattern: (e.g. Clean Architecture — App / Presentation / Domain / Data / Core)
+- UI & legacy stack: (e.g. SwiftUI / @Observable / UIKit / Objective-C interop via Bridging Header / WKWebView)
+- Concurrency & persistence: (e.g. Swift 6 strict concurrency / @MainActor / Actors / SwiftData / Keychain)
+- Testing & static analysis: (e.g. Swift Testing / XCTest / Protocol DI mocks / SwiftLint / swift-format)
+- Deployment & packages: (e.g. IPHONEOS_DEPLOYMENT_TARGET / SWIFT_VERSION / Xcode / SwiftPM or CocoaPods)
 
-## 자주 쓰는 검증 명령어
-- 빌드 확인: \`xcodebuild -scheme <App> -destination 'platform=iOS Simulator,name=iPhone 16' build\`
-- 단위 테스트: \`xcodebuild -scheme <App> -destination 'platform=iOS Simulator,name=iPhone 16' test\`
-- 린트 검사: \`swiftlint\`
-- 시뮬레이터 실행: \`xcrun simctl install booted <App.app>\`
+## Common Verification Commands
+- Simulator build: \`xcodebuild -scheme <Scheme> -destination 'generic/platform=iOS Simulator' build\`
+- Unit tests & coverage: \`xcodebuild -scheme <Scheme> -destination 'platform=iOS Simulator,name=iPhone 16' -enableCodeCoverage YES test\`
+- SwiftPM build & test: \`swift build\` / \`swift test --enable-code-coverage\`
+- Lint & format check: \`swiftlint lint --quiet\` / \`swift-format lint -r .\`
+- Simulator smoke test: \`xcrun simctl install booted <App.app> && xcrun simctl launch booted <bundle-id>\`
 
-## 진행 중인 작업 & 기술 부채
-- 진행 중인 피처 브랜치: (없음)
-- 미해결 이슈 / 기술 부채: (없음)
+## Active Work & Tech Debt
+- Active feature branches: (none)
+- Open issues / tech debt: (none)
 `
 
 export const IOS_DEV_AUTOMATIONS_DOC = `# Automations
 
-## 1. 일일 빌드·린트 헬스체크 (Daily Morning Check)
+## 1. 일일 Xcode/Swift 빌드·정적 분석 헬스체크 (Daily Morning Check)
 - **실행 시각**: 평일 오전 9:00 (\`0 9 * * 1-5\`, 생성 시 비활성화 상태로 등록됨)
 - **동작**:
-  1. \`git fetch\` 후 현재 작업 브랜치에서 \`xcodebuild\` 빌드 및 \`swiftlint\` 실행
-  2. 경고/에러 또는 최신 커밋 내역을 요약해 \`ios-desk-brief\` 양식으로 아침 브리핑 생성
+  1. \`git fetch\` 후 현재 작업 브랜치에서 \`xcodebuild build-for-testing\`(또는 \`swift build\`), \`swiftlint\`/\`swift-format\` 실행
+  2. 빌드·정적 분석 결과 및 최신 커밋 요약을 간결한 아침 상태로 보고
 
-## 2. PR / 작업 완료 자동 검증 파이프라인 (Post-Worker / PR Trigger)
-- **트리거**: 풀 리퀘스트 생성/업데이트 또는 워커 작업 완료 시
+## 2. PR 자동 검증 및 코드 리뷰 파이프라인 (PR Trigger)
+- **트리거**: 풀 리퀘스트 생성/업데이트 시
 - **동작**:
-  1. \`xcodebuild test\` 실행
-  2. \`Info.plist\` / Entitlements / WKWebView 브리지 인터페이스 변경점 Diff 추출
-  3. \`ios-close-out\` 체크리스트를 채워 결과 보고
+  1. \`ios-verification-loop\` 6단계 검증(빌드, \`swiftlint\`/\`swift-format\`, 단위 테스트, 보안 diff 스캔, \`Info.plist\`/Entitlements/WKWebView 점검) 실행
+  2. \`swift-code-review\` 기준으로 심각도별(CRITICAL/HIGH/MEDIUM/LOW) 리뷰 및 PASS/FAIL 리포트 게시
 `

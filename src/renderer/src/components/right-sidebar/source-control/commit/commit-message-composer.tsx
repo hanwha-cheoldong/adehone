@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { RefreshCw, Sparkles, Square } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { useTranslate } from '@/i18n/use-translate'
 import { cn } from '@/lib/class-names'
 
+const AI_SPARKLE_DURATION_MS = 1450
+
 export function CommitMessageComposer({
+  worktreeId,
   rows,
   commitMessage,
   disabled,
@@ -15,8 +18,10 @@ export function CommitMessageComposer({
   onCancelGenerate,
   isGenerateDisabled,
   onGenerate,
-  generateTooltip
+  generateTooltip,
+  stageCompletionSeq = 0
 }: {
+  worktreeId?: string | null
   rows: number
   commitMessage: string
   disabled: boolean
@@ -28,8 +33,37 @@ export function CommitMessageComposer({
   isGenerateDisabled: boolean
   onGenerate: () => void
   generateTooltip?: string
+  stageCompletionSeq?: number
 }): React.JSX.Element {
   const t = useTranslate()
+  const [prevTrack, setPrevTrack] = useState({ worktreeId, seq: stageCompletionSeq })
+  const [sparkleCycle, setSparkleCycle] = useState(0)
+  const [isSparkling, setIsSparkling] = useState(false)
+
+  if (prevTrack.worktreeId !== worktreeId) {
+    setPrevTrack({ worktreeId, seq: stageCompletionSeq })
+    setIsSparkling(false)
+  } else if (prevTrack.seq !== stageCompletionSeq) {
+    setPrevTrack({ worktreeId, seq: stageCompletionSeq })
+    if (stageCompletionSeq > 0 && showGenerate && !isGenerateDisabled) {
+      setSparkleCycle((cycle) => cycle + 1)
+      setIsSparkling(true)
+    }
+  }
+
+  if (isSparkling && (!showGenerate || isGenerateDisabled)) {
+    setIsSparkling(false)
+  }
+
+  useEffect(() => {
+    if (!isSparkling) {
+      return
+    }
+    const timer = window.setTimeout(() => {
+      setIsSparkling(false)
+    }, AI_SPARKLE_DURATION_MS)
+    return () => window.clearTimeout(timer)
+  }, [isSparkling, sparkleCycle])
   return (
     <div className="relative">
       <textarea
@@ -89,11 +123,15 @@ export function CommitMessageComposer({
                 )}
                 className={cn(
                   'absolute right-1.5 top-1.5 inline-flex size-5 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+                  isSparkling && 'commit-ai-sparkle-button',
                   isGenerateDisabled &&
                     'cursor-not-allowed opacity-40 hover:bg-transparent hover:text-muted-foreground'
                 )}
               >
-                <Sparkles className="size-3.5" />
+                <Sparkles
+                  key={sparkleCycle}
+                  className={cn('size-3.5', isSparkling && 'commit-ai-sparkle-icon')}
+                />
               </button>
             </TooltipTrigger>
             <TooltipContent side="left" sideOffset={6}>
