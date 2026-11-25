@@ -77,6 +77,7 @@ export function SourceControlCommitSurface({
     setPrTitle,
     sourceControlAiActionsVisible,
     stackParentReview,
+    stageCompletionSeq,
     unresolvedConflicts,
     updateCommitDraft
   } = model
@@ -156,6 +157,7 @@ export function SourceControlCommitSurface({
       isGenerating={isGenerating}
       generateError={generateError}
       stagedCount={grouped.staged.length}
+      stageCompletionSeq={stageCompletionSeq}
       hasPartiallyStagedChanges={hasPartiallyStagedChanges}
       hasUnresolvedConflicts={unresolvedConflicts.length > 0}
       isRemoteOperationActive={isRemoteOperationActive || isAbortingOperation}

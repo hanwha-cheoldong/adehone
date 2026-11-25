@@ -4594,3 +4594,60 @@ body:has([data-contextual-tour-target='tab-create-menu'][data-state='open'])
     animation: none;
   }
 }
+
+.commit-ai-sparkle-button {
+  animation: commit-ai-sparkle-button-glow 1.4s ease-out;
+}
+
+.commit-ai-sparkle-icon {
+  animation: commit-ai-sparkle-icon-twinkle 1.4s ease-in-out;
+}
+
+@keyframes commit-ai-sparkle-button-glow {
+  0%,
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  20%,
+  55% {
+    background-color: color-mix(in srgb, var(--accent) 80%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ring) 45%, transparent);
+  }
+}
+
+@keyframes commit-ai-sparkle-icon-twinkle {
+  0%,
+  100% {
+    color: var(--muted-foreground);
+    transform: scale(1) rotate(0deg);
+    filter: none;
+  }
+  20% {
+    color: var(--foreground);
+    transform: scale(1.22) rotate(-8deg);
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--foreground) 45%, transparent));
+  }
+  40% {
+    color: var(--muted-foreground);
+    transform: scale(0.95) rotate(0deg);
+    filter: none;
+  }
+  60% {
+    color: var(--foreground);
+    transform: scale(1.18) rotate(8deg);
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--foreground) 45%, transparent));
+  }
+  80% {
+    color: var(--foreground);
+    transform: scale(1) rotate(0deg);
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .commit-ai-sparkle-button,
+  .commit-ai-sparkle-icon {
+    animation: none;
+  }
+}

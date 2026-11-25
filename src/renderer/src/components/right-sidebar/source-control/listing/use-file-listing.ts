@@ -36,6 +36,7 @@ export function useSourceControlFileListing({
   isFolder,
   isGitHistoryNeeded,
   isMac,
+  onStageComplete,
   refreshActiveGitStatusAfterMutation,
   remoteActionError,
   repositoryHuge,
@@ -64,6 +65,7 @@ export function useSourceControlFileListing({
   isFolder: boolean
   isGitHistoryNeeded: boolean
   isMac: boolean
+  onStageComplete?: () => void
   refreshActiveGitStatusAfterMutation: SourceControlStatusRefresh['refreshActiveGitStatusAfterMutation']
   remoteActionError: SourceControlActionError | null
   repositoryHuge: SourceControlWorktreeContext['repositoryHuge']
@@ -213,7 +215,8 @@ export function useSourceControlFileListing({
     grouped,
     isStatusTruncated: repositoryHuge !== undefined,
     clearSelection,
-    refreshActiveGitStatusAfterMutation
+    refreshActiveGitStatusAfterMutation,
+    onStageComplete
   })
   const unresolvedConflicts = useMemo(
     () => entries.filter((entry) => entry.conflictStatus === 'unresolved' && entry.conflictKind),

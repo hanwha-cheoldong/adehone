@@ -43,7 +43,8 @@ export function useSourceControlBulkActions({
   grouped,
   isStatusTruncated,
   clearSelection,
-  refreshActiveGitStatusAfterMutation
+  refreshActiveGitStatusAfterMutation,
+  onStageComplete
 }: {
   selectedKeys: ReadonlySet<string>
   flatEntriesByKey: ReadonlyMap<string, FlatEntry>
@@ -55,6 +56,7 @@ export function useSourceControlBulkActions({
   isStatusTruncated: boolean
   clearSelection: () => void
   refreshActiveGitStatusAfterMutation: () => Promise<void>
+  onStageComplete?: () => void
 }) {
   const sourceControlScope = useSourceControlScope()
   const [isExecutingBulk, setIsExecutingBulk] = useState(false)
@@ -106,6 +108,7 @@ export function useSourceControlBulkActions({
       )
       await refreshActiveGitStatusAfterMutation()
       clearSelection()
+      onStageComplete?.()
     } catch (error) {
       reportBulkMutationFailure(error)
     } finally {
@@ -118,6 +121,7 @@ export function useSourceControlBulkActions({
     clearSelection,
     activeWorktreeId,
     isExecutingBulk,
+    onStageComplete,
     refreshActiveGitStatusAfterMutation,
     sourceControlScope
   ])
@@ -177,6 +181,7 @@ export function useSourceControlBulkActions({
           : bulkStageRuntimeGitPaths(context, [...paths]))
         await refreshActiveGitStatusAfterMutation()
         clearSelection()
+        onStageComplete?.()
       } catch (error) {
         reportBulkMutationFailure(error)
       } finally {
@@ -189,6 +194,7 @@ export function useSourceControlBulkActions({
       activeWorktreeId,
       clearSelection,
       isExecutingBulk,
+      onStageComplete,
       refreshActiveGitStatusAfterMutation,
       worktreePath
     ]
@@ -226,6 +232,7 @@ export function useSourceControlBulkActions({
         )
         await refreshActiveGitStatusAfterMutation()
         clearSelection()
+        onStageComplete?.()
       } catch (error) {
         reportBulkMutationFailure(error)
       } finally {
@@ -238,6 +245,7 @@ export function useSourceControlBulkActions({
       activeWorktreeId,
       clearSelection,
       isExecutingBulk,
+      onStageComplete,
       refreshActiveGitStatusAfterMutation,
       worktreePath
     ]
