@@ -46,6 +46,12 @@ export function mobileBotMascotAsset(id: BotMascotId): ImageSourcePropType {
       return require('../../assets/bot-mascots/S2.webp')
     case 'T1':
       return require('../../assets/bot-mascots/T1.webp')
+    case 'AND':
+      return require('../../assets/bot-mascots/AND.webp')
+    case 'APL':
+      return require('../../assets/bot-mascots/APL.webp')
+    case 'MWB':
+      return require('../../assets/bot-mascots/MWB.webp')
   }
 }
 
@@ -92,5 +98,11 @@ export function mobileBotMascotRimAsset(id: BotMascotId): ImageSourcePropType {
       return require('../../../src/shared/bot-mascots/S2-rim.webp')
     case 'T1':
       return require('../../../src/shared/bot-mascots/T1-rim.webp')
+    case 'AND':
+      return require('../../../src/shared/bot-mascots/AND-rim.webp')
+    case 'APL':
+      return require('../../../src/shared/bot-mascots/APL-rim.webp')
+    case 'MWB':
+      return require('../../../src/shared/bot-mascots/MWB-rim.webp')
   }
 }
