@@ -101,7 +101,7 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
           return
         }
         console.warn('Failed to fetch PR comments:', err)
-        setComments([])
+        setComments(null)
         setCommentsError(checksPanelLoadErrorMessage(err, getRepoExecutionHostId(repo)))
       } finally {
         if (
@@ -157,6 +157,23 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
     [fetchPRCheckDetails, pr?.prRepo, repo, activeWorktree, gitLabProjectRefRef]
   )
 
+  // GitHub comments reset only when the read below would read something else; each such change
+  // reruns that read, so a reset never outlives it. GitLab comments belong to the checks timer.
+  const commentsReadIdentity = activeGitLabReview
+    ? 'gitlab'
+    : JSON.stringify([
+        repo ? getRepoExecutionHostId(repo) : null,
+        checksPanelAsyncResultKey(prCacheKey, branch, prNumber, pr?.prRepo, pr?.headSha)
+      ])
+  const [readCommentsIdentity, setReadCommentsIdentity] = useState(commentsReadIdentity)
+  if (readCommentsIdentity !== commentsReadIdentity) {
+    setReadCommentsIdentity(commentsReadIdentity)
+    if (!activeGitLabReview) {
+      setComments(undefined)
+      setCommentsLoading(false)
+    }
+  }
+
   // Read the ref at call time because async MR fetches can fill it after render.
   const getGitLabProjectRef = useCallback(() => gitLabProjectRefRef.current, [gitLabProjectRefRef])
 
@@ -164,8 +181,12 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
     if (activeGitLabReview) {
       return
     }
-    if (!repo || !prNumber || !isPanelVisible) {
-      setComments([])
+    if (!repo || !prNumber) {
+      setComments(undefined)
+      return
+    }
+    if (!isPanelVisible) {
+      setCommentsLoading(false)
       return
     }
     let cancelled = false
@@ -191,7 +212,7 @@ export function useChecksPanelReviewData(model: ChecksPanelReviewDataInput) {
       },
       () => {
         if (!cancelled && isCurrentAsyncResult(requestKey)) {
-          setComments([])
+          setComments(null)
           setCommentsLoading(false)
           setSettledCommentsKey(requestKey)
         }

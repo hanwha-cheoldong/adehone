@@ -3,6 +3,7 @@ import { createGitHistoryApi } from './web-git-history-api'
 import type { PreloadApi } from '../../../../../preload/api-types'
 import { callAbortableRuntimeEnvironment } from '../../../runtime/rpc/calls/abortable-runtime-environment-call'
 import { toRuntimeWorktreeSelector } from '../../../runtime/rpc/targets/runtime-worktree-selector'
+import { createWebGitRebaseApi } from './web-git-rebase-api'
 import { translate } from '@/i18n/i18n'
 import { callRuntimeResult } from '../../runtime/client/web-runtime-calls'
 import { createWebGitAtRiskLocalFilesApi } from './web-git-at-risk-local-files-api'
@@ -110,9 +111,7 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
     abortMerge: async ({ worktreePath }) => {
       await callWorktreeGit('git.abortMerge', worktreePath)
     },
-    abortRebase: async ({ worktreePath }) => {
-      await callWorktreeGit('git.abortRebase', worktreePath)
-    },
+    ...createWebGitRebaseApi(),
     diff: async ({ worktreePath, filePath, staged, compareAgainstHead, oldPath }) => {
       const file = await resolveRuntimeFilePath(filePath, worktreePath)
       return callRuntimeResult('git.diff', {
@@ -137,8 +136,8 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
     },
     syncFork: async ({ worktreePath, expectedUpstream }) =>
       callWorktreeGit('git.forkSync', worktreePath, { expectedUpstream }, 60_000),
-    push: async ({ worktreePath, publish, pushTarget }) => {
-      await callWorktreeGit('git.push', worktreePath, { publish, pushTarget })
+    push: async ({ worktreePath, publish, forceWithLease, pushTarget }) => {
+      await callWorktreeGit('git.push', worktreePath, { publish, forceWithLease, pushTarget })
     },
     pull: async ({ worktreePath, pushTarget }) => {
       await callWorktreeGit('git.pull', worktreePath, { pushTarget })
@@ -147,7 +146,7 @@ export function createGitApi(): NonNullable<Partial<PreloadApi>['git']> {
       await callWorktreeGit('git.fastForward', worktreePath, { pushTarget })
     },
     rebaseFromBase: async ({ worktreePath, baseRef }) => {
-      await callWorktreeGit('git.rebaseFromBase', worktreePath, { baseRef })
+      return callWorktreeGit('git.rebaseFromBase', worktreePath, { baseRef })
     },
     branchDiff: async ({ worktreePath, filePath, compare, oldPath }) => {
       const file = await resolveRuntimeFilePath(filePath, worktreePath)
