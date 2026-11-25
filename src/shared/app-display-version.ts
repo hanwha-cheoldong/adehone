@@ -6,10 +6,17 @@ export const ADEHONE_VERSION = '0.1'
  */
 export function formatAdehoneDisplayVersion(orcaVersion: string): string {
   let trimmedOrcaVersion = orcaVersion.trim()
-  if (trimmedOrcaVersion.startsWith(`${ADEHONE_VERSION}-`)) {
+  const semverPrefix = `${ADEHONE_VERSION}.0-`
+  if (trimmedOrcaVersion.startsWith(semverPrefix)) {
+    trimmedOrcaVersion = trimmedOrcaVersion.slice(semverPrefix.length)
+  } else if (trimmedOrcaVersion.startsWith(`${ADEHONE_VERSION}-`)) {
     trimmedOrcaVersion = trimmedOrcaVersion.slice(ADEHONE_VERSION.length + 1)
   }
-  if (!trimmedOrcaVersion || trimmedOrcaVersion === ADEHONE_VERSION) {
+  if (
+    !trimmedOrcaVersion ||
+    trimmedOrcaVersion === ADEHONE_VERSION ||
+    trimmedOrcaVersion === `${ADEHONE_VERSION}.0`
+  ) {
     return ADEHONE_VERSION
   }
   return `${ADEHONE_VERSION} (Orca ${trimmedOrcaVersion})`

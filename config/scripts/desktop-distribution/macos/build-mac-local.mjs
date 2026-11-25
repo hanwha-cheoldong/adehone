@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { readAdehoneVersion } from '../../release/versioning/dev-channel-base-version.mjs'
 
 export function findLocalSigningIdentity() {
   if (process.env.CSC_NAME) {
@@ -53,7 +54,7 @@ export function createLocalBuildVersion(baseVersion, timestamp, commit, adehoneV
 
 export function getLocalBuildIdentity() {
   const packageJson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
-  const adehoneVersion = packageJson.adehoneVersion ?? '0.1'
+  const adehoneVersion = readAdehoneVersion(packageJson)
   const commit = execFileSync('git', ['rev-parse', '--short=12', 'HEAD'], {
     encoding: 'utf8'
   }).trim()
