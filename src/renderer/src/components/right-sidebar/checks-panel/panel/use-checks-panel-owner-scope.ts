@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react'
+import { useLayoutEffect, useMemo, useRef } from 'react'
 import { useWorktreeGitOwnerTarget } from '../../source-control/sync/worktree-git-owner-target'
 import { useWorktreeGitCopyHostId } from '@/lib/workspace/ownership/worktree-git-copy'
 import { useAppStore } from '@/store/index'
@@ -10,6 +10,15 @@ import { normalizeGlobalWindowsRuntimeDefault } from '../../../../../../shared/e
 import { buildChecksPanelGitStatusContextKey } from '../refresh/checks-panel-git-status-snapshot'
 import type { Repo } from '../../../../../../shared/repository/repo-types'
 import type { Worktree } from '../../../../../../shared/worktree/types'
+
+function readActiveSourceControlLaunchPlatform(repo: Repo, activeWorktree: Worktree) {
+  return resolveRepoWorktreeLaunchPlatform(
+    useAppStore.getState(),
+    readRuntimeStatuses(),
+    repo,
+    activeWorktree
+  )
+}
 
 export function useChecksPanelOwnerScope({
   activeWorktree,
@@ -28,14 +37,7 @@ export function useChecksPanelOwnerScope({
   const activeWorktreePushTarget = activeWorktree?.pushTarget ?? null
   // Quote for the workspace owner's OS, where the agent actually runs (#27971).
   const activeSourceControlLaunchPlatform =
-    activeWorktree && repo
-      ? resolveRepoWorktreeLaunchPlatform(
-          useAppStore.getState(),
-          readRuntimeStatuses(),
-          repo,
-          activeWorktree
-        )
-      : undefined
+    activeWorktree && repo ? readActiveSourceControlLaunchPlatform(repo, activeWorktree) : undefined
   const runtimeEnvironmentId = useAppStore((s) =>
     runtimeEnvironmentIdOrLocalUnlessTwin(s, activeWorktreeId)
   )
@@ -79,7 +81,9 @@ export function useChecksPanelOwnerScope({
     pushTarget: activeWorktreePushTarget
   })
   const panelContextKeyRef = useRef(panelContextKey)
-  panelContextKeyRef.current = panelContextKey
+  useLayoutEffect(() => {
+    panelContextKeyRef.current = panelContextKey
+  }, [panelContextKey])
 
   return {
     activeWorktreePath,

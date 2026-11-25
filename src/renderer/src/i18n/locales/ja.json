@@ -440,6 +440,9 @@
         "title": "パスワード",
         "description": "Orca のブラウザに保存されたログイン情報を追加、インポート、編集、削除します。",
         "httpSuffix": " · http"
+      },
+      "sessionHost": {
+        "sshDetail": "この SSH ホストのページはこのコンピュータで開きます。"
       }
     },
     "agents": {
@@ -839,7 +842,8 @@
       "keywordSecurity": "セキュリティ",
       "1b4d825e0e": "アップデートの遅延",
       "ab7e864374": "アップデートの遅延について",
-      "ee1d96f74a": "今回のみ遅延をスキップ"
+      "ee1d96f74a": "今回のみ遅延をスキップ",
+      "teamManaged": "チームによって設定されています"
     },
     "editorFormatOnSave": {
       "description": "手動保存と自動保存の前にテキストをフォーマットします。設定 > プロジェクトでフォーマッターコマンドを設定してください。デフォルトではオフです。",
@@ -911,6 +915,25 @@
       "description": "対応するデスクトップ環境では、Orca が定期チェック時に対象のアップデートをダウンロードし、自動的に再起動してインストールします。",
       "info": "自動アップデートについて",
       "saveFailed": "自動アップデートの設定を保存できませんでした。"
+    },
+    "cloudConsole": {
+      "manageInBrowser": "ブラウザで管理",
+      "openFailed": "ブラウザを開けませんでした。もう一度お試しください。",
+      "teamAdmin": {
+        "title": "チームと管理",
+        "description": "ブラウザでチームを管理します。"
+      },
+      "signInFailed": "コンソールにサインインできませんでした",
+      "signInFailedDetail": "コンソールはブラウザで開きました。続行するには、そこでサインインしてください。"
+    },
+    "mobile": {
+      "teamDisabledRelay": "Orca Relay はチームによってオフにされています。LAN を使用してください。"
+    },
+    "computerUse": {
+      "teamDisabled": "コンピュータ操作はチームによってオフにされています。"
+    },
+    "artifacts": {
+      "teamDisabled": "アーティファクトの共有はチームによってオフにされています。"
     }
   },
   "menu": {
@@ -1589,8 +1612,26 @@
           "tab": {
             "open": {
               "urlFailed": "URLを開けませんでした。",
-              "searchFailed": "{{value0}} で検索できませんでした。"
+              "searchFailed": "{{value0}} で検索できませんでした。",
+              "failure": {
+                "stageError": "エラー · {{value0}} · {{value1}}",
+                "hostNotFound": "ワークスペースのコンピュータが見つかりませんでした。",
+                "linkBlocked": "リンクを開く操作がブロックされました。",
+                "notWebLink": "Web リンクではありません。"
+              }
             }
+          }
+        },
+        "ports": {
+          "serverPortForward": {
+            "updateServer": "{{host}} のポート {{port}} を転送できませんでした。{{host}} の Orca を更新してから、もう一度お試しください。",
+            "failed": "{{host}} のポート {{port}} を転送できませんでした。接続を確認してから、もう一度お試しください。",
+            "forwarded": "{{host}} のポート {{port}} を転送しました",
+            "opened": "{{address}} をデフォルトのブラウザで開きました。",
+            "otherMachine": "ポート {{port}} を転送できませんでした。このワークスペースは {{host}} 自体では実行されていません。",
+            "useSshPorts": "{{host}} のポート {{port}} を転送できませんでした。「ポート」で転送してから、もう一度お試しください。",
+            "restoredMoved": "{{host}} のポート {{port}} を localhost:{{localPort}} に転送しました",
+            "restoredMovedReason": "このコンピュータでは localhost:{{previousPort}} が使用中です。"
           }
         }
       },
@@ -4239,6 +4280,7 @@
             "copyFilePathFailed": "ファイルパスのコピーに失敗しました",
             "downloadOpenWithDefaultApp": "ダウンロードしてデフォルトのアプリで開く",
             "downloadOpenFailed": "「{{value0}}」のダウンロードに失敗しました。",
+            "openLinkInThisGroupRefused": "このグループでリンクを開けませんでした",
             "openInNewTab": "新しいタブで開く",
             "openInThisGroupRefused": "{{value0}} をこのグループで開けませんでした"
           },
@@ -4678,6 +4720,7 @@
             "cursorUsageMenu": "Cursor の使用状況",
             "hiddenUsageProviders": "ほかに: {{value0}}",
             "zcodeUsageMenu": "ZCode の使用量",
+            "rateLimitResetsUnsupportedWsl_other": "レート制限リセットが {{count}} 回利用可能 · WSL では未対応",
             "rateLimitResetsAvailable_other": "レート制限リセットが {{count}} 回利用可能",
             "signedOutAccounts": "サインアウト済み",
             "addAnotherAccount": "別のアカウントを追加…",
@@ -4886,7 +4929,8 @@
             "hoursAgo": "{{hours}} 時間前",
             "updatedAgo": "{{time}}に更新",
             "notYetUpdated": "未更新",
-            "rateLimitResetsAvailable_other": "レート制限リセットが {{count}} 回利用可能"
+            "rateLimitResetsAvailable_other": "レート制限リセットが {{count}} 回利用可能",
+            "unsupportedOwner": "{{server}} では使用量を利用できません"
           },
           "SshTargetStatusRow": {
             "sshHost": "SSH ホスト"
@@ -4912,6 +4956,7 @@
             "gotIt": "了解"
           },
           "UsageRosterPanel": {
+            "wslUsageNotShown": "WSL の使用量はまだ表示されません",
             "title": "使用量",
             "openDetails": "使用量の詳細を開く",
             "notSignedIn": "未サインイン",
@@ -5851,7 +5896,16 @@
           "repairAvailable": "修復できます",
           "installAvailable": "インストールできます",
           "otherBuild": "別のバージョンの Orca でインストール済み",
-          "otherBuildKept": "保持: 別のバージョンの Orca で書き込まれています"
+          "otherBuildKept": "保持: 別のバージョンの Orca で書き込まれています",
+          "differsFromOrca": "このコピーは Orca のものと異なります",
+          "replaceMovesFolder": "置き換えると、追加のファイルを含むフォルダー全体が {{folder}} に移動されます。",
+          "replaceMovesFolderOnHost": "置き換えると、追加のファイルを含むフォルダー全体が {{host}} 上の {{folder}} に移動されます。",
+          "replaceMovesLink": "置き換えると、このリンクが {{folder}} に移動されます。",
+          "replaceMovesLinkOnHost": "置き換えると、このリンクが {{host}} 上の {{folder}} に移動されます。",
+          "replaceMovesFile": "置き換えると、このファイルが {{folder}} に移動されます。",
+          "replaceMovesFileOnHost": "置き換えると、このファイルが {{host}} 上の {{folder}} に移動されます。",
+          "replaceMovesCopy": "置き換えると、このコピーが {{folder}} に移動されます。",
+          "replaceMovesCopyOnHost": "置き換えると、このコピーが {{host}} 上の {{folder}} に移動されます。"
         },
         "installResult": {
           "installed": "インストールと検証が完了しました。",
@@ -5873,6 +5927,11 @@
           "preservedDescription": "Orca はスキルを更新し、編集内容を {{value0}} に保存しました。",
           "uncertainTitle": "{{value0}} でのスキルの更新を確認できませんでした",
           "uncertainDescription": "Orca は {{value0}} 上のスキルを更新した可能性がありますが、結果を確認できませんでした。更新中にスキルを編集した場合、そのコピーは {{value1}} にあります。"
+        },
+        "SkillBackupPathLine": {
+          "movedTo": "古いコピーの移動先:",
+          "movedToOnHost": "古いコピーの移動先（{{host}}）:",
+          "showFolder": "フォルダーを表示"
         }
       },
       "sidebar": {
@@ -7978,6 +8037,12 @@
           },
           "worktreeCardStyle": {
             "title": "カードのスタイル"
+          },
+          "sharedCodexServers": {
+            "title": "共有 Codex サーバー",
+            "description": "同じ設定の Codex チャットは、チャットごとにバックグラウンドプロセスを起動する代わりに、1 つのバックグラウンドプロセスを共有します。",
+            "copy": "メモリ使用量が減り、新規チャットの起動も速くなります。共有プロセスがクラッシュすると、そのプロセスのすべてのチャットが再接続されます。変更後に開始した、このコンピュータ上のチャットに適用されます。リモートホストと WSL ホストでは、チャットごとに 1 つのプロセスが維持されます。",
+            "toggleLabel": "共有 Codex サーバーを切り替える"
           }
         },
         "FloatingWorkspacePane": {
@@ -10154,6 +10219,12 @@
               "inWindow": "窓内",
               "worktrees": "ワークツリー",
               "eaf17a7214": "Agent ダッシュボード"
+            },
+            "sharedCodexServers": {
+              "title": "共有 Codex サーバー",
+              "description": "同じ設定の Codex チャットは、チャットごとにバックグラウンドプロセスを起動する代わりに、1 つのバックグラウンドプロセスを共有します。",
+              "codex": "codex",
+              "memory": "メモリ"
             }
           }
         },
@@ -11989,6 +12060,7 @@
           "pathLabel": "開発用プラグインのフォルダーパス",
           "placeholder": "プラグインフォルダーのパス",
           "add": "パスを追加",
+          "teamDisabled": "開発フォルダーはチームによってオフにされています。",
           "reviewHelp": "確認は一度だけ。その後のコード変更は確認なしで実行されます。",
           "dialogTitle": "開発フォルダー"
         },
@@ -12434,6 +12506,11 @@
           "title": "Adehone アカウント",
           "description": "作業を即座に共有し、どこにいても Adehone Mobile からデスクトップにアクセスできます。",
           "searchDescription": "Artifacts と Adehone Relay で使用されるアカウントにサインインまたはサインアウトします。",
+          "managed": "一部の Orca 設定はチームによって管理されています。",
+          "deviceReportNamedViewers": "{{teams}} のオーナーと管理者は、このデバイスからのレポートを表示できます。",
+          "deviceReportViewers": "チームのオーナーと管理者は、このデバイスからのレポートを表示できます。",
+          "reportingDetails": "デバイスレポートの詳細",
+          "reportingDisclosure": "「デバイス」ビューには、Orca のバージョン、リリースチャンネル、デバイス名、プラットフォーム、アップデートの状態、Orca がインストールできなかった必須プラグイン、デバイスが最後にレポートした日時が表示されます。",
           "benefitsTitle": "アカウントに含まれています",
           "artifactsTitle": "成果物の共有",
           "artifactsDescription": "HTML ファイルと Markdown ファイルを公開し、Adehone からのすべての共有リンクを管理します。",
@@ -13029,6 +13106,10 @@
           "defaultHostHelp": "既存のプロジェクトはそのままです。",
           "defaultHostWebHelp": "このブラウザーは新しいプロジェクトを選択したサーバーで開きます。",
           "updateAll": "すべて更新",
+          "shareRowHint": "ほかの Orca がここに接続できるようにします。",
+          "manageShare": "管理",
+          "share": "共有",
+          "serversCaption": "サーバー",
           "updatesCount_other": "{{count}} 件の更新があります",
           "addServer": "サーバーを追加",
           "moreWaysToAdd": "サーバーを追加するその他の方法",
@@ -13099,7 +13180,11 @@
           "attentionOther": "対応が必要です · 別のスキルがすでにこの名前を使用しています",
           "attentionSharedNotCurrent": "対応が必要です · このフォルダーが使用する共有コピーは Adehone のものではありません",
           "resultUpdateSkippedPlaces": "{{result}} · {{places}} か所で更新をスキップ: {{reason}}",
-          "resultUpdateSkippedAgent": "{{result}} · {{agent}} で更新をスキップ: {{reason}}"
+          "resultUpdateSkippedAgent": "{{result}} · {{agent}} で更新をスキップ: {{reason}}",
+          "attentionDiffersFromOrca": "対応が必要です · このコピーは Orca のものと異なります",
+          "replaceMovesCopyToBackup": "置き換えると、追加のファイルを含む現在のコピーがバックアップに移動されます。",
+          "replaceMovesCopyToFolder": "置き換えると、追加のファイルを含む現在のコピーが {{folder}} に移動されます。",
+          "replaceMovesCopyToFolderOnHost": "置き換えると、追加のファイルを含む現在のコピーが {{host}} 上の {{folder}} に移動されます。"
         },
         "ReleaseBuildPicker": {
           "build": "バージョン",
@@ -13215,6 +13300,7 @@
           "customEditor": "エディター"
         },
         "PluginManagerRows": {
+          "requiredByTeam": "チームが必須に指定",
           "reinstall": "再インストール",
           "crashedCount": "{{value0}} 回連続でクラッシュしました",
           "crashed": "起動中にクラッシュしました",
@@ -20175,6 +20261,10 @@
       "railLabel": "あなたのメッセージ",
       "railImageMessage": "画像添付",
       "railEmptyMessage": "メッセージ",
+      "railFilterPlaceholder": "メッセージを絞り込む",
+      "railNoMatches": "一致するメッセージはありません",
+      "railTickLabel": "メッセージ {{index}}/{{count}}: {{text}}",
+      "railMatchCount": "{{count}} / {{total}}",
       "ask": {
         "awaiting": "ユーザー入力を待っています:",
         "awaitingUnnamed": "ユーザー入力を待っています",
@@ -20395,6 +20485,14 @@
         "stopUnconfirmed": "Codex の停止を確認できませんでした。続行する前にチャットを確認してください。",
         "noGoal": "このチャットには Codex の変更できる目標がありません。/goal の後に目的を続けて目標を設定してください。"
       },
+      "automationResult": {
+        "openRun": "実行を開く",
+        "notRead": "{{name}} はまだこれを読んでいません。次のメッセージと一緒に送られます。",
+        "read": "{{name}} は次のメッセージと一緒にこれを読みました。",
+        "sentWithOne": "オートメーションの結果 1 件と一緒に送信",
+        "sentWithMany": "オートメーションの結果 {{count}} 件と一緒に送信",
+        "cleared": "チャットがクリアされる前に届きました。{{name}} には送られません。"
+      },
       "slashCommandDescriptions": {
         "clearConversation": "会話をクリア",
         "clearHistory": "会話履歴をクリア",
@@ -20585,6 +20683,27 @@
         "sourceTooltip": "{{name}} から分岐",
         "unknownSourceTooltip": "別のチャットから分岐"
       },
+      "importPlan": {
+        "comes": "インポートする項目",
+        "changed": "変更してインポートする項目",
+        "already": "すでにある項目",
+        "stays": "{{app}} に残る項目",
+        "fromAgain": "{{app}} から（再度）",
+        "from": "{{app}} から",
+        "selected": "{{total}} 件中 {{chosen}} 件を選択 · キーとログイン情報はコピーされません",
+        "importOne": "1 件をインポート",
+        "importMany": "{{count}} 件をインポート",
+        "askedOne": "1 件のインポートを依頼しました",
+        "askedMany": "{{count}} 件のインポートを依頼しました"
+      },
+      "importDone": {
+        "heading": "インポート完了",
+        "title": "{{name}} を {{app}} からインポートしました",
+        "open": "開く",
+        "stayed": "{{app}} に残したもの: {{things}}。{{app}} では何も変更されていません。",
+        "unchanged": "{{app}} では何も変更されていません。",
+        "paused": "二重に実行されないよう、オートメーションは一時停止しています。{{app}} で古いbotをオフにしてから、オートメーションをオンにしてください。"
+      },
       "usage": {
         "description": "このチャットの Codex アカウントの使用量を表示",
         "loading": "Codex の使用量を読み込み中…",
@@ -20639,109 +20758,6 @@
         "questionNotSentDetail": "質問はこのチャットに残っています。再試行するには、もう一度 /btw を送信してください。",
         "questionUnconfirmed": "{{agent}} のサイドチャットに質問が届いたか確認できませんでした",
         "questionUnconfirmedDetail": "もう一度質問する前に、サイドチャットを確認してください。質問はこのチャットに残っています。"
-      },
-      "automationSaved": {
-        "resultsInRuns": "結果は各実行内",
-        "paused": "一時停止中",
-        "webhookHint": "サービスの送信先をこの URL に設定してください",
-        "gettingUrl": "URL を取得中…",
-        "editDraft": "「{{name}}」を次のように変更してください: ",
-        "resultsInEachRun": "各実行内",
-        "resultsChat": "チャット",
-        "noRuns": "実行はまだありません",
-        "recentRuns": "最近の実行",
-        "when": "タイミング",
-        "results": "結果",
-        "agent": "Agent",
-        "runNow": "今すぐ実行",
-        "loading": "読み込み中",
-        "deleted": "このオートメーションは削除されました",
-        "loadFailed": "このオートメーションを読み込めませんでした",
-        "openFullPage": "ページを開く",
-        "onAgent": "{{name}} で実行"
-      },
-      "mcp": {
-        "status": {
-          "notStarted": "未開始",
-          "connected": "接続済み",
-          "disabled": "無効",
-          "failed": "失敗",
-          "failedReason": "失敗：{{error}}",
-          "needsAuth": "サインインが必要",
-          "needsAuthAfterSend": "サインインが必要です。メッセージを送信すると、ここでサインインできます。",
-          "pending": "接続中…",
-          "tools_other": "{{count}} 個のツール"
-        },
-        "signIn": {
-          "external": "開いたページで完了してください",
-          "waiting": "サインイン待ち…",
-          "waitingBrowser": "ブラウザー待ち…",
-          "action": "サインイン",
-          "remote": "サインイン後、ブラウザーは読み込めないページに移動します。そのページのアドレスをコピーし、ここに貼り付けてください。",
-          "done": "完了",
-          "finish": "完了",
-          "openAgain": "もう一度開く",
-          "addressLabel": "サインインページのアドレス",
-          "unfinished": "サインインはまだ完了していません。開いたページで完了させてから「完了」を押してください。"
-        },
-        "title": "MCP サーバー",
-        "close": "閉じる",
-        "loading": "読み込み中…",
-        "notRunning": "次のメッセージ送信時に接続",
-        "unsupported": "ここで管理するには、このチャットのホストの Orca を更新",
-        "readFailed": "読み込みに失敗",
-        "retry": "再試行",
-        "empty": "このチャットには未設定",
-        "cancel": "キャンセル",
-        "reconnect": "再接続",
-        "toggle": "{{name}} を使用",
-        "actionFailed": "操作できませんでした。もう一度お試しください。",
-        "summary": {
-          "connected": "接続済み: {{count}}",
-          "needsAuth_other": "{{count}} 件サインインが必要",
-          "failed": "失敗: {{count}}",
-          "signingIn": "{{name}} にサインイン中"
-        },
-        "source": {
-          "project": "プロジェクト",
-          "local": "ローカル",
-          "user": "ユーザー",
-          "plugin": "プラグイン",
-          "session": "セッション"
-        }
-      },
-      "railFilterPlaceholder": "メッセージを絞り込む",
-      "railNoMatches": "一致するメッセージはありません",
-      "railTickLabel": "メッセージ {{index}}/{{count}}: {{text}}",
-      "railMatchCount": "{{count}} / {{total}}",
-      "automationResult": {
-        "openRun": "実行を開く",
-        "notRead": "{{name}} はまだこれを読んでいません。次のメッセージと一緒に送られます。",
-        "read": "{{name}} は次のメッセージと一緒にこれを読みました。",
-        "sentWithOne": "オートメーションの結果 1 件と一緒に送信",
-        "sentWithMany": "オートメーションの結果 {{count}} 件と一緒に送信",
-        "cleared": "チャットがクリアされる前に届きました。{{name}} には送られません。"
-      },
-      "importPlan": {
-        "comes": "インポートする項目",
-        "changed": "変更してインポートする項目",
-        "already": "すでにある項目",
-        "stays": "{{app}} に残る項目",
-        "fromAgain": "{{app}} から（再度）",
-        "from": "{{app}} から",
-        "selected": "{{total}} 件中 {{chosen}} 件を選択 · キーとログイン情報はコピーされません",
-        "importOne": "1 件をインポート",
-        "importMany": "{{count}} 件をインポート",
-        "askedOne": "1 件のインポートを依頼しました",
-        "askedMany": "{{count}} 件のインポートを依頼しました"
-      },
-      "importDone": {
-        "heading": "インポート完了",
-        "title": "{{name}} を {{app}} からインポートしました",
-        "open": "開く",
-        "stayed": "{{app}} に残したもの: {{things}}。{{app}} では何も変更されていません。",
-        "unchanged": "{{app}} では何も変更されていません。",
-        "paused": "二重に実行されないよう、オートメーションは一時停止しています。{{app}} で古いbotをオフにしてから、オートメーションをオンにしてください。"
       },
       "automationRun": {
         "waitOver": "待機終了",
@@ -20863,6 +20879,76 @@
         "showMore": "さらに表示",
         "running": "実行中",
         "failed": "失敗"
+      },
+      "automationSaved": {
+        "resultsInRuns": "結果は各実行内",
+        "paused": "一時停止中",
+        "webhookHint": "サービスの送信先をこの URL に設定してください",
+        "gettingUrl": "URL を取得中…",
+        "editDraft": "「{{name}}」を次のように変更してください: ",
+        "resultsInEachRun": "各実行内",
+        "resultsChat": "チャット",
+        "noRuns": "実行はまだありません",
+        "recentRuns": "最近の実行",
+        "when": "タイミング",
+        "results": "結果",
+        "agent": "Agent",
+        "runNow": "今すぐ実行",
+        "loading": "読み込み中",
+        "deleted": "このオートメーションは削除されました",
+        "loadFailed": "このオートメーションを読み込めませんでした",
+        "openFullPage": "ページを開く",
+        "onAgent": "{{name}} で実行"
+      },
+      "mcp": {
+        "status": {
+          "notStarted": "未開始",
+          "connected": "接続済み",
+          "disabled": "無効",
+          "failed": "失敗",
+          "failedReason": "失敗：{{error}}",
+          "needsAuth": "サインインが必要",
+          "needsAuthAfterSend": "サインインが必要です。メッセージを送信すると、ここでサインインできます。",
+          "pending": "接続中…",
+          "tools_other": "{{count}} 個のツール"
+        },
+        "signIn": {
+          "external": "開いたページで完了してください",
+          "waiting": "サインイン待ち…",
+          "waitingBrowser": "ブラウザー待ち…",
+          "action": "サインイン",
+          "remote": "サインイン後、ブラウザーは読み込めないページに移動します。そのページのアドレスをコピーし、ここに貼り付けてください。",
+          "done": "完了",
+          "finish": "完了",
+          "openAgain": "もう一度開く",
+          "addressLabel": "サインインページのアドレス",
+          "unfinished": "サインインはまだ完了していません。開いたページで完了させてから「完了」を押してください。"
+        },
+        "title": "MCP サーバー",
+        "close": "閉じる",
+        "loading": "読み込み中…",
+        "notRunning": "次のメッセージ送信時に接続",
+        "unsupported": "ここで管理するには、このチャットのホストの Orca を更新",
+        "readFailed": "読み込みに失敗",
+        "retry": "再試行",
+        "empty": "このチャットには未設定",
+        "cancel": "キャンセル",
+        "reconnect": "再接続",
+        "toggle": "{{name}} を使用",
+        "actionFailed": "操作できませんでした。もう一度お試しください。",
+        "summary": {
+          "connected": "接続済み: {{count}}",
+          "needsAuth_other": "{{count}} 件サインインが必要",
+          "failed": "失敗: {{count}}",
+          "signingIn": "{{name}} にサインイン中"
+        },
+        "source": {
+          "project": "プロジェクト",
+          "local": "ローカル",
+          "user": "ユーザー",
+          "plugin": "プラグイン",
+          "session": "セッション"
+        }
       }
     },
     "tab": {
@@ -21724,7 +21810,9 @@
       "downloading": "{{done}} MB をダウンロード中です。",
       "downloadingOf": "{{total}} MB 中 {{done}} MB をダウンロード中です。",
       "external": "ご自身の {{agent}} を使用しています",
+      "externalShort": "ご自身のコピーを使用しています",
       "extracting": "{{agent}} を展開しています…",
+      "extractingShort": "展開しています…",
       "failed": "インストールに失敗しました。もう一度お試しください。",
       "cancelFailed": "インストールをキャンセルできませんでした。もう一度お試しください。",
       "install": "{{agent}} をインストール",
@@ -21745,6 +21833,7 @@
       "unavailable": "{{agent}} はこのホストでは利用できません。",
       "update": "更新",
       "verifying": "検証しています…",
+      "verifyingAgent": "{{agent}} を検証しています…",
       "installTitle": "チャットを始めるには {{agent}} をインストールしてください",
       "continueTitle": "続けるには {{agent}} をインストールしてください",
       "heroBody": "{{size}} MB の一度きりのダウンロードです。このチャットを実行するコンピューター上の {{agent}} チャットで共有されます。",
@@ -21765,10 +21854,7 @@
       "checkingDetail": "{{agent}} を検証しています…",
       "stepDownload": "ダウンロード",
       "stepUnpack": "展開",
-      "stepCheck": "確認",
-      "externalShort": "ご自身のコピーを使用しています",
-      "extractingShort": "展開しています…",
-      "verifyingAgent": "{{agent}} を検証しています…"
+      "stepCheck": "確認"
     },
     "orchestrationCrew": {
       "mentionAll": "全員にメンション",
@@ -21811,7 +21897,10 @@
         "keepOpen": "開いたままにする",
         "bannerRunning": "オーケストレーションワーカー · 完了の2分後に閉じます",
         "bannerFinished": "オーケストレーションワーカーが完了 · {{countdown}}後に閉じます",
-        "bannerFinishedStatus": "オーケストレーションワーカーが完了 · まもなく閉じます"
+        "bannerFinishedStatus": "オーケストレーションワーカーが完了 · まもなく閉じます",
+        "boundRunning": "{{worker}} と一緒に閉じます",
+        "boundFinished": "{{worker}} が完了しました · {{countdown}} 後に閉じます",
+        "boundFallbackName": "そのワーカー"
       }
     },
     "wslHostMark": {
@@ -22110,6 +22199,19 @@
       "title": "ブラウザページが停止しました",
       "failed": "ブラウザページが予期せず停止しました。復元を再試行してください。"
     },
+    "serverPage": {
+      "download": {
+        "started": "{{host}} 上の {{path}} にダウンロードしています",
+        "saveHere": "このコンピュータに保存",
+        "copying": "{{filename}} をこのコンピュータにダウンロードしています…",
+        "copied": "{{path}} に保存しました",
+        "copyFailed": "{{filename}} をこのコンピュータに保存できませんでした。",
+        "showInFolder": "フォルダーで表示"
+      },
+      "print": {
+        "failed": "ページを PDF として保存できませんでした"
+      }
+    },
     "clientHosted": {
       "preparationFailed": "このデスクトップ上でリモートブラウザを起動できませんでした。ペアリングされた接続を確認して、もう一度試してください。",
       "unavailableTitle": "クライアントホスト型ブラウザは利用不可",
@@ -22144,6 +22246,12 @@
       "pending": "再開…",
       "caveat": "これにより、リモートホスト上のこのページの最後のアドレスにある新規ページが開きます。サインインとその他の一時的なページの状態は異なる場合があり、フォーム送信からのページは空白で開きます。",
       "failed": "リモートホストでこのページを開けませんでした。接続を確認して再試行してください。"
+    },
+    "deviceMove": {
+      "toThisComputer": "このコンピューターで開く",
+      "toHost": "{{host}} で開く",
+      "tooltip": "このアドレスを反対側の新しいタブで開き、このタブを閉じます。再度サインインが必要になる場合があります。",
+      "failedToThisComputer": "このコンピューターでこのページを開けませんでした。"
     },
     "sshRoute": {
       "preparingTitle": "SSH ホスト経由で接続する",
@@ -22332,11 +22440,24 @@
       "findOnPage": "ページ内を検索",
       "profile": "プロファイル"
     },
-    "deviceMove": {
-      "toThisComputer": "このコンピューターで開く",
-      "toHost": "{{host}} で開く",
-      "tooltip": "このアドレスを反対側の新しいタブで開き、このタブを閉じます。再度サインインが必要になる場合があります。",
-      "failedToThisComputer": "このコンピューターでこのページを開けませんでした。"
+    "profileCookieClear": {
+      "label": "Cookie",
+      "action": "Cookie を消去…",
+      "rowLocal": "このコンピュータ上の {{profile}} にあるすべてのサイトからサインアウトします。",
+      "rowServer": "{{host}} 上の {{profile}} にあるすべてのサイトから、このコンピュータ上のページとストリーミングされたページの両方でサインアウトします。",
+      "rowSsh": "{{host}} 用の {{profile}} にあるすべてのサイトからサインアウトします。",
+      "unavailable": "選択したホストではこのプロファイルを利用できません。",
+      "confirmTitle": "{{host}} 上の {{profile}} の Cookie を消去しますか？",
+      "confirmTitleLocal": "このコンピュータ上の {{profile}} の Cookie を消去しますか？",
+      "confirmDescriptionServer": "このプロファイルのすべてのサイトから、このコンピュータ上のページとストリーミングされたページの両方でサインアウトします。ほかのプロファイルやホストの Cookie はそのまま残ります。",
+      "confirmDescription": "このプロファイルのすべてのサイトからサインアウトします。ほかのプロファイルやホストの Cookie はそのまま残ります。",
+      "clear": "消去",
+      "cancel": "キャンセル",
+      "cleared": "{{host}} 上の {{profile}} の Cookie を消去しました。",
+      "clearedLocal": "このコンピュータ上の {{profile}} の Cookie を消去しました。",
+      "failed": "{{host}} 上の {{profile}} の Cookie を消去できませんでした。もう一度お試しください。",
+      "failedLocal": "このコンピュータ上の {{profile}} の Cookie を消去できませんでした。もう一度お試しください。",
+      "sshHostOption": "{{host}} (SSH)"
     }
   },
   "runtimeRpc": {
@@ -23445,6 +23566,7 @@
       "saveShort": "保存",
       "readAt": "{{time}} に取得",
       "active": "アクティブ",
+      "chatDescriptionKeyOnAgy": "新規チャットは、下のサインインを使って agy 上で実行されます。ターミナルの agy とは別に管理されます。",
       "apiKeyGet": "APIキーを取得する"
     },
     "claude": {
@@ -23516,7 +23638,14 @@
         "title": "Claude の使用量の定期取得",
         "description": "Claude Code のログイン情報を使って、使用量、クレジット、非アクティブなアカウントを確認します。オフにすると、実行中のターミナルセッションからの使用量データのみを表示します。",
         "about": "Claude の使用量の定期取得について"
-      }
+      },
+      "organizationSuffix": "組織 ···{{suffix}}",
+      "personalOrganization": "個人"
+    },
+    "codex": {
+      "usageSignInLabel": "サインアウト済み",
+      "usageSignInMessage": "使用量を表示するにはサインインしてください。",
+      "usageSignInSettingsMessage": "サインインするには、設定 → アカウントを開いてください。"
     },
     "hostSignIn": {
       "copied": "コピーしました",
@@ -23837,7 +23966,8 @@
       "organizations": "組織",
       "listFailed": "プロジェクト一覧を取得できませんでした",
       "detailsFailed": "詳細を読み込めませんでした",
-      "viewFailed": "プロジェクトビューを取得できませんでした"
+      "viewFailed": "プロジェクトビューを取得できませんでした",
+      "chooseProject": "プロジェクトを選択"
     },
     "error": {
       "notFoundState": "このプロジェクトまたはビューが見つかりませんでした。",
@@ -24139,6 +24269,12 @@
     }
   },
   "updates": {
+    "installOnQuit": {
+      "title": "アップデートのインストール準備完了",
+      "summary": "Orca を終了し、インストール後に再度開いてください。",
+      "quit": "Orca を終了",
+      "later": "後で"
+    },
     "installBlock": {
       "instancesLabel": "Adehone を使用中のインスタンス",
       "browserLabel": "バックグラウンドブラウザ",
@@ -24199,9 +24335,25 @@
       "rateLimitedInMinuteSignedOut": "GitHub のレート制限に達しました。約 1 分後にもう一度試すか、`gh auth login` を実行して Adehone がアカウントのより高い上限を利用できるようにしてください。",
       "rateLimitedInMinutes_other": "GitHub のレート制限に達しました。約 {{count}} 分後にもう一度お試しください。",
       "rateLimitedInMinutesSignedOut_other": "GitHub のレート制限に達しました。約 {{count}} 分後にもう一度試すか、`gh auth login` を実行して Adehone がアカウントのより高い上限を利用できるようにしてください。",
+      "teamUpdatePolicy": "Orca のアップデートはチームによって管理されています。",
       "automaticInstallCheckpointFailed": "再起動前に現在のウィンドウを保存できませんでした。アップデートのインストールをやり直してください。",
       "automaticInstallTerminalBusy": "再起動すると一部のターミナルが終了します。Orca は次回以降のアップデート確認時に再試行します。",
       "macStagingTimeout": "macOS がアップデートを準備しています。この状態が続く場合は、Orca を終了して開き直してください。"
+    },
+    "emergencyRequired": {
+      "title": "Orca {{version}} が必要です",
+      "summary": "Orca {{version}} が必要です。再起動してアップデートしてください。"
+    },
+    "teamRequired": {
+      "summary": "チームは Orca {{version}} を必須としています。再起動してアップデートしてください。",
+      "title": "チームは Orca {{version}} を必須としています",
+      "restartNow": "今すぐ再起動",
+      "countdown": "カウントダウン後、Orca はセッションを保存して再起動します。実行中の Agent がある場合、再起動が遅れることがあります。",
+      "waiting": "Orca は実行中の Agent の完了を待ってから再起動します。",
+      "retry": "Orca は次回起動時にこのアップデートを再試行します。",
+      "manual": "自動インストールに失敗しました。このアップデートを手動でインストールしてください。",
+      "deadline": "{{deadline}} までに再起動してください。Orca は再起動前にセッションを保存します。",
+      "download": "ダウンロードを開く"
     }
   },
   "onboarding": {
@@ -24272,7 +24424,11 @@
     "refresh": "更新",
     "restartLocal": "ローカルデーモンを再起動",
     "killAllLocal": "すべてのローカルセッションを終了",
-    "killFailed": "ターミナルを終了できませんでした。最後に観測されたセッションを保持しています。"
+    "killFailed": "ターミナルを終了できませんでした。最後に観測されたセッションを保持しています。",
+    "chatRow": {
+      "tooltip": "{{agent}} チャット（配下で実行中のプロセスを含む）"
+    },
+    "sharedAgentProcesses": "共有 Agent プロセス"
   },
   "workspaceSpace": {
     "table": {
@@ -25120,6 +25276,7 @@
       },
       "botProviderErrorNotSaved": "ボットのターンは失敗しましたが、この実行ではプロバイダーのエラーが保存されませんでした。元のチャットに詳細が残っている可能性があります。",
       "botsOff": "設定でボットがオフになっているため、Orca はこの実行をスキップしました。",
+      "botsOffByTeam": "Bots はチームによってオフにされているため、Orca はこの実行をスキップしました。",
       "botMissing": "このオートメーションを実行するボットはもう存在しません。",
       "botFolderMissing": "ボットのフォルダーは利用できなくなりました。",
       "botPaused": "{{bot}} は一時停止中のため、Orca はこの実行をスキップしました。"
@@ -25152,7 +25309,8 @@
     },
     "botTarget": {
       "hostNeedsUpdate": "{host} 上のボットでオートメーションを利用できるように、Orca サーバーを更新してください。"
-    }
+    },
+    "hostUnreachable": "{{host}} に接続できませんでした。復旧したらもう一度お試しください。"
   },
   "codeHost": {
     "errors": {
@@ -25489,6 +25647,13 @@
     "terminalUnverifiable": "WSL ディストリビューション {{distro}} が実行中か確認できなかったため、Adehone はこのターミナルを起動しませんでした。ディストリビューションを起動してから、もう一度お試しください。"
   },
   "plugins": {
+    "blockedByTeam": "チームによってブロックされています。",
+    "requiredFailures": {
+      "toast": "必須プラグインをインストールできませんでした",
+      "open": "プラグインを開く",
+      "label": "チームが必須に指定",
+      "body": "Orca は {{plugin}} をインストールできませんでした。"
+    },
     "frameSaveAs": {
       "title": "ファイルを保存",
       "allFiles": "すべてのファイル"
@@ -25512,6 +25677,19 @@
       "unknownProject": "不明なプロジェクト",
       "automationNewWorkspaces": "オートメーション {{id}}: 実行ごとに {{project}} の新しいワークスペースを使用、スケジュール: {{schedule}}。",
       "automationInWorkspace": "オートメーション {{id}}: {{project}} / {{workspace}} で実行、スケジュール: {{schedule}}。"
+    },
+    "catalog": {
+      "managedByTeam": "チームが管理",
+      "managedByNamedTeams": "{{teams}} が管理",
+      "teamPublisher": "あなたのチーム"
+    },
+    "displayText": {
+      "tb0b38488": "Orca 用 GitHub テーマ",
+      "tb8aa98fc": "Orca 用 VS Code デフォルトテーマ",
+      "tfc425a57": "Multipass VM レシピ",
+      "t0f9f5503": "GitHub 公式の VS Code テーマ: Light Default、Dark Default、Dark Dimmed、およびハイコントラストのバリエーション。",
+      "t0b4f7e19": "VS Code のデフォルトのカラーテーマの非公式ポート: Dark Modern、Light Modern、Dark+、Light+。",
+      "tc86eed7d": "使い捨ての Multipass ワークスペース向けに、レビュー済みのスターターライフサイクルを提供します。"
     }
   },
   "checks": {
@@ -26238,6 +26416,21 @@
     "sendReport": "レポートを送信"
   },
   "agentCliUpdate": {
+    "devinProduct": "Devin CLI",
+    "codebuddyProduct": "CodeBuddy Code",
     "thisComputer": "このコンピューター"
+  },
+  "activityBar": {
+    "moveUp": "上へ移動",
+    "moveDown": "下へ移動",
+    "hide": "非表示",
+    "show": "{{name}} を表示",
+    "dragStart": "{{name}} を持ち上げました",
+    "dragOver": "{{name}} が {{target}} の上にあります",
+    "dragEnd": "{{name}} をドロップしました",
+    "dragCancel": "{{name}} の移動をキャンセルしました",
+    "moveLeft": "左へ移動",
+    "moveRight": "右へ移動",
+    "reset": "タブの順序をリセット"
   }
 }
