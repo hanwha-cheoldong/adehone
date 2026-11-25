@@ -12,7 +12,11 @@ import type {
   GitForkSyncResult
 } from '../../../shared/git/remotes/git-fork-sync'
 import type {
+  ContinueRebaseAction,
+  ContinueRebaseRequest,
+  ContinueRebaseResult,
   GitConflictOperation,
+  RebaseFromBaseResult,
   GitStagingArea,
   GitStatusResult,
   GitUpstreamStatus
@@ -88,6 +92,12 @@ export type IGitProvider = {
   detectConflictOperation(worktreePath: string): Promise<GitConflictOperation>
   abortMerge(worktreePath: string): Promise<void>
   abortRebase(worktreePath: string): Promise<void>
+  continueRebase(
+    worktreePath: string,
+    action: ContinueRebaseAction,
+    request?: ContinueRebaseRequest
+  ): Promise<ContinueRebaseResult>
+  readRebaseAutoStash(worktreePath: string): Promise<boolean>
   /** `skippedPaths`: files git could not replace (held open on Windows) though the switch landed. */
   checkoutBranch(
     worktreePath: string,
@@ -111,7 +121,7 @@ export type IGitProvider = {
   ): Promise<void>
   pullBranch(worktreePath: string, pushTarget?: GitPushTarget): Promise<void>
   fastForwardBranch(worktreePath: string, pushTarget?: GitPushTarget): Promise<void>
-  rebaseFromBase(worktreePath: string, baseRef: string): Promise<void>
+  rebaseFromBase(worktreePath: string, baseRef: string): Promise<RebaseFromBaseResult>
   fetchRemote(worktreePath: string, pushTarget?: GitPushTarget): Promise<void>
   syncForkDefaultBranch(
     worktreePath: string,
