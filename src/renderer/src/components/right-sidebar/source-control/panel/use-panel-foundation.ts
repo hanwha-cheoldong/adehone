@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useAppStore } from '@/store'
 import { useSourceControlAi } from '../ai/use-ai'
 import { useSourceControlFileListing } from '../listing/use-file-listing'
@@ -8,6 +8,10 @@ import { useSourceControlPanelState } from './use-panel-state'
 /** Keep data foundation separate from action hooks so flows cannot become dependencies of the state they mutate. */
 export function useSourceControlPanelFoundation() {
   const panelState = useSourceControlPanelState()
+  const [stageCompletionSeq, setStageCompletionSeq] = useState(0)
+  const notifyStageComplete = useCallback(() => {
+    setStageCompletionSeq((seq) => seq + 1)
+  }, [])
   const updateSettingsOrThrow = useCallback(
     (...args: Parameters<ReturnType<typeof useAppStore.getState>['updateSettingsOrThrow']>) =>
       useAppStore.getState().updateSettingsOrThrow(...args),
@@ -67,6 +71,7 @@ export function useSourceControlPanelFoundation() {
     isFolder,
     isGitHistoryExpanded,
     isMac,
+    onStageComplete: notifyStageComplete,
     refreshActiveGitStatusAfterMutation,
     remoteActionError,
     repositoryHuge,
@@ -119,7 +124,14 @@ export function useSourceControlPanelFoundation() {
     sourceControlAiActionsVisible
   ])
 
-  return { ...panelState, ...reviewContext, ...listing, ...ai }
+  return {
+    ...panelState,
+    ...reviewContext,
+    ...listing,
+    ...ai,
+    stageCompletionSeq,
+    notifyStageComplete
+  }
 }
 
 export type SourceControlPanelFoundation = ReturnType<typeof useSourceControlPanelFoundation>

@@ -34,12 +34,14 @@ export function useSourceControlEntryMutations({
   activeRepoTarget,
   activeWorktreeId,
   worktreePath,
-  refreshActiveGitStatusAfterMutation
+  refreshActiveGitStatusAfterMutation,
+  onStageComplete
 }: {
   activeRepoTarget: RuntimeClientTarget | null
   activeWorktreeId: string | null
   worktreePath: string | null
   refreshActiveGitStatusAfterMutation: () => Promise<void>
+  onStageComplete?: () => void
 }) {
   // Name the callback so Retry can reenter the same attempt.
   const scope = useSourceControlScope()
@@ -82,8 +84,18 @@ export function useSourceControlEntryMutations({
       dismissSourceControlEntryFailureToast(activeWorktreeId)
       // Refresh outside the mutation catch so its errors cannot be mislabeled as stage failures.
       await refreshActiveGitStatusAfterMutation()
+      if (operation === 'stage') {
+        onStageComplete?.()
+      }
     },
-    [activeRepoTarget, worktreePath, activeWorktreeId, refreshActiveGitStatusAfterMutation, scope]
+    [
+      activeRepoTarget,
+      worktreePath,
+      activeWorktreeId,
+      onStageComplete,
+      refreshActiveGitStatusAfterMutation,
+      scope
+    ]
   )
 
   const handleStage = useCallback(

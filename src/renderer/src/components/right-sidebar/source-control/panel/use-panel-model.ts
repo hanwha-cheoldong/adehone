@@ -161,7 +161,8 @@ export function useSourceControlPanelModel() {
     activeRepoTarget,
     activeWorktreeId,
     worktreePath,
-    refreshActiveGitStatusAfterMutation
+    refreshActiveGitStatusAfterMutation,
+    onStageComplete: foundation.notifyStageComplete
   })
   const discardConfirmation = useSourceControlDiscardConfirmation({
     activeRepoTarget,
