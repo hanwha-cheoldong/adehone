@@ -26,7 +26,7 @@ export const ANDROID_DEV_MEMORY_SEED = `# Memory
 
 ## Common Verification Commands
 - Debug build: \`./gradlew assembleDebug\`
-- Unit tests: \`./gradlew testDebugUnitTest\`
+- Unit tests: \`./gradlew testDebugUnitTest\`, plus \`test\` for pure Kotlin/JVM modules (e.g. \`./gradlew :domain:test\`)
 - Lint & static analysis: \`./gradlew lintDebug\`, \`./gradlew ktlintCheck\`, \`./gradlew detekt\`
 - Auto-format: \`./gradlew ktlintFormat\`
 - Coverage report: \`./gradlew koverHtmlReport\`

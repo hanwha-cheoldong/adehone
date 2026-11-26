@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: android-compose-patterns
 description: Android Jetpack Compose patterns — Hilt ViewModel + single StateFlow, Event Sink, Type-Safe Navigation, WindowInsets/edge-to-edge, AndroidView/WebView lifecycle, recomposition, and TalkBack accessibility.
@@ -49,3 +51,5 @@ sealed interface ItemListEvent {
 - Keep interactive touch targets at least \`48.dp x 48.dp\` and maintain text contrast (>= 4.5:1 normal, >= 3:1 large/UI).
 - Security exception: on secure PIN/password keypads, harden accessibility (\`importantForAccessibility\`) per security policy so sensitive digits are not read aloud.
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

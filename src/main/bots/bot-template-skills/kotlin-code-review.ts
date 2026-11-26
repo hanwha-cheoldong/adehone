@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: kotlin-code-review
 description: Kotlin and Android code reviewer — severity-ranked checks for Clean Architecture, security, coroutines/Flows, Compose performance, Kotlin idioms, and Android pitfalls.
@@ -16,6 +18,7 @@ Inspect \`git diff\` (and surrounding context) and report only high-confidence f
   - Hardcoded secrets/API keys/tokens, \`*.jks\`, \`local.properties\`, or sensitive data in logs
   - Permissive \`TrustManager\` / \`HostnameVerifier\`, \`cleartextTrafficPermitted="true"\`, \`allowBackup="true"\`
   - Unvalidated WebView origins, raw \`intent://\` forwarding, \`PendingIntent.FLAG_MUTABLE\` on notification taps
+  - Path traversal: a file path built from external input (Intent extras, deep links, \`ContentProvider\` URIs, shared \`DISPLAY_NAME\`, server responses, zip entry names) that can leave the app's allowed directory. Prefer app-generated file names; otherwise compare the target's \`canonicalFile.toPath()\` with the allowed directory's using \`startsWith\` (never a raw string prefix) and reject anything outside before reading or writing
   - Raw SQL string interpolation in Room/SQLDelight (must use parameterized \`:param\`)
 
 ### HIGH (Should Fix Before Merge)
@@ -48,3 +51,5 @@ Fix: Concrete minimal fix.
 Verdict: APPROVE (no CRITICAL/HIGH) | BLOCK (fix CRITICAL/HIGH first)
 \`\`\`
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES
