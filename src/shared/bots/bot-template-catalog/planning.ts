@@ -109,12 +109,12 @@ export const BOT_TEMPLATES_PLANNING: readonly BotTemplate[] = [
     id: 'product-planning',
     category: 'planning',
     name: 'Product planning',
-    line: 'Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.',
+    line: 'Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.',
     firstChat:
-      'Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.',
+      'Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.',
     mascot: 'O1',
-    watches: 'Product ideas, docs, Linear issues, and dev-bot review feedback',
-    does: 'Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.',
+    watches: 'Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback',
+    does: 'Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.',
     reports: 'Here, when you ask and Mondays at 9:30 AM',
     connectors: ['linear', 'github'],
     schedules: [
@@ -124,14 +124,14 @@ export const BOT_TEMPLATES_PLANNING: readonly BotTemplate[] = [
         what: 'Planning & open decisions sync',
         rrule: '30 9 * * 1',
         prompt:
-          'Review active PRDs, capability contracts, and delegated work items, then post a concise summary of progress, dev-bot review blockers, and open product decisions.'
+          'Review active PRDs, 3-platform capability contracts, and delegated [AND]/[IOS]/[MWB] work items, then post a concise summary of progress, dev-bot review blockers, and open product decisions.'
       }
     ],
     events: [],
     skills: ['product-lens', 'prd-authoring', 'product-capability', 'work-breakdown'],
     example: [
-      'Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.',
-      'Flagged 2 blocking open decisions from Android feasibility review before coding started.'
+      'Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.',
+      'Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.'
     ]
   }
 ]
