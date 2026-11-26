@@ -133,15 +133,35 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDo.0',
+    'Plan every non-trivial feature or refactor with `mobile-web-planner` (Requirements & `[MWB]` Contract Intake -> Search-First & Architecture/Bridge Review -> Phased Steps -> Testing Strategy & Risks) before editing code.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDo.0',
     'Classify every feature or fix into Track A/B/C with the `mobile-web-intake` skill and convert it into a `mobile-web-worker-brief` template before delegating.'
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDo.1',
+    'Follow `mobile-web-patterns` (separated server/client/URL/form state, `AbortController`), `mobile-web-design-a11y` (`100dvh`/safe-area, `>=44px` touch targets, WCAG 2.2 AA), `mobile-web-performance-pwa`, and `mobile-web-tdd-testing`.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDo.2',
     'After code changes, verify build, typecheck, lint, and unit/E2E tests pass directly in the `mobile-web-close-out` step.'
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDo.2',
+    'Before reporting done or opening a PR, run the 6-phase `mobile-web-verification-loop` (build & bundle budget, typecheck/lint, unit & mobile-viewport E2E, security/bridge scan, Vitals/a11y diff, live acceptance) and `mobile-web-code-review`.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDo.3',
     'Before changing responsive layouts, WebView JS bridge clients, or CSP/cookie policies, check iOS Safari/Android WebView compatibility, safe-area insets, and XSS/origin security first.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDo.3',
+    'Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDont.0',
+    'Never claim something is fixed without passing `mobile-web-verification-loop` build, test, and mobile viewport checks first.'
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDont.0',
@@ -149,10 +169,18 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDont.1',
+    'Never inject untrusted strings into `innerHTML`/`dangerouslySetInnerHTML`, use `postMessage(..., "*")` without `event.origin` checks, or store sensitive tokens in `localStorage`.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDont.2',
     'Never upgrade framework/bundler major versions or alter CSP/CORS/cookie security headers without approval.'
   ),
   entry(
     'bots.templates.mobile-web-dev.soulDont.2',
+    'Never upgrade framework/bundler major versions or relax CSP/CORS/cookie security headers without explicit owner approval.'
+  ),
+  entry(
+    'bots.templates.mobile-web-dev.soulDont.3',
     'Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs.'
   ),
   entry(
@@ -174,6 +202,10 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   entry(
     'bots.templates.product-planning.soulDont.0',
     'Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDont.1',
+    'Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, `mobile-web-planner`).'
   ),
   entry(
     'bots.templates.product-planning.soulDont.1',

@@ -1,3 +1,5 @@
+import { WEBVIEW_BRIDGE_PROTOCOL, WEBVIEW_BRIDGE_PROTOCOL_PATH } from './webview-bridge-protocol'
+
 export const SKILL = `---
 name: product-capability
 description: Translate PRD intent into an implementation-ready 3-platform Capability Contract (Android, iOS, Mobile Web) locking down shared bridge/API contracts, invariants, and open decisions.
@@ -13,12 +15,13 @@ Turn product intent (PRD, roadmap note, or discussion) into explicit engineering
 - Separate **user-visible promises** from **implementation details**.
 - Distinguish **fixed policy** (security, compliance, SLA) from **open preference**.
 - Lock down **shared cross-platform contracts** (WebView JS bridge, deep links, API schemas, push payloads) in one place before splitting work to platform bots.
+- For hybrid WebView work, start the bridge section from \`references/bridge-protocol.md\`, record every difference from it, and resolve its \`OPEN\` items that the feature needs.
 - If a requirement conflicts with existing platform constraints (e.g. iOS WKWebView origin rules, Android permissions/R8, Mobile Web viewport/CSP), call it out directly.
 
 ## Capability Contract Format
 
 \`\`\`markdown
-# Capability Contract: [Product / Feature Name]
+# Capability Contract: [Product / Feature Name] (version [n])
 
 ## Source PRD / Context
 - Reference: [path or link to PRD / foundational spec]
@@ -32,7 +35,7 @@ Turn product intent (PRD, roadmap note, or discussion) into explicit engineering
 - **Mobile Web**: [viewport/100dvh, touch ergonomics, offline/PWA, CSP/origin rules]
 
 ## Shared Contracts (SSOT)
-- **WebView JS Bridge**: [method names, request/response schemas, error codes, fallback/versioning]
+- **WebView JS Bridge**: [baseline version, actions and events used, payload/data schemas, error codes, fallback/versioning, differences from the baseline]
 - **Deep Links / Routing**: [URL schemes, universal/app links, fallback behavior]
 - **API & Push Payloads**: [endpoints, auth headers, FCM/APNs payload parity]
 - **Fixed Policies & Invariants**: [encryption, session rules, states that must never occur]
@@ -46,3 +49,7 @@ Turn product intent (PRD, roadmap note, or discussion) into explicit engineering
 
 Once blocking decisions are resolved (or flagged for dev-bot triage), hand off to \`work-breakdown\` to slice into platform-specific work items.
 `
+
+export const SKILL_FILES: Readonly<Record<string, string>> = {
+  [WEBVIEW_BRIDGE_PROTOCOL_PATH]: WEBVIEW_BRIDGE_PROTOCOL
+}

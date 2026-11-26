@@ -34,6 +34,10 @@ export const IOS_DEV_MEMORY_SEED = `# Memory
 ## Active Work & Tech Debt
 - Active feature branches: (none)
 - Open issues / tech debt: (none)
+
+## Cross-Bot Collaboration (Product Planning · Mobile Web · Android)
+- Active [IOS] items & SSOT Capability Contracts: (none)
+- Shared WKWebView bridge / Universal Links sync status: (none)
 `
 
 export const IOS_DEV_AUTOMATIONS_DOC = `# Automations

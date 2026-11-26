@@ -1,3 +1,5 @@
+import { WEBVIEW_BRIDGE_PROTOCOL, WEBVIEW_BRIDGE_PROTOCOL_PATH } from './webview-bridge-protocol'
+
 export const SKILL = `---
 name: android-security-webview
 description: Enterprise Android security and platform guide — transport/E2EE encryption, hardened WebView JS bridge, native/JS Device APIs, MDM/MAM, secure keypad, and FCM push notifications.
@@ -5,7 +7,7 @@ description: Enterprise Android security and platform guide — transport/E2EE e
 
 # Android Enterprise Security, WebView Bridge & Device APIs
 
-Reference this skill when implementing or reviewing encryption, WebView ↔ Native JS bridges, native Device APIs, MDM/MAM compliance, secure keypads, or push notifications. See \`references/device-apis.md\` for the full 11-API native/JS specification.
+Reference this skill when implementing or reviewing encryption, WebView ↔ Native JS bridges, native Device APIs, MDM/MAM compliance, secure keypads, or push notifications. See \`references/device-apis.md\` for the 11-API native specification. The wire contract shared with the Mobile web, iOS, and Product planning bots is \`references/bridge-protocol.md\`; read it before any bridge change and follow its section 6 to raise mismatches.
 
 ## 1. Transport & Payload Encryption (구간 암호화)
 - **TLS & Pinning**: Enforce HTTPS (TLS 1.2/1.3) via \`network_security_config.xml\` with \`cleartextTrafficPermitted="false"\`. Apply \`OkHttp CertificatePinner\` or \`<pin-set>\` with a backup pin and rotation plan. Never use permissive \`TrustManager\` or \`HostnameVerifier { _, _ -> true }\`.
@@ -14,7 +16,7 @@ Reference this skill when implementing or reviewing encryption, WebView ↔ Nati
 ## 2. WebView ↔ Native JS Bridge Hardening
 - Prefer \`WebViewCompat.addWebMessageListener\` with explicit \`allowedOriginRules\` over \`addJavascriptInterface\`.
 - If using \`@JavascriptInterface\`, annotate every exposed method with \`@Keep\`, attach only on allowlisted \`https://\` origins, and verify \`webView.url\` origin on the main thread before execution.
-- Use a structured JSON envelope: \`{ id, action, payload }\` -> \`{ id, ok, data, error: { code, message } }\`. Treat all JS input as untrusted and dispatch blocking work off the main thread.
+- Use the channel name \`AppBridge\` and the envelopes, \`action\` strings, error codes, and events in \`references/bridge-protocol.md\` unless the Capability Contract or the shipped bridge differs. \`@JavascriptInterface\` is visible to every frame, so a \`webView.url\` check alone does not authenticate the caller. Treat all JS input as untrusted and dispatch blocking work off the main thread.
 - Harden \`WebSettings\`: \`allowFileAccess = false\`, \`allowContentAccess = false\`, \`allowFileAccessFromFileURLs = false\`, \`allowUniversalAccessFromFileURLs = false\`, \`mixedContentMode = MIXED_CONTENT_NEVER_ALLOW\`, \`safeBrowsingEnabled = true\`. Never call \`handler.proceed()\` in \`onReceivedSslError\`.
 - Block arbitrary \`intent://\` URIs in \`shouldOverrideUrlLoading\`; allow only \`https://\` or allowlisted app schemes with \`ActivityNotFoundException\` handling. Handle \`OnBackPressedDispatcher\` cleanly and forward WebView lifecycle (\`onPause\`/\`onResume\`/\`destroy\`).
 
@@ -34,50 +36,51 @@ Reference this skill when implementing or reviewing encryption, WebView ↔ Nati
 `
 
 export const SKILL_FILES: Readonly<Record<string, string>> = {
+  [WEBVIEW_BRIDGE_PROTOCOL_PATH]: WEBVIEW_BRIDGE_PROTOCOL,
   'references/device-apis.md': `# Android Device APIs (Native Kotlin & WebView JS Bridge)
 
 1. **생체 인증 (Biometric Authentication)**
    - *Native*: \`androidx.biometric:biometric\` (\`BiometricPrompt\`). Check \`BiometricManager.canAuthenticate(BIOMETRIC_STRONG or DEVICE_CREDENTIAL)\`; bind \`CryptoObject\` backed by an \`AndroidKeyStore\` key with \`setUserAuthenticationRequired(true)\`.
-   - *JS*: \`authenticateBiometric({ reason })\` -> \`{ authenticated, errorCode }\`.
+   - *JS*: \`authenticateBiometric\` (payload and result: \`bridge-protocol.md\`).
 
 2. **소셜 로그인 SDK (Social Login)**
    - *Native*: \`androidx.credentials:credentials\` (Credential Manager) for Google Sign-In / Passkeys; OAuth 2.0 PKCE via Custom Tabs for third-party providers. Never embed \`client_secret\`; validate \`state\`/\`nonce\` and ID tokens server-side.
-   - *JS*: \`socialLogin({ provider })\`.
+   - *JS*: \`socialLogin\` (payload and result: \`bridge-protocol.md\`).
 
 3. **Android Keystore / Encrypted Storage**
    - *Native*: Hardware-backed \`AndroidKeyStore\` AES-GCM keys (\`StrongBox\` when available) + DataStore/Tink AEAD (or \`EncryptedSharedPreferences\` in existing apps). Never store tokens/PII in plain \`SharedPreferences\`.
-   - *JS*: \`secureStorage.set/get/remove(key, value)\` with explicit namespace/key allowlist.
+   - *JS*: \`secureStorage.set\`, \`secureStorage.get\`, \`secureStorage.remove\` (payload and result: \`bridge-protocol.md\`).
 
 4. **CameraX / Photo Picker**
-   - *Native*: \`CameraX\` bound to \`LifecycleOwner\` with runtime \`CAMERA\` permission; Android Photo Picker (\`PickVisualMedia\`) for gallery without broad storage permissions. Strip EXIF and validate MIME/size.
-   - *JS*: \`openCamera(options)\` / \`pickMedia(options)\` -> temporary \`FileProvider\` URI; clean up temp files after upload.
+   - *Native*: \`CameraX\` bound to \`LifecycleOwner\` with runtime \`CAMERA\` permission; Android Photo Picker (\`PickVisualMedia\`) for gallery without broad storage permissions. Strip EXIF and validate MIME/size. Keep files app-private behind the opaque \`fileId\` from \`bridge-protocol.md\` and delete temp files after upload.
+   - *JS*: \`openCamera\`, \`pickMedia\` (payload and result: \`bridge-protocol.md\`).
 
 5. **FusedLocationProviderClient**
    - *Native*: \`getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, cancellationToken)\`. Handle fine/coarse permissions, disabled GPS, and timeouts.
-   - *JS*: \`getLocation({ accuracy, timeoutMs })\` -> \`{ lat, lng, accuracy, timestamp }\`.
+   - *JS*: \`getLocation\` (payload and result: \`bridge-protocol.md\`).
 
 6. **Vibrator / HapticFeedback**
    - *Native*: \`VibratorManager\` (API 31+) with \`Vibrator\` fallback or Compose \`LocalHapticFeedback\`; declare \`VIBRATE\`.
-   - *JS*: \`vibrate({ type | durationMs })\` (cap duration).
+   - *JS*: \`vibrate\` (payload and result: \`bridge-protocol.md\`).
 
 7. **FCM & Notification Settings**
    - *Native*: \`FirebaseMessaging.getInstance().token\`, \`POST_NOTIFICATIONS\` (API 33+), \`NotificationManagerCompat.areNotificationsEnabled()\`, \`Settings.ACTION_APP_NOTIFICATION_SETTINGS\`.
-   - *JS*: \`getPushToken()\`, \`getNotificationSettings()\`, \`openNotificationSettings()\`.
+   - *JS*: \`getPushToken\`, \`getNotificationSettings\`, \`openNotificationSettings\` (payload and result: \`bridge-protocol.md\`).
 
 8. **Intent / Custom Tabs / External App Launch**
    - *Native*: \`CustomTabsIntent.Builder()\`, \`<queries>\` (API 30+), \`Intent.ACTION_VIEW\` with \`ActivityNotFoundException\` handling and scheme/package allowlist.
-   - *JS*: \`openExternalUrl({ url })\` / \`openCustomTab({ url })\`.
+   - *JS*: \`openExternalUrl\`, \`openInAppBrowser\` (payload and result: \`bridge-protocol.md\`).
 
 9. **ShareSheet (Intent.ACTION_SEND)**
    - *Native*: \`Intent.createChooser(Intent(Intent.ACTION_SEND), title)\` with \`FileProvider\` + \`FLAG_GRANT_READ_URI_PERMISSION\`.
-   - *JS*: \`share({ title, text, url })\`.
+   - *JS*: \`share\` (payload and result: \`bridge-protocol.md\`).
 
 10. **OnBackPressed & WebView Control**
     - *Native*: \`OnBackPressedDispatcher\` + predictive back (\`android:enableOnBackInvokedCallback="true"\`), coordinating \`webView.canGoBack()\` / SPA history.
-    - *JS*: \`onBackPressed\` event / \`setBackHandlerMode('native' | 'web')\`.
+    - *JS*: \`setBackHandlerMode\` + \`onBackPressed\` event (payload and result: \`bridge-protocol.md\`).
 
 11. **App Info & Network Status**
     - *Native*: \`PackageInfoCompat.getLongVersionCode\`; \`ConnectivityManager.registerDefaultNetworkCallback\` (\`NET_CAPABILITY_INTERNET\` & \`NET_CAPABILITY_VALIDATED\`). Never use deprecated \`NetworkInfo\`.
-    - *JS*: \`getAppInfo()\`, \`getNetworkStatus()\`.
+    - *JS*: \`getAppInfo\`, \`getNetworkStatus\` (payload and result: \`bridge-protocol.md\`).
 `
 }

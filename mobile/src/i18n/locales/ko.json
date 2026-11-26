@@ -5190,7 +5190,15 @@
         "swift-code-review": "안전성, 동시성, ARC 메모리, 프로토콜, SwiftUI, Xcode를 다루는 심각도별 Swift/ObjC iOS 코드 리뷰.",
         "xcode-build-resolver": "최소 변경 Xcode/SwiftPM 빌드 오류 해결, Bridging Header/Sendable/SPM 수정, 배포 타깃 및 서명 가드레일.",
         "ios-verification-loop": "6단계 품질 게이트(빌드, SwiftLint/포맷, 테스트/커버리지, 보안 스캔, Diff 리뷰, simctl 검증).",
-        "ios-security-webview": "구간/E2EE 암호화, 보안 WKWebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 APNs 푸시."
+        "ios-security-webview": "구간/E2EE 암호화, 보안 WKWebView JS 브리지, 11종 디바이스 API, MDM/MAM, 보안 키패드 및 APNs 푸시.",
+        "mobile-web-planner": "4단계 플래닝, Search-First 재사용, [MWB] 계약 인테이크, WebView 브리지 정렬 및 Red Flag 검증.",
+        "mobile-web-patterns": "컴포넌트 합성, server/client/URL/form 상태 분리, SWR, AbortController 기반 ECC 프론트엔드 패턴.",
+        "mobile-web-design-a11y": "안티템플릿 UI 품질, 100dvh/safe-area 에르고노믹스, ≥44px 터치 타깃, WCAG 2.2 AA, 400% 줌 리플로우.",
+        "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright 모바일 뷰포트(320-1920px), 터치 검증 및 브리지 계약 테스트.",
+        "mobile-web-code-review": "XSS/CSP/오리진 보안, 브리지 패리티, 100dvh/safe-area, Core Web Vitals 기반 심각도별 모바일 웹 코드 리뷰.",
+        "mobile-web-verification-loop": "6단계 검증 게이트(빌드/번들 예산, 타입체크/린트, 단위·E2E, 보안·브리지 diff, Vitals·a11y, 인수 승인).",
+        "mobile-web-webview-bridge": "Android/iOS 통합 JS 브리지 클라이언트(11종 디바이스 API), 오리진 검증, 브라우저 폴백, 크로스봇 동기화.",
+        "mobile-web-performance-pwa": "Core Web Vitals 목표, 번들 예산, 이미지·폰트 로딩, 컴포지터 전용 애니메이션, 안전한 PWA 캐싱 전략."
       },
       "androidPlanner": "안드로이드 플래너",
       "androidCleanArchitecture": "클린 아키텍처",
@@ -5210,7 +5218,15 @@
       "swiftCodeReview": "Swift 코드 리뷰",
       "xcodeBuildResolver": "Xcode 빌드 및 서명 해결",
       "iosVerificationLoop": "6단계 검증 루프",
-      "iosSecurityWebview": "보안 · WKWebView · 디바이스 API"
+      "iosSecurityWebview": "보안 · WKWebView · 디바이스 API",
+      "mobileWebPlanner": "모바일 웹 플래너",
+      "mobileWebPatterns": "모바일 웹 패턴",
+      "mobileWebDesignA11y": "디자인 품질 및 접근성",
+      "mobileWebTddTesting": "모바일 웹 TDD 테스트",
+      "mobileWebCodeReview": "모바일 웹 코드 리뷰",
+      "mobileWebVerificationLoop": "6단계 검증 루프",
+      "mobileWebWebviewBridge": "WebView JS 브리지 · 11종 디바이스 API",
+      "mobileWebPerformancePwa": "성능 및 PWA 규칙"
     },
     "waits": {
       "cancel": "취소",

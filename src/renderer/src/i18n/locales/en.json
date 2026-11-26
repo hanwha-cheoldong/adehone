@@ -29826,34 +29826,36 @@
       },
       "mobile-web-dev": {
         "name": "Mobile web development",
-        "line": "Builds and reviews responsive mobile web, PWA, and hybrid WebView frontend features.",
-        "firstChat": "Point it at a mobile web workspace or give it a task. It follows mobile-first responsive UI, touch/viewport ergonomics, Core Web Vitals, hybrid WebView bridge, and frontend security guides.",
-        "watches": "Mobile web workspaces, tasks, and pull requests you hand it",
-        "does": "Implements and reviews responsive mobile UI, touch interactions, PWA/caching, WebView JS bridge client, and frontend security code.",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
-        "example1": "Fixed iOS Safari 100dvh keyboard overlap and added safe-area-inset-bottom padding.",
-        "example2": "Flagged unsanitized postMessage origin check and missing CSP frame-ancestors.",
+        "line": "Plans, builds, tests, and reviews responsive mobile web, PWA, and hybrid WebView features with ECC web & bridge guides.",
+        "firstChat": "Point it at a mobile web workspace or hand it a [MWB] work item from Product planning. It follows structured ECC workflows (planner, web patterns, design/a11y, TDD & Playwright mobile E2E, code review, 6-phase verification loop) plus Android/iOS WebView bridge guides.",
+        "watches": "Mobile web workspaces, [MWB] tasks, WebView bridge specs, and pull requests you hand it",
+        "does": "Plans and implements responsive 100dvh/safe-area UI, WCAG 2.2 AA a11y, Core Web Vitals/PWA, TDD/Playwright tests, and Android/iOS WebView JS bridge clients.",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
+        "example1": "Planned [MWB-04] with mobile-web-planner, aligned 11-API WebView bridge with Android/iOS bots, and passed 6-phase verification.",
+        "example2": "Flagged 100vh keyboard clipping, missing safe-area-inset-bottom, and postMessage(*) origin bypass.",
         "schedules": {
           "daily-morning-check": {
             "when": "Weekdays at 9 AM",
-            "what": "Daily build & lint/typecheck healthcheck"
+            "what": "Daily build, typecheck & lint healthcheck"
           }
         },
         "events": {
           "pr-verify": {
             "trigger": "When a pull request is opened or updated",
-            "action": "Run build, tests, and mobile viewport/security checks"
+            "action": "Run 6-phase verification loop and mobile web code review"
           }
         },
         "soulDo": {
-          "0": "Classify every feature or fix into Track A/B/C with the `mobile-web-intake` skill and convert it into a `mobile-web-worker-brief` template before delegating.",
-          "1": "After code changes, verify build, typecheck, lint, and unit/E2E tests pass directly in the `mobile-web-close-out` step.",
-          "2": "Before changing responsive layouts, WebView JS bridge clients, or CSP/cookie policies, check iOS Safari/Android WebView compatibility, safe-area insets, and XSS/origin security first."
+          "0": "Plan every non-trivial feature or refactor with `mobile-web-planner` (Requirements & `[MWB]` Contract Intake -> Search-First & Architecture/Bridge Review -> Phased Steps -> Testing Strategy & Risks) before editing code.",
+          "1": "Follow `mobile-web-patterns` (separated server/client/URL/form state, `AbortController`), `mobile-web-design-a11y` (`100dvh`/safe-area, `>=44px` touch targets, WCAG 2.2 AA), `mobile-web-performance-pwa`, and `mobile-web-tdd-testing`.",
+          "2": "Before reporting done or opening a PR, run the 6-phase `mobile-web-verification-loop` (build & bundle budget, typecheck/lint, unit & mobile-viewport E2E, security/bridge scan, Vitals/a11y diff, live acceptance) and `mobile-web-code-review`.",
+          "3": "Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`."
         },
         "soulDont": {
-          "0": "Never claim something is fixed without verifying the production build and mobile viewport behavior first.",
-          "1": "Never upgrade framework/bundler major versions or alter CSP/CORS/cookie security headers without approval.",
-          "2": "Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs."
+          "0": "Never claim something is fixed without passing `mobile-web-verification-loop` build, test, and mobile viewport checks first.",
+          "1": "Never inject untrusted strings into `innerHTML`/`dangerouslySetInnerHTML`, use `postMessage(..., \"*\")` without `event.origin` checks, or store sensitive tokens in `localStorage`.",
+          "2": "Never upgrade framework/bundler major versions or relax CSP/CORS/cookie security headers without explicit owner approval.",
+          "3": "Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs."
         }
       }
     },
@@ -30918,13 +30920,14 @@
         "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails.",
         "ios-verification-loop": "6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).",
         "ios-security-webview": "Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.",
-        "mobile-web-intake": "Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
-        "mobile-web-close-out": "Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.",
-        "mobile-web-desk-brief": "Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.",
-        "mobile-web-development": "Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.",
-        "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
-        "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.",
+        "mobile-web-planner": "4-step planning process, Search-First reuse, [MWB] contract intake, WebView bridge alignment, and Red Flags.",
+        "mobile-web-patterns": "ECC frontend patterns: component composition, separated server/client/URL/form state, SWR, and AbortController.",
+        "mobile-web-design-a11y": "Anti-template UI quality, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.",
+        "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.",
+        "mobile-web-code-review": "Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.",
+        "mobile-web-verification-loop": "6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).",
+        "mobile-web-webview-bridge": "Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.",
+        "mobile-web-performance-pwa": "Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.",
         "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
         "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
         "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
@@ -30949,11 +30952,12 @@
       "xcodeBuildResolver": "xcode-build-resolver",
       "iosVerificationLoop": "ios-verification-loop",
       "iosSecurityWebview": "ios-security-webview",
-      "mobileWebIntake": "mobile-web-intake",
-      "mobileWebWorkerBrief": "mobile-web-worker-brief",
-      "mobileWebCloseOut": "mobile-web-close-out",
-      "mobileWebDeskBrief": "mobile-web-desk-brief",
-      "mobileWebDevelopment": "mobile-web-development",
+      "mobileWebPlanner": "mobile-web-planner",
+      "mobileWebPatterns": "mobile-web-patterns",
+      "mobileWebDesignA11y": "mobile-web-design-a11y",
+      "mobileWebTddTesting": "mobile-web-tdd-testing",
+      "mobileWebCodeReview": "mobile-web-code-review",
+      "mobileWebVerificationLoop": "mobile-web-verification-loop",
       "mobileWebWebviewBridge": "mobile-web-webview-bridge",
       "mobileWebPerformancePwa": "mobile-web-performance-pwa",
       "productLens": "product-lens",

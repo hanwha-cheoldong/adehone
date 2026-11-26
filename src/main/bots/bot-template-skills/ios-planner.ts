@@ -10,8 +10,9 @@ Create specific, actionable, incrementally verifiable plans before writing code 
 ## Planning Process
 
 ### 1. Requirements Analysis
-- Clarify the exact feature or bug fix, success criteria, assumptions, and constraints.
-- Ask concise clarifying questions when requirements are ambiguous.
+- When receiving an \`[IOS-xx]\` work item from the planning bot, read the attached **SSOT Capability Contract** and the item's DoD first; if either is missing, ask for it.
+- Clarify the exact feature or bug fix, success criteria, assumptions, and constraints; report any missing spec or platform conflict back to \`product-planning\` *before* coding.
+- For WKWebView JS bridge, Universal Links, or APNs payload changes, check \`ios-security-webview/references/bridge-protocol.md\` and the attached contract, then align with the Mobile web and Android bots as its section 6 describes.
 - Define explicit **In Scope** and **Out of Scope** boundaries.
 
 ### 2. Search-First & Architecture Review

@@ -35,6 +35,10 @@ export const ANDROID_DEV_MEMORY_SEED = `# Memory
 ## Active Work & Tech Debt
 - Active feature branches: (none)
 - Open issues / tech debt: (none)
+
+## Cross-Bot Collaboration (Product Planning · Mobile Web · iOS)
+- Active [AND] items & SSOT Capability Contracts: (none)
+- Shared WebView bridge / deep-link sync status: (none)
 `
 
 export const ANDROID_DEV_AUTOMATIONS_DOC = `# Automations

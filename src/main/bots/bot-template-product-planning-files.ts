@@ -10,7 +10,7 @@ export const PRODUCT_PLANNING_DO_RULES: readonly string[] = [
 
 export const PRODUCT_PLANNING_DONT_RULES: readonly string[] = [
   '- Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.',
-  '- Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, etc.).',
+  '- Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, `mobile-web-planner`).',
   '- Never delegate ambiguous or uncontracted work items without explicit acceptance criteria, out-of-scope guards, and a pre-implementation review gate.',
   '- Never update a shared bridge/API/deep-link spec for one platform without syncing the Capability Contract and sibling work items for Android, iOS, and Mobile Web.'
 ]
