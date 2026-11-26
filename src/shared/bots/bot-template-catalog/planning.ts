@@ -104,5 +104,34 @@ export const BOT_TEMPLATES_PLANNING: readonly BotTemplate[] = [
     events: [],
     skills: ['issue-triage'],
     example: ['14 issues untouched since August.', 'ORC-511 and ORC-688 look like the same bug.']
+  },
+  {
+    id: 'product-planning',
+    category: 'planning',
+    name: 'Product planning',
+    line: 'Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.',
+    firstChat:
+      'Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.',
+    mascot: 'O1',
+    watches: 'Product ideas, docs, Linear issues, and dev-bot review feedback',
+    does: 'Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.',
+    reports: 'Here, when you ask and Mondays at 9:30 AM',
+    connectors: ['linear', 'github'],
+    schedules: [
+      {
+        id: 'weekly-planning-sync',
+        when: 'Mondays at 9:30 AM',
+        what: 'Planning & open decisions sync',
+        rrule: '30 9 * * 1',
+        prompt:
+          'Review active PRDs, capability contracts, and delegated work items, then post a concise summary of progress, dev-bot review blockers, and open product decisions.'
+      }
+    ],
+    events: [],
+    skills: ['product-lens', 'prd-authoring', 'product-capability', 'work-breakdown'],
+    example: [
+      'Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.',
+      'Flagged 2 blocking open decisions from Android feasibility review before coding started.'
+    ]
   }
 ]

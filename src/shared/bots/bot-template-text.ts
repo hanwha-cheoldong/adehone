@@ -204,6 +204,14 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.mobileWebWebviewBridge', 'mobile-web-webview-bridge')
     case 'mobile-web-performance-pwa':
       return t('bots.templateSkills.mobileWebPerformancePwa', 'mobile-web-performance-pwa')
+    case 'product-lens':
+      return t('bots.templateSkills.productLens', 'product-lens')
+    case 'prd-authoring':
+      return t('bots.templateSkills.prdAuthoring', 'prd-authoring')
+    case 'product-capability':
+      return t('bots.templateSkills.productCapability', 'product-capability')
+    case 'work-breakdown':
+      return t('bots.templateSkills.workBreakdown', 'work-breakdown')
   }
 }
 

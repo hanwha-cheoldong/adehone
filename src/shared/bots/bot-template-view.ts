@@ -81,7 +81,15 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'mobile-web-webview-bridge':
     'Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.',
   'mobile-web-performance-pwa':
-    'Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.'
+    'Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.',
+  'product-lens':
+    'Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.',
+  'prd-authoring':
+    '4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking internal code design.',
+  'product-capability':
+    'Translate PRD intent into explicit Capability Contracts: constraints, invariants, interfaces, and open decisions.',
+  'work-breakdown':
+    'Break foundational specs into prioritized milestones and self-contained work briefs with dev-bot review gates.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */

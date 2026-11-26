@@ -29,6 +29,9 @@ import * as mobileWebPerformancePwa from './bot-template-skills/mobile-web-perfo
 import * as mobileWebWebviewBridge from './bot-template-skills/mobile-web-webview-bridge'
 import * as mobileWebWorkerBrief from './bot-template-skills/mobile-web-worker-brief'
 import * as prReviewChecklist from './bot-template-skills/pr-review-checklist'
+import * as prdAuthoring from './bot-template-skills/prd-authoring'
+import * as productCapability from './bot-template-skills/product-capability'
+import * as productLens from './bot-template-skills/product-lens'
 import * as releaseNotesStyle from './bot-template-skills/release-notes-style'
 import * as releaseReadiness from './bot-template-skills/release-readiness'
 import * as securityChecklist from './bot-template-skills/security-checklist'
@@ -37,6 +40,7 @@ import * as statusBrief from './bot-template-skills/status-brief'
 import * as swiftCodeReview from './bot-template-skills/swift-code-review'
 import * as swiftConcurrencyActors from './bot-template-skills/swift-concurrency-actors'
 import * as swiftTddTesting from './bot-template-skills/swift-tdd-testing'
+import * as workBreakdown from './bot-template-skills/work-breakdown'
 import * as workspaceHygiene from './bot-template-skills/workspace-hygiene'
 import * as xcodeBuildResolver from './bot-template-skills/xcode-build-resolver'
 
@@ -86,7 +90,11 @@ const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'mobile-web-desk-brief': mobileWebDeskBrief,
   'mobile-web-development': mobileWebDevelopment,
   'mobile-web-webview-bridge': mobileWebWebviewBridge,
-  'mobile-web-performance-pwa': mobileWebPerformancePwa
+  'mobile-web-performance-pwa': mobileWebPerformancePwa,
+  'product-lens': productLens,
+  'prd-authoring': prdAuthoring,
+  'product-capability': productCapability,
+  'work-breakdown': workBreakdown
 }
 
 function normalizeSkillRelativePath(skill: BotTemplateSkill, rawPath: string): string {

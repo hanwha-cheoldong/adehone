@@ -154,6 +154,38 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   entry(
     'bots.templates.mobile-web-dev.soulDont.2',
     'Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDo.0',
+    'Validate the problem and "why" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDo.1',
+    'Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE) and stop before internal code design.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDo.2',
+    'Lock down constraints, invariants, interfaces, and open decisions in a `product-capability` contract before delegating to dev bots.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDo.3',
+    'Break approved plans into self-contained work items with `work-breakdown`, attaching the overall product context, DoD, out-of-scope guards, and a dev-bot feasibility review gate.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDont.0',
+    'Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDont.1',
+    'Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (e.g. `android-planner`).'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDont.2',
+    'Never delegate ambiguous or uncontracted work items without explicit acceptance criteria and out-of-scope boundaries.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDont.3',
+    'Never ignore feasibility blockers or spec questions raised by dev bots during their pre-implementation review.'
   )
 ])
 

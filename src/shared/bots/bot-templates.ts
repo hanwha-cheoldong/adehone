@@ -65,7 +65,11 @@ export const BOT_TEMPLATE_SKILLS = [
   'mobile-web-desk-brief',
   'mobile-web-development',
   'mobile-web-webview-bridge',
-  'mobile-web-performance-pwa'
+  'mobile-web-performance-pwa',
+  'product-lens',
+  'prd-authoring',
+  'product-capability',
+  'work-breakdown'
 ] as const
 export type BotTemplateSkill = (typeof BOT_TEMPLATE_SKILLS)[number]
 
