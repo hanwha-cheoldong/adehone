@@ -6157,13 +6157,13 @@
       },
       "product-planning": {
         "name": "Product planning",
-        "line": "Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.",
-        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.",
-        "watches": "Product ideas, docs, Linear issues, and dev-bot review feedback",
-        "does": "Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.",
+        "line": "Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.",
+        "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback",
+        "does": "Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.",
         "reports": "Here, when you ask and Mondays at 9:30 AM",
-        "example1": "Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.",
-        "example2": "Flagged 2 blocking open decisions from Android feasibility review before coding started.",
+        "example1": "Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.",
+        "example2": "Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.",
         "schedules": {
           "weekly-planning-sync": {
             "when": "Mondays at 9:30 AM",
@@ -6890,9 +6890,9 @@
         "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
         "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.",
         "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
-        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking internal code design.",
-        "product-capability": "Translate PRD intent into explicit Capability Contracts: constraints, invariants, interfaces, and open decisions.",
-        "work-breakdown": "Break foundational specs into prioritized milestones and self-contained work briefs with dev-bot review gates."
+        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
+        "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
+        "work-breakdown": "Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization."
       },
       "androidPlanner": "android-planner",
       "androidCleanArchitecture": "android-clean-architecture",

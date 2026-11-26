@@ -85,11 +85,11 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
   'product-lens':
     'Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.',
   'prd-authoring':
-    '4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking internal code design.',
+    '4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).',
   'product-capability':
-    'Translate PRD intent into explicit Capability Contracts: constraints, invariants, interfaces, and open decisions.',
+    'Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.',
   'work-breakdown':
-    'Break foundational specs into prioritized milestones and self-contained work briefs with dev-bot review gates.'
+    'Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */

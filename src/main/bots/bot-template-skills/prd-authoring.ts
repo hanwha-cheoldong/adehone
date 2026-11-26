@@ -1,11 +1,11 @@
 export const SKILL = `---
 name: prd-authoring
-description: Generate a lean, problem-first PRD through 4 gated phases (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking implementation details.
+description: Generate a lean, problem-first PRD for Android, iOS, and Mobile Web through 4 gated phases (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking internal code design.
 ---
 
-# PRD Authoring
+# PRD Authoring (Android · iOS · Mobile Web)
 
-Produce a **Product Requirements Document** capturing *what* must be true for success and *why*, stopping strictly before *how* (file paths, class names, or library choices belong to engineering bots).
+Produce a **Product Requirements Document** capturing *what* must be true for success and *why* across **Android, iOS, and Mobile Web**, stopping strictly before *how* (file paths, class names, or library choices belong to engineering bots).
 
 ## Anti-Fluff Rule
 
@@ -18,6 +18,7 @@ Each phase is a single gate — ask concise questions, wait for owner confirmati
 ### Phase 1 — FRAME
 - Restate the idea in one sentence and confirm alignment.
 - Clarify: **Who** has the problem, **What** observable pain exists, **Why** current workarounds fail, and **Why now**.
+- Confirm **Target Platforms**: Android, iOS, Mobile Web (and whether WebView hybrid or standalone mobile browser/PWA).
 
 ### Phase 2 — GROUND
 - Collect concrete evidence (user quotes, support tickets, analytics, failed workarounds).
@@ -25,8 +26,8 @@ Each phase is a single gate — ask concise questions, wait for owner confirmati
 
 ### Phase 3 — DECIDE
 - **Hypothesis**: *We believe [capability] will [solve problem] for [users]. We will know we are right when [measurable outcome].*
-- **MVP Scope**: Minimum required to test the hypothesis.
-- **Out of Scope**: Explicitly excluded items.
+- **MVP Scope & Platform Matrix**: Minimum required to test the hypothesis, explicitly mapping what applies to **Android**, **iOS**, and **Mobile Web**.
+- **Out of Scope**: Explicitly excluded items (and deferred platforms, if any).
 - **Open Questions**: Uncertainties that could change the approach.
 
 ### Phase 4 — GENERATE & HAND OFF
@@ -44,6 +45,11 @@ Write the PRD (e.g. \`docs/prds/<kebab-name>.prd.md\`) using this structure:
 - Hypothesis: ...
 - Primary metric: ...
 
+## Platform Scope & Parity Matrix
+| Capability | Android | iOS | Mobile Web | Notes / Platform Differences |
+|---|---|---|---|---|
+| [Feature 1] | In Scope | In Scope | In Scope | e.g. Android back-nav, iOS Safe Area, Web 100dvh |
+
 ## Scope
 ### In Scope (MVP)
 - ...
@@ -52,11 +58,11 @@ Write the PRD (e.g. \`docs/prds/<kebab-name>.prd.md\`) using this structure:
 - ...
 
 ## User Flows & Functional Requirements
-1. **[Flow/Requirement]**: [Expected behavior and acceptance criteria]
+1. **[Flow/Requirement]**: [Expected behavior, edge states, and acceptance criteria]
 
 ## Open Questions & Risks
 - [ ] [Question / Owner]
 \`\`\`
 
-After approval, pass the PRD to \`product-capability\` to lock down engineering constraints before breaking down work.
+After approval, pass the PRD to \`product-capability\` to lock down 3-platform engineering constraints and shared contracts before breaking down work.
 `

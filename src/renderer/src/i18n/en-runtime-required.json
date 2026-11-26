@@ -3659,8 +3659,8 @@
         "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
         "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
         "pr-review-checklist": "Read a diff for behaviour changes, missing tests and risky edits; cite each finding.",
-        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) without leaking internal code design.",
-        "product-capability": "Translate PRD intent into explicit Capability Contracts: constraints, invariants, interfaces, and open decisions.",
+        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
+        "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
         "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
         "release-notes-style": "Notes for users: new, fixed, changed; leave out refactors and code names.",
         "release-readiness": "What blocks a release and how to list it: checks, reviews, open blockers.",
@@ -3670,7 +3670,7 @@
         "swift-code-review": "Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.",
         "swift-concurrency-actors": "Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.",
         "swift-tdd-testing": "TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.",
-        "work-breakdown": "Break foundational specs into prioritized milestones and self-contained work briefs with dev-bot review gates.",
+        "work-breakdown": "Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization.",
         "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
         "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails."
       }
@@ -4046,11 +4046,11 @@
         "watches": "Pull requests waiting on your review, in the repos you pick"
       },
       "product-planning": {
-        "does": "Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.",
-        "example1": "Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.",
-        "example2": "Flagged 2 blocking open decisions from Android feasibility review before coding started.",
-        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.",
-        "line": "Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.",
+        "does": "Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.",
+        "example1": "Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.",
+        "example2": "Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.",
+        "line": "Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.",
         "name": "Product planning",
         "reports": "Here, when you ask and Mondays at 9:30 AM",
         "schedules": {
@@ -4061,17 +4061,17 @@
         },
         "soulDo": {
           "0": "Validate the problem and \"why\" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.",
-          "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE) and stop before internal code design.",
-          "2": "Lock down constraints, invariants, interfaces, and open decisions in a `product-capability` contract before delegating to dev bots.",
-          "3": "Break approved plans into self-contained work items with `work-breakdown`, attaching the overall product context, DoD, out-of-scope guards, and a dev-bot feasibility review gate."
+          "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE), including a 3-platform parity matrix for Android, iOS, and Mobile Web.",
+          "2": "Lock down platform constraints and shared SSOT contracts (WebView JS bridge, deep links, APIs, invariants) in a `product-capability` contract before delegating.",
+          "3": "Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms."
         },
         "soulDont": {
           "0": "Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.",
-          "1": "Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (e.g. `android-planner`).",
-          "2": "Never delegate ambiguous or uncontracted work items without explicit acceptance criteria and out-of-scope boundaries.",
-          "3": "Never ignore feasibility blockers or spec questions raised by dev bots during their pre-implementation review."
+          "1": "Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, etc.).",
+          "2": "Never delegate ambiguous or uncontracted work items without explicit acceptance criteria, out-of-scope guards, and a pre-implementation review gate.",
+          "3": "Never update a shared bridge/API/deep-link spec for one platform without syncing the Capability Contract and sibling work items for Android, iOS, and Mobile Web."
         },
-        "watches": "Product ideas, docs, Linear issues, and dev-bot review feedback"
+        "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback"
       },
       "release-notes": {
         "does": "Drafts release notes for users in three groups: new, fixed, changed.",

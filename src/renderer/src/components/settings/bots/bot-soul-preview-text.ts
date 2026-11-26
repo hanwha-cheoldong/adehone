@@ -161,15 +161,15 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   ),
   entry(
     'bots.templates.product-planning.soulDo.1',
-    'Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE) and stop before internal code design.'
+    'Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE), including a 3-platform parity matrix for Android, iOS, and Mobile Web.'
   ),
   entry(
     'bots.templates.product-planning.soulDo.2',
-    'Lock down constraints, invariants, interfaces, and open decisions in a `product-capability` contract before delegating to dev bots.'
+    'Lock down platform constraints and shared SSOT contracts (WebView JS bridge, deep links, APIs, invariants) in a `product-capability` contract before delegating.'
   ),
   entry(
     'bots.templates.product-planning.soulDo.3',
-    'Break approved plans into self-contained work items with `work-breakdown`, attaching the overall product context, DoD, out-of-scope guards, and a dev-bot feasibility review gate.'
+    'Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms.'
   ),
   entry(
     'bots.templates.product-planning.soulDont.0',
@@ -177,15 +177,15 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
   ),
   entry(
     'bots.templates.product-planning.soulDont.1',
-    'Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (e.g. `android-planner`).'
+    'Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, etc.).'
   ),
   entry(
     'bots.templates.product-planning.soulDont.2',
-    'Never delegate ambiguous or uncontracted work items without explicit acceptance criteria and out-of-scope boundaries.'
+    'Never delegate ambiguous or uncontracted work items without explicit acceptance criteria, out-of-scope guards, and a pre-implementation review gate.'
   ),
   entry(
     'bots.templates.product-planning.soulDont.3',
-    'Never ignore feasibility blockers or spec questions raised by dev bots during their pre-implementation review.'
+    'Never update a shared bridge/API/deep-link spec for one platform without syncing the Capability Contract and sibling work items for Android, iOS, and Mobile Web.'
   )
 ])
 
