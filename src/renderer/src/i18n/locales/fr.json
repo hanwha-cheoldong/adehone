@@ -919,7 +919,7 @@
       "signInFailedDetail": "Votre navigateur l’a ouverte malgré tout. Connectez-vous-y pour continuer."
     },
     "mobile": {
-      "teamDisabledRelay": "Orca Relay est désactivé par votre équipe. Utilisez le LAN."
+      "teamDisabledRelay": "Adehone Relay est désactivé par votre équipe. Utilisez le LAN."
     },
     "computerUse": {
       "teamDisabled": "Computer Use est désactivé par votre équipe."
@@ -1616,7 +1616,7 @@
         },
         "ports": {
           "serverPortForward": {
-            "updateServer": "Impossible de transférer le port {{port}} depuis {{host}}. Mettez à jour Orca sur {{host}} puis réessayez.",
+            "updateServer": "Impossible de transférer le port {{port}} depuis {{host}}. Mettez à jour Adehone sur {{host}} puis réessayez.",
             "failed": "Impossible de transférer le port {{port}} depuis {{host}}. Vérifiez la connexion puis réessayez.",
             "forwarded": "Port {{port}} transféré depuis {{host}}",
             "opened": "{{address}} ouvert dans votre navigateur par défaut.",
@@ -12434,11 +12434,11 @@
           "title": "Compte Adehone",
           "description": "Partagez instantanément votre travail et accédez à votre poste depuis Adehone Mobile, où que vous soyez.",
           "searchDescription": "Connectez-vous ou déconnectez-vous du compte utilisé par Artifacts et Adehone Relay.",
-          "managed": "Votre équipe gère certains paramètres d’Orca.",
+          "managed": "Votre équipe gère certains paramètres d’Adehone.",
           "deviceReportNamedViewers": "Les propriétaires et administrateurs de {{teams}} peuvent consulter les rapports de cet appareil.",
           "deviceReportViewers": "Les propriétaires et administrateurs de l’équipe peuvent consulter les rapports de cet appareil.",
           "reportingDetails": "Détails des rapports de l’appareil",
-          "reportingDisclosure": "La vue Appareils affiche la version d’Orca, le canal de publication, le nom de l’appareil, la plateforme, l’état de la mise à jour, les plugins requis qu’Orca n’a pas pu installer et la date du dernier rapport de l’appareil.",
+          "reportingDisclosure": "La vue Appareils affiche la version d’Adehone, le canal de publication, le nom de l’appareil, la plateforme, l’état de la mise à jour, les plugins requis qu’Adehone n’a pas pu installer et la date du dernier rapport de l’appareil.",
           "benefitsTitle": "Inclus avec votre compte",
           "artifactsTitle": "Partage d'artifacts",
           "artifactsDescription": "Publiez des fichiers HTML et Markdown, puis gérez chaque lien partagé depuis Adehone.",
@@ -12807,8 +12807,8 @@
             "unverifiable": "Non effectué : Adehone n'a pas pu confirmer ce qui tourne sur ce serveur. Réessayez lorsque l'hôte est joignable.",
             "migration": "Non effectué : un déplacement vers ce serveur est inachevé. Reprenez-le d'abord.",
             "deferred": "Pas encore effectué : le serveur n'est pas prêt pour cela. Réessayez plus tard.",
-            "stopIncomplete": "Non effectué : Orca n'a pas pu confirmer l'arrêt du serveur actuel et n'a donc pas lancé la mise à jour. Consultez orcad.log dans le dossier d'installation du serveur, sous ~/.orca-remote sur l'hôte, avant de réessayer.",
-            "rollbackStopIncomplete": "Non effectué : Orca n'a pas pu confirmer l'arrêt du serveur actuel et n'est donc pas revenu en arrière. Consultez orcad.log dans le dossier d'installation du serveur, sous ~/.orca-remote sur l'hôte, avant de réessayer.",
+            "stopIncomplete": "Non effectué : Adehone n'a pas pu confirmer l'arrêt du serveur actuel et n'a donc pas lancé la mise à jour. Consultez orcad.log dans le dossier d'installation du serveur, sous ~/.orca-remote sur l'hôte, avant de réessayer.",
+            "rollbackStopIncomplete": "Non effectué : Adehone n'a pas pu confirmer l'arrêt du serveur actuel et n'est donc pas revenu en arrière. Consultez orcad.log dans le dossier d'installation du serveur, sous ~/.orca-remote sur l'hôte, avant de réessayer.",
             "failed": "Adehone n'a pas pu terminer cette action sur le serveur. Réessayez.",
             "defaultServer": "Non effectué : ce serveur est l’hôte par défaut des nouveaux projets. Choisissez-en un autre dans « Les nouveaux projets s’ouvrent sur » avant de l’arrêter.",
             "wslMoveRunning": "Non effectué : un projet est en cours de déplacement vers ce serveur. Adehone le mettra à jour une fois le déplacement terminé."
@@ -13073,7 +13073,7 @@
           "defaultHostWebHelp": "Ce navigateur ouvre les nouveaux projets sur le serveur choisi.",
           "updateAll": "Tout mettre à jour",
           "updatesCount_other": "{{count}} mises à jour disponibles",
-          "shareRowHint": "Permettre à un autre Orca de se connecter ici.",
+          "shareRowHint": "Permettre à un autre Adehone de se connecter ici.",
           "manageShare": "Gérer",
           "share": "Partager",
           "serversCaption": "Serveurs",
@@ -19566,7 +19566,7 @@
         "attachmentExpired": "Cette pièce jointe a expiré.",
         "reattachFile": "Retirez-la et joignez-la à nouveau.",
         "reattachFiles": "Retirez-les et joignez-les à nouveau.",
-        "mailOwnerUnconfirmed": "Orca n’a pas pu confirmer que ce message est toujours destiné à ce chat.",
+        "mailOwnerUnconfirmed": "Adehone n’a pas pu confirmer que ce message est toujours destiné à ce chat.",
         "conversationCleared": "Cette conversation a été effacée.",
         "openCurrentConversation": "Ouvrez la conversation actuelle pour continuer.",
         "clearUnfinished": "Le dernier /clear ne s'est pas terminé.",
@@ -19917,8 +19917,8 @@
         "hostUpdateRequired": "Mettez à jour Adehone sur cet hôte pour continuer dans l'interface de chat.",
         "exitUnconfirmedFromTerminal": "{{agent}} exécute encore cette conversation dans ce terminal. Quittez {{agent}} ici, puis ouvrez cette conversation depuis l’historique des sessions.",
         "notSavedYet": "{{agent}} n'a pas encore enregistré cette conversation. Réessayez après sa réponse.",
-        "terminalChanged": "Le terminal qui exécutait {{agent}} a changé avant sa fermeture, Orca l’a donc laissé ouvert. Réessayez.",
-        "terminalExitUnproven": "Orca a fermé le terminal de {{agent}} mais n’a pas pu confirmer son arrêt, le chat ne s’est donc pas ouvert. Vérifiez la connexion à l’hôte, puis ouvrez la conversation depuis l’historique des sessions.",
+        "terminalChanged": "Le terminal qui exécutait {{agent}} a changé avant sa fermeture, Adehone l’a donc laissé ouvert. Réessayez.",
+        "terminalExitUnproven": "Adehone a fermé le terminal de {{agent}} mais n’a pas pu confirmer son arrêt, le chat ne s’est donc pas ouvert. Vérifiez la connexion à l’hôte, puis ouvrez la conversation depuis l’historique des sessions.",
         "resumeFailed": "{{agent}} n’a pas pu continuer dans le chat. Vérifiez ce terminal et la connexion à l’hôte, puis réessayez.",
         "exitUnconfirmed": "{{agent}} exécute cette conversation dans un autre terminal. Quittez-le là-bas ou fermez ce terminal, puis réessayez."
       },
@@ -20091,10 +20091,10 @@
         "orcaStopRemote": "Adehone sur {{machine}} s'est arrêté pendant que cette réponse était en cours.",
         "orcaStopCanContinue": "Vous pouvez continuer dans cette conversation.",
         "orcaStopUnnamedServer": "le serveur distant",
-        "restartContinued": "Orca a demandé à cet agent de poursuivre après un redémarrage. Votre propre message n’a pas été renvoyé.",
-        "restartContinueRefused": "Orca n’a pas pu poursuivre ce chat après le redémarrage. Envoyez un message pour le poursuivre.",
-        "restartContinueUnconfirmed": "Orca a demandé à cet agent de poursuivre après le redémarrage, mais n’a pas pu confirmer qu’il l’a fait. Vérifiez sa dernière réponse avant d’envoyer un autre message.",
-        "restartNotConnected": "Orca n’a pas pu reconnecter ce chat après le redémarrage et n’a donc pas demandé à l’agent de poursuivre.",
+        "restartContinued": "Adehone a demandé à cet agent de poursuivre après un redémarrage. Votre propre message n’a pas été renvoyé.",
+        "restartContinueRefused": "Adehone n’a pas pu poursuivre ce chat après le redémarrage. Envoyez un message pour le poursuivre.",
+        "restartContinueUnconfirmed": "Adehone a demandé à cet agent de poursuivre après le redémarrage, mais n’a pas pu confirmer qu’il l’a fait. Vérifiez sa dernière réponse avant d’envoyer un autre message.",
+        "restartNotConnected": "Adehone n’a pas pu reconnecter ce chat après le redémarrage et n’a donc pas demandé à l’agent de poursuivre.",
         "permissionDenied": "{{agent}} a refusé la permission. Voir les détails.",
         "safetyReviewApproved": "{{agent}} a approuvé cette action. Voir les détails.",
         "safetyReview": "{{agent}} a signalé un avertissement de sécurité. Voir les détails.",
@@ -20408,7 +20408,7 @@
         "stopped": "{{distro}} est arrêté",
         "start": "Démarrer",
         "connecting": "Connexion à {{distro}}…",
-        "startFailed": "Impossible de démarrer {{distro}}. Vérifiez-le dans Paramètres → Serveurs Orca distants.",
+        "startFailed": "Impossible de démarrer {{distro}}. Vérifiez-le dans Paramètres → Serveurs Adehone distants.",
         "unverifiable": "Adehone n'a pas pu vérifier si {{distro}} est en cours d'exécution",
         "startToSend": "Démarrez {{distro}} pour envoyer.",
         "startDistro": "Démarrer {{distro}}"
@@ -20629,7 +20629,7 @@
         "unavailable": "Aucun aperçu pour cette page."
       },
       "workers": {
-        "stopUnconfirmed": "Orca n’a pas pu confirmer l’arrêt du worker."
+        "stopUnconfirmed": "Adehone n’a pas pu confirmer l’arrêt du worker."
       },
       "connectorAsker": {
         "anApp": "Une application",
@@ -20662,8 +20662,8 @@
         "handOff": "Passer à un agent",
         "more": "Plus d’actions",
         "statusUnknown": "Heure de réinitialisation inconnue.",
-        "statusCanContinueAtAuto": "Vous pourrez poursuivre à {{time}}. Orca reprendra ce chat à {{autoTime}}.",
-        "statusCanContinueAtNoAuto": "Vous pourrez poursuivre à {{time}}. Orca ne reprendra pas ce chat automatiquement.",
+        "statusCanContinueAtAuto": "Vous pourrez poursuivre à {{time}}. Adehone reprendra ce chat à {{autoTime}}.",
+        "statusCanContinueAtNoAuto": "Vous pourrez poursuivre à {{time}}. Adehone ne reprendra pas ce chat automatiquement.",
         "statusCanContinueAt": "Vous pourrez poursuivre à {{time}}.",
         "resetUnknown": "Heure de réinitialisation inconnue",
         "continuesAt": "Reprise à {{time}}",
@@ -20673,10 +20673,10 @@
         "titleWeeklyReached": "Limite hebdomadaire atteinte pour {{agent}}",
         "titleExtraUsageReached": "Limite d’utilisation supplémentaire atteinte pour {{agent}}",
         "titleUsageReached": "Limite d’utilisation atteinte pour {{agent}}",
-        "statusHasUsageAuto": "{{agent}} dispose à nouveau de quota. Orca reprendra ce chat à {{time}}.",
+        "statusHasUsageAuto": "{{agent}} dispose à nouveau de quota. Adehone reprendra ce chat à {{time}}.",
         "statusHasUsage": "{{agent}} dispose à nouveau de quota.",
         "titleHasUsage": "{{agent}} dispose à nouveau de quota",
-        "statusCanContinueNowAuto": "{{agent}} peut reprendre maintenant. Orca reprendra ce chat à {{time}}.",
+        "statusCanContinueNowAuto": "{{agent}} peut reprendre maintenant. Adehone reprendra ce chat à {{time}}.",
         "statusCanContinueNow": "{{agent}} peut reprendre maintenant.",
         "titleCanContinueNow": "{{agent}} peut reprendre maintenant",
         "turnOnAutoContinue": "Reprise automatique à la réinitialisation"
@@ -20743,7 +20743,7 @@
         "greenLead": "CI au vert sur",
         "at": "à",
         "hide": "Ne pas afficher les lignes de résultat CI",
-        "hidden": "Orca n’affichera plus les lignes de résultat CI"
+        "hidden": "Adehone n’affichera plus les lignes de résultat CI"
       },
       "openedPullRequests": {
         "one": "Pull request créée : {{name}}",
@@ -20906,7 +20906,7 @@
         "addOrg": "Ajouter une organisation",
         "addWorkspace": "Ajouter un espace de travail",
         "githubAsYou": "Il peut aussi agir dans GitHub en votre nom, via votre connexion gh.",
-        "linearAsYou": "Il peut aussi agir dans Linear en votre nom, via votre propre connexion Linear dans Orca."
+        "linearAsYou": "Il peut aussi agir dans Linear en votre nom, via votre propre connexion Linear dans Adehone."
       },
       "toolAdded": {
         "removed": "Retiré",
@@ -21146,9 +21146,9 @@
         "someonesDm": "Publie aussi dans un DM avec {{bot}}",
         "channel": "Publie aussi dans le fil de {{channel}}",
         "thread": "Publie aussi dans le fil Slack",
-        "offUnavailable": "Uniquement dans Orca · fil indisponible",
-        "offNotInChannel": "Uniquement dans Orca · absent du canal",
-        "off": "Uniquement dans Orca",
+        "offUnavailable": "Uniquement dans Adehone · fil indisponible",
+        "offNotInChannel": "Uniquement dans Adehone · absent du canal",
+        "off": "Uniquement dans Adehone",
         "shortDm": "DM Slack",
         "shortChannel": "Fil de {{channel}}",
         "shortThread": "Fil Slack",
@@ -21159,23 +21159,23 @@
         "detailRemovedFrom": "{{bot}} a été retiré de {{channel}}.",
         "detailRemoved": "{{bot}} a été retiré du canal.",
         "detailFallback": "Publie en tant que {{bot}} avec votre nom. Mettez à jour dans Slack pour publier sous votre nom.",
-        "detailOwnDm": "Vos messages et les réponses envoyées par {{bot}}. Vous seul voyez ce DM. Les appels d’outils et les workers restent dans Orca.",
-        "detailTheirDm": "Vos messages et les réponses envoyées par {{bot}}. {{name}} les voit dans son DM. Les appels d’outils et les workers restent dans Orca.",
-        "detailSomeonesDm": "Vos messages et les réponses envoyées par {{bot}}. La personne de ce DM les voit. Les appels d’outils et les workers restent dans Orca.",
-        "detailThread": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres du canal peuvent les voir. Les appels d’outils et les workers restent dans Orca.",
-        "detailExternal": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres de {{channel}} peuvent les voir, y compris les personnes extérieures à votre espace de travail. Les appels d’outils et les workers restent dans Orca.",
-        "detailChannel": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres de {{channel}} peuvent les voir. Les appels d’outils et les workers restent dans Orca.",
+        "detailOwnDm": "Vos messages et les réponses envoyées par {{bot}}. Vous seul voyez ce DM. Les appels d’outils et les workers restent dans Adehone.",
+        "detailTheirDm": "Vos messages et les réponses envoyées par {{bot}}. {{name}} les voit dans son DM. Les appels d’outils et les workers restent dans Adehone.",
+        "detailSomeonesDm": "Vos messages et les réponses envoyées par {{bot}}. La personne de ce DM les voit. Les appels d’outils et les workers restent dans Adehone.",
+        "detailThread": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres du canal peuvent les voir. Les appels d’outils et les workers restent dans Adehone.",
+        "detailExternal": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres de {{channel}} peuvent les voir, y compris les personnes extérieures à votre espace de travail. Les appels d’outils et les workers restent dans Adehone.",
+        "detailChannel": "Vos messages et les réponses envoyées par {{bot}}. Tous les membres de {{channel}} peuvent les voir. Les appels d’outils et les workers restent dans Adehone.",
         "posting": "Publication dans Slack…",
         "failedFile": "Non publié dans Slack · fichier trop volumineux",
         "failedEmpty": "Non publié dans Slack · rien à publier",
         "failedTooLong": "Non publié dans Slack · message trop long",
         "failed": "Non publié dans Slack",
         "delete": "Supprimer de Slack",
-        "postedFrom": "Publié depuis Orca · {{place}}",
+        "postedFrom": "Publié depuis Adehone · {{place}}",
         "retry": "Réessayer",
         "rewindStays": "Les messages déjà dans Slack y restent.",
         "switch": "Publier ce chat dans Slack",
-        "tooltipOff": "Vos messages restent dans Orca",
+        "tooltipOff": "Vos messages restent dans Adehone",
         "tooltipOn": "Vos messages et les réponses envoyées par {{bot}} sont aussi publiés dans ce fil Slack"
       },
       "typedBy": {
@@ -21207,7 +21207,7 @@
         "detected": "Détecté",
         "settings": "Paramètres de connexion…",
         "switched": "Antigravity se connecte désormais via {{method}}.",
-        "switchFailed": "Orca n’a pas pu modifier le mode de connexion d’Antigravity. Réessayez.",
+        "switchFailed": "Adehone n’a pas pu modifier le mode de connexion d’Antigravity. Réessayez.",
         "confirmTitle": "Passer à la connexion via {{method}} ?",
         "confirmBody": "Les chats Antigravity en cours sur cet hôte redémarrent. Une réponse en cours s’arrête ; vos conversations sont conservées.",
         "cancel": "Annuler",
@@ -21216,10 +21216,10 @@
         "moreOptions": "Plus d’options…",
         "useApiKey": "Utiliser votre clé API Gemini",
         "useGoogle": "Utiliser votre connexion Google",
-        "apiKeySaved": "Enregistrée dans Orca",
+        "apiKeySaved": "Enregistrée dans Adehone",
         "googleFound": "Vous vous êtes déjà connecté avec Google sur cet hôte",
         "askApiKeyEnvironment": "Utiliser plutôt la clé API Gemini trouvée dans votre environnement ?",
-        "askApiKeySaved": "Utiliser plutôt la clé API Gemini enregistrée dans Orca ?",
+        "askApiKeySaved": "Utiliser plutôt la clé API Gemini enregistrée dans Adehone ?",
         "askGcloud": "Utiliser plutôt votre connexion gcloud (projet {{project}}) ?",
         "askGoogle": "Utiliser plutôt votre connexion Google ?",
         "noSubscription": "Ce compte Google n’a pas d’abonnement Antigravity.",
@@ -21230,8 +21230,8 @@
         "signInGoogle": "Se connecter avec Google",
         "yourAgy": "Votre agy",
         "yourAgyVersion": "Votre agy · v{{version}}",
-        "orcasAgy": "L’agy d’Orca",
-        "orcasAgyVersion": "L’agy d’Orca · v{{version}}",
+        "orcasAgy": "L’agy d’Adehone",
+        "orcasAgyVersion": "L’agy d’Adehone · v{{version}}",
         "runsOn": "Exécuté avec : {{program}}",
         "keepsOwnLogin": "Ce chat conserve la connexion Google propre à agy. Les nouveaux chats se connectent via {{method}}.",
         "apiKeyEnvironment": "Depuis votre environnement",
@@ -24221,8 +24221,8 @@
   "updates": {
     "installOnQuit": {
       "title": "Mise à jour prête à être installée",
-      "summary": "Quittez Orca. Rouvrez-le après l’installation.",
-      "quit": "Quitter Orca",
+      "summary": "Quittez Adehone. Rouvrez-le après l’installation.",
+      "quit": "Quitter Adehone",
       "later": "Plus tard"
     },
     "installBlock": {
@@ -24288,25 +24288,25 @@
       "rateLimitedInMinutes_many": "Limite de débit GitHub atteinte. Réessayez dans environ {{count}} minutes.",
       "rateLimitedInMinutesSignedOut_one": "Limite de débit GitHub atteinte. Réessayez dans environ {{count}} minute ou exécutez `gh auth login` pour qu'Adehone puisse utiliser la limite plus élevée de votre compte.",
       "rateLimitedInMinutesSignedOut_other": "Limite de débit GitHub atteinte. Réessayez dans environ {{count}} minutes ou exécutez `gh auth login` pour qu'Adehone puisse utiliser la limite plus élevée de votre compte.",
-      "teamUpdatePolicy": "Votre équipe gère les mises à jour d’Orca.",
+      "teamUpdatePolicy": "Votre équipe gère les mises à jour d’Adehone.",
       "rateLimitedInMinutesSignedOut_many": "Limite de débit GitHub atteinte. Réessayez dans environ {{count}} minutes ou exécutez `gh auth login` pour qu'Adehone puisse utiliser la limite plus élevée de votre compte.",
       "automaticInstallCheckpointFailed": "Orca n’a pas pu enregistrer la fenêtre actuelle avant le redémarrage. Réessayez d’installer la mise à jour.",
       "automaticInstallTerminalBusy": "Certains terminaux seraient fermés au redémarrage. Orca réessaiera lors d’une prochaine vérification des mises à jour.",
       "macStagingTimeout": "macOS prépare toujours la mise à jour. Si cela persiste, quittez Orca et rouvrez-le."
     },
     "emergencyRequired": {
-      "title": "Orca {{version}} est requis",
-      "summary": "Orca {{version}} est requis. Redémarrez pour mettre à jour."
+      "title": "Adehone {{version}} est requis",
+      "summary": "Adehone {{version}} est requis. Redémarrez pour mettre à jour."
     },
     "teamRequired": {
-      "summary": "Votre équipe exige Orca {{version}}. Redémarrez pour mettre à jour.",
-      "title": "Votre équipe exige Orca {{version}}",
+      "summary": "Votre équipe exige Adehone {{version}}. Redémarrez pour mettre à jour.",
+      "title": "Votre équipe exige Adehone {{version}}",
       "restartNow": "Redémarrer maintenant",
-      "countdown": "Orca enregistrera vos sessions et redémarrera à la fin du compte à rebours. Les agents actifs peuvent retarder le redémarrage.",
-      "waiting": "Orca attend la fin des agents actifs avant de redémarrer.",
-      "retry": "Orca réessaiera cette mise à jour au prochain démarrage.",
+      "countdown": "Adehone enregistrera vos sessions et redémarrera à la fin du compte à rebours. Les agents actifs peuvent retarder le redémarrage.",
+      "waiting": "Adehone attend la fin des agents actifs avant de redémarrer.",
+      "retry": "Adehone réessaiera cette mise à jour au prochain démarrage.",
       "manual": "L’installation automatique a échoué. Installez cette mise à jour manuellement.",
-      "deadline": "Redémarrez d’ici {{deadline}}. Orca enregistre vos sessions avant de redémarrer.",
+      "deadline": "Redémarrez d’ici {{deadline}}. Adehone enregistre vos sessions avant de redémarrer.",
       "download": "Ouvrir les téléchargements"
     }
   },
@@ -25122,7 +25122,7 @@
       },
       "botProviderErrorNotSaved": "Le tour du bot a échoué, mais cette exécution n’a pas enregistré l’erreur du fournisseur. Le Chat d’origine peut contenir plus de détails.",
       "botsOff": "Les bots sont désactivés dans les Réglages, donc Orca a ignoré cette exécution.",
-      "botsOffByTeam": "Les bots sont désactivés par votre équipe ; Orca a donc ignoré cette exécution.",
+      "botsOffByTeam": "Les bots sont désactivés par votre équipe ; Adehone a donc ignoré cette exécution.",
       "botMissing": "Le bot sous lequel cette automatisation s’exécute n’existe plus.",
       "botFolderMissing": "Le dossier du bot n’est plus disponible.",
       "botPaused": "{{bot}} est en pause, donc Orca a ignoré cette exécution."
@@ -25899,7 +25899,7 @@
     },
     "errors": {
       "unsavedDrafts": "Son dossier contient des modifications non enregistrées dans l’éditeur. Enregistrez-les ou fermez les fichiers concernés, puis réessayez de le supprimer.",
-      "purposeTooLongForHost": "Orca sur {{host}} accepte jusqu’à 200 caractères pour l’objectif. Raccourcissez-le ou mettez Orca à jour sur {{host}}."
+      "purposeTooLongForHost": "Adehone sur {{host}} accepte jusqu’à 200 caractères pour l’objectif. Raccourcissez-le ou mettez Adehone à jour sur {{host}}."
     },
     "automations": {
       "paused": "En pause",
@@ -26178,7 +26178,7 @@
       "toast": "Un plugin requis n’a pas pu être installé",
       "open": "Ouvrir les plugins",
       "label": "Requis par votre équipe",
-      "body": "Orca n’a pas pu installer {{plugin}}."
+      "body": "Adehone n’a pas pu installer {{plugin}}."
     },
     "actionConfirmation": {
       "cancel": "Annuler",
@@ -26200,8 +26200,8 @@
       "teamPublisher": "Votre équipe"
     },
     "displayText": {
-      "tb0b38488": "Thèmes GitHub pour Orca",
-      "tb8aa98fc": "Thèmes par défaut de VS Code pour Orca",
+      "tb0b38488": "Thèmes GitHub pour Adehone",
+      "tb8aa98fc": "Thèmes par défaut de VS Code pour Adehone",
       "tfc425a57": "Recettes de VM Multipass",
       "t0f9f5503": "Les thèmes VS Code officiels de GitHub : Light Default, Dark Default, Dark Dimmed et les variantes à contraste élevé.",
       "t0b4f7e19": "Portages non officiels des thèmes de couleurs par défaut de VS Code : Dark Modern, Light Modern, Dark+ et Light+.",

@@ -7140,7 +7140,7 @@
           "preservedTitle": "{{value0}} üzerindeki düzenlemeleriniz ayrı olarak kaydedildi",
           "preservedDescription": "Orca beceriyi güncelledi ve düzenlemelerinizi {{value0}} konumuna kaydetti.",
           "uncertainTitle": "Orca, {{value0}} üzerindeki beceri güncellemesini doğrulayamadı",
-          "uncertainDescriptionKept": "Orca, {{value0}} üzerindeki becerileri güncellemiş olabilir ancak sonucu doğrulayamadı. Güncelleme sırasında bir beceriyi düzenlediyseniz kopyanız {{value1}} konumunda ya da hâlâ beceriler klasöründe."
+          "uncertainDescriptionKept": "Adehone, {{value0}} üzerindeki becerileri güncellemiş olabilir ancak sonucu doğrulayamadı. Güncelleme sırasında bir beceriyi düzenlediyseniz kopyanız {{value1}} konumunda ya da hâlâ beceriler klasöründe."
         },
         "SkillBackupPathLine": {
           "movedTo": "Eski kopyanın taşındığı yer:",
@@ -14033,8 +14033,8 @@
             "unverifiable": "Tamamlanamadı: Adehone bu sunucuda nelerin çalıştığını doğrulayamadı. Ana makineye erişilebildiğinde yeniden deneyin.",
             "migration": "Tamamlanamadı: bu sunucuya taşıma işlemi henüz bitmedi. Önce bu işlemi sürdürün.",
             "deferred": "Henüz tamamlanamadı: sunucu bu işleme hazır değil. Daha sonra yeniden deneyin.",
-            "stopIncomplete": "Tamamlanamadı: Orca mevcut sunucunun kapandığını doğrulayamadığı için güncellemeyi başlatmadı. Yeniden denemeden önce ana makinede ~/.orca-remote altındaki sunucu kurulum klasöründe bulunan orcad.log dosyasını kontrol edin.",
-            "rollbackStopIncomplete": "Tamamlanamadı: Orca mevcut sunucunun kapandığını doğrulayamadığı için önceki sürüme dönmedi. Yeniden denemeden önce ana makinede ~/.orca-remote altındaki sunucu kurulum klasöründe bulunan orcad.log dosyasını kontrol edin.",
+            "stopIncomplete": "Tamamlanamadı: Adehone mevcut sunucunun kapandığını doğrulayamadığı için güncellemeyi başlatmadı. Yeniden denemeden önce ana makinede ~/.orca-remote altındaki sunucu kurulum klasöründe bulunan orcad.log dosyasını kontrol edin.",
+            "rollbackStopIncomplete": "Tamamlanamadı: Adehone mevcut sunucunun kapandığını doğrulayamadığı için önceki sürüme dönmedi. Yeniden denemeden önce ana makinede ~/.orca-remote altındaki sunucu kurulum klasöründe bulunan orcad.log dosyasını kontrol edin.",
             "failed": "Adehone bu işlemi sunucuda tamamlayamadı. Yeniden deneyin.",
             "defaultServer": "Tamamlanamadı: bu sunucu yeni projeler için varsayılan ana makine. Durdurmadan önce Yeni projelerin açılacağı yer bölümünden başka bir ana makine seçin.",
             "wslMoveRunning": "Tamamlanamadı: bu sunucuya bir proje taşınıyor. Taşıma bittiğinde Adehone sunucuyu günceller."
@@ -28708,7 +28708,7 @@
     "errors": {
       "unsavedDrafts": "Klasöründe kaydedilmemiş düzenleyici değişiklikleri var. Bunları kaydedin veya kapatın, ardından silmeyi tekrar deneyin.",
       "nameTaken": "Bu ad başka bir bot tarafından kullanılıyor.",
-      "purposeTooLongForHost": "{{host}} üzerindeki Orca, amaç için en fazla 200 karakter kabul ediyor. Kısaltın veya {{host}} üzerindeki Orca'yı güncelleyin.",
+      "purposeTooLongForHost": "{{host}} üzerindeki Adehone, amaç için en fazla 200 karakter kabul ediyor. Kısaltın veya {{host}} üzerindeki Adehone'yı güncelleyin.",
       "generic": "Bir sorun oluştu. Tekrar deneyin.",
       "avatarHomeUnreadable": "Kaydedilen resim okunamadı. Resmi yeniden seçin.",
       "folderNotOwned": "Bu botun klasörü doğrulanamadı.",

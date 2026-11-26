@@ -1811,6 +1811,8 @@
           "loadFailed": "Adehone couldn’t load SSH hosts and unfinished moves. Reopen Settings to try again.",
           "outcome": {
             "failed": "Adehone couldn’t finish this on the server. Try again.",
+            "rollbackStopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not roll back. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
+            "stopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not start the update. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
             "unverifiable": "Not done: Adehone couldn’t confirm what is running on this server. Try again when the host is reachable.",
             "wslMoveRunning": "Not done: a project is moving onto this server. Adehone updates it once the move finishes."
           },
@@ -2527,9 +2529,14 @@
           "script_one": "{{count}} script",
           "script_other": "{{count}} scripts"
         },
+        "skillBackupRefusal": {
+          "noReminder": "Move it out of the skills folder. Adehone won't remind you."
+        },
         "skillFreshnessAutoUpdate": {
+          "preservedBackupOnly": "Adehone saved your edits to {{value0}}.",
           "preservedDescription": "Adehone updated the skill and saved your edits to {{value0}}.",
           "strandedTitle": "Adehone couldn't back up your edits to {{value0}}",
+          "uncertainDescriptionKept": "Adehone may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}} or still in the skills folder.",
           "uncertainTitle": "Adehone couldn't confirm the skill update on {{value0}}"
         },
         "skillPlanOpCopy": {
@@ -3396,6 +3403,9 @@
       "needYou_one": "{{count}} needs you",
       "needYou_other": "{{count}} need you"
     },
+    "errors": {
+      "purposeTooLongForHost": "Adehone on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Adehone on {{host}}."
+    },
     "failures": {
       "attachmentExpired": "{{names}}: this attachment expired. Attach it again.",
       "attachmentTooLarge": "{{name}} is over {{maxMb}} MB.",
@@ -3556,6 +3566,10 @@
         "skillsKept_other": "{{kept}}/{{count}} skills",
         "skills_one": "{{count}} skill",
         "skills_other": "{{count}} skills"
+      },
+      "wslSetup": {
+        "failedGeneric": "Adehone’s server didn’t start in the distro. Details say what stopped it.",
+        "installing": "Installing Adehone’s server in ~/.orca-remote"
       }
     },
     "notices": {
@@ -5536,6 +5550,13 @@
   "macosUpdateRequirement": {
     "whyIntro": "We updated parts of Adehone’s foundation, like Electron and the on-device speech engine, to bring:"
   },
+  "mcpServers": {
+    "paste": {
+      "badCommand": "Put the values themselves in the mcp add command: Adehone can’t fill in $VARIABLES or other shell expressions.",
+      "none": "Adehone found no server it can add. SSE servers, servers with their own OAuth client or tool filters, and values read from the environment (${VAR}) aren’t supported.",
+      "unsupported": "Adehone can’t add this server as written: it uses SSE, its own OAuth client, or a value read from the environment."
+    }
+  },
   "menu": {
     "about": "About Adehone",
     "hide": "Hide Adehone",
@@ -5886,6 +5907,24 @@
     "mcp": {
       "serverCount_one": "{{count}} server",
       "serverCount_other": "{{count}} servers"
+    },
+    "mcpServers": {
+      "fileAgent": {
+        "line": "Adehone will keep your MCP servers in {{agent}}’s settings file ({{file}}). Your own entries stay as they are.",
+        "title": "Let Adehone edit {{agent}}’s MCP file?"
+      },
+      "found": {
+        "copied": "Copied {{name}} to Adehone",
+        "copy": "Copy to Adehone",
+        "move": "Move to Adehone",
+        "moveAll": "Move all to Adehone"
+      },
+      "move": {
+        "allLine": "Adehone removes them from {{agents}} settings and keeps a backup.",
+        "allTitle": "Move {{count}} servers to Adehone?",
+        "line": "Adehone removes it from {{agents}} settings and keeps a backup.",
+        "title": "Move {{name}} to Adehone?"
+      }
     },
     "network": {
       "proxyUrlErrors": {
