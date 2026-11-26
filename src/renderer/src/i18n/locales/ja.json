@@ -19924,7 +19924,8 @@
         "permissionAppliesNextMessage": "{{saved}} は次のメッセージから適用されます。現在は {{active}} を使用しています",
         "bots": "ボット",
         "backToBots": "ボットに戻る",
-        "loadingBotChats": "{{name}} のチャットを読み込み中…"
+        "loadingBotChats": "{{name}} のチャットを読み込み中…",
+        "modelLockedWhileWorking": "Agent の作業が終わるとモデルを変更できます。"
       },
       "tool": {
         "result": "結果",
@@ -20613,7 +20614,8 @@
         "modelPickerFailed": "モデル選択画面を開けませんでした。",
         "effortPickerFailed": "推論レベル選択画面を開けませんでした。",
         "modelApplyFailed": "モデル {{value}} を適用できませんでした。",
-        "effortApplyFailed": "推論レベル {{value}} を適用できませんでした。"
+        "effortApplyFailed": "推論レベル {{value}} を適用できませんでした。",
+        "lockedWhileWorking": "Agent の作業中は /{{name}} を使用できません。作業の完了後にもう一度お試しください。"
       },
       "githubPeek": {
         "updated": "{{time}} に更新",

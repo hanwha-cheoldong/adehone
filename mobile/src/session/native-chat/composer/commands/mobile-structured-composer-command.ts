@@ -74,6 +74,7 @@ export async function dispatchMobileStructuredCommand(input: {
   let unknown = false
   const outcome = await dispatchStructuredAgentSessionComposerCommand(input.text, {
     ...input.controller,
+    agentWorking: input.holds().working,
     runConversationCommand: async (command, instructions) => {
       const held = (hold: Parameters<typeof heldConversationCommandParts>[1]) =>
         mobileAgentSessionWriteNoticeText(heldConversationCommandParts(command, hold))
@@ -165,7 +166,13 @@ export async function dispatchMobileStructuredCommand(input: {
   })
   if (outcome.error) {
     input.onError(
-      outcome.error,
+      outcome.errorCode === 'lockedWhileWorking'
+        ? translate(
+            'session.structuredComposerCommand.lockedWhileWorking',
+            '/{{name}} is unavailable while the agent is working. Try again when it finishes.',
+            { name: outcome.errorParams?.name ?? '' }
+          )
+        : outcome.error,
       outcome.refusedWhile ? { refusedWhile: outcome.refusedWhile } : undefined
     )
   }

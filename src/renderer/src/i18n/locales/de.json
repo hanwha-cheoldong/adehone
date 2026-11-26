@@ -19827,7 +19827,8 @@
         "moreControls": "Weitere Chat-Steuerelemente",
         "exitPlanMode": "Planungsmodus verlassen",
         "permissionAppliesNextMessage": "{{saved}} gilt für deine nächste Nachricht; derzeit wird {{active}} verwendet",
-        "bots": "Bots"
+        "bots": "Bots",
+        "modelLockedWhileWorking": "Du kannst das Modell ändern, sobald der Agent fertig ist."
       },
       "tool": {
         "exitCode": "Rückgabecode {{value0}}",
@@ -20440,7 +20441,8 @@
         "modelPickerFailed": "Die Modellauswahl konnte nicht geöffnet werden.",
         "effortPickerFailed": "Die Auswahl des Denkaufwands konnte nicht geöffnet werden.",
         "modelApplyFailed": "Modell {{value}} konnte nicht angewendet werden.",
-        "effortApplyFailed": "Denkaufwand {{value}} konnte nicht angewendet werden."
+        "effortApplyFailed": "Denkaufwand {{value}} konnte nicht angewendet werden.",
+        "lockedWhileWorking": "/{{name}} ist nicht verfügbar, während der Agent arbeitet. Versuche es erneut, wenn er fertig ist."
       },
       "settings": "Chat-Einstellungen",
       "textAttachmentPreview": {

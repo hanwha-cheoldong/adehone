@@ -27,6 +27,10 @@ const COPY: Record<StructuredComposerFailureCode, (name: string, value: string) 
       EN.commandUnsupportedByHost,
       { name }
     ),
+  lockedWhileWorking: (name) =>
+    translate('components.native-chat.composerErrors.lockedWhileWorking', EN.lockedWhileWorking, {
+      name
+    }),
   modelPickerFailed: () =>
     translate('components.native-chat.composerErrors.modelPickerFailed', EN.modelPickerFailed),
   effortPickerFailed: () =>

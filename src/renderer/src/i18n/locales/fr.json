@@ -19626,7 +19626,8 @@
         "moreControls": "Plus de commandes de conversation",
         "exitPlanMode": "Quitter le mode plan",
         "permissionAppliesNextMessage": "{{saved}} s’applique à votre prochain message ; réglage utilisé actuellement : {{active}}",
-        "bots": "Bots"
+        "bots": "Bots",
+        "modelLockedWhileWorking": "Vous pourrez changer de modèle quand l’agent aura terminé."
       },
       "tool": {
         "result": "Résultat",
@@ -20337,7 +20338,8 @@
         "modelPickerFailed": "Impossible d’ouvrir le sélecteur de modèle.",
         "effortPickerFailed": "Impossible d’ouvrir le sélecteur d’effort.",
         "modelApplyFailed": "Impossible d’appliquer le modèle {{value}}.",
-        "effortApplyFailed": "Impossible d’appliquer l’effort {{value}}."
+        "effortApplyFailed": "Impossible d’appliquer l’effort {{value}}.",
+        "lockedWhileWorking": "/{{name}} n’est pas disponible pendant que l’agent travaille. Réessayez quand il aura terminé."
       },
       "usageLimitActions": {
         "switchAccount": "Changer de compte",

@@ -3614,7 +3614,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "Не удалось подтвердить выполнение команды чата.",
-      "removeAttachments": "Уберите вложения перед выполнением команды сессии чата."
+      "removeAttachments": "Уберите вложения перед выполнением команды сессии чата.",
+      "lockedWhileWorking": "Команда /{{name}} недоступна, пока агент работает. Повторите, когда он закончит."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Сообщение не отправлено"

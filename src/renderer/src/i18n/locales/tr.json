@@ -21496,7 +21496,8 @@
         "noOtherChats": "Başka sohbet yok",
         "retryChats": "Yeniden dene",
         "modelAndEffortValue": "{{model}} · {{effort}}",
-        "modelAndEffort": "Model ve akıl yürütme düzeyi"
+        "modelAndEffort": "Model ve akıl yürütme düzeyi",
+        "modelLockedWhileWorking": "Aracı işini bitirdiğinde modeli değiştirebilirsiniz."
       },
       "tool": {
         "exitCode": "çıkış {{value0}}",
@@ -22305,7 +22306,8 @@
         "modelPickerFailed": "Model seçici açılamadı.",
         "effortPickerFailed": "Çaba seçici açılamadı.",
         "modelApplyFailed": "{{value}} modeli uygulanamadı.",
-        "effortApplyFailed": "Çaba düzeyi {{value}} olarak ayarlanamadı."
+        "effortApplyFailed": "Çaba düzeyi {{value}} olarak ayarlanamadı.",
+        "lockedWhileWorking": "Aracı çalışırken /{{name}} kullanılamaz. İşi bitince yeniden deneyin."
       },
       "settings": "Sohbet ayarları",
       "textAttachmentPreview": {

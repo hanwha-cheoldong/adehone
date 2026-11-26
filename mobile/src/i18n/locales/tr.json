@@ -3603,7 +3603,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "Konuşma işlemi doğrulanamadı.",
-      "removeAttachments": "Bir sohbet oturumu komutu kullanmadan önce ekleri kaldırın."
+      "removeAttachments": "Bir sohbet oturumu komutu kullanmadan önce ekleri kaldırın.",
+      "lockedWhileWorking": "Aracı çalışırken /{{name}} kullanılamaz. İşi bitince yeniden deneyin."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Mesaj gönderilmedi"

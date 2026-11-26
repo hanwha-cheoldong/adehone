@@ -2540,7 +2540,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "無法確認對話操作。",
-      "removeAttachments": "使用聊天工作階段命令前，請先移除附件。"
+      "removeAttachments": "使用聊天工作階段命令前，請先移除附件。",
+      "lockedWhileWorking": "代理工作期間無法使用 /{{name}}。請在其完成後再試一次。"
     },
     "structuredSendDelivery": {
       "messageNotSent": "訊息未傳送"

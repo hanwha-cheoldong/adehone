@@ -482,6 +482,9 @@
         "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
         "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
         "pr-review-checklist": "Read a diff for behaviour changes, missing tests and risky edits; cite each finding.",
+        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
+        "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
+        "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
         "release-notes-style": "Notes for users: new, fixed, changed; leave out refactors and code names.",
         "release-readiness": "What blocks a release and how to list it: checks, reviews, open blockers.",
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
@@ -490,6 +493,7 @@
         "swift-code-review": "Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.",
         "swift-concurrency-actors": "Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.",
         "swift-tdd-testing": "TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.",
+        "work-breakdown": "Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization.",
         "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
         "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails."
       }
@@ -829,6 +833,22 @@
         "name": "Pull request review",
         "reports": "Here, when a review is requested",
         "watches": "Pull requests waiting on your review, in the repos you pick"
+      },
+      "product-planning": {
+        "does": "Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.",
+        "example1": "Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.",
+        "example2": "Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.",
+        "line": "Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.",
+        "name": "Product planning",
+        "reports": "Here, when you ask and Mondays at 9:30 AM",
+        "schedules": {
+          "weekly-planning-sync": {
+            "what": "Planning & open decisions sync",
+            "when": "Mondays at 9:30 AM"
+          }
+        },
+        "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback"
       },
       "release-notes": {
         "does": "Drafts release notes for users in three groups: new, fixed, changed.",

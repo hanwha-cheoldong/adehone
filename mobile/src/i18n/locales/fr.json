@@ -2622,7 +2622,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "L'opération sur la conversation n'a pas été confirmée.",
-      "removeAttachments": "Retirez les pièces jointes avant d'utiliser une commande de session de chat."
+      "removeAttachments": "Retirez les pièces jointes avant d'utiliser une commande de session de chat.",
+      "lockedWhileWorking": "/{{name}} n’est pas disponible pendant que l’agent travaille. Réessayez quand il aura terminé."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Message non envoyé"

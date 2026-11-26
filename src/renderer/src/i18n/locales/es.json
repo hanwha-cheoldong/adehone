@@ -19401,7 +19401,8 @@
         "moreControls": "Más controles de chat",
         "exitPlanMode": "Salir del modo de planificación",
         "permissionAppliesNextMessage": "{{saved}} se aplica a tu próximo mensaje; actualmente se usa {{active}}",
-        "bots": "Bots"
+        "bots": "Bots",
+        "modelLockedWhileWorking": "Podrás cambiar el modelo cuando el agente termine de trabajar."
       },
       "tool": {
         "result": "Resultado",
@@ -20124,7 +20125,8 @@
         "modelPickerFailed": "No se pudo abrir el selector de modelo.",
         "effortPickerFailed": "No se pudo abrir el selector de esfuerzo.",
         "modelApplyFailed": "No se pudo aplicar el modelo {{value}}.",
-        "effortApplyFailed": "No se pudo aplicar el esfuerzo {{value}}."
+        "effortApplyFailed": "No se pudo aplicar el esfuerzo {{value}}.",
+        "lockedWhileWorking": "/{{name}} no está disponible mientras el agente está trabajando. Inténtalo de nuevo cuando termine."
       },
       "usageLimitActions": {
         "switchAccount": "Cambiar de cuenta",

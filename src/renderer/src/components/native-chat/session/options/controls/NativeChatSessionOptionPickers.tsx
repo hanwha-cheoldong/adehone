@@ -161,17 +161,18 @@ function SessionOptionPopover(props: {
 }): React.JSX.Element {
   const t = useTranslate()
   const { model, options, pendingIds, demandModelCatalog } = props
-  const canOpen = [model, ...options].some(
-    (descriptor) =>
-      descriptor.settable &&
-      !pendingIds.has(descriptor.id) &&
-      (!props.isWorking || descriptor.transport === 'agent-session')
-  )
+  // A mid-turn pick would show a model that is not the one answering.
+  const canOpen =
+    !props.isWorking &&
+    [model, ...options].some((descriptor) => descriptor.settable && !pendingIds.has(descriptor.id))
   // Why here: this unmounts with the pill, so a picker that went away comes back closed.
   const [open, setOpen] = useState(false)
   const [seenRequest, setSeenRequest] = useState<NativeChatOptionPickerRequest | null>(null)
   // The option a slash command asked for, focused in place of the search by that opening only.
   const [requestedOptionId, setRequestedOptionId] = useState<string | null>(null)
+  if (open && props.isWorking) {
+    setOpen(false)
+  }
   if (props.request !== seenRequest) {
     setSeenRequest(props.request)
     if (props.request && canOpen) {
@@ -253,7 +254,14 @@ function SessionOptionPopover(props: {
             : modelName
         }
         disabled={!canOpen}
-        disabledReason={modelReason ?? optionsReason}
+        disabledReason={
+          props.isWorking
+            ? t(
+                'components.native-chat.composer.modelLockedWhileWorking',
+                'You can change the model when the agent finishes working.'
+              )
+            : (modelReason ?? optionsReason)
+        }
         dispatched={
           sessionOptionDispatchUnconfirmed(model) || options.some(sessionOptionDispatchUnconfirmed)
         }

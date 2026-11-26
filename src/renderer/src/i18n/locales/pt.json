@@ -21125,7 +21125,8 @@
         "exitPlanMode": "Sair do modo de planejamento",
         "moreControls": "Mais controles do chat",
         "permissionAppliesNextMessage": "{{saved}} vale para a próxima mensagem; usando {{active}} no momento",
-        "bots": "Bots"
+        "bots": "Bots",
+        "modelLockedWhileWorking": "Você poderá mudar o modelo quando o agente terminar de trabalhar."
       },
       "tool": {
         "exitCode": "saída {{value0}}",
@@ -22006,7 +22007,8 @@
         "modelPickerFailed": "Não foi possível abrir o seletor de modelo.",
         "effortPickerFailed": "Não foi possível abrir o seletor de esforço.",
         "modelApplyFailed": "Não foi possível aplicar o modelo {{value}}.",
-        "effortApplyFailed": "Não foi possível aplicar o esforço {{value}}."
+        "effortApplyFailed": "Não foi possível aplicar o esforço {{value}}.",
+        "lockedWhileWorking": "/{{name}} não está disponível enquanto o agente está trabalhando. Tente novamente quando ele terminar."
       },
       "settings": "Configurações do chat",
       "textAttachmentPreview": {

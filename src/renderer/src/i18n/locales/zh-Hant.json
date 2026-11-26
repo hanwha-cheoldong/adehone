@@ -19467,7 +19467,8 @@
         "permissionAppliesNextMessage": "{{saved}} 將從下一則訊息生效；目前使用 {{active}}",
         "bots": "機器人",
         "backToBots": "返回機器人",
-        "loadingBotChats": "正在載入 {{name}} 的聊天…"
+        "loadingBotChats": "正在載入 {{name}} 的聊天…",
+        "modelLockedWhileWorking": "代理完成工作後即可變更模型。"
       },
       "tool": {
         "exitCode": "結束碼 {{value0}}",
@@ -20019,7 +20020,8 @@
         "modelPickerFailed": "無法開啟模型選擇器。",
         "effortPickerFailed": "無法開啟推理強度選擇器。",
         "modelApplyFailed": "無法套用模型 {{value}}。",
-        "effortApplyFailed": "無法套用推理強度 {{value}}。"
+        "effortApplyFailed": "無法套用推理強度 {{value}}。",
+        "lockedWhileWorking": "代理工作期間無法使用 /{{name}}。請在其完成後再試一次。"
       },
       "settings": "聊天設定",
       "textAttachmentPreview": {

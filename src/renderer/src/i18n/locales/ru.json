@@ -20418,7 +20418,8 @@
         "exitPlanMode": "Выйти из режима планирования",
         "moreControls": "Другие элементы управления чатом",
         "permissionAppliesNextMessage": "{{saved}} применяется со следующего сообщения; сейчас используется: {{active}}",
-        "bots": "Боты"
+        "bots": "Боты",
+        "modelLockedWhileWorking": "Модель можно сменить, когда агент закончит работу."
       },
       "tool": {
         "exitCode": "код {{value0}}",
@@ -21122,7 +21123,8 @@
         "modelPickerFailed": "Не удалось открыть меню выбора модели.",
         "effortPickerFailed": "Не удалось открыть меню выбора глубины рассуждений.",
         "modelApplyFailed": "Не удалось применить модель {{value}}.",
-        "effortApplyFailed": "Не удалось применить глубину рассуждений {{value}}."
+        "effortApplyFailed": "Не удалось применить глубину рассуждений {{value}}.",
+        "lockedWhileWorking": "Команда /{{name}} недоступна, пока агент работает. Повторите, когда он закончит."
       },
       "settings": "Настройки чата",
       "textAttachmentPreview": {

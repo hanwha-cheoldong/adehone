@@ -3471,7 +3471,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "对话操作未获确认",
-      "removeAttachments": "使用聊天会话命令前，请先移除附件"
+      "removeAttachments": "使用聊天会话命令前，请先移除附件",
+      "lockedWhileWorking": "代理工作期间无法使用 /{{name}}。请在其完成后重试。"
     },
     "structuredSendDelivery": {
       "messageNotSent": "消息未发送"
