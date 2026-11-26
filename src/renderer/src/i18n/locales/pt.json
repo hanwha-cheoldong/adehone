@@ -21150,7 +21150,8 @@
         "loadingBotChats": "Carregando os chats de {{name}}…",
         "noMatchingChats": "Nenhum chat correspondente",
         "noOtherChats": "Nenhum outro chat",
-        "retryChats": "Tentar novamente"
+        "retryChats": "Tentar novamente",
+        "modelLockedWhileWorking": "Você poderá mudar o modelo quando o agente terminar de trabalhar."
       },
       "tool": {
         "exitCode": "saída {{value0}}",
@@ -22176,7 +22177,8 @@
         "modelPickerFailed": "Não foi possível abrir o seletor de modelo.",
         "effortPickerFailed": "Não foi possível abrir o seletor de esforço.",
         "modelApplyFailed": "Não foi possível aplicar o modelo {{value}}.",
-        "effortApplyFailed": "Não foi possível aplicar o esforço {{value}}."
+        "effortApplyFailed": "Não foi possível aplicar o esforço {{value}}.",
+        "lockedWhileWorking": "/{{name}} não está disponível enquanto o agente está trabalhando. Tente novamente quando ele terminar."
       },
       "settings": "Configurações do chat",
       "textAttachmentPreview": {

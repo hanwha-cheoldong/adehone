@@ -2726,7 +2726,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "대화 작업이 확인되지 않았습니다.",
-      "removeAttachments": "채팅 세션 명령을 사용하기 전에 첨부 파일을 제거하세요."
+      "removeAttachments": "채팅 세션 명령을 사용하기 전에 첨부 파일을 제거하세요.",
+      "lockedWhileWorking": "에이전트가 작업 중일 때는 /{{name}}을(를) 사용할 수 없습니다. 작업이 끝난 후 다시 시도하세요."
     },
     "structuredSendDelivery": {
       "messageNotSent": "메시지가 전송되지 않음"

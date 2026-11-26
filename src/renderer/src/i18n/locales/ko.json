@@ -20795,7 +20795,8 @@
         "botChats": "채팅",
         "botChatsCount": "{{name}}의 채팅 {{chatCount}}개",
         "changeChat": "채팅 변경",
-        "chooseChat": "채팅 선택"
+        "chooseChat": "채팅 선택",
+        "modelLockedWhileWorking": "에이전트 작업이 끝나면 모델을 변경할 수 있습니다."
       },
       "tool": {
         "result": "결과",
@@ -21616,7 +21617,8 @@
         "modelPickerFailed": "모델 선택기를 열지 못했습니다.",
         "effortPickerFailed": "추론 수준 선택기를 열지 못했습니다.",
         "modelApplyFailed": "{{value}} 모델을 적용하지 못했습니다.",
-        "effortApplyFailed": "{{value}} 추론 수준을 적용하지 못했습니다."
+        "effortApplyFailed": "{{value}} 추론 수준을 적용하지 못했습니다.",
+        "lockedWhileWorking": "에이전트가 작업 중일 때는 /{{name}}을(를) 사용할 수 없습니다. 작업이 끝난 후 다시 시도하세요."
       },
       "githubPeek": {
         "updated": "{{time}} 업데이트됨",

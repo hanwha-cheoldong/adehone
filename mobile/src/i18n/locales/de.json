@@ -2546,7 +2546,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "Die Aktion für die Unterhaltung wurde nicht bestätigt.",
-      "removeAttachments": "Vor der Verwendung eines Chat-Sitzungsbefehls die Anhänge entfernen."
+      "removeAttachments": "Vor der Verwendung eines Chat-Sitzungsbefehls die Anhänge entfernen.",
+      "lockedWhileWorking": "/{{name}} ist nicht verfügbar, während der Agent arbeitet. Versuche es erneut, wenn er fertig ist."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Nachricht nicht gesendet"

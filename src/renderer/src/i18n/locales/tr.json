@@ -21480,7 +21480,8 @@
         "modelAndEffortValue": "{{model}} · {{effort}}",
         "modelAndEffort": "Model ve akıl yürütme düzeyi",
         "modelsLoading": "Modeller yükleniyor…",
-        "signInForModels": "Kullanabileceğiniz modelleri görmek için oturum açın."
+        "signInForModels": "Kullanabileceğiniz modelleri görmek için oturum açın.",
+        "modelLockedWhileWorking": "Aracı işini bitirdiğinde modeli değiştirebilirsiniz."
       },
       "tool": {
         "exitCode": "çıkış {{value0}}",
@@ -22294,7 +22295,8 @@
         "modelPickerFailed": "Model seçici açılamadı.",
         "effortPickerFailed": "Çaba seçici açılamadı.",
         "modelApplyFailed": "{{value}} modeli uygulanamadı.",
-        "effortApplyFailed": "Çaba düzeyi {{value}} olarak ayarlanamadı."
+        "effortApplyFailed": "Çaba düzeyi {{value}} olarak ayarlanamadı.",
+        "lockedWhileWorking": "Aracı çalışırken /{{name}} kullanılamaz. İşi bitince yeniden deneyin."
       },
       "settings": "Sohbet ayarları",
       "textAttachmentPreview": {

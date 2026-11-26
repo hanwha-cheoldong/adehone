@@ -4672,6 +4672,7 @@
         "effortApplyFailed": "Could not apply effort {{value}}.",
         "effortPickerFailed": "Could not open the effort picker.",
         "goalObjectiveMissing": "Describe the goal after /goal.",
+        "lockedWhileWorking": "/{{name}} is unavailable while the agent is working. Try again when it finishes.",
         "modelApplyFailed": "Could not apply model {{value}}.",
         "modelPickerFailed": "Could not open the model picker."
       },

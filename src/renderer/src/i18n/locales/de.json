@@ -19868,7 +19868,8 @@
         "loadingBotChats": "Chats von {{name}} werden geladen…",
         "noMatchingChats": "Keine passenden Chats",
         "noOtherChats": "Keine anderen Chats",
-        "retryChats": "Erneut versuchen"
+        "retryChats": "Erneut versuchen",
+        "modelLockedWhileWorking": "Du kannst das Modell ändern, sobald der Agent fertig ist."
       },
       "tool": {
         "exitCode": "Rückgabecode {{value0}}",
@@ -20626,7 +20627,8 @@
         "modelPickerFailed": "Die Modellauswahl konnte nicht geöffnet werden.",
         "effortPickerFailed": "Die Auswahl des Denkaufwands konnte nicht geöffnet werden.",
         "modelApplyFailed": "Modell {{value}} konnte nicht angewendet werden.",
-        "effortApplyFailed": "Denkaufwand {{value}} konnte nicht angewendet werden."
+        "effortApplyFailed": "Denkaufwand {{value}} konnte nicht angewendet werden.",
+        "lockedWhileWorking": "/{{name}} ist nicht verfügbar, während der Agent arbeitet. Versuche es erneut, wenn er fertig ist."
       },
       "githubPeek": {
         "updated": "aktualisiert {{time}}",

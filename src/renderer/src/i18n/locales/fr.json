@@ -19764,7 +19764,8 @@
         "loadingBotChats": "Chargement des chats du bot {{name}}…",
         "noMatchingChats": "Aucun chat correspondant",
         "noOtherChats": "Aucun autre chat",
-        "retryChats": "Réessayer"
+        "retryChats": "Réessayer",
+        "modelLockedWhileWorking": "Vous pourrez changer de modèle quand l’agent aura terminé."
       },
       "tool": {
         "result": "Résultat",
@@ -20613,7 +20614,8 @@
         "modelPickerFailed": "Impossible d’ouvrir le sélecteur de modèle.",
         "effortPickerFailed": "Impossible d’ouvrir le sélecteur d’effort.",
         "modelApplyFailed": "Impossible d’appliquer le modèle {{value}}.",
-        "effortApplyFailed": "Impossible d’appliquer l’effort {{value}}."
+        "effortApplyFailed": "Impossible d’appliquer l’effort {{value}}.",
+        "lockedWhileWorking": "/{{name}} n’est pas disponible pendant que l’agent travaille. Réessayez quand il aura terminé."
       },
       "githubPeek": {
         "updated": "mis à jour {{time}}",

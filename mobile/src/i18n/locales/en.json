@@ -2807,7 +2807,8 @@
     },
     "structuredComposerCommand": {
       "removeAttachments": "Remove attachments before using a chat-session command.",
-      "operationUnconfirmed": "Conversation operation was not confirmed."
+      "operationUnconfirmed": "Conversation operation was not confirmed.",
+      "lockedWhileWorking": "/{{name}} is unavailable while the agent is working. Try again when it finishes."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Message not sent"

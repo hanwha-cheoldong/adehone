@@ -2622,7 +2622,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "No se confirmó la operación de la conversación.",
-      "removeAttachments": "Quita los archivos adjuntos antes de usar un comando de la sesión de chat."
+      "removeAttachments": "Quita los archivos adjuntos antes de usar un comando de la sesión de chat.",
+      "lockedWhileWorking": "/{{name}} no está disponible mientras el agente está trabajando. Inténtalo de nuevo cuando termine."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Mensaje no enviado"

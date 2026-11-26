@@ -21712,7 +21712,8 @@
         "modelAndEffortValue": "{{model}} · {{effort}}",
         "modelAndEffort": "Model and effort",
         "modelsLoading": "Loading models…",
-        "signInForModels": "Sign in to see the models you can use."
+        "signInForModels": "Sign in to see the models you can use.",
+        "modelLockedWhileWorking": "You can change the model when the agent finishes working."
       },
       "tool": {
         "exitCode": "exit {{value0}}",
@@ -22474,7 +22475,8 @@
         "modelPickerFailed": "Could not open the model picker.",
         "effortPickerFailed": "Could not open the effort picker.",
         "modelApplyFailed": "Could not apply model {{value}}.",
-        "effortApplyFailed": "Could not apply effort {{value}}."
+        "effortApplyFailed": "Could not apply effort {{value}}.",
+        "lockedWhileWorking": "/{{name}} is unavailable while the agent is working. Try again when it finishes."
       },
       "githubPeek": {
         "updated": "updated {{time}}",

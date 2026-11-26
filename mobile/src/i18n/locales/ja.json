@@ -2542,7 +2542,8 @@
     },
     "structuredComposerCommand": {
       "operationUnconfirmed": "会話の操作が実行されたことを確認できませんでした。",
-      "removeAttachments": "チャットセッションのコマンドを使う前に添付ファイルを削除してください。"
+      "removeAttachments": "チャットセッションのコマンドを使う前に添付ファイルを削除してください。",
+      "lockedWhileWorking": "Agent の作業中は /{{name}} を使用できません。作業の完了後にもう一度お試しください。"
     },
     "structuredSendDelivery": {
       "messageNotSent": "メッセージは送信されませんでした"

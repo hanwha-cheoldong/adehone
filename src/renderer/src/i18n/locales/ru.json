@@ -20459,7 +20459,8 @@
         "loadingBotChats": "Загрузка чатов: {{name}}…",
         "noMatchingChats": "Подходящих чатов нет",
         "noOtherChats": "Других чатов нет",
-        "retryChats": "Повторить"
+        "retryChats": "Повторить",
+        "modelLockedWhileWorking": "Модель можно сменить, когда агент закончит работу."
       },
       "tool": {
         "exitCode": "код {{value0}}",
@@ -21315,7 +21316,8 @@
         "modelPickerFailed": "Не удалось открыть меню выбора модели.",
         "effortPickerFailed": "Не удалось открыть меню выбора глубины рассуждений.",
         "modelApplyFailed": "Не удалось применить модель {{value}}.",
-        "effortApplyFailed": "Не удалось применить глубину рассуждений {{value}}."
+        "effortApplyFailed": "Не удалось применить глубину рассуждений {{value}}.",
+        "lockedWhileWorking": "Команда /{{name}} недоступна, пока агент работает. Повторите, когда он закончит."
       },
       "githubPeek": {
         "updated": "обновлено: {{time}}",
