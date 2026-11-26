@@ -21,6 +21,8 @@ import {
 
 export type StructuredAgentSessionComposerOptions = {
   agent?: AgentType
+  /** A turn is running, so `/model` and `/effort` are refused. */
+  agentWorking?: boolean
   snapshot: readonly SessionOptionDescriptor[]
   invokeAction: (id: string) => Promise<boolean>
   setOption: (id: string, value: SessionOptionValue) => Promise<boolean>
@@ -245,6 +247,14 @@ export async function dispatchStructuredAgentSessionComposerCommand(
   }
   if (command.name !== 'model' && command.name !== 'effort') {
     return unavailable(command.name)
+  }
+  if (controller.agentWorking) {
+    return {
+      handled: true,
+      accepted: false,
+      refusedWhile: 'working',
+      ...structuredComposerFailure('lockedWhileWorking', { name: command.name })
+    }
   }
   const descriptor = controller.snapshot.find((entry) => entry.id === command.name)
   if (!command.argument) {

@@ -51,7 +51,6 @@ export type MobileNativeChatPickerPresentation = { page: string | null; refocus:
 
 export type MobileNativeChatSessionOptionPickersProps = {
   controller: MobileNativeChatSessionOptionsController
-  // Mid-turn terminal model commands would interleave with agent output.
   isWorking: boolean
   // Block applies during composer send: the host’s body/Enter delay could submit the setting as prompt text.
   sendInFlight?: boolean
@@ -111,7 +110,6 @@ export function MobileNativeChatSessionOptionPickers({
     (model !== undefined || permission !== undefined) &&
     activeDescriptor !== undefined &&
     isWorking &&
-    activeDescriptor.transport !== 'agent-session' &&
     !permissionView
 
   useEffect(() => {
@@ -134,9 +132,9 @@ export function MobileNativeChatSessionOptionPickers({
   const home = model ?? permission ?? options[0]!
   const homeView = activeDescriptor !== undefined && activeDescriptor === home
   const busy = pendingId !== null || sendInFlight
-  // Structured picks and permission mode affect the next send, not the running turn.
+  // Permission mode affects the next send; a mid-turn model pick would misname the one answering.
   const locked = (descriptor: SessionOptionDescriptor): boolean =>
-    busy || (isWorking && descriptor.transport !== 'agent-session' && descriptor !== permission)
+    busy || (isWorking && descriptor !== permission)
   const reason = nativeChatSessionOptionDisabledReason(activeDescriptor?.disabledReason, say)
   const permissionChoice = selectedChoice(permission)
   const permissionColor = permissionChoiceColor(permissionChoice?.value)
