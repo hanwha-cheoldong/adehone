@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: gradle-build-resolver
 description: Kotlin/Gradle build resolver and R8/ProGuard specialist — surgical build error resolution, dependency conflict debugging, SDK/secret guardrails, and ktlint/detekt fixes.
@@ -32,3 +34,5 @@ Fix Kotlin compilation errors, Gradle configuration issues, dependency conflicts
 - Add \`@Keep\` or narrow \`-keep\` rules in \`proguard-rules.pro\` for \`@JavascriptInterface\` classes/methods, serialization DTOs (Kotlinx.serialization, Gson, Moshi), reflection/JNI, and name-referenced enums.
 - Avoid broad \`-keep class ** { *; }\` rules.
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

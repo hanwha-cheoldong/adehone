@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: android-planner
 description: Planning specialist for Android features and refactors — 4-step planning process, Search-First reuse, phased implementation plans, testing strategy, risks, and Red Flags.
@@ -75,3 +77,5 @@ Break large changes into independently deliverable, mergeable phases:
 - Phases that cannot be verified or merged independently
 - Unapproved \`minSdk\`/\`targetSdk\`/AGP or major dependency bumps
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES
