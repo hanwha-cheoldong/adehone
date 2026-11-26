@@ -1170,11 +1170,9 @@
           "3fe7862418": "No managed Claude accounts for {{value0}}. Adehone will use that environment's system default Claude login until you add one here.",
           "72b36ea174": "Optional. Adehone can use your normal Claude login; add accounts only if you want quick switching without moving chat sessions.",
           "b4c9450319": "No managed Codex accounts for {{value0}}. Adehone will use that environment's system default Codex login until you add one here.",
-          "c2aee76420": "Extracts OAuth credentials from your local Gemini CLI installation to authenticate with Google for {{value0}}. This uses credentials issued to the Gemini CLI app, not Adehone. May break if Google updates the CLI. Use at your own risk.",
           "cedfab35ab": "Optional. Adehone can use your normal Codex login; add accounts only if you want quick switching in Adehone.",
           "codexConfigSyncManagedHomeUnavailable": "Adehone could not read this account’s Codex files just now, so settings may not be syncing. This usually clears on its own — antivirus or a backup tool briefly locks them.",
           "d0d53b7eb0": "Manage which Codex account Adehone uses for live rate limit fetching.",
-          "d676c41fc6": "Extracts OAuth credentials from your local Gemini CLI installation to authenticate with Google. This uses credentials issued to the Gemini CLI app, not Adehone. May break if Google updates the CLI. Use at your own risk.",
           "opencodeGo": {
             "apiKey": {
               "description": "Optional override. Adehone otherwise uses the key OpenCode saved when you ran /connect, then OPENCODE_API_KEY."
@@ -2098,10 +2096,10 @@
           "over_limit_other": "Importing these themes would exceed the {{value0}} custom terminal theme limit. Deselect {{value1}} new themes and try again."
         },
         "wslHosts": {
-          "description": "Adehone runs a server inside each distro. Opening a project never starts a stopped distro: click Start, open a new terminal, or connect it here."
+          "description": "Adehone runs a server inside each distro. To start a stopped distro, click Start, open a terminal, or connect it here."
         },
         "wslHostsExperimental": {
-          "description": "Add a WSL 2 distro as a host. Adehone runs its server inside the distro, so git, files and terminals in new projects there run natively in Linux."
+          "description": "Run Adehone’s server inside a WSL 2 distro, so git, files and terminals run natively in Linux."
         }
       },
       "setup": {
@@ -2532,7 +2530,6 @@
         "skillFreshnessAutoUpdate": {
           "preservedDescription": "Adehone updated the skill and saved your edits to {{value0}}.",
           "strandedTitle": "Adehone couldn't back up your edits to {{value0}}",
-          "uncertainDescription": "Adehone may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}}.",
           "uncertainTitle": "Adehone couldn't confirm the skill update on {{value0}}"
         },
         "skillPlanOpCopy": {
@@ -4048,6 +4045,34 @@
         "reports": "Here, when a review is requested",
         "watches": "Pull requests waiting on your review, in the repos you pick"
       },
+      "product-planning": {
+        "does": "Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.",
+        "example1": "Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.",
+        "example2": "Flagged 2 blocking open decisions from Android feasibility review before coding started.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.",
+        "line": "Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.",
+        "name": "Product planning",
+        "reports": "Here, when you ask and Mondays at 9:30 AM",
+        "schedules": {
+          "weekly-planning-sync": {
+            "what": "Planning & open decisions sync",
+            "when": "Mondays at 9:30 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Validate the problem and \"why\" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.",
+          "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE) and stop before internal code design.",
+          "2": "Lock down constraints, invariants, interfaces, and open decisions in a `product-capability` contract before delegating to dev bots.",
+          "3": "Break approved plans into self-contained work items with `work-breakdown`, attaching the overall product context, DoD, out-of-scope guards, and a dev-bot feasibility review gate."
+        },
+        "soulDont": {
+          "0": "Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.",
+          "1": "Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (e.g. `android-planner`).",
+          "2": "Never delegate ambiguous or uncontracted work items without explicit acceptance criteria and out-of-scope boundaries.",
+          "3": "Never ignore feasibility blockers or spec questions raised by dev bots during their pre-implementation review."
+        },
+        "watches": "Product ideas, docs, Linear issues, and dev-bot review feedback"
+      },
       "release-notes": {
         "does": "Drafts release notes for users in three groups: new, fixed, changed.",
         "example1": "Draft for 1.5: 4 new, 9 fixed, 2 changed.",
@@ -4105,34 +4130,6 @@
         "name": "Spec drafting",
         "reports": "Here, when you ask",
         "watches": "Slack threads and docs you hand it"
-      },
-      "product-planning": {
-        "does": "Validates product direction, drafts PRDs and capability contracts, and breaks work into verifiable items for dev bots.",
-        "example1": "Drafted PRD + Capability Contract for PIN Lock; sliced 4 work items with DoD for the Android bot.",
-        "example2": "Flagged 2 blocking open decisions from Android feasibility review before coding started.",
-        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a lean PRD and capability contract, and slices work into self-contained briefs for dev bots to review and build.",
-        "line": "Validates the why, writes lean PRDs & capability contracts, and breaks work into dev-ready items.",
-        "name": "Product planning",
-        "reports": "Here, when you ask and Mondays at 9:30 AM",
-        "schedules": {
-          "weekly-planning-sync": {
-            "what": "Planning & open decisions sync",
-            "when": "Mondays at 9:30 AM"
-          }
-        },
-        "soulDo": {
-          "0": "Validate the problem and \"why\" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.",
-          "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE) and stop before internal code design.",
-          "2": "Lock down constraints, invariants, interfaces, and open decisions in a `product-capability` contract before delegating to dev bots.",
-          "3": "Break approved plans into self-contained work items with `work-breakdown`, attaching the overall product context, DoD, out-of-scope guards, and a dev-bot feasibility review gate."
-        },
-        "soulDont": {
-          "0": "Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.",
-          "1": "Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (e.g. `android-planner`).",
-          "2": "Never delegate ambiguous or uncontracted work items without explicit acceptance criteria and out-of-scope boundaries.",
-          "3": "Never ignore feasibility blockers or spec questions raised by dev bots during their pre-implementation review."
-        },
-        "watches": "Product ideas, docs, Linear issues, and dev-bot review feedback"
       },
       "standup": {
         "does": "Writes yesterday’s notes and today’s plan.",

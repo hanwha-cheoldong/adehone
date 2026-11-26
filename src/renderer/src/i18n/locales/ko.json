@@ -30504,7 +30504,6 @@
         "cancel": "취소",
         "cancelRunning": "생성 취소",
         "edit": "설명 편집",
-        "realPerson": "아바타에는 실제 인물을 사용할 수 없습니다. 대신 캐릭터를 설명해 주세요.",
         "signedOut": "{{agent}}에 로그인되어 있지 않습니다. 로그인한 후 다시 시도하세요.",
         "usageLimit": "{{agent}}의 사용 한도에 도달했습니다. 나중에 다시 시도하세요.",
         "noImage": "{{agent}}가 이미지를 생성하지 못했습니다. 설명을 다르게 작성해 보세요.",
@@ -31359,18 +31358,5 @@
     "moveLeft": "왼쪽으로 이동",
     "moveRight": "오른쪽으로 이동",
     "reset": "탭 순서 초기화"
-  },
-  "tabStrip": {
-    "overflow": {
-      "chipOnlyName_one": "{{title}}, {{count}} tab",
-      "chipOnlyName_other": "{{title}}, {{count}} tabs",
-      "entryNeedsAttention": "{{title}}, needs attention",
-      "moreTabs_one": "{{count}} more tab",
-      "moreTabs_other": "{{count}} more tabs",
-      "needAttention_one": ", {{count}} needs attention",
-      "needAttention_other": ", {{count}} need attention",
-      "openTabs_one": "{{count}} open tab",
-      "openTabs_other": "{{count}} open tabs"
-    }
   }
 }
