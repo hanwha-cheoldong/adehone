@@ -1,23 +1,20 @@
+import {
+  MOBILE_WEB_BUNDLE_BUDGET,
+  MOBILE_WEB_CORE_WEB_VITALS
+} from './mobile-web-performance-budget'
+
 export const SKILL = `---
 name: mobile-web-performance-pwa
-description: ECC Web Performance & PWA guardrails for Mobile Web — Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe Service Worker caching.
+description: Web performance and PWA guardrails for Mobile Web — Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe Service Worker caching.
 ---
 
 # Mobile Web Performance & PWA Guardrails
 
-Aligned with ECC \`rules/web/performance.md\`.
-
 ## 1. Core Web Vitals Targets
-- **LCP** < \`2.5s\`
-- **INP** < \`200ms\`
-- **CLS** < \`0.1\`
-- **FCP** < \`1.5s\`
-- **TBT** < \`200ms\`
+${MOBILE_WEB_CORE_WEB_VITALS}
 
 ## 2. Bundle Budget (gzipped)
-- **Landing page**: JS < \`150KB\`, CSS < \`30KB\`
-- **App page**: JS < \`300KB\`, CSS < \`50KB\`
-- **Microsite**: JS < \`80KB\`, CSS < \`15KB\`
+${MOBILE_WEB_BUNDLE_BUDGET}
 - Dynamically import heavy libraries/routes, tree-shake icon/utility imports, and inline only justified critical above-the-fold CSS.
 
 ## 3. Image & Font Optimization
@@ -29,6 +26,7 @@ Aligned with ECC \`rules/web/performance.md\`.
 ## 4. Animation & Network Resilience
 - Animate compositor-friendly properties only (\`transform\`, \`opacity\`); apply \`will-change\` narrowly and remove when done.
 - Avoid scroll-handler churn; use \`IntersectionObserver\` and passive listeners.
+- For render and re-render performance, read the project's framework guide in \`mobile-web-patterns\` (Framework Gate).
 - Design for 3G/4G mobile networks with graceful loading/retry states, \`AbortController\` cancellation, and idempotent mutations.
 
 ## 5. Service Worker & Cache Safety

@@ -64,6 +64,7 @@ export const BOT_TEMPLATE_SKILLS = [
   'mobile-web-design-a11y',
   'mobile-web-tdd-testing',
   'mobile-web-code-review',
+  'mobile-web-build-resolver',
   'mobile-web-verification-loop',
   'mobile-web-webview-bridge',
   'mobile-web-performance-pwa',

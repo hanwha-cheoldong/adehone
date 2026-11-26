@@ -5,7 +5,7 @@ description: TDD workflow for Mobile Web — Vitest + Testing Library, MSW, Play
 
 # Mobile Web TDD Testing
 
-Aligned with ECC \`rules/common/testing.md\`, \`rules/web/testing.md\`, \`react-testing\`, and \`e2e-testing\`. Use the project's existing runner and conventions first; the examples assume Vitest, React, and Playwright.
+Use the project's existing framework, runner, and conventions first; the examples assume Vitest, React, and Playwright. In another framework, keep the method and use that framework's testing tools.
 
 ## 1. Red → Green → Refactor
 1. Write one failing test that describes a behaviour (Arrange, Act, Assert).

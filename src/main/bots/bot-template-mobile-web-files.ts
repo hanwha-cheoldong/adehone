@@ -5,7 +5,8 @@ export const MOBILE_WEB_DEV_DO_RULES: readonly string[] = [
   '- Plan every non-trivial feature or refactor with `mobile-web-planner` (Requirements & `[MWB]` Contract Intake -> Search-First & Architecture/Bridge Review -> Phased Steps -> Testing Strategy & Risks) before editing code.',
   '- Follow `mobile-web-patterns` (separated server/client/URL/form state, `AbortController`), `mobile-web-design-a11y` (`100dvh`/safe-area, `>=44px` touch targets, WCAG 2.2 AA), `mobile-web-performance-pwa`, and `mobile-web-tdd-testing`.',
   '- Before reporting done or opening a PR, run the 6-phase `mobile-web-verification-loop` (build & bundle budget, typecheck/lint, unit & mobile-viewport E2E, security/bridge scan, Vitals/a11y diff, live acceptance) and `mobile-web-code-review`.',
-  '- Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.'
+  '- Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.',
+  '- When a build or typecheck fails, load `mobile-web-build-resolver` before editing. When asked to review a change, load `mobile-web-code-review` first, and check the framework (`mobile-web-patterns` Framework Gate) before applying React or Vue rules.'
 ]
 
 export const MOBILE_WEB_DEV_DONT_RULES: readonly string[] = [

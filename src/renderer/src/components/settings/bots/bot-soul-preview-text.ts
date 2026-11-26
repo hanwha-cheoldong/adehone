@@ -160,6 +160,10 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     'Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.'
   ),
   entry(
+    'bots.templates.mobile-web-dev.soulDo.4',
+    'When a build or typecheck fails, load `mobile-web-build-resolver` before editing. When asked to review a change, load `mobile-web-code-review` first, and check the framework (`mobile-web-patterns` Framework Gate) before applying React or Vue rules.'
+  ),
+  entry(
     'bots.templates.mobile-web-dev.soulDont.0',
     'Never claim something is fixed without passing `mobile-web-verification-loop` build, test, and mobile viewport checks first.'
   ),

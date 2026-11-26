@@ -78,6 +78,8 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
     'Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.',
   'mobile-web-code-review':
     'Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.',
+  'mobile-web-build-resolver':
+    'Minimal-change build/typecheck/bundler fixes, stop after 3 failed attempts, and owner approval for major upgrades.',
   'mobile-web-verification-loop':
     '6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).',
   'mobile-web-webview-bridge':
