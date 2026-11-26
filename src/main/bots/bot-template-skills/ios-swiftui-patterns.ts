@@ -5,6 +5,17 @@ description: Modern SwiftUI architecture patterns — @Observable state manageme
 
 # iOS SwiftUI Patterns
 
+## Deployment Target First
+
+Read the deployment target (\`IPHONEOS_DEPLOYMENT_TARGET\` or \`Package.swift\` \`platforms\`) and the existing UI stack before choosing an API; follow that stack. The patterns below assume iOS 17+. Hiding a whole feature behind \`@available\` leaves older users without it, so on a lower target use the fallback unless the owner approves otherwise.
+
+| API | Needs | Below that |
+|-----|-------|------------|
+| \`@Observable\`, \`@Bindable\`, \`ContentUnavailableView\` | iOS 17 | \`ObservableObject\` / \`@Published\` with \`@ObservedObject\`; a custom empty/error view |
+| \`NavigationStack\` | iOS 16 | \`NavigationView\`, or the app's UIKit navigation |
+| \`.task\` | iOS 15 | \`.onAppear\` starting a stored \`Task\`, cancelled in \`.onDisappear\` |
+| \`@StateObject\` | iOS 14 | Own the model outside the view (e.g. the hosting view controller) and pass it as \`@ObservedObject\` |
+
 ## State Management & @Observable
 
 Choose the simplest wrapper that fits:
@@ -16,7 +27,7 @@ Choose the simplest wrapper that fits:
 | \`@Bindable\` | Two-way binding to an \`@Observable\` model property |
 | \`@Environment\` | Shared dependencies injected via \`.environment()\` |
 
-- Prefer \`@Observable\` (Observation framework) over \`ObservableObject\` / \`@Published\` so SwiftUI tracks property-level reads and skips unnecessary body re-evaluations.
+- On iOS 17+, prefer \`@Observable\` (Observation framework) over \`ObservableObject\` / \`@Published\` so SwiftUI tracks property-level reads and skips unnecessary body re-evaluations.
 - Annotate UI-bound ViewModels with \`@MainActor\` and keep business logic in Domain UseCases.
 - Trigger initial async loads with \`.task { await viewModel.load() }\` or \`.task(id: query)\` so SwiftUI automatically cancels the task when the view disappears or \`id\` changes.
 
