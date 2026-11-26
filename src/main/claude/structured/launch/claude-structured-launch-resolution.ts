@@ -1,7 +1,7 @@
 import { claudeBotSessionOptions } from './claude-bot-session-options'
 import { withSessionMcpToolsEnv } from '../../../mcp-servers/session-mcp-tools'
 import type { ClaudeAccountRecipe } from '../../../../shared/agent-session/lifecycle/accounts/agent-session-acquired-account'
-import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../../../shared/source-control/ai/settings/source-control-ai-settings'
+import { CHAT_REPLY_LANGUAGE_INSTRUCTION } from '../../../../shared/agent-session/chat-reply-language-instruction'
 import { prepareClaudeLaunchAccount, withClaudeLaunchAccountPin } from './claude-launch-account'
 import { assertStructuredAgentResolutionCurrent } from '../../../native-chat/agent-launch/structured-agent-command-resolution'
 import { activeProviderContext } from '../../../../shared/agent-session/conversation-context/agent-session-provider-context'
@@ -75,7 +75,7 @@ export type ClaudeStructuredSdkOptions = Pick<
 /** Replay acknowledgements require an explicit flag; the SDK supplies the other transport flags. */
 export const CLAUDE_STRUCTURED_BASE_OPTIONS: ClaudeStructuredSdkOptions = {
   includePartialMessages: true,
-  systemPrompt: { type: 'preset', preset: 'claude_code', append: DEFAULT_KOREAN_AI_INSTRUCTION },
+  systemPrompt: { type: 'preset', preset: 'claude_code', append: CHAT_REPLY_LANGUAGE_INSTRUCTION },
   settingSources: [...CLAUDE_DEFAULT_SETTING_SOURCES],
   supportedDialogKinds: [],
   extraArgs: { 'replay-user-messages': null }

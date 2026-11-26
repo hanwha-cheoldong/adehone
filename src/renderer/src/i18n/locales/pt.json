@@ -9483,8 +9483,8 @@
             "unverifiable": "Não concluído: o Adehone não conseguiu confirmar o que está em execução neste servidor. Tente novamente quando o host estiver acessível.",
             "migration": "Não concluído: há uma movimentação para este servidor pendente. Retome-a primeiro.",
             "deferred": "Ainda não concluído: o servidor não está pronto para isso. Tente novamente mais tarde.",
-            "stopIncomplete": "Não concluído: o Orca não conseguiu confirmar que o servidor atual foi encerrado, então não iniciou a atualização. Verifique o orcad.log na pasta de instalação do servidor, em ~/.orca-remote no host, antes de tentar novamente.",
-            "rollbackStopIncomplete": "Não concluído: o Orca não conseguiu confirmar que o servidor atual foi encerrado, então não fez a reversão. Verifique o orcad.log na pasta de instalação do servidor, em ~/.orca-remote no host, antes de tentar novamente.",
+            "stopIncomplete": "Não concluído: o Adehone não conseguiu confirmar que o servidor atual foi encerrado, então não iniciou a atualização. Verifique o orcad.log na pasta de instalação do servidor, em ~/.orca-remote no host, antes de tentar novamente.",
+            "rollbackStopIncomplete": "Não concluído: o Adehone não conseguiu confirmar que o servidor atual foi encerrado, então não fez a reversão. Verifique o orcad.log na pasta de instalação do servidor, em ~/.orca-remote no host, antes de tentar novamente.",
             "failed": "O Adehone não conseguiu concluir esta ação no servidor. Tente novamente.",
             "defaultServer": "Não concluído: este servidor é o host padrão para novos projetos. Escolha outro em Novos projetos são abertos em antes de pará-lo.",
             "wslMoveRunning": "Não concluído: um projeto está sendo movido para este servidor. O Adehone o atualiza quando a movimentação terminar."
@@ -14960,7 +14960,7 @@
           "preservedTitle": "Suas edições em {{value0}} foram salvas separadamente",
           "preservedDescription": "O Orca atualizou a skill e salvou suas edições em {{value0}}.",
           "uncertainTitle": "O Orca não conseguiu confirmar a atualização da skill em {{value0}}",
-          "uncertainDescriptionKept": "O Orca pode ter atualizado as skills em {{value0}}, mas não conseguiu confirmar o resultado. Se você editou uma skill durante a atualização, sua cópia está em {{value1}} ou ainda na pasta de skills."
+          "uncertainDescriptionKept": "O Adehone pode ter atualizado as skills em {{value0}}, mas não conseguiu confirmar o resultado. Se você editou uma skill durante a atualização, sua cópia está em {{value1}} ou ainda na pasta de skills."
         },
         "SkillBackupPathLine": {
           "movedTo": "Cópia antiga movida para:",
@@ -20978,10 +20978,10 @@
         "orcaStopRemote": "O Adehone em {{machine}} parou enquanto esta resposta estava em andamento.",
         "orcaStopCanContinue": "Você pode continuar nesta conversa.",
         "orcaStopUnnamedServer": "o servidor remoto",
-        "restartContinued": "O Orca pediu a este agente que continuasse após uma reinicialização. Seu próprio prompt não foi reenviado.",
-        "restartContinueRefused": "O Orca não conseguiu continuar este chat após a reinicialização. Envie uma mensagem para continuar.",
-        "restartContinueUnconfirmed": "O Orca pediu a este agente que continuasse após a reinicialização, mas não conseguiu confirmar que ele continuou. Confira a última resposta dele antes de enviar outra mensagem.",
-        "restartNotConnected": "O Orca não conseguiu reconectar este chat após a reinicialização, por isso não pediu ao agente que continuasse.",
+        "restartContinued": "O Adehone pediu a este agente que continuasse após uma reinicialização. Seu próprio prompt não foi reenviado.",
+        "restartContinueRefused": "O Adehone não conseguiu continuar este chat após a reinicialização. Envie uma mensagem para continuar.",
+        "restartContinueUnconfirmed": "O Adehone pediu a este agente que continuasse após a reinicialização, mas não conseguiu confirmar que ele continuou. Confira a última resposta dele antes de enviar outra mensagem.",
+        "restartNotConnected": "O Adehone não conseguiu reconectar este chat após a reinicialização, por isso não pediu ao agente que continuasse.",
         "permissionDenied": "{{agent}} negou a permissão. Ver detalhes.",
         "safetyReviewApproved": "{{agent}} aprovou esta ação. Ver detalhes.",
         "safetyReview": "{{agent}} relatou um aviso de revisão de segurança. Ver detalhes.",
@@ -22261,7 +22261,7 @@
         "greenLead": "CI verde em",
         "at": "em",
         "hide": "Não mostrar linhas de resultado de CI",
-        "hidden": "O Orca não mostrará mais linhas de resultado de CI"
+        "hidden": "O Adehone não mostrará mais linhas de resultado de CI"
       },
       "openedPullRequests": {
         "one": "Pull request criada: {{name}}",
@@ -22430,9 +22430,9 @@
         "someonesDm": "Também publica em uma DM com {{bot}}",
         "channel": "Também publica na thread de {{channel}}",
         "thread": "Também publica na thread do Slack",
-        "offUnavailable": "Somente no Orca · thread indisponível",
-        "offNotInChannel": "Somente no Orca · fora do canal",
-        "off": "Somente no Orca",
+        "offUnavailable": "Somente no Adehone · thread indisponível",
+        "offNotInChannel": "Somente no Adehone · fora do canal",
+        "off": "Somente no Adehone",
         "shortDm": "DM do Slack",
         "shortChannel": "Thread de {{channel}}",
         "shortThread": "Thread do Slack",
@@ -22443,23 +22443,23 @@
         "detailRemovedFrom": "{{bot}} foi removido de {{channel}}.",
         "detailRemoved": "{{bot}} foi removido do canal.",
         "detailFallback": "Publica como {{bot}} com o seu nome. Atualize no Slack para publicar como você.",
-        "detailOwnDm": "Suas mensagens e as respostas de {{bot}}. Somente você vê esta DM. Chamadas de ferramentas e workers ficam no Orca.",
-        "detailTheirDm": "Suas mensagens e as respostas de {{bot}}. {{name}} as vê na própria DM. Chamadas de ferramentas e workers ficam no Orca.",
-        "detailSomeonesDm": "Suas mensagens e as respostas de {{bot}}. A pessoa desta DM as vê. Chamadas de ferramentas e workers ficam no Orca.",
-        "detailThread": "Suas mensagens e as respostas de {{bot}}. Todos no canal podem vê-las. Chamadas de ferramentas e workers ficam no Orca.",
-        "detailExternal": "Suas mensagens e as respostas de {{bot}}. Todos em {{channel}} podem vê-las, inclusive pessoas de fora do seu workspace. Chamadas de ferramentas e workers ficam no Orca.",
-        "detailChannel": "Suas mensagens e as respostas de {{bot}}. Todos em {{channel}} podem vê-las. Chamadas de ferramentas e workers ficam no Orca.",
+        "detailOwnDm": "Suas mensagens e as respostas de {{bot}}. Somente você vê esta DM. Chamadas de ferramentas e workers ficam no Adehone.",
+        "detailTheirDm": "Suas mensagens e as respostas de {{bot}}. {{name}} as vê na própria DM. Chamadas de ferramentas e workers ficam no Adehone.",
+        "detailSomeonesDm": "Suas mensagens e as respostas de {{bot}}. A pessoa desta DM as vê. Chamadas de ferramentas e workers ficam no Adehone.",
+        "detailThread": "Suas mensagens e as respostas de {{bot}}. Todos no canal podem vê-las. Chamadas de ferramentas e workers ficam no Adehone.",
+        "detailExternal": "Suas mensagens e as respostas de {{bot}}. Todos em {{channel}} podem vê-las, inclusive pessoas de fora do seu workspace. Chamadas de ferramentas e workers ficam no Adehone.",
+        "detailChannel": "Suas mensagens e as respostas de {{bot}}. Todos em {{channel}} podem vê-las. Chamadas de ferramentas e workers ficam no Adehone.",
         "posting": "Publicando no Slack…",
         "failedFile": "Não publicado no Slack · arquivo grande demais",
         "failedEmpty": "Não publicado no Slack · nada para publicar",
         "failedTooLong": "Não publicado no Slack · mensagem longa demais",
         "failed": "Não publicado no Slack",
         "delete": "Excluir do Slack",
-        "postedFrom": "Publicado em {{place}} pelo Orca",
+        "postedFrom": "Publicado em {{place}} pelo Adehone",
         "retry": "Tentar novamente",
         "rewindStays": "As mensagens que já estão no Slack permanecem lá.",
         "switch": "Publicar este chat no Slack",
-        "tooltipOff": "Suas mensagens ficam no Orca",
+        "tooltipOff": "Suas mensagens ficam no Adehone",
         "tooltipOn": "Suas mensagens e as respostas de {{bot}} também são publicadas nesta thread do Slack"
       },
       "typedBy": {
@@ -22491,7 +22491,7 @@
         "detected": "Detectado",
         "settings": "Configurações de login…",
         "switched": "O Antigravity agora usa {{method}}.",
-        "switchFailed": "O Orca não conseguiu alterar como o Antigravity entra. Tente novamente.",
+        "switchFailed": "O Adehone não conseguiu alterar como o Antigravity entra. Tente novamente.",
         "confirmTitle": "Mudar para {{method}}?",
         "confirmBody": "Os chats do Antigravity em execução neste host serão reiniciados. Uma resposta em andamento é interrompida; suas conversas permanecem.",
         "cancel": "Cancelar",
@@ -22500,10 +22500,10 @@
         "moreOptions": "Mais opções…",
         "useApiKey": "Usar sua chave de API do Gemini",
         "useGoogle": "Usar seu login do Google",
-        "apiKeySaved": "Salva no Orca",
+        "apiKeySaved": "Salva no Adehone",
         "googleFound": "Você já entrou com o Google neste host",
         "askApiKeyEnvironment": "Usar a chave de API do Gemini encontrada no seu ambiente?",
-        "askApiKeySaved": "Usar a chave de API do Gemini salva no Orca?",
+        "askApiKeySaved": "Usar a chave de API do Gemini salva no Adehone?",
         "askGcloud": "Usar seu login do gcloud (projeto {{project}})?",
         "askGoogle": "Usar seu login do Google?",
         "noSubscription": "Esta conta do Google não tem assinatura do Antigravity.",
@@ -22514,8 +22514,8 @@
         "signInGoogle": "Entrar com o Google",
         "yourAgy": "Seu agy",
         "yourAgyVersion": "Seu agy · v{{version}}",
-        "orcasAgy": "agy do Orca",
-        "orcasAgyVersion": "agy do Orca · v{{version}}",
+        "orcasAgy": "agy do Adehone",
+        "orcasAgyVersion": "agy do Adehone · v{{version}}",
         "runsOn": "Executa em: {{program}}",
         "keepsOwnLogin": "Este chat mantém o login do Google do próprio agy. Os novos chats usam {{method}}.",
         "apiKeyEnvironment": "Do seu ambiente",
@@ -22558,7 +22558,7 @@
         "unavailable": "Nenhuma visualização para esta página."
       },
       "workers": {
-        "stopUnconfirmed": "O Orca não conseguiu confirmar se o worker parou."
+        "stopUnconfirmed": "O Adehone não conseguiu confirmar se o worker parou."
       },
       "connectorAsker": {
         "anApp": "Um app",
@@ -22591,8 +22591,8 @@
         "handOff": "Passar para agente",
         "more": "Mais ações",
         "statusUnknown": "Horário de redefinição desconhecido.",
-        "statusCanContinueAtAuto": "Você pode continuar em {{time}}. O Orca continuará este chat em {{autoTime}}.",
-        "statusCanContinueAtNoAuto": "Você pode continuar em {{time}}. O Orca não continuará este chat automaticamente.",
+        "statusCanContinueAtAuto": "Você pode continuar em {{time}}. O Adehone continuará este chat em {{autoTime}}.",
+        "statusCanContinueAtNoAuto": "Você pode continuar em {{time}}. O Adehone não continuará este chat automaticamente.",
         "statusCanContinueAt": "Você pode continuar em {{time}}.",
         "resetUnknown": "Horário de redefinição desconhecido",
         "continuesAt": "Continua em {{time}}",
@@ -22602,10 +22602,10 @@
         "titleWeeklyReached": "{{agent}} atingiu o limite semanal",
         "titleExtraUsageReached": "{{agent}} atingiu o limite de uso extra",
         "titleUsageReached": "{{agent}} atingiu o limite de uso",
-        "statusHasUsageAuto": "{{agent}} tem uso disponível novamente. O Orca continuará este chat em {{time}}.",
+        "statusHasUsageAuto": "{{agent}} tem uso disponível novamente. O Adehone continuará este chat em {{time}}.",
         "statusHasUsage": "{{agent}} tem uso disponível novamente.",
         "titleHasUsage": "{{agent}} tem uso disponível novamente",
-        "statusCanContinueNowAuto": "{{agent}} já pode continuar. O Orca continuará este chat em {{time}}.",
+        "statusCanContinueNowAuto": "{{agent}} já pode continuar. O Adehone continuará este chat em {{time}}.",
         "statusCanContinueNow": "{{agent}} já pode continuar.",
         "titleCanContinueNow": "{{agent}} já pode continuar",
         "turnOnAutoContinue": "Continuar automaticamente na redefinição"
@@ -22750,7 +22750,7 @@
         "addOrg": "Adicionar organização",
         "addWorkspace": "Adicionar workspace",
         "githubAsYou": "Ele também pode atuar no GitHub como você, por meio do seu login do gh.",
-        "linearAsYou": "Ele também pode atuar no Linear como você, por meio do seu próprio login do Linear no Orca."
+        "linearAsYou": "Ele também pode atuar no Linear como você, por meio do seu próprio login do Linear no Adehone."
       },
       "toolAdded": {
         "removed": "Removido",
@@ -26417,7 +26417,7 @@
     },
     "errors": {
       "unsavedDrafts": "A pasta dele tem alterações não salvas no editor. Salve ou feche os arquivos e tente excluir novamente.",
-      "purposeTooLongForHost": "O Orca em {{host}} aceita até 200 caracteres para a finalidade. Encurte o texto ou atualize o Orca em {{host}}."
+      "purposeTooLongForHost": "O Adehone em {{host}} aceita até 200 caracteres para a finalidade. Encurte o texto ou atualize o Adehone em {{host}}."
     },
     "groups": {
       "handoffsPaused": "Pausado após {{count}} repasses. Responda para continuar.",

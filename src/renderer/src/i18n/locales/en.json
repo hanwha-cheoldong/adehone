@@ -2085,8 +2085,8 @@
         "repoOff": "{{name}} turned off in {{repo}}"
       },
       "fileAgent": {
-        "title": "Let Orca edit {{agent}}’s MCP file?",
-        "line": "Orca will keep your MCP servers in {{agent}}’s settings file ({{file}}). Your own entries stay as they are.",
+        "title": "Let Adehone edit {{agent}}’s MCP file?",
+        "line": "Adehone will keep your MCP servers in {{agent}}’s settings file ({{file}}). Your own entries stay as they are.",
         "allow": "Allow"
       },
       "agents": {
@@ -2134,14 +2134,14 @@
       },
       "found": {
         "onlyIn": "{{agents}} · {{projects}} only",
-        "move": "Move to Orca",
+        "move": "Move to Adehone",
         "actions": "{{name}} actions",
-        "copy": "Copy to Orca",
+        "copy": "Copy to Adehone",
         "open": "Open",
-        "copied": "Copied {{name}} to Orca",
+        "copied": "Copied {{name}} to Adehone",
         "title": "In your agents",
         "summary": "Found {{count}} servers in {{agents}}",
-        "moveAll": "Move all to Orca"
+        "moveAll": "Move all to Adehone"
       },
       "signedInToast": "Signed in to {{name}}",
       "pasteRefused": "That address isn’t from this sign-in.",
@@ -2166,10 +2166,10 @@
         "linear": "Read and update issues and projects"
       },
       "move": {
-        "title": "Move {{name}} to Orca?",
-        "allTitle": "Move {{count}} servers to Orca?",
-        "line": "Orca removes it from {{agents}} settings and keeps a backup.",
-        "allLine": "Orca removes them from {{agents}} settings and keeps a backup.",
+        "title": "Move {{name}} to Adehone?",
+        "allTitle": "Move {{count}} servers to Adehone?",
+        "line": "Adehone removes it from {{agents}} settings and keeps a backup.",
+        "allLine": "Adehone removes them from {{agents}} settings and keeps a backup.",
         "confirm": "Move"
       },
       "yours": "Yours",
@@ -7287,9 +7287,9 @@
           "strandedDescription": "Your edits are still in {{value0}}. Copy them somewhere safe before updating again.",
           "preservedTitle": "Your edits to {{value0}} were saved separately",
           "preservedDescription": "Adehone updated the skill and saved your edits to {{value0}}.",
-          "preservedBackupOnly": "Orca saved your edits to {{value0}}.",
+          "preservedBackupOnly": "Adehone saved your edits to {{value0}}.",
           "uncertainTitle": "Adehone couldn't confirm the skill update on {{value0}}",
-          "uncertainDescriptionKept": "Orca may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}} or still in the skills folder."
+          "uncertainDescriptionKept": "Adehone may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}} or still in the skills folder."
         },
         "SkillBackupPathLine": {
           "movedTo": "Old copy moved to:",
@@ -7302,7 +7302,7 @@
           "leftoverReason": "Can't back up the left-over copy: it's on another drive.",
           "movedAsideReason": "Couldn't back up the old copy: it's on another drive.",
           "keepIt": "Move it out of the skills folder to keep it.",
-          "noReminder": "Move it out of the skills folder. Orca won't remind you.",
+          "noReminder": "Move it out of the skills folder. Adehone won't remind you.",
           "copyPathFor": "Copy path for {{value0}}",
           "copyFailed": "Couldn't copy the path."
         }
@@ -14213,8 +14213,8 @@
             "unverifiable": "Not done: Adehone couldn’t confirm what is running on this server. Try again when the host is reachable.",
             "migration": "Not done: a move onto this server is unfinished. Resume it first.",
             "deferred": "Not done yet: the server isn’t ready for this. Try again later.",
-            "stopIncomplete": "Not done: Orca couldn’t confirm the current server exited, so it did not start the update. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
-            "rollbackStopIncomplete": "Not done: Orca couldn’t confirm the current server exited, so it did not roll back. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
+            "stopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not start the update. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
+            "rollbackStopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not roll back. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
             "failed": "Adehone couldn’t finish this on the server. Try again.",
             "defaultServer": "Not done: this server is the default host for new projects. Choose another one under New projects open on before stopping it.",
             "wslMoveRunning": "Not done: a project is moving onto this server. Adehone updates it once the move finishes."
@@ -27882,7 +27882,7 @@
       "wslSetup": {
         "waiting": "Waiting for {{distro}}…",
         "starting": "Starting {{distro}}",
-        "installing": "Installing Orca’s server in ~/.orca-remote",
+        "installing": "Installing Adehone’s server in ~/.orca-remote",
         "connecting": "Connecting",
         "findingAgents": "Looking for agents in {{distro}}",
         "installingHint": "The first time also downloads its Linux Node runtime.",
@@ -27893,7 +27893,7 @@
         "title": "Setting up {{distro}} as a host",
         "subtitle": "About a minute the first time. Your Windows files and other distros aren’t touched.",
         "cancel": "Cancel",
-        "failedGeneric": "Orca’s server didn’t start in the distro. Details say what stopped it."
+        "failedGeneric": "Adehone’s server didn’t start in the distro. Details say what stopped it."
       },
       "wslNoAgent": {
         "field": "No agent in {{distro}}",
@@ -27924,7 +27924,7 @@
     },
     "errors": {
       "nameTaken": "Another bot already has that name.",
-      "purposeTooLongForHost": "Orca on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Orca on {{host}}.",
+      "purposeTooLongForHost": "Adehone on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Adehone on {{host}}.",
       "generic": "Something went wrong. Try again.",
       "avatarHomeUnreadable": "Couldn't read the saved picture. Choose it again.",
       "folderNotOwned": "Couldn't verify this bot's folder.",
@@ -31607,11 +31607,11 @@
   },
   "mcpServers": {
     "paste": {
-      "badCommand": "Put the values themselves in the mcp add command: Orca can’t fill in $VARIABLES or other shell expressions.",
-      "unsupported": "Orca can’t add this server as written: it uses SSE, its own OAuth client, or a value read from the environment.",
+      "badCommand": "Put the values themselves in the mcp add command: Adehone can’t fill in $VARIABLES or other shell expressions.",
+      "unsupported": "Adehone can’t add this server as written: it uses SSE, its own OAuth client, or a value read from the environment.",
       "badAddCommand": "Check the mcp add command: a name and a URL or command.",
       "badJson": "Check the pasted JSON: it doesn’t parse.",
-      "none": "Orca found no server it can add. SSE servers, servers with their own OAuth client or tool filters, and values read from the environment (${VAR}) aren’t supported."
+      "none": "Adehone found no server it can add. SSE servers, servers with their own OAuth client or tool filters, and values read from the environment (${VAR}) aren’t supported."
     }
   }
 }

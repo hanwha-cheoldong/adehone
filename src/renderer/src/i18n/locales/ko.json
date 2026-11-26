@@ -6452,7 +6452,7 @@
           "preservedTitle": "{{value0}}에 대한 수정 내용이 별도로 저장되었습니다",
           "preservedDescription": "Adehone가 스킬을 업데이트하고 수정한 내용을 {{value0}}에 저장했습니다.",
           "uncertainTitle": "Adehone가 {{value0}}의 스킬 업데이트를 확인하지 못했습니다",
-          "uncertainDescriptionKept": "Orca가 {{value0}}의 스킬을 업데이트했을 수 있지만 결과를 확인하지 못했습니다. 업데이트 중에 스킬을 수정했다면 사본이 {{value1}}에 있거나 스킬 폴더에 그대로 남아 있습니다."
+          "uncertainDescriptionKept": "Adehone가 {{value0}}의 스킬을 업데이트했을 수 있지만 결과를 확인하지 못했습니다. 업데이트 중에 스킬을 수정했다면 사본이 {{value1}}에 있거나 스킬 폴더에 그대로 남아 있습니다."
         },
         "SkillBackupPathLine": {
           "movedTo": "이전 사본을 옮긴 위치:",
@@ -13468,8 +13468,8 @@
             "unverifiable": "완료되지 않음: Adehone가 이 서버에서 무엇이 실행 중인지 확인하지 못했습니다. 호스트에 연결할 수 있을 때 다시 시도하세요.",
             "migration": "완료되지 않음: 이 서버로의 이동이 끝나지 않았습니다. 먼저 재개하세요.",
             "deferred": "아직 완료되지 않음: 서버가 아직 준비되지 않았습니다. 나중에 다시 시도하세요.",
-            "stopIncomplete": "완료되지 않음: Orca가 현재 서버가 종료되었는지 확인하지 못해 업데이트를 시작하지 않았습니다. 다시 시도하기 전에 호스트의 ~/.orca-remote 아래 서버 설치 폴더에 있는 orcad.log를 확인하세요.",
-            "rollbackStopIncomplete": "완료되지 않음: Orca가 현재 서버가 종료되었는지 확인하지 못해 롤백하지 않았습니다. 다시 시도하기 전에 호스트의 ~/.orca-remote 아래 서버 설치 폴더에 있는 orcad.log를 확인하세요.",
+            "stopIncomplete": "완료되지 않음: Adehone가 현재 서버가 종료되었는지 확인하지 못해 업데이트를 시작하지 않았습니다. 다시 시도하기 전에 호스트의 ~/.orca-remote 아래 서버 설치 폴더에 있는 orcad.log를 확인하세요.",
+            "rollbackStopIncomplete": "완료되지 않음: Adehone가 현재 서버가 종료되었는지 확인하지 못해 롤백하지 않았습니다. 다시 시도하기 전에 호스트의 ~/.orca-remote 아래 서버 설치 폴더에 있는 orcad.log를 확인하세요.",
             "failed": "Adehone가 서버에서 이 작업을 완료하지 못했습니다. 다시 시도하세요.",
             "defaultServer": "완료되지 않음: 이 서버는 새 프로젝트의 기본 호스트입니다. 중지하기 전에 '새 프로젝트를 여는 위치'에서 다른 서버를 선택하세요.",
             "wslMoveRunning": "완료되지 않음: 프로젝트를 이 서버로 옮기는 중입니다. 이동이 끝나면 Adehone가 업데이트합니다."
@@ -29056,7 +29056,7 @@
     },
     "errors": {
       "unsavedDrafts": "봇 폴더에 저장하지 않은 편집 내용이 있습니다. 파일을 저장하거나 닫은 다음 다시 삭제하세요.",
-      "purposeTooLongForHost": "{{host}}의 Orca는 용도를 200자까지만 받을 수 있습니다. 줄이거나 {{host}}의 Orca를 업데이트하세요.",
+      "purposeTooLongForHost": "{{host}}의 Adehone는 용도를 200자까지만 받을 수 있습니다. 줄이거나 {{host}}의 Adehone를 업데이트하세요.",
       "nameTaken": "다른 봇이 이미 해당 이름을 사용하고 있습니다.",
       "generic": "문제가 발생했습니다. 다시 시도하세요.",
       "avatarInvalid": "해당 사진은 사용할 수 없습니다. PNG 또는 JPG 이미지를 선택하세요.",

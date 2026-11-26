@@ -12837,8 +12837,8 @@
             "unverifiable": "Nicht abgeschlossen: Adehone konnte nicht feststellen, was auf diesem Server läuft. Erneut versuchen, sobald der Host erreichbar ist.",
             "migration": "Nicht abgeschlossen: Eine Verschiebung auf diesen Server ist noch nicht abgeschlossen. Diese zuerst fortsetzen.",
             "deferred": "Noch nicht abgeschlossen: Der Server ist dafür noch nicht bereit. Später erneut versuchen.",
-            "stopIncomplete": "Nicht abgeschlossen: Orca konnte nicht bestätigen, dass der aktuelle Server beendet wurde, und hat das Update daher nicht gestartet. Vor einem erneuten Versuch orcad.log im Installationsordner des Servers unter ~/.orca-remote auf dem Host prüfen.",
-            "rollbackStopIncomplete": "Nicht abgeschlossen: Orca konnte nicht bestätigen, dass der aktuelle Server beendet wurde, und hat daher nicht zurückgesetzt. Vor einem erneuten Versuch orcad.log im Installationsordner des Servers unter ~/.orca-remote auf dem Host prüfen.",
+            "stopIncomplete": "Nicht abgeschlossen: Adehone konnte nicht bestätigen, dass der aktuelle Server beendet wurde, und hat das Update daher nicht gestartet. Vor einem erneuten Versuch orcad.log im Installationsordner des Servers unter ~/.orca-remote auf dem Host prüfen.",
+            "rollbackStopIncomplete": "Nicht abgeschlossen: Adehone konnte nicht bestätigen, dass der aktuelle Server beendet wurde, und hat daher nicht zurückgesetzt. Vor einem erneuten Versuch orcad.log im Installationsordner des Servers unter ~/.orca-remote auf dem Host prüfen.",
             "failed": "Adehone konnte diesen Vorgang auf dem Server nicht abschließen. Erneut versuchen.",
             "defaultServer": "Nicht abgeschlossen: Dieser Server ist der Standard-Host für neue Projekte. Vor dem Stoppen unter „Neue Projekte öffnen auf“ einen anderen Host auswählen.",
             "wslMoveRunning": "Nicht abgeschlossen: Ein Projekt wird auf diesen Server verschoben. Adehone aktualisiert ihn, sobald der Vorgang abgeschlossen ist."
@@ -19599,7 +19599,7 @@
         "attachmentExpired": "Dieser Anhang ist abgelaufen.",
         "reattachFile": "Den Anhang entfernen und erneut anhängen.",
         "reattachFiles": "Die Anhänge entfernen und erneut anhängen.",
-        "mailOwnerUnconfirmed": "Orca konnte nicht bestätigen, dass diese Nachricht weiterhin für diesen Chat bestimmt ist.",
+        "mailOwnerUnconfirmed": "Adehone konnte nicht bestätigen, dass diese Nachricht weiterhin für diesen Chat bestimmt ist.",
         "conversationCleared": "Diese Unterhaltung wurde geleert.",
         "openCurrentConversation": "Zum Fortfahren die aktuelle Unterhaltung öffnen.",
         "clearUnfinished": "Der letzte /clear-Befehl wurde nicht abgeschlossen.",
@@ -19698,10 +19698,10 @@
         "orcaStopRemote": "Adehone auf {{machine}} wurde während dieser Antwort gestoppt.",
         "orcaStopCanContinue": "Die Unterhaltung kann fortgesetzt werden.",
         "orcaStopUnnamedServer": "dem entfernten Server",
-        "restartContinued": "Orca hat diesen Agenten nach einem Neustart zum Fortfahren aufgefordert. Dein eigener Prompt wurde nicht erneut gesendet.",
-        "restartContinueRefused": "Orca konnte diesen Chat nach dem Neustart nicht fortsetzen. Eine Nachricht senden, um ihn fortzusetzen.",
-        "restartContinueUnconfirmed": "Orca hat diesen Agenten nach dem Neustart zum Fortfahren aufgefordert, konnte aber nicht bestätigen, dass er es getan hat. Vor einer weiteren Nachricht seine letzte Antwort prüfen.",
-        "restartNotConnected": "Orca konnte diesen Chat nach dem Neustart nicht wiederverbinden und hat den Agenten daher nicht zum Fortfahren aufgefordert.",
+        "restartContinued": "Adehone hat diesen Agenten nach einem Neustart zum Fortfahren aufgefordert. Dein eigener Prompt wurde nicht erneut gesendet.",
+        "restartContinueRefused": "Adehone konnte diesen Chat nach dem Neustart nicht fortsetzen. Eine Nachricht senden, um ihn fortzusetzen.",
+        "restartContinueUnconfirmed": "Adehone hat diesen Agenten nach dem Neustart zum Fortfahren aufgefordert, konnte aber nicht bestätigen, dass er es getan hat. Vor einer weiteren Nachricht seine letzte Antwort prüfen.",
+        "restartNotConnected": "Adehone konnte diesen Chat nach dem Neustart nicht wiederverbinden und hat den Agenten daher nicht zum Fortfahren aufgefordert.",
         "permissionDenied": "{{agent}} hat die Berechtigung verweigert. Details anzeigen.",
         "safetyReviewApproved": "{{agent}} hat diese Aktion genehmigt. Details anzeigen.",
         "safetyReview": "{{agent}} hat eine Warnung zur Sicherheitsprüfung gemeldet. Details anzeigen.",
@@ -20070,8 +20070,8 @@
         "hostUpdateRequired": "Adehone auf diesem Host aktualisieren, um in der Chat-Oberfläche fortzufahren.",
         "exitUnconfirmedFromTerminal": "{{agent}} führt diese Unterhaltung noch in diesem Terminal aus. {{agent}} hier beenden und die Unterhaltung dann über den Sitzungsverlauf öffnen.",
         "notSavedYet": "{{agent}} hat diese Unterhaltung noch nicht gespeichert. Nach der Antwort erneut versuchen.",
-        "terminalChanged": "Das Terminal, in dem {{agent}} lief, hat sich vor dem Schließen geändert, daher hat Orca es geöffnet gelassen. Erneut versuchen.",
-        "terminalExitUnproven": "Orca hat das Terminal von {{agent}} geschlossen, konnte aber nicht bestätigen, dass der Agent beendet wurde, daher wurde der Chat nicht geöffnet. Die Host-Verbindung prüfen und die Unterhaltung dann über den Sitzungsverlauf öffnen.",
+        "terminalChanged": "Das Terminal, in dem {{agent}} lief, hat sich vor dem Schließen geändert, daher hat Adehone es geöffnet gelassen. Erneut versuchen.",
+        "terminalExitUnproven": "Adehone hat das Terminal von {{agent}} geschlossen, konnte aber nicht bestätigen, dass der Agent beendet wurde, daher wurde der Chat nicht geöffnet. Die Host-Verbindung prüfen und die Unterhaltung dann über den Sitzungsverlauf öffnen.",
         "resumeFailed": "{{agent}} konnte nicht im Chat fortgesetzt werden. Dieses Terminal und die Host-Verbindung prüfen und anschließend erneut versuchen.",
         "exitUnconfirmed": "{{agent}} führt diese Unterhaltung in einem anderen Terminal aus. Dort beenden oder das Terminal schließen, dann erneut versuchen."
       },
@@ -20429,7 +20429,7 @@
         "stopped": "{{distro}} ist gestoppt",
         "start": "Starten",
         "connecting": "Verbindung mit {{distro}} wird hergestellt…",
-        "startFailed": "{{distro}} konnte nicht gestartet werden. In den Einstellungen unter Entfernte Orca-Server prüfen.",
+        "startFailed": "{{distro}} konnte nicht gestartet werden. In den Einstellungen unter Entfernte Adehone-Server prüfen.",
         "unverifiable": "Adehone konnte nicht prüfen, ob {{distro}} läuft",
         "startToSend": "Starte {{distro}}, um zu senden.",
         "startDistro": "{{distro}} starten"
@@ -20642,7 +20642,7 @@
         "unavailable": "Keine Vorschau für diese Seite."
       },
       "workers": {
-        "stopUnconfirmed": "Orca konnte nicht bestätigen, dass der Worker gestoppt wurde."
+        "stopUnconfirmed": "Adehone konnte nicht bestätigen, dass der Worker gestoppt wurde."
       },
       "connectorAsker": {
         "anApp": "Eine App",
@@ -20759,7 +20759,7 @@
         "greenLead": "CI erfolgreich für",
         "at": "bei",
         "hide": "CI-Ergebniszeilen nicht anzeigen",
-        "hidden": "Orca zeigt keine CI-Ergebniszeilen mehr an"
+        "hidden": "Adehone zeigt keine CI-Ergebniszeilen mehr an"
       },
       "openedPullRequests": {
         "one": "Pull Request erstellt: {{name}}",
@@ -20927,9 +20927,9 @@
         "someonesDm": "Wird auch in eine DM mit {{bot}} gepostet",
         "channel": "Wird auch im Thread in {{channel}} gepostet",
         "thread": "Wird auch im Slack-Thread gepostet",
-        "offUnavailable": "Nur in Orca · Thread nicht verfügbar",
-        "offNotInChannel": "Nur in Orca · nicht im Channel",
-        "off": "Nur in Orca",
+        "offUnavailable": "Nur in Adehone · Thread nicht verfügbar",
+        "offNotInChannel": "Nur in Adehone · nicht im Channel",
+        "off": "Nur in Adehone",
         "shortDm": "Slack-DM",
         "shortChannel": "Thread in {{channel}}",
         "shortThread": "Slack-Thread",
@@ -20940,23 +20940,23 @@
         "detailRemovedFrom": "{{bot}} wurde aus {{channel}} entfernt.",
         "detailRemoved": "{{bot}} wurde aus dem Channel entfernt.",
         "detailFallback": "Wird als {{bot}} mit deinem Namen gepostet. In Slack aktualisieren, um unter deinem Namen zu posten.",
-        "detailOwnDm": "Deine Nachrichten und die Antworten von {{bot}}. Nur du siehst diese DM. Werkzeugaufrufe und Worker bleiben in Orca.",
-        "detailTheirDm": "Deine Nachrichten und die Antworten von {{bot}}. {{name}} sieht sie in der eigenen DM. Werkzeugaufrufe und Worker bleiben in Orca.",
-        "detailSomeonesDm": "Deine Nachrichten und die Antworten von {{bot}}. Die Person in dieser DM sieht sie. Werkzeugaufrufe und Worker bleiben in Orca.",
-        "detailThread": "Deine Nachrichten und die Antworten von {{bot}}. Alle im Channel können sie sehen. Werkzeugaufrufe und Worker bleiben in Orca.",
-        "detailExternal": "Deine Nachrichten und die Antworten von {{bot}}. Alle in {{channel}} können sie sehen, auch Personen außerhalb deines Arbeitsbereichs. Werkzeugaufrufe und Worker bleiben in Orca.",
-        "detailChannel": "Deine Nachrichten und die Antworten von {{bot}}. Alle in {{channel}} können sie sehen. Werkzeugaufrufe und Worker bleiben in Orca.",
+        "detailOwnDm": "Deine Nachrichten und die Antworten von {{bot}}. Nur du siehst diese DM. Werkzeugaufrufe und Worker bleiben in Adehone.",
+        "detailTheirDm": "Deine Nachrichten und die Antworten von {{bot}}. {{name}} sieht sie in der eigenen DM. Werkzeugaufrufe und Worker bleiben in Adehone.",
+        "detailSomeonesDm": "Deine Nachrichten und die Antworten von {{bot}}. Die Person in dieser DM sieht sie. Werkzeugaufrufe und Worker bleiben in Adehone.",
+        "detailThread": "Deine Nachrichten und die Antworten von {{bot}}. Alle im Channel können sie sehen. Werkzeugaufrufe und Worker bleiben in Adehone.",
+        "detailExternal": "Deine Nachrichten und die Antworten von {{bot}}. Alle in {{channel}} können sie sehen, auch Personen außerhalb deines Arbeitsbereichs. Werkzeugaufrufe und Worker bleiben in Adehone.",
+        "detailChannel": "Deine Nachrichten und die Antworten von {{bot}}. Alle in {{channel}} können sie sehen. Werkzeugaufrufe und Worker bleiben in Adehone.",
         "posting": "Wird in Slack gepostet…",
         "failedFile": "Nicht in Slack gepostet · Datei zu groß",
         "failedEmpty": "Nicht in Slack gepostet · nichts zu posten",
         "failedTooLong": "Nicht in Slack gepostet · Nachricht zu lang",
         "failed": "Nicht in Slack gepostet",
         "delete": "Aus Slack löschen",
-        "postedFrom": "Aus Orca gepostet: {{place}}",
+        "postedFrom": "Aus Adehone gepostet: {{place}}",
         "retry": "Erneut versuchen",
         "rewindStays": "Nachrichten, die bereits in Slack sind, bleiben dort.",
         "switch": "Diesen Chat in Slack posten",
-        "tooltipOff": "Deine Nachrichten bleiben in Orca",
+        "tooltipOff": "Deine Nachrichten bleiben in Adehone",
         "tooltipOn": "Deine Nachrichten und die Antworten von {{bot}} werden auch in diesem Slack-Thread gepostet"
       },
       "typedBy": {
@@ -20988,7 +20988,7 @@
         "detected": "Erkannt",
         "settings": "Anmeldeeinstellungen…",
         "switched": "Antigravity verwendet jetzt „{{method}}“.",
-        "switchFailed": "Orca konnte die Anmeldung von Antigravity nicht ändern. Erneut versuchen.",
+        "switchFailed": "Adehone konnte die Anmeldung von Antigravity nicht ändern. Erneut versuchen.",
         "confirmTitle": "Zu „{{method}}“ wechseln?",
         "confirmBody": "Antigravity-Chats auf diesem Host werden neu gestartet. Eine laufende Antwort wird abgebrochen; die Unterhaltungen bleiben erhalten.",
         "cancel": "Abbrechen",
@@ -20997,10 +20997,10 @@
         "moreOptions": "Weitere Optionen…",
         "useApiKey": "Deinen Gemini-API-Schlüssel verwenden",
         "useGoogle": "Deine Google-Anmeldung verwenden",
-        "apiKeySaved": "In Orca gespeichert",
+        "apiKeySaved": "In Adehone gespeichert",
         "googleFound": "Du hast dich auf diesem Host schon einmal mit Google angemeldet",
         "askApiKeyEnvironment": "Stattdessen den Gemini-API-Schlüssel aus deiner Umgebung verwenden?",
-        "askApiKeySaved": "Stattdessen den in Orca gespeicherten Gemini-API-Schlüssel verwenden?",
+        "askApiKeySaved": "Stattdessen den in Adehone gespeicherten Gemini-API-Schlüssel verwenden?",
         "askGcloud": "Stattdessen deine gcloud-Anmeldung (Projekt {{project}}) verwenden?",
         "askGoogle": "Stattdessen deine Google-Anmeldung verwenden?",
         "noSubscription": "Dieses Google-Konto hat kein Antigravity-Abonnement.",
@@ -21011,8 +21011,8 @@
         "signInGoogle": "Mit Google anmelden",
         "yourAgy": "Dein agy",
         "yourAgyVersion": "Dein agy · v{{version}}",
-        "orcasAgy": "agy von Orca",
-        "orcasAgyVersion": "agy von Orca · v{{version}}",
+        "orcasAgy": "agy von Adehone",
+        "orcasAgyVersion": "agy von Adehone · v{{version}}",
         "runsOn": "Läuft auf: {{program}}",
         "keepsOwnLogin": "Dieser Chat behält die eigene Google-Anmeldung von agy. Neue Chats verwenden „{{method}}“.",
         "apiKeyEnvironment": "Aus deiner Umgebung",
@@ -21152,7 +21152,7 @@
         "addOrg": "Organisation hinzufügen",
         "addWorkspace": "Arbeitsbereich hinzufügen",
         "githubAsYou": "Der Bot kann über deine gh-Anmeldung auch in deinem Namen in GitHub arbeiten.",
-        "linearAsYou": "Der Bot kann über deine eigene Linear-Anmeldung in Orca auch in deinem Namen in Linear arbeiten."
+        "linearAsYou": "Der Bot kann über deine eigene Linear-Anmeldung in Adehone auch in deinem Namen in Linear arbeiten."
       },
       "toolAdded": {
         "removed": "Entfernt",
@@ -21175,8 +21175,8 @@
         "handOff": "An Agenten übergeben",
         "more": "Weitere Aktionen",
         "statusUnknown": "Zeitpunkt des Zurücksetzens unbekannt.",
-        "statusCanContinueAtAuto": "Du kannst um {{time}} fortfahren. Orca setzt diesen Chat um {{autoTime}} fort.",
-        "statusCanContinueAtNoAuto": "Du kannst um {{time}} fortfahren. Orca setzt diesen Chat nicht automatisch fort.",
+        "statusCanContinueAtAuto": "Du kannst um {{time}} fortfahren. Adehone setzt diesen Chat um {{autoTime}} fort.",
+        "statusCanContinueAtNoAuto": "Du kannst um {{time}} fortfahren. Adehone setzt diesen Chat nicht automatisch fort.",
         "statusCanContinueAt": "Du kannst um {{time}} fortfahren.",
         "resetUnknown": "Zeitpunkt des Zurücksetzens unbekannt",
         "continuesAt": "Weiter um {{time}}",
@@ -21186,17 +21186,17 @@
         "titleWeeklyReached": "Wöchentliches Limit von {{agent}} erreicht",
         "titleExtraUsageReached": "Limit für zusätzliche Nutzung von {{agent}} erreicht",
         "titleUsageReached": "Nutzungslimit von {{agent}} erreicht",
-        "statusHasUsageAuto": "{{agent}} hat wieder Kontingent. Orca setzt diesen Chat um {{time}} fort.",
+        "statusHasUsageAuto": "{{agent}} hat wieder Kontingent. Adehone setzt diesen Chat um {{time}} fort.",
         "statusHasUsage": "{{agent}} hat wieder Kontingent.",
         "titleHasUsage": "{{agent}} hat wieder Kontingent",
-        "statusCanContinueNowAuto": "{{agent}} kann jetzt fortfahren. Orca setzt diesen Chat um {{time}} fort.",
+        "statusCanContinueNowAuto": "{{agent}} kann jetzt fortfahren. Adehone setzt diesen Chat um {{time}} fort.",
         "statusCanContinueNow": "{{agent}} kann jetzt fortfahren.",
         "titleCanContinueNow": "{{agent}} kann jetzt fortfahren",
         "turnOnAutoContinue": "Beim Zurücksetzen automatisch fortsetzen"
       },
       "usageLimitAutoContinue": {
         "cancelFailed": "Das automatische Fortsetzen konnte nicht abgebrochen werden. Erneut versuchen.",
-        "scheduled": "Orca setzt diesen Chat um {{time}} fort."
+        "scheduled": "Adehone setzt diesen Chat um {{time}} fort."
       },
       "mcp": {
         "status": {
@@ -25304,7 +25304,7 @@
     },
     "errors": {
       "unsavedDrafts": "In seinem Ordner gibt es ungespeicherte Änderungen im Editor. Speichere sie oder schließe die betroffenen Dateien und versuche dann erneut, den Bot zu löschen.",
-      "purposeTooLongForHost": "Orca auf {{host}} erlaubt höchstens 200 Zeichen für den Zweck. Kürze ihn oder aktualisiere Orca auf {{host}}."
+      "purposeTooLongForHost": "Adehone auf {{host}} erlaubt höchstens 200 Zeichen für den Zweck. Kürze ihn oder aktualisiere Adehone auf {{host}}."
     },
     "automations": {
       "paused": "Pausiert",

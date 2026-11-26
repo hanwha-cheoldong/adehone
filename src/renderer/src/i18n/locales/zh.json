@@ -1398,8 +1398,8 @@
         "repoOff": "已在 {{repo}} 中关闭 {{name}}"
       },
       "fileAgent": {
-        "title": "允许 Orca 编辑 {{agent}} 的 MCP 文件？",
-        "line": "Orca 会将你的 MCP 服务器保存在 {{agent}} 的设置文件（{{file}}）中。你自己的条目保持不变。",
+        "title": "允许 Adehone 编辑 {{agent}} 的 MCP 文件？",
+        "line": "Adehone 会将你的 MCP 服务器保存在 {{agent}} 的设置文件（{{file}}）中。你自己的条目保持不变。",
         "allow": "允许"
       },
       "agents": {
@@ -1447,14 +1447,14 @@
       },
       "found": {
         "onlyIn": "{{agents}} · 仅限 {{projects}}",
-        "move": "移至 Orca",
+        "move": "移至 Adehone",
         "actions": "{{name}} 操作",
-        "copy": "复制到 Orca",
+        "copy": "复制到 Adehone",
         "open": "打开",
-        "copied": "已将 {{name}} 复制到 Orca",
+        "copied": "已将 {{name}} 复制到 Adehone",
         "title": "来自你的智能体",
         "summary": "在 {{agents}} 中找到 {{count}} 个服务器",
-        "moveAll": "全部移至 Orca"
+        "moveAll": "全部移至 Adehone"
       },
       "signedInToast": "已登录 {{name}}",
       "pasteRefused": "该地址不属于此次登录。",
@@ -1479,10 +1479,10 @@
         "linear": "读取和更新议题与项目"
       },
       "move": {
-        "title": "将 {{name}} 移至 Orca？",
-        "allTitle": "将 {{count}} 个服务器移至 Orca？",
-        "line": "Orca 会将它从 {{agents}} 的设置中移除，并保留备份。",
-        "allLine": "Orca 会将它们从 {{agents}} 的设置中移除，并保留备份。",
+        "title": "将 {{name}} 移至 Adehone？",
+        "allTitle": "将 {{count}} 个服务器移至 Adehone？",
+        "line": "Adehone 会将它从 {{agents}} 的设置中移除，并保留备份。",
+        "allLine": "Adehone 会将它们从 {{agents}} 的设置中移除，并保留备份。",
         "confirm": "移动"
       },
       "yours": "你的服务器",
@@ -6504,8 +6504,8 @@
           "preservedTitle": "你对 {{value0}} 的修改已单独保存",
           "preservedDescription": "Orca 已更新该技能，并将你的修改保存到 {{value0}}",
           "uncertainTitle": "Orca 无法确认 {{value0}} 上的技能更新",
-          "uncertainDescriptionKept": "Orca 可能已更新 {{value0}} 上的技能，但无法确认结果；如果你在更新期间编辑过技能，你的副本位于 {{value1}}，或仍在技能文件夹中",
-          "preservedBackupOnly": "Orca 已将你的修改保存到 {{value0}}"
+          "uncertainDescriptionKept": "Adehone 可能已更新 {{value0}} 上的技能，但无法确认结果；如果你在更新期间编辑过技能，你的副本位于 {{value1}}，或仍在技能文件夹中",
+          "preservedBackupOnly": "Adehone 已将你的修改保存到 {{value0}}"
         },
         "SkillBackupPathLine": {
           "movedTo": "旧副本已移动到：",
@@ -6519,7 +6519,7 @@
           "keepIt": "想保留它，请把它移出技能文件夹。",
           "leftoverReason": "无法备份遗留的副本：它在另一个驱动器上。",
           "movedAsideReason": "无法备份旧副本：它在另一个驱动器上。",
-          "noReminder": "请把它移出技能文件夹，Orca 不会再提醒你。",
+          "noReminder": "请把它移出技能文件夹，Adehone 不会再提醒你。",
           "tryAgain": "把它移出技能文件夹后重试。"
         }
       },
@@ -13487,8 +13487,8 @@
             "unverifiable": "未完成：Adehone 无法确认此服务器上正在运行什么，请在主机可访问时重试",
             "migration": "未完成：迁移到此服务器的操作尚未完成，请先继续该操作",
             "deferred": "尚未完成：服务器尚未准备好执行此操作，请稍后重试",
-            "stopIncomplete": "未完成：Orca 无法确认当前服务器已退出，因此未开始更新，请先查看主机上 ~/.orca-remote 中服务器安装文件夹内的 orcad.log 再重试",
-            "rollbackStopIncomplete": "未完成：Orca 无法确认当前服务器已退出，因此未回滚，请先查看主机上 ~/.orca-remote 中服务器安装文件夹内的 orcad.log 再重试",
+            "stopIncomplete": "未完成：Adehone 无法确认当前服务器已退出，因此未开始更新，请先查看主机上 ~/.orca-remote 中服务器安装文件夹内的 orcad.log 再重试",
+            "rollbackStopIncomplete": "未完成：Adehone 无法确认当前服务器已退出，因此未回滚，请先查看主机上 ~/.orca-remote 中服务器安装文件夹内的 orcad.log 再重试",
             "failed": "Adehone 无法在服务器上完成此操作，请重试",
             "defaultServer": "未执行：此服务器是新项目的默认主机，停止前请在“新项目打开位置”中选择其他主机",
             "wslMoveRunning": "未完成：有项目正在移到此服务器上。移动完成后，Adehone 会更新它"
@@ -27987,7 +27987,7 @@
       "wslSetup": {
         "waiting": "正在等待 {{distro}}…",
         "starting": "正在启动 {{distro}}",
-        "installing": "正在 ~/.orca-remote 中安装 Orca 服务器",
+        "installing": "正在 ~/.orca-remote 中安装 Adehone 服务器",
         "connecting": "正在连接",
         "findingAgents": "正在 {{distro}} 中查找智能体",
         "installingHint": "首次设置还会下载 Linux 版 Node 运行时。",
@@ -27998,7 +27998,7 @@
         "title": "正在将 {{distro}} 设置为主机",
         "subtitle": "首次大约需要一分钟。你的 Windows 文件和其他发行版不会受到影响。",
         "cancel": "取消",
-        "failedGeneric": "Orca 服务器未能在发行版中启动。请查看详情了解原因。"
+        "failedGeneric": "Adehone 服务器未能在发行版中启动。请查看详情了解原因。"
       },
       "wslNoAgent": {
         "field": "{{distro}} 中没有智能体",
@@ -28947,15 +28947,15 @@
       },
       "setDefault": "设为默认",
       "addServiceMenu": "添加服务…",
-      "updateToAdd": "请更新 {{host}} 上的 Orca 以添加其他 Google 账户",
+      "updateToAdd": "请更新 {{host}} 上的 Adehone 以添加其他 Google 账户",
       "accessBlocked": "看到“访问被阻止”（Access blocked）？",
       "setUpNewApp": "设置新的 Google 应用",
       "useAnother": "使用其他账户",
       "useAnotherSignIn": "使用 Google 登录",
       "useAnotherSignInDetail": "使用你当前的 Google 应用",
       "setUpNewAppDetail": "如果当前应用不适用于此账户或组织",
-      "updateToSetUpNewApp": "请更新 {{host}} 上的 Orca 以设置新的 Google 应用",
-      "updateToChooseAccounts": "请更新 {{host}} 上的 Orca 以选择账户",
+      "updateToSetUpNewApp": "请更新 {{host}} 上的 Adehone 以设置新的 Google 应用",
+      "updateToChooseAccounts": "请更新 {{host}} 上的 Adehone 以选择账户",
       "picker": {
         "label": "Google 账户",
         "addAccount": "添加其他账户",
@@ -30253,7 +30253,7 @@
     },
     "errors": {
       "nameTaken": "已有其他 bot 使用此名称",
-      "purposeTooLongForHost": "{{host}} 上的 Orca 最多接受 200 个字符的用途说明。请缩短内容，或更新 {{host}} 上的 Orca。",
+      "purposeTooLongForHost": "{{host}} 上的 Adehone 最多接受 200 个字符的用途说明。请缩短内容，或更新 {{host}} 上的 Adehone。",
       "generic": "出了点问题，请重试",
       "avatarInvalid": "无法使用该图片。请选择 PNG 或 JPG 图片",
       "unsavedDrafts": "它的文件夹中有未保存的编辑器更改。请先保存或关闭这些更改，然后再删除",
@@ -30411,7 +30411,7 @@
         "expiredOnTitle": "{{host}} 上的 Slack 登录已过期",
         "signInAgain": "重新登录",
         "neededTitle": "Slack 需要此工作区的令牌",
-        "whyNeeded": "Orca 没有此工作区可用的 Slack 令牌",
+        "whyNeeded": "Adehone 没有此工作区可用的 Slack 令牌",
         "pasteNeeded": "请粘贴令牌以继续",
         "continue": "继续"
       },
@@ -30926,10 +30926,10 @@
   "mcpServers": {
     "paste": {
       "badAddCommand": "请检查 mcp add 命令：需要写名称，以及 URL 或命令。",
-      "badCommand": "请直接在 mcp add 命令里写出值：Orca 无法自动填充 $VARIABLES 或其他 shell 表达式。",
+      "badCommand": "请直接在 mcp add 命令里写出值：Adehone 无法自动填充 $VARIABLES 或其他 shell 表达式。",
       "badJson": "粘贴的 JSON 格式有误，无法解析。",
-      "none": "Orca 未找到可添加的服务器。SSE 服务器、自带 OAuth 客户端或工具筛选器的服务器，以及从环境读取的值（${VAR}）都不支持。",
-      "unsupported": "这个服务器用了 SSE、自带的 OAuth 客户端，或从环境读取的值，Orca 无法按原样添加。"
+      "none": "Adehone 未找到可添加的服务器。SSE 服务器、自带 OAuth 客户端或工具筛选器的服务器，以及从环境读取的值（${VAR}）都不支持。",
+      "unsupported": "这个服务器用了 SSE、自带的 OAuth 客户端，或从环境读取的值，Adehone 无法按原样添加。"
     }
   }
 }
