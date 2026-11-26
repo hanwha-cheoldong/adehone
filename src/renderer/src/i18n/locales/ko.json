@@ -28303,7 +28303,8 @@
           "0": "비자명한 기능이나 리팩터링은 코드를 수정하기 전에 `mobile-web-planner`(요구사항 및 `[MWB]` 계약 인입 -> Search-First 및 아키텍처/브리지 검토 -> 단계별 계획 -> 테스트 전략 및 리스크)로 먼저 계획합니다.",
           "1": "`mobile-web-patterns`(서버/클라이언트/URL/폼 상태 분리, `AbortController`), `mobile-web-design-a11y`(`100dvh`/safe-area, `>=44px` 터치 타깃, WCAG 2.2 AA), `mobile-web-performance-pwa` 및 `mobile-web-tdd-testing`을 준수합니다.",
           "2": "완료 보고 또는 PR 생성 전에 6단계 `mobile-web-verification-loop`(빌드/번들 예산, 타입체크/린트, 단위 및 모바일 뷰포트 E2E, 보안/브리지 스캔, Vitals/접근성 Diff, 실환경 검증)와 `mobile-web-code-review`를 실행합니다.",
-          "3": "WebView JS 브리지 계약, 딥링크 또는 CSP/쿠키 정책을 변경하기 전에 `mobile-web-webview-bridge`를 통해 `product-planning`(`product-capability` SSOT), `android-dev`(`android-security-webview`) 및 `ios-dev`(`ios-security-webview`)와 규격을 맞춥니다."
+          "3": "WebView JS 브리지 계약, 딥링크 또는 CSP/쿠키 정책을 변경하기 전에 `mobile-web-webview-bridge`를 통해 `product-planning`(`product-capability` SSOT), `android-dev`(`android-security-webview`) 및 `ios-dev`(`ios-security-webview`)와 규격을 맞춥니다.",
+          "4": "빌드나 타입 체크가 실패하면 수정하기 전에 `mobile-web-build-resolver`를 불러옵니다. 변경 리뷰를 요청받으면 먼저 `mobile-web-code-review`를 불러오고, React나 Vue 규칙을 적용하기 전에 프레임워크를 확인합니다(`mobile-web-patterns`의 Framework Gate)."
         },
         "soulDont": {
           "0": "`mobile-web-verification-loop`의 빌드, 테스트 및 모바일 뷰포트 검증을 통과하기 전에 \"수정했습니다\"라고 보고하지 않습니다.",
@@ -29945,6 +29946,7 @@
         "mobile-web-design-a11y": "안티 템플릿 UI 품질, 100dvh/safe-area 인체공학, >=44px 터치 타깃, WCAG 2.2 AA 및 400% 확대 리플로우.",
         "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright 모바일 뷰포트(320-1920px), 터치 검증 및 브리지 계약 테스트.",
         "mobile-web-code-review": "XSS/CSP/Origin 보안, 브리지 정합성, 100dvh/safe-area 및 Core Web Vitals를 다루는 심각도별 모바일 웹 리뷰.",
+        "mobile-web-build-resolver": "최소 변경으로 빌드·타입 체크·번들러 오류를 해결하고, 3번 시도 후 실패하면 중단하며, 주요 버전 업그레이드는 승인을 받습니다.",
         "mobile-web-verification-loop": "6단계 품질 게이트(빌드/번들 예산, 타입체크/린트, 단위/E2E, 보안/브리지 Diff, Vitals/접근성, 실환경 검증).",
         "mobile-web-webview-bridge": "Android/iOS 통합 JS 브리지 클라이언트(11종 디바이스 API), Origin 검증, 브라우저 폴백 및 크로스봇 동기화.",
         "mobile-web-performance-pwa": "Core Web Vitals 목표, 번들 예산, 이미지/폰트 로딩, 컴포지터 전용 모션 및 안전한 PWA 캐싱.",
@@ -29977,6 +29979,7 @@
       "mobileWebDesignA11y": "디자인 품질 및 접근성",
       "mobileWebTddTesting": "모바일 웹 TDD 테스트",
       "mobileWebCodeReview": "모바일 웹 코드 리뷰",
+      "mobileWebBuildResolver": "빌드 오류 해결",
       "mobileWebVerificationLoop": "6단계 검증 루프",
       "mobileWebWebviewBridge": "WebView JS 브리지 · 11종 디바이스 API",
       "mobileWebPerformancePwa": "성능 및 PWA 규칙",

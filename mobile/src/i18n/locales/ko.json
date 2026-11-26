@@ -5283,6 +5283,7 @@
         "mobile-web-design-a11y": "안티템플릿 UI 품질, 100dvh/safe-area 에르고노믹스, ≥44px 터치 타깃, WCAG 2.2 AA, 400% 줌 리플로우.",
         "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright 모바일 뷰포트(320-1920px), 터치 검증 및 브리지 계약 테스트.",
         "mobile-web-code-review": "XSS/CSP/오리진 보안, 브리지 패리티, 100dvh/safe-area, Core Web Vitals 기반 심각도별 모바일 웹 코드 리뷰.",
+        "mobile-web-build-resolver": "최소 변경으로 빌드·타입 체크·번들러 오류를 해결하고, 3번 시도 후 실패하면 중단하며, 주요 버전 업그레이드는 승인을 받습니다.",
         "mobile-web-verification-loop": "6단계 검증 게이트(빌드/번들 예산, 타입체크/린트, 단위·E2E, 보안·브리지 diff, Vitals·a11y, 인수 승인).",
         "mobile-web-webview-bridge": "Android/iOS 통합 JS 브리지 클라이언트(11종 디바이스 API), 오리진 검증, 브라우저 폴백, 크로스봇 동기화.",
         "mobile-web-performance-pwa": "Core Web Vitals 목표, 번들 예산, 이미지·폰트 로딩, 컴포지터 전용 애니메이션, 안전한 PWA 캐싱 전략."
@@ -5311,6 +5312,7 @@
       "mobileWebDesignA11y": "디자인 품질 및 접근성",
       "mobileWebTddTesting": "모바일 웹 TDD 테스트",
       "mobileWebCodeReview": "모바일 웹 코드 리뷰",
+      "mobileWebBuildResolver": "빌드 오류 해결",
       "mobileWebVerificationLoop": "6단계 검증 루프",
       "mobileWebWebviewBridge": "WebView JS 브리지 · 11종 디바이스 API",
       "mobileWebPerformancePwa": "성능 및 PWA 규칙"

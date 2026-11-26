@@ -1,11 +1,9 @@
 export const SKILL = `---
 name: mobile-web-design-a11y
-description: ECC Web Design Quality & Accessibility for Mobile Web — anti-template UI standards, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.
+description: Web design quality and accessibility for Mobile Web — anti-template UI standards, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.
 ---
 
 # Mobile Web Design Quality, Ergonomics & Accessibility
-
-Aligned with ECC \`rules/web/design-quality.md\`, \`frontend-design-direction\`, \`frontend-a11y\`, and \`accessibility\`.
 
 ## 1. Anti-Template Design Quality
 Do not ship generic template-looking UI:
