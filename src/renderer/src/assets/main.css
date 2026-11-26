@@ -4571,59 +4571,84 @@ body:has([data-contextual-tour-target='tab-create-menu'][data-state='open'])
   }
 }
 
+/* Durations match AI_SPARKLE_DURATION_MS. */
 .commit-ai-sparkle-button {
-  animation: commit-ai-sparkle-button-glow 1.4s ease-out;
+  animation: commit-ai-sparkle-button-glow 2.4s ease-out;
+}
+
+.commit-ai-sparkle-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--ai-action-accent);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  animation: commit-ai-sparkle-ring 0.8s ease-out 3;
 }
 
 .commit-ai-sparkle-icon {
-  animation: commit-ai-sparkle-icon-twinkle 1.4s ease-in-out;
+  animation: commit-ai-sparkle-icon-twinkle 2.4s ease-in-out;
 }
 
+/* No 0%/100% color stops, so the button eases out of and back into its hover or resting colors. */
 @keyframes commit-ai-sparkle-button-glow {
-  0%,
-  100% {
-    background-color: transparent;
-    box-shadow: none;
+  10%,
+  80% {
+    color: var(--ai-action-accent);
+    background-color: color-mix(in srgb, var(--ai-action-accent) 18%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--ai-action-accent) 70%, transparent),
+      0 0 12px color-mix(in srgb, var(--ai-action-accent) 60%, transparent);
   }
-  20%,
-  55% {
-    background-color: color-mix(in srgb, var(--accent) 80%, transparent);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ring) 45%, transparent);
+}
+
+@keyframes commit-ai-sparkle-ring {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
   }
 }
 
 @keyframes commit-ai-sparkle-icon-twinkle {
   0%,
   100% {
-    color: var(--muted-foreground);
     transform: scale(1) rotate(0deg);
-    filter: none;
   }
-  20% {
-    color: var(--foreground);
-    transform: scale(1.22) rotate(-8deg);
-    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--foreground) 45%, transparent));
+  15%,
+  48% {
+    transform: scale(1.35) rotate(-12deg);
+    filter: drop-shadow(0 0 5px var(--ai-action-accent));
+    fill: color-mix(in srgb, var(--ai-action-accent) 45%, transparent);
   }
-  40% {
-    color: var(--muted-foreground);
-    transform: scale(0.95) rotate(0deg);
-    filter: none;
+  32% {
+    transform: scale(0.9) rotate(0deg);
   }
-  60% {
-    color: var(--foreground);
-    transform: scale(1.18) rotate(8deg);
-    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--foreground) 45%, transparent));
+  65% {
+    transform: scale(1.25) rotate(12deg);
+    filter: drop-shadow(0 0 5px var(--ai-action-accent));
+    fill: color-mix(in srgb, var(--ai-action-accent) 45%, transparent);
   }
-  80% {
-    color: var(--foreground);
+  82% {
     transform: scale(1) rotate(0deg);
-    filter: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .commit-ai-sparkle-button,
+  .commit-ai-sparkle-button::after,
   .commit-ai-sparkle-icon {
     animation: none;
+  }
+
+  /* Without motion, a steady color still signals that generation is ready. */
+  .commit-ai-sparkle-button {
+    color: var(--ai-action-accent);
+    background-color: color-mix(in srgb, var(--ai-action-accent) 18%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ai-action-accent) 70%, transparent);
   }
 }
