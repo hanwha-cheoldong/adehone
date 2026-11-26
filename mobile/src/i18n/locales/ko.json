@@ -440,7 +440,9 @@
       "toggleOption": "{{value0}} 전환",
       "ultra": "울트라",
       "xhigh": "매우 높음",
-      "xhighShort": "매우 높음"
+      "xhighShort": "매우 높음",
+      "modelsLoading": "모델 불러오는 중…",
+      "signInForModels": "사용할 수 있는 모델을 보려면 로그인하세요."
     },
     "sessionOptionPickers": {
       "agentWorking": "에이전트 작업 중",
@@ -730,7 +732,8 @@
         "needsAuth_other": "로그인 필요: {{count}}",
         "failed": "실패: {{count}}"
       },
-      "pasteHint": "브라우저가 불러올 수 없는 페이지로 이동하면 주소를 복사해 여기에 붙여넣으세요."
+      "pasteHint": "브라우저가 불러올 수 없는 페이지로 이동하면 주소를 복사해 여기에 붙여넣으세요.",
+      "manage": "MCP 서버 관리"
     }
   },
   "common": {
@@ -1672,7 +1675,8 @@
       "hideSidebar": "사이드바 숨기기",
       "reconnect": "다시 연결",
       "tasks": "작업",
-      "automations": "자동화"
+      "automations": "자동화",
+      "mcpServers": "MCP 서버"
     },
     "hostScreenOverlays": {
       "deleteConfirmMessage": "\"{{name}}\" ({{branch}})을(를) 삭제하시겠습니까?",
@@ -1791,7 +1795,8 @@
       "tasks": "작업",
       "terminal": "터미널",
       "workspace": "워크스페이스",
-      "automations": "자동화"
+      "automations": "자동화",
+      "mcpServers": "MCP 서버"
     }
   },
   "newWorkspace": {
@@ -5604,7 +5609,8 @@
       "removeVariableRow": "변수 제거",
       "emptyArgument": "비어 있음",
       "valueNew": "새 값",
-      "valueSaved": "저장됨"
+      "valueSaved": "저장됨",
+      "hostMcpServers": "내 MCP 서버"
     },
     "handToBot": {
       "menu": "봇에게 넘기기…",
@@ -5851,6 +5857,96 @@
     }
   },
   "mcpServers": {
-    "agentBlocked": "조직의 Claude 설정에 의해 차단됨"
+    "agentBlocked": "조직의 Claude 설정에 의해 차단됨",
+    "category": {
+      "coding": "코딩",
+      "chat": "채팅",
+      "monitoring": "모니터링",
+      "docs": "문서 및 프로젝트",
+      "more": "더 보기"
+    },
+    "searchApps": "앱 검색",
+    "filterActive": "필터, {{filter}}",
+    "filter": "필터",
+    "allApps": "모든 앱",
+    "added": "추가됨",
+    "addTitle": "MCP 서버 추가",
+    "customServer": "사용자 지정 서버",
+    "customServerLine": "URL, 명령 또는 붙여넣은 설정",
+    "noMatch": "“{{query}}”와 일치하는 앱이 없습니다.",
+    "apps": "앱",
+    "header": "헤더",
+    "headerName": "이름",
+    "headerValue": "값",
+    "removeHeader": "헤더 제거",
+    "headers": "헤더",
+    "headerEmpty": "비어 있음",
+    "addHeader": "헤더 추가",
+    "addButton": "추가",
+    "sourceLabel": "서버 URL 또는 시작 명령",
+    "sourcePlaceholder": "https://… 또는 npx …",
+    "sourceNote": "서버 URL, 시작 명령 또는 mcpServers 설정을 붙여넣으세요.",
+    "details": "세부 정보",
+    "trust": "신뢰할 수 있는 소프트웨어만 추가하세요.",
+    "serverType": "서버 유형",
+    "urlMode": "URL에 연결",
+    "commandMode": "명령 실행",
+    "serverName": "서버 이름",
+    "headersNone": "없음",
+    "yours": "내 서버",
+    "addServer": "서버 추가",
+    "fromPlugins": "플러그인에서",
+    "inYourAgents": "내 에이전트에 있음",
+    "needsSignIn": "로그인 필요",
+    "wontStart": "시작되지 않음",
+    "signIn": "로그인",
+    "projectsOnly": "{{projects}}에서만",
+    "moreFor": "{{name}} 더 보기",
+    "moveToOrca": "Orca로 옮기기",
+    "copyToOrca": "Orca로 복사",
+    "signInAgain": "다시 로그인",
+    "signOut": "로그아웃",
+    "workspaces": "워크스페이스",
+    "account": "계정",
+    "signedIn": "로그인됨",
+    "agents": "에이전트",
+    "turnAllOn": "모두 켜기",
+    "agentsUnread": "이 컴퓨터의 에이전트를 읽지 못했습니다.",
+    "advanced": "고급",
+    "sharedProcess": "에이전트 간에 프로세스 하나 공유",
+    "sharedProcessNote": "메모리를 덜 사용합니다. 워크스페이스 폴더 밖에서 실행됩니다.",
+    "removeServer": "서버 제거",
+    "url": "URL",
+    "command": "명령",
+    "arguments": "인수",
+    "title": "MCP 서버",
+    "reading": "MCP 서버 읽는 중…",
+    "unavailable": "{{host}}에서는 MCP 서버를 사용할 수 없습니다",
+    "signedInTo": "{{app}}에 로그인됨",
+    "allWorkspaces": "모든 워크스페이스",
+    "includingLater": "나중에 추가되는 워크스페이스 포함",
+    "appliesToNewNote": "변경 사항은 새 세션에 적용됩니다.",
+    "allAgents": "모든 에이전트",
+    "agentsOf": "{{total}}개 중 {{on}}개",
+    "workspacesAll": "전체",
+    "workspacesAllBut": "{{names}} 제외 전체",
+    "workspacesNone": "없음",
+    "appliesToNew": "새 세션에 적용",
+    "restartSessions": "세션 {{count}}개 다시 시작",
+    "restarted": "세션 {{count}}개를 다시 시작했습니다",
+    "agentFileTitle": "{{agent}}에서 {{server}}을(를) 켤까요?",
+    "agentFileMessage": "Orca가 MCP 서버를 {{agent}}의 설정 파일({{file}})에 유지합니다. 직접 추가한 항목은 그대로 둡니다.",
+    "agentFilesMessage": "Orca가 MCP 서버를 각 설정 파일에 유지합니다. 직접 추가한 항목은 그대로 둡니다.",
+    "allow": "허용",
+    "removeTitle": "{{name}}을(를) 제거할까요?",
+    "removeMessage": "새 세션에서는 사용할 수 없습니다. 언제든 다시 추가할 수 있습니다.",
+    "remove": "제거",
+    "moveTitle": "{{name}}을(를) Orca로 옮길까요?",
+    "moveMessage": "Orca가 {{agents}} 설정에서 제거하고 백업을 보관합니다.",
+    "move": "옮기기",
+    "workspacesCount": "워크스페이스 {{count}}개",
+    "workspacesAllButCount": "{{count}}개 제외 전체",
+    "headerMissing": "이 서버를 추가하려면 {{header}}을(를) 입력하세요.",
+    "servers": "서버"
   }
 }

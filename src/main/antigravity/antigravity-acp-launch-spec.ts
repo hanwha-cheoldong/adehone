@@ -32,7 +32,11 @@ import {
 } from '../native-chat/conversation-adoption/structured-agent-cli-conversations'
 import { ANTIGRAVITY_TRANSCRIPT_IMPORT } from './antigravity-transcript-import'
 import { agentSessionSetupFor } from '../../shared/agent-session/lifecycle/launch/agent-session-setup-commands'
-import { deliverAntigravityInstructions } from '../acp/launch/acp-instructions'
+import {
+  antigravityTakesSystemPrompt,
+  deliverAntigravityInstructions
+} from '../acp/launch/acp-instructions'
+import { DEFAULT_KOREAN_AI_INSTRUCTION } from '../../shared/source-control/ai/settings/source-control-ai-settings'
 import {
   compareAppVersions,
   isValidAppVersion
@@ -141,6 +145,11 @@ const ANTIGRAVITY_AGY_LAUNCH_SPEC = {
     fullAccessAtLaunch: true
   },
   instructions: deliverAntigravityInstructions,
+  // Adehone: every chat answers in Korean, as Claude and Codex chats do.
+  resolveSessionMeta: async ({ initialized }) =>
+    antigravityTakesSystemPrompt(initialized)
+      ? { antigravity: { systemPrompt: { append: DEFAULT_KOREAN_AI_INSTRUCTION } } }
+      : undefined,
   transcriptImport: ANTIGRAVITY_TRANSCRIPT_IMPORT,
   sessionHistory: ANTIGRAVITY_SESSION_HISTORY,
   privateTempDirectory: true,
