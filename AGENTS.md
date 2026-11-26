@@ -1,3 +1,7 @@
+# Language
+
+- Unless the user asks for another language, write every reply in Korean, including progress updates and the final report. This applies even when the code, tool results, or earlier conversation are in English.
+
 # Checks
 
 - **Gate**: `pnpm check:changed` runs format, lint, typecheck, the tests that import your changes, and the ratchets your paths select, and prints only failures. Run it once when you are done editing (and again after a rebase or fix), then push. On the `merge` branch, run `pnpm check:dev` (`--base=origin/merge`) right before push instead of `pnpm check:local` (`--base=HEAD`). A pass is cached, so don't rerun it "to be sure", and don't also run `pnpm tc`, `pnpm lint`, or the full suite. Never `--no-verify`.

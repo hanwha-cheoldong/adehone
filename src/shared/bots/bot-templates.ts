@@ -59,13 +59,19 @@ export const BOT_TEMPLATE_SKILLS = [
   'xcode-build-resolver',
   'ios-verification-loop',
   'ios-security-webview',
-  'mobile-web-intake',
-  'mobile-web-worker-brief',
-  'mobile-web-close-out',
-  'mobile-web-desk-brief',
-  'mobile-web-development',
+  'mobile-web-planner',
+  'mobile-web-patterns',
+  'mobile-web-design-a11y',
+  'mobile-web-tdd-testing',
+  'mobile-web-code-review',
+  'mobile-web-build-resolver',
+  'mobile-web-verification-loop',
   'mobile-web-webview-bridge',
-  'mobile-web-performance-pwa'
+  'mobile-web-performance-pwa',
+  'product-lens',
+  'prd-authoring',
+  'product-capability',
+  'work-breakdown'
 ] as const
 export type BotTemplateSkill = (typeof BOT_TEMPLATE_SKILLS)[number]
 

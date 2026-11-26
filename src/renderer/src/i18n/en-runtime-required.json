@@ -33,7 +33,13 @@
     "heading_one": "{{count}} CLI update available",
     "heading_other": "{{count}} CLI updates available",
     "statusCount_one": "{{count}} CLI update",
-    "statusCount_other": "{{count}} CLI updates"
+    "statusCount_other": "{{count}} CLI updates",
+    "toastDone_one": "{{count}} CLI updated",
+    "toastDone_other": "{{count}} CLIs updated",
+    "toastFailedCount_one": "{{count}} update failed",
+    "toastFailedCount_other": "{{count}} updates failed",
+    "toastUpdating_one": "Updating {{current}} of {{count}} CLI",
+    "toastUpdating_other": "Updating {{current}} of {{count}} CLIs"
   },
   "agentLaunch": {
     "opencode": {
@@ -1164,11 +1170,9 @@
           "3fe7862418": "No managed Claude accounts for {{value0}}. Adehone will use that environment's system default Claude login until you add one here.",
           "72b36ea174": "Optional. Adehone can use your normal Claude login; add accounts only if you want quick switching without moving chat sessions.",
           "b4c9450319": "No managed Codex accounts for {{value0}}. Adehone will use that environment's system default Codex login until you add one here.",
-          "c2aee76420": "Extracts OAuth credentials from your local Gemini CLI installation to authenticate with Google for {{value0}}. This uses credentials issued to the Gemini CLI app, not Adehone. May break if Google updates the CLI. Use at your own risk.",
           "cedfab35ab": "Optional. Adehone can use your normal Codex login; add accounts only if you want quick switching in Adehone.",
           "codexConfigSyncManagedHomeUnavailable": "Adehone could not read this account’s Codex files just now, so settings may not be syncing. This usually clears on its own — antivirus or a backup tool briefly locks them.",
           "d0d53b7eb0": "Manage which Codex account Adehone uses for live rate limit fetching.",
-          "d676c41fc6": "Extracts OAuth credentials from your local Gemini CLI installation to authenticate with Google. This uses credentials issued to the Gemini CLI app, not Adehone. May break if Google updates the CLI. Use at your own risk.",
           "opencodeGo": {
             "apiKey": {
               "description": "Optional override. Adehone otherwise uses the key OpenCode saved when you ran /connect, then OPENCODE_API_KEY."
@@ -1807,6 +1811,8 @@
           "loadFailed": "Adehone couldn’t load SSH hosts and unfinished moves. Reopen Settings to try again.",
           "outcome": {
             "failed": "Adehone couldn’t finish this on the server. Try again.",
+            "rollbackStopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not roll back. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
+            "stopIncomplete": "Not done: Adehone couldn’t confirm the current server exited, so it did not start the update. Check orcad.log in the server’s install folder under ~/.orca-remote on the host before trying again.",
             "unverifiable": "Not done: Adehone couldn’t confirm what is running on this server. Try again when the host is reachable.",
             "wslMoveRunning": "Not done: a project is moving onto this server. Adehone updates it once the move finishes."
           },
@@ -2092,10 +2098,10 @@
           "over_limit_other": "Importing these themes would exceed the {{value0}} custom terminal theme limit. Deselect {{value1}} new themes and try again."
         },
         "wslHosts": {
-          "description": "Adehone runs a server inside each distro. Opening a project never starts a stopped distro: click Start, open a new terminal, or connect it here."
+          "description": "Adehone runs a server inside each distro. To start a stopped distro, click Start, open a terminal, or connect it here."
         },
         "wslHostsExperimental": {
-          "description": "Add a WSL 2 distro as a host. Adehone runs its server inside the distro, so git, files and terminals in new projects there run natively in Linux."
+          "description": "Run Adehone’s server inside a WSL 2 distro, so git, files and terminals run natively in Linux."
         }
       },
       "setup": {
@@ -2523,10 +2529,14 @@
           "script_one": "{{count}} script",
           "script_other": "{{count}} scripts"
         },
+        "skillBackupRefusal": {
+          "noReminder": "Move it out of the skills folder. Adehone won't remind you."
+        },
         "skillFreshnessAutoUpdate": {
+          "preservedBackupOnly": "Adehone saved your edits to {{value0}}.",
           "preservedDescription": "Adehone updated the skill and saved your edits to {{value0}}.",
           "strandedTitle": "Adehone couldn't back up your edits to {{value0}}",
-          "uncertainDescription": "Adehone may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}}.",
+          "uncertainDescriptionKept": "Adehone may have updated skills on {{value0}} but couldn't confirm the result. If you edited a skill during the update, your copy is in {{value1}} or still in the skills folder.",
           "uncertainTitle": "Adehone couldn't confirm the skill update on {{value0}}"
         },
         "skillPlanOpCopy": {
@@ -2644,8 +2654,6 @@
             "runningSkills_other": "Updating {{count}} skills…"
           },
           "SshStatusSegment": {
-            "connectedHostCount_one": "{{count}} host",
-            "connectedHostCount_other": "{{count}} hosts",
             "moreSshHostMatches_one": "{{count}} more match. Keep typing to narrow it down.",
             "moreSshHostMatches_other": "{{count}} more matches. Keep typing to narrow them down.",
             "moreSshHosts_one": "Find {{count}} more SSH host…",
@@ -3026,11 +3034,6 @@
           "failedToLoadUsage": "Failed to load usage data",
           "failedToParseCliOutput": "Failed to parse CLI output",
           "fetchAborted": "Rate-limit fetch aborted",
-          "geminiCredentialsNotFound": "Gemini CLI credentials not found",
-          "geminiOauthDisabled": "Gemini CLI OAuth is disabled in settings",
-          "geminiProjectIdLoadFailed": "Failed to load Gemini project ID (HTTP {{status}})",
-          "geminiProjectIdMissingInResponse": "Gemini project ID not found in API response",
-          "geminiProjectIdNotFound": "Gemini project ID not found",
           "grokAuthInvalid": "Grok auth file is invalid",
           "grokAuthUnreadable": "Unable to read Grok auth file",
           "grokBillingConfigMissing": "Grok billing response did not include config",
@@ -3065,13 +3068,11 @@
           "opencodeNoWorkspaceIdShort": "No workspace ID found",
           "ptyTimeout": "PTY timeout",
           "ptyUsageTimeout": "PTY timeout — /usage panel did not render",
-          "quotaFetchFailed": "Quota fetch failed ({{status}})",
           "rpcFailed": "RPC failed",
           "rpcProcessExited": "RPC process exited unexpectedly",
           "rpcTimeout": "RPC timeout",
           "sessionCookieNotConfigured": "Session cookie not configured",
           "signInWithChatgpt": "Sign in with ChatGPT",
-          "tokenRefreshFailed": "Token refresh failed",
           "unknown": "Unknown error",
           "usagePageFetchFailed": "Usage page fetch failed ({{status}})",
           "waitingForClaudeSession": "Waiting for Claude session",
@@ -3370,11 +3371,15 @@
         "zoom": "Meetings, recordings and transcripts"
       },
       "line": {
+        "airtable": "Query and edit bases, tables and records",
         "atlassian": "Jira issues and Confluence pages",
+        "clickup": "Manage tasks, lists and docs",
         "cloudflare": "Manage Workers, DNS and the rest of an account",
         "context7": "Current docs and examples for code libraries",
         "datadog": "Search logs, metrics and monitors",
         "gitlab": "Read and update issues and merge requests",
+        "granola": "Search meeting notes and transcripts",
+        "intercom": "Search conversations, contacts and articles",
         "neon": "Run SQL and manage Postgres branches",
         "netlify": "Deploy sites and check their builds",
         "notion": "Search, read and edit pages",
@@ -3382,7 +3387,9 @@
         "sentry": "Look into errors and the events behind them",
         "stripe": "Look up payments, customers and subscriptions",
         "supabase": "Query databases and manage projects",
-        "vercel": "Check deployments and read their logs"
+        "todoist": "Add, sort and complete tasks",
+        "vercel": "Check deployments and read their logs",
+        "zapier": "Run actions in the apps you set up in Zapier"
       }
     },
     "chats": {
@@ -3395,6 +3402,9 @@
     "connectors": {
       "needYou_one": "{{count}} needs you",
       "needYou_other": "{{count}} need you"
+    },
+    "errors": {
+      "purposeTooLongForHost": "Adehone on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Adehone on {{host}}."
     },
     "failures": {
       "attachmentExpired": "{{names}}: this attachment expired. Attach it again.",
@@ -3556,6 +3566,10 @@
         "skillsKept_other": "{{kept}}/{{count}} skills",
         "skills_one": "{{count}} skill",
         "skills_other": "{{count}} skills"
+      },
+      "wslSetup": {
+        "failedGeneric": "Adehone’s server didn’t start in the distro. Details say what stopped it.",
+        "installing": "Installing Adehone’s server in ~/.orca-remote"
       }
     },
     "notices": {
@@ -3651,14 +3665,19 @@
         "kotlin-code-review": "Severity-ranked Kotlin/Android code review for architecture, security, coroutines, Compose, and Gradle.",
         "kotlin-coroutines-flows": "Idiomatic Kotlin, structured concurrency, StateFlow/SharedFlow, dispatcher injection, and cancellation safety.",
         "kotlin-tdd-testing": "TDD workflow with JUnit/Kotest, MockK, Fake repositories, runTest, Turbine Flow testing, and Kover coverage.",
-        "mobile-web-close-out": "Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.",
-        "mobile-web-desk-brief": "Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.",
-        "mobile-web-development": "Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.",
-        "mobile-web-intake": "Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.",
-        "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
-        "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
+        "mobile-web-build-resolver": "Minimal-change build/typecheck/bundler fixes, stop after 3 failed attempts, and owner approval for major upgrades.",
+        "mobile-web-code-review": "Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.",
+        "mobile-web-design-a11y": "Anti-template UI quality, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.",
+        "mobile-web-patterns": "ECC frontend patterns: component composition, separated server/client/URL/form state, SWR, and AbortController.",
+        "mobile-web-performance-pwa": "Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.",
+        "mobile-web-planner": "4-step planning process, Search-First reuse, [MWB] contract intake, WebView bridge alignment, and Red Flags.",
+        "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.",
+        "mobile-web-verification-loop": "6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).",
+        "mobile-web-webview-bridge": "Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.",
         "pr-review-checklist": "Read a diff for behaviour changes, missing tests and risky edits; cite each finding.",
+        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
+        "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
+        "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
         "release-notes-style": "Notes for users: new, fixed, changed; leave out refactors and code names.",
         "release-readiness": "What blocks a release and how to list it: checks, reviews, open blockers.",
         "security-checklist": "Secrets, injection, auth checks and unsafe defaults to look for in a change.",
@@ -3667,6 +3686,7 @@
         "swift-code-review": "Severity-ranked Swift/ObjC iOS code review for safety, concurrency, ARC memory, protocols, SwiftUI, and Xcode.",
         "swift-concurrency-actors": "Idiomatic Swift, Swift 6/6.2 strict concurrency (@MainActor, Sendable, @concurrent), ObjC interop, and actor persistence.",
         "swift-tdd-testing": "TDD workflow with Swift Testing (@Test, #expect), XCTest (Swift/ObjC), Protocol DI mocks/fakes, and 80%+ coverage.",
+        "work-breakdown": "Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization.",
         "workspace-hygiene": "When a workspace is done or abandoned, and what to check before removing it.",
         "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails."
       }
@@ -3977,36 +3997,39 @@
         "watches": "Your calendar"
       },
       "mobile-web-dev": {
-        "does": "Implements and reviews responsive mobile UI, touch interactions, PWA/caching, WebView JS bridge client, and frontend security code.",
+        "does": "Plans and implements responsive 100dvh/safe-area UI, WCAG 2.2 AA a11y, Core Web Vitals/PWA, TDD/Playwright tests, and Android/iOS WebView JS bridge clients.",
         "events": {
           "pr-verify": {
-            "action": "Run build, tests, and mobile viewport/security checks",
+            "action": "Run 6-phase verification loop and mobile web code review",
             "trigger": "When a pull request is opened or updated"
           }
         },
-        "example1": "Fixed iOS Safari 100dvh keyboard overlap and added safe-area-inset-bottom padding.",
-        "example2": "Flagged unsanitized postMessage origin check and missing CSP frame-ancestors.",
-        "firstChat": "Point it at a mobile web workspace or give it a task. It follows mobile-first responsive UI, touch/viewport ergonomics, Core Web Vitals, hybrid WebView bridge, and frontend security guides.",
-        "line": "Builds and reviews responsive mobile web, PWA, and hybrid WebView frontend features.",
+        "example1": "Planned [MWB-04] with mobile-web-planner, aligned 11-API WebView bridge with Android/iOS bots, and passed 6-phase verification.",
+        "example2": "Flagged 100vh keyboard clipping, missing safe-area-inset-bottom, and postMessage(*) origin bypass.",
+        "firstChat": "Point it at a mobile web workspace or hand it a [MWB] work item from Product planning. It follows structured ECC workflows (planner, web patterns, design/a11y, TDD & Playwright mobile E2E, code review, 6-phase verification loop) plus Android/iOS WebView bridge guides.",
+        "line": "Plans, builds, tests, and reviews responsive mobile web, PWA, and hybrid WebView features with ECC web & bridge guides.",
         "name": "Mobile web development",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
         "schedules": {
           "daily-morning-check": {
-            "what": "Daily build & lint/typecheck healthcheck",
+            "what": "Daily build, typecheck & lint healthcheck",
             "when": "Weekdays at 9 AM"
           }
         },
         "soulDo": {
-          "0": "Classify every feature or fix into Track A/B/C with the `mobile-web-intake` skill and convert it into a `mobile-web-worker-brief` template before delegating.",
-          "1": "After code changes, verify build, typecheck, lint, and unit/E2E tests pass directly in the `mobile-web-close-out` step.",
-          "2": "Before changing responsive layouts, WebView JS bridge clients, or CSP/cookie policies, check iOS Safari/Android WebView compatibility, safe-area insets, and XSS/origin security first."
+          "0": "Plan every non-trivial feature or refactor with `mobile-web-planner` (Requirements & `[MWB]` Contract Intake -> Search-First & Architecture/Bridge Review -> Phased Steps -> Testing Strategy & Risks) before editing code.",
+          "1": "Follow `mobile-web-patterns` (separated server/client/URL/form state, `AbortController`), `mobile-web-design-a11y` (`100dvh`/safe-area, `>=44px` touch targets, WCAG 2.2 AA), `mobile-web-performance-pwa`, and `mobile-web-tdd-testing`.",
+          "2": "Before reporting done or opening a PR, run the 6-phase `mobile-web-verification-loop` (build & bundle budget, typecheck/lint, unit & mobile-viewport E2E, security/bridge scan, Vitals/a11y diff, live acceptance) and `mobile-web-code-review`.",
+          "3": "Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.",
+          "4": "When a build or typecheck fails, load `mobile-web-build-resolver` before editing. When asked to review a change, load `mobile-web-code-review` first, and check the framework (`mobile-web-patterns` Framework Gate) before applying React or Vue rules."
         },
         "soulDont": {
-          "0": "Never claim something is fixed without verifying the production build and mobile viewport behavior first.",
-          "1": "Never upgrade framework/bundler major versions or alter CSP/CORS/cookie security headers without approval.",
-          "2": "Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs."
+          "0": "Never claim something is fixed without passing `mobile-web-verification-loop` build, test, and mobile viewport checks first.",
+          "1": "Never inject untrusted strings into `innerHTML`/`dangerouslySetInnerHTML`, use `postMessage(..., \"*\")` without `event.origin` checks, or store sensitive tokens in `localStorage`.",
+          "2": "Never upgrade framework/bundler major versions or relax CSP/CORS/cookie security headers without explicit owner approval.",
+          "3": "Never commit `.env*` secrets, API tokens, or private keys to Git, or expose them in client bundles/logs."
         },
-        "watches": "Mobile web workspaces, tasks, and pull requests you hand it"
+        "watches": "Mobile web workspaces, [MWB] tasks, WebView bridge specs, and pull requests you hand it"
       },
       "oncall-handoff": {
         "does": "Summarizes the week’s alerts and incidents, and lists open follow-ups.",
@@ -4040,6 +4063,34 @@
         "name": "Pull request review",
         "reports": "Here, when a review is requested",
         "watches": "Pull requests waiting on your review, in the repos you pick"
+      },
+      "product-planning": {
+        "does": "Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.",
+        "example1": "Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.",
+        "example2": "Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.",
+        "line": "Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.",
+        "name": "Product planning",
+        "reports": "Here, when you ask and Mondays at 9:30 AM",
+        "schedules": {
+          "weekly-planning-sync": {
+            "what": "Planning & open decisions sync",
+            "when": "Mondays at 9:30 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Validate the problem and \"why\" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.",
+          "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE), including a 3-platform parity matrix for Android, iOS, and Mobile Web.",
+          "2": "Lock down platform constraints and shared SSOT contracts (WebView JS bridge, deep links, APIs, invariants) in a `product-capability` contract before delegating.",
+          "3": "Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms."
+        },
+        "soulDont": {
+          "0": "Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.",
+          "1": "Never dictate internal code structure (class names, file paths, library internals) in product specs — leave technical design to dev bots (`android-planner`, `ios-planner`, etc.).",
+          "2": "Never delegate ambiguous or uncontracted work items without explicit acceptance criteria, out-of-scope guards, and a pre-implementation review gate.",
+          "3": "Never update a shared bridge/API/deep-link spec for one platform without syncing the Capability Contract and sibling work items for Android, iOS, and Mobile Web."
+        },
+        "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback"
       },
       "release-notes": {
         "does": "Drafts release notes for users in three groups: new, fixed, changed.",
@@ -4458,6 +4509,7 @@
         "someMemberAccess": "Someone on Who can ask sent this when it ran.",
         "someoneWrote": "Someone wrote",
         "startError": "Error",
+        "thenAt": "Runs once at {{time}}",
         "thenLine": "Then",
         "thenOnce": "Runs once, when it happens",
         "thenOnceBy": "Runs once; at {{time}} if nothing came",
@@ -4639,6 +4691,7 @@
         "effortApplyFailed": "Could not apply effort {{value}}.",
         "effortPickerFailed": "Could not open the effort picker.",
         "goalObjectiveMissing": "Describe the goal after /goal.",
+        "lockedWhileWorking": "/{{name}} is unavailable while the agent is working. Try again when it finishes.",
         "modelApplyFailed": "Could not apply model {{value}}.",
         "modelPickerFailed": "Could not open the model picker."
       },
@@ -5073,26 +5126,12 @@
         "scheduled": "Adehone will continue this chat at {{time}}."
       },
       "workerDock": {
-        "agentCount_one": "{{count}} agent",
-        "agentCount_other": "{{count}} agents",
         "clearAllLabel_one": "Clear failed worker",
         "clearAllLabel_other": "Clear all {{count}} failed workers",
-        "cleared_one": "Cleared 1 worker",
-        "cleared_other": "Cleared {{count}} workers",
-        "commandCount_one": "{{count}} command",
-        "commandCount_other": "{{count}} commands",
-        "monitorCount_one": "{{count}} monitor",
-        "monitorCount_other": "{{count}} monitors",
         "newQuestions_one": "{{count}} new worker question waiting on you",
         "newQuestions_other": "{{count}} new worker questions waiting on you",
-        "pillLabel_one": "{{count}} worker, latest: {{title}}",
-        "pillLabel_other": "{{count}} workers, latest: {{title}}",
-        "taskCount_one": "{{count}} task",
-        "taskCount_other": "{{count}} tasks",
         "workerCount_one": "{{count}} worker",
-        "workerCount_other": "{{count}} workers",
-        "workflowCount_one": "{{count}} workflow",
-        "workflowCount_other": "{{count}} workflows"
+        "workerCount_other": "{{count}} workers"
       },
       "writeNotice": {
         "agentRefused": "The agent turned this down.",
@@ -5516,6 +5555,13 @@
   "macosUpdateRequirement": {
     "whyIntro": "We updated parts of Adehone’s foundation, like Electron and the on-device speech engine, to bring:"
   },
+  "mcpServers": {
+    "paste": {
+      "badCommand": "Put the values themselves in the mcp add command: Adehone can’t fill in $VARIABLES or other shell expressions.",
+      "none": "Adehone found no server it can add. SSE servers, servers with their own OAuth client or tool filters, and values read from the environment (${VAR}) aren’t supported.",
+      "unsupported": "Adehone can’t add this server as written: it uses SSE, its own OAuth client, or a value read from the environment."
+    }
+  },
   "menu": {
     "about": "About Adehone",
     "hide": "Hide Adehone",
@@ -5866,6 +5912,24 @@
     "mcp": {
       "serverCount_one": "{{count}} server",
       "serverCount_other": "{{count}} servers"
+    },
+    "mcpServers": {
+      "fileAgent": {
+        "line": "Adehone will keep your MCP servers in {{agent}}’s settings file ({{file}}). Your own entries stay as they are.",
+        "title": "Let Adehone edit {{agent}}’s MCP file?"
+      },
+      "found": {
+        "copied": "Copied {{name}} to Adehone",
+        "copy": "Copy to Adehone",
+        "move": "Move to Adehone",
+        "moveAll": "Move all to Adehone"
+      },
+      "move": {
+        "allLine": "Adehone removes them from {{agents}} settings and keeps a backup.",
+        "allTitle": "Move {{count}} servers to Adehone?",
+        "line": "Adehone removes it from {{agents}} settings and keeps a backup.",
+        "title": "Move {{name}} to Adehone?"
+      }
     },
     "network": {
       "proxyUrlErrors": {
@@ -6227,18 +6291,6 @@
         "noAgentAvailable": "No chat-name agent can run in this workspace.",
         "noName": "The chat-name agent returned no name."
       }
-    }
-  },
-  "tabStrip": {
-    "overflow": {
-      "chipOnlyName_one": "{{title}}, {{count}} tab",
-      "chipOnlyName_other": "{{title}}, {{count}} tabs",
-      "moreTabs_one": "{{count}} more tab",
-      "moreTabs_other": "{{count}} more tabs",
-      "needAttention_one": ", {{count}} needs attention",
-      "needAttention_other": ", {{count}} need attention",
-      "openTabs_one": "{{count}} open tab",
-      "openTabs_other": "{{count}} open tabs"
     }
   },
   "taskProviders": {

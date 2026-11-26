@@ -68,20 +68,32 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
     '6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).',
   'ios-security-webview':
     'Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.',
-  'mobile-web-intake':
-    'Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).',
-  'mobile-web-worker-brief':
-    'Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.',
-  'mobile-web-close-out':
-    'Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.',
-  'mobile-web-desk-brief':
-    'Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.',
-  'mobile-web-development':
-    'Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.',
+  'mobile-web-planner':
+    '4-step planning process, Search-First reuse, [MWB] contract intake, WebView bridge alignment, and Red Flags.',
+  'mobile-web-patterns':
+    'ECC frontend patterns: component composition, separated server/client/URL/form state, SWR, and AbortController.',
+  'mobile-web-design-a11y':
+    'Anti-template UI quality, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.',
+  'mobile-web-tdd-testing':
+    'Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.',
+  'mobile-web-code-review':
+    'Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.',
+  'mobile-web-build-resolver':
+    'Minimal-change build/typecheck/bundler fixes, stop after 3 failed attempts, and owner approval for major upgrades.',
+  'mobile-web-verification-loop':
+    '6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).',
   'mobile-web-webview-bridge':
-    'Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.',
+    'Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.',
   'mobile-web-performance-pwa':
-    'Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety.'
+    'Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.',
+  'product-lens':
+    'Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.',
+  'prd-authoring':
+    '4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).',
+  'product-capability':
+    'Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.',
+  'work-breakdown':
+    'Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization.'
 }
 
 /** A template event's name split into its trigger and what it does ("…: review it and post here"). */

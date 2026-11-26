@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: android-verification-loop
 description: 6-phase verification loop for Android — build, lint/static analysis, unit tests & Kover coverage, security grep scan, diff review, and adb target acceptance with PASS/FAIL report.
@@ -16,6 +18,7 @@ Run all verification phases after completing a feature or refactor and before re
 
 ## Phase 3: Unit Tests & Coverage
 - Run \`./gradlew testDebugUnitTest\` and confirm all tests pass.
+- It skips pure Kotlin/JVM modules such as \`domain\`: also run their \`test\` task (e.g. \`./gradlew :domain:test\`).
 - Run \`./gradlew koverHtmlReport\` when Kover is configured (target 80%+ on domain/business logic).
 
 ## Phase 4: Security & Anti-Pattern Scan
@@ -23,6 +26,7 @@ Scan \`git diff\` for high-risk patterns:
 - **Secrets & Logs**: Hardcoded keys/tokens, \`*.jks\`, \`local.properties\`, sensitive data in \`Log.*\` / \`println\`.
 - **Network & Manifest**: \`cleartextTrafficPermitted="true"\`, \`allowBackup="true"\`, permissive \`TrustManager\`/\`HostnameVerifier\`, unguarded exported components.
 - **Intents & WebView**: \`PendingIntent.FLAG_MUTABLE\`, unvalidated \`intent://\`, \`@JavascriptInterface\` without \`@Keep\` or origin checks.
+- **Files**: Paths built from external input (including zip entry names) without the \`kotlin-code-review\` path traversal check.
 - **Data & Coroutines**: Raw SQL string interpolation, \`GlobalScope\`, swallowed \`CancellationException\`, \`!!\`.
 
 ## Phase 5: Diff Review
@@ -40,10 +44,12 @@ Report target acceptance **separately** from local Gradle checks. If \`adb devic
 Verification Report: PASS / FAIL
 - Build (assembleDebug): PASS/FAIL
 - Lint & Static (lintDebug, ktlint, detekt): PASS/FAIL/N/A
-- Tests & Coverage (testDebugUnitTest, kover): PASS/FAIL (X passed)
+- Tests & Coverage (testDebugUnitTest, JVM module tests, kover): PASS/FAIL (X passed)
 - Security Scan & Diff Review: PASS/FAIL
 - Target Acceptance (adb): PASS/FAIL/SKIPPED
 - Modified Files & Summary: ...
 - Manual Verification Needed: ...
 \`\`\`
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: kotlin-tdd-testing
 description: TDD workflow and Kotlin/Android testing patterns using JUnit 4/5, Kotest, MockK, Fake repositories, kotlinx-coroutines-test, Turbine for Flows, and Kover 80%+ coverage.
@@ -41,3 +43,5 @@ fun \`loading state emitted then data\`() = runTest {
 - Happy path, empty states, null/invalid inputs, network/IO failures, coroutine cancellation, and boundary conditions.
 - Avoid brittle UI-only assertions or mock-call choreography; test real behavior and state transitions.
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

@@ -3,7 +3,7 @@
 
 export const IOS_DEV_DO_RULES: readonly string[] = [
   '- Plan every non-trivial feature or refactor with `ios-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.',
-  '- Follow `ios-clean-architecture` (`Domain` pure Swift), `ios-swiftui-patterns` (`@Observable`), `swift-concurrency-actors` (`Sendable`/actors), and `swift-tdd-testing` (tests before code, Swift Testing, 80%+ domain coverage).',
+  '- Follow `ios-clean-architecture` (`Domain` pure Swift), `ios-swiftui-patterns` (`@Observable` only when the deployment target is iOS 17+), `swift-concurrency-actors` (`Sendable`/actors), and `swift-tdd-testing` (tests before code, Swift Testing, 80%+ domain coverage).',
   '- Before reporting done or opening a PR, run the 6-phase `ios-verification-loop` (`xcodebuild`/`swift build`, `swiftlint`, `xcodebuild test`, security scan, `simctl` acceptance) and `swift-code-review`.',
   '- Before changing WKWebView bridge specs, encryption, `Info.plist`, or `*.entitlements`, verify backward compatibility and `ios-security-webview` + `xcode-build-resolver` guardrails.'
 ]
@@ -12,6 +12,7 @@ export const IOS_DEV_DONT_RULES: readonly string[] = [
   '- Never claim something is fixed without passing `ios-verification-loop` build/test checks first.',
   '- Never use force unwraps (`!`, `try!`, `as!`), store secrets in `UserDefaults`, block `@MainActor` with sync I/O, or import UI/DB/WebKit frameworks inside `Domain`.',
   '- Never bump `IPHONEOS_DEPLOYMENT_TARGET`, `SWIFT_VERSION`, or major SPM/CocoaPods dependency versions without explicit owner approval.',
+  '- Never build a feature on APIs newer than the deployment target, not even behind `@available`/`#available`, without explicit owner approval. Asked for the "latest" approach, ship what runs on every supported OS and offer the newer one as a choice.',
   '- Never commit `.p12`, `.mobileprovision`, `AuthKey_*.p8`, or API secret keys to Git, or print sensitive values in logs.'
 ]
 
@@ -34,6 +35,10 @@ export const IOS_DEV_MEMORY_SEED = `# Memory
 ## Active Work & Tech Debt
 - Active feature branches: (none)
 - Open issues / tech debt: (none)
+
+## Cross-Bot Collaboration (Product Planning · Mobile Web · Android)
+- Active [IOS] items & SSOT Capability Contracts: (none)
+- Shared WKWebView bridge / Universal Links sync status: (none)
 `
 
 export const IOS_DEV_AUTOMATIONS_DOC = `# Automations

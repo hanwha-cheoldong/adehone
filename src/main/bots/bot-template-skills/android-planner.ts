@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: android-planner
 description: Planning specialist for Android features and refactors — 4-step planning process, Search-First reuse, phased implementation plans, testing strategy, risks, and Red Flags.
@@ -10,8 +12,9 @@ Create specific, actionable, incrementally verifiable plans before writing code 
 ## Planning Process
 
 ### 1. Requirements Analysis
-- Clarify the exact feature or bug fix, success criteria, assumptions, and constraints.
-- Ask concise clarifying questions when requirements are ambiguous.
+- When receiving an \`[AND-xx]\` work item from the planning bot, read the attached **SSOT Capability Contract** and the item's DoD first; if either is missing, ask for it.
+- Clarify the exact feature or bug fix, success criteria, assumptions, and constraints; report any missing spec or platform conflict back to \`product-planning\` *before* coding.
+- For WebView JS bridge, deep-link, or push-payload changes, check \`android-security-webview/references/bridge-protocol.md\` and the attached contract, then align with the Mobile web and iOS bots as its section 6 describes.
 - Define explicit **In Scope** and **Out of Scope** boundaries.
 
 ### 2. Search-First & Architecture Review
@@ -74,3 +77,5 @@ Break large changes into independently deliverable, mergeable phases:
 - Phases that cannot be verified or merged independently
 - Unapproved \`minSdk\`/\`targetSdk\`/AGP or major dependency bumps
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

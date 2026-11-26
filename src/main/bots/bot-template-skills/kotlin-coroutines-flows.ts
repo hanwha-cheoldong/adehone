@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: kotlin-coroutines-flows
 description: Idiomatic Kotlin, structured concurrency, Coroutines, Flow/StateFlow/SharedFlow patterns, dispatcher injection, and cancellation-safe error handling for Android.
@@ -37,3 +39,5 @@ description: Idiomatic Kotlin, structured concurrency, Coroutines, Flow/StateFlo
 - Use \`SharedFlow\` (or \`Channel\`) for one-time UI effects (navigation, snackbar) collected inside \`LaunchedEffect\`.
 - Never mutate a collection inside \`StateFlow\`—always emit a new copy via \`_state.update { it.copy(items = it.items + newItem) }\`.
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

@@ -5,6 +5,8 @@ export const STRUCTURED_COMPOSER_FAILURE_COPY = {
     '/{{name}} is not available in chat sessions. Use the slash menu to see available commands.',
   commandTakesNoArguments: 'Use /{{name}} without arguments.',
   commandUnsupportedByHost: '/{{name}} is not supported by this chat host.',
+  lockedWhileWorking:
+    '/{{name}} is unavailable while the agent is working. Try again when it finishes.',
   modelPickerFailed: 'Could not open the model picker.',
   effortPickerFailed: 'Could not open the effort picker.',
   modelApplyFailed: 'Could not apply model {{value}}.',

@@ -190,20 +190,32 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.iosVerificationLoop', 'ios-verification-loop')
     case 'ios-security-webview':
       return t('bots.templateSkills.iosSecurityWebview', 'ios-security-webview')
-    case 'mobile-web-intake':
-      return t('bots.templateSkills.mobileWebIntake', 'mobile-web-intake')
-    case 'mobile-web-worker-brief':
-      return t('bots.templateSkills.mobileWebWorkerBrief', 'mobile-web-worker-brief')
-    case 'mobile-web-close-out':
-      return t('bots.templateSkills.mobileWebCloseOut', 'mobile-web-close-out')
-    case 'mobile-web-desk-brief':
-      return t('bots.templateSkills.mobileWebDeskBrief', 'mobile-web-desk-brief')
-    case 'mobile-web-development':
-      return t('bots.templateSkills.mobileWebDevelopment', 'mobile-web-development')
+    case 'mobile-web-planner':
+      return t('bots.templateSkills.mobileWebPlanner', 'mobile-web-planner')
+    case 'mobile-web-patterns':
+      return t('bots.templateSkills.mobileWebPatterns', 'mobile-web-patterns')
+    case 'mobile-web-design-a11y':
+      return t('bots.templateSkills.mobileWebDesignA11y', 'mobile-web-design-a11y')
+    case 'mobile-web-tdd-testing':
+      return t('bots.templateSkills.mobileWebTddTesting', 'mobile-web-tdd-testing')
+    case 'mobile-web-code-review':
+      return t('bots.templateSkills.mobileWebCodeReview', 'mobile-web-code-review')
+    case 'mobile-web-build-resolver':
+      return t('bots.templateSkills.mobileWebBuildResolver', 'mobile-web-build-resolver')
+    case 'mobile-web-verification-loop':
+      return t('bots.templateSkills.mobileWebVerificationLoop', 'mobile-web-verification-loop')
     case 'mobile-web-webview-bridge':
       return t('bots.templateSkills.mobileWebWebviewBridge', 'mobile-web-webview-bridge')
     case 'mobile-web-performance-pwa':
       return t('bots.templateSkills.mobileWebPerformancePwa', 'mobile-web-performance-pwa')
+    case 'product-lens':
+      return t('bots.templateSkills.productLens', 'product-lens')
+    case 'prd-authoring':
+      return t('bots.templateSkills.prdAuthoring', 'prd-authoring')
+    case 'product-capability':
+      return t('bots.templateSkills.productCapability', 'product-capability')
+    case 'work-breakdown':
+      return t('bots.templateSkills.workBreakdown', 'work-breakdown')
   }
 }
 

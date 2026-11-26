@@ -102,46 +102,49 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
     id: 'mobile-web-dev',
     category: 'coding',
     name: 'Mobile web development',
-    line: 'Builds and reviews responsive mobile web, PWA, and hybrid WebView frontend features.',
+    line: 'Plans, builds, tests, and reviews responsive mobile web, PWA, and hybrid WebView features with ECC web & bridge guides.',
     firstChat:
-      'Point it at a mobile web workspace or give it a task. It follows mobile-first responsive UI, touch/viewport ergonomics, Core Web Vitals, hybrid WebView bridge, and frontend security guides.',
+      'Point it at a mobile web workspace or hand it a [MWB] work item from Product planning. It follows structured ECC workflows (planner, web patterns, design/a11y, TDD & Playwright mobile E2E, code review, 6-phase verification loop) plus Android/iOS WebView bridge guides.',
     mascot: 'MWB',
-    watches: 'Mobile web workspaces, tasks, and pull requests you hand it',
-    does: 'Implements and reviews responsive mobile UI, touch interactions, PWA/caching, WebView JS bridge client, and frontend security code.',
-    reports: 'Here, weekdays at 9 AM and after worker verification',
+    watches:
+      'Mobile web workspaces, [MWB] tasks, WebView bridge specs, and pull requests you hand it',
+    does: 'Plans and implements responsive 100dvh/safe-area UI, WCAG 2.2 AA a11y, Core Web Vitals/PWA, TDD/Playwright tests, and Android/iOS WebView JS bridge clients.',
+    reports: 'Here, weekdays at 9 AM and after verification-loop checks',
     connectors: ['github'],
     schedules: [
       {
         id: 'daily-morning-check',
         when: 'Weekdays at 9 AM',
-        what: 'Daily build & lint/typecheck healthcheck',
+        what: 'Daily build, typecheck & lint healthcheck',
         rrule: '0 9 * * 1-5',
         prompt:
-          'Run git fetch, build, typecheck, and lint on the active mobile web workspace, then post a morning summary using the mobile-web-desk-brief skill.'
+          'Run git fetch, production build, typecheck, and lint on the active mobile web workspace, then post a concise morning status summary.'
       }
     ],
     events: [
       {
         id: 'pr-verify',
-        name: 'When a pull request is opened or updated: run build, tests, and mobile viewport/security checks',
+        name: 'When a pull request is opened or updated: run 6-phase verification loop and mobile web code review',
         source: 'github',
         event: 'pull_request',
         prompt:
-          'Verify the mobile web pull request with the mobile-web-close-out skill: run build/tests, check safe-area/viewport regressions, XSS/CSP, and WebView bridge diffs, and report the checklist here.'
+          'Verify the mobile web pull request using mobile-web-verification-loop and mobile-web-code-review: run build/bundle budget, typecheck/lint, unit & mobile-viewport E2E tests, scan XSS/CSP/WebView bridge diffs, and post the PASS/FAIL report here.'
       }
     ],
     skills: [
-      'mobile-web-intake',
-      'mobile-web-worker-brief',
-      'mobile-web-close-out',
-      'mobile-web-desk-brief',
-      'mobile-web-development',
+      'mobile-web-planner',
+      'mobile-web-patterns',
+      'mobile-web-design-a11y',
+      'mobile-web-tdd-testing',
+      'mobile-web-code-review',
+      'mobile-web-build-resolver',
+      'mobile-web-verification-loop',
       'mobile-web-webview-bridge',
       'mobile-web-performance-pwa'
     ],
     example: [
-      'Fixed iOS Safari 100dvh keyboard overlap and added safe-area-inset-bottom padding.',
-      'Flagged unsanitized postMessage origin check and missing CSP frame-ancestors.'
+      'Planned [MWB-04] with mobile-web-planner, aligned 11-API WebView bridge with Android/iOS bots, and passed 6-phase verification.',
+      'Flagged 100vh keyboard clipping, missing safe-area-inset-bottom, and postMessage(*) origin bypass.'
     ]
   }
 ]

@@ -1,3 +1,5 @@
+import { ECC_LICENSE_FILES } from './ecc-license'
+
 export const SKILL = `---
 name: android-clean-architecture
 description: Clean Architecture patterns for Android — module structure, dependency inversion, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.
@@ -59,3 +61,5 @@ core -> (nothing)
 - Prefer constructor injection everywhere.
 - Use \`@HiltViewModel\` + \`@Inject constructor(...)\` for ViewModels, and \`@Module\` / \`@InstallIn(SingletonComponent::class)\` with \`@Binds\` for repository interfaces and \`@Provides\` for Room/OkHttp/Retrofit instances.
 `
+
+export const SKILL_FILES = ECC_LICENSE_FILES

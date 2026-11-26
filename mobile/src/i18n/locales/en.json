@@ -878,7 +878,8 @@
       "tasks": "Tasks",
       "moreActions": "More actions",
       "automations": "Automations",
-      "sharedLinks": "Shared links"
+      "sharedLinks": "Shared links",
+      "mcpServers": "MCP servers"
     },
     "deleteConfirm": {
       "changes_one": "{{count}} uncommitted change",
@@ -1048,7 +1049,8 @@
       "changes": "Changes",
       "pullRequest": "Pull Request",
       "workspace": "Workspace",
-      "automations": "Automations"
+      "automations": "Automations",
+      "mcpServers": "MCP servers"
     }
   },
   "notifications": {
@@ -1097,7 +1099,7 @@
       "signInDetail": "Sign in to Orca on your desktop to reconnect",
       "hostOffline": "{{host}} is offline",
       "hostOfflineDetail": "Check it's awake, Orca is running, and you're signed in",
-      "relayAccessExpired": "Relay access expired for {{host}}",
+      "relayAccessRefused": "Relay refused access for {{host}}",
       "rePairDetail": "Re-pair with your desktop",
       "relayUnreachable": "Can't reach Relay",
       "checkConnection": "Check your connection",
@@ -2805,7 +2807,8 @@
     },
     "structuredComposerCommand": {
       "removeAttachments": "Remove attachments before using a chat-session command.",
-      "operationUnconfirmed": "Conversation operation was not confirmed."
+      "operationUnconfirmed": "Conversation operation was not confirmed.",
+      "lockedWhileWorking": "/{{name}} is unavailable while the agent is working. Try again when it finishes."
     },
     "structuredSendDelivery": {
       "messageNotSent": "Message not sent"
@@ -3500,7 +3503,9 @@
       "sessionOptions": "Session options",
       "permissionAppliesNextMessage": "{{saved}} applies to your next message; running {{active}}",
       "permissionAppliesNextMessageCompact": "{{saved}} · next message",
-      "permissionAppliesNextMessageTiming": "Applies next message · running {{active}}"
+      "permissionAppliesNextMessageTiming": "Applies next message · running {{active}}",
+      "modelsLoading": "Loading models…",
+      "signInForModels": "Sign in to see the models you can use."
     },
     "streamFrame": {
       "streamFailed": "Transcript stream failed",
@@ -3939,7 +3944,8 @@
         "needsAuth_other": "{{count}} need sign-in",
         "failed": "{{count}} failed"
       },
-      "pasteHint": "When the browser lands on a page that won't load, copy its address and paste it here."
+      "pasteHint": "When the browser lands on a page that won't load, copy its address and paste it here.",
+      "manage": "Manage MCP servers"
     },
     "selectionQuote": {
       "action": "Quote",
@@ -5724,6 +5730,7 @@
       "shuffle": "Another picture",
       "namePlaceholder": "Name your bot",
       "purposeLabel": "Identity",
+      "purposeTooLongForHost": "Orca on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Orca on {{host}}.",
       "purposePlaceholder": "Who it is and what it does",
       "create": "Create",
       "fromTemplate": "Use template",
@@ -6149,6 +6156,22 @@
         "example1": "Draft: “Bot sharing v2”. 3 decisions, 2 open questions.",
         "example2": "Saved to your Drive as a doc."
       },
+      "product-planning": {
+        "name": "Product planning",
+        "line": "Plans across Android, iOS, and Mobile Web: validates the why, writes PRDs & shared contracts, and slices dev-ready items.",
+        "firstChat": "Share a product idea, doc, or initiative. It validates the problem, drafts a 3-platform PRD and shared capability contract (Android, iOS, Mobile Web), and slices work into self-contained briefs for dev bots to review and build.",
+        "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback",
+        "does": "Validates product direction, locks 3-platform PRDs and shared bridge/API contracts, and slices verifiable work for Android, iOS, and Mobile Web bots.",
+        "reports": "Here, when you ask and Mondays at 9:30 AM",
+        "example1": "Drafted 3-platform PRD + WebView bridge contract for PIN Lock; sliced [AND], [IOS], and [MWB] work items with DoD.",
+        "example2": "Synced 2 blocking bridge/UX decisions from Android, iOS, and Mobile Web feasibility reviews before coding started.",
+        "schedules": {
+          "weekly-planning-sync": {
+            "when": "Mondays at 9:30 AM",
+            "what": "Planning & open decisions sync"
+          }
+        }
+      },
       "backlog-cleanup": {
         "name": "Backlog cleanup",
         "line": "Finds stale, duplicate and unowned issues.",
@@ -6312,23 +6335,23 @@
       },
       "mobile-web-dev": {
         "name": "Mobile web development",
-        "line": "Builds and reviews responsive mobile web, PWA, and hybrid WebView frontend features.",
-        "firstChat": "Point it at a mobile web workspace or give it a task. It follows mobile-first responsive UI, touch/viewport ergonomics, Core Web Vitals, hybrid WebView bridge, and frontend security guides.",
-        "watches": "Mobile web workspaces, tasks, and pull requests you hand it",
-        "does": "Implements and reviews responsive mobile UI, touch interactions, PWA/caching, WebView JS bridge client, and frontend security code.",
-        "reports": "Here, weekdays at 9 AM and after worker verification",
-        "example1": "Fixed iOS Safari 100dvh keyboard overlap and added safe-area-inset-bottom padding.",
-        "example2": "Flagged unsanitized postMessage origin check and missing CSP frame-ancestors.",
+        "line": "Plans, builds, tests, and reviews responsive mobile web, PWA, and hybrid WebView features with ECC web & bridge guides.",
+        "firstChat": "Point it at a mobile web workspace or hand it a [MWB] work item from Product planning. It follows structured ECC workflows (planner, web patterns, design/a11y, TDD & Playwright mobile E2E, code review, 6-phase verification loop) plus Android/iOS WebView bridge guides.",
+        "watches": "Mobile web workspaces, [MWB] tasks, WebView bridge specs, and pull requests you hand it",
+        "does": "Plans and implements responsive 100dvh/safe-area UI, WCAG 2.2 AA a11y, Core Web Vitals/PWA, TDD/Playwright tests, and Android/iOS WebView JS bridge clients.",
+        "reports": "Here, weekdays at 9 AM and after verification-loop checks",
+        "example1": "Planned [MWB-04] with mobile-web-planner, aligned 11-API WebView bridge with Android/iOS bots, and passed 6-phase verification.",
+        "example2": "Flagged 100vh keyboard clipping, missing safe-area-inset-bottom, and postMessage(*) origin bypass.",
         "schedules": {
           "daily-morning-check": {
             "when": "Weekdays at 9 AM",
-            "what": "Daily build & lint/typecheck healthcheck"
+            "what": "Daily build, typecheck & lint healthcheck"
           }
         },
         "events": {
           "pr-verify": {
             "trigger": "When a pull request is opened or updated",
-            "action": "Run build, tests, and mobile viewport/security checks"
+            "action": "Run 6-phase verification loop and mobile web code review"
           }
         }
       }
@@ -6684,7 +6707,9 @@
         "replaced": "The agent asked a new question. Read it, then reply.",
         "replacedByNewer": "Replaced by a newer question",
         "skipped": "Skipped",
-        "notNow": "Not now"
+        "notNow": "Not now",
+        "heldImagesLimit": "Your answers go as one comment, which takes up to {{max}} photos. Remove some and try again.",
+        "heldSkillsLimit": "Your answers go as one comment, which takes up to {{max}} skills. Remove some and try again."
       },
       "readFailedClosedPage": "Couldn’t read more closed items.",
       "skillLimit": "Message not sent. Keep at most {{limit}} selected skill files and try again."
@@ -6858,13 +6883,19 @@
         "xcode-build-resolver": "Surgical Xcode/SwiftPM build error resolution, Bridging Header/Sendable/SPM fixes, deployment target, and signing guardrails.",
         "ios-verification-loop": "6-phase verification gate (build, SwiftLint/format, tests/coverage, security grep, diff review, simctl acceptance).",
         "ios-security-webview": "Transport/E2EE encryption, hardened WKWebView JS bridge, 11 Device APIs, MDM/MAM, secure keypad, and APNs push.",
-        "mobile-web-intake": "Classify incoming mobile web requests into Track A (Quick Fix), B (Feature/Bridge), or C (Architecture).",
-        "mobile-web-worker-brief": "Standard mobile web BRIEF.md template with viewport targets, bridge contracts, and build/test DoD.",
-        "mobile-web-close-out": "Build/typecheck/lint/test execution, safe-area/viewport check, and XSS/CSP/bridge diff verification.",
-        "mobile-web-desk-brief": "Daily morning mobile web build/lint brief and weekly bundle/vitals tech-debt report formats.",
-        "mobile-web-development": "Responsive 100dvh/safe-area layouts, touch ergonomics, iOS/Android WebView quirks, and frontend security.",
-        "mobile-web-webview-bridge": "Frontend JS bridge client for iOS WKWebView and Android JavascriptInterface with origin checks.",
-        "mobile-web-performance-pwa": "Core Web Vitals, bundle splitting, flaky network resilience, and PWA service worker cache safety."
+        "mobile-web-planner": "4-step planning process, Search-First reuse, [MWB] contract intake, WebView bridge alignment, and Red Flags.",
+        "mobile-web-patterns": "ECC frontend patterns: component composition, separated server/client/URL/form state, SWR, and AbortController.",
+        "mobile-web-design-a11y": "Anti-template UI quality, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.",
+        "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.",
+        "mobile-web-code-review": "Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.",
+        "mobile-web-build-resolver": "Minimal-change build/typecheck/bundler fixes, stop after 3 failed attempts, and owner approval for major upgrades.",
+        "mobile-web-verification-loop": "6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).",
+        "mobile-web-webview-bridge": "Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.",
+        "mobile-web-performance-pwa": "Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.",
+        "product-lens": "Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.",
+        "prd-authoring": "4-phase gated PRD workflow (FRAME -> GROUND -> DECIDE -> GENERATE) with a 3-platform parity matrix (Android, iOS, Mobile Web).",
+        "product-capability": "Translate PRD intent into a 3-platform Capability Contract locking shared WebView bridge, API, deep-link, and policy constraints.",
+        "work-breakdown": "Break foundational specs into [AND]/[IOS]/[MWB] work briefs with dependency ordering and cross-bot review synchronization."
       },
       "androidPlanner": "android-planner",
       "androidCleanArchitecture": "android-clean-architecture",
@@ -6885,13 +6916,19 @@
       "xcodeBuildResolver": "xcode-build-resolver",
       "iosVerificationLoop": "ios-verification-loop",
       "iosSecurityWebview": "ios-security-webview",
-      "mobileWebIntake": "mobile-web-intake",
-      "mobileWebWorkerBrief": "mobile-web-worker-brief",
-      "mobileWebCloseOut": "mobile-web-close-out",
-      "mobileWebDeskBrief": "mobile-web-desk-brief",
-      "mobileWebDevelopment": "mobile-web-development",
+      "mobileWebPlanner": "mobile-web-planner",
+      "mobileWebPatterns": "mobile-web-patterns",
+      "mobileWebDesignA11y": "mobile-web-design-a11y",
+      "mobileWebTddTesting": "mobile-web-tdd-testing",
+      "mobileWebCodeReview": "mobile-web-code-review",
+      "mobileWebBuildResolver": "mobile-web-build-resolver",
+      "mobileWebVerificationLoop": "mobile-web-verification-loop",
       "mobileWebWebviewBridge": "mobile-web-webview-bridge",
-      "mobileWebPerformancePwa": "mobile-web-performance-pwa"
+      "mobileWebPerformancePwa": "mobile-web-performance-pwa",
+      "productLens": "product-lens",
+      "prdAuthoring": "prd-authoring",
+      "productCapability": "product-capability",
+      "workBreakdown": "work-breakdown"
     },
     "waits": {
       "cancel": "Cancel",
@@ -7243,7 +7280,8 @@
       "removeVariableRow": "Remove variable",
       "emptyArgument": "Empty",
       "valueNew": "New value",
-      "valueSaved": "Saved"
+      "valueSaved": "Saved",
+      "hostMcpServers": "Your MCP servers"
     },
     "handToBot": {
       "menu": "Hand to bot…",
@@ -7426,7 +7464,13 @@
         "context7": "Current docs and examples for code libraries",
         "atlassian": "Jira issues and Confluence pages",
         "notion": "Search, read and edit pages",
-        "stripe": "Look up payments, customers and subscriptions"
+        "stripe": "Look up payments, customers and subscriptions",
+        "clickup": "Manage tasks, lists and docs",
+        "airtable": "Query and edit bases, tables and records",
+        "todoist": "Add, sort and complete tasks",
+        "zapier": "Run actions in the apps you set up in Zapier",
+        "granola": "Search meeting notes and transcripts",
+        "intercom": "Search conversations, contacts and articles"
       },
       "webhooks": {
         "line": "Events from any tool or script"
@@ -8446,6 +8490,12 @@
                 "message": "Claude usage updates the next time Claude runs."
               }
             },
+            "codex": {
+              "waiting": {
+                "label": "Updates when Codex runs",
+                "message": "Codex usage updates the next time Codex runs."
+              }
+            },
             "1804cd8c3f": "Refreshing sign-in",
             "bf2e739f18": "Sign-in unavailable",
             "f8f0f9d8cc": "Network issue",
@@ -8518,10 +8568,6 @@
           "grokBillingUsageMissing": "Grok billing response did not include credit usage",
           "grokUsageUnauthorizedHttp": "Grok usage request unauthorized (HTTP {{status}})",
           "grokUsageFailedHttp": "Grok usage request failed (HTTP {{status}})",
-          "geminiOauthDisabled": "Gemini CLI OAuth is disabled in settings",
-          "geminiCredentialsNotFound": "Gemini CLI credentials not found",
-          "geminiProjectIdNotFound": "Gemini project ID not found",
-          "tokenRefreshFailed": "Token refresh failed",
           "codexNotSignedIn": "Codex not signed in",
           "codexHomeUnavailable": "Codex home unavailable",
           "wslCodexHomeUnavailable": "WSL Codex home unavailable for {{distro}}",
@@ -8540,9 +8586,6 @@
           "ptyUsageTimeout": "PTY timeout — /usage panel did not render",
           "cliExitedBeforeUsage": "CLI exited before /usage rendered",
           "cliExitedBeforeStatus": "CLI exited before status was available",
-          "quotaFetchFailed": "Quota fetch failed ({{status}})",
-          "geminiProjectIdLoadFailed": "Failed to load Gemini project ID (HTTP {{status}})",
-          "geminiProjectIdMissingInResponse": "Gemini project ID not found in API response",
           "minimaxUsageFetchFailed": "MiniMax usage fetch failed ({{status}})",
           "minimaxReturnedError": "MiniMax returned an error",
           "minimaxInvalidUsageResponse": "Invalid MiniMax usage response",
@@ -8676,5 +8719,98 @@
       "home": "A managed agent's Home Chat can't be deleted",
       "workerOwed": "An orchestration still waits on this chat"
     }
+  },
+  "mcpServers": {
+    "category": {
+      "coding": "Coding",
+      "chat": "Chat",
+      "monitoring": "Monitoring",
+      "docs": "Docs and projects",
+      "more": "More"
+    },
+    "searchApps": "Search apps",
+    "filterActive": "Filter, {{filter}}",
+    "filter": "Filter",
+    "allApps": "All apps",
+    "added": "Added",
+    "addTitle": "Add an MCP server",
+    "customServer": "Custom server",
+    "customServerLine": "URL, command or pasted config",
+    "noMatch": "No app matches “{{query}}”.",
+    "apps": "Apps",
+    "header": "Header",
+    "headerName": "Name",
+    "headerValue": "Value",
+    "removeHeader": "Remove header",
+    "headers": "Headers",
+    "headerEmpty": "Empty",
+    "addHeader": "Add header",
+    "addButton": "Add",
+    "sourceLabel": "Server URL or start command",
+    "sourcePlaceholder": "https://… or npx …",
+    "sourceNote": "Paste a server URL, a start command or an mcpServers config.",
+    "details": "Details",
+    "trust": "Only add software you trust.",
+    "serverType": "Server type",
+    "urlMode": "Connect to a URL",
+    "commandMode": "Run a command",
+    "serverName": "Server name",
+    "headersNone": "None",
+    "yours": "Yours",
+    "addServer": "Add a server",
+    "fromPlugins": "From plugins",
+    "inYourAgents": "In your agents",
+    "needsSignIn": "Needs sign-in",
+    "wontStart": "Won’t start",
+    "signIn": "Sign in",
+    "projectsOnly": "{{projects}} only",
+    "moreFor": "More for {{name}}",
+    "moveToOrca": "Move to Orca",
+    "copyToOrca": "Copy to Orca",
+    "signInAgain": "Sign in again",
+    "signOut": "Sign out",
+    "workspaces": "Workspaces",
+    "account": "Account",
+    "signedIn": "Signed in",
+    "agents": "Agents",
+    "turnAllOn": "Turn all on",
+    "agentsUnread": "Couldn’t read the agents on this computer.",
+    "agentBlocked": "Blocked by your organization’s Claude settings",
+    "advanced": "Advanced",
+    "sharedProcess": "Share one process across agents",
+    "sharedProcessNote": "Uses less memory. Runs outside the workspace folder.",
+    "removeServer": "Remove server",
+    "url": "URL",
+    "command": "Command",
+    "arguments": "Arguments",
+    "title": "MCP servers",
+    "reading": "Reading MCP servers…",
+    "unavailable": "MCP servers aren’t on {{host}}",
+    "signedInTo": "Signed in to {{app}}",
+    "allWorkspaces": "All workspaces",
+    "includingLater": "Including ones added later",
+    "appliesToNewNote": "Changes apply to new sessions.",
+    "allAgents": "All agents",
+    "agentsOf": "{{on}} of {{total}}",
+    "workspacesAll": "All",
+    "workspacesAllBut": "All but {{names}}",
+    "workspacesNone": "None",
+    "appliesToNew": "Applies to new sessions",
+    "restartSessions": "Restart {{count}} sessions",
+    "restarted": "Restarted {{count}} sessions",
+    "agentFileTitle": "Turn on {{server}} for {{agent}}?",
+    "agentFileMessage": "Orca will keep your MCP servers in {{agent}}’s settings file ({{file}}). Your own entries stay as they are.",
+    "agentFilesMessage": "Orca will keep your MCP servers in their settings files. Your own entries stay as they are.",
+    "allow": "Allow",
+    "removeTitle": "Remove {{name}}?",
+    "removeMessage": "New sessions won’t have it. You can add it again any time.",
+    "remove": "Remove",
+    "moveTitle": "Move {{name}} to Orca?",
+    "moveMessage": "Orca removes it from {{agents}} settings and keeps a backup.",
+    "move": "Move",
+    "workspacesCount": "{{count}} workspaces",
+    "workspacesAllButCount": "All but {{count}}",
+    "headerMissing": "Fill in {{header}} to add this server.",
+    "servers": "Servers"
   }
 }

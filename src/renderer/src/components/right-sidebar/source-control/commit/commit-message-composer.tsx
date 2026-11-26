@@ -4,7 +4,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { useTranslate } from '@/i18n/use-translate'
 import { cn } from '@/lib/class-names'
 
-const AI_SPARKLE_DURATION_MS = 1450
+const AI_SPARKLE_DURATION_MS = 2400
 
 export function CommitMessageComposer({
   worktreeId,

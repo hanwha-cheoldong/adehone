@@ -17,6 +17,10 @@ import {
   MOBILE_WEB_DEV_AUTOMATIONS_DOC,
   MOBILE_WEB_DEV_MEMORY_SEED
 } from './bot-template-mobile-web-files'
+import {
+  PRODUCT_PLANNING_AUTOMATIONS_DOC,
+  PRODUCT_PLANNING_MEMORY_SEED
+} from './bot-template-product-planning-files'
 import { botTemplateSkillFiles } from './bot-template-skill-text'
 
 const TEMPLATE_EXTRA_FILES: Partial<Record<string, readonly { to: string; text: string }[]>> = {
@@ -31,6 +35,10 @@ const TEMPLATE_EXTRA_FILES: Partial<Record<string, readonly { to: string; text: 
   'mobile-web-dev': [
     { to: 'MEMORY.md', text: MOBILE_WEB_DEV_MEMORY_SEED },
     { to: 'AUTOMATIONS.md', text: MOBILE_WEB_DEV_AUTOMATIONS_DOC }
+  ],
+  'product-planning': [
+    { to: 'MEMORY.md', text: PRODUCT_PLANNING_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: PRODUCT_PLANNING_AUTOMATIONS_DOC }
   ]
 }
 
