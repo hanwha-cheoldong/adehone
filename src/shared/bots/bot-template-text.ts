@@ -200,6 +200,8 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.mobileWebTddTesting', 'mobile-web-tdd-testing')
     case 'mobile-web-code-review':
       return t('bots.templateSkills.mobileWebCodeReview', 'mobile-web-code-review')
+    case 'mobile-web-build-resolver':
+      return t('bots.templateSkills.mobileWebBuildResolver', 'mobile-web-build-resolver')
     case 'mobile-web-verification-loop':
       return t('bots.templateSkills.mobileWebVerificationLoop', 'mobile-web-verification-loop')
     case 'mobile-web-webview-bridge':

@@ -21,6 +21,7 @@ import * as issueTriage from './bot-template-skills/issue-triage'
 import * as kotlinCodeReview from './bot-template-skills/kotlin-code-review'
 import * as kotlinCoroutinesFlows from './bot-template-skills/kotlin-coroutines-flows'
 import * as kotlinTddTesting from './bot-template-skills/kotlin-tdd-testing'
+import * as mobileWebBuildResolver from './bot-template-skills/mobile-web-build-resolver'
 import * as mobileWebCodeReview from './bot-template-skills/mobile-web-code-review'
 import * as mobileWebDesignA11y from './bot-template-skills/mobile-web-design-a11y'
 import * as mobileWebPatterns from './bot-template-skills/mobile-web-patterns'
@@ -90,6 +91,7 @@ const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'mobile-web-design-a11y': mobileWebDesignA11y,
   'mobile-web-tdd-testing': mobileWebTddTesting,
   'mobile-web-code-review': mobileWebCodeReview,
+  'mobile-web-build-resolver': mobileWebBuildResolver,
   'mobile-web-verification-loop': mobileWebVerificationLoop,
   'mobile-web-webview-bridge': mobileWebWebviewBridge,
   'mobile-web-performance-pwa': mobileWebPerformancePwa,

@@ -137,6 +137,7 @@ export const BOT_TEMPLATES_MOBILE_CODING: readonly BotTemplate[] = [
       'mobile-web-design-a11y',
       'mobile-web-tdd-testing',
       'mobile-web-code-review',
+      'mobile-web-build-resolver',
       'mobile-web-verification-loop',
       'mobile-web-webview-bridge',
       'mobile-web-performance-pwa'

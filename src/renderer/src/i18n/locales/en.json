@@ -30011,7 +30011,8 @@
           "0": "Plan every non-trivial feature or refactor with `mobile-web-planner` (Requirements & `[MWB]` Contract Intake -> Search-First & Architecture/Bridge Review -> Phased Steps -> Testing Strategy & Risks) before editing code.",
           "1": "Follow `mobile-web-patterns` (separated server/client/URL/form state, `AbortController`), `mobile-web-design-a11y` (`100dvh`/safe-area, `>=44px` touch targets, WCAG 2.2 AA), `mobile-web-performance-pwa`, and `mobile-web-tdd-testing`.",
           "2": "Before reporting done or opening a PR, run the 6-phase `mobile-web-verification-loop` (build & bundle budget, typecheck/lint, unit & mobile-viewport E2E, security/bridge scan, Vitals/a11y diff, live acceptance) and `mobile-web-code-review`.",
-          "3": "Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`."
+          "3": "Before changing WebView JS bridge contracts, deep links, or CSP/cookie policies, align with `product-planning` (`product-capability` SSOT), `android-dev` (`android-security-webview`), and `ios-dev` (`ios-security-webview`) via `mobile-web-webview-bridge`.",
+          "4": "When a build or typecheck fails, load `mobile-web-build-resolver` before editing. When asked to review a change, load `mobile-web-code-review` first, and check the framework (`mobile-web-patterns` Framework Gate) before applying React or Vue rules."
         },
         "soulDont": {
           "0": "Never claim something is fixed without passing `mobile-web-verification-loop` build, test, and mobile viewport checks first.",
@@ -31099,6 +31100,7 @@
         "mobile-web-design-a11y": "Anti-template UI quality, 100dvh/safe-area ergonomics, >=44px touch targets, WCAG 2.2 AA, and 400% zoom reflow.",
         "mobile-web-tdd-testing": "Vitest/Testing Library TDD, Playwright mobile viewports (320-1920px), touch checks, and bridge contract tests.",
         "mobile-web-code-review": "Severity-ranked Mobile Web review for XSS/CSP/origin security, bridge parity, 100dvh/safe-area, and Core Web Vitals.",
+        "mobile-web-build-resolver": "Minimal-change build/typecheck/bundler fixes, stop after 3 failed attempts, and owner approval for major upgrades.",
         "mobile-web-verification-loop": "6-phase verification gate (build/bundle budget, typecheck/lint, unit/E2E, security/bridge diff, Vitals/a11y, acceptance).",
         "mobile-web-webview-bridge": "Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.",
         "mobile-web-performance-pwa": "Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.",
@@ -31131,6 +31133,7 @@
       "mobileWebDesignA11y": "mobile-web-design-a11y",
       "mobileWebTddTesting": "mobile-web-tdd-testing",
       "mobileWebCodeReview": "mobile-web-code-review",
+      "mobileWebBuildResolver": "mobile-web-build-resolver",
       "mobileWebVerificationLoop": "mobile-web-verification-loop",
       "mobileWebWebviewBridge": "mobile-web-webview-bridge",
       "mobileWebPerformancePwa": "mobile-web-performance-pwa",

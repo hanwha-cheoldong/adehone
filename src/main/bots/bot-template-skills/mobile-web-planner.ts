@@ -15,6 +15,7 @@ Create specific, actionable, incrementally verifiable plans before writing code 
 - If a requirement depends on native capabilities (biometrics, secure storage, camera, push, back-button, deep links), check \`mobile-web-webview-bridge/references/bridge-protocol.md\` and the contract, then confirm gaps with the Android, iOS, and planning bots (protocol section 6) *before* coding.
 
 ### 2. Search-First & Architecture Review
+- Run the Framework Gate in \`mobile-web-patterns\` and plan in the project's framework; say so if no framework guide is installed.
 - Search existing components, hooks, design tokens, and bridge adapters before building anything new: **Adopt -> Extend -> Build Custom**.
 - Inspect \`package.json\`, routing config, state stores, CSP/cookie headers, \`viewport\` meta tags, and existing WebView bridge clients.
 - Check server/client state boundaries, SSR/hydration constraints, bundle budget impact, and XSS/origin security.
