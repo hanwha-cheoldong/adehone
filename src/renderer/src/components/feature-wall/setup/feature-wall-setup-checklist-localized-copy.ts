@@ -49,6 +49,13 @@ const getLocalizedFeatureWallSetupChecklistCopyById = createLocalizedCatalog(
         'Start new work faster with your preferred agent already selected.'
       )
     },
+    'mobile-dev-bots': {
+      name: translate('setupGuide.mobileBots.stepName', 'Set up mobile dev bots'),
+      description: translate(
+        'setupGuide.mobileBots.stepDescription',
+        'Pick the Android, iOS, and mobile web bots you want. Bots are created from templates; no SDK, emulator, or simulator is installed.'
+      )
+    },
     'agent-capabilities': {
       name: translate(
         'auto.components.feature.wall.feature.wall.setup.checklist.localized.copy.agentSkillsName',

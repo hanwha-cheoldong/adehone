@@ -14,6 +14,7 @@ import {
 import {
   getFeatureWallSetupSectionId,
   isFeatureWallSetupStepId,
+  type FeatureWallSetupCoreStepId,
   type FeatureWallSetupStepId
 } from '../../../../shared/feature-education/explore/feature-wall-setup-steps'
 import { track } from './telemetry'
@@ -72,7 +73,7 @@ export function trackSetupGuideOpened(args: {
   source: string | null | undefined
   initialCompletedCount: number
   totalSteps: number
-  firstIncompleteStepId: FeatureWallSetupStepId | 'none'
+  firstIncompleteStepId: FeatureWallSetupCoreStepId | 'none'
 }): SetupGuideSource {
   const source = normalizeSetupGuideSource(args.source)
   emitFeatureEducationTelemetry('setup_guide_opened', {
@@ -90,7 +91,7 @@ export function trackSetupGuideClosed(args: {
   initialCompletedCount: number
   finalCompletedCount: number
   totalSteps: number
-  activeStepId: FeatureWallSetupStepId | 'none'
+  activeStepId: FeatureWallSetupCoreStepId | 'none'
 }): void {
   const initialCompletedCount = clampSetupGuideStepCount(args.initialCompletedCount)
   const finalCompletedCount = Math.max(
@@ -108,7 +109,7 @@ export function trackSetupGuideClosed(args: {
 }
 
 export function trackSetupGuideStepCompleted(args: {
-  stepId: FeatureWallSetupStepId
+  stepId: FeatureWallSetupCoreStepId
   completedCount: number
   totalSteps: number
   setupGuideVisible: boolean

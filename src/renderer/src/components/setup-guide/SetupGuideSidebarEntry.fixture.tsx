@@ -1,4 +1,5 @@
 import { defineFixture } from '../../component-fixtures/component-fixture'
+import { stubBots } from '../../component-fixtures/fixture-bots'
 import { SetupGuideSidebarEntry } from './SetupGuideSidebarEntry'
 import { Button } from '@/components/ui/button'
 
@@ -18,6 +19,8 @@ const checklist = defineFixture({
   setup: () => {
     window.api.skills.discover = async () => ({ skills: [], sources: [], scannedAt: 0 })
     window.api.ui.set = async () => {}
+    // The checklist reads the bot list for its mobile bot step.
+    stubBots([])
   },
   render: () => (
     <div className="bg-worktree-sidebar p-2 text-worktree-sidebar-foreground">

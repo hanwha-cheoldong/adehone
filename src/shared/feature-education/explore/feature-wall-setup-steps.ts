@@ -7,12 +7,21 @@ export type FeatureWallSetupStepId =
   | 'task-sources'
   | 'agent-capabilities'
   | 'setup-script'
+  | 'mobile-dev-bots'
+
+/** Steps that never count toward the checklist's progress. */
+export type FeatureWallSetupOptionalStepId = 'mobile-dev-bots'
+export type FeatureWallSetupCoreStepId = Exclude<
+  FeatureWallSetupStepId,
+  FeatureWallSetupOptionalStepId
+>
 
 export type FeatureWallSetupStep = {
   readonly id: FeatureWallSetupStepId
   readonly name: string
   readonly subtitle: string
   readonly description: string
+  readonly optional?: true
 }
 
 export const FEATURE_WALL_SETUP_PARALLEL_WORK_STEP_IDS = [
@@ -20,7 +29,8 @@ export const FEATURE_WALL_SETUP_PARALLEL_WORK_STEP_IDS = [
   'browser'
 ] as const satisfies readonly FeatureWallSetupStepId[]
 
-export type FeatureWallSetupSectionId = 'parallel-work' | 'setup'
+export type FeatureWallSetupCoreSectionId = 'parallel-work' | 'setup'
+export type FeatureWallSetupSectionId = FeatureWallSetupCoreSectionId | 'optional'
 
 export const FEATURE_WALL_SETUP_STEPS: readonly FeatureWallSetupStep[] = [
   {
@@ -75,18 +85,49 @@ export const FEATURE_WALL_SETUP_STEPS: readonly FeatureWallSetupStep[] = [
     subtitle: 'Start work in multiple repos',
     description:
       'Bring your key repos into Orca so you can start agent work without hunting for folders.'
+  },
+  {
+    id: 'mobile-dev-bots',
+    name: 'Set up mobile dev bots',
+    subtitle: 'Set up mobile dev bots',
+    description:
+      'Pick the Android, iOS, and mobile web bots you want. Bots are created from templates; no SDK, emulator, or simulator is installed.',
+    optional: true
   }
 ] as const
 
 export const FEATURE_WALL_SETUP_STEP_IDS = FEATURE_WALL_SETUP_STEPS.map((step) => step.id)
+
+/** The steps progress counts. */
+export const FEATURE_WALL_SETUP_CORE_STEPS = FEATURE_WALL_SETUP_STEPS.filter(
+  (step) => !step.optional
+)
+
+export const FEATURE_WALL_SETUP_CORE_STEP_IDS: readonly FeatureWallSetupCoreStepId[] =
+  FEATURE_WALL_SETUP_CORE_STEPS.map((step) => step.id).filter(isFeatureWallSetupCoreStepId)
+
+export function isFeatureWallSetupCoreStepId(
+  stepId: FeatureWallSetupStepId
+): stepId is FeatureWallSetupCoreStepId {
+  return stepId !== 'mobile-dev-bots'
+}
 
 export function getFeatureWallSetupSteps(): readonly FeatureWallSetupStep[] {
   return FEATURE_WALL_SETUP_STEPS
 }
 
 export function getFeatureWallSetupSectionId(
+  stepId: FeatureWallSetupCoreStepId
+): FeatureWallSetupCoreSectionId
+export function getFeatureWallSetupSectionId(
+  stepId: FeatureWallSetupStepId
+): FeatureWallSetupSectionId
+export function getFeatureWallSetupSectionId(
   stepId: FeatureWallSetupStepId
 ): FeatureWallSetupSectionId {
+  if (!isFeatureWallSetupCoreStepId(stepId)) {
+    return 'optional'
+  }
   return FEATURE_WALL_SETUP_PARALLEL_WORK_STEP_IDS.includes(
     stepId as (typeof FEATURE_WALL_SETUP_PARALLEL_WORK_STEP_IDS)[number]
   )

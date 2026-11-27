@@ -73,6 +73,13 @@ export function createUiTrustActions(set: UISliceSet, _get: UISliceGet): Partial
         window.api.ui.set(updates).catch(console.error)
         return updates
       }),
+    mobileBotSetup: null,
+    setMobileBotSetup: (setup) =>
+      set(() => {
+        // Sent alone: an older paired host refuses a whole ui.set that carries a key it doesn't know.
+        window.api.ui.set({ mobileBotSetup: setup }).catch(console.error)
+        return { mobileBotSetup: setup }
+      }),
     browserImportHintHidden: false,
     setBrowserImportHintHidden: (hidden) =>
       set((s) => {

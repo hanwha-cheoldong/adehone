@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import {
-  FEATURE_WALL_SETUP_STEP_IDS,
+  FEATURE_WALL_SETUP_CORE_STEP_IDS,
   getFirstIncompleteFeatureWallSetupStepId,
-  getFeatureWallSetupSteps,
+  isFeatureWallSetupCoreStepId,
+  type FeatureWallSetupCoreStepId,
   type FeatureWallSetupStepId
 } from '../../../../shared/feature-education/explore/feature-wall-setup-steps'
 import type { SetupGuideSource } from '../../../../shared/feature-education/feature-education-telemetry'
@@ -23,7 +24,7 @@ type SetupGuideTelemetrySession = {
 type SetupGuideTelemetrySnapshot = {
   completedCount: number
   totalSteps: number
-  activeStepId: FeatureWallSetupStepId | 'none'
+  activeStepId: FeatureWallSetupCoreStepId | 'none'
 }
 
 type SetupGuideStepCompletionTelemetryState = {
@@ -37,11 +38,10 @@ export function useSetupGuideOpenCloseTelemetry(args: {
   progress: FeatureWallSetupProgress
   activeStepId: FeatureWallSetupStepId | null
 }): void {
-  const setupSteps = useMemo(() => getFeatureWallSetupSteps(), [])
   const sessionRef = useRef<SetupGuideTelemetrySession | null>(null)
   const snapshotRef = useRef<SetupGuideTelemetrySnapshot>({
     completedCount: 0,
-    totalSteps: FEATURE_WALL_SETUP_STEP_IDS.length,
+    totalSteps: FEATURE_WALL_SETUP_CORE_STEP_IDS.length,
     activeStepId: 'none'
   })
 
@@ -50,8 +50,12 @@ export function useSetupGuideOpenCloseTelemetry(args: {
 
   snapshotRef.current = {
     completedCount,
-    totalSteps: setupSteps.length,
-    activeStepId: args.activeStepId ?? 'none'
+    totalSteps: FEATURE_WALL_SETUP_CORE_STEP_IDS.length,
+    // Optional steps are outside this funnel.
+    activeStepId:
+      args.activeStepId && isFeatureWallSetupCoreStepId(args.activeStepId)
+        ? args.activeStepId
+        : 'none'
   }
 
   const closeSession = useCallback((outcome: 'completed' | 'dismissed' | 'interrupted'): void => {
@@ -76,7 +80,7 @@ export function useSetupGuideOpenCloseTelemetry(args: {
       const source = trackSetupGuideOpened({
         source: args.source,
         initialCompletedCount: completedCount,
-        totalSteps: setupSteps.length,
+        totalSteps: FEATURE_WALL_SETUP_CORE_STEP_IDS.length,
         firstIncompleteStepId
       })
       sessionRef.current = { source, initialCompletedCount: completedCount }
@@ -85,14 +89,7 @@ export function useSetupGuideOpenCloseTelemetry(args: {
     if (!args.isOpen && sessionRef.current) {
       closeSession('dismissed')
     }
-  }, [
-    args.isOpen,
-    args.source,
-    closeSession,
-    completedCount,
-    firstIncompleteStepId,
-    setupSteps.length
-  ])
+  }, [args.isOpen, args.source, closeSession, completedCount, firstIncompleteStepId])
 
   useEffect(() => {
     return () => {
@@ -103,10 +100,12 @@ export function useSetupGuideOpenCloseTelemetry(args: {
 
 export function getSetupGuideTelemetryFirstIncompleteStepId(
   progress: FeatureWallSetupProgress
-): FeatureWallSetupStepId | 'none' {
-  return countCompletedSetupSteps(progress.stepDone) >= FEATURE_WALL_SETUP_STEP_IDS.length
-    ? 'none'
-    : getFirstIncompleteFeatureWallSetupStepId(progress.stepDone)
+): FeatureWallSetupCoreStepId | 'none' {
+  if (countCompletedSetupSteps(progress.stepDone) >= FEATURE_WALL_SETUP_CORE_STEP_IDS.length) {
+    return 'none'
+  }
+  const stepId = getFirstIncompleteFeatureWallSetupStepId(progress.stepDone)
+  return isFeatureWallSetupCoreStepId(stepId) ? stepId : 'none'
 }
 
 export function useSetupGuideStepCompletionTelemetry(args: {
@@ -152,7 +151,7 @@ export function recordSetupGuideStepCompletionTelemetry(args: {
   }
 
   const completedCount = countCompletedSetupSteps(args.progress.stepDone)
-  for (const stepId of FEATURE_WALL_SETUP_STEP_IDS) {
+  for (const stepId of FEATURE_WALL_SETUP_CORE_STEP_IDS) {
     if (!args.progress.stepDone[stepId] || previousDone[stepId] || emitted.has(stepId)) {
       continue
     }
@@ -161,21 +160,21 @@ export function recordSetupGuideStepCompletionTelemetry(args: {
     trackSetupGuideStepCompleted({
       stepId,
       completedCount,
-      totalSteps: FEATURE_WALL_SETUP_STEP_IDS.length,
+      totalSteps: FEATURE_WALL_SETUP_CORE_STEP_IDS.length,
       setupGuideVisible: args.setupGuideVisible
     })
   }
 }
 
 function countCompletedSetupSteps(done: Record<FeatureWallSetupStepId, boolean>): number {
-  return FEATURE_WALL_SETUP_STEP_IDS.filter((stepId) => done[stepId]).length
+  return FEATURE_WALL_SETUP_CORE_STEP_IDS.filter((stepId) => done[stepId]).length
 }
 
 function persistCompletedSetupGuideStepBaselines(
   done: Record<FeatureWallSetupStepId, boolean>,
   emitted: Set<FeatureWallSetupStepId>
 ): void {
-  for (const stepId of FEATURE_WALL_SETUP_STEP_IDS) {
+  for (const stepId of FEATURE_WALL_SETUP_CORE_STEP_IDS) {
     if (!done[stepId] || emitted.has(stepId)) {
       continue
     }

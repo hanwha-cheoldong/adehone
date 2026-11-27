@@ -24,6 +24,7 @@ import { ClientUiWorkspaceFilterFields } from './client-ui-workspace-filter-fiel
 import { TaskResumeState } from './task-resume-state-params'
 import { WorkspaceCleanup } from '../workspace-cleanup/workspace-cleanup-ui-params'
 import { omitUndefinedValues, tolerateUnknownValues } from './ui-update-value-tolerance-params'
+import { MobileBotSetupSchema } from '../../bots/mobile-bot-setup'
 
 export const NullableString = lazyZodSchema(() => z.string().nullable())
 
@@ -280,6 +281,7 @@ export const UiUpdateFields = lazyZodSchema(() =>
       setupGuideSidebarDismissed: z.boolean().optional(),
       setupGuideBrowserMilestoneMigrated: z.boolean().optional(),
       setupGuideBrowserMilestoneLegacyComplete: z.boolean().optional(),
+      mobileBotSetup: MobileBotSetupSchema.optional(),
       browserImportHintHidden: z.boolean().optional(),
       mobileEmulatorTabIntroDismissed: z.boolean().optional(),
       mobileEmulatorAgentSetupDismissed: z.boolean().optional(),
