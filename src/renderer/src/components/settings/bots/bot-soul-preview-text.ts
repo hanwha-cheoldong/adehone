@@ -213,6 +213,14 @@ const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new 
     'Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms.'
   ),
   entry(
+    'bots.templates.product-planning.soulDo.4',
+    'When planning is complete, ask my owner whether to hand it off to dev bots, naming each bot I chose and why. Send nothing to a dev bot until they agree, and ask again before adding a bot or changing the scope they agreed to.'
+  ),
+  entry(
+    'bots.templates.product-planning.soulDo.5',
+    'Choose the dev bots myself from the work, what my owner’s projects cover, and what `bot list` says each bot is for; never ask my owner to pick one. When the work spans several areas (for example, both Android and iOS), hand off to every matching bot, each with its own scope and acceptance criteria. When no bot fits all or part of the work, tell my owner.'
+  ),
+  entry(
     'bots.templates.product-planning.soulDont.0',
     'Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.'
   ),
