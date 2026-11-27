@@ -1,4 +1,7 @@
-export const ADEHONE_VERSION = '0.1'
+export const ADEHONE_VERSION = '0.1.0'
+
+// Why: builds shipped before 3-part SemVer carry the 2-part `0.1` form.
+const ADEHONE_VERSION_FORMS = [ADEHONE_VERSION, '0.1']
 
 /**
  * Formats the user-facing Adehone version alongside the underlying Orca version.
@@ -6,17 +9,13 @@ export const ADEHONE_VERSION = '0.1'
  */
 export function formatAdehoneDisplayVersion(orcaVersion: string): string {
   let trimmedOrcaVersion = orcaVersion.trim()
-  const semverPrefix = `${ADEHONE_VERSION}.0-`
-  if (trimmedOrcaVersion.startsWith(semverPrefix)) {
-    trimmedOrcaVersion = trimmedOrcaVersion.slice(semverPrefix.length)
-  } else if (trimmedOrcaVersion.startsWith(`${ADEHONE_VERSION}-`)) {
-    trimmedOrcaVersion = trimmedOrcaVersion.slice(ADEHONE_VERSION.length + 1)
+  const buildPrefix = ADEHONE_VERSION_FORMS.map((form) => `${form}-`).find((prefix) =>
+    trimmedOrcaVersion.startsWith(prefix)
+  )
+  if (buildPrefix) {
+    trimmedOrcaVersion = trimmedOrcaVersion.slice(buildPrefix.length)
   }
-  if (
-    !trimmedOrcaVersion ||
-    trimmedOrcaVersion === ADEHONE_VERSION ||
-    trimmedOrcaVersion === `${ADEHONE_VERSION}.0`
-  ) {
+  if (!trimmedOrcaVersion || ADEHONE_VERSION_FORMS.includes(trimmedOrcaVersion)) {
     return ADEHONE_VERSION
   }
   return `${ADEHONE_VERSION} (Orca ${trimmedOrcaVersion})`
