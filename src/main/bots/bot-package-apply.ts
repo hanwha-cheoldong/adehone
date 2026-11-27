@@ -5,6 +5,7 @@ import { join } from 'node:path'
 import type { Bot } from '../../shared/bot-types'
 import { BOT_SHARED_SETUP_FILE } from '../../shared/bots/bot-shared-from'
 import type { BotPackageConnector } from '../../shared/bots/bot-package'
+import { BOT_PARTLY_MADE_KEPT_WORDS } from '../../shared/bots/bot-partly-made'
 import type { BotController } from './bot-controller'
 import { botHomeFolder, type BotHomeFilesystem } from './bot-home'
 import { changeBotToolServers } from './bot-tools-file'
@@ -73,7 +74,7 @@ export async function applyBotPackage(
     await deps.bots.delete({ botId: bot.id, deleteFolder: true }).catch((cleanup: unknown) => {
       const why = (value: unknown) => (value instanceof Error ? value.message : String(value))
       throw new Error(
-        `${why(error)} Orca couldn't remove the partly made bot "${bot.name}" (${why(cleanup)}). Delete it from Bots to try again.`,
+        `${why(error)} Orca ${BOT_PARTLY_MADE_KEPT_WORDS} "${bot.name}" (${why(cleanup)}). Delete it from Bots to try again.`,
         { cause: error }
       )
     })

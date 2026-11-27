@@ -1,4 +1,5 @@
 import type { GitHistoryRefs } from '../git/history/git-history-types'
+import type { MobileBotSetup } from '../bots/mobile-bot-setup'
 import type { BotChatFold } from '../bots/bot-chat-tree'
 import type { JiraQuickFilterState } from '../jira/jira-quick-filters'
 import type { BrowserDevToolsDockLayout } from '../browser/devtools/browser-devtools-dock'
@@ -200,6 +201,8 @@ export type PersistedUIState = {
   setupGuideBrowserMilestoneMigrated?: boolean
   /** Existing users who completed/dismissed the pre-browser checklist stay complete after the browser milestone is added. */
   setupGuideBrowserMilestoneLegacyComplete?: boolean
+  /** The onboarding checklist's mobile bot pick and the bots named for it; completion is derived from live bot lists. */
+  mobileBotSetup?: MobileBotSetup
   /** User-dismissed browser import toolbar hint; import stays available from Settings > Browser and the overflow menu. */
   browserImportHintHidden?: boolean
   /** Why: Windows-only. Set once on first hide to tray so the "Orca is still running" notice shows only once. */

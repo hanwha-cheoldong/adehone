@@ -11,6 +11,7 @@ import type { OrcaHookTrustKind } from '../../../../../shared/workspace-setup/ho
 import type { SettingsNavigationTarget } from '../../../components/settings/navigation/settings-navigation-types'
 import type { ExecutionHostId } from '../../../../../shared/execution-host/execution-host'
 import type { WslMovedProject } from '../../../../../shared/wsl-move/wsl-moved-project'
+import type { MobileBotSetup } from '../../../../../shared/bots/mobile-bot-setup'
 
 export type WorktreeCardsIntroChoice = 'new' | 'classic'
 
@@ -121,6 +122,8 @@ export type UISliceContextual = {
   setupGuideBrowserMilestoneMigrated: boolean
   setupGuideBrowserMilestoneLegacyComplete: boolean
   markSetupGuideBrowserMilestoneMigrated: (legacyComplete: boolean) => void
+  mobileBotSetup: MobileBotSetup | null
+  setMobileBotSetup: (setup: MobileBotSetup) => void
   browserImportHintHidden: boolean
   setBrowserImportHintHidden: (hidden: boolean) => void
   mobileEmulatorTabIntroDismissed: boolean

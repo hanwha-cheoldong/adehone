@@ -26,6 +26,7 @@ import {
 } from '../../applying-settings/onboarding-normalization'
 import type { PersistedState } from '../../../../shared/orca-profiles/persisted-state-types'
 import type { OnboardingState } from '../../../../shared/onboarding/onboarding-state-types'
+import { parseMobileBotSetup } from '../../../../shared/bots/mobile-bot-setup'
 
 export function normalizeLoadedUiState(
   parsed: PersistedState,
@@ -226,6 +227,7 @@ export function normalizeLoadedUiState(
         : false,
     setupGuideBrowserMilestoneLegacyComplete:
       parsed.ui?.setupGuideBrowserMilestoneLegacyComplete === true,
+    mobileBotSetup: parseMobileBotSetup(parsed.ui?.mobileBotSetup),
     // Persist pending notices before windows exist so a crash cannot discard them.
     osc52ClipboardDefaultOnNoticePending: osc52ClipboardNoticePending,
     sortBy: migrate ? ('smart' as const) : sort,

@@ -148,6 +148,7 @@ export const UI_STATE_GLOBAL_FIELDS = [
   'setupGuideSidebarDismissed',
   'setupGuideBrowserMilestoneMigrated',
   'setupGuideBrowserMilestoneLegacyComplete',
+  'mobileBotSetup',
   'browserImportHintHidden',
   'trayMinimizeNoticeShown',
   'mobileEmulatorTabIntroDismissed',

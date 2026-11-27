@@ -40,6 +40,7 @@ import {
   type BotHostConnectorStatus,
   readHasBot,
   readBotHostIds,
+  readBotHostListed,
   readHostBots,
   stampBotHost,
   subscribeToBotChanges
@@ -65,6 +66,7 @@ import { requestNativeChatComposerFocus } from '../components/native-chat/compos
 import { structuredAgentSessionDraftScopeKey } from '../components/native-chat/drafts/native-chat-draft-scope'
 
 export { isHome, readBots, readHostBots, refreshBotHost, refreshBots, subscribeToBotChanges }
+export { readBotHostListed, subscribe as subscribeToLoadedBots }
 
 const NO_BOTS: readonly Bot[] = []
 

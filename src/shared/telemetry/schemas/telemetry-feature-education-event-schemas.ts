@@ -8,7 +8,7 @@ import {
   SETUP_GUIDE_SOURCES,
   TERMINAL_PANE_SPLIT_SOURCES
 } from '../../feature-education/feature-education-telemetry'
-import { FEATURE_WALL_SETUP_STEP_IDS } from '../../feature-education/explore/feature-wall-setup-steps'
+import { FEATURE_WALL_SETUP_CORE_STEP_IDS } from '../../feature-education/explore/feature-wall-setup-steps'
 
 export const featureEducationSourceSchema = lazyZodSchema(() => z.enum(FEATURE_EDUCATION_SOURCES))
 export const featureEducationContextualTourIdSchema = lazyZodSchema(() =>
@@ -16,9 +16,9 @@ export const featureEducationContextualTourIdSchema = lazyZodSchema(() =>
 )
 export const setupGuideSourceSchema = lazyZodSchema(() => z.enum(SETUP_GUIDE_SOURCES))
 export const setupGuideCloseOutcomeSchema = lazyZodSchema(() => z.enum(SETUP_GUIDE_CLOSE_OUTCOMES))
-export const setupGuideStepIdSchema = lazyZodSchema(() => z.enum(FEATURE_WALL_SETUP_STEP_IDS))
+export const setupGuideStepIdSchema = lazyZodSchema(() => z.enum(FEATURE_WALL_SETUP_CORE_STEP_IDS))
 export const setupGuideStepIdOrNoneSchema = lazyZodSchema(() =>
-  z.enum([...FEATURE_WALL_SETUP_STEP_IDS, 'none'] as const)
+  z.enum([...FEATURE_WALL_SETUP_CORE_STEP_IDS, 'none'] as const)
 )
 export const terminalPaneSplitSourceSchema = lazyZodSchema(() =>
   z.enum(TERMINAL_PANE_SPLIT_SOURCES)
