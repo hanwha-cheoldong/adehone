@@ -1,8 +1,10 @@
 import type { BotTemplate } from '../bot-templates'
+import { BOT_TEMPLATES_ADEHONE_CODING } from './adehone-coding'
 import { BOT_TEMPLATES_MOBILE_CODING } from './mobile-coding'
 
 export const BOT_TEMPLATES_CODING: readonly BotTemplate[] = [
   ...BOT_TEMPLATES_MOBILE_CODING,
+  ...BOT_TEMPLATES_ADEHONE_CODING,
   {
     id: 'pr-review',
     category: 'coding',

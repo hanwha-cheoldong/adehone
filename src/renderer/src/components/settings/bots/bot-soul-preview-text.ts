@@ -1,4 +1,8 @@
 // Translates known template/proposal SOUL.md headings and lines for the read-only preview.
+import {
+  ADEHONE_DEV_DO_RULES,
+  ADEHONE_DEV_DONT_RULES
+} from '../../../../../shared/bots/adehone-dev-soul-rules'
 import { botTemplateText } from '../../../../../shared/bots/bot-template-text'
 
 type Translate = (key: string, fallback: string, values?: Record<string, unknown>) => string
@@ -10,11 +14,16 @@ const entry = (key: string, text: string): [string, { key: string; fallback: str
   { key, fallback: text }
 ]
 
+const ruleEntries = (keyPrefix: string, rules: readonly string[]) =>
+  rules.map((rule, index) => entry(`${keyPrefix}.${index}`, rule.slice('- '.length)))
+
 const KNOWN_LINES: ReadonlyMap<string, { key: string; fallback: string }> = new Map([
   entry(
     'bots.soul.readOnlyStart',
     'Change anything (comments, labels, pull requests, posts anywhere but here) until my owner says I can. I start by reading and reporting only.'
   ),
+  ...ruleEntries('bots.templates.adehone-dev.soulDo', ADEHONE_DEV_DO_RULES),
+  ...ruleEntries('bots.templates.adehone-dev.soulDont', ADEHONE_DEV_DONT_RULES),
   entry(
     'bots.templates.android-dev.soulDo.0',
     'Plan every non-trivial feature or refactor with `android-planner` (Requirements -> Search-First & Architecture Review -> Phased Steps -> Testing Strategy & Risks) before editing code.'
