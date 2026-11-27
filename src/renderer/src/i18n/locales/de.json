@@ -187,11 +187,11 @@
         "serviceUnconfirmed": "Der WSL-Dienst hat nicht bestätigt, ob die Distribution läuft.",
         "peerCheckFailed": "Adehone konnte den WSL-Host nicht fragen, ob eine andere Adehone-Instanz auf diesem Computer ihn noch nutzt: {{detail}}",
         "removalUnrecorded": "Adehone konnte nicht erfassen, was nach dem Entfernen noch läuft: {{detail}}",
-        "installLockWait_one": "Warte, bis eine andere Orca-Installation in dieser Distribution fertig ist. Andernfalls übernimmt Orca in etwa {{count}} Minute.",
-        "installLockWait_other": "Warte, bis eine andere Orca-Installation in dieser Distribution fertig ist. Andernfalls übernimmt Orca in etwa {{count}} Minuten.",
-        "installLockWaitGivesUp_one": "Warte, bis eine andere Orca-Installation in dieser Distribution fertig ist. Andernfalls hört Orca in etwa {{count}} Minute auf zu warten.",
-        "installLockWaitGivesUp_other": "Warte, bis eine andere Orca-Installation in dieser Distribution fertig ist. Andernfalls hört Orca in etwa {{count}} Minuten auf zu warten.",
-        "installLockWaitHolderGone": "Die andere Orca-Installation in dieser Distribution wurde beendet. Orca übernimmt in wenigen Sekunden."
+        "installLockWait_one": "Warte, bis eine andere Adehone-Installation in dieser Distribution fertig ist. Andernfalls übernimmt Adehone in etwa {{count}} Minute.",
+        "installLockWait_other": "Warte, bis eine andere Adehone-Installation in dieser Distribution fertig ist. Andernfalls übernimmt Adehone in etwa {{count}} Minuten.",
+        "installLockWaitGivesUp_one": "Warte, bis eine andere Adehone-Installation in dieser Distribution fertig ist. Andernfalls hört Adehone in etwa {{count}} Minute auf zu warten.",
+        "installLockWaitGivesUp_other": "Warte, bis eine andere Adehone-Installation in dieser Distribution fertig ist. Andernfalls hört Adehone in etwa {{count}} Minuten auf zu warten.",
+        "installLockWaitHolderGone": "Die andere Adehone-Installation in dieser Distribution wurde beendet. Adehone übernimmt in wenigen Sekunden."
       }
     },
     "agentSummary": {
@@ -281,13 +281,13 @@
       "hidden": "{{name}} ausgeblendet",
       "hiddenDescription": "Die zugehörigen Terminals und Agenten laufen weiter. Unter „Ausgeblendete Projekte“ unterhalb der Liste lässt es sich wieder anzeigen.",
       "undo": "Rückgängig machen",
-      "hideFailed": "{{name}} konnte nicht ausgeblendet werden. Möglicherweise benötigt der zugehörige Host ein Orca-Update.",
+      "hideFailed": "{{name}} konnte nicht ausgeblendet werden. Möglicherweise benötigt der zugehörige Host ein Adehone-Update.",
       "showFailed": "{{name}} konnte nicht wieder angezeigt werden.",
       "listLabel": "Ausgeblendete Projekte",
       "show": "Anzeigen",
       "showAriaLabel": "{{name}} in der Seitenleiste anzeigen",
       "settingsTitle": "Aus der Seitenleiste ausblenden",
-      "settingsDescription": "Blendet die Kopie des Projekts auf diesem Host in der Seitenleiste, den Projektauswahlen und der Arbeitsbereichsauswahl aus. Die zugehörigen Terminals, Agenten und Automatisierungen laufen weiter. Auf einem gekoppelten Orca-Server wird es dadurch für alle ausgeblendet, die mit diesem Server verbunden sind.",
+      "settingsDescription": "Blendet die Kopie des Projekts auf diesem Host in der Seitenleiste, den Projektauswahlen und der Arbeitsbereichsauswahl aus. Die zugehörigen Terminals, Agenten und Automatisierungen laufen weiter. Auf einem gekoppelten Adehone-Server wird es dadurch für alle ausgeblendet, die mit diesem Server verbunden sind.",
       "settingsToggleLabel": "{{name}} aus der Seitenleiste ausblenden",
       "keywordHide": "Ausblenden",
       "keywordHidden": "Ausgeblendet",
@@ -295,7 +295,7 @@
       "hideFromSidebar": "Aus der Seitenleiste ausblenden",
       "sectionTitle": "Ausgeblendete Projekte ({{count}})",
       "allHidden": "Alle Projekte sind ausgeblendet. Unter „Ausgeblendete Projekte“ unten lässt sich eines wieder anzeigen.",
-      "undoGone": "{{name}} wurde aus Orca entfernt.",
+      "undoGone": "{{name}} wurde aus Adehone entfernt.",
       "settingsGroup": "Seitenleiste",
       "showOnHostAriaLabel": "{{name}} auf {{host}} in der Seitenleiste anzeigen",
       "keywordShow": "Anzeigen",
@@ -333,10 +333,10 @@
     "googleCookieClear": {
       "signInKeyword": "Anmeldung",
       "unavailable": "Für dieses Profil auf dem ausgewählten Host nicht verfügbar.",
-      "explanation": "Google bindet Anmeldungen an den Browser, in dem sie erfolgt sind, daher importiert Orca keine Google-Cookies aus anderen Browsern. Wenn Google am falschen Konto hängt oder dich immer wieder abmeldet, lösche die Google-Cookies aus dem aktiven Profil und melde dich dann in Orca erneut bei Google an. Andere Websites bleiben angemeldet.",
+      "explanation": "Google bindet Anmeldungen an den Browser, in dem sie erfolgt sind, daher importiert Adehone keine Google-Cookies aus anderen Browsern. Wenn Google am falschen Konto hängt oder dich immer wieder abmeldet, lösche die Google-Cookies aus dem aktiven Profil und melde dich dann in Adehone erneut bei Google an. Andere Websites bleiben angemeldet.",
       "action": "Google-Cookies löschen…",
       "confirmTitle": "Google-Cookies aus {{profile}} löschen?",
-      "confirmDescription": "Du wirst in Orcas Browser für dieses Profil von Google abgemeldet. Andere Websites bleiben angemeldet.",
+      "confirmDescription": "Du wirst in Adehones Browser für dieses Profil von Google abgemeldet. Andere Websites bleiben angemeldet.",
       "clear": "Löschen",
       "cancel": "Abbrechen",
       "cleared": "Google-Cookies aus {{profile}} gelöscht.",
@@ -774,9 +774,9 @@
         "restartingAdministrator": "Wird neu gestartet…",
         "administratorSearchDescription": "Windows-Berechtigungen von Adehone anzeigen oder mit Administratorbestätigung neu starten.",
         "10aafff216": "„Sitzungen verwalten“ öffnen",
-        "confirmOrcaAdministratorRestart": "Orca als Administrator neu starten?",
+        "confirmOrcaAdministratorRestart": "Adehone als Administrator neu starten?",
         "administratorRestartSummary": "Lokale Terminals und Agenten werden geschlossen. Windows fragt nach deiner Bestätigung.",
-        "orcaCouldNotRestart": "Orca konnte nicht neu starten.",
+        "orcaCouldNotRestart": "Adehone konnte nicht neu starten.",
         "manualAdministratorSteps": "Manuelle Schritte",
         "restartOrca": "Neu starten"
       },
@@ -788,7 +788,7 @@
         "shared": "Wird mit anderen Terminal-Apps geteilt. Dies ist die Gesamtkapazität, keine freien Plätze.",
         "disconnected": "Dieser Host ist getrennt. Verbinde dich erneut, um sein Terminal-Limit anzuzeigen oder zu ändern.",
         "unsupported": "Der Terminaldienst dieses Hosts unterstützt das Ändern dieses Limits noch nicht.",
-        "environment": "Für diese Orca-Instanz ist ein Terminal-Limit über ihre Umgebung festgelegt. Entferne die Überschreibung auf diesem Host, um es hier zu bearbeiten.",
+        "environment": "Für diese Adehone-Instanz ist ein Terminal-Limit über ihre Umgebung festgelegt. Entferne die Überschreibung auf diesem Host, um es hier zu bearbeiten.",
         "savedUnreadable": "Das gespeicherte Terminal-Limit dieses Hosts konnte nicht gelesen werden. {{value}} wird verwendet. Gib einen Wert ein und drücke Enter, um es zu ersetzen.",
         "failed": "Das Terminal-Limit konnte nicht bestätigt werden. Versuche es erneut.",
         "retry": "Erneut versuchen",
@@ -1056,7 +1056,7 @@
           "touchId": "Touch ID"
         },
         "authFailed": "Deine Identität konnte nicht bestätigt werden",
-        "copied": "Passwort kopiert. Orca entfernt es in 2 Minuten aus der Zwischenablage.",
+        "copied": "Passwort kopiert. Adehone entfernt es in 2 Minuten aus der Zwischenablage.",
         "search": "{{count}} Passwörter durchsuchen",
         "add": "Hinzufügen",
         "noMatches": "Keine gespeicherten Passwörter gefunden.",
@@ -1089,38 +1089,38 @@
           "note": "Notiz",
           "cancel": "Abbrechen",
           "save": "Speichern",
-          "description": "Orca füllt es aus, wenn du es unter einem Anmeldefeld auf dieser Website auswählst.",
+          "description": "Adehone füllt es aus, wenn du es unter einem Anmeldefeld auf dieser Website auswählst.",
           "usernamePlaceholder": "E-Mail oder Benutzername",
           "addNote": "Notiz hinzufügen"
         },
         "hide": "Passwort ausblenden",
         "show": "Passwort anzeigen",
         "offerToSave": "Speichern von Passwörtern anbieten",
-        "offerToSaveDescription": "Nach der Anmeldung auf einer Website in Orcas Browser anbieten, die Anmeldedaten zu speichern.",
+        "offerToSaveDescription": "Nach der Anmeldung auf einer Website in Adehones Browser anbieten, die Anmeldedaten zu speichern.",
         "fillReauth": "Vor dem Ausfüllen nach Touch ID fragen",
         "fillReauthDescription": "Für einen gemeinsam genutzten Computer. Beim Anzeigen oder Kopieren eines Passworts wird bereits gefragt.",
         "noReauth": "Dieser Computer kann deine Identität nicht mit Touch ID bestätigen, daher werden Passwörter ohne Prüfung angezeigt und ausgefüllt.",
-        "reauthUnavailable": "Touch ID kann gerade nicht verwendet werden, daher zeigt, kopiert oder füllt Orca kein Passwort aus, das Touch ID erfordert.",
+        "reauthUnavailable": "Touch ID kann gerade nicht verwendet werden, daher zeigt, kopiert oder füllt Adehone kein Passwort aus, das Touch ID erfordert.",
         "import": "Importieren",
         "importCsv": "Aus einer CSV-Datei…",
         "deleteAllTitle": "Alle Passwortdaten löschen",
         "deleteAllDescription": "Alle gespeicherten Passwörter, Notizen und Websites, für die nie gespeichert wird, im Profil {{profile}}.",
-        "empty": "Orca bietet nach deiner Anmeldung an, die Anmeldedaten zu speichern. Du kannst sie auch aus einem anderen Browser oder einer CSV-Datei übernehmen.",
+        "empty": "Adehone bietet nach deiner Anmeldung an, die Anmeldedaten zu speichern. Du kannst sie auch aus einem anderen Browser oder einer CSV-Datei übernehmen.",
         "account": "{{username}} auf {{site}}",
         "lastUsed": "Verwendet {{when}}",
         "copyFor": "Passwort für {{account}} kopieren",
         "editFor": "{{account}} bearbeiten",
         "moreActions": "Weitere Aktionen für {{account}}",
         "accountCount": "{{count}} Konten",
-        "deleteConfirmDescription": "Orca füllt es nicht mehr aus. Dies kann nicht rückgängig gemacht werden.",
+        "deleteConfirmDescription": "Adehone füllt es nicht mehr aus. Dies kann nicht rückgängig gemacht werden.",
         "deleteConfirm": "Löschen",
-        "profileDescription": "Gespeicherte Anmeldedaten für das Profil {{profile}}. Orca füllt sie nur aus, wenn du sie unter einem Anmeldefeld auswählst.",
+        "profileDescription": "Gespeicherte Anmeldedaten für das Profil {{profile}}. Adehone füllt sie nur aus, wenn du sie unter einem Anmeldefeld auswählst.",
         "unavailableTitle": "Gespeicherte Passwörter sind auf diesem Computer deaktiviert",
         "emptyTitle": "Noch keine gespeicherten Passwörter",
         "searchLabel": "Passwörter durchsuchen",
         "deleteAllAction": "Löschen…",
         "title": "Passwörter",
-        "description": "Gespeicherte Anmeldedaten für Orcas Browser: hinzufügen, importieren, bearbeiten und löschen.",
+        "description": "Gespeicherte Anmeldedaten für Adehones Browser: hinzufügen, importieren, bearbeiten und löschen.",
         "httpSuffix": " · http"
       },
       "memorySaver": {
@@ -1236,7 +1236,7 @@
       "defaultSurfaceKeptChat_other": "{{agents}} bleiben wie eingestellt Chats.",
       "defaultSurfaceSetAllChat": "Alle auf Chat setzen",
       "defaultSurfaceSetAllTerminal": "Alle auf Terminal setzen",
-      "modelListFallback": "Integrierte Liste. Orca konnte von diesem Host keine Modellliste abrufen.",
+      "modelListFallback": "Integrierte Liste. Adehone konnte von diesem Host keine Modellliste abrufen.",
       "chatUnavailableOnWindows": "{{value0}} Chat ist unter Windows noch nicht verfügbar, daher öffnet sich {{value0}} auf diesem Host in einem Terminal. Chats auf einem macOS- oder Linux-Host funktionieren weiterhin.",
       "undetectedCommandHint": "Wenn die {{agent}}-CLI außerhalb von PATH installiert ist, gib den vollständigen Pfad zu ihrer ausführbaren Datei auf diesem Host ein.",
       "agentActions": "Aktionen für {{agent}}",
@@ -1255,8 +1255,8 @@
     "followSymlinkedDirectories": "Symbolischen Verzeichnislinks folgen",
     "followSymlinkedDirectoriesDescription": "Verknüpfte Ordner beim Schnellöffnen durchsuchen und lokale verknüpfte Ordner im Datei-Explorer aufklappen.",
     "accounts": {
-      "codexRemoveHome": "Orca löscht den Codex-Ordner dieses Kontos auf {{host}}, einschließlich seiner Anmeldung und MCP-Logins. Dies kann nicht rückgängig gemacht werden. Ist es ausgewählt, verwendet der nächste gestartete Codex den Systemstandard.",
-      "claudeRemoveProfile": "Orca löscht den eigenen Claude-Ordner dieses Kontos und die darin gespeicherte Anmeldung auf {{host}}. Deine Systemstandard-Anmeldung und der damit geteilte Chatverlauf bleiben erhalten. Ist es ausgewählt, verwendet der nächste gestartete Claude den Systemstandard."
+      "codexRemoveHome": "Adehone löscht den Codex-Ordner dieses Kontos auf {{host}}, einschließlich seiner Anmeldung und MCP-Logins. Dies kann nicht rückgängig gemacht werden. Ist es ausgewählt, verwendet der nächste gestartete Codex den Systemstandard.",
+      "claudeRemoveProfile": "Adehone löscht den eigenen Claude-Ordner dieses Kontos und die darin gespeicherte Anmeldung auf {{host}}. Deine Systemstandard-Anmeldung und der damit geteilte Chatverlauf bleiben erhalten. Ist es ausgewählt, verwendet der nächste gestartete Claude den Systemstandard."
     },
     "sourceControl": {
       "gitOperationInAnotherWorkspace": "Git-Vorgang läuft anderswo",
@@ -1342,8 +1342,8 @@
       "cli": {
         "title": "Befehlszeile",
         "otherTerminals": "{{command}} in anderen Terminals",
-        "skillTitle": "Orca-Skill für Agenten",
-        "description": "Orcas eigene Terminals haben es bereits."
+        "skillTitle": "Adehone-Skill für Agenten",
+        "description": "Adehones eigene Terminals haben es bereits."
       },
       "previewTabs": {
         "title": "Vorschau-Tabs",
@@ -1384,7 +1384,7 @@
       },
       "about": {
         "title": "Info",
-        "version": "Orca {{version}}"
+        "version": "Adehone {{version}}"
       },
       "inlineBlameTitle": "Inline-Git-Blame",
       "inlineBlameDescription": "Am Ende der Zeile anzeigen, wer die Zeile am Cursor zuletzt geändert hat und wann.",
@@ -1582,14 +1582,14 @@
       "example": "Beispiel: in jedem Repo einen Worktree erstellen (nur auf diesem Computer)",
       "useExample": "Dieses Beispiel verwenden",
       "description": "Skripte, die in diesem Ordner ausgeführt werden, wenn ein Arbeitsbereich erstellt wird. Alle Arbeitsbereiche teilen sich den Ordner. Lokale Skripte werden auf diesem Computer gespeichert; `orca.yaml`-Skripte werden mit deinem Team geteilt.",
-      "invalidSetup": "Die Datei ist vorhanden, aber Orca konnte kein gültiges Einrichtungsskript finden.",
+      "invalidSetup": "Die Datei ist vorhanden, aber Adehone konnte kein gültiges Einrichtungsskript finden.",
       "supportedKeys": "Definiere nur die unterstützten Schlüssel: `scripts` und `setup`.",
       "supportedArchiveKeys": "Definiere nur die unterstützten Schlüssel: `scripts`, `setup` und `archive`.",
-      "invalidArchive": "Die Datei ist vorhanden, aber Orca konnte kein gültiges Einrichtungs- oder Archivierungsskript finden."
+      "invalidArchive": "Die Datei ist vorhanden, aber Adehone konnte kein gültiges Einrichtungs- oder Archivierungsskript finden."
     },
     "uninstall": {
       "groupTitle": "Deinstallieren",
-      "title": "Orca deinstallieren",
+      "title": "Adehone deinstallieren",
       "searchDescription": "Agenten-Hooks, den Befehl orca, den Server orca serve und Hooks auf SSH-Hosts entfernen.",
       "keywords": {
         "uninstall": "deinstallieren",
@@ -1599,20 +1599,20 @@
         "hooks": "Hooks"
       },
       "copyCommand": "Befehl kopieren",
-      "quit": "Orca beenden",
+      "quit": "Adehone beenden",
       "next": {
-        "unknown": "Beende Orca und lösche dann die App.",
-        "macApp": "Beende Orca und ziehe es dann aus „Programme“ in den Papierkorb.",
-        "homebrew": "Orca wurde mit Homebrew installiert. Führe dies aus, um die App zu entfernen:",
+        "unknown": "Beende Adehone und lösche dann die App.",
+        "macApp": "Beende Adehone und ziehe es dann aus „Programme“ in den Papierkorb.",
+        "homebrew": "Adehone wurde mit Homebrew installiert. Führe dies aus, um die App zu entfernen:",
         "linuxPackage": "Führe dies aus, um das Paket zu entfernen:",
-        "windows": "Schließe den Vorgang im Windows-Deinstallationsprogramm ab. Orca wird beendet, sobald das Deinstallationsprogramm geöffnet wird.",
-        "appImage": "Beende Orca und lösche dann <path>{{path}}</path>."
+        "windows": "Schließe den Vorgang im Windows-Deinstallationsprogramm ab. Adehone wird beendet, sobald das Deinstallationsprogramm geöffnet wird.",
+        "appImage": "Beende Adehone und lösche dann <path>{{path}}</path>."
       },
       "openUninstaller": "Deinstallationsprogramm öffnen",
-      "agentStatusOff": "Der Agentenstatus ist aus. Orca fügt keine Hooks mehr hinzu, es sei denn, du aktivierst ihn unter Einstellungen → Agenten.",
-      "loadFailed": "Orca konnte nicht prüfen, was es installiert hat.",
+      "agentStatusOff": "Der Agentenstatus ist aus. Adehone fügt keine Hooks mehr hinzu, es sei denn, du aktivierst ihn unter Einstellungen → Agenten.",
+      "loadFailed": "Adehone konnte nicht prüfen, was es installiert hat.",
       "tryAgain": "Erneut versuchen",
-      "keeps": "Projekte, Worktrees und Orca-Einstellungen bleiben erhalten.",
+      "keeps": "Projekte, Worktrees und Adehone-Einstellungen bleiben erhalten.",
       "keepsShared": "{{name}} ist ebenfalls installiert, daher bleiben gemeinsam genutzte Hooks erhalten.",
       "closesTerminals": "Geöffnete Terminals werden geschlossen.",
       "removing": "Wird entfernt…",
@@ -1633,8 +1633,8 @@
         "sshHosts_other": "{{count}} SSH-Hosts"
       },
       "path": {
-        "codexAccount": "Von Orca verwaltetes Codex-Konto",
-        "appData": "Orca-App-Daten"
+        "codexAccount": "Von Adehone verwaltetes Codex-Konto",
+        "appData": "Adehone-App-Daten"
       },
       "host": {
         "ssh": "SSH",
@@ -1649,11 +1649,11 @@
         "terminalDaemon": "der Terminal-Hintergrundprozess",
         "hookScripts": "Hook-Skripte",
         "nothing": "Außerhalb der App gibt es nichts zu entfernen.",
-        "loading": "Es wird geprüft, was Orca installiert hat…",
+        "loading": "Es wird geprüft, was Adehone installiert hat…",
         "done": "Entfernt. Lösche die App, um den Vorgang abzuschließen.",
         "problems_one": "Kläre noch 1 offenen Punkt, bevor du die App löschst.",
         "problems_other": "Kläre noch {{count}} offene Punkte, bevor du die App löschst.",
-        "stillInUse": "Einige Orca-Dateien werden noch verwendet und bleiben daher vorerst erhalten."
+        "stillInUse": "Einige Adehone-Dateien werden noch verwendet und bleiben daher vorerst erhalten."
       },
       "status": {
         "running": "Wird entfernt",
@@ -1661,8 +1661,8 @@
         "problem": "Erfordert Aufmerksamkeit",
         "kept": "Beibehalten"
       },
-      "stepFailed": "Orca konnte diesen Schritt nicht abschließen.",
-      "finishFailed": "Orca konnte das nicht ausführen."
+      "stepFailed": "Adehone konnte diesen Schritt nicht abschließen.",
+      "finishFailed": "Adehone konnte das nicht ausführen."
     },
     "notifications": {
       "perfNotices": {
@@ -1719,7 +1719,7 @@
       "reducedEffects": "Deaktiviert, solange „Visuelle Effekte reduzieren“ oder die Systemeinstellung „Transparenz reduzieren“ aktiv ist.",
       "needsOpacity": "Senke die Hintergrunddeckkraft unter 1, um den Desktop durch die Terminals zu sehen.",
       "linuxCompositor": "Dein Compositor entscheidet, ob er es unscharf darstellt. Erfordert einen Neustart.",
-      "restartDescription": "Starte Orca neu, um die Änderung des Fenstermaterials anzuwenden.",
+      "restartDescription": "Starte Adehone neu, um die Änderung des Fenstermaterials anzuwenden.",
       "keywords": {
         "acrylic": "Acryl"
       },
@@ -1728,7 +1728,7 @@
     },
     "automaticUpdates": {
       "title": "Automatische Updates",
-      "description": "Bei unterstützten Desktop-Installationen lädt Orca verfügbare Updates bei der regulären Prüfung herunter und startet zur Installation automatisch neu.",
+      "description": "Bei unterstützten Desktop-Installationen lädt Adehone verfügbare Updates bei der regulären Prüfung herunter und startet zur Installation automatisch neu.",
       "info": "Über automatische Updates",
       "saveFailed": "Die Einstellung für automatische Updates konnte nicht gespeichert werden."
     },
@@ -1743,7 +1743,7 @@
       "signInFailedDetail": "Der Browser hat sie trotzdem geöffnet. Dort anmelden, um fortzufahren."
     },
     "mobile": {
-      "teamDisabledRelay": "Orca Relay ist vom Team ausgeschaltet. LAN verwenden."
+      "teamDisabledRelay": "Adehone Relay ist vom Team ausgeschaltet. LAN verwenden."
     },
     "computerUse": {
       "teamDisabled": "Computer Use ist vom Team ausgeschaltet."
@@ -1761,14 +1761,14 @@
       "ab7e864374": "Info zur Update-Verzögerung",
       "ee1d96f74a": "Verzögerung einmal überspringen",
       "teamManaged": "Vom Team festgelegt",
-      "description": "Nach Veröffentlichung einer Version wartet Orca so viele Tage, bevor es sie anbietet.",
+      "description": "Nach Veröffentlichung einer Version wartet Adehone so viele Tage, bevor es sie anbietet.",
       "none": "Keine",
       "availableSoon": "Für dich verfügbar {{relative}}",
       "availableOn": "Für dich verfügbar am {{date}} ({{relative}})",
-      "clearedTitle": "Orca {{version}} ist verfügbar",
-      "heldTitle": "Orca {{version}} wird später angeboten",
+      "clearedTitle": "Adehone {{version}} ist verfügbar",
+      "heldTitle": "Adehone {{version}} wird später angeboten",
       "released": "Veröffentlicht am {{released}}",
-      "progress": "Zeit bis Orca {{version}} verfügbar ist",
+      "progress": "Zeit bis Adehone {{version}} verfügbar ist",
       "skipDelayOnceHint": "Jetzt nach dieser Version suchen. Die Verzögerungseinstellung bleibt unverändert.",
       "upToDateWithHeld": "Du bist auf dem aktuellen Stand. Eine neuere Version wird bis {{date}} zurückgehalten.",
       "heldReleaseReady": "Eine neuere Version ist verfügbar. Suche nach Updates, um sie zu erhalten.",
@@ -1815,10 +1815,10 @@
         "staleTerminals_other": "{{count}} Agenten-Terminals verwenden eine ältere MCP-Einrichtung",
         "staleTerminalsOnHost_one": "{{count}} Agenten-Terminal auf {{host}} verwendet eine ältere MCP-Einrichtung",
         "staleTerminalsOnHost_other": "{{count}} Agenten-Terminals auf {{host}} verwenden eine ältere MCP-Einrichtung",
-        "staleTerminalsRestart_one": "Starte es neu, um Orcas MCP-Server wieder zu verbinden.",
-        "staleTerminalsRestart_other": "Starte sie neu, um Orcas MCP-Server wieder zu verbinden.",
-        "staleTerminalsRestartManual_one": "Starte es selbst neu, um Orcas MCP-Server wieder zu verbinden.",
-        "staleTerminalsRestartManual_other": "Starte sie selbst neu, um Orcas MCP-Server wieder zu verbinden.",
+        "staleTerminalsRestart_one": "Starte es neu, um Adehones MCP-Server wieder zu verbinden.",
+        "staleTerminalsRestart_other": "Starte sie neu, um Adehones MCP-Server wieder zu verbinden.",
+        "staleTerminalsRestartManual_one": "Starte es selbst neu, um Adehones MCP-Server wieder zu verbinden.",
+        "staleTerminalsRestartManual_other": "Starte sie selbst neu, um Adehones MCP-Server wieder zu verbinden.",
         "staleTerminalsRestartSome_one": "Davon kannst du {{restartable}} hier fortsetzen. Starte das andere selbst neu.",
         "staleTerminalsRestartSome_other": "Davon kannst du {{restartable}} hier fortsetzen. Starte die anderen {{count}} selbst neu.",
         "addedMany": "{{count}} Server hinzugefügt",
@@ -1826,8 +1826,8 @@
         "repoOff": "{{name}} in {{repo}} deaktiviert"
       },
       "fileAgent": {
-        "title": "Orca die MCP-Datei von {{agent}} bearbeiten lassen?",
-        "line": "Orca speichert deine MCP-Server in der Einstellungsdatei von {{agent}} ({{file}}). Deine eigenen Einträge bleiben unverändert.",
+        "title": "Adehone die MCP-Datei von {{agent}} bearbeiten lassen?",
+        "line": "Adehone speichert deine MCP-Server in der Einstellungsdatei von {{agent}} ({{file}}). Deine eigenen Einträge bleiben unverändert.",
         "allow": "Zulassen"
       },
       "agents": {
@@ -1875,14 +1875,14 @@
       },
       "found": {
         "onlyIn": "{{agents}} · nur {{projects}}",
-        "move": "Zu Orca verschieben",
+        "move": "Zu Adehone verschieben",
         "actions": "Aktionen für {{name}}",
-        "copy": "In Orca kopieren",
+        "copy": "In Adehone kopieren",
         "open": "Öffnen",
-        "copied": "{{name}} in Orca kopiert",
+        "copied": "{{name}} in Adehone kopiert",
         "title": "In deinen Agenten",
         "summary": "{{count}} Server in {{agents}} gefunden",
-        "moveAll": "Alle zu Orca verschieben"
+        "moveAll": "Alle zu Adehone verschieben"
       },
       "signedInToast": "Bei {{name}} angemeldet",
       "pasteRefused": "Diese Adresse stammt nicht von dieser Anmeldung.",
@@ -1907,10 +1907,10 @@
         "linear": "Issues und Projekte lesen und aktualisieren"
       },
       "move": {
-        "title": "{{name}} zu Orca verschieben?",
-        "allTitle": "{{count}} Server zu Orca verschieben?",
-        "line": "Orca entfernt ihn aus den Einstellungen von {{agents}} und behält eine Sicherung.",
-        "allLine": "Orca entfernt sie aus den Einstellungen von {{agents}} und behält eine Sicherung.",
+        "title": "{{name}} zu Adehone verschieben?",
+        "allTitle": "{{count}} Server zu Adehone verschieben?",
+        "line": "Adehone entfernt ihn aus den Einstellungen von {{agents}} und behält eine Sicherung.",
+        "allLine": "Adehone entfernt sie aus den Einstellungen von {{agents}} und behält eine Sicherung.",
         "confirm": "Verschieben"
       },
       "yours": "Deine",
@@ -1959,9 +1959,9 @@
     "selectAll": "Alles auswählen",
     "quitAndStopAllSessions": "Vollständig beenden…",
     "quitAndStopAllSessionsTooltip": "Beendet auch alle Terminal-Sitzungen einschließlich laufender Agenten. Beim einfachen Beenden laufen sie weiter, sodass Adehone beim nächsten Start die Verbindung wiederherstellt.",
-    "about": "Über Orca",
+    "about": "Über Adehone",
     "cut": "Ausschneiden",
-    "hide": "Orca ausblenden",
+    "hide": "Adehone ausblenden",
     "hideOthers": "Andere ausblenden",
     "minimize": "Minimieren",
     "redo": "Wiederholen",
@@ -2289,7 +2289,7 @@
             "33290e88ed": "Profil konnte nicht verbunden werden",
             "9fcb07a796": "Profil verbunden",
             "2f6c78a039": "Profil-Authentifizierung konnte nicht aktualisiert werden",
-            "a37b5e6d37": "Von Orca abgemeldet",
+            "a37b5e6d37": "Von Adehone abgemeldet",
             "83600521e7": "Abmelden fehlgeschlagen",
             "76deec8f58": "Organisation konnte nicht gewechselt werden",
             "7d4bc516ee": "Profil konnte nicht gewechselt werden",
@@ -2435,7 +2435,7 @@
             }
           },
           "availability": {
-            "web": "Der schwebende Arbeitsbereich läuft auf deinem eigenen Computer und ist daher nur in der Orca-Desktop-App verfügbar."
+            "web": "Der schwebende Arbeitsbereich läuft auf deinem eigenen Computer und ist daher nur in der Adehone-Desktop-App verfügbar."
           }
         }
       },
@@ -2617,7 +2617,7 @@
         },
         "ports": {
           "serverPortForward": {
-            "updateServer": "Port {{port}} von {{host}} konnte nicht weitergeleitet werden. Orca auf {{host}} aktualisieren und erneut versuchen.",
+            "updateServer": "Port {{port}} von {{host}} konnte nicht weitergeleitet werden. Adehone auf {{host}} aktualisieren und erneut versuchen.",
             "failed": "Port {{port}} von {{host}} konnte nicht weitergeleitet werden. Die Verbindung prüfen und erneut versuchen.",
             "forwarded": "Port {{port}} von {{host}} weitergeleitet",
             "opened": "{{address}} im Standardbrowser geöffnet.",
@@ -2773,10 +2773,10 @@
       "activateAiVaultStructuredSession": {
         "gone": "Dieser Chat befindet sich nicht mehr auf diesem Host und kann hier daher nicht erneut geöffnet werden.",
         "hostCannotOpen": "Dieser Chat kann erst nach einer Aktualisierung von Adehone erneut geöffnet werden.",
-        "notLocatedNamed": "Orca findet nicht, wo {{agent}} läuft, und kann es daher nicht öffnen.",
-        "notLocated": "Orca findet nicht, wo dieser Agent läuft, und kann ihn daher nicht öffnen.",
+        "notLocatedNamed": "Adehone findet nicht, wo {{agent}} läuft, und kann es daher nicht öffnen.",
+        "notLocated": "Adehone findet nicht, wo dieser Agent läuft, und kann ihn daher nicht öffnen.",
         "worktreeDeleted": "Der Worktree wurde gelöscht.",
-        "projectRemoved": "Das Projekt wurde aus Orca entfernt.",
+        "projectRemoved": "Das Projekt wurde aus Adehone entfernt.",
         "folderWorkspaceRemoved": "Der Ordner-Arbeitsbereich wurde entfernt.",
         "chatStillStarting": "Chat startet noch. Versuche es gleich erneut.",
         "chatOpenFailed": "Chat konnte nicht geöffnet werden",
@@ -2898,41 +2898,41 @@
       },
       "cli": {
         "detail": {
-          "registerForWsl": "{{path}} registrieren, um Orca aus WSL zu verwenden.",
-          "registerForTerminal": "{{path}} registrieren, um Orca im Terminal zu verwenden.",
-          "registerForWindowsShell": "{{path}} registrieren, um Orca aus der Eingabeaufforderung oder PowerShell zu verwenden.",
+          "registerForWsl": "{{path}} registrieren, um Adehone aus WSL zu verwenden.",
+          "registerForTerminal": "{{path}} registrieren, um Adehone im Terminal zu verwenden.",
+          "registerForWindowsShell": "{{path}} registrieren, um Adehone aus der Eingabeaufforderung oder PowerShell zu verwenden.",
           "devLauncherOnly": "Der Entwicklungsmodus verwendet einen generierten Launcher nur zur Validierung.",
           "differentLauncher": "{{path}} verweist auf einen anderen Launcher.",
-          "launcherMissing": "Der gebündelte CLI-Launcher fehlt in diesem Orca-Build.",
+          "launcherMissing": "Der gebündelte CLI-Launcher fehlt in diesem Adehone-Build.",
           "noWslDistro": "Es ist keine WSL-Distribution verfügbar.",
-          "notOrcaLauncherScript": "{{path}} existiert, ist aber kein Orca-Launcher-Skript.",
-          "notOrcaSymlink": "{{path}} existiert, ist aber kein Orca-Symlink.",
-          "olderLauncher": "{{path}} enthält einen älteren Orca-Launcher.",
+          "notOrcaLauncherScript": "{{path}} existiert, ist aber kein Adehone-Launcher-Skript.",
+          "notOrcaSymlink": "{{path}} existiert, ist aber kein Adehone-Symlink.",
+          "olderLauncher": "{{path}} enthält einen älteren Adehone-Launcher.",
           "platformUnsupported": "Die CLI-Registrierung ist auf dieser Plattform nicht implementiert.",
-          "readlinkPermissionDenied": "Orca hat keine Berechtigung, {{path}} zu prüfen. Prüfe die Berechtigungen des Pfads und seines übergeordneten Verzeichnisses und versuche es dann erneut.",
+          "readlinkPermissionDenied": "Adehone hat keine Berechtigung, {{path}} zu prüfen. Prüfe die Berechtigungen des Pfads und seines übergeordneten Verzeichnisses und versuche es dann erneut.",
           "registeredAt": "Registriert unter {{path}}.",
           "registeredInDistroAt": "In {{distro}} unter {{path}} registriert.",
           "registrationUnavailable": "Die CLI-Registrierung ist in diesem Build nicht verfügbar.",
           "unreadableSymlink": "{{path}} kann nicht gelesen werden. Registriere erneut, um das Problem zu beheben.",
           "windowsLauncherMissing": "Der Windows-Orca-CLI-Launcher fehlt.",
-          "windowsPathCheckFailed": "Der Orca-Launcher ist vorhanden, aber Orca konnte deinen Windows-Benutzer-PATH nicht prüfen.",
+          "windowsPathCheckFailed": "Der Adehone-Launcher ist vorhanden, aber Adehone konnte deinen Windows-Benutzer-PATH nicht prüfen.",
           "windowsPathTimedOut": "Der Windows-PATH-Befehl hat nach {{ms}} ms das Zeitlimit überschritten.",
           "wslCommandTimedOut": "Der WSL-Befehl hat nach {{ms}} ms das Zeitlimit überschritten.",
           "wslDistroUnreachable": "Die WSL-Distribution ist nicht erreichbar. Erneut versuchen.",
           "wslHomeUnresolved": "Das WSL-Home-Verzeichnis konnte nicht ermittelt werden.",
-          "wslInteropUnavailable": "Die WSL-Windows-Interoperabilität ist nicht verfügbar; Orca kann die Windows-CLI nicht aus WSL starten.",
+          "wslInteropUnavailable": "Die WSL-Windows-Interoperabilität ist nicht verfügbar; Adehone kann die Windows-CLI nicht aus WSL starten.",
           "wslRegistrationUnavailable": "Die WSL-CLI-Registrierung ist nicht verfügbar.",
           "wslWindowsOnly": "Die WSL-CLI-Registrierung ist nur unter Windows verfügbar."
         }
       },
       "ephemeralVm": {
-        "provisionedRootNeedsUpdate": "Der Orca-Server auf dieser VM kann kein bereitgestelltes Stammverzeichnis übernehmen. Aktualisiere Orca auf der VM."
+        "provisionedRootNeedsUpdate": "Der Adehone-Server auf dieser VM kann kein bereitgestelltes Stammverzeichnis übernehmen. Aktualisiere Adehone auf der VM."
       },
       "executionHostFacts": {
         "sshPlatformWithheld": "Der SSH-Host hat sein Betriebssystem noch nicht gemeldet. Verbinde dich mit ihm und versuche es erneut.",
-        "runtimePlatformWithheld": "Der Orca-Server hat sein Betriebssystem noch nicht gemeldet. Verbinde dich erneut mit ihm und versuche es noch einmal.",
-        "runtimePlatformUpdate": "Dieser Orca-Server meldet sein Betriebssystem nicht. Aktualisiere den Server, um darauf Agenten zu starten.",
-        "hostUnresolvedWithheld": "Orca kann noch nicht feststellen, welchem Host dieser Arbeitsbereich gehört."
+        "runtimePlatformWithheld": "Der Adehone-Server hat sein Betriebssystem noch nicht gemeldet. Verbinde dich erneut mit ihm und versuche es noch einmal.",
+        "runtimePlatformUpdate": "Dieser Adehone-Server meldet sein Betriebssystem nicht. Aktualisiere den Server, um darauf Agenten zu starten.",
+        "hostUnresolvedWithheld": "Adehone kann noch nicht feststellen, welchem Host dieser Arbeitsbereich gehört."
       },
       "fileOwnerRuntimeTarget": {
         "unresolved": "Es konnte nicht geprüft werden, welchem Host diese Datei gehört. Öffne die Datei erneut und versuche es noch einmal."
@@ -2991,7 +2991,7 @@
           "grokBillingConfigMissing": "Die Grok-Abrechnungsantwort enthielt keine Konfiguration",
           "grokBillingUsageMissing": "Die Grok-Abrechnungsantwort enthielt keine Credit-Nutzung",
           "grokNotSignedIn": "Nicht bei Grok angemeldet — führe grok login aus",
-          "grokSignInExpired": "Grok-Anmeldung abgelaufen — führe grok auf dem Computer aus, auf dem Orca läuft, und melde dich an, falls du dazu aufgefordert wirst. Eine Chatnachricht ist nicht nötig.",
+          "grokSignInExpired": "Grok-Anmeldung abgelaufen — führe grok auf dem Computer aus, auf dem Adehone läuft, und melde dich an, falls du dazu aufgefordert wirst. Eine Chatnachricht ist nicht nötig.",
           "grokUsageFailedHttp": "Grok-Nutzungsanfrage fehlgeschlagen (HTTP {{status}})",
           "grokUsageRequestFailed": "Grok-Nutzungsanfrage fehlgeschlagen",
           "grokUsageUnauthorizedHttp": "Grok-Nutzungsanfrage nicht autorisiert (HTTP {{status}})",
@@ -3085,7 +3085,7 @@
         "nativeDropUnresolvedPaths": "Adehone konnte keinen Pfad für die abgelegten Dateien lesen.",
         "nativeDropTempCopyFailed_one": "Adehone konnte {{count}} abgelegte Datei nicht kopieren.",
         "nativeDropTempCopyFailed_other": "Adehone konnte {{count}} abgelegte Dateien nicht kopieren.",
-        "nativeDropTempCopyFailed": "Orca konnte {{count}} abgelegte Dateien nicht kopieren."
+        "nativeDropTempCopyFailed": "Adehone konnte {{count}} abgelegte Dateien nicht kopieren."
       },
       "useIpcEvents": {
         "0e3cf53060": "Browser-Tab {{value0}} nicht gefunden",
@@ -3246,7 +3246,7 @@
       "GitHubItemDialog": {
         "refreshTask": "Aufgabe aktualisieren",
         "refreshTaskFailed": "Diese Aufgabe konnte nicht aktualisiert werden. Versuche es erneut.",
-        "refreshTaskUnsupported": "Aktualisiere Orca auf diesem Server, um Aufgaben hier zu aktualisieren.",
+        "refreshTaskUnsupported": "Aktualisiere Adehone auf diesem Server, um Aufgaben hier zu aktualisieren.",
         "3cd5ae5b7b": "Keine Dateien geändert.",
         "filesUnavailable": "Geänderte Dateien konnten nicht geladen werden.",
         "filesRetry": "Erneut versuchen",
@@ -5361,7 +5361,7 @@
             "fitHere": "Hier anpassen"
           },
           "legacyRelayBridge": {
-            "unreachable": "Dieses Terminal läuft auf dem Host noch unter einer älteren Orca-Version. Verbindung wird wiederhergestellt…"
+            "unreachable": "Dieses Terminal läuft auf dem Host noch unter einer älteren Adehone-Version. Verbindung wird wiederhergestellt…"
           }
         }
       },
@@ -6527,7 +6527,7 @@
         "StatsHostScope": {
           "remoteCaption": "Statistiken und Nutzung erfasst auf {{value0}}. Aktivieren und Aktualisieren wirken auf {{value0}}.",
           "tooOldTitle": "{{value0}} kann noch keine Nutzung melden",
-          "tooOldBody": "Dort läuft eine ältere Orca-Version. Aktualisiere Orca auf {{value0}}, um die Token-Nutzung hier zu sehen."
+          "tooOldBody": "Dort läuft eine ältere Adehone-Version. Aktualisiere Adehone auf {{value0}}, um die Token-Nutzung hier zu sehen."
         }
       },
       "sparse": {
@@ -6996,9 +6996,9 @@
           "updateAvailable": "Aktualisierung verfügbar",
           "repairAvailable": "Reparatur verfügbar",
           "installAvailable": "Installation verfügbar",
-          "otherBuild": "Von einer anderen Orca-Version installiert",
-          "otherBuildKept": "Beibehalten: von einer anderen Orca-Version geschrieben",
-          "differsFromOrca": "Diese Kopie weicht von Orcas Kopie ab",
+          "otherBuild": "Von einer anderen Adehone-Version installiert",
+          "otherBuildKept": "Beibehalten: von einer anderen Adehone-Version geschrieben",
+          "differsFromOrca": "Diese Kopie weicht von Adehones Kopie ab",
           "replaceMovesFolder": "Beim Ersetzen wird der gesamte Ordner einschließlich zusätzlicher Dateien nach {{folder}} verschoben.",
           "replaceMovesFolderOnHost": "Beim Ersetzen wird der gesamte Ordner einschließlich zusätzlicher Dateien nach {{folder}} auf {{host}} verschoben.",
           "replaceMovesLink": "Beim Ersetzen wird dieser Link nach {{folder}} verschoben.",
@@ -7023,13 +7023,13 @@
           "removedPreserved_other": "{{removed}} entfernt · {{count}} geänderte Skills beibehalten."
         },
         "skillFreshnessAutoUpdate": {
-          "strandedTitle": "Orca konnte deine Änderungen an {{value0}} nicht sichern",
+          "strandedTitle": "Adehone konnte deine Änderungen an {{value0}} nicht sichern",
           "strandedDescription": "Deine Änderungen befinden sich noch in {{value0}}. Kopiere sie an einen sicheren Ort, bevor du erneut aktualisierst.",
           "preservedTitle": "Deine Änderungen an {{value0}} wurden separat gespeichert",
-          "preservedDescription": "Orca hat den Skill aktualisiert und deine Änderungen in {{value0}} gespeichert.",
-          "preservedBackupOnly": "Orca hat deine Änderungen in {{value0}} gespeichert.",
-          "uncertainTitle": "Orca konnte das Skill-Update auf {{value0}} nicht bestätigen",
-          "uncertainDescriptionKept": "Orca hat die Skills auf {{value0}} möglicherweise aktualisiert, konnte das Ergebnis aber nicht bestätigen. Wenn du während des Updates einen Skill bearbeitet hast, befindet sich deine Kopie in {{value1}} oder noch im Skills-Ordner."
+          "preservedDescription": "Adehone hat den Skill aktualisiert und deine Änderungen in {{value0}} gespeichert.",
+          "preservedBackupOnly": "Adehone hat deine Änderungen in {{value0}} gespeichert.",
+          "uncertainTitle": "Adehone konnte das Skill-Update auf {{value0}} nicht bestätigen",
+          "uncertainDescriptionKept": "Adehone hat die Skills auf {{value0}} möglicherweise aktualisiert, konnte das Ergebnis aber nicht bestätigen. Wenn du während des Updates einen Skill bearbeitet hast, befindet sich deine Kopie in {{value1}} oder noch im Skills-Ordner."
         },
         "SkillBackupPathLine": {
           "movedTo": "Alte Kopie verschoben nach:",
@@ -7042,7 +7042,7 @@
           "leftoverReason": "Die übrig gebliebene Kopie kann nicht gesichert werden: Sie liegt auf einem anderen Laufwerk.",
           "movedAsideReason": "Die alte Kopie konnte nicht gesichert werden: Sie liegt auf einem anderen Laufwerk.",
           "keepIt": "Verschiebe es aus dem Skills-Ordner, um es zu behalten.",
-          "noReminder": "Verschiebe es aus dem Skills-Ordner. Orca erinnert dich nicht daran.",
+          "noReminder": "Verschiebe es aus dem Skills-Ordner. Adehone erinnert dich nicht daran.",
           "copyPathFor": "Pfad für {{value0}} kopieren",
           "copyFailed": "Der Pfad konnte nicht kopiert werden."
         }
@@ -7192,18 +7192,18 @@
           "tryAgain": "Erneut versuchen",
           "errorDetailsAt": "Fehlerdetails · {{time}}",
           "reasonNothingYet": "Noch keine Änderungen, nach denen dieser Branch benannt werden könnte.",
-          "reasonBranchChanged": "Der Branch hat sich geändert, während Orca ihn benannt hat.",
+          "reasonBranchChanged": "Der Branch hat sich geändert, während Adehone ihn benannt hat.",
           "reasonProjectMoving": "Ein Projekt wird gerade verschoben.",
-          "reasonHistoryUnreadable": "Orca konnte den Verlauf dieses Arbeitsbereichs nicht lesen. Versuche es erneut.",
-          "reasonInterrupted": "Orca konnte die Benennung des Branches nicht abschließen. Versuche es erneut.",
-          "reasonBranchPushed": "Der Branch wurde gepusht, daher hat Orca seinen Namen beibehalten.",
-          "reasonBranchRenamed": "Der Branch wurde umbenannt, daher hat Orca seinen Namen beibehalten.",
-          "reasonNameChosen": "Dieser Branch-Name wurde von Hand gewählt, daher hat Orca ihn beibehalten.",
+          "reasonHistoryUnreadable": "Adehone konnte den Verlauf dieses Arbeitsbereichs nicht lesen. Versuche es erneut.",
+          "reasonInterrupted": "Adehone konnte die Benennung des Branches nicht abschließen. Versuche es erneut.",
+          "reasonBranchPushed": "Der Branch wurde gepusht, daher hat Adehone seinen Namen beibehalten.",
+          "reasonBranchRenamed": "Der Branch wurde umbenannt, daher hat Adehone seinen Namen beibehalten.",
+          "reasonNameChosen": "Dieser Branch-Name wurde von Hand gewählt, daher hat Adehone ihn beibehalten.",
           "reasonSettingOff": "Die automatische Branch-Benennung ist in den Einstellungen deaktiviert.",
           "reasonNoDistinctName": "Der erzeugte Name stimmte mit dem aktuellen überein.",
-          "reasonFirstMessageUnavailable": "Orca konnte die erste Nachricht dieses Arbeitsbereichs nicht finden.",
+          "reasonFirstMessageUnavailable": "Adehone konnte die erste Nachricht dieses Arbeitsbereichs nicht finden.",
           "reasonAlreadyNamed": "Dieser Arbeitsbereich wurde bereits umbenannt.",
-          "reasonUnavailable": "Orca kann diesen Branch nicht mehr benennen."
+          "reasonUnavailable": "Adehone kann diesen Branch nicht mehr benennen."
         },
         "CreateProjectLocationField": {
           "95548e33bf": "Übergeordneten Ordner auswählen…",
@@ -7359,8 +7359,8 @@
           "removeDescriptionSsh": "Dies entfernt {{name}} nur aus Adehone. Die Dateien bleiben auf {{host}} — zum Wiederherstellen diesen SSH-Host erneut hinzufügen.",
           "removeDescriptionLocal": "Dies entfernt {{name}} nur aus Adehone. Es bleibt auf dem Datenträger erhalten.",
           "removeDescriptionVmRecipe": "Dies entfernt {{name}} aus Adehone. Das zugehörige VM-Rezept legt fest, ob die Umgebung und ihre Dateien dauerhaft gelöscht werden.",
-          "linkedWorkspaceWarning_one": "{{count}} Arbeitsbereich in diesem Projekt wird ebenfalls aus Orca entfernt.",
-          "linkedWorkspaceWarning_other": "{{count}} Arbeitsbereiche in diesem Projekt werden ebenfalls aus Orca entfernt.",
+          "linkedWorkspaceWarning_one": "{{count}} Arbeitsbereich in diesem Projekt wird ebenfalls aus Adehone entfernt.",
+          "linkedWorkspaceWarning_other": "{{count}} Arbeitsbereiche in diesem Projekt werden ebenfalls aus Adehone entfernt.",
           "openTerminalWarning_one": "{{count}} offenes Terminal in diesem Projekt wird geschlossen.",
           "openTerminalWarning_other": "{{count}} offene Terminals in diesem Projekt werden geschlossen."
         },
@@ -7406,9 +7406,9 @@
           "setupScript": "Einrichtungsskript",
           "archiveScript": "Archivierungsskript",
           "save": "Lokales Setup speichern",
-          "descriptionWithSource": "Aus <file>{{source}}</file>. Nach dem Speichern wird dies jedes Mal ausgeführt, wenn Orca einen Worktree für {{repo}} erstellt.",
+          "descriptionWithSource": "Aus <file>{{source}}</file>. Nach dem Speichern wird dies jedes Mal ausgeführt, wenn Adehone einen Worktree für {{repo}} erstellt.",
           "notImported": "Nicht importiert",
-          "notImportedHint": "Für diese Einstellungen gibt es in Orca keine Entsprechung, sie werden nicht gespeichert."
+          "notImportedHint": "Für diese Einstellungen gibt es in Adehone keine Entsprechung, sie werden nicht gespeichert."
         },
         "SidebarFeedbackDialog": {
           "8bf619e4cf": "Abbrechen",
@@ -8268,7 +8268,7 @@
           "sshImportSynced_one": "{{count}} Host zu Adehone hinzugefügt.",
           "sshImportSynced_other": "{{count}} Hosts zu Adehone hinzugefügt.",
           "sshConfigPickerInvalidResponse": "Ungültige Host-Antwort aus der SSH-Konfiguration",
-          "sshImportSynced": "{{value0}} Host{{value1}} zu Orca hinzugefügt."
+          "sshImportSynced": "{{value0}} Host{{value1}} zu Adehone hinzugefügt."
         },
         "ForgetSshWorkspaceDialog": {
           "cancel": "Abbrechen",
@@ -8330,7 +8330,7 @@
                 "d42f1f14e0_other": "Für {{count}} Branches erneut versuchen",
                 "0e0379f24a": "{{count}} Branches beibehalten",
                 "6310412304": "{{count}} Branches prüfen",
-                "a3cdd9d9e6": "Git hat {{count}} lokale Branches beibehalten, da sie möglicherweise nicht gemergte Commits enthalten. Beibehaltene Branches behalten keine Arbeitsbereichsordner; ihre Commits bleiben im Repository. Orca gibt möglicherweise weiterhin im Hintergrund Speicherplatz von Arbeitsbereichen frei.",
+                "a3cdd9d9e6": "Git hat {{count}} lokale Branches beibehalten, da sie möglicherweise nicht gemergte Commits enthalten. Beibehaltene Branches behalten keine Arbeitsbereichsordner; ihre Commits bleiben im Repository. Adehone gibt möglicherweise weiterhin im Hintergrund Speicherplatz von Arbeitsbereichen frei.",
                 "cea24c2b7d": "{{count}} Arbeitsbereiche entfernt",
                 "d42f1f14e0": "Für {{count}} Branches erneut versuchen"
               }
@@ -9341,7 +9341,7 @@
           "downloadUpdate": "Update herunterladen",
           "restartToUpdate": "Zum Aktualisieren neu starten",
           "versionAvailable": "Version {{version}} ist verfügbar.",
-          "externallyManagedVersionAvailable": "Version {{version}} ist verfügbar. Aktualisiere Orca über die Paketverwaltung deines Systems. Orca kann diese Version nicht selbst installieren.",
+          "externallyManagedVersionAvailable": "Version {{version}} ist verfügbar. Aktualisiere Adehone über die Paketverwaltung deines Systems. Adehone kann diese Version nicht selbst installieren.",
           "versionReadyToInstall": "Version {{version}} ist bereit zur Installation.",
           "versionInstalling": "Version {{version}} wird installiert.",
           "downloadingVersion": "Version {{version}} wird heruntergeladen ({{percent}} %)…"
@@ -9465,9 +9465,9 @@
           "prAutoRefreshHintAutomatic": "Hält Pull Requests und Checks auf dem neuesten Stand.",
           "prAutoRefreshHintLessOften": "Fragt GitHub seltener ab. Nützlich, wenn du an GitHub-Ratenlimits stößt.",
           "prAutoRefreshTitle": "PR-Updates",
-          "prAutoRefreshDescription": "Wie oft Orca GitHub auf Änderungen an Pull Requests und CI prüft.",
+          "prAutoRefreshDescription": "Wie oft Adehone GitHub auf Änderungen an Pull Requests und CI prüft.",
           "prAutoRefreshHintOff": "Aktualisiert, wenn du pushst oder auf „Aktualisieren“ klickst.",
-          "prAutoRefreshUnsupportedHost": "Aktualisiere Orca auf {{host}}, um dies zu ändern",
+          "prAutoRefreshUnsupportedHost": "Aktualisiere Adehone auf {{host}}, um dies zu ändern",
           "prAutoRefreshUnknownHost": "dem ausgewählten Server"
         },
         "HiddenExperimentalGroup": {
@@ -12970,7 +12970,7 @@
           "cleanupStopped": "Bereinigung gestoppt",
           "stopCleanupFailed": "Cloud-VM-Bereinigung konnte nicht gestoppt werden.",
           "provisioning": "Wird bereitgestellt",
-          "untrackedRuntimeHint": "Orca hat die Details dieser VM nie erhalten. Die Bereinigung führt destroy nur mit der Instanz-ID {{instanceId}} aus; schlägt das fehl, lösche die VM bei deinem Anbieter und entferne sie dann aus dieser Liste.",
+          "untrackedRuntimeHint": "Adehone hat die Details dieser VM nie erhalten. Die Bereinigung führt destroy nur mit der Instanz-ID {{instanceId}} aus; schlägt das fehl, lösche die VM bei deinem Anbieter und entferne sie dann aus dieser Liste.",
           "removeFromList": "Aus Liste entfernen",
           "removeFromListFailed": "Die Cloud-VM-Laufzeit konnte nicht aus der Liste entfernt werden.",
           "cca21fb369": "Cloud-VMs aktualisieren"
@@ -13405,7 +13405,7 @@
           "invalidArtifact": "Eine deklarierte Datei für einen Hintergrundprozess oder ein Panel fehlt oder ist unsicher. Die Plugin-Dateien korrigieren und anschließend aktualisieren.",
           "consentChanged": "Das Plugin wurde während der Prüfung geändert. Diesen Dialog schließen und die aktualisierten Berechtigungen prüfen.",
           "installGitMoved": "Das Repository hat sich geändert, nachdem Adehone es geprüft hat. Erneut versuchen.",
-          "installReservedIdentity": "Dieses Plugin verwendet einen Namen, der offiziellen Orca-Plugins vorbehalten ist, die nur aus dem Orca-Katalog installiert werden. Ändere für deine eigene Kopie oder deinen Fork \"id\" in orca-plugin.json so, dass sie nicht mit \"orca-\" beginnt, und setze \"publisher\" auf deinen eigenen Namen."
+          "installReservedIdentity": "Dieses Plugin verwendet einen Namen, der offiziellen Adehone-Plugins vorbehalten ist, die nur aus dem Adehone-Katalog installiert werden. Ändere für deine eigene Kopie oder deinen Fork \"id\" in orca-plugin.json so, dass sie nicht mit \"orca-\" beginnt, und setze \"publisher\" auf deinen eigenen Namen."
         },
         "plugins": {
           "search": {
@@ -13621,11 +13621,11 @@
           "title": "Adehone-Konto",
           "description": "Arbeit sofort teilen und von überall über Adehone Mobile auf den Desktop zugreifen.",
           "searchDescription": "Beim Konto für Artefakte und Adehone Relay anmelden oder abmelden.",
-          "managed": "Das Team verwaltet einige Orca-Einstellungen.",
+          "managed": "Das Team verwaltet einige Adehone-Einstellungen.",
           "deviceReportNamedViewers": "Inhaber und Administratoren von {{teams}} können Berichte dieses Geräts einsehen.",
           "deviceReportViewers": "Team-Inhaber und -Administratoren können Berichte dieses Geräts einsehen.",
           "reportingDetails": "Details zur Gerätemeldung",
-          "reportingDisclosure": "Die Geräteansicht zeigt Orca-Version, Update-Kanal, Gerätename, Plattform, Update-Status, erforderliche Plugins, die Orca nicht installieren konnte, und den Zeitpunkt der letzten Meldung des Geräts.",
+          "reportingDisclosure": "Die Geräteansicht zeigt Adehone-Version, Update-Kanal, Gerätename, Plattform, Update-Status, erforderliche Plugins, die Adehone nicht installieren konnte, und den Zeitpunkt der letzten Meldung des Geräts.",
           "benefitsTitle": "Im Konto enthalten",
           "artifactsTitle": "Teilen von Artefakten",
           "artifactsDescription": "HTML- und Markdown-Dateien veröffentlichen und alle geteilten Links in Adehone verwalten.",
@@ -13868,7 +13868,7 @@
             "updateAnyway": "Trotzdem aktualisieren",
             "notNow": "Jetzt nicht",
             "forceUpdate": "Auf diesem Host laufen Terminals. Sie laufen während des Updates weiter, und ihre Bereiche verbinden sich erneut, wenn der Adehone-Server neu startet.",
-            "forceUpdateUncounted": "Orca konnte die Terminals auf diesem Host nicht zählen. Das Update wird nur ausgeführt, wenn dort kein Terminal-Daemon läuft, und alle Terminals, die Orcas Server selbst ausführt, werden beendet."
+            "forceUpdateUncounted": "Adehone konnte die Terminals auf diesem Host nicht zählen. Das Update wird nur ausgeführt, wenn dort kein Terminal-Daemon läuft, und alle Terminals, die Adehones Server selbst ausführt, werden beendet."
           },
           "description": "Adehone installiert sich auf einem leeren SSH-Host und hält sich selbst aktuell.",
           "deploy": {
@@ -13973,9 +13973,9 @@
           "unsupportedUnknown": "Dieser Host wird von dieser Adehone-Version nicht unterstützt. Eine ältere Adehone-Version installieren, um ihn weiter zu verwenden.",
           "tunnelUnsupported": "Dieser Host wird von dieser Adehone-Version nicht unterstützt: Sein SSH-Server erlaubt keine Portweiterleitung, und Adehone konnte seinen Server auch nicht über die SSH-Sitzung erreichen. Eine ältere Adehone-Version installieren, um ihn weiter zu verwenden.",
           "setupRetry": "Adehone konnte seinen Server auf diesem Host nicht starten. Erneut verbinden.",
-          "setupFreeHostSpace": "Auf diesem Host ist nicht genug freier Speicherplatz, damit Orca beim Start eine Sicherung seiner Serverdaten anlegen kann. Gib auf dem Host Speicherplatz frei und verbinde dich dann erneut.",
-          "setupStopUnmanagedRuntime": "Ein Orca-Server, den diese App nicht gestartet hat, scheint noch die Orca-Daten dieses Hosts zu verwenden. Beende ihn auf dem Host und verbinde dich dann erneut. Die Details dieses Hosts unter Einstellungen > SSH-Hosts nennen seinen Prozess.",
-          "setupSeeDetails": "Orca konnte seinen Server auf diesem Host nicht starten. Die Ursache steht in den Details dieses Hosts unter Einstellungen > SSH-Hosts.",
+          "setupFreeHostSpace": "Auf diesem Host ist nicht genug freier Speicherplatz, damit Adehone beim Start eine Sicherung seiner Serverdaten anlegen kann. Gib auf dem Host Speicherplatz frei und verbinde dich dann erneut.",
+          "setupStopUnmanagedRuntime": "Ein Adehone-Server, den diese App nicht gestartet hat, scheint noch die Adehone-Daten dieses Hosts zu verwenden. Beende ihn auf dem Host und verbinde dich dann erneut. Die Details dieses Hosts unter Einstellungen > SSH-Hosts nennen seinen Prozess.",
+          "setupSeeDetails": "Adehone konnte seinen Server auf diesem Host nicht starten. Die Ursache steht in den Details dieses Hosts unter Einstellungen > SSH-Hosts.",
           "moveHeld": "Adehone hat die Verschiebung der Projekte dieses Hosts auf dessen Adehone-Server angehalten, weil die Kopie des Servers nicht bestätigt werden konnte. Nichts ist verloren: Der Host behält seine Projekte und bleibt gesperrt, bis die Verschiebung abgeschlossen ist. Zum Fortsetzen erneut verbinden. Falls der Server nicht wieder verfügbar wird, ihn unter „Einstellungen > Adehone auf SSH-Hosts“ stoppen oder vergessen.",
           "olderTerminalsBridged": "Adehone ist auf diesem Host noch nicht eingerichtet: In seinen Projekten laufen noch Terminals, die von einer älteren Adehone-Version gestartet wurden. Sie funktionieren hier weiterhin. Diese schließen oder auf dem Host beenden und anschließend erneut verbinden.",
           "olderTerminalsUncounted": "Auf diesem Host laufen noch Terminals, die von einer älteren Adehone-Version gestartet wurden und nicht von selbst enden. Diese in jener Adehone-Version schließen oder auf dem Host beenden und anschließend erneut verbinden.",
@@ -14003,8 +14003,8 @@
           "refusedLeaveBehindUnnamed": "Einige gespeicherte Elemente für diesen Host können nicht auf seinen Adehone-Server verschoben werden. „Trotzdem verschieben“ verbindet den Host und behält diese Elemente auf diesem Computer.",
           "windowsBuildUnsupported": "Auf diesem Host läuft eine ältere Windows-Version als Windows 10 bzw. Windows Server 2016. Daher kann er den Adehone-Server nicht ausführen. Einen Host mit einer neueren Windows-Version oder einen Linux- oder macOS-Host verwenden.",
           "windowsNoExtractor": "Dieser Windows-Host verfügt weder über tar.exe noch über Expand-Archive von PowerShell. Daher kann Adehone seinen Server dort nicht entpacken. Windows PowerShell 5.1 auf dem Host installieren und anschließend erneut verbinden.",
-          "linkedProjects": "Der Orca-Server dieses Hosts hatte bereits {{paths}}, daher verwendet dieser Desktop jetzt die Kopie des Servers. Die Tabs dieses Desktops und {{count}} Automatisierungen dort wurden nicht verschoben, und von ihm dort erstellte Worktrees werden als externe Worktrees angezeigt.",
-          "olderTerminals": "{{count}} Terminals, die von einer älteren Orca-Version gestartet wurden, laufen noch auf diesem Host und beenden sich nicht von selbst. Schließe sie in dieser Orca-Version oder beende sie auf dem Host und verbinde dich dann erneut."
+          "linkedProjects": "Der Adehone-Server dieses Hosts hatte bereits {{paths}}, daher verwendet dieser Desktop jetzt die Kopie des Servers. Die Tabs dieses Desktops und {{count}} Automatisierungen dort wurden nicht verschoben, und von ihm dort erstellte Worktrees werden als externe Worktrees angezeigt.",
+          "olderTerminals": "{{count}} Terminals, die von einer älteren Adehone-Version gestartet wurden, laufen noch auf diesem Host und beenden sich nicht von selbst. Schließe sie in dieser Adehone-Version oder beende sie auf dem Host und verbinde dich dann erneut."
         },
         "ZcodeCliSetupSection": {
           "title": "GLM mit ZCode verwenden",
@@ -14126,7 +14126,7 @@
           "restartAsWslHost": {
             "button": "Als WSL-Host neu starten",
             "title": "Als WSL-Host neu starten?",
-            "description": "Beendet alle Terminals und Agenten auf {{host}}, auch die von einem SSH-Host geöffneten, und startet Orcas Server dann als WSL-Host neu.",
+            "description": "Beendet alle Terminals und Agenten auf {{host}}, auch die von einem SSH-Host geöffneten, und startet Adehones Server dann als WSL-Host neu.",
             "cancel": "Abbrechen",
             "action": "Terminals beenden und neu starten"
           }
@@ -14252,7 +14252,7 @@
           "defaultHostWebHelp": "Dieser Browser öffnet neue Projekte auf dem ausgewählten Server.",
           "updateAll": "Alle aktualisieren",
           "updatesCount_other": "{{count}} Aktualisierungen verfügbar",
-          "shareRowHint": "Einem anderen Orca die Verbindung hierher ermöglichen.",
+          "shareRowHint": "Einem anderen Adehone die Verbindung hierher ermöglichen.",
           "manageShare": "Verwalten",
           "share": "Teilen",
           "serversCaption": "Server",
@@ -14341,7 +14341,7 @@
           "attentionSharedNotCurrent": "Handlungsbedarf · Die von diesem Ordner verwendete gemeinsame Kopie stammt nicht von Adehone",
           "resultUpdateSkippedPlaces": "{{result}} · Aktualisierung an {{places}} Stellen übersprungen: {{reason}}",
           "resultUpdateSkippedAgent": "{{result}} · Aktualisierung bei {{agent}} übersprungen: {{reason}}",
-          "attentionDiffersFromOrca": "Handlungsbedarf · Diese Kopie weicht von Orcas Kopie ab",
+          "attentionDiffersFromOrca": "Handlungsbedarf · Diese Kopie weicht von Adehones Kopie ab",
           "replaceMovesCopyToBackup": "Beim Ersetzen wird die aktuelle Kopie einschließlich zusätzlicher Dateien in eine Sicherungskopie verschoben.",
           "replaceMovesCopyToFolder": "Beim Ersetzen wird die aktuelle Kopie einschließlich zusätzlicher Dateien nach {{folder}} verschoben.",
           "replaceMovesCopyToFolderOnHost": "Beim Ersetzen wird die aktuelle Kopie einschließlich zusätzlicher Dateien nach {{folder}} auf {{host}} verschoben."
@@ -14399,15 +14399,15 @@
           "newShortcuts": "Tastenkürzel",
           "newCommands": "Befehle",
           "newPanels": "Fügt Panels hinzu",
-          "newEvents": "Reagiert auf mehr Orca-Ereignisse",
+          "newEvents": "Reagiert auf mehr Adehone-Ereignisse",
           "newRecipes": "Maschinenrezepte",
           "newMcpServers": "MCP-Server",
           "newContributions": "Funktionen, die für dich handeln",
           "allAccess": "Alle Zugriffe anzeigen",
           "update": "Aktualisieren",
-          "replacesAction": "{{value0}} wird anstelle von Orcas {{value1}} ausgeführt",
+          "replacesAction": "{{value0}} wird anstelle von Adehones {{value1}} ausgeführt",
           "newFileTypes": "Ändert, welche Dateien es öffnet",
-          "newHooks": "Kann ändern oder stoppen, was Orca und deine Agenten tun",
+          "newHooks": "Kann ändern oder stoppen, was Adehone und deine Agenten tun",
           "newSettings": "Eine Einstellungsseite",
           "newStatusBarItems": "Statusleisten-Elemente",
           "opensFileTypes": "Öffnet neue Dateitypen: {{value0}}",
@@ -14419,7 +14419,7 @@
         "PluginUpdateReview": {
           "title": "Update für {{value0}} prüfen",
           "approve": "Genehmigen & aktualisieren",
-          "uncompared": "Orca konnte diese Version nicht mit der genehmigten vergleichen. Prüfe vor dem Update, worauf sie zugreifen kann.",
+          "uncompared": "Adehone konnte diese Version nicht mit der genehmigten vergleichen. Prüfe vor dem Update, worauf sie zugreifen kann.",
           "newInVersion": "Neu in dieser Version:",
           "titleMany": "{{value0}} Updates prüfen",
           "history": "Änderungen auf GitHub ansehen"
@@ -14545,7 +14545,7 @@
           "updatesKeepApproval": "Updates fragen nur bei neuem Zugriff erneut",
           "fullAccessUpdates": "Updates können den Code ohne Nachfrage ändern",
           "editsFileTypes": "Öffnet und bearbeitet {{value0}}-Dateien in Adehone. Es kann die geöffneten Dateien lesen.",
-          "replacesAction": "{{value0}} wird anstelle von Orcas {{value1}} ausgeführt. Du kannst das auf der Plugin-Seite wieder umstellen.",
+          "replacesAction": "{{value0}} wird anstelle von Adehones {{value1}} ausgeführt. Du kannst das auf der Plugin-Seite wieder umstellen.",
           "install": "Installieren und aktivieren",
           "keepOff": "Ausgeschaltet lassen"
         },
@@ -14646,7 +14646,7 @@
           "details": "Details",
           "failed": "{{value0}} konnte nicht aktualisiert werden",
           "morePlugins": "und {{value0}} weitere Plugins",
-          "uncompared": "Orca konnte es nicht mit der genehmigten Version vergleichen.",
+          "uncompared": "Adehone konnte es nicht mit der genehmigten Version vergleichen.",
           "held": "{{value0}} hat sich nach deiner Prüfung geändert und wartet daher in Einstellungen → Plugins auf deine Prüfung."
         },
         "PluginThemeUseNow": {
@@ -14835,7 +14835,7 @@
         "StatusBarUsageFormatSetting": {
           "reset": "Zurücksetzen",
           "previewLabel": "Vorschau",
-          "previewBuiltin": "Leer lassen, um Orcas integriertes Format zu verwenden.",
+          "previewBuiltin": "Leer lassen, um Adehones integriertes Format zu verwenden.",
           "placeholder": {
             "provider": "Name des Anbieters",
             "plan": "Tarif (Codex)",
@@ -15655,7 +15655,7 @@
                   },
                   "host_off": {
                     "title": "WSL-Host ist ausgeschaltet",
-                    "body": "Orca aktualisiert den Status von {{reviewLabel}} über den WSL-Host dieses Projekts, der ausgeschaltet ist. Verbinde ihn erneut, um zu aktualisieren."
+                    "body": "Adehone aktualisiert den Status von {{reviewLabel}} über den WSL-Host dieses Projekts, der ausgeschaltet ist. Verbinde ihn erneut, um zu aktualisieren."
                   },
                   "not_git": {
                     "title": "Kein Git-Repository",
@@ -16383,7 +16383,7 @@
             "loading": "Plugin-Panel wird geladen…",
             "unresponsive": "Dieses Plugin-Panel reagiert nicht mehr und wurde angehalten.",
             "loadFailed": "Das Plugin-Panel konnte nicht geladen werden.",
-            "needsDesktop": "Dieses Panel läuft nur in der Orca-Desktop-App.",
+            "needsDesktop": "Dieses Panel läuft nur in der Adehone-Desktop-App.",
             "needsIsolatedFrames": "Dieses Panel ist nicht verfügbar: Es benötigt isolierte Plugin-Frames, die deaktiviert sind."
           },
           "activityBar": {
@@ -17494,7 +17494,7 @@
                 "f98e9d1bad": "Alle Agentensitzungen durchsuchen",
                 "990cc29865": "Finde jede frühere Unterhaltung anhand ihres Inhalts und mach dort weiter, wo der Agent aufgehört hat.",
                 "91e2719807": "Sitzungssuche aktivieren",
-                "3eacedec93": "Lass Agenten Orca mit der Orca CLI steuern",
+                "3eacedec93": "Lass Agenten Adehone mit der Adehone CLI steuern",
                 "8d54d0ff53": "Ermögliche Agenten, untergeordnete Worktrees zu koordinieren und zwischen Worktrees zu kommunizieren.",
                 "0080bc86eb": "CLI & Skills installieren",
                 "9b58bc5d7a": "Mit <shortcut> zu einem Worktree springen",
@@ -18322,7 +18322,7 @@
             "sectionStale": {
               "notice": "Diese Datei wurde auf dem Datenträger geändert, seit dieser Abschnitt geladen wurde."
             },
-            "bytesUpdateRequired": "Zum Speichern von Binärdateien hier ist ein neuerer Orca-Server erforderlich. Aktualisiere den Orca-Server und versuche es erneut.",
+            "bytesUpdateRequired": "Zum Speichern von Binärdateien hier ist ein neuerer Adehone-Server erforderlich. Aktualisiere den Adehone-Server und versuche es erneut.",
             "notUtf8": {
               "notice": "Automatisches Speichern ist für {{name}} pausiert, da die Datei kein UTF-8-Text ist. Manuelles Speichern schreibt sie als UTF-8 neu und ersetzt alle Zeichen, die kein gültiges UTF-8 sind.",
               "refused": "Diese Datei ist kein UTF-8-Text und wurde daher nicht gespeichert.",
@@ -18453,7 +18453,7 @@
         "PluginEditorNeedsDesktopNotice": {
           "browser": "{{value0}} läuft nur in einem isolierten Frame, den Browser-Clients nicht bereitstellen können.",
           "isolationOff": "{{value0}} läuft nur in einem isolierten Frame, und isolierte Plugin-Frames sind deaktiviert.",
-          "heading": "Dieser Editor benötigt die Orca-Desktop-App",
+          "heading": "Dieser Editor benötigt die Adehone-Desktop-App",
           "openSource": "Quelltext öffnen"
         },
         "MarkdownDefaultViewContextMenu": {
@@ -18464,7 +18464,7 @@
           "pathAccessDenied": "Zugriff verweigert: Der Pfad führt aus den erlaubten Verzeichnissen heraus. Wenn das einen legitimen Arbeitsablauf blockiert, erstelle bitte ein GitHub-Issue.",
           "changedDuringRead": "Die Datei wurde während des Ladens auf der Festplatte geändert. Lade die Datei neu, um die neueste Version zu sehen.",
           "remotePathIsDirectory": "Der Remote-Pfad ist ein Verzeichnis",
-          "remotePagedReadUnsupported": "Die Remote-Datei ist größer als die 512 KB, die dieser Orca-Server senden kann. Aktualisiere den Server, um sie zu öffnen.",
+          "remotePagedReadUnsupported": "Die Remote-Datei ist größer als die 512 KB, die dieser Adehone-Server senden kann. Aktualisiere den Server, um sie zu öffnen.",
           "remoteFileTooLarge": "Die Remote-Datei ist zu groß, um sie im Editor zu öffnen ({{bytes}} Bytes)"
         },
         "BinaryFileDefaultAppButton": {
@@ -18725,7 +18725,7 @@
                     "extensions": {
                       "intro": {
                         "title": "Bring deine Chrome-Erweiterungen mit",
-                        "everydayTitle": "Deine täglichen Browser-Tools, in Orca",
+                        "everydayTitle": "Deine täglichen Browser-Tools, in Adehone",
                         "body": "Installiere Erweiterungen aus dem Chrome Web Store und hefte sie neben der Adressleiste an.",
                         "action": "Web Store öffnen",
                         "secondaryAction": "Verstanden"
@@ -19903,7 +19903,7 @@
         },
         "PluginDeclarativePanel": {
           "dismissLoadError": "Schließen",
-          "invalidTree": "Das Panel hat ein Layout gesendet, das Orca nicht anzeigen kann.",
+          "invalidTree": "Das Panel hat ein Layout gesendet, das Adehone nicht anzeigen kann.",
           "loadFailed": "{{value0}} konnte nicht geladen werden.",
           "loadFailedKeptLastGood": "{{value0}} konnte nicht geladen werden. Die zuletzt geladene Version wird angezeigt.",
           "pluginMessage": "Nachricht von {{value0}}: {{value1}}",
@@ -20531,7 +20531,7 @@
       "plugins": {
         "list": {
           "PluginsSectionDescription": {
-            "openWith": "Öffnen mit (außer beim Tippen in einem Orca-Textfeld)"
+            "openWith": "Öffnen mit (außer beim Tippen in einem Adehone-Textfeld)"
           }
         },
         "pluginInstallCount": {
@@ -20539,7 +20539,7 @@
         },
         "declarative": {
           "PluginDeclarativeView": {
-            "unsupported": "{{value0}} ist in dieser Orca-Version nicht verfügbar"
+            "unsupported": "{{value0}} ist in dieser Adehone-Version nicht verfügbar"
           },
           "KeyValue": {
             "yes": "Ja",
@@ -20558,10 +20558,10 @@
           }
         },
         "PluginCommandReplacementRow": {
-          "title": "{{value0}} wird anstelle von Orcas {{value1}} ausgeführt",
+          "title": "{{value0}} wird anstelle von Adehones {{value1}} ausgeführt",
           "conflict": "Nicht verwendet: {{value0}} wurde zuerst installiert und ersetzt es",
-          "detail": "Über das Tastenkürzel, die Befehlspalette und Menüs. Schlägt das Plugin fehl, wird Orcas eigene Version ausgeführt.",
-          "switch": "{{value0}} anstelle von Orcas {{value1}} verwenden"
+          "detail": "Über das Tastenkürzel, die Befehlspalette und Menüs. Schlägt das Plugin fehl, wird Adehones eigene Version ausgeführt.",
+          "switch": "{{value0}} anstelle von Adehones {{value1}} verwenden"
         },
         "PluginCatalogLinkDialog": {
           "failed": "Dieser Katalog konnte nicht hinzugefügt werden.",
@@ -20617,18 +20617,18 @@
         "partial_other": "{{resumed}} von {{total}} Agenten fortgesetzt. {{count}} brauchen dich.",
         "stoppedOn_one": "{{count}} Agent auf {{machine}} angehalten.",
         "stoppedOn_other": "{{count}} Agenten auf {{machine}} angehalten.",
-        "stoppedUpdate_one": "{{count}} Agent beim Orca-Update angehalten.",
-        "stoppedUpdate_other": "{{count}} Agenten beim Orca-Update angehalten.",
-        "stoppedRestart_one": "{{count}} Agent beim Beenden von Orca angehalten.",
-        "stoppedRestart_other": "{{count}} Agenten beim Beenden von Orca angehalten.",
+        "stoppedUpdate_one": "{{count}} Agent beim Adehone-Update angehalten.",
+        "stoppedUpdate_other": "{{count}} Agenten beim Adehone-Update angehalten.",
+        "stoppedRestart_one": "{{count}} Agent beim Beenden von Adehone angehalten.",
+        "stoppedRestart_other": "{{count}} Agenten beim Beenden von Adehone angehalten.",
         "promptsNotResent": "Deine Prompts werden nicht erneut gesendet.",
         "resume": "Fortsetzen",
         "details": "Details",
         "close": "Schließen",
         "listLabel": "Agenten",
         "untitled": "Agent ohne Titel",
-        "willAsk": "Orca bittet die Agenten, fortzufahren. Wartende Nachrichten werden evtl. gesendet.",
-        "asked": "Orca hat die Agenten gebeten, fortzufahren. Wartende Nachrichten werden evtl. gesendet.",
+        "willAsk": "Adehone bittet die Agenten, fortzufahren. Wartende Nachrichten werden evtl. gesendet.",
+        "asked": "Adehone hat die Agenten gebeten, fortzufahren. Wartende Nachrichten werden evtl. gesendet.",
         "resumedAutomatically": "Automatisch fortgesetzt.",
         "changeInSettings": "In den Einstellungen ändern",
         "dismissAll": "Alle verwerfen",
@@ -20653,7 +20653,7 @@
         "ownershipUnknownShort": "Noch nicht bereit.",
         "notAttachedShort": "Keine Verbindung.",
         "dispatchRejectedShort": "Der Agent hat abgelehnt.",
-        "unsupportedShort": "Orca kann ihn nicht fortsetzen."
+        "unsupportedShort": "Adehone kann ihn nicht fortsetzen."
       }
     },
     "i18n": {
@@ -20709,12 +20709,12 @@
         "streamStopped": "Der Remote-Terminal-Stream reagiert nicht mehr."
       },
       "jira": {
-        "currentSprintNeedsUpdate": "Aktualisiere den entfernten Orca-Server, um voreingestellte Issues nach dem aktuellen Sprint zu filtern.",
-        "transitionFieldsNeedsUpdate": "Aktualisiere den entfernten Orca-Server, um erforderliche Übergangsfelder zu übermitteln, oder schließe den Übergang in Jira ab."
+        "currentSprintNeedsUpdate": "Aktualisiere den entfernten Adehone-Server, um voreingestellte Issues nach dem aktuellen Sprint zu filtern.",
+        "transitionFieldsNeedsUpdate": "Aktualisiere den entfernten Adehone-Server, um erforderliche Übergangsfelder zu übermitteln, oder schließe den Übergang in Jira ab."
       },
       "runtimeGitSyncClient": {
         "completeMergeNeedsNewerHost": "Zum Abschließen eines Merge wird eine neuere Adehone-Version auf diesem Host benötigt. Aktualisiere Adehone auf diesem Host.",
-        "continueRebaseNeedsNewerHost": "Zum Fortsetzen eines Rebase braucht dieser Host eine neuere Orca-Version. Aktualisiere Orca auf diesem Host."
+        "continueRebaseNeedsNewerHost": "Zum Fortsetzen eines Rebase braucht dieser Host eine neuere Adehone-Version. Aktualisiere Adehone auf diesem Host."
       },
       "runtimeGitWorkingTreeClient": {
         "resolveConflictNeedsNewerHost": "Zum Lösen von Konflikten wird eine neuere Adehone-Version auf diesem Host benötigt. Aktualisiere Adehone auf diesem Host."
@@ -20768,7 +20768,7 @@
         "dashboard": {
           "popout": {
             "window": {
-              "title": "Orca-Agenten-Dashboard"
+              "title": "Adehone-Agenten-Dashboard"
             }
           }
         }
@@ -20821,7 +20821,7 @@
           "subtitle": "Wähle einen Agenten für die Chat-Oberfläche. Agenten ohne Chat-Unterstützung werden stattdessen in einem Terminal geöffnet."
         },
         "agentTerminal": {
-          "subtitle": "Orca funktioniert mit jedem CLI-Agenten. Wähle den, den du am häufigsten nutzen wirst."
+          "subtitle": "Adehone funktioniert mit jedem CLI-Agenten. Wähle den, den du am häufigsten nutzen wirst."
         }
       },
       "skipConfirmation": {
@@ -20981,7 +20981,7 @@
         "runtimeNotInstalled": "{{agent}} ist auf dem Computer, auf dem dieser Chat läuft, nicht installiert. Die Installation über den Chat in einer aktuellen Adehone-Version durchführen.",
         "fullAccessAsRoot": "{{agent}} verwendet keinen Vollzugriff, solange die Ausführung als root erfolgt. Unter Einstellungen → Agenten für den Computer, auf dem dieser Chat läuft, eine andere Berechtigung für {{agent}} auswählen und anschließend einen neuen Chat starten.",
         "botToolsNeedStatusHooks": "{{agent}}-Bots brauchen Agentenstatus-Hooks: Über sie handeln die Werkzeuge eines Bots als dieser Bot. Aktiviere sie für {{agent}} unter Einstellungen → Agenten und starte dann einen neuen Chat.",
-        "botToolsGatewayOutdated": "Das Gateway von {{agent}} läuft noch mit einer älteren Version des Orca-Plugins, daher können die Werkzeuge dieses Bots nicht als der Bot handeln. Führe `hermes gateway stop` aus und starte dann einen neuen Chat.",
+        "botToolsGatewayOutdated": "Das Gateway von {{agent}} läuft noch mit einer älteren Version des Adehone-Plugins, daher können die Werkzeuge dieses Bots nicht als der Bot handeln. Führe `hermes gateway stop` aus und starte dann einen neuen Chat.",
         "launchPreparationFailed": "Adehone konnte den Start von {{agent}} auf dem Computer, auf dem dieser Chat läuft, nicht vorbereiten.",
         "conversationOpenElsewhere": "Codex hält diese Unterhaltung noch offen. In einem Moment erneut versuchen oder andere Codex-Terminals schließen.",
         "conversationOpenInTerminal": "{{agent}} führt diese Unterhaltung bereits in einem anderen Terminal aus. Dort {{agent}} beenden oder das Terminal schließen, um hier fortzufahren.",
@@ -21345,7 +21345,7 @@
         "permissionFullAccess": "Vollzugriff",
         "permissionAgentSettings": "{{agent}}-Einstellungen",
         "permissionAgentSettingsUsedHint": "Verwendet deine Berechtigungseinstellungen für {{agent}}.",
-        "permissionAgentSettingsUnnamedHint": "Verwendet deine Berechtigungseinstellungen für {{agent}}. Orca kann diesen Modus nicht anzeigen.",
+        "permissionAgentSettingsUnnamedHint": "Verwendet deine Berechtigungseinstellungen für {{agent}}. Adehone kann diesen Modus nicht anzeigen.",
         "permissionFromAgentSettings": "{{mode}}, aus den {{agent}}-Einstellungen",
         "permissionFullAccessDescription": "Fragt nie vor Änderungen oder Befehlen",
         "permissionFullAccessCodexDescription": "Fragt nie nach; kann jede Datei bearbeiten und das Netzwerk nutzen",
@@ -22732,7 +22732,7 @@
         "close": "Schließen",
         "loading": "Wird geladen…",
         "notRunning": "Verbindung beim Senden der nächsten Nachricht",
-        "unsupported": "Orca auf dem Host dieses Chats aktualisieren, um sie hier zu verwalten",
+        "unsupported": "Adehone auf dem Host dieses Chats aktualisieren, um sie hier zu verwalten",
         "readFailed": "Laden fehlgeschlagen",
         "retry": "Erneut versuchen",
         "empty": "Für diesen Chat nicht eingerichtet",
@@ -23043,8 +23043,8 @@
           "statusLabel": "Status",
           "signalsLabel": "Signale",
           "projectOnHost": "{{project}} · {{host}}",
-          "notGit": "Kein Git-Arbeitsbereich. Entferne stattdessen das Projekt aus Orca.",
-          "unreachable": "{{host}} ist nicht erreichbar. Verbinde dich erneut, um zu löschen, oder entferne ihn aus Orca.",
+          "notGit": "Kein Git-Arbeitsbereich. Entferne stattdessen das Projekt aus Adehone.",
+          "unreachable": "{{host}} ist nicht erreichbar. Verbinde dich erneut, um zu löschen, oder entferne ihn aus Adehone.",
           "mainCheckout": "Der Haupt-Checkout des Projekts kann nicht gelöscht werden.",
           "uncommittedFiles_one": "{{count}} nicht committete Datei",
           "uncommittedFiles_other": "{{count}} nicht committete Dateien",
@@ -23190,10 +23190,10 @@
         "copySessionIdSuccess": "Sitzungs-ID kopiert",
         "copySessionIdError": "Sitzungs-ID konnte nicht kopiert werden",
         "copySessionIdUnavailable": "Keine Sitzungs-ID zum Kopieren",
-        "copyOrcaSessionId": "Orca-Sitzungs-ID kopieren",
-        "orcaSessionIdTooltip": "Orcas ID für diesen Agenten, getrennt von der eigenen Sitzungs-ID der Agenten-CLI. Agenten verwenden sie, um sich über Orca gegenseitig anzusprechen.",
-        "orcaSessionIdCopied": "Orca-Sitzungs-ID kopiert",
-        "orcaSessionIdCopyFailed": "Orca-Sitzungs-ID konnte nicht kopiert werden"
+        "copyOrcaSessionId": "Adehone-Sitzungs-ID kopieren",
+        "orcaSessionIdTooltip": "Adehones ID für diesen Agenten, getrennt von der eigenen Sitzungs-ID der Agenten-CLI. Agenten verwenden sie, um sich über Adehone gegenseitig anzusprechen.",
+        "orcaSessionIdCopied": "Adehone-Sitzungs-ID kopiert",
+        "orcaSessionIdCopyFailed": "Adehone-Sitzungs-ID konnte nicht kopiert werden"
       },
       "hostFile": {
         "updateHostForOutsideFiles": "Adehone auf {{value0}} aktualisieren, um Dateien außerhalb seiner Arbeitsbereiche zu öffnen"
@@ -23234,7 +23234,7 @@
           "position": "position"
         },
         "claudeCodeThemeSync": {
-          "description": "Claude Code auf diesem Computer verwendet deine Terminalfarben und folgt Designänderungen live, auch außerhalb von Orca. Beim Ausschalten wird dein vorheriges Claude-Code-Design wiederhergestellt. Wählst du in Claude Code ein Design, endet die Synchronisierung.",
+          "description": "Claude Code auf diesem Computer verwendet deine Terminalfarben und folgt Designänderungen live, auch außerhalb von Adehone. Beim Ausschalten wird dein vorheriges Claude-Code-Design wiederhergestellt. Wählst du in Claude Code ein Design, endet die Synchronisierung.",
           "claude": "claude",
           "9353305ea6": "Claude Code an das Terminal-Design anpassen"
         }
@@ -23261,7 +23261,7 @@
         "shellEnvSearchProxy": "Proxy",
         "linkPreviewsToggleLabel": "Linkvorschauen ein-/ausschalten",
         "linkPreviewsTitle": "Linkvorschauen",
-        "linkPreviewsCopy": "Beim Überfahren eines Weblinks wird eine Vorschaukarte angezeigt. Orca ruft dazu die Seite ab, daher kann die Website die Anfrage sehen.",
+        "linkPreviewsCopy": "Beim Überfahren eines Weblinks wird eine Vorschaukarte angezeigt. Adehone ruft dazu die Seite ab, daher kann die Website die Anfrage sehen.",
         "linkPreviewsSearchUnfurl": "Vorschau",
         "linkPreviewsSearchHover": "Hover-Karte",
         "composerSpellcheckTitle": "Rechtschreibprüfung und Autokorrektur",
@@ -23269,11 +23269,11 @@
         "composerSpellcheckSearchSpelling": "Rechtschreibprüfung",
         "composerSpellcheckSearchAutocorrect": "Autokorrektur",
         "usageLimitContinueTitle": "Chats automatisch fortsetzen, wenn ein Nutzungslimit zurückgesetzt wird",
-        "usageLimitContinueCopy": "Orca sendet „Continue where you left off.“, wenn das Limit zurückgesetzt wird. Gilt für alle Chats mit bekannter Zurücksetzungszeit.",
+        "usageLimitContinueCopy": "Adehone sendet „Continue where you left off.“, wenn das Limit zurückgesetzt wird. Gilt für alle Chats mit bekannter Zurücksetzungszeit.",
         "usageLimitContinueSearchLimit": "Nutzungslimit",
         "usageLimitContinueSearchReset": "Zurücksetzen",
         "usageLimitContinueToggleLabel": "Fortsetzen von Chats beim Zurücksetzen eines Nutzungslimits ein-/ausschalten",
-        "usageLimitContinueUnsupported": "Aktualisiere Orca auf {{host}}, um diese Einstellung dort zu ändern.",
+        "usageLimitContinueUnsupported": "Aktualisiere Adehone auf {{host}}, um diese Einstellung dort zu ändern.",
         "usageLimitContinueUpdateFailed": "Die Einstellung konnte auf {{host}} nicht aktualisiert werden.",
         "idleStopTitle": "Inaktive Agenten beenden nach",
         "idleStopCopy": "Beendet den Agenten eines Chats, sobald der Chat so lange inaktiv war, um Speicher freizugeben. Der Chat bleibt erhalten, und deine nächste Nachricht startet den Agenten erneut. Wähle Nie für Agenten, die zwischen Durchgängen im Hintergrund weiterarbeiten.",
@@ -23463,7 +23463,7 @@
             "waitLabel": "Wartezeit",
             "wait": "Der Text wird einige Sekunden später eingefügt.",
             "title": "KI-Nachbearbeitung aktivieren?",
-            "description": "Nach jedem Diktat sendet Orca den Text an {{agent}}, um ihn vor dem Einfügen nachzubearbeiten.",
+            "description": "Nach jedem Diktat sendet Adehone den Text an {{agent}}, um ihn vor dem Einfügen nachzubearbeiten.",
             "cancel": "Abbrechen",
             "confirm": "Aktivieren"
           },
@@ -23511,8 +23511,8 @@
       },
       "workspaceCleanup": {
         "title": "Bereinigung von Arbeitsbereichen",
-        "description": "Entferne Arbeitsbereiche, mit denen du fertig bist. Bevor etwas entfernt wird, prüft Orca erneut auf ungespeicherte Arbeit.",
-        "unsupportedHost": "Auf diesem Host läuft eine Orca-Version ohne automatische Bereinigung. Aktualisiere Orca dort, um diese Einstellungen zu verwenden.",
+        "description": "Entferne Arbeitsbereiche, mit denen du fertig bist. Bevor etwas entfernt wird, prüft Adehone erneut auf ungespeicherte Arbeit.",
+        "unsupportedHost": "Auf diesem Host läuft eine Adehone-Version ohne automatische Bereinigung. Aktualisiere Adehone dort, um diese Einstellungen zu verwenden.",
         "previewFailed": "Es konnte nicht geprüft werden, auf welche Arbeitsbereiche diese Änderung zutrifft.",
         "pinFailed": "{{name}} konnte nicht behalten werden.",
         "rules": {
@@ -23746,8 +23746,8 @@
       "recoverServer": {
         "titleOnHost": "Alte Sperre auf {{host}} aufheben?",
         "titleGeneric": "Alte Sperre aufheben?",
-        "summary": "Ein früherer Lauf hat eine Sperre hinterlassen, daher kann Orcas Server nicht starten.",
-        "confirmCheckHomeFolder": "Kein anderer Rechner, der diesen Home-Ordner teilt, führt Orca aus",
+        "summary": "Ein früherer Lauf hat eine Sperre hinterlassen, daher kann Adehones Server nicht starten.",
+        "confirmCheckHomeFolder": "Kein anderer Rechner, der diesen Home-Ordner teilt, führt Adehone aus",
         "details": "Details",
         "clearing": "Wird aufgehoben…"
       },
@@ -23755,13 +23755,13 @@
         "deleteHistoryWithWorkspace": {
           "updateFailed": "Die Einstellung konnte auf {{host}} nicht aktualisiert werden.",
           "recommended": "Empfohlen",
-          "unsupported": "Aktualisiere Orca auf {{host}}, um diese Einstellung dort zu verwenden.",
+          "unsupported": "Aktualisiere Adehone auf {{host}}, um diese Einstellung dort zu verwenden.",
           "confirmTitle": "Agentenverlauf aus gelöschten Arbeitsbereichen löschen?",
-          "confirmDescription": "Orca löscht Orca-, Claude-Code- und Codex-Chats aus Arbeitsbereichen, die nicht mehr existieren, auch aus solchen, die vor heute gelöscht wurden. Chats aus Arbeitsbereichen, die du noch hast, bleiben erhalten. Gelöschte Chats lassen sich nicht wiederherstellen.",
+          "confirmDescription": "Adehone löscht Adehone-, Claude-Code- und Codex-Chats aus Arbeitsbereichen, die nicht mehr existieren, auch aus solchen, die vor heute gelöscht wurden. Chats aus Arbeitsbereichen, die du noch hast, bleiben erhalten. Gelöschte Chats lassen sich nicht wiederherstellen.",
           "cancel": "Abbrechen",
           "turnOn": "Aktivieren",
           "title": "Agentenverlauf beim Löschen eines Arbeitsbereichs löschen",
-          "description": "Orca-, Claude-Code- und Codex-Chats aus gelöschten Arbeitsbereichen werden automatisch entfernt, um Speicherplatz freizugeben. Sie lassen sich nicht wiederherstellen.",
+          "description": "Adehone-, Claude-Code- und Codex-Chats aus gelöschten Arbeitsbereichen werden automatisch entfernt, um Speicherplatz freizugeben. Sie lassen sich nicht wiederherstellen.",
           "codexHistoryBadge": "Codex-Verlauf: {{size}}",
           "codexHistoryBadgeAtLeast": "Codex-Verlauf: {{size}}+",
           "codexHistoryTooltip": "Speicherplatz, den Codex auf {{host}} für seinen eigenen Chatverlauf verwendet, einschließlich Chats aus Arbeitsbereichen, die du noch hast.",
@@ -23777,20 +23777,20 @@
         "server": {
           "fallbackHost": "dieser Server",
           "updateFailed": "Die Benachrichtigungen auf {{host}} konnten nicht aktualisiert werden.",
-          "unsupported": "Aktualisiere Orca auf {{host}}, um dessen Benachrichtigungen hier zu ändern.",
+          "unsupported": "Aktualisiere Adehone auf {{host}}, um dessen Benachrichtigungen hier zu ändern.",
           "enabledDescription": "Hinweise, die {{host}} für seine Agenten und Terminals sendet, einschließlich Push-Nachrichten an deine Smartphones.",
           "sectionDescription": "Hinweise, die {{host}} für seine Agenten und Terminals sendet."
         }
       },
       "orcaAccount": {
         "server": {
-          "sectionDescription": "Das Orca-Konto, unter dem {{host}} läuft, für Slack, GitHub, Linear und Webhooks seiner Bots.",
-          "unread": "Das Orca-Konto von {{host}} kann nicht gelesen werden. Aktualisiere {{host}} oder verbinde dich erneut.",
+          "sectionDescription": "Das Adehone-Konto, unter dem {{host}} läuft, für Slack, GitHub, Linear und Webhooks seiner Bots.",
+          "unread": "Das Adehone-Konto von {{host}} kann nicht gelesen werden. Aktualisiere {{host}} oder verbinde dich erneut.",
           "signInThere": "Führe `orca auth login` auf {{host}} aus, um es anzumelden."
         }
       },
       "hostScope": {
-        "updateHostToChange": "Aktualisiere Orca auf {{host}}, um diese Einstellung dort zu ändern.",
+        "updateHostToChange": "Aktualisiere Adehone auf {{host}}, um diese Einstellung dort zu ändern.",
         "updateFailed": "Die Einstellung konnte auf {{host}} nicht aktualisiert werden."
       },
       "git": {
@@ -23878,7 +23878,7 @@
       "inherit": "Browser-Einstellung ({{scope}})",
       "deletedOption": "Gelöschtes Profil",
       "deleted": "Das für dieses Projekt gewählte Profil wurde gelöscht, daher folgen neue Tabs der Browser-Einstellung.",
-      "saveFailed": "Das Browser-Profil konnte nicht gespeichert werden. Orca auf dem Host dieses Projekts muss möglicherweise aktualisiert werden."
+      "saveFailed": "Das Browser-Profil konnte nicht gespeichert werden. Adehone auf dem Host dieses Projekts muss möglicherweise aktualisiert werden."
     },
     "managed-runtime": {
       "cancelled": "Installation abgebrochen.",
@@ -23894,7 +23894,7 @@
       "failed": "Installation fehlgeschlagen. Erneut versuchen.",
       "cancelFailed": "Die Installation konnte nicht abgebrochen werden. Erneut versuchen.",
       "install": "{{agent}} installieren",
-      "installedByOrca": "Von Orca installiert · {{version}}",
+      "installedByOrca": "Von Adehone installiert · {{version}}",
       "notInstalled": "Nicht installiert.",
       "progress": "Download von {{agent}}",
       "readFailed": "{{agent}} konnte auf diesem Host nicht überprüft werden. Erneuter Versuch.",
@@ -24087,11 +24087,11 @@
       "activeAgentNeedsPermission": "Der aktive Agent benötigt eine Berechtigung.",
       "statusUnverified": "Der Status des {{target}}n Agenten konnte nicht überprüft werden.",
       "approvalUnseen": "Der {{target}} Agent wartet möglicherweise auf eine Genehmigung. Sende die Notizen, wenn sein Durchgang beendet ist.",
-      "hostUpdateRequired": "Aktualisiere Orca auf dem Host des {{target}}n Agenten, um ihm Notizen zu senden.",
+      "hostUpdateRequired": "Aktualisiere Adehone auf dem Host des {{target}}n Agenten, um ihm Notizen zu senden.",
       "notReady": "Der {{target}} Agent war noch nicht bereit für Eingaben.",
       "notWritable": "Der {{target}} Agent hat die Notizen nicht angenommen.",
-      "selectedSubmitFailed": "Die Notizen wurden möglicherweise bereits in das ausgewählte Terminal eingefügt, aber Orca konnte sie nicht absenden.",
-      "activeSubmitFailed": "Die Notizen wurden möglicherweise bereits in das aktive Terminal eingefügt, aber Orca konnte sie nicht absenden.",
+      "selectedSubmitFailed": "Die Notizen wurden möglicherweise bereits in das ausgewählte Terminal eingefügt, aber Adehone konnte sie nicht absenden.",
+      "activeSubmitFailed": "Die Notizen wurden möglicherweise bereits in das aktive Terminal eingefügt, aber Adehone konnte sie nicht absenden.",
       "notWritableSelection": "Der {{target}} Agent hat die Auswahl nicht angenommen."
     },
     "crash": {
@@ -24106,8 +24106,8 @@
       "routing": {
         "preference": {
           "dialog": {
-            "keepInOrcaTitle": "Terminal-Links weiter in Orca öffnen?",
-            "openInOrcaTitle": "Terminal-Links in Orca öffnen?",
+            "keepInOrcaTitle": "Terminal-Links weiter in Adehone öffnen?",
+            "openInOrcaTitle": "Terminal-Links in Adehone öffnen?",
             "shortcutSummary": "{{shortcut}}-Klick öffnet einmalig deinen Systembrowser. Du kannst das in den Einstellungen ändern."
           }
         }
@@ -24122,7 +24122,7 @@
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "{{name}} aus Orca entfernen?",
+        "removeFromOrcaTitle": "{{name}} aus Adehone entfernen?",
         "ghostHostLine": "{{host}} ist kein gespeicherter Host mehr. Die Dateien bleiben dort.",
         "disconnectedHostLine": "{{host}} ist nicht verbunden. Die Dateien bleiben auf dem Host.",
         "filesStayLine": "Die Dateien bleiben auf {{host}}.",
@@ -25019,8 +25019,8 @@
       "turnOffSharing": "Freigabe ausschalten",
       "dialogQuestion": "Jedem Codex-Tab einen eigenen Server geben?",
       "stopSummary": "Stoppt den laufenden Server und schließt alle Codex-Sitzungen, die ihn nutzen.",
-      "dialogSummary": "Schaltet die Codex-Serverfreigabe aus, auch außerhalb von Orca.",
-      "alsoStop": "Auch den laufenden Server stoppen (schließt alle Codex-Sitzungen, die ihn nutzen, auch außerhalb von Orca)",
+      "dialogSummary": "Schaltet die Codex-Serverfreigabe aus, auch außerhalb von Adehone.",
+      "alsoStop": "Auch den laufenden Server stoppen (schließt alle Codex-Sitzungen, die ihn nutzen, auch außerhalb von Adehone)",
       "couldNotTurnOff": "Die Freigabe konnte nicht ausgeschaltet werden.",
       "stopFailedAfterOff": "Die Freigabe ist aus, aber der Server wurde nicht gestoppt.",
       "turnOffAndStop": "Turn off and stop server"
@@ -25097,11 +25097,11 @@
       "lighterText": "Dünnerer Terminaltext"
     },
     "claudeThemeSyncOffer": {
-      "title": "Claude Code an dein Orca-Design anpassen?",
-      "description": "Claude Code auf diesem Computer würde deine Terminalfarben verwenden und Designänderungen folgen, auch außerhalb von Orca. Du kannst das in den Einstellungen ändern.",
+      "title": "Claude Code an dein Adehone-Design anpassen?",
+      "description": "Claude Code auf diesem Computer würde deine Terminalfarben verwenden und Designänderungen folgen, auch außerhalb von Adehone. Du kannst das in den Einstellungen ändern.",
       "accept": "Design anpassen",
       "accepted": "Claude-Code-Designsynchronisierung ist aktiv",
-      "acceptedDescription": "Neue Claude-Code-Sitzungen auf diesem Computer verwenden dein Orca-Design.",
+      "acceptedDescription": "Neue Claude-Code-Sitzungen auf diesem Computer verwenden dein Adehone-Design.",
       "decline": "Nein danke",
       "failed": "Claude-Code-Designsynchronisierung konnte nicht aktiviert werden",
       "failedDescription": "Aktiviere sie in den Einstellungen."
@@ -25138,7 +25138,7 @@
     "new": "Neue Voreinstellung für partiellen Checkout",
     "edit": "Voreinstellung für partiellen Checkout bearbeiten",
     "saveFailed": "Die Voreinstellung konnte nicht gespeichert werden. Erneut versuchen.",
-    "updateServerToRemove": "Aktualisiere Orca auf dem Server dieses Projekts, um seine Voreinstellungen zu entfernen.",
+    "updateServerToRemove": "Aktualisiere Adehone auf dem Server dieses Projekts, um seine Voreinstellungen zu entfernen.",
     "nameRequired": "Ein Name ist erforderlich.",
     "nameTooLong": "Der Name darf höchstens 80 Zeichen lang sein.",
     "nameExists": "Eine Voreinstellung namens „{{name}}“ ist bereits vorhanden.",
@@ -25213,8 +25213,8 @@
       "agentPlatform": "Google Agent Platform",
       "projectFromGcloud": "Aus gcloud",
       "locationGlobal": "global",
-      "adcHint": "Optional. Orca verwendet dein gcloud-Projekt und den Standort „global“. Führe vorher einmal gcloud auth application-default login aus.",
-      "apiKeySaveFailed": "Orca konnte den Schlüssel nicht speichern. Versuche es erneut.",
+      "adcHint": "Optional. Adehone verwendet dein gcloud-Projekt und den Standort „global“. Führe vorher einmal gcloud auth application-default login aus.",
+      "apiKeySaveFailed": "Adehone konnte den Schlüssel nicht speichern. Versuche es erneut.",
       "apiKeySaved": "Schlüssel verschlüsselt auf diesem Host gespeichert.",
       "apiKeyFromEnvironment": "GEMINI_API_KEY aus deiner Umgebung wird verwendet. Füge einen Schlüssel ein, um einen anderen zu verwenden.",
       "apiKeyLabel": "Gemini-API-Schlüssel",
@@ -25379,12 +25379,12 @@
     "rename": {
       "action": "Umbenennen",
       "title": "Konto umbenennen",
-      "description": "Nur der in Orca angezeigte Name ändert sich. Leer lassen, um {{email}} anzuzeigen.",
+      "description": "Nur der in Adehone angezeigte Name ändert sich. Leer lassen, um {{email}} anzuzeigen.",
       "label": "Anzeigename",
       "reset": "Auf Standard zurücksetzen",
       "cancel": "Abbrechen",
       "save": "Speichern",
-      "unsupportedHost": "Aktualisiere Orca auf {{host}}, um diese Einstellung dort zu ändern."
+      "unsupportedHost": "Aktualisiere Adehone auf {{host}}, um diese Einstellung dort zu ändern."
     }
   },
   "fileSearch": {
@@ -25420,14 +25420,14 @@
       "createdBranchSkipped": "Die Einrichtung wurde nicht ausgeführt: Der Branch dieses Arbeitsbereichs enthält andere adehone.yaml-Einrichtungsbefehle als die von dir genehmigten.",
       "runFailed": "Die Einrichtung konnte nicht gestartet werden.",
       "changedAgain": "Die Einrichtung wurde nicht ausgeführt: Die orca.yaml dieses Arbeitsbereichs hat sich seit deiner Prüfung erneut geändert.",
-      "hostUnsupported": "Genehmigt. Aktualisiere Orca auf dem Host des Arbeitsbereichs, um die Einrichtung für einen bestehenden Arbeitsbereich auszuführen.",
+      "hostUnsupported": "Genehmigt. Aktualisiere Adehone auf dem Host des Arbeitsbereichs, um die Einrichtung für einen bestehenden Arbeitsbereich auszuführen.",
       "reviewAction": "Einrichtung prüfen",
       "branchDiffersTitle": "Der Branch dieses Arbeitsbereichs hat andere Einrichtungsbefehle",
       "branchDiffersBody": "Der Arbeitsbereich wurde erstellt, aber die Einrichtung wurde übersprungen: Die Befehle in <code>orca.yaml</code> unterscheiden sich von den genehmigten Befehlen. Führe die neuen Befehle nur für diesen Arbeitsbereich aus und nur, wenn du <repo/> vertraust.",
       "branchSetupScript": "Einrichtungsskript des Branches",
       "runOnce": "Einmal ausführen",
       "alwaysTrust": "Immer vertrauen",
-      "alwaysTrustScope": "Mit „Immer vertrauen“ führt Orca künftige Befehle aus <code>orca.yaml</code> in <repo/> auch nach Änderungen ohne Nachfrage aus."
+      "alwaysTrustScope": "Mit „Immer vertrauen“ führt Adehone künftige Befehle aus <code>orca.yaml</code> in <repo/> auch nach Änderungen ohne Nachfrage aus."
     },
     "delete": {
       "detachingChildren": "Untergeordnete Arbeitsbereiche werden gelöst…",
@@ -25732,8 +25732,8 @@
   "updates": {
     "installOnQuit": {
       "title": "Update bereit zur Installation",
-      "summary": "Orca beenden. Nach der Installation erneut öffnen.",
-      "quit": "Orca beenden",
+      "summary": "Adehone beenden. Nach der Installation erneut öffnen.",
+      "quit": "Adehone beenden",
       "later": "Später"
     },
     "installBlock": {
@@ -25798,29 +25798,29 @@
       "rateLimitedInMinutes_other": "GitHub-Ratenlimit erreicht. In etwa {{count}} Minuten erneut versuchen.",
       "rateLimitedInMinutesSignedOut_one": "GitHub-Ratenlimit erreicht. In etwa {{count}} Minute erneut versuchen oder `gh auth login` ausführen, damit Adehone das höhere Limit deines Kontos nutzen kann.",
       "rateLimitedInMinutesSignedOut_other": "GitHub-Ratenlimit erreicht. In etwa {{count}} Minuten erneut versuchen oder `gh auth login` ausführen, damit Adehone das höhere Limit deines Kontos nutzen kann.",
-      "teamUpdatePolicy": "Das Team verwaltet Orca-Updates.",
-      "automaticInstallCheckpointFailed": "Orca konnte das aktuelle Fenster vor dem Neustart nicht sichern. Versuche erneut, das Update zu installieren.",
-      "automaticInstallTerminalBusy": "Einige Terminals würden beim Neustart beendet. Orca versucht es bei einer späteren Update-Prüfung erneut.",
-      "macStagingTimeout": "macOS bereitet das Update noch vor. Falls es dabei bleibt, beende Orca und öffne es erneut."
+      "teamUpdatePolicy": "Das Team verwaltet Adehone-Updates.",
+      "automaticInstallCheckpointFailed": "Adehone konnte das aktuelle Fenster vor dem Neustart nicht sichern. Versuche erneut, das Update zu installieren.",
+      "automaticInstallTerminalBusy": "Einige Terminals würden beim Neustart beendet. Adehone versucht es bei einer späteren Update-Prüfung erneut.",
+      "macStagingTimeout": "macOS bereitet das Update noch vor. Falls es dabei bleibt, beende Adehone und öffne es erneut."
     },
     "automatic": {
-      "downloading": "Orca {{version}} wird heruntergeladen…",
-      "installing": "Orca {{version}} wird installiert…",
-      "restarting": "Orca wird automatisch neu gestartet."
+      "downloading": "Adehone {{version}} wird heruntergeladen…",
+      "installing": "Adehone {{version}} wird installiert…",
+      "restarting": "Adehone wird automatisch neu gestartet."
     },
     "emergencyRequired": {
-      "title": "Orca {{version}} ist erforderlich",
-      "summary": "Orca {{version}} ist erforderlich. Zum Aktualisieren neu starten."
+      "title": "Adehone {{version}} ist erforderlich",
+      "summary": "Adehone {{version}} ist erforderlich. Zum Aktualisieren neu starten."
     },
     "teamRequired": {
-      "summary": "Das Team verlangt Orca {{version}}. Zum Aktualisieren neu starten.",
-      "title": "Das Team verlangt Orca {{version}}",
+      "summary": "Das Team verlangt Adehone {{version}}. Zum Aktualisieren neu starten.",
+      "title": "Das Team verlangt Adehone {{version}}",
       "restartNow": "Jetzt neu starten",
-      "countdown": "Orca speichert die Sitzungen und startet nach dem Countdown neu. Aktive Agenten können den Neustart verzögern.",
-      "waiting": "Orca wartet vor dem Neustart auf aktive Agenten.",
-      "retry": "Orca versucht dieses Update beim nächsten Start erneut.",
+      "countdown": "Adehone speichert die Sitzungen und startet nach dem Countdown neu. Aktive Agenten können den Neustart verzögern.",
+      "waiting": "Adehone wartet vor dem Neustart auf aktive Agenten.",
+      "retry": "Adehone versucht dieses Update beim nächsten Start erneut.",
       "manual": "Die automatische Installation ist fehlgeschlagen. Dieses Update manuell installieren.",
-      "deadline": "Neustart bis {{deadline}}. Orca speichert die Sitzungen vor dem Neustart.",
+      "deadline": "Neustart bis {{deadline}}. Adehone speichert die Sitzungen vor dem Neustart.",
       "download": "Downloads öffnen"
     },
     "remoteUpdateBusy": "Dieser Server wird bereits aktualisiert. Prüfe erneut, sobald der Vorgang abgeschlossen ist."
@@ -26068,8 +26068,8 @@
       "destinationChanged": "Frühere Projekte aus {{distro}} wurden auf einen anderen WSL-Host verschoben. Diesen Host verbinden, um weitere Projekte zu verschieben.",
       "hostUnavailable": "Der {{distro}}-Host ist nicht verbunden. In den Einstellungen verbinden und dann erneut versuchen.",
       "hostUpdateRequired": "Auf dem {{distro}}-Host läuft eine ältere Version von Adehone. In den Einstellungen aktualisieren und dann erneut versuchen.",
-      "hostLaunchUnproven": "Der Orca-Server in {{distro}} läuft mit dieser Orca-Version, kann diese Projekte aber nicht übernehmen, daher hilft ein Update nicht. Er wurde möglicherweise außerhalb der WSL-Hosts gestartet, etwa von einem SSH-Host. Entferne den Host {{distro}} in den Einstellungen und füge ihn dann erneut hinzu.",
-      "hostNotWslLaunched": "Der Orca-Server in {{distro}} wurde nicht als WSL-Host gestartet (meist hat ihn ein SSH-Host für diese Distribution gestartet), daher kann er diese Projekte nicht übernehmen. Ein Update hilft nicht. Wähle in den Einstellungen beim Host {{distro}} „Als WSL-Host neu starten“ und versuche es dann erneut.",
+      "hostLaunchUnproven": "Der Adehone-Server in {{distro}} läuft mit dieser Adehone-Version, kann diese Projekte aber nicht übernehmen, daher hilft ein Update nicht. Er wurde möglicherweise außerhalb der WSL-Hosts gestartet, etwa von einem SSH-Host. Entferne den Host {{distro}} in den Einstellungen und füge ihn dann erneut hinzu.",
+      "hostNotWslLaunched": "Der Adehone-Server in {{distro}} wurde nicht als WSL-Host gestartet (meist hat ihn ein SSH-Host für diese Distribution gestartet), daher kann er diese Projekte nicht übernehmen. Ein Update hilft nicht. Wähle in den Einstellungen beim Host {{distro}} „Als WSL-Host neu starten“ und versuche es dann erneut.",
       "terminalsBlocked": "Einige Terminals, Agenten oder Automatisierungen in diesen Projekten sind beschäftigt. Es wurde nichts verschoben.",
       "exportIncomplete": "Einige gespeicherte Zustandsdaten dieser Projekte können noch nicht übertragen werden, daher wurde nichts verschoben:",
       "exportIncompletePreview": "Einige gespeicherte Zustandsdaten dieser Projekte können noch nicht übertragen werden:",
@@ -26078,7 +26078,7 @@
       "scopeChanged": "Ein Projekt wurde während der Vorbereitung des Verschiebevorgangs geändert, daher wurde nichts verschoben. Die Projekte prüfen und erneut versuchen.",
       "cancelled": "Verschieben abgebrochen. Es wurde nichts verschoben.",
       "finishedEarlierMove": "Adehone hat zunächst einen früheren Verschiebevorgang nach {{distro}} abgeschlossen. Das Fenster neu laden und dann diesen Verschiebevorgang erneut starten.",
-      "mappedDriveUnverifiable": "Orca konnte einen Laufwerksbuchstaben, auf dem einige Projekte gespeichert sind, nicht prüfen. Stelle sicher, dass das Laufwerk verbunden ist, und versuche es dann erneut.",
+      "mappedDriveUnverifiable": "Adehone konnte einen Laufwerksbuchstaben, auf dem einige Projekte gespeichert sind, nicht prüfen. Stelle sicher, dass das Laufwerk verbunden ist, und versuche es dann erneut.",
       "nothingMovable": "Keines dieser Projekte kann bisher auf den Host {{distro}} verschoben werden. Bei jedem steht, warum."
     },
     "step": {
@@ -26120,8 +26120,8 @@
       "other": "Es kann nicht verschoben werden.",
       "windowsGitWorktrees": "Git for Windows hat einige seiner Worktrees erfasst, auch inzwischen gelöschte, und Git auf dem WSL-Host kann diese Einträge nicht verwenden. Entferne diese Worktrees oder führe git worktree repair in WSL aus und verschiebe es dann.",
       "windowsGitDir": "Sein Git-Ordner ist über einen Windows-Pfad verknüpft (ein Worktree oder ein separater Git-Ordner, den Git for Windows eingerichtet hat), dem Git auf dem WSL-Host nicht folgen kann.",
-      "gitUnreadable": "Orca konnte seine Git-Details nicht rechtzeitig lesen, um sie zu prüfen, daher bleibt es auf diesem Computer. Prüfe es gleich noch einmal.",
-      "mappedDriveUnverifiable": "Orca konnte gerade nicht prüfen, wohin sein Laufwerksbuchstabe verweist. Stelle sicher, dass das Laufwerk verbunden ist, und prüfe es dann erneut."
+      "gitUnreadable": "Adehone konnte seine Git-Details nicht rechtzeitig lesen, um sie zu prüfen, daher bleibt es auf diesem Computer. Prüfe es gleich noch einmal.",
+      "mappedDriveUnverifiable": "Adehone konnte gerade nicht prüfen, wohin sein Laufwerksbuchstabe verweist. Stelle sicher, dass das Laufwerk verbunden ist, und prüfe es dann erneut."
     },
     "reloadToast": {
       "title": "Neu laden, um das Verschieben abzuschließen"
@@ -26216,10 +26216,10 @@
     "killAllLocal": "Alle lokalen Sitzungen beenden",
     "killFailed": "Das Terminal konnte nicht beendet werden. Die zuletzt beobachteten Sitzungen bleiben erhalten.",
     "owner": {
-      "orca": "Orca",
+      "orca": "Adehone",
       "agents": "Agenten",
       "otherTerminals": "Andere Terminals",
-      "privateBytes": "Von Orca, Agenten und Terminals belegt"
+      "privateBytes": "Von Adehone, Agenten und Terminals belegt"
     },
     "chatRow": {
       "tooltip": "{{agent}}-Chat einschließlich der darunter laufenden Prozesse"
@@ -26550,12 +26550,12 @@
   },
   "wslDriveProject": {
     "label": "Git",
-    "converted": "Orca führt Git für dieses Projekt unter Windows aus. Terminals und Agenten laufen weiterhin in {{distro}}.",
-    "checkFailed": "Orca konnte dieses Projekt nicht prüfen.",
-    "convertFailed": "Orca konnte Git nicht umstellen.",
+    "converted": "Adehone führt Git für dieses Projekt unter Windows aus. Terminals und Agenten laufen weiterhin in {{distro}}.",
+    "checkFailed": "Adehone konnte dieses Projekt nicht prüfen.",
+    "convertFailed": "Adehone konnte Git nicht umstellen.",
     "description": "Dieses Projekt liegt auf einem Windows-Laufwerk, auf dem Git in WSL langsam ist und unter Windows vorgenommene Änderungen übersieht. Verwende stattdessen Git for Windows; Terminals und Agenten bleiben in {{distro}}.",
     "useWindowsGit": "Git for Windows verwenden",
-    "review": "In Orca ändert sich für dieses Projekt nichts: Tabs, Terminals, Chats und Arbeitsbereiche bleiben, wie sie sind. Laufende Terminals laufen weiter.",
+    "review": "In Adehone ändert sich für dieses Projekt nichts: Tabs, Terminals, Chats und Arbeitsbereiche bleiben, wie sie sind. Laufende Terminals laufen weiter.",
     "lineEndings": "Setzt in diesem Repo außerdem core.autocrlf, damit git in WSL-Terminals nicht mehr jede Datei als geändert anzeigt.",
     "cancel": "Abbrechen",
     "confirm": "Git for Windows verwenden",
@@ -26570,24 +26570,24 @@
   },
   "wslDriveUnc": {
     "label": "Speicherort",
-    "description": "Orca öffnet dieses Projekt über WSL. Öffne es stattdessen unter {{drivePath}}: Git läuft dann unter Windows, was hier deutlich schneller ist, und Terminals und Agenten bleiben in {{distro}}.",
+    "description": "Adehone öffnet dieses Projekt über WSL. Öffne es stattdessen unter {{drivePath}}: Git läuft dann unter Windows, was hier deutlich schneller ist, und Terminals und Agenten bleiben in {{distro}}.",
     "convert": "Unter {{drivePath}} öffnen",
-    "review": "Orca pausiert die Terminals dieses Projekts, startet neu und öffnet es unter {{drivePath}} erneut. Tabs, Terminals mit ihrem Verlauf, Chats und Einstellungen werden übernommen, und pausierte Terminals machen dort weiter, wo sie waren.",
+    "review": "Adehone pausiert die Terminals dieses Projekts, startet neu und öffnet es unter {{drivePath}} erneut. Tabs, Terminals mit ihrem Verlauf, Chats und Einstellungen werden übernommen, und pausierte Terminals machen dort weiter, wo sie waren.",
     "cancel": "Abbrechen",
     "confirm": "Neu starten und umstellen",
-    "failed": "Orca konnte dieses Projekt nicht umstellen.",
-    "restarting": "Orca wird neu gestartet, um dieses Projekt umzustellen…",
+    "failed": "Adehone konnte dieses Projekt nicht umstellen.",
+    "restarting": "Adehone wird neu gestartet, um dieses Projekt umzustellen…",
     "terminalsBusy": "Einige Terminals in diesem Projekt sind beschäftigt. Lass sie fertig werden oder schließe sie und versuche es dann erneut.",
-    "pauseFailed": "Orca konnte die Terminals dieses Projekts nicht pausieren, daher wurde nichts geändert.",
+    "pauseFailed": "Adehone konnte die Terminals dieses Projekts nicht pausieren, daher wurde nichts geändert.",
     "blocker": {
-      "pending": "Orca stellt bereits ein Projekt um. Der Vorgang wird beim Neustart von Orca abgeschlossen.",
-      "state": "Orca hat für dieses Projekt gespeicherte Daten gefunden, die es nicht sicher umstellen kann, daher wurde nichts geändert.",
-      "duplicate": "{{drivePath}} ist bereits ein Projekt in Orca.",
+      "pending": "Adehone stellt bereits ein Projekt um. Der Vorgang wird beim Neustart von Adehone abgeschlossen.",
+      "state": "Adehone hat für dieses Projekt gespeicherte Daten gefunden, die es nicht sicher umstellen kann, daher wurde nichts geändert.",
+      "duplicate": "{{drivePath}} ist bereits ein Projekt in Adehone.",
       "mixed": "Einige Ordner dieses Projekts liegen in WSL, nicht auf einem Windows-Laufwerk.",
-      "overlap": "Dieses Projekt teilt Ordner mit einem Projekt, das Orca nicht umstellen kann, daher würden sie getrennt.",
+      "overlap": "Dieses Projekt teilt Ordner mit einem Projekt, das Adehone nicht umstellen kann, daher würden sie getrennt.",
       "notDriveMount": "In dieser Distribution ist dieser Ordner nicht {{drivePath}}: Er ist nicht von diesem Windows-Laufwerk eingebunden.",
       "notConvertible": "Dieses Projekt liegt auf diesem Computer nicht auf einem Windows-Laufwerk.",
-      "differingState": "Orca hat für diesen Ordner unter seinem WSL-Pfad und unter {{drivePath}} unterschiedliche Details gespeichert, daher wurde nichts geändert.",
+      "differingState": "Adehone hat für diesen Ordner unter seinem WSL-Pfad und unter {{drivePath}} unterschiedliche Details gespeichert, daher wurde nichts geändert.",
       "projectSplit": "Dieses Projekt enthält auch ein Repository, das nicht umgestellt wird, daher wurde nichts geändert."
     }
   },
@@ -26841,11 +26841,11 @@
         "prompt": "Der Agent wurde an einer Abfrage angehalten, die deine Antwort braucht."
       },
       "botProviderErrorNotSaved": "Der Durchgang des Bots ist fehlgeschlagen, aber diese Ausführung hat den Fehler des Anbieters nicht gespeichert. Der ursprüngliche Chat enthält möglicherweise weitere Details.",
-      "botsOff": "Bots sind in den Einstellungen ausgeschaltet, daher hat Orca diesen Lauf übersprungen.",
-      "botsOffByTeam": "Bots sind vom Team ausgeschaltet, daher hat Orca diese Ausführung übersprungen.",
+      "botsOff": "Bots sind in den Einstellungen ausgeschaltet, daher hat Adehone diesen Lauf übersprungen.",
+      "botsOffByTeam": "Bots sind vom Team ausgeschaltet, daher hat Adehone diese Ausführung übersprungen.",
       "botMissing": "Der Bot, als der diese Automatisierung läuft, existiert nicht mehr.",
       "botFolderMissing": "Der Ordner des Bots ist nicht mehr verfügbar.",
-      "botPaused": "{{bot}} ist pausiert, daher hat Orca diesen Lauf übersprungen."
+      "botPaused": "{{bot}} ist pausiert, daher hat Adehone diesen Lauf übersprungen."
     },
     "extraAgentArgs": {
       "errors": {
@@ -26874,12 +26874,12 @@
       "listSkippedTitle": "Die letzte Ausführung hat die Einrichtung übersprungen, weil sich die adehone.yaml-Einrichtungsbefehle ihres Branches geändert haben. Prüfe sie über das Aktionsmenü."
     },
     "botTarget": {
-      "hostNeedsUpdate": "Aktualisiere den Orca-Server auf {host}, damit seine Bots Automatisierungen nutzen können."
+      "hostNeedsUpdate": "Aktualisiere den Adehone-Server auf {host}, damit seine Bots Automatisierungen nutzen können."
     },
     "wontFire": "Wird nicht ausgeführt: benötigt den Connector {{connectors}}",
     "eventsWontFire": "Läuft nur nach Zeitplan: benötigt den Connector {{connectors}}",
-    "webhooksOff": "Wird nicht ausgeführt: Orca Cloud unterstützt noch keine Webhooks",
-    "webhooksOffScheduled": "Läuft nur nach Zeitplan: Orca Cloud unterstützt noch keine Webhooks",
+    "webhooksOff": "Wird nicht ausgeführt: Adehone Cloud unterstützt noch keine Webhooks",
+    "webhooksOffScheduled": "Läuft nur nach Zeitplan: Adehone Cloud unterstützt noch keine Webhooks",
     "openConnectors": "Connectors öffnen",
     "hostUnreachable": "{{host}} konnte nicht erreicht werden. Erneut versuchen, sobald der Host wieder verfügbar ist."
   },
@@ -27157,8 +27157,8 @@
       "suspendExitedWithoutCode": "Anhalten wurde mit unbekanntem Code beendet.",
       "resumeExited": "Fortsetzen wurde mit Code {{exitCode}} beendet.",
       "resumeExitedWithoutCode": "Fortsetzen wurde mit unbekanntem Code beendet.",
-      "recipeTimedOut": "Der Rezeptschritt {{mode}} wurde nicht innerhalb von {{timeout}} abgeschlossen, daher hat Orca ihn gestoppt. Prüfe die Ausgabe des Rezepts oder erhöhe timeoutSeconds in orca.yaml, wenn er länger braucht.",
-      "provisionInterrupted": "Orca wurde beendet, während diese VM erstellt wurde. Lösche sie, um Ressourcen beim Anbieter freizugeben."
+      "recipeTimedOut": "Der Rezeptschritt {{mode}} wurde nicht innerhalb von {{timeout}} abgeschlossen, daher hat Adehone ihn gestoppt. Prüfe die Ausgabe des Rezepts oder erhöhe timeoutSeconds in orca.yaml, wenn er länger braucht.",
+      "provisionInterrupted": "Adehone wurde beendet, während diese VM erstellt wurde. Lösche sie, um Ressourcen beim Anbieter freizugeben."
     }
   },
   "installDirAcl": {
@@ -27210,7 +27210,7 @@
     "disabledReason": {
       "needsPermission": "Agent benötigt eine Genehmigung",
       "approvalUnseen": "Agent wartet möglicherweise auf eine Genehmigung",
-      "hostUpdateRequired": "Aktualisiere Orca auf diesem Host, um an diesen Agent zu senden"
+      "hostUpdateRequired": "Aktualisiere Adehone auf diesem Host, um an diesen Agent zu senden"
     }
   },
   "wslDistroHold": {
@@ -27314,8 +27314,8 @@
     },
     "new": {
       "fromTemplate": "Vorlage",
-      "hostNeedsServer": "Orca-Server erforderlich",
-      "hostNeedsServerHint": "Richte unter Einstellungen → Entfernte Orca-Server einen Orca-Server auf {{host}} ein, um Bots auszuführen.",
+      "hostNeedsServer": "Adehone-Server erforderlich",
+      "hostNeedsServerHint": "Richte unter Einstellungen → Entfernte Adehone-Server einen Adehone-Server auf {{host}} ein, um Bots auszuführen.",
       "pictureColor": "Hintergrundfarbe",
       "pictureColorCustom": "Benutzerdefinierte Farbe",
       "pictureOutfit": "Outfit",
@@ -27344,7 +27344,7 @@
       "change": "Ändern",
       "computer": "Computer",
       "computerHint": "Wo der Bot läuft.",
-      "computerAccountHint": "Wo der Bot läuft, bei Orca angemeldet als {{account}}.",
+      "computerAccountHint": "Wo der Bot läuft, bei Adehone angemeldet als {{account}}.",
       "useChatDefaults": "Chat-Standardeinstellungen verwenden",
       "chatDefault": "Wie im Chat",
       "agent": "Agent",
@@ -27359,7 +27359,7 @@
         "noAgents": "Keine Agents",
         "noAgentsAvailable": "Keine Agents verfügbar",
         "pictureLoading": "Bild wird geladen…",
-        "updateOrca": "Orca aktualisieren"
+        "updateOrca": "Adehone aktualisieren"
       },
       "identityWatches": "Beobachtet {{what}}",
       "identityReports": "Meldet {{what}}",
@@ -27368,7 +27368,7 @@
       "wslSetup": {
         "waiting": "Warte auf {{distro}}…",
         "starting": "{{distro}} wird gestartet",
-        "installing": "Orcas Server wird in ~/.orca-remote installiert",
+        "installing": "Adehones Server wird in ~/.orca-remote installiert",
         "connecting": "Verbindung wird hergestellt",
         "findingAgents": "Agenten in {{distro}} werden gesucht",
         "installingHint": "Beim ersten Mal wird auch die Linux-Node-Laufzeit heruntergeladen.",
@@ -27379,7 +27379,7 @@
         "title": "{{distro}} wird als Host eingerichtet",
         "subtitle": "Beim ersten Mal etwa eine Minute. Deine Windows-Dateien und andere Distributionen bleiben unberührt.",
         "cancel": "Abbrechen",
-        "failedGeneric": "Orcas Server ist in der Distribution nicht gestartet. Die Details zeigen, was ihn gestoppt hat."
+        "failedGeneric": "Adehones Server ist in der Distribution nicht gestartet. Die Details zeigen, was ihn gestoppt hat."
       },
       "wslNoAgent": {
         "field": "Kein Agent in {{distro}}",
@@ -27709,22 +27709,22 @@
         "why": "Slack akzeptiert das gespeicherte Token dieses Workspaces nicht mehr.",
         "submit": "Erneut verbinden",
         "about": "Über Slack-Tokens",
-        "kept": "Orca Cloud speichert das neue Token verschlüsselt, sodass deine nächsten Bots hier nur einen Klick brauchen.",
+        "kept": "Adehone Cloud speichert das neue Token verschlüsselt, sodass deine nächsten Bots hier nur einen Klick brauchen.",
         "mineMac": "Das Token dieses Macs ist abgelaufen. Füge ein neues ein.",
         "mine": "Das Token dieses Computers ist abgelaufen. Füge ein neues ein.",
         "paste": "Füge ein neues Token ein, um die Verbindung wiederherzustellen.",
         "expiredOnTitle": "Slack-Anmeldung auf {{host}} abgelaufen",
         "signInAgain": "Erneut anmelden",
         "neededTitle": "Slack benötigt ein Token für diesen Workspace",
-        "whyNeeded": "Orca hat kein funktionierendes Slack-Token für diesen Workspace.",
+        "whyNeeded": "Adehone hat kein funktionierendes Slack-Token für diesen Workspace.",
         "pasteNeeded": "Füge ein Token ein, um fortzufahren.",
         "continue": "Fortfahren"
       },
       "problem": {
         "reconnecting": "Warte darauf, dass sich {{host}} wieder verbindet…",
         "reconnectingNext": "Die Slack-Einrichtung startet von selbst neu, sobald {{host}} wieder da ist. Du musst nicht von vorn beginnen oder ein Token einfügen.",
-        "offline": "Orca kann {{host}} nicht erreichen.",
-        "offlineNext": "Prüfe, ob Orca auf {{host}} läuft, und verbinde dich dann erneut. Die Slack-Einrichtung startet neu, sobald {{host}} wieder da ist.",
+        "offline": "Adehone kann {{host}} nicht erreichen.",
+        "offlineNext": "Prüfe, ob Adehone auf {{host}} läuft, und verbinde dich dann erneut. Die Slack-Einrichtung startet neu, sobald {{host}} wieder da ist.",
         "otherUser": "Ein anderes Slack-Konto hat die Verbindung genehmigt.",
         "otherUserNext": "Jemand, der bei einem anderen Slack-Konto angemeldet ist, hat den Slack-Link genehmigt, daher kann {{bot}} nicht in deinem Namen handeln. Hol dir einen neuen Link und genehmige ihn, während du bei deinem eigenen Slack-Konto angemeldet bist.",
         "expired": "Die Slack-Anmeldung wurde nicht abgeschlossen.",
@@ -27734,11 +27734,11 @@
         "reconnect": "Erneut verbinden",
         "replaceToken": "Token ersetzen",
         "details": "Details",
-        "reconnectFailed": "Orca kann {{host}} immer noch nicht erreichen."
+        "reconnectFailed": "Adehone kann {{host}} immer noch nicht erreichen."
       },
       "approve": {
-        "noteUntil": "Funktioniert einmal, bis {{time}}. Melde dich dort mit deinem eigenen Konto bei Slack an; Orca Cloud gibt die Genehmigung an {{host}} weiter.",
-        "note": "Funktioniert einmal. Melde dich dort mit deinem eigenen Konto bei Slack an; Orca Cloud gibt die Genehmigung an {{host}} weiter.",
+        "noteUntil": "Funktioniert einmal, bis {{time}}. Melde dich dort mit deinem eigenen Konto bei Slack an; Adehone Cloud gibt die Genehmigung an {{host}} weiter.",
+        "note": "Funktioniert einmal. Melde dich dort mit deinem eigenen Konto bei Slack an; Adehone Cloud gibt die Genehmigung an {{host}} weiter.",
         "noteUntilHere": "Funktioniert einmal, bis {{time}}. Melde dich dort mit deinem eigenen Konto bei Slack an.",
         "noteHere": "Funktioniert einmal. Melde dich dort mit deinem eigenen Konto bei Slack an.",
         "openOn": "Slack auf {{host}} öffnen",
@@ -27874,17 +27874,17 @@
     "host": {
       "botWorkspaceUnavailable": "Der Arbeitsbereich dieses Agenten ist hier gerade nicht verfügbar. Deshalb kann die Seite darin nicht geöffnet werden.",
       "signIn": {
-        "updateFirst": "Aktualisiere Orca auf {{host}} und melde es dann von hier aus an.",
-        "unconfigured": "Orca auf {{host}} wurde ohne Unterstützung für die Anmeldung bei Orca Cloud erstellt. Installiere dort die Release-Version von Orca, um es anzumelden.",
-        "unread": "Die Orca-Anmeldung von {{host}} konnte nicht gelesen werden.",
+        "updateFirst": "Aktualisiere Adehone auf {{host}} und melde es dann von hier aus an.",
+        "unconfigured": "Adehone auf {{host}} wurde ohne Unterstützung für die Anmeldung bei Adehone Cloud erstellt. Installiere dort die Release-Version von Adehone, um es anzumelden.",
+        "unread": "Die Adehone-Anmeldung von {{host}} konnte nicht gelesen werden.",
         "readAgain": "Erneut versuchen"
       }
     },
     "cloudSignIn": {
       "signIn": "Anmelden",
-      "webhooksHostChat": "Für Webhooks muss {{host}} bei Orca Cloud angemeldet sein. Ich erstelle ihn, sobald das der Fall ist.",
-      "eventsHostChat": "Für {{source}}-Ereignisse muss {{host}} bei Orca Cloud angemeldet sein. Ich speichere diese Regel, sobald das der Fall ist.",
-      "webhooksNotReaching": "Orca Cloud erreicht {{name}} nicht. Deshalb lassen sich noch keine Webhooks erstellen."
+      "webhooksHostChat": "Für Webhooks muss {{host}} bei Adehone Cloud angemeldet sein. Ich erstelle ihn, sobald das der Fall ist.",
+      "eventsHostChat": "Für {{source}}-Ereignisse muss {{host}} bei Adehone Cloud angemeldet sein. Ich speichere diese Regel, sobald das der Fall ist.",
+      "webhooksNotReaching": "Adehone Cloud erreicht {{name}} nicht. Deshalb lassen sich noch keine Webhooks erstellen."
     },
     "tabs": {
       "homeTitle": "Home"
@@ -27915,7 +27915,7 @@
     "failures": {
       "lookUnfinished": "Das letzte Umsehen wurde nicht beendet.",
       "lookTimedOut": "Das letzte Umsehen wurde nach {{minutes}} Min. gestoppt.",
-      "lookInterrupted": "Orca wurde während des letzten Umsehens beendet.",
+      "lookInterrupted": "Adehone wurde während des letzten Umsehens beendet.",
       "lookCouldNotStart": "Das letzte Umsehen konnte nicht starten.",
       "lookAsleep": "Das letzte Umsehen wurde verpasst, weil dieser Computer im Ruhezustand war.",
       "tidyUpUnfinished": "Das letzte Aufräumen wurde nicht beendet.",
@@ -27924,11 +27924,11 @@
       "tidyUpAsleep": "Das letzte Aufräumen wurde verpasst, weil dieser Computer im Ruhezustand war.",
       "tidyUpUnreadChats": "Das letzte Aufräumen konnte seine Chats nicht lesen und lief daher nicht.",
       "tidyUpNoDraft": "Das letzte Aufräumen hat keine neue MEMORY.md geliefert.",
-      "tidyUpNoOps": "Die Antwort des letzten Aufräumens war keine Liste von Änderungen, die Orca lesen konnte.",
-      "tidyUpAllSkipped": "Orca hat jede Änderung des letzten Aufräumens übersprungen, daher hat sich nichts geändert. ({{detail}})",
+      "tidyUpNoOps": "Die Antwort des letzten Aufräumens war keine Liste von Änderungen, die Adehone lesen konnte.",
+      "tidyUpAllSkipped": "Adehone hat jede Änderung des letzten Aufräumens übersprungen, daher hat sich nichts geändert. ({{detail}})",
       "tidyUpNotListLines": "Das letzte Aufräumen lief nicht: MEMORY.md enthält mehr als ein paar Zeilen, die keine Listenzeilen sind, und das Aufräumen liest nur Listenzeilen.",
-      "tidyUpMovedOnly": "Das letzte Aufräumen hat Statuszeilen nach memory/journal/ verschoben, aber Orca konnte den Rest der Antwort nicht verwenden. ({{detail}})",
-      "tidyUpBadTopic": "Das letzte Aufräumen nannte eine Themendatei, die Orca nicht schreiben kann, daher hat sich nichts geändert.",
+      "tidyUpMovedOnly": "Das letzte Aufräumen hat Statuszeilen nach memory/journal/ verschoben, aber Adehone konnte den Rest der Antwort nicht verwenden. ({{detail}})",
+      "tidyUpBadTopic": "Das letzte Aufräumen nannte eine Themendatei, die Adehone nicht schreiben kann, daher hat sich nichts geändert.",
       "tidyUpTooLong": "Die MEMORY.md des letzten Aufräumens hatte über {{max}} Zeilen und wurde nicht kürzer, daher hat sich nichts geändert.",
       "tidyUpTooManyRemoved": "Das letzte Aufräumen hat zu viele Zeilen auf einmal entfernt, daher hat sich nichts geändert.",
       "tidyUpTooManyAdded": "Das letzte Aufräumen hat zu viele neue Zeilen auf einmal hinzugefügt, daher hat sich nichts geändert.",
@@ -27942,9 +27942,9 @@
       "toolSavedValueGone": "Dieser gespeicherte Wert ist nicht mehr verfügbar. Gib ihn erneut ein oder entferne seine Zeile.",
       "toolValueMissing": "Gib für jede Zeile einen Wert ein oder entferne die Zeile.",
       "toolCredentialsUnreadable": "Die gespeicherten Tool-Zugangsdaten des Bots sind nicht lesbar. Gib die Werte des Tools erneut ein.",
-      "toolSignInManaged": "Orca meldet sich bei diesem Tool an. Melde es stattdessen an oder ab.",
-      "toolCredentialsRaced": "Die Tool-Zugangsdaten des Bots wurden in einem anderen Orca geändert. Versuche es erneut.",
-      "toolSourceManaged": "Orca verwaltet dieses Tool. Ändere es dort, wo du es eingerichtet hast.",
+      "toolSignInManaged": "Adehone meldet sich bei diesem Tool an. Melde es stattdessen an oder ab.",
+      "toolCredentialsRaced": "Die Tool-Zugangsdaten des Bots wurden in einem anderen Adehone geändert. Versuche es erneut.",
+      "toolSourceManaged": "Adehone verwaltet dieses Tool. Ändere es dort, wo du es eingerichtet hast.",
       "toolValuesUnmoved": "Ein Tool enthält noch seine gespeicherten Werte. Öffne die Tools des Bots erneut, um sie zu verschieben.",
       "googleAccountsChanged": "Seine Google-Konten haben sich geändert, seit du sie geöffnet hast. Prüfe sie und speichere erneut.",
       "toolCodexCheckFailed": "Codex konnte die Tools nicht prüfen oder verbinden. Prüfe die Einrichtung und versuche es erneut.",
@@ -27960,7 +27960,7 @@
       "toolSignInEnded": "Die Anmeldung war bereits beendet oder abgelaufen. Starte sie mit Verbinden neu.",
       "toolNotFound": "Dieser Bot hat kein Tool namens {{name}}.",
       "toolNeedsNoSignIn": "{{name}} verwendet seine gespeicherten Werte und braucht keine Anmeldung.",
-      "toolSignInAgentUnsupported": "Orca meldet {{name}} nur für Claude Code und Codex an. Füge es stattdessen mit seinen Anmeldewerten hinzu.",
+      "toolSignInAgentUnsupported": "Adehone meldet {{name}} nur für Claude Code und Codex an. Füge es stattdessen mit seinen Anmeldewerten hinzu.",
       "toolCodexNoSignInPage": "Codex hat keine Anmeldeseite für {{name}} geliefert.",
       "toolClaudeSignInFailed": "Claude konnte die Anmeldung bei {{name}} nicht starten.",
       "toolClaudeNoSignInPage": "Claude hat keine Anmeldeseite für {{name}} geöffnet.",
@@ -27979,7 +27979,7 @@
       "groupNeedsLocalBot": "Diese Gruppe braucht mindestens einen Bot auf diesem Computer.",
       "groupNameTaken": "{{name}} ist bereits in dieser Gruppe. Mitglieder brauchen unterschiedliche Namen, damit Erwähnungen eindeutig bleiben.",
       "groupPostFromHost": "Um in einer Gruppe mit Bots auf anderen Computern zu posten, verwende {{host}}.",
-      "groupPeerTooOld": "Aktualisiere Orca auf {{host}}, um dessen Bots einer Gruppe hinzuzufügen.",
+      "groupPeerTooOld": "Aktualisiere Adehone auf {{host}}, um dessen Bots einer Gruppe hinzuzufügen.",
       "attachmentUnreadable": "{{name}} kann nicht gelesen werden.",
       "attachmentTooLarge": "{{name}} ist größer als {{maxMb}} MB.",
       "attachmentUploading": "{{name}} wird noch hochgeladen.",
@@ -28005,7 +28005,7 @@
       "groupRemoteUnreachableRetry": "{{host}} war nicht erreichbar. {{detail}} Poste erneut, um es noch einmal zu versuchen.",
       "composioKeyCantCreateSessions": "Dieser Composio-Schlüssel kann keine Sitzungen erstellen. Er benötigt {{permission}}.",
       "composioKeyNeedsPermission": "Diesem Composio-Schlüssel fehlt eine Berechtigung. Er benötigt {{permission}}.",
-      "composioKeyMissingPermission": "Diesem Composio-Schlüssel fehlt eine Berechtigung, die Orca benötigt."
+      "composioKeyMissingPermission": "Diesem Composio-Schlüssel fehlt eine Berechtigung, die Adehone benötigt."
     },
     "lookAroundEvery": {
       "every4h": "Alle 4 Stunden, 8 bis 20 Uhr",
@@ -28039,7 +28039,7 @@
       "setDefault": "Als Standard festlegen",
       "accountActions": "Aktionen für {{email}}",
       "addServiceMenu": "Dienst hinzufügen…",
-      "updateToAdd": "Aktualisiere Orca auf {{host}}, um ein weiteres Google-Konto hinzuzufügen.",
+      "updateToAdd": "Aktualisiere Adehone auf {{host}}, um ein weiteres Google-Konto hinzuzufügen.",
       "signInRun": {
         "cancelled": "Die Google-Anmeldung wurde abgebrochen.",
         "failed": "Die Google-Anmeldung ist fehlgeschlagen. Versuche es erneut.",
@@ -28053,8 +28053,8 @@
       "useAnotherSignIn": "Mit Google anmelden",
       "useAnotherSignInDetail": "Verwendet deine aktuelle Google-App",
       "setUpNewAppDetail": "Wenn deine aktuelle App für dieses Konto oder diese Organisation nicht funktioniert",
-      "updateToSetUpNewApp": "Aktualisiere Orca auf {{host}}, um eine neue Google-App einzurichten.",
-      "updateToChooseAccounts": "Aktualisiere Orca auf {{host}}, um Konten auszuwählen.",
+      "updateToSetUpNewApp": "Aktualisiere Adehone auf {{host}}, um eine neue Google-App einzurichten.",
+      "updateToChooseAccounts": "Aktualisiere Adehone auf {{host}}, um Konten auszuwählen.",
       "picker": {
         "label": "Google-Konten",
         "addAccount": "Weiteres Konto hinzufügen",
@@ -28093,7 +28093,7 @@
         "unsupported": "Diese App wird noch nicht unterstützt.",
         "unavailable": "Diese App ist nicht erreichbar. Prüfe die Adresse und versuche es dann erneut.",
         "noTool": "Dieser Bot hat dieses Tool nicht mehr.",
-        "desktopOnly": "Melde dich in Orca auf {{host}} an.",
+        "desktopOnly": "Melde dich in Adehone auf {{host}} an.",
         "denied": "Der Zugriff wurde nicht erlaubt.",
         "expired": "Die Anmeldung ist abgelaufen. Versuche es erneut.",
         "couldNotSignIn": "Anmeldung nicht möglich. Versuche es erneut."
@@ -28106,7 +28106,7 @@
       "toast": "Ein erforderliches Plugin konnte nicht installiert werden",
       "open": "Plugins öffnen",
       "label": "Vom Team vorgeschrieben",
-      "body": "Orca konnte {{plugin}} nicht installieren."
+      "body": "Adehone konnte {{plugin}} nicht installieren."
     },
     "frameSaveAs": {
       "title": "Datei speichern",
@@ -28138,8 +28138,8 @@
       "teamPublisher": "Team"
     },
     "displayText": {
-      "tb0b38488": "GitHub-Themes für Orca",
-      "tb8aa98fc": "Standard-Themes von VS Code für Orca",
+      "tb0b38488": "GitHub-Themes für Adehone",
+      "tb8aa98fc": "Standard-Themes von VS Code für Adehone",
       "tfc425a57": "Multipass-VM-Rezepte",
       "t0f9f5503": "Die eigenen VS-Code-Themes von GitHub: Light Default, Dark Default, Dark Dimmed und die Varianten mit hohem Kontrast.",
       "t0b4f7e19": "Inoffizielle Portierungen der Standard-Farbthemes von VS Code: Dark Modern, Light Modern, Dark+ und Light+.",
@@ -28306,8 +28306,8 @@
   "renderer": {
     "lib": {
       "filePreview": {
-        "remoteFileUnsupported": "„Im Orca-Browser öffnen“ ist nur für lokale Dateien verfügbar.",
-        "twinFileUnsupported": "Dieses Projekt liegt auf mehr als einem Host, daher kann Orca nicht feststellen, welche Kopie geöffnet werden soll."
+        "remoteFileUnsupported": "„Im Adehone-Browser öffnen“ ist nur für lokale Dateien verfügbar.",
+        "twinFileUnsupported": "Dieses Projekt liegt auf mehr als einem Host, daher kann Adehone nicht feststellen, welche Kopie geöffnet werden soll."
       }
     }
   },
@@ -28332,10 +28332,10 @@
       "attachmentsOmitted": "Der gespeicherte Freeze-Bericht und die Diagnoseprotokolle wurden nicht angehängt: {{value0}}",
       "description": "Sende den gespeicherten Freeze-Bericht, damit wir verstehen, was passiert ist.",
       "notSent": "Freeze-Bericht wurde nicht gesendet",
-      "notes": "Optional: Was hast du gemacht, bevor Orca eingefroren ist?",
+      "notes": "Optional: Was hast du gemacht, bevor Adehone eingefroren ist?",
       "sent": "Freeze-Bericht gesendet.",
       "sentWithoutAttachments": "Details ohne den gespeicherten Freeze-Bericht oder Diagnoseprotokolle gesendet",
-      "summary": "Orca reagiert nicht mehr",
+      "summary": "Adehone reagiert nicht mehr",
       "title": "Einfrieren melden",
       "includeRedacted": "Gespeicherten Freeze-Bericht und aktuelle Protokolle anhängen (bereinigt)",
       "uncheckAttachments": "Uncheck \"Include the saved freeze report and recent logs (redacted)\" and try again, or copy the details."
@@ -28423,7 +28423,7 @@
     "preparing": "Wird vorbereitet…",
     "offerConfirming": "Warten auf Bestätigung…",
     "offerRetry": "Erneut versuchen",
-    "suggestionTitle": "Orca auf <lang>{{language}}</lang>",
+    "suggestionTitle": "Adehone auf <lang>{{language}}</lang>",
     "systemResolved": "{{system}} ({{language}})",
     "suggestionInstall": "Installieren",
     "suggestionUse": "Verwenden",
@@ -28477,8 +28477,8 @@
     "failedChipLabel": "Update fehlgeschlagen: Fehler anzeigen",
     "failedChipTooltip": "Update fehlgeschlagen. Klicken, um Details anzuzeigen.",
     "failedTitle": "{{product}} konnte nicht aktualisiert werden",
-    "failedDescription": "Orca hat <code>{{command}}</code> auf <strong>{{host}}</strong> ausgeführt, um dein {{product}} von <strong>{{installedVersion}}</strong> auf <strong>{{latestVersion}}</strong> zu aktualisieren, und dabei ist ein Fehler aufgetreten.",
-    "failedDescriptionNoCommand": "Orca konnte dein {{product}} auf <strong>{{host}}</strong> nicht aktualisieren.",
+    "failedDescription": "Adehone hat <code>{{command}}</code> auf <strong>{{host}}</strong> ausgeführt, um dein {{product}} von <strong>{{installedVersion}}</strong> auf <strong>{{latestVersion}}</strong> zu aktualisieren, und dabei ist ein Fehler aufgetreten.",
+    "failedDescriptionNoCommand": "Adehone konnte dein {{product}} auf <strong>{{host}}</strong> nicht aktualisieren.",
     "cardLabel": "Updates der Agenten-CLIs",
     "cardLater": "Später",
     "toastUpdating_one": "CLI {{current}} von {{count}} wird aktualisiert",
@@ -28561,11 +28561,11 @@
   },
   "mcpServers": {
     "paste": {
-      "badCommand": "Trage die Werte selbst in den Befehl mcp add ein: Orca kann keine $VARIABLES oder andere Shell-Ausdrücke ausfüllen.",
-      "unsupported": "Orca kann diesen Server so nicht hinzufügen: Er verwendet SSE, einen eigenen OAuth-Client oder einen aus der Umgebung gelesenen Wert.",
+      "badCommand": "Trage die Werte selbst in den Befehl mcp add ein: Adehone kann keine $VARIABLES oder andere Shell-Ausdrücke ausfüllen.",
+      "unsupported": "Adehone kann diesen Server so nicht hinzufügen: Er verwendet SSE, einen eigenen OAuth-Client oder einen aus der Umgebung gelesenen Wert.",
       "badAddCommand": "Prüfe den Befehl mcp add: ein Name und eine URL oder ein Befehl.",
       "badJson": "Prüfe das eingefügte JSON: Es lässt sich nicht parsen.",
-      "none": "Orca hat keinen Server gefunden, den es hinzufügen kann. SSE-Server, Server mit eigenem OAuth-Client oder Tool-Filtern sowie aus der Umgebung gelesene Werte (${VAR}) werden nicht unterstützt."
+      "none": "Adehone hat keinen Server gefunden, den es hinzufügen kann. SSE-Server, Server mit eigenem OAuth-Client oder Tool-Filtern sowie aus der Umgebung gelesene Werte (${VAR}) werden nicht unterstützt."
     }
   }
 }

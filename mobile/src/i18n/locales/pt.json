@@ -49,7 +49,7 @@
       "title": "Histórico de Sessões de Agente",
       "unavailable": "Histórico de Sessões de Agente Indisponível",
       "unknownHostPlatform": "Não foi possível determinar a plataforma do host.",
-      "updateHost": "Atualize o Orca neste host para consultar o histórico de sessões de agente.",
+      "updateHost": "Atualize o Adehone neste host para consultar o histórico de sessões de agente.",
       "waitingForHost": "Aguardando host…",
       "workspace": "Espaço de Trabalho",
       "hideDetails": "Ocultar detalhes",
@@ -132,7 +132,7 @@
       "stepProgress": "Etapa {{step}} de {{total}}"
     },
     "notifications": {
-      "description": "Receba alertas dos agentes mesmo com o app fechado. Enviados pelo serviço de notificações push do Orca e pela Apple ou pelo Google."
+      "description": "Receba alertas dos agentes mesmo com o app fechado. Enviados pelo serviço de notificações push do Adehone e pela Apple ou pelo Google."
     },
     "pair": {
       "backToHome": "Voltar ao início",
@@ -151,13 +151,13 @@
     "pairScan": {
       "cameraDisabledDescription": "Ative o acesso à câmera nas Configurações ou cole o código de pareamento.",
       "cameraDisabledTitle": "Acesso à câmera desativado",
-      "cameraPermissionDescription": "Escaneie o código QR do Orca no seu desktop ou cole o código de pareamento.",
+      "cameraPermissionDescription": "Escaneie o código QR do Adehone no seu desktop ou cole o código de pareamento.",
       "connectTimedOut": "Não foi possível conectar em {{seconds}}s — veja no log abaixo em que etapa a conexão parou",
       "connecting": "Conectando…",
       "invalidPairingCode": "Código de pareamento inválido — copie-o do seu computador e cole novamente",
-      "invalidQrCode": "Código QR do Orca inválido",
+      "invalidQrCode": "Código QR do Adehone inválido",
       "downloadQrCode": "Esse é o código de download. Leia o código de pareamento na etapa 2 no seu computador.",
-      "openDesktopStep": "Abra o Orca no seu computador",
+      "openDesktopStep": "Abra o Adehone no seu computador",
       "openMobileSettingsStep": "Vá para Configurações → Mobile",
       "openSettings": "Abrir Configurações",
       "pairingFailed": "Falha no pareamento: {{error}}",
@@ -171,11 +171,11 @@
       "title": "Parear com desktop",
       "tryAgain": "Tentar novamente",
       "codeNoLongerValid": "Este código de pareamento expirou, já foi usado ou foi substituído. Mostre um novo código no computador e escaneie novamente.",
-      "runtimeAccessLink": "Este link é para outro app do Orca. Escaneie o código em Configurações → Mobile no seu computador ou execute orca pair --mobile no seu servidor."
+      "runtimeAccessLink": "Este link é para outro app do Adehone. Escaneie o código em Configurações → Mobile no seu computador ou execute orca pair --mobile no seu servidor."
     },
     "terminalSettings": {
       "keepPhoneSize": "Manter no tamanho do celular (padrão)",
-      "leaveAppDescription": "Enquanto você usa um terminal no celular, o Orca o reduz para caber na tela. Ao fechar o app ou alternar para outro, esta opção define se o terminal mantém o tamanho do celular (evitando que ferramentas de CLI interativas reorganizem o conteúdo) ou volta ao tamanho do desktop. Você pode usar Restaurar no banner do desktop a qualquer momento para redimensioná-lo manualmente.",
+      "leaveAppDescription": "Enquanto você usa um terminal no celular, o Adehone o reduz para caber na tela. Ao fechar o app ou alternar para outro, esta opção define se o terminal mantém o tamanho do celular (evitando que ferramentas de CLI interativas reorganizem o conteúdo) ou volta ao tamanho do desktop. Você pode usar Restaurar no banner do desktop a qualquer momento para redimensioná-lo manualmente.",
       "leaveAppHeading": "AO SAIR DO APP",
       "noPairedDesktops": "Nenhum desktop pareado ainda. Pareie um para controlar o comportamento do terminal.",
       "restoreAfterMinutes_many": "Após {{count}} minutos",
@@ -207,7 +207,7 @@
       "weightMedium": "Médio",
       "fontPickerTitle": "Fonte do terminal",
       "fontsOnDevice": "Neste dispositivo",
-      "fontsIncluded": "Incluídas no Orca",
+      "fontsIncluded": "Incluídas no Adehone",
       "systemMono": "Monoespaçada do sistema",
       "defaultFont": "Padrão",
       "resetFont": "Restaurar configurações de fonte",
@@ -216,15 +216,15 @@
   },
   "appMove": {
     "play": {
-      "title": "O Orca agora está no Google Play",
+      "title": "O Adehone agora está no Google Play",
       "description": "Este app continua funcionando, mas as atualizações agora vêm do Google Play. A troca leva só alguns minutos.",
-      "installTitle": "Instale o Orca pelo Google Play",
+      "installTitle": "Instale o Adehone pelo Google Play",
       "installDescription": "Você pode fazer isso agora, de onde estiver.",
       "openGooglePlay": "Abrir o Google Play",
       "cantUseGooglePlay": "Não consigo usar o Google Play"
     },
     "download": {
-      "title": "Baixe o novo app do Orca",
+      "title": "Baixe o novo app do Adehone",
       "description": "Este app continua funcionando, mas as atualizações e correções de segurança agora vêm pelo novo app. A troca leva só alguns minutos.",
       "installTitle": "Baixe o novo app",
       "installDescription": "Se o celular pedir, permita que o navegador instale apps.",
@@ -233,7 +233,7 @@
       "keepThisVersionNote": "Você vai ficar sem as correções de segurança. Vamos lembrar você em uma semana."
     },
     "pairTitle": "Pareie com o seu computador",
-    "pairDescription": "No Orca do seu computador, vá em Configurações → Mobile e escaneie o código.",
+    "pairDescription": "No Adehone do seu computador, vá em Configurações → Mobile e escaneie o código.",
     "deleteTitle": "Exclua este app",
     "deleteDescription": "Assim que o novo app mostrar seus agentes. Até lá, continue usando este.",
     "dataKept": "Seus agentes, chats e workspaces ficam salvos no seu computador, então você verá tudo no novo app.",
@@ -278,7 +278,7 @@
       "webView": "Mostrar versão do site para computador"
     },
     "stream": {
-      "updateApp": "Atualize o aplicativo Orca para transmitir as guias do navegador aqui.",
+      "updateApp": "Atualize o aplicativo Adehone para transmitir as guias do navegador aqui.",
       "hostCannotStream": "Este host não pode transmitir abas do navegador aqui.",
       "checking": "Verificando o suporte de streaming do navegador de desktop.",
       "pageUnavailable": "A página do navegador ainda não está disponível.",
@@ -290,15 +290,15 @@
       "connectionNotSecure": "A conexão não é segura",
       "certificateNameMismatch": "O certificado não corresponde a {{value0}}.",
       "certificateDateInvalid": "O certificado de {{value0}} não é válido na data e hora atuais.",
-      "certificateAuthorityInvalid": "O Orca não confia na autoridade que emitiu o certificado de {{value0}}.",
-      "certificateVerificationFailed": "O Orca não conseguiu verificar o certificado de {{value0}}.",
+      "certificateAuthorityInvalid": "O Adehone não confia na autoridade que emitiu o certificado de {{value0}}.",
+      "certificateVerificationFailed": "O Adehone não conseguiu verificar o certificado de {{value0}}.",
       "proceedUnsafe": "Continuar Assim Mesmo (Inseguro)",
       "connecting": "Conectando…",
       "certificateChallengeExpired": "Esta aprovação de certificado expirou. Tente novamente a página para solicitar uma nova.",
       "certificateChallengeChanged": "A solicitação de certificado foi alterada. Tente novamente a página e revise o novo aviso.",
-      "certificateProceedFailed": "O Orca não conseguiu aprovar esta solicitação de certificado. Tente novamente a página.",
+      "certificateProceedFailed": "O Adehone não conseguiu aprovar esta solicitação de certificado. Tente novamente a página.",
       "certificateChallengeUnavailable": "Esta solicitação de certificado não está mais disponível. Tente novamente a página para solicitar uma nova.",
-      "certificateProceedNeedsHostUpdate": "Atualize o Orca neste host para aceitar avisos de certificado pelo celular."
+      "certificateProceedNeedsHostUpdate": "Atualize o Adehone neste host para aceitar avisos de certificado pelo celular."
     },
     "pagePrompt": {
       "downloadStarted": "Baixando para {{path}} no host",
@@ -425,7 +425,7 @@
       "copyFailed": "Não foi possível copiar a imagem",
       "saveFailed": "Não foi possível salvar a imagem",
       "shareFailed": "Não foi possível compartilhar a imagem",
-      "photosAccessDenied": "Permita que o Orca adicione fotos em Ajustes",
+      "photosAccessDenied": "Permita que o Adehone adicione fotos em Ajustes",
       "imageTooLarge": "Esta imagem é grande demais",
       "previousImage": "Imagem anterior",
       "nextImage": "Próxima imagem"
@@ -501,28 +501,28 @@
     },
     "orcaStop": {
       "canContinue": "Você pode continuar nesta conversa.",
-      "crash": "O Orca ({{machine}}) parou inesperadamente enquanto esta resposta estava em andamento.",
-      "quit": "O Orca ({{machine}}) foi fechado enquanto esta resposta estava em andamento.",
-      "remote": "O Orca ({{machine}}) parou enquanto esta resposta estava em andamento.",
+      "crash": "O Adehone ({{machine}}) parou inesperadamente enquanto esta resposta estava em andamento.",
+      "quit": "O Adehone ({{machine}}) foi fechado enquanto esta resposta estava em andamento.",
+      "remote": "O Adehone ({{machine}}) parou enquanto esta resposta estava em andamento.",
       "unnamedServer": "o servidor remoto",
-      "update": "O Orca ({{machine}}) reiniciou para uma atualização enquanto esta resposta estava em andamento."
+      "update": "O Adehone ({{machine}}) reiniciou para uma atualização enquanto esta resposta estava em andamento."
     },
     "interruptedContinue": {
       "failed": "Não foi possível continuar este chat. Tente novamente ou envie uma mensagem.",
       "explanation": "Ao continuar, o agente verifica primeiro se a última etapa foi concluída."
     },
     "restartNote": {
-      "continued": "O Orca pediu a este agente que continuasse após uma reinicialização. Seu próprio prompt não foi reenviado.",
-      "refused": "O Orca não conseguiu continuar este chat após a reinicialização. Envie uma mensagem para continuar.",
-      "unconfirmed": "O Orca pediu a este agente que continuasse após a reinicialização, mas não conseguiu confirmar que ele continuou. Confira a última resposta dele antes de enviar outra mensagem.",
-      "notConnected": "O Orca não conseguiu reconectar este chat após a reinicialização, por isso não pediu ao agente que continuasse."
+      "continued": "O Adehone pediu a este agente que continuasse após uma reinicialização. Seu próprio prompt não foi reenviado.",
+      "refused": "O Adehone não conseguiu continuar este chat após a reinicialização. Envie uma mensagem para continuar.",
+      "unconfirmed": "O Adehone pediu a este agente que continuasse após a reinicialização, mas não conseguiu confirmar que ele continuou. Confira a última resposta dele antes de enviar outra mensagem.",
+      "notConnected": "O Adehone não conseguiu reconectar este chat após a reinicialização, por isso não pediu ao agente que continuasse."
     },
     "sendError": {
       "dismiss": "Descartar"
     },
     "permission": {
       "needsAccessTo": "Precisa de acesso a: ",
-      "newerVersionRequired": "Esta solicitação requer uma versão mais recente do Orca.",
+      "newerVersionRequired": "Esta solicitação requer uma versão mais recente do Adehone.",
       "planFile": "Arquivo do plano: {{filePath}}",
       "reason": "Motivo: "
     },
@@ -555,7 +555,7 @@
       "waitingFor": "Será enviada quando {{host}} voltar",
       "waiting": "Será enviada quando o computador voltar",
       "behind": "Aguardando — uma mensagem anterior precisa de atenção",
-      "closed": "Não enviada antes de o Orca fechar"
+      "closed": "Não enviada antes de o Adehone fechar"
     },
     "receipt": {
       "cancelled": "Cancelado",
@@ -820,9 +820,9 @@
       "autoContinueCancel": "Não continuar",
       "statusResetAt": "Redefinido às {{time}}",
       "statusResetsAt": "Redefine às {{time}}",
-      "statusContinuesShortly": "O Orca continuará em breve",
-      "statusContinuesThen": "O Orca continuará então",
-      "statusWontContinue": "O Orca não continuará automaticamente"
+      "statusContinuesShortly": "O Adehone continuará em breve",
+      "statusContinuesThen": "O Adehone continuará então",
+      "statusWontContinue": "O Adehone não continuará automaticamente"
     },
     "useImageUpload": {
       "attachFailed": "Falha ao anexar",
@@ -835,7 +835,7 @@
       "incompleteReply": "O anexo foi alterado ou a resposta estava incompleta. Feche-o e tente novamente.",
       "notText": "Não é possível visualizar este arquivo como texto. Salve-o para abri-lo em outro aplicativo.",
       "openFailed": "Não foi possível abrir o anexo. Tente novamente.",
-      "hostUpdate": "Este host ainda não pode abrir anexos de texto. Atualize o Orca nesse host e tente novamente.",
+      "hostUpdate": "Este host ainda não pode abrir anexos de texto. Atualize o Adehone nesse host e tente novamente.",
       "copyTooLarge": "Este arquivo é grande demais para copiar. Salve-o em vez disso.",
       "connectionChanged": "A conexão mudou. Tente abrir o anexo novamente.",
       "hostChanged": "O host do anexo mudou. Feche-o e abra-o novamente.",
@@ -908,10 +908,10 @@
       "historyLimit": "Esta conversa é longa demais para voltar a uma mensagem anterior. Nada foi alterado.",
       "providerRefused": "O agente não conseguiu voltar a esta mensagem.",
       "proofMismatch": "O histórico do agente não corresponde a este chat. Confira a conversa antes de continuar.",
-      "outcomeUnknown": "O Orca não conseguiu confirmar se a conversa voltou a uma mensagem anterior. Ele verifica antes de enviar sua próxima mensagem.",
-      "refused": "O Orca não conseguiu voltar a esta mensagem. Confira a conversa antes de continuar.",
+      "outcomeUnknown": "O Adehone não conseguiu confirmar se a conversa voltou a uma mensagem anterior. Ele verifica antes de enviar sua próxima mensagem.",
+      "refused": "O Adehone não conseguiu voltar a esta mensagem. Confira a conversa antes de continuar.",
       "unavailable": "Aguarde o término da conexão do chat.",
-      "outcomeUnknownReturned": "O Orca não conseguiu confirmar se a conversa voltou a esta mensagem. Sua mensagem está de volta no campo de texto, e o Orca verifica a conversa antes de enviar sua próxima mensagem.",
+      "outcomeUnknownReturned": "O Adehone não conseguiu confirmar se a conversa voltou a esta mensagem. Sua mensagem está de volta no campo de texto, e o Adehone verifica a conversa antes de enviar sua próxima mensagem.",
       "timeout": "O chat não foi atualizado depois de voltar a esta mensagem. Abra novamente para ver a versão mais recente.",
       "pending": "Aguarde a conversa voltar à mensagem anterior."
     },
@@ -1000,7 +1000,7 @@
       },
       "title": "Servidores MCP",
       "notRunning": "Os servidores MCP se conectam quando você envia sua próxima mensagem.",
-      "unsupported": "Atualize o Orca no host deste chat para gerenciar os servidores MCP aqui.",
+      "unsupported": "Atualize o Adehone no host deste chat para gerenciar os servidores MCP aqui.",
       "readFailed": "Não foi possível carregar os servidores MCP.",
       "retry": "Tentar novamente",
       "empty": "Não há servidores MCP configurados para este chat.",
@@ -1054,7 +1054,7 @@
     "offline": {
       "waitingFor": "Esperando por {{host}}",
       "waiting": "Aguardando host",
-      "message": "Verifique se o host está ativado e se o Orca está em execução.",
+      "message": "Verifique se o host está ativado e se o Adehone está em execução.",
       "reconnect": "Reconectar"
     },
     "noMatch": {
@@ -1072,7 +1072,7 @@
       "copyFailed": "Não foi possível copiar",
       "copyPrompt": "Copiar prompt",
       "statusUnreadable": "Não foi possível ler o status deste host. Tentando novamente…",
-      "updateRequired": "Atualize o Orca neste host para iniciar um agente pelo celular."
+      "updateRequired": "Atualize o Adehone neste host para iniciar um agente pelo celular."
     },
     "agentSpinner": {
       "monitoring": "Monitorando tarefas em segundo plano",
@@ -1087,7 +1087,7 @@
     },
     "authFailedBannerActions": {
       "repair": "Parear novamente",
-      "webNote": "Reconecte ou remova este host pelo aplicativo Orca."
+      "webNote": "Reconecte ou remova este host pelo aplicativo Adehone."
     },
     "codexResetCredit": {
       "alreadyAppliedTitle": "Redefinição já aplicada",
@@ -1210,7 +1210,7 @@
       "unsentNotes_many": "{{count}} notas não enviadas",
       "unsentNotes_one": "{{count}} nota não enviada",
       "unsentNotes_other": "{{count}} notas não enviadas",
-      "updateRequired": "Atualize o Orca neste host",
+      "updateRequired": "Atualize o Adehone neste host",
       "viewedFiles_one": "{{count}} arquivo visualizado",
       "viewedFiles_other": "{{count}} arquivos visualizados",
       "notes_one": "{{count}} nota",
@@ -1300,10 +1300,10 @@
     },
     "jiraConnectPrompt": {
       "checkAgain": "Verificar novamente",
-      "connectHint": "Adicione seu site do Jira no Orca para desktop em Configurações → Integrações e verifique novamente.",
+      "connectHint": "Adicione seu site do Jira no Adehone para desktop em Configurações → Integrações e verifique novamente.",
       "connectOnDesktop": "Conecte o Jira no seu desktop",
       "credentialUnreadable": "Não foi possível ler as credenciais salvas do Jira: {{credentialError}}",
-      "updateDesktop": "Atualize o Orca neste host"
+      "updateDesktop": "Atualize o Adehone neste host"
     },
     "markdownBlocks": {
       "copyCode": "Copiar código",
@@ -1374,23 +1374,23 @@
     },
     "protocolBlockScreen": {
       "backToHosts": "Voltar para hosts",
-      "desktopTooOldBody": "A versão do Orca neste host é antiga demais para a sua versão atual do Orca Mobile. Atualize o Orca nesse host e tente se conectar a ele novamente.",
-      "getVersion": "Baixar o Orca {{version}}",
-      "mobileTooOldAppStore": "Este host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pela App Store e tente se conectar a este host novamente.",
-      "mobileTooOldGooglePlay": "Este host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pelo Google Play e tente se conectar a este host novamente.",
-      "mobileTooOldGitHubReleases": "Este host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pelo GitHub Releases e tente se conectar a este host novamente.",
+      "desktopTooOldBody": "A versão do Adehone neste host é antiga demais para a sua versão atual do Adehone Mobile. Atualize o Adehone nesse host e tente se conectar a ele novamente.",
+      "getVersion": "Baixar o Adehone {{version}}",
+      "mobileTooOldAppStore": "Este host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pela App Store e tente se conectar a este host novamente.",
+      "mobileTooOldGooglePlay": "Este host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pelo Google Play e tente se conectar a este host novamente.",
+      "mobileTooOldGitHubReleases": "Este host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pelo GitHub Releases e tente se conectar a este host novamente.",
       "openAppStore": "Abrir a App Store",
       "openGooglePlay": "Abrir o Google Play",
       "openGitHubReleases": "Abrir GitHub Releases",
       "refreshRecoveryNote": "Se esta mensagem persistir, remova este host e faça o pareamento novamente.",
       "refreshWorkspaceBody": "O espaço de trabalho em cache deste host é mais antigo do que o host espera. Reconecte-se a este host para baixar a versão atual.",
       "refreshWorkspaceTitle": "Atualizar o espaço de trabalho mobile",
-      "updateDesktopTitle": "Atualizar o Orca neste host",
-      "updateMobileTitle": "Atualizar o Orca Mobile",
+      "updateDesktopTitle": "Atualizar o Adehone neste host",
+      "updateMobileTitle": "Atualizar o Adehone Mobile",
       "updateRecoveryNote": "Já atualizou? Volte para Hosts e atualize a conexão. Se esta mensagem persistir, remova este host e faça o pareamento novamente.",
-      "workspaceNeedsUpdateAppStore": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pela App Store e tente se conectar a este host novamente.",
-      "workspaceNeedsUpdateGooglePlay": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pelo Google Play e tente se conectar a este host novamente.",
-      "workspaceNeedsUpdateGitHubReleases": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Orca Mobile. Atualize o Orca Mobile pelo GitHub Releases e tente se conectar a este host novamente."
+      "workspaceNeedsUpdateAppStore": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pela App Store e tente se conectar a este host novamente.",
+      "workspaceNeedsUpdateGooglePlay": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pelo Google Play e tente se conectar a este host novamente.",
+      "workspaceNeedsUpdateGitHubReleases": "O espaço de trabalho mobile deste host precisa de uma versão mais recente do Adehone Mobile. Atualize o Adehone Mobile pelo GitHub Releases e tente se conectar a este host novamente."
     },
     "richMarkdownEditor": {
       "imageUrl": "URL da imagem",
@@ -1677,7 +1677,7 @@
       "disconnected": "Desconectado",
       "hostFallback": "Host",
       "hostOffline": "{{host}} está off-line",
-      "hostOfflineDetail": "Verifique se o computador não está suspenso, se o Orca está em execução e se você entrou na sua conta",
+      "hostOfflineDetail": "Verifique se o computador não está suspenso, se o Adehone está em execução e se você entrou na sua conta",
       "labelWithHint": "{{label}} — {{hint}}",
       "pairingInvalid": "Pareamento inválido — pareie novamente com seu desktop",
       "rePairDetail": "Pareie novamente com seu desktop",
@@ -1685,7 +1685,7 @@
       "relayAccessRefused": "O Relay recusou o acesso para {{host}}",
       "relayConnectFailed": "Não foi possível conectar via Relay",
       "relayUnreachable": "Não foi possível acessar o Relay",
-      "signInDetail": "Entre no Orca no seu desktop para se reconectar",
+      "signInDetail": "Entre no Adehone no seu desktop para se reconectar",
       "signInRequired": "Login necessário em {{host}}",
       "tailscaleHint": "verifique o Tailscale"
     },
@@ -1753,21 +1753,21 @@
       "title": "Atualizações de espaços de trabalho"
     },
     "troubleshootCommonIssues": {
-      "allowNotifications": "Verifique se as configurações do sistema permitem notificações do Orca e se o modo Foco ou Não Perturbe está desativado.",
+      "allowNotifications": "Verifique se as configurações do sistema permitem notificações do Adehone e se o modo Foco ou Não Perturbe está desativado.",
       "checkTailnet": "Verifique se o desktop está fora do modo de suspensão e aparece como conectado na sua tailnet.",
       "desktopTitle": "App desktop não está em execução",
       "disableVpn": "Desative essa VPN ou ative o tunelamento dividido / \"Permitir LAN\".",
       "firewallTitle": "Firewall bloqueando a porta {{port}}",
       "linuxFirewall": "Linux: sudo ufw allow {{port}}",
       "keepTailscaleOn": "Hosts com endereços como 100.x.x.x ou *.ts.net se conectam via Tailscale — mantenha-o ATIVADO.",
-      "macosFirewall": "macOS: Ajustes do Sistema → Rede → Firewall — permita o Orca.",
+      "macosFirewall": "macOS: Ajustes do Sistema → Rede → Firewall — permita o Adehone.",
       "notificationNetwork": "Tente usar os dados móveis ou outra rede Wi-Fi. Se os alertas chegarem após a troca, sua rede pode estar atrasando a entrega.",
       "notificationsTitle": "Notificações push",
-      "openDesktop": "O Orca precisa estar aberto no seu desktop para aceitar conexões.",
+      "openDesktop": "O Adehone precisa estar aberto no seu desktop para aceitar conexões.",
       "pairAfterUpdate": "Após uma atualização, pode ser necessário parear novamente usando um código QR.",
       "reconnectWifi": "Tente reconectar o Wi-Fi nos dois dispositivos.",
       "restartBothApps": "Reinicie os dois apps se os erros de tempo limite persistirem.",
-      "restartDesktop": "Tente reiniciar o Orca — o servidor de conexão com o celular inicia junto com o app.",
+      "restartDesktop": "Tente reiniciar o Adehone — o servidor de conexão com o celular inicia junto com o app.",
       "restartTailscale": "O iOS e o Android podem travar o túnel sem aviso: desative e reative o Tailscale no app Tailscale.",
       "restrictedNetwork": "Redes corporativas ou escolares podem bloquear P2P — tente usar um ponto de acesso pessoal.",
       "retryHost": "Volte à lista de hosts e toque no seu host para tentar novamente.",
@@ -1780,7 +1780,7 @@
       "vpnTitle": "Interferência de outra VPN",
       "wifiSignal": "Verifique a intensidade do sinal Wi-Fi no seu celular.",
       "wifiTitle": "Redes Wi-Fi diferentes",
-      "windowsFirewall": "Windows: Firewall do Windows Defender → Permitir um aplicativo — habilite o Orca para redes privadas."
+      "windowsFirewall": "Windows: Firewall do Windows Defender → Permitir um aplicativo — habilite o Adehone para redes privadas."
     },
     "troubleshootView": {
       "commonIssues": "Problemas comuns",
@@ -1854,15 +1854,15 @@
   },
   "dictation": {
     "setup": {
-      "alreadyActive": "O ditado já está em uso no computador ou em outro celular. Atualize o Orca no computador para ditar em vários dispositivos ao mesmo tempo.",
+      "alreadyActive": "O ditado já está em uso no computador ou em outro celular. Atualize o Adehone no computador para ditar em vários dispositivos ao mesmo tempo.",
       "cloudModelNeedsKey": "Requer uma chave da OpenAI",
       "deleteFailed": "Falha ao excluir o modelo",
-      "desktopUpdateRequired": "Atualize o app Orca no desktop pareado para usar as configurações de voz do celular.",
+      "desktopUpdateRequired": "Atualize o app Adehone no desktop pareado para usar as configurações de voz do celular.",
       "downloadFailed": "Falha ao iniciar o download",
       "loadFailed": "Falha ao carregar os modelos de ditado",
       "modelBusy": "Outro dispositivo está ditando com um modelo de voz diferente. Tente de novo quando ele terminar.",
       "repairRequired": "Pareie este celular novamente com o computador para usar o ditado.",
-      "serverUpdateRequired": "Atualize o Orca neste servidor para usar o ditado por voz.",
+      "serverUpdateRequired": "Atualize o Adehone neste servidor para usar o ditado por voz.",
       "sessionLimit": "Há dispositivos demais ditando neste computador. Tente de novo quando um deles terminar.",
       "sessionLost": "O ditado perdeu a conexão com o computador. Tente novamente.",
       "updateFailed": "Falha ao atualizar as configurações de ditado"
@@ -2025,7 +2025,7 @@
       "open": "Abrir PDF",
       "openFailed": "Não foi possível abrir este PDF",
       "opening": "Abrindo PDF…",
-      "updateRequired": "Atualize o Orca Mobile para abrir PDFs"
+      "updateRequired": "Atualize o Adehone Mobile para abrir PDFs"
     },
     "unsavedEditsOffer": {
       "changedSince": "Alterado no desktop desde suas edições de {{time}}",
@@ -2037,9 +2037,9 @@
   },
   "home": {
     "appUpdateCard": {
-      "dismissAccessibilityLabel": "Descartar atualização do Orca {{version}}",
-      "title": "Orca {{version}} está disponível",
-      "updateAccessibilityLabel": "Orca {{version}} está disponível, toque para atualizar",
+      "dismissAccessibilityLabel": "Descartar atualização do Adehone {{version}}",
+      "title": "Adehone {{version}} está disponível",
+      "updateAccessibilityLabel": "Adehone {{version}} está disponível, toque para atualizar",
       "update": "Atualizar"
     },
     "automationsTab": {
@@ -2054,14 +2054,14 @@
       "scheduled": "Agendadas",
       "showFor": "Mostrar automações de",
       "toggleFailed": "Não foi possível atualizar {{name}}",
-      "updateDesktop": "Atualize o Orca em {{desktop}} para usar automações."
+      "updateDesktop": "Atualize o Adehone em {{desktop}} para usar automações."
     },
     "emptyState": {
       "connectedDescription": "Seu desktop aparecerá aqui. Tudo é criptografado de ponta a ponta.",
       "connectedTitle": "Você está conectado",
-      "description": "Pareie com o Orca no seu computador para acompanhar seus agentes, acessar qualquer terminal e gerenciar o trabalho pelo celular.",
+      "description": "Pareie com o Adehone no seu computador para acompanhar seus agentes, acessar qualquer terminal e gerenciar o trabalho pelo celular.",
       "openDesktopDescription": "Vá para Configurações → Mobile e gere um código QR de pareamento.",
-      "openDesktopTitle": "Abra o Orca no desktop",
+      "openDesktopTitle": "Abra o Adehone no desktop",
       "scanCodeTitle": "Escaneie o código",
       "title": "Conecte seu desktop",
       "pairDesktopButton": "Emparelhar computador",
@@ -2146,8 +2146,8 @@
       "connectionPreview": "Conecta a {{endpoint}}",
       "updateStepsServiceManager": "Atualize-o pelo gerenciador de pacotes ou pelo gerenciador de serviços.",
       "updateStepsSourceCheckout": "Atualize-o a partir do seu checkout de origem.",
-      "updateStepsServer": "Atualize o Orca no servidor e depois reinicie-o.",
-      "orcaVersion": "Versão do Orca",
+      "updateStepsServer": "Atualize o Adehone no servidor e depois reinicie-o.",
+      "orcaVersion": "Versão do Adehone",
       "goBack": "Voltar",
       "hostNamePlaceholder": "Nome do host",
       "hostRemoved": "Este host foi removido deste celular.",
@@ -2194,14 +2194,14 @@
       "ignoredNamesMore": "{{names}} e outros",
       "ignoredNamesCount": "{{names}} +{{value0}}",
       "ignoredUnchecked": "Não foi possível verificar completamente os arquivos ignorados",
-      "needsUpdate": "Atualize o Orca no seu computador para excluir este espaço de trabalho pelo celular.",
+      "needsUpdate": "Atualize o Adehone no seu computador para excluir este espaço de trabalho pelo celular.",
       "removeTitle": "Remover Espaço de Trabalho",
-      "removeFolderMessage": "Remover \"{{name}}\" do Orca? A pasta no disco será mantida."
+      "removeFolderMessage": "Remover \"{{name}}\" do Adehone? A pasta no disco será mantida."
     },
     "hostScreenOverlays": {
       "deleteConfirmMessage": "Excluir \"{{name}}\" ({{branch}})?",
-      "deleteDestroysEnvironment": "Isto também destrói o ambiente \"{{environment}}\" que o Orca criou para ele, com as alterações não confirmadas e os terminais em execução nele.",
-      "deleteKeepsEnvironment": "O ambiente \"{{environment}}\" que o Orca criou para ele continua em execução: a receita não tem um passo de destruição.",
+      "deleteDestroysEnvironment": "Isto também destrói o ambiente \"{{environment}}\" que o Adehone criou para ele, com as alterações não confirmadas e os terminais em execução nele.",
+      "deleteKeepsEnvironment": "O ambiente \"{{environment}}\" que o Adehone criou para ele continua em execução: a receita não tem um passo de destruição.",
       "pin": "Fixar",
       "primaryWorktreeDeleteHint": "Worktree primária — não pode ser excluída. Remova o projeto em vez disso.",
       "removeHost": "Remover host",
@@ -2223,7 +2223,7 @@
       "closed": "Fechado",
       "createdByAutomation": "Criado por automação",
       "createdByNamedAutomation": "Criado pela automação “{{name}}”",
-      "createdFromCli": "Criado via Orca CLI",
+      "createdFromCli": "Criado via Adehone CLI",
       "draft": "Rascunho",
       "merged": "Mergeado",
       "openLink": "Abrir {{label}}",
@@ -2343,7 +2343,7 @@
       "loading": "Carregando"
     },
     "createdSetupReview": {
-      "hostUnsupported": "Aprovado. Atualize o Orca no host do espaço de trabalho para executar a configuração em um espaço de trabalho existente.",
+      "hostUnsupported": "Aprovado. Atualize o Adehone no host do espaço de trabalho para executar a configuração em um espaço de trabalho existente.",
       "changedAgain": "A configuração não foi executada: o orca.yaml deste espaço de trabalho mudou novamente desde a sua revisão.",
       "runFailed": "Não foi possível iniciar a configuração."
     }
@@ -2351,7 +2351,7 @@
   "notifications": {
     "desktopChannel": {
       "name": "Notificações do desktop",
-      "silentName": "Notificações silenciosas do Orca"
+      "silentName": "Notificações silenciosas do Adehone"
     },
     "notificationDeliverySection": {
       "footer": "Os tipos de alerta seguem as configurações de notificação de cada desktop pareado. As notificações são pausadas após 7 dias sem usar este app; abra-o e reconecte-se para retomá-las.",
@@ -2378,7 +2378,7 @@
       "keepTerminal": "Manter terminal",
       "notNow": "Agora não",
       "notificationsDescription": "Receba uma notificação neste celular quando um agente terminar ou estiver aguardando — mesmo sem usar o app.",
-      "notificationsDisclosure": "Enviadas pelo serviço de notificações push do Orca após 3 minutos de inatividade do seu desktop. Altere isso a qualquer momento em Configurações.",
+      "notificationsDisclosure": "Enviadas pelo serviço de notificações push do Adehone após 3 minutos de inatividade do seu desktop. Altere isso a qualquer momento em Configurações.",
       "notificationsTitle": "Saiba quando um agente precisar de você",
       "openInChatUi": "Abrir sessões na interface de chat",
       "openInTerminal": "Abrir sessões no terminal",
@@ -2816,8 +2816,8 @@
     },
     "aiVaultResumePreparation": {
       "openInChat": "Esta conversa de {{agent}} está aberta em um chat. Atualize o Histórico de sessões para abri-la.",
-      "ownershipUnknown": "O Orca não conseguiu confirmar quem é o proprietário desta conversa de {{agent}}. Atualize o Histórico de sessões e tente novamente.",
-      "preparationRefused": "O Orca não conseguiu preparar esta conversa do {{agent}}. Inicie um novo chat para continuar.",
+      "ownershipUnknown": "O Adehone não conseguiu confirmar quem é o proprietário desta conversa de {{agent}}. Atualize o Histórico de sessões e tente novamente.",
+      "preparationRefused": "O Adehone não conseguiu preparar esta conversa do {{agent}}. Inicie um novo chat para continuar.",
       "prepareFailed": "Não foi possível preparar esta sessão legada do Codex. Tente retomar novamente."
     },
     "backgroundTask": {
@@ -2924,7 +2924,7 @@
       "committedChangesFailed": "Falha ao carregar alterações commitadas",
       "committedChangesUnavailable": "Alterações commitadas indisponíveis",
       "committedDiffUnavailable": "Diff de alterações commitadas indisponível",
-      "desktopUpdateRequired": "Atualize o Orca neste host para revisar alterações no celular.",
+      "desktopUpdateRequired": "Atualize o Adehone neste host para revisar alterações no celular.",
       "diffLoadFailed": "Não foi possível carregar o diff",
       "reviewNotesLoadFailed": "Não foi possível carregar as notas de revisão",
       "commitLoadFailed": "Não foi possível carregar este commit",
@@ -2959,7 +2959,7 @@
       "forkOriginalLatestOnly": "{{agent}} só consegue fazer fork da resposta mais recente no chat original. Abra esse chat e faça o fork da resposta mais recente quando ela terminar.",
       "forkOriginalLatestOnlyNamed": "{{agent}} só consegue fazer fork da resposta mais recente em \"{{detail}}\". Abra esse chat e faça o fork da resposta mais recente quando ela terminar.",
       "accountSwitchInProgress": "A configuração de {{agent}} está sendo alterada neste host. Tente novamente quando terminar.",
-      "agentCommandNotRunnable": "O Comando de {{agent}} em Configurações → Agentes deve ser o caminho ou nome de um programa que o Orca possa encontrar, sem argumentos nem variáveis. Altere-o ou redefina-o.",
+      "agentCommandNotRunnable": "O Comando de {{agent}} em Configurações → Agentes deve ser o caminho ou nome de um programa que o Adehone possa encontrar, sem argumentos nem variáveis. Altere-o ou redefina-o.",
       "agentCommandFailed": "O Comando do {{agent}} em Configurações → Agentes não iniciou o {{agent}}: {{detail}}. Altere ou redefina o comando.",
       "agentCommandNotSignedIn": "Entre na conta de {{agent}} com `{{loginCommand}}` no computador que executa este chat.",
       "agentNotSignedIn": "Entre na conta de {{agent}}.",
@@ -3021,16 +3021,16 @@
       "emptyMessage": "Esta mensagem está vazia, por isso não foi enviada.",
       "fullAccessAsRoot": "{{agent}} não usará Acesso total enquanto for executado como root. Escolha outra permissão para {{agent}} em Configurações → Agentes para o computador que executa este chat e inicie um novo chat.",
       "botToolsNeedStatusHooks": "Os bots do {{agent}} precisam dos Hooks de status do agente: é por eles que as ferramentas de um bot agem como o bot. Ative-os para o {{agent}} em Configurações → Agentes e depois inicie um novo chat.",
-      "botToolsGatewayOutdated": "O gateway do {{agent}} ainda está executando uma versão antiga do plugin do Orca, então as ferramentas deste bot não podem agir como o bot. Execute `hermes gateway stop` e depois inicie um novo chat.",
+      "botToolsGatewayOutdated": "O gateway do {{agent}} ainda está executando uma versão antiga do plugin do Adehone, então as ferramentas deste bot não podem agir como o bot. Execute `hermes gateway stop` e depois inicie um novo chat.",
       "historyInOtherAccount": "O histórico deste chat está em outra conta do Claude. Volte para essa conta para continuar.",
       "historyTooLarge": "O histórico desta conversa é grande demais para ser restaurado aqui.",
-      "hostFault": "O Orca encontrou um problema, por isso isto não foi concluído.",
-      "hostFaultTryAgain": "O Orca encontrou um problema, por isso isto não foi concluído. Tente novamente.",
-      "hostRestarted": "O Orca reiniciou antes de esta mensagem ser enviada.",
-      "hostStopped": "{{agent}} não terminou de iniciar, por isso o Orca o parou.",
+      "hostFault": "O Adehone encontrou um problema, por isso isto não foi concluído.",
+      "hostFaultTryAgain": "O Adehone encontrou um problema, por isso isto não foi concluído. Tente novamente.",
+      "hostRestarted": "O Adehone reiniciou antes de esta mensagem ser enviada.",
+      "hostStopped": "{{agent}} não terminou de iniciar, por isso o Adehone o parou.",
       "interactiveAgentNotSignedIn": "Entre na conta de {{agent}} executando `{{loginCommand}}` e usando `{{slashCommand}}` no computador que executa este chat.",
       "launchFolderMissing": "A pasta em que este chat foi executado não existe mais. Restaure-a para continuar este chat.",
-      "launchPreparationFailed": "O Orca não conseguiu preparar a inicialização de {{agent}} no computador que executa este chat.",
+      "launchPreparationFailed": "O Adehone não conseguiu preparar a inicialização de {{agent}} no computador que executa este chat.",
       "managedAccountEnvOverride": "Esta inicialização do Claude define suas próprias variáveis de login da Anthropic. Remova-as para usar uma conta gerenciada do Claude.",
       "managedAccountUnsupported": "Embora uma conta do Claude tenha sido adicionada no WSL, os chats do Claude precisam de uma conta do Claude no Windows.",
       "modelUnavailable": "{{agent}} não conseguiu usar {{detail}}. Selecione outro modelo e envie novamente.",
@@ -3063,7 +3063,7 @@
       "quitTerminalAgent": "Encerre esse agente para continuar o chat aqui.",
       "runCommandAgain": "Execute /{{command}} novamente.",
       "runCommandWhenDone": "Execute /{{command}} quando terminar.",
-      "runtimeNotInstalled": "{{agent}} não está instalado no computador que executa este chat. Instale-o pelo chat em uma versão atual do Orca.",
+      "runtimeNotInstalled": "{{agent}} não está instalado no computador que executa este chat. Instale-o pelo chat em uma versão atual do Adehone.",
       "sendAgainToTryOnceMore": "Envie sua mensagem novamente para fazer outra tentativa.",
       "sendToTryAgain": "Envie sua mensagem para tentar novamente.",
       "sessionNotRestored": "{{agent}} não conseguiu reabrir sua sessão anterior, por isso este chat continua em uma nova sessão. {{agent}} não se lembra das mensagens anteriores.",
@@ -3088,7 +3088,7 @@
       "usageLimitWindowWeeklyModel": "uso semanal do modelo",
       "waitForBackgroundTasks": "Aguarde a conclusão das tarefas em segundo plano.",
       "waitForStart": "Aguarde o agente terminar de iniciar.",
-      "writeFailed": "O Orca não conseguiu repassar esta mensagem ao agente, por isso ela não foi enviada.",
+      "writeFailed": "O Adehone não conseguiu repassar esta mensagem ao agente, por isso ela não foi enviada.",
       "pluginInputRequired": "{{agent}} parou porque o plugin \"{{plugin}}\" está aguardando uma entrada em um painel de terminal. Desative o plugin para sessões de chat ou execute a tarefa em um terminal {{agent}}.",
       "unconfirmed": "Não foi possível confirmar se isto foi enviado. Não foi reenviado."
     },
@@ -3204,7 +3204,7 @@
       "emptyPrompt": "O prompt salvo para esta ação está vazio. Atualize as configurações de IA do Controle de Versão no seu computador.",
       "loadFailed": "Não foi possível carregar os agentes disponíveis.",
       "promptNotSent": "O agente foi iniciado, mas o prompt não foi enviado.",
-      "updateRequired": "Atualize o Orca neste host para iniciar um agente pelo celular."
+      "updateRequired": "Atualize o Adehone neste host para iniciar um agente pelo celular."
     },
     "prSidebarState": {
       "loadFailed": "Não foi possível carregar o pull request"
@@ -3242,7 +3242,7 @@
       "globalScope": "Global",
       "label": "Rótulo",
       "labelPlaceholder": "Iniciar servidor de desenvolvimento",
-      "olderHostPromptTooLong": "Longo demais para este host. Atualize o Orca no host para salvar prompts mais longos.",
+      "olderHostPromptTooLong": "Longo demais para este host. Atualize o Adehone no host para salvar prompts mais longos.",
       "projectScope": "Projeto",
       "prompt": "Prompt",
       "promptHint": "Suporta skills, caminhos de arquivo e comandos integrados.",
@@ -3398,7 +3398,7 @@
     },
     "useCloseActions": {
       "closeFailed": "Não foi possível fechar a aba. Tente novamente.",
-      "closeFailedDesktopNotReady": "Não foi possível fechar a aba. O Orca ainda está carregando no seu computador. Tente novamente em instantes."
+      "closeFailedDesktopNotReady": "Não foi possível fechar a aba. O Adehone ainda está carregando no seu computador. Tente novamente em instantes."
     },
     "useContentCreateActions": {
       "browserCommandFailed": "Falha no comando do navegador",
@@ -3424,7 +3424,7 @@
     "useDiffReviewController": {
       "loadFailed": "Não foi possível carregar a revisão",
       "missingWorktree": "Worktree ausente",
-      "commitMissing": "Atualize o aplicativo Orca para abrir arquivos de commit aqui."
+      "commitMissing": "Atualize o aplicativo Adehone para abrir arquivos de commit aqui."
     },
     "useDiffReviewDiffLoading": {
       "loadFailed": "Não foi possível carregar o diff"
@@ -3500,7 +3500,7 @@
       "liveInputInterrupted": "A entrada ao vivo foi interrompida. O campo foi limpo; verifique o terminal antes de continuar."
     },
     "useStartup": {
-      "wakeAgents": "Abra o Orca no host para ativar os agentes suspensos."
+      "wakeAgents": "Abra o Adehone no host para ativar os agentes suspensos."
     },
     "useTerminalCreateActions": {
       "createFailed": "Falha ao criar o terminal",
@@ -3535,10 +3535,10 @@
       "attachmentExpired": "Este anexo expirou.",
       "backgroundTasksRunning": "Ainda há tarefas em segundo plano em execução.",
       "cancelNotSaved": "Não foi possível cancelar esta pergunta ou pedido de aprovação.",
-      "cannotRunHere": "O Orca não pode executar este agente em um chat aqui.",
-      "capacity": "O Orca no computador que executa este chat atingiu um limite de requisições. Atualize o Orca lá e tente novamente.",
-      "chatNotFound": "O Orca não consegue encontrar este chat.",
-      "chatSavedByNewerOrca": "Este chat foi salvo por uma versão mais recente do Orca.",
+      "cannotRunHere": "O Adehone não pode executar este agente em um chat aqui.",
+      "capacity": "O Adehone no computador que executa este chat atingiu um limite de requisições. Atualize o Adehone lá e tente novamente.",
+      "chatNotFound": "O Adehone não consegue encontrar este chat.",
+      "chatSavedByNewerOrca": "Este chat foi salvo por uma versão mais recente do Adehone.",
       "clearAfterAnswer": "Responda à pergunta ou ao pedido de aprovação do agente e execute /clear.",
       "clearAfterRetry": "Tente enviar sua mensagem anterior novamente e execute /clear.",
       "clearAfterSending": "Sua mensagem anterior ainda está sendo enviada. Execute /clear após o envio.",
@@ -3550,13 +3550,13 @@
       "continuationSuperseded": "Este chat avançou. Confira as mensagens mais recentes antes de continuar.",
       "conversationCleared": "Esta conversa foi limpa.",
       "goalsUnsupported": "Este agente não aceita objetivos.",
-      "historyUnavailable": "O Orca não conseguiu abrir o histórico deste chat agora.",
+      "historyUnavailable": "O Adehone não conseguiu abrir o histórico deste chat agora.",
       "diskFull": "O disco do computador que executa este chat está cheio.",
       "freeDiskSpace": "Libere espaço nesse disco e tente novamente.",
       "savedInOtherFolder": "Esta conversa foi salva em outra pasta.",
-      "historyUnreadable": "O Orca não conseguiu ler o histórico salvo deste chat.",
+      "historyUnreadable": "O Adehone não conseguiu ler o histórico salvo deste chat.",
       "historyUnusable": "Não foi possível carregar este chat.",
-      "hostReconciling": "O Orca ainda está verificando este chat após reiniciar.",
+      "hostReconciling": "O Adehone ainda está verificando este chat após reiniciar.",
       "messageNotSaved": "Não foi possível salvar sua mensagem.",
       "messageTooLarge": "Ela ultrapassa o limite de 256 KB por mensagem.",
       "messagesUnsettled": "Uma mensagem enviada anteriormente ainda não foi confirmada.",
@@ -3573,7 +3573,7 @@
       "notDoneStopTasks": "As tarefas em segundo plano não foram interrompidas.",
       "openCurrentConversation": "Abra a conversa atual para continuar.",
       "optionRejected": "O agente não aceitou esta configuração.",
-      "outcomeUnknown": "O Orca não conseguiu confirmar o que aconteceu. Verifique o chat.",
+      "outcomeUnknown": "O Adehone não conseguiu confirmar o que aconteceu. Verifique o chat.",
       "ownerUnproven": "O agente anterior deste chat pode ainda estar em execução.",
       "pendingWork": "Aguarde a conclusão do trabalho e das mensagens pendentes antes de usar este comando.",
       "promptPending": "O agente está aguardando uma resposta a uma pergunta ou pedido de aprovação.",
@@ -3582,14 +3582,14 @@
       "quitTerminalAgent": "Encerre esse agente para continuar o chat aqui.",
       "reattachFile": "Remova-o e anexe-o novamente.",
       "reattachFiles": "Remova-os e anexe-os novamente.",
-      "recordFailed": "O Orca não conseguiu salvar isto no histórico do chat.",
-      "recordUnreadable": "O Orca não conseguiu ler o estado salvo deste chat.",
+      "recordFailed": "O Adehone não conseguiu salvar isto no histórico do chat.",
+      "recordUnreadable": "O Adehone não conseguiu ler o estado salvo deste chat.",
       "reopenChat": "Reabra o chat para verificar novamente.",
       "restartFailed": "Não foi possível reiniciar o agente.",
       "runClearWhenDone": "Execute /clear quando terminar.",
       "runCompactWhenDone": "Execute /compact quando terminar.",
-      "savedByNewerOrca": "Os chats foram salvos por uma versão mais recente do Orca.",
-      "sendOutcomeLost": "O Orca não conseguiu confirmar que sua mensagem chegou ao agente. Verifique o chat e envie-a novamente, se necessário.",
+      "savedByNewerOrca": "Os chats foram salvos por uma versão mais recente do Adehone.",
+      "sendOutcomeLost": "O Adehone não conseguiu confirmar que sua mensagem chegou ao agente. Verifique o chat e envie-a novamente, se necessário.",
       "settleEarlierMessage": "Aguarde o envio da sua mensagem anterior ou tente enviá-la novamente.",
       "shortenMessage": "Encurte ou divida a mensagem e envie novamente.",
       "shrinkQueue": "Exclua uma mensagem da fila ou aguarde o envio de uma delas e tente novamente.",
@@ -3598,16 +3598,16 @@
       "tryAgain": "Tente novamente.",
       "tryAgainComposerSend": "Envie-a novamente.",
       "turnActive": "O agente ainda está respondendo.",
-      "unreachable": "O Orca não conseguiu se conectar ao agente.",
-      "unsupported": "Isto exige uma versão mais recente do Orca no computador que executa este chat. Atualize o Orca lá e tente novamente.",
-      "updateOrcaToKeepUsing": "Atualize o Orca para continuar usando-os.",
-      "updateOrcaToOpenChat": "Atualize o Orca para abri-lo.",
+      "unreachable": "O Adehone não conseguiu se conectar ao agente.",
+      "unsupported": "Isto exige uma versão mais recente do Adehone no computador que executa este chat. Atualize o Adehone lá e tente novamente.",
+      "updateOrcaToKeepUsing": "Atualize o Adehone para continuar usando-os.",
+      "updateOrcaToOpenChat": "Atualize o Adehone para abri-lo.",
       "waitForBackgroundTasks": "Aguarde a conclusão das tarefas em segundo plano.",
       "waitForCommand": "Aguarde a conclusão do /compact ou /clear.",
       "waitForStart": "Aguarde o agente terminar de iniciar.",
       "waitForTurn": "Aguarde o agente terminar de responder ou interrompa-o.",
       "waitMoment": "Aguarde um momento.",
-      "mailOwnerUnconfirmed": "Orca não conseguiu confirmar se esta mensagem ainda se destina a este chat."
+      "mailOwnerUnconfirmed": "Adehone não conseguiu confirmar se esta mensagem ainda se destina a este chat."
     },
     "workerAutoClose": {
       "running": "Agente de orquestração temporário · Fecha 2 minutos após terminar",
@@ -3653,15 +3653,15 @@
     },
     "structuredOpen": {
       "worktreeDeleted": "A worktree foi excluída.",
-      "projectRemoved": "O projeto foi removido do Orca.",
+      "projectRemoved": "O projeto foi removido do Adehone.",
       "folderWorkspaceRemoved": "O espaço de trabalho de pasta foi removido.",
       "goneGeneric": "O chat do agente não está mais neste host, portanto não pode ser reaberto aqui.",
       "unknownGeneric": "Não foi possível encontrar o bate-papo do agente neste host. Reconecte-se ao computador e tente novamente.",
-      "unsupportedGeneric": "O chat do agente não pode ser reaberto até que o Orca seja atualizado.",
+      "unsupportedGeneric": "O chat do agente não pode ser reaberto até que o Adehone seja atualizado.",
       "unreachableGeneric": "O chat do agente ainda não está disponível. Tente novamente em alguns instantes.",
       "gone": "O bate-papo de {{agent}} não está mais neste host, portanto não pode ser reaberto aqui.",
       "unknown": "O bate-papo de {{agent}} não foi encontrado neste host. Reconecte-se ao computador e tente novamente.",
-      "unsupported": "O bate-papo de {{agent}} não pode ser reaberto até que o Orca seja atualizado.",
+      "unsupported": "O bate-papo de {{agent}} não pode ser reaberto até que o Adehone seja atualizado.",
       "unreachable": "O bate-papo de {{agent}} ainda não está disponível. Tente novamente em alguns instantes.",
       "paneUnavailable": "O painel do agente não está mais disponível."
     },
@@ -3686,7 +3686,7 @@
       "outsideWorkspace": "Este arquivo está fora do espaço de trabalho. Abra-o no computador para visualizá-lo."
     },
     "linkActionSheet": {
-      "openInOrca": "Abrir no navegador do Orca",
+      "openInOrca": "Abrir no navegador do Adehone",
       "openInBrowser": "Abrir no navegador do sistema",
       "copyLink": "Copiar link"
     },
@@ -3760,11 +3760,11 @@
   "settings": {
     "aboutScreen": {
       "openLinkFailed": "Não foi possível abrir o link. Tente novamente.",
-      "socialProfile": "Orca no X",
-      "sourceCode": "Código-fonte do Orca",
+      "socialProfile": "Adehone no X",
+      "sourceCode": "Código-fonte do Adehone",
       "tagline": "IDE de código aberto com agentes para quem cria 100x mais",
       "title": "Sobre",
-      "website": "Site do Orca"
+      "website": "Site do Adehone"
     },
     "appUpdateSettingsRows": {
       "checkFailed": "Falha ao verificar",
@@ -3785,7 +3785,7 @@
       "neverChecked": "Nunca",
       "upToDate": "Atualizado",
       "update": "Atualizar",
-      "updateToVersion": "Atualizar para o Orca {{version}}"
+      "updateToVersion": "Atualizar para o Adehone {{version}}"
     },
     "appearance": {
       "language": {
@@ -3810,8 +3810,8 @@
     },
     "browserSettingsScreen": {
       "askEachTime": "Perguntar sempre",
-      "askEachTimeDescription": "Escolha sempre entre o navegador do Orca, o do celular ou copiar o link.",
-      "desktopBrowser": "Navegador do Orca no desktop",
+      "askEachTimeDescription": "Escolha sempre entre o navegador do Adehone, o do celular ou copiar o link.",
+      "desktopBrowser": "Navegador do Adehone no desktop",
       "desktopBrowserDescription": "Abrir no navegador transmitido pelo seu desktop pareado.",
       "terminalAndChatLinksDescription": "Escolha onde abrir os links da web ao tocar neles na saída do terminal e no chat.",
       "linksHeading": "LINKS",
@@ -3872,15 +3872,15 @@
       "updateDesktopHint": "Pareie um host atualizado para receber notificações neste celular."
     },
     "notificationDisplayTest": {
-      "accepted": "O serviço de notificações push do Orca aceitou o teste. Verifique se a notificação chegou.",
+      "accepted": "O serviço de notificações push do Adehone aceitou o teste. Verifique se a notificação chegou.",
       "connectDesktop": "Conecte um desktop e tente novamente.",
       "description": "Teste a entrega de notificações push ou uma notificação local quando o push não estiver disponível.",
       "desktopUnreachable": "Não foi possível acessar o desktop. Tente novamente.",
       "loadFailed": "Não foi possível carregar os desktops pareados.",
       "pairDesktop": "Pareie um desktop e tente novamente.",
-      "pushServiceFailed": "Não foi possível enviar pelo serviço de notificações push do Orca. Tente novamente.",
-      "hostClockSkew": "O relógio de {{host}} está {{seconds}} segundos errado, por isso o serviço push do Orca o recusou. Ajuste o relógio para a hora correta e tente novamente.",
-      "hostClockSkewDuration": "O relógio de {{host}} está {{duration}} errado, por isso o serviço push do Orca o recusou. Ajuste o relógio para a hora correta e tente novamente.",
+      "pushServiceFailed": "Não foi possível enviar pelo serviço de notificações push do Adehone. Tente novamente.",
+      "hostClockSkew": "O relógio de {{host}} está {{seconds}} segundos errado, por isso o serviço push do Adehone o recusou. Ajuste o relógio para a hora correta e tente novamente.",
+      "hostClockSkewDuration": "O relógio de {{host}} está {{duration}} errado, por isso o serviço push do Adehone o recusou. Ajuste o relógio para a hora correta e tente novamente.",
       "rateLimited": "Notificações demais. Tente novamente mais tarde.",
       "sendButton": "Enviar Notificação de Teste",
       "sendFailed": "Não foi possível enviar o teste de notificação push.",
@@ -3890,12 +3890,12 @@
       "localTitle": "Notificação de teste",
       "localBody": "Teste de notificação local deste telefone.",
       "localScheduled": "{{reason}} Teste local agendado. Verifique a notificação. Este teste verifica apenas a exibição, não a entrega de alertas dos agentes.",
-      "disabled": "As notificações estão desativadas no Orca. Ative-as e tente novamente.",
+      "disabled": "As notificações estão desativadas no Adehone. Ative-as e tente novamente.",
       "osDisabled": "As notificações estão desativadas nas configurações do sistema. Permita-as e tente novamente.",
       "noToken": "Nenhum token push está disponível neste telefone.",
       "unsupportedHost": "Este computador não oferece suporte a notificações push. Atualize-o para recebê-las.",
       "registrationPending": "O registro push ainda não está pronto neste computador. Tente novamente em instantes.",
-      "liveFallbackScheduled": "{{reason}} Teste local agendado. Verifique a notificação. Os alertas ao vivo estão disponíveis enquanto o Orca estiver em execução e conectado."
+      "liveFallbackScheduled": "{{reason}} Teste local agendado. Verifique a notificação. Os alertas ao vivo estão disponíveis enquanto o Adehone estiver em execução e conectado."
     },
     "notificationSettingsScreen": {
       "description": "Receba notificações neste dispositivo quando um agente precisar da sua resposta ou concluir uma tarefa.",
@@ -4215,7 +4215,7 @@
     },
     "loaders": {
       "loadFailed": "Não foi possível carregar o controle de versão",
-      "updateDesktop": "Atualize o Orca neste host para usar o controle de versão no celular."
+      "updateDesktop": "Atualize o Adehone neste host para usar o controle de versão no celular."
     },
     "modals": {
       "currentBranch": "atual",
@@ -4234,7 +4234,7 @@
     "prCreate": {
       "authRequired": "Autentique-se antes de criar um {{reviewLabel}}.",
       "baseNotOnRemote": "Faça push da branch base antes de criar um {{reviewLabel}}.",
-      "createdNotRefreshed": "{{titleLabel}} criado, mas o Orca ainda não conseguiu atualizá-lo.",
+      "createdNotRefreshed": "{{titleLabel}} criado, mas o Adehone ainda não conseguiu atualizá-lo.",
       "defaultBranch": "Mude para uma branch de funcionalidade antes de criar um {{reviewLabel}}.",
       "detachedHead": "Faça checkout de uma branch antes de criar um {{reviewLabel}}.",
       "dirty": "Faça commit das alterações antes de criar um {{reviewLabel}}.",
@@ -4242,7 +4242,7 @@
       "existingNumber": "{{titleLabel}} #{{number}} já está aberto.",
       "existingReview": "Já existe um(a) {{reviewLabel}} para esta branch.",
       "forkHeadUnsupported": "Não há suporte à criação de um {{reviewLabel}} a partir deste fork.",
-      "lookupUnconfirmed": "O Orca não conseguiu confirmar se esta branch já tem um {{reviewLabel}}. Tente novamente em instantes.",
+      "lookupUnconfirmed": "O Adehone não conseguiu confirmar se esta branch já tem um {{reviewLabel}}. Tente novamente em instantes.",
       "needsSync": "Sincronize esta branch antes de criar um {{reviewLabel}}.",
       "noUpstream": "Publique os commits antes de criar um {{reviewLabel}}.",
       "notReady": "Esta branch ainda não está pronta para um {{reviewLabel}}.",
@@ -4387,7 +4387,7 @@
       "kimiSessionNotFound": "Kimi não encontrou a sessão solicitada. Use uma sessão existente ou inicie uma nova.",
       "kimiSessionOccupied": "Kimi não pôde usar esta sessão porque ela está ativa em outro cliente. Pare a sessão nesse cliente ou saia dele e tente novamente.",
       "kimiSessionOtherDirectory": "Esta sessão do Kimi pertence a outro diretório. Retome-a lá ou use uma sessão criada para este espaço de trabalho.",
-      "kimiUnreadableOutput": "Kimi retornou uma saída que o Orca não conseguiu ler. Tente novamente.",
+      "kimiUnreadableOutput": "Kimi retornou uma saída que o Adehone não conseguiu ler. Tente novamente.",
       "noBranchChanges": "Não há alterações na branch para resumir.",
       "noModelForAgent": "Nenhum modelo está disponível para {{label}}.",
       "noStagedChanges": "Não há alterações no stage para resumir.",
@@ -4408,7 +4408,7 @@
       "sourceControlCustomCommandEmpty": "O comando personalizado está vazio. Adicione um em Configurações -> Git -> IA de Controle de Versão.",
       "stagedChangesReadFailed": "Não foi possível ler as alterações no stage.",
       "timedOut": "A geração excedeu o tempo limite de {{seconds}} s.",
-      "windowsBatchUnsafeArguments": "{{label}} é executado por um script em lote do Windows que não aceita o prompt de várias linhas como argumento. Em Configurações, indique o executável do agente ou use um comando personalizado sem {prompt} para que o Orca envie o prompt pelo stdin."
+      "windowsBatchUnsafeArguments": "{{label}} é executado por um script em lote do Windows que não aceita o prompt de várias linhas como argumento. Em Configurações, indique o executável do agente ou use um comando personalizado sem {prompt} para que o Adehone envie o prompt pelo stdin."
     },
     "useMobileCommitFailureRecovery": {
       "launchFailed": "Falha ao iniciar o agente"
@@ -4422,7 +4422,7 @@
       "commitFailed": "Falha no commit"
     },
     "conflictActions": {
-      "needsNewerHost": "Atualize o Orca no computador que executa este espaço de trabalho para resolver conflitos de mesclagem pelo celular.",
+      "needsNewerHost": "Atualize o Adehone no computador que executa este espaço de trabalho para resolver conflitos de mesclagem pelo celular.",
       "markResolved": "Marcar como resolvido",
       "keepFile": "Manter arquivo",
       "keepDeletion": "Manter exclusão",
@@ -4600,7 +4600,7 @@
       "searchProjects": "Buscar projetos",
       "subtitle": "Selecione uma visualização de projeto para a página Tarefas.",
       "title": "GitHub Projects",
-      "unsupportedLayout": "O Orca ainda não oferece suporte a este layout de projeto do GitHub.",
+      "unsupportedLayout": "O Adehone ainda não oferece suporte a este layout de projeto do GitHub.",
       "view": "Visualização do projeto"
     },
     "githubViewControls": {
@@ -4707,8 +4707,8 @@
       "connectLinearMessage": "Veja as issues do Linear atribuídas a você e comece a trabalhar nelas diretamente em Tarefas.",
       "connectLinearTitle": "Conecte sua conta do Linear",
       "jiraStatusFailed": "Falha ao ler o status do Jira",
-      "updateDesktopMessage": "Esta visualização de Tarefas no celular requer uma versão mais recente do Orca neste host.",
-      "updateDesktopTitle": "Atualize o Orca neste host"
+      "updateDesktopMessage": "Esta visualização de Tarefas no celular requer uma versão mais recente do Adehone neste host.",
+      "updateDesktopTitle": "Atualize o Adehone neste host"
     },
     "options": {
       "all": "Todos",
@@ -4808,7 +4808,7 @@
       "show": "Mostrar"
     },
     "projectDetailDrawer": {
-      "addRepositoryFromDesktop": "{{repository}} não foi adicionado ao Orca. Adicione este repositório pelo app desktop e depois atualize Tarefas no celular.",
+      "addRepositoryFromDesktop": "{{repository}} não foi adicionado ao Adehone. Adicione este repositório pelo app desktop e depois atualize Tarefas no celular.",
       "clearType": "Limpar tipo",
       "closeItem": "Fechar item",
       "copyGitHubLink": "Copiar link do GitHub",
@@ -4819,7 +4819,7 @@
       "issueType": "Tipo de issue",
       "loadingIssueTypes": "Carregando tipos de issue…",
       "mergePullRequest": "Fazer merge do pull request",
-      "mergeRepositoryRequirement": "Para fazer merge, este repositório precisa estar no Orca.",
+      "mergeRepositoryRequirement": "Para fazer merge, este repositório precisa estar no Adehone.",
       "noIssueTypes": "Nenhum tipo de issue configurado para este repositório.",
       "noType": "Sem tipo",
       "openInGitHub": "Abrir no GitHub",
@@ -4827,7 +4827,7 @@
       "projectSubtitle": "Projeto do GitHub · {{repository}}{{itemNumber}}",
       "pullRequest": "Pull request",
       "reopenItem": "Reabrir item",
-      "repositoryNotInOrca": "Repositório não está no Orca",
+      "repositoryNotInOrca": "Repositório não está no Adehone",
       "status": "Status",
       "type": "Tipo",
       "workspaceCreationRequirement": "Espaços de trabalho só podem ser criados a partir de issues e pull requests do GitHub."
@@ -5173,7 +5173,7 @@
       "downloadingLatestApp": "Baixando a versão mais recente do app",
       "hostProfileUnreadable": "Não foi possível ler os dados deste host no seu dispositivo. Tente novamente.",
       "isolationUnavailable": "O WebView deste dispositivo é antigo demais para abrir o espaço de trabalho com segurança.",
-      "isolationUnavailableAndroid": "O Orca precisa do Android System WebView ou do Chrome 101 ou mais recente. Atualize-o pela Play Store ou escolha uma versão mais recente em Opções do desenvolvedor > Implementação do WebView.",
+      "isolationUnavailableAndroid": "O Adehone precisa do Android System WebView ou do Chrome 101 ou mais recente. Atualize-o pela Play Store ou escolha uma versão mais recente em Opções do desenvolvedor > Implementação do WebView.",
       "webViewInUse": "Este dispositivo tem {{name}} {{version}}.",
       "openingWorkspace": "Abrindo espaço de trabalho",
       "renderProcessGone": "O espaço de trabalho parou de responder.",
@@ -5181,9 +5181,9 @@
       "tryAgain": "Tentar novamente"
     },
     "pageRouteUnavailable": {
-      "updateTitle": "Atualize o Orca",
-      "updateMessage": "Esta tela precisa de uma versão mais recente do Orca no seu celular ou em {{host}}.",
-      "updateMessageNoHost": "Esta tela precisa de uma versão mais recente do Orca.",
+      "updateTitle": "Atualize o Adehone",
+      "updateMessage": "Esta tela precisa de uma versão mais recente do Adehone no seu celular ou em {{host}}.",
+      "updateMessageNoHost": "Esta tela precisa de uma versão mais recente do Adehone.",
       "serverTitle": "Não foi possível acessar este servidor",
       "serverMessage": "Seu celular não consegue acessar o servidor deste espaço de trabalho via {{host}}."
     }
@@ -5193,7 +5193,7 @@
       "automaticName": "Nome automático",
       "existing": "Branch existente",
       "existingHint": "Novos commits são adicionados a esta branch.",
-      "hostUpdateRequired": "Atualize o Orca no host do espaço de trabalho para reutilizar uma branch ou criar explicitamente uma branch separada.",
+      "hostUpdateRequired": "Atualize o Adehone no host do espaço de trabalho para reutilizar uma branch ou criar explicitamente uma branch separada.",
       "newHint": "Criar uma nova branch local",
       "newName": "Nome da nova branch",
       "title": "Branch para esta árvore de trabalho"
@@ -5228,7 +5228,7 @@
       "working": "Trabalhando"
     },
     "hostWorkspaceListStates": {
-      "checkHost": "Verifique se o computador não está suspenso e se o Orca está em execução",
+      "checkHost": "Verifique se o computador não está suspenso e se o Adehone está em execução",
       "empty": "Nenhum espaço de trabalho",
       "loadFailed": "Não foi possível carregar os espaços de trabalho deste host",
       "noFilterMatches": "Nenhum espaço de trabalho corresponde aos filtros",
@@ -5384,7 +5384,7 @@
       "invalidDestination": "Esse host não está mais disponível nesta instância. Escolha um host e tente novamente.",
       "agentDiscoveryUnavailable": "A descoberta de agentes está indisponível para o host deste projeto. As escolhas salvas são preservadas.",
       "agentVerificationUnavailable": "Este host não pode verificar os agentes deste projeto. Atualize o host e tente novamente.",
-      "hostUnavailable": "As automações estão indisponíveis neste host. Atualize o Orca nesse host e reconecte.",
+      "hostUnavailable": "As automações estão indisponíveis neste host. Atualize o Adehone nesse host e reconecte.",
       "hostUnreachable": "Não foi possível acessar este host. Reconecte e atualize para verificar o estado atual.",
       "actionFailed": "Não foi possível concluir esta ação no host. Atualize e tente novamente.",
       "dispatched": "Enviada",
@@ -5414,19 +5414,19 @@
       "workspaceHostAmbiguous": "Seu espaço de trabalho abrange mais de um host, portanto não tem um único proprietário."
     },
     "runFailures": {
-      "noDispatchHost": "Nenhuma janela do Orca estava disponível para iniciar a automação.",
-      "unevaluableSchedule": "O Orca não conseguiu avaliar esta automação e ignorou esta execução.",
+      "noDispatchHost": "Nenhuma janela do Adehone estava disponível para iniciar a automação.",
+      "unevaluableSchedule": "O Adehone não conseguiu avaliar esta automação e ignorou esta execução.",
       "noRunnableHost": "Esta automação não tem host onde ser executada.",
-      "wslMoveInProgress": "O projeto desta automação está sendo movido para seu host WSL, por isso o Orca ignorou esta execução. As execuções serão retomadas quando a movimentação terminar.",
-      "wslMoveOwnedByHost": "O projeto desta automação agora é executado em seu host WSL, que também executa esta automação. O Orca não executa mais esta cópia local.",
+      "wslMoveInProgress": "O projeto desta automação está sendo movido para seu host WSL, por isso o Adehone ignorou esta execução. As execuções serão retomadas quando a movimentação terminar.",
+      "wslMoveOwnedByHost": "O projeto desta automação agora é executado em seu host WSL, que também executa esta automação. O Adehone não executa mais esta cópia local.",
       "managedHostServer": "Requer migração para {{host}}",
-      "missedGraceWindow": "Quando o Orca verificou novamente, o período de tolerância para recuperar esta execução perdida já havia expirado.",
+      "missedGraceWindow": "Quando o Adehone verificou novamente, o período de tolerância para recuperar esta execução perdida já havia expirado.",
       "targetMissing": "O host da automação não está mais registrado, então esta automação não tem onde ser executada.",
       "targetReplaced": "O host da automação foi removido e registrado novamente, então esta automação precisa ser vinculada novamente antes de poder ser executada.",
-      "workspaceHostAmbiguous": "O espaço de trabalho da automação abrange mais de um host, então o Orca não consegue determinar em qual deles executá-la.",
-      "legacyTwinHosts": "Esta automação foi salva antes de o Orca registrar em qual host ela é executada, e seu projeto está em mais de um host. Abra a automação e escolha o host em que ela deve ser executada.",
+      "workspaceHostAmbiguous": "O espaço de trabalho da automação abrange mais de um host, então o Adehone não consegue determinar em qual deles executá-la.",
+      "legacyTwinHosts": "Esta automação foi salva antes de o Adehone registrar em qual host ela é executada, e seu projeto está em mais de um host. Abra a automação e escolha o host em que ela deve ser executada.",
       "targetUnavailable": "O destino de execução da automação não está mais disponível.",
-      "remoteSchedulingUnavailable": "O agendamento de automações em servidores remotos ainda não está disponível neste cliente do Orca. Execute esta automação no servidor remoto ou atualize o Orca quando o agendamento remoto persistente estiver disponível.",
+      "remoteSchedulingUnavailable": "O agendamento de automações em servidores remotos ainda não está disponível neste cliente do Adehone. Execute esta automação no servidor remoto ou atualize o Adehone quando o agendamento remoto persistente estiver disponível.",
       "projectSetupMissing": "O projeto não está mais configurado no host selecionado para a automação.",
       "targetSetupMismatch": "O destino de execução da automação não corresponde mais à configuração do host selecionado para o projeto.",
       "repoUnavailable": "O repositório do host selecionado para a automação não está mais disponível.",
@@ -5437,7 +5437,7 @@
       "hooksReviewBlocked": "O agente está aguardando alguém revisar os hooks novos ou alterados (“Hooks need review”). Abra esta execução e confie neles ou remova-os. As execuções agendadas continuam e serão bem-sucedidas assim que não houver mais nada para revisar.",
       "agentNeverStarted": "O agente da automação nunca foi iniciado após o envio do prompt.",
       "agentNoCompletion": "O agente da automação não informou a conclusão.",
-      "watchTimedOut": "O Orca parou de monitorar esta execução após 6 horas sem um sinal de conclusão.",
+      "watchTimedOut": "O Adehone parou de monitorar esta execução após 6 horas sem um sinal de conclusão.",
       "projectSetupState": {
         "notSetUp": "O projeto não está configurado no host selecionado para a automação.",
         "settingUp": "O projeto ainda está sendo configurado no host selecionado para a automação.",
@@ -5446,10 +5446,10 @@
       },
       "wslDistroStopped": "A distribuição WSL {{distro}} está parada, então esta execução agendada não a iniciou. Inicie a distribuição ou use Executar agora; as próximas execuções acontecem enquanto ela estiver em execução.",
       "agentInterrupted": "O agente foi interrompido antes de terminar esta execução.",
-      "botsOff": "Os bots estão desativados nas Configurações, então o Orca pulou esta execução.",
+      "botsOff": "Os bots estão desativados nas Configurações, então o Adehone pulou esta execução.",
       "botMissing": "O bot com que esta automação é executada não existe mais.",
       "botFolderMissing": "A pasta do bot não está mais disponível.",
-      "botPaused": "{{bot}} está pausado, então o Orca pulou esta execução."
+      "botPaused": "{{bot}} está pausado, então o Adehone pulou esta execução."
     },
     "eventsWontFire": "Executa só no horário programado: precisa do conector {{connectors}}",
     "wontFire": "Não vai executar: precisa do conector {{connectors}}"
@@ -5564,7 +5564,7 @@
             "cursor": {
               "expired": {
                 "label": "Login expirado",
-                "message": "Execute cursor-agent login em um terminal no computador que executa o Orca e tente consultar o uso novamente."
+                "message": "Execute cursor-agent login em um terminal no computador que executa o Adehone e tente consultar o uso novamente."
               }
             },
             "usage": {
@@ -5575,8 +5575,8 @@
             "7ad719c4bf": "Limitado",
             "e740f92596": "Falha ao atualizar",
             "2c35eca8d4": "Não foi possível obter o uso",
-            "d1b7f509ac": "Execute o grok em um terminal no computador que está executando o Orca e espere ele iniciar. Se solicitado, conclua o login e depois tente o uso novamente. Não é necessário enviar uma mensagem de chat.",
-            "a37e8c15d4": "Execute o kimi em um terminal no computador que está executando o Orca e espere ele iniciar, depois tente o uso novamente.",
+            "d1b7f509ac": "Execute o grok em um terminal no computador que está executando o Adehone e espere ele iniciar. Se solicitado, conclua o login e depois tente o uso novamente. Não é necessário enviar uma mensagem de chat.",
+            "a37e8c15d4": "Execute o kimi em um terminal no computador que está executando o Adehone e espere ele iniciar, depois tente o uso novamente.",
             "3d3c9c0c1f": "O uso do Claude será atualizado após o terminal ativo do Claude renovar suas credenciais.",
             "42fdd4da1d": "O login do Claude está sendo atualizado. As sessões de agente podem continuar conectadas.",
             "c06c1d215d": "Não foi possível atualizar o uso do Claude porque a solicitação de rede falhou.",
@@ -5618,7 +5618,7 @@
           "grokNotSignedIn": "Não conectado ao Grok — execute grok login",
           "grokAuthInvalid": "O arquivo de autenticação do Grok é inválido",
           "grokAuthUnreadable": "Não foi possível ler o arquivo de autenticação do Grok",
-          "grokSignInExpired": "O login do Grok expirou — execute grok no computador que está rodando o Orca e faça login se for solicitado. Não é preciso enviar nenhuma mensagem no chat.",
+          "grokSignInExpired": "O login do Grok expirou — execute grok no computador que está rodando o Adehone e faça login se for solicitado. Não é preciso enviar nenhuma mensagem no chat.",
           "grokBillingConfigMissing": "A resposta de cobrança do Grok não incluiu a configuração",
           "grokBillingUsageMissing": "A resposta de cobrança do Grok não incluiu o uso de créditos",
           "grokUsageUnauthorizedHttp": "Solicitação de uso do Grok não autorizada (HTTP {{status}})",
@@ -5682,14 +5682,14 @@
       "pairRequired": "Para abrir este link, emparelhe este telefone com um computador e abra o link novamente.",
       "pairAction": "Emparelhar um computador",
       "openFailed": "Não foi possível abrir este link",
-      "ambiguous": "Este bot está em {{names}}. Abra a conversa no Orca no computador que você quiser.",
+      "ambiguous": "Este bot está em {{names}}. Abra a conversa no Adehone no computador que você quiser.",
       "computer": "seu computador",
-      "updateNeeded": "Atualize o Orca em {{names}} para abrir este link.",
-      "unreachable": "Não foi possível conectar a {{names}}. Verifique se o Orca está aberto em um deles e tente novamente.",
+      "updateNeeded": "Atualize o Adehone em {{names}} para abrir este link.",
+      "unreachable": "Não foi possível conectar a {{names}}. Verifique se o Adehone está aberto em um deles e tente novamente.",
       "missing": "Nenhum dos seus computadores emparelhados tem este bot.",
       "offline": "{{name}} está offline. Abra o link novamente quando ele se conectar.",
       "chatOpenFailed": "{{name}} não conseguiu abrir esta conversa. Tente o link novamente.",
-      "unreachableSingle": "Não foi possível conectar a {{name}}. Verifique se o Orca está aberto nele e tente novamente.",
+      "unreachableSingle": "Não foi possível conectar a {{name}}. Verifique se o Adehone está aberto nele e tente novamente.",
       "workspaceDeleted": "O espaço de trabalho desta conversa foi excluído em {{name}}."
     },
     "settings": {
@@ -5716,8 +5716,8 @@
       "whoCanAsk": "Quem pode pedir",
       "deleteBot": "Excluir bot…",
       "accountChecking": "Verificando…",
-      "signedOut": "Sessão do Orca encerrada",
-      "orcaAccount": "Conta do Orca",
+      "signedOut": "Sessão do Adehone encerrada",
+      "orcaAccount": "Conta do Adehone",
       "folder": "Pasta",
       "copyPath": "Copiar caminho",
       "pathCopied": "Caminho copiado",
@@ -5730,7 +5730,7 @@
       "model": "Modelo",
       "effort": "Esforço",
       "modelDefault": "Padrão",
-      "signInChanged": "O login do Orca mudou",
+      "signInChanged": "O login do Adehone mudou",
       "sameAsChatsDetail": "Usa a configuração de permissão dos seus chats.",
       "needsPermissionDetail": "Quando ele ou um worker precisa da sua aprovação.",
       "taskCompleteDetail": "Uma thread, uma automação ou um worker termina.",
@@ -5861,7 +5861,7 @@
       "resume": "Retomar",
       "pause": "Pausar",
       "more": "Mais ações",
-      "orphanedNote": "O Orca de {{bot}} não lista mais esta automação, então as chamadas não são executadas.",
+      "orphanedNote": "O Adehone de {{bot}} não lista mais esta automação, então as chamadas não são executadas.",
       "url": "URL",
       "copy": "Copiar",
       "copyUrl": "Copiar URL",
@@ -5898,9 +5898,9 @@
         "changeTitle": "Alterar segredo de assinatura",
         "addTitle": "Adicionar segredo de assinatura",
         "sender": "Remetente",
-        "modeGenerate": "O Orca cria um",
+        "modeGenerate": "O Adehone cria um",
         "modePaste": "Colar o do remetente",
-        "generateNote": "O Orca cria este segredo. Depois você o copia no {{sender}}.",
+        "generateNote": "O Adehone cria este segredo. Depois você o copia no {{sender}}.",
         "paste": "Segredo do {{sender}}",
         "save": "Salvar",
         "saved": "Segredo de assinatura salvo",
@@ -5960,7 +5960,7 @@
       },
       "everyCall": "Toda chamada",
       "hostOffline": "O computador de {{bot}} está offline",
-      "hostNeedsUpdate": "Seu Orca precisa de uma atualização antes que {{bot}} possa fazer isso.",
+      "hostNeedsUpdate": "Seu Adehone precisa de uma atualização antes que {{bot}} possa fazer isso.",
       "errors": {
         "notFound": "Este webhook foi excluído.",
         "unavailable": "Os webhooks não estão disponíveis no momento."
@@ -6018,9 +6018,9 @@
       "reading": "Conhecendo sua configuração…",
       "read": "Conhecendo sua configuração",
       "namesMore": "{{names}} e mais {{count}}",
-      "projectsReading": "Projetos: vendo o que você tem no Orca…",
+      "projectsReading": "Projetos: vendo o que você tem no Adehone…",
       "projectsDone": "Analisei seus projetos",
-      "projectsNone": "Ainda não há projetos no Orca",
+      "projectsNone": "Ainda não há projetos no Adehone",
       "projectsOne": "Encontrei 1 projeto: {{names}}",
       "projectsMany": "Encontrei {{count}} projetos: {{names}}",
       "githubReading": "GitHub: lendo seus PRs abertos…",
@@ -6049,7 +6049,7 @@
     "picture": {
       "invalid": "Não foi possível usar essa imagem. Escolha uma imagem PNG ou JPG.",
       "permissionDenied": "Permissão de acesso às fotos negada",
-      "unreadable": "O Orca não consegue ler essa imagem. Tente PNG ou JPEG.",
+      "unreadable": "O Adehone não consegue ler essa imagem. Tente PNG ou JPEG.",
       "colorSky": "Céu",
       "colorWhite": "Branco",
       "colorPink": "Rosa",
@@ -6108,7 +6108,7 @@
         "needsSignIn": "Precisa entrar",
         "finishInBrowser": "Concluir no navegador",
         "finishing": "Concluindo login…",
-        "updateHost": "Atualizar o Orca em {{host}}",
+        "updateHost": "Atualizar o Adehone em {{host}}",
         "cantReach": "Inacessível",
         "unsupported": "Este app ainda não tem suporte"
       },
@@ -6122,13 +6122,13 @@
         "step2": "Copie o endereço",
         "step2Detail": "A última página não vai carregar. Isso é esperado. Copie o endereço dela.",
         "step3": "Cole aqui",
-        "step3Detail": "O Orca conclui o login em {{host}}.",
+        "step3Detail": "O Adehone conclui o login em {{host}}.",
         "title": "Entrar no {{app}}",
         "pastePlaceholder": "Cole o endereço",
         "open": "Abrir página de login",
         "notThisSignIn": "Esse endereço não corresponde a este login. Cole o endereço da página em que você chegou."
       },
-      "updateHost": "Atualize o Orca em {{host}} para entrar em apps",
+      "updateHost": "Atualize o Adehone em {{host}} para entrar em apps",
       "none": "Nenhuma",
       "from": "{{count}} do {{agent}}",
       "more": "Mais {{count}} do {{agent}}",
@@ -6148,7 +6148,7 @@
         "unsupported": "Este app ainda não é compatível.",
         "unavailable": "Não foi possível alcançar este app. Verifique o endereço e tente novamente.",
         "noTool": "Este bot não tem mais essa ferramenta.",
-        "desktopOnly": "Faça login pelo Orca em {{host}}.",
+        "desktopOnly": "Faça login pelo Adehone em {{host}}.",
         "denied": "O acesso não foi permitido.",
         "expired": "O login expirou. Tente novamente.",
         "couldNotSignIn": "Não foi possível fazer login. Tente novamente."
@@ -6231,7 +6231,7 @@
     "failures": {
       "lookUnfinished": "A última olhada não terminou.",
       "lookTimedOut": "A última olhada foi interrompida após {{minutes}} min.",
-      "lookInterrupted": "O Orca parou durante a última olhada.",
+      "lookInterrupted": "O Adehone parou durante a última olhada.",
       "lookCouldNotStart": "A última olhada não pôde começar.",
       "lookAsleep": "A última olhada foi perdida porque este computador estava em repouso.",
       "tidyUpUnfinished": "A última arrumação não terminou.",
@@ -6240,11 +6240,11 @@
       "tidyUpAsleep": "A última arrumação foi perdida porque este computador estava em repouso.",
       "tidyUpUnreadChats": "A última arrumação não conseguiu ler os chats, então não foi executada.",
       "tidyUpNoDraft": "A última arrumação não respondeu com um novo MEMORY.md.",
-      "tidyUpNoOps": "A resposta da última arrumação não era uma lista de alterações que o Orca conseguisse ler.",
-      "tidyUpAllSkipped": "O Orca ignorou todas as alterações pedidas pela última arrumação, então nada mudou. ({{detail}})",
+      "tidyUpNoOps": "A resposta da última arrumação não era uma lista de alterações que o Adehone conseguisse ler.",
+      "tidyUpAllSkipped": "O Adehone ignorou todas as alterações pedidas pela última arrumação, então nada mudou. ({{detail}})",
       "tidyUpNotListLines": "A última arrumação não foi executada: o MEMORY.md tem mais do que algumas linhas que não são de lista, e a arrumação só lê linhas de lista.",
-      "tidyUpMovedOnly": "A última arrumação moveu linhas de status para memory/journal/, mas o Orca não conseguiu usar o resto da resposta. ({{detail}})",
-      "tidyUpBadTopic": "A última arrumação indicou um arquivo de tópico que o Orca não pode gravar, então nada mudou.",
+      "tidyUpMovedOnly": "A última arrumação moveu linhas de status para memory/journal/, mas o Adehone não conseguiu usar o resto da resposta. ({{detail}})",
+      "tidyUpBadTopic": "A última arrumação indicou um arquivo de tópico que o Adehone não pode gravar, então nada mudou.",
       "tidyUpTooLong": "O MEMORY.md da última arrumação passava de {{max}} linhas e não ficou mais curto, então nada mudou.",
       "tidyUpTooManyRemoved": "A última arrumação removeu linhas demais de uma vez, então nada mudou.",
       "tidyUpTooManyAdded": "A última arrumação adicionou linhas novas demais de uma vez, então nada mudou.",
@@ -6258,9 +6258,9 @@
       "toolSavedValueGone": "Esse valor salvo não está mais disponível. Digite-o novamente ou remova a linha dele.",
       "toolValueMissing": "Digite um valor em cada linha ou remova a linha.",
       "toolCredentialsUnreadable": "As credenciais de ferramentas salvas do bot estão ilegíveis. Digite os valores da ferramenta novamente.",
-      "toolSignInManaged": "O Orca faz login nesta ferramenta. Em vez disso, entre ou saia dela.",
-      "toolCredentialsRaced": "As credenciais de ferramentas do bot mudaram em outro Orca. Tente novamente.",
-      "toolSourceManaged": "O Orca gerencia esta ferramenta. Altere-a onde você a configurou.",
+      "toolSignInManaged": "O Adehone faz login nesta ferramenta. Em vez disso, entre ou saia dela.",
+      "toolCredentialsRaced": "As credenciais de ferramentas do bot mudaram em outro Adehone. Tente novamente.",
+      "toolSourceManaged": "O Adehone gerencia esta ferramenta. Altere-a onde você a configurou.",
       "toolValuesUnmoved": "Uma ferramenta ainda guarda seus valores salvos. Abra as ferramentas do bot novamente para movê-los.",
       "toolCodexCheckFailed": "O Codex não conseguiu verificar nem conectar as ferramentas. Verifique a configuração e tente novamente.",
       "toolCodexNoThread": "O Codex não iniciou nenhuma thread para verificar as ferramentas.",
@@ -6275,7 +6275,7 @@
       "toolSignInEnded": "O login já tinha terminado ou expirado. Comece de novo com Conectar.",
       "toolNotFound": "Este bot não tem nenhuma ferramenta chamada {{name}}.",
       "toolNeedsNoSignIn": "{{name}} usa seus valores salvos e não precisa de login.",
-      "toolSignInAgentUnsupported": "O Orca faz login em {{name}} só para Claude Code e Codex. Em vez disso, adicione-a com os valores de login.",
+      "toolSignInAgentUnsupported": "O Adehone faz login em {{name}} só para Claude Code e Codex. Em vez disso, adicione-a com os valores de login.",
       "toolCodexNoSignInPage": "O Codex não forneceu uma página de login para {{name}}.",
       "toolClaudeSignInFailed": "O Claude não conseguiu começar o login em {{name}}.",
       "toolClaudeNoSignInPage": "O Claude não abriu uma página de login para {{name}}.",
@@ -6294,7 +6294,7 @@
       "groupNeedsLocalBot": "Este grupo precisa de pelo menos um bot neste computador.",
       "groupNameTaken": "{{name}} já está neste grupo. Os membros precisam de nomes diferentes para que as menções não fiquem ambíguas.",
       "groupPostFromHost": "Para publicar em um grupo com bots em outros computadores, use {{host}}.",
-      "groupPeerTooOld": "Atualize o Orca em {{host}} para adicionar os bots dele a um grupo.",
+      "groupPeerTooOld": "Atualize o Adehone em {{host}} para adicionar os bots dele a um grupo.",
       "attachmentUnreadable": "Não é possível ler {{name}}.",
       "attachmentTooLarge": "{{name}} passa de {{maxMb}} MB.",
       "attachmentUploading": "{{name}} ainda está sendo enviado.",
@@ -6401,12 +6401,12 @@
       "hitLimit": "Limite atingido · reinicia às {{time}}"
     },
     "new": {
-      "purposeTooLongForHost": "O Orca em {{host}} aceita até 200 caracteres para a finalidade. Encurte o texto ou atualize o Orca em {{host}}."
+      "purposeTooLongForHost": "O Adehone em {{host}} aceita até 200 caracteres para a finalidade. Encurte o texto ou atualize o Adehone em {{host}}."
     }
   },
   "hostMutation": {
     "renameOffline": "{{host}} está offline. Seu texto fica aqui até que você possa salvar.",
-    "renameUnconfirmed": "Ainda não confirmado. O Orca verifica o nome quando {{host}} voltar.",
+    "renameUnconfirmed": "Ainda não confirmado. O Adehone verifica o nome quando {{host}} voltar.",
     "saving": "Salvando",
     "serverUnreachable": "Não foi possível acessar o servidor."
   },
@@ -6460,8 +6460,8 @@
     "signIn": "Entrar",
     "projectsOnly": "Somente {{projects}}",
     "moreFor": "Mais para {{name}}",
-    "moveToOrca": "Mover para o Orca",
-    "copyToOrca": "Copiar para o Orca",
+    "moveToOrca": "Mover para o Adehone",
+    "copyToOrca": "Copiar para o Adehone",
     "signInAgain": "Entrar novamente",
     "signOut": "Sair",
     "workspaces": "Espaços de trabalho",
@@ -6494,13 +6494,13 @@
     "restartSessions": "Reiniciar sessões ({{count}})",
     "restarted": "Sessões reiniciadas: {{count}}",
     "agentFileTitle": "Ativar {{server}} para {{agent}}?",
-    "agentFileMessage": "O Orca vai manter seus servidores MCP no arquivo de configurações do {{agent}} ({{file}}). Suas próprias entradas continuam como estão.",
-    "agentFilesMessage": "O Orca vai manter seus servidores MCP nos arquivos de configurações deles. Suas próprias entradas continuam como estão.",
+    "agentFileMessage": "O Adehone vai manter seus servidores MCP no arquivo de configurações do {{agent}} ({{file}}). Suas próprias entradas continuam como estão.",
+    "agentFilesMessage": "O Adehone vai manter seus servidores MCP nos arquivos de configurações deles. Suas próprias entradas continuam como estão.",
     "allow": "Permitir",
     "removeTitle": "Remover {{name}}?",
     "remove": "Remover",
-    "moveTitle": "Mover {{name}} para o Orca?",
-    "moveMessage": "O Orca o remove das configurações de {{agents}} e mantém um backup.",
+    "moveTitle": "Mover {{name}} para o Adehone?",
+    "moveMessage": "O Adehone o remove das configurações de {{agents}} e mantém um backup.",
     "move": "Mover",
     "workspacesCount": "{{count}} espaços de trabalho",
     "workspacesAllButCount": "Todos, exceto {{count}}",

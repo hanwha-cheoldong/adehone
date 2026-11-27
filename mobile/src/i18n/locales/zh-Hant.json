@@ -45,7 +45,7 @@
       "title": "代理程式工作階段歷史",
       "unavailable": "無法使用代理程式工作階段歷史",
       "unknownHostPlatform": "無法判斷主機平台。",
-      "updateHost": "請更新此主機上的 Orca，以瀏覽代理程式工作階段歷史。",
+      "updateHost": "請更新此主機上的 Adehone，以瀏覽代理程式工作階段歷史。",
       "waitingForHost": "正在等待主機…",
       "workspace": "工作區"
     },
@@ -121,7 +121,7 @@
       "stepProgress": "第 {{step}} 步，共 {{total}} 步"
     },
     "notifications": {
-      "description": "即使關閉應用程式，仍可收到代理程式提醒。通知透過 Orca 的推播服務與 Apple 或 Google 傳送。"
+      "description": "即使關閉應用程式，仍可收到代理程式提醒。通知透過 Adehone 的推播服務與 Apple 或 Google 傳送。"
     },
     "pair": {
       "backToHome": "返回首頁",
@@ -140,13 +140,13 @@
     "pairScan": {
       "cameraDisabledDescription": "請在「設定」中啟用相機存取權限，或改為貼上配對碼。",
       "cameraDisabledTitle": "相機存取權限已停用",
-      "cameraPermissionDescription": "掃描電腦上 Orca 顯示的 QR Code，或改為貼上配對碼。",
+      "cameraPermissionDescription": "掃描電腦上 Adehone 顯示的 QR Code，或改為貼上配對碼。",
       "connectTimedOut": "未能在 {{seconds}} 秒內連線；請查看下方記錄，確認停在哪個步驟",
       "connecting": "連線中…",
       "invalidPairingCode": "配對碼無效，請從電腦複製後重新貼上",
-      "invalidQrCode": "無效的 Orca QR Code",
+      "invalidQrCode": "無效的 Adehone QR Code",
       "downloadQrCode": "這是下載碼。請掃描桌面端第 2 步中的配對碼。",
-      "openDesktopStep": "在電腦上開啟 Orca",
+      "openDesktopStep": "在電腦上開啟 Adehone",
       "openMobileSettingsStep": "前往「設定」→「行動版」",
       "openSettings": "開啟設定",
       "pairingFailed": "配對失敗：{{error}}",
@@ -163,7 +163,7 @@
     },
     "terminalSettings": {
       "keepPhoneSize": "保持手機尺寸（預設）",
-      "leaveAppDescription": "在手機上使用終端機時，Orca 會將終端機縮小以符合螢幕大小。關閉 App 或切換到其他 App 時，此設定決定終端機要保持手機尺寸（避免互動式 CLI 工具重新排版），還是還原為電腦上的尺寸。您隨時都能使用桌面版橫幅上的「還原」手動調整尺寸。",
+      "leaveAppDescription": "在手機上使用終端機時，Adehone 會將終端機縮小以符合螢幕大小。關閉 App 或切換到其他 App 時，此設定決定終端機要保持手機尺寸（避免互動式 CLI 工具重新排版），還是還原為電腦上的尺寸。您隨時都能使用桌面版橫幅上的「還原」手動調整尺寸。",
       "leaveAppHeading": "離開 App 時",
       "noPairedDesktops": "尚未配對任何電腦。配對一台電腦後，即可設定終端機行為。",
       "restoreAfterMinutes_one": "{{count}} 分鐘後",
@@ -176,15 +176,15 @@
   },
   "appMove": {
     "play": {
-      "title": "Orca 現已上架 Google Play",
+      "title": "Adehone 現已上架 Google Play",
       "description": "此 App 仍可繼續使用，但之後的更新將透過 Google Play 提供。切換只需要幾分鐘。",
-      "installTitle": "從 Google Play 安裝 Orca",
+      "installTitle": "從 Google Play 安裝 Adehone",
       "installDescription": "現在就能安裝，無論你在哪裡。",
       "openGooglePlay": "開啟 Google Play",
       "cantUseGooglePlay": "我無法使用 Google Play"
     },
     "download": {
-      "title": "取得新版 Orca App",
+      "title": "取得新版 Adehone App",
       "description": "此 App 仍可繼續使用，但之後的更新與安全性修正將透過新 App 提供。切換只需要幾分鐘。",
       "installTitle": "下載新 App",
       "installDescription": "如果手機詢問，請允許瀏覽器安裝 App。",
@@ -193,7 +193,7 @@
       "keepThisVersionNote": "你將收不到安全性修正。我們會在一週後再提醒你。"
     },
     "pairTitle": "與電腦配對",
-    "pairDescription": "在電腦上的 Orca 中，前往「設定」→「行動版」，然後掃描 QR Code。",
+    "pairDescription": "在電腦上的 Adehone 中，前往「設定」→「行動版」，然後掃描 QR Code。",
     "deleteTitle": "刪除此 App",
     "deleteDescription": "等新 App 顯示你的代理程式後再刪除。在那之前，請繼續使用此 App。",
     "dataKept": "你的代理程式、聊天和工作區都儲存在電腦上，因此在新 App 中也能全部看到。",
@@ -234,13 +234,13 @@
       "connectionNotSecure": "連線不安全",
       "certificateNameMismatch": "憑證與 {{value0}} 不相符。",
       "certificateDateInvalid": "{{value0}} 的憑證在目前日期和時間無效。",
-      "certificateAuthorityInvalid": "Orca 不信任簽發 {{value0}} 憑證的機構。",
-      "certificateVerificationFailed": "Orca 無法驗證 {{value0}} 的憑證。",
+      "certificateAuthorityInvalid": "Adehone 不信任簽發 {{value0}} 憑證的機構。",
+      "certificateVerificationFailed": "Adehone 無法驗證 {{value0}} 的憑證。",
       "proceedUnsafe": "仍然繼續（不安全）",
       "connecting": "正在連線…",
       "certificateChallengeExpired": "此憑證的核准已過期。請重試此頁面以重新要求核准。",
       "certificateChallengeChanged": "憑證要求已變更。請重試該頁面並檢視新的警告。",
-      "certificateProceedFailed": "Orca 無法核准此憑證要求。請重試該頁面後再試。",
+      "certificateProceedFailed": "Adehone 無法核准此憑證要求。請重試該頁面後再試。",
       "certificateChallengeUnavailable": "此憑證要求已無法使用。請重試該頁面以提出新的要求。"
     }
   },
@@ -333,7 +333,7 @@
       "copyFailed": "無法拷貝影像",
       "saveFailed": "無法儲存影像",
       "shareFailed": "無法分享影像",
-      "photosAccessDenied": "請在「設定」中允許 Orca 加入照片",
+      "photosAccessDenied": "請在「設定」中允許 Adehone 加入照片",
       "imageTooLarge": "影像過大",
       "previousImage": "上一張圖片",
       "nextImage": "下一張圖片"
@@ -409,28 +409,28 @@
     },
     "orcaStop": {
       "canContinue": "您可以在此對話中繼續。",
-      "crash": "此回覆進行期間，{{machine}} 上的 Orca 意外停止。",
-      "quit": "此回覆進行期間，{{machine}} 上的 Orca 已關閉。",
-      "remote": "此回覆進行期間，{{machine}} 上的 Orca 已停止。",
+      "crash": "此回覆進行期間，{{machine}} 上的 Adehone 意外停止。",
+      "quit": "此回覆進行期間，{{machine}} 上的 Adehone 已關閉。",
+      "remote": "此回覆進行期間，{{machine}} 上的 Adehone 已停止。",
       "unnamedServer": "遠端伺服器",
-      "update": "此回覆進行期間，{{machine}} 上的 Orca 為更新而重新啟動。"
+      "update": "此回覆進行期間，{{machine}} 上的 Adehone 為更新而重新啟動。"
     },
     "interruptedContinue": {
       "failed": "無法繼續此聊天。請重試，或傳送一則訊息。",
       "explanation": "繼續後，代理程式會先檢查其上一步是否已完成。"
     },
     "restartNote": {
-      "continued": "Orca 在重新啟動後已請此代理程式繼續。你自己的提示詞未重新傳送。",
-      "refused": "Orca 在重新啟動後無法繼續此聊天。請傳送訊息以繼續。",
-      "unconfirmed": "Orca 在重新啟動後已請此代理程式繼續，但無法確認它是否照做。傳送其他訊息前，請先查看它的最新回覆。",
-      "notConnected": "Orca 在重新啟動後無法重新連線到此聊天，因此未請代理程式繼續。"
+      "continued": "Adehone 在重新啟動後已請此代理程式繼續。你自己的提示詞未重新傳送。",
+      "refused": "Adehone 在重新啟動後無法繼續此聊天。請傳送訊息以繼續。",
+      "unconfirmed": "Adehone 在重新啟動後已請此代理程式繼續，但無法確認它是否照做。傳送其他訊息前，請先查看它的最新回覆。",
+      "notConnected": "Adehone 在重新啟動後無法重新連線到此聊天，因此未請代理程式繼續。"
     },
     "sendError": {
       "dismiss": "關閉"
     },
     "permission": {
       "needsAccessTo": "需要存取： ",
-      "newerVersionRequired": "此請求需要更新版本的 Orca。",
+      "newerVersionRequired": "此請求需要更新版本的 Adehone。",
       "planFile": "計畫檔案：{{filePath}}",
       "reason": "原因： "
     },
@@ -461,7 +461,7 @@
       "waitingFor": "{{host}} 恢復連線後傳送",
       "waiting": "桌面端恢復連線後傳送",
       "behind": "等待中 — 前面的訊息需要處理",
-      "closed": "Orca 關閉前未傳送"
+      "closed": "Adehone 關閉前未傳送"
     },
     "receipt": {
       "cancelled": "已取消",
@@ -690,9 +690,9 @@
       "autoContinueCancel": "不要繼續",
       "statusResetAt": "已於 {{time}} 重設",
       "statusResetsAt": "將於 {{time}} 重設",
-      "statusContinuesShortly": "Orca 即將繼續",
-      "statusContinuesThen": "Orca 屆時會繼續",
-      "statusWontContinue": "Orca 不會自動繼續"
+      "statusContinuesShortly": "Adehone 即將繼續",
+      "statusContinuesThen": "Adehone 屆時會繼續",
+      "statusWontContinue": "Adehone 不會自動繼續"
     },
     "useImageUpload": {
       "attachFailed": "附加失敗",
@@ -705,7 +705,7 @@
       "incompleteReply": "附件已變更或回應不完整。請關閉後重試。",
       "notText": "無法以文字預覽此檔案。請儲存後在其他應用程式中開啟。",
       "openFailed": "無法開啟附件。請重試。",
-      "hostUpdate": "此主機尚無法開啟文字附件。請更新該主機上的 Orca，然後重試。",
+      "hostUpdate": "此主機尚無法開啟文字附件。請更新該主機上的 Adehone，然後重試。",
       "copyTooLarge": "檔案太大，無法複製。請改為儲存。",
       "connectionChanged": "連線已變更。請重試以重新開啟附件。",
       "hostChanged": "附件所在的主機已變更。請關閉附件並重新開啟。",
@@ -777,10 +777,10 @@
       "historyLimit": "此對話過長，無法回溯。未做任何更改。",
       "providerRefused": "代理程式無法返回到此訊息。",
       "proofMismatch": "代理程式的歷史記錄與此聊天不符。請在繼續前檢查對話。",
-      "outcomeUnknown": "Orca 無法確認對話是否已返回到更早的訊息。它會在傳送您的下一則訊息前進行檢查。",
-      "refused": "Orca 無法返回到此訊息。請在繼續前檢查對話。",
+      "outcomeUnknown": "Adehone 無法確認對話是否已返回到更早的訊息。它會在傳送您的下一則訊息前進行檢查。",
+      "refused": "Adehone 無法返回到此訊息。請在繼續前檢查對話。",
       "unavailable": "請等待聊天完成連線。",
-      "outcomeUnknownReturned": "Orca 無法確認對話是否已返回到此訊息。您的訊息已回到輸入框中，Orca 會在傳送您的下一則訊息前檢查對話。",
+      "outcomeUnknownReturned": "Adehone 無法確認對話是否已返回到此訊息。您的訊息已回到輸入框中，Adehone 會在傳送您的下一則訊息前檢查對話。",
       "timeout": "返回到此訊息後聊天未更新。請重新開啟以檢視最新內容。",
       "pending": "請等待對話回溯到更早的訊息。"
     },
@@ -844,7 +844,7 @@
           "guideHere": "在這裡指導我",
           "guideBrowser": "在我的瀏覽器中指導我",
           "doItNote": "由 {{bot}} 替你點選完成",
-          "guideHereNote": "你在 Orca 中點選操作",
+          "guideHereNote": "你在 Adehone 中點選操作",
           "guideBrowserNote": "你在瀏覽器中點選操作"
         },
         "notNow": "暫時不要",
@@ -871,7 +871,7 @@
         "connect": {
           "titleAccount": "登入以連線 {{email}}",
           "title": "登入以連線",
-          "onComputer": "請在電腦上的 Orca 中登入 Google。",
+          "onComputer": "請在電腦上的 Adehone 中登入 Google。",
           "signIn": "登入 Google"
         },
         "movedDown": "已在下方繼續。",
@@ -881,7 +881,7 @@
         },
         "copied": "已複製。請傳送給你的 Google 管理員。",
         "action": {
-          "onComputer": "如需「{{action}}」，請使用電腦上的 Orca。",
+          "onComputer": "如需「{{action}}」，請使用電腦上的 Adehone。",
           "makeNewKey": "新增金鑰",
           "importKey": "匯入金鑰檔案",
           "allow": "授權 {{services}}",
@@ -931,7 +931,7 @@
           },
           "branding": {
             "start": "點選<b>開始</b>。",
-            "name": "應用程式名稱填寫 <b>Orca</b>，使用者支援電子郵件選擇你的電子郵件位址。",
+            "name": "應用程式名稱填寫 <b>Adehone</b>，使用者支援電子郵件選擇你的電子郵件位址。",
             "external": "受眾群體：<b>外部</b>。",
             "internal": "受眾群體：<b>內部</b>。",
             "either": "受眾群體：Gmail 帳戶選擇<b>外部</b>，工作帳戶選擇<b>內部</b>。",
@@ -950,7 +950,7 @@
           "client": {
             "type": "應用程式類型選擇<b>桌面應用程式</b>，然後點選<b>建立</b>。",
             "agent": "如果看到 <b>Use this client for an AI-powered agent</b>，請勾選。",
-            "download": "點選<b>下載 JSON</b>。Orca 會儲存該金鑰。"
+            "download": "點選<b>下載 JSON</b>。Adehone 會儲存該金鑰。"
           }
         },
         "blocker": {
@@ -958,7 +958,7 @@
           "stopped": "設定已停止。",
           "paused": "設定在「{{step}}」這一步暫停了。目前的進度都已儲存。",
           "yourTurn": "輪到你了：{{step}}。",
-          "noKey": "Orca 需要先取得應用程式金鑰。",
+          "noKey": "Adehone 需要先取得應用程式金鑰。",
           "keyGone": "此應用程式的金鑰已失效：它已在 Google Cloud 中被刪除。",
           "keyOtherProject": "已儲存的金鑰屬於專案 {{keyProject}}，而不是 {{project}}。",
           "otherAccount": "你以 {{signedIn}} 身份登入；但此設定針對的是 {{wanted}}。",
@@ -966,7 +966,7 @@
           "needsPermission": "快完成了：請授權 {{services}}。Google 會為每項服務顯示一個核取方塊，請全部勾選。",
           "apiOff": "{{services}} 已在 Google Cloud 中停用。",
           "adminBlocked": "你公司的 Google 管理員已阻止 {{services}}。",
-          "checkFailed": "Orca 無法檢查 {{services}}。"
+          "checkFailed": "Adehone 無法檢查 {{services}}。"
         },
         "ownerStep": "第 {{step}} 步，共 3 步",
         "adminRequest": "請在 Google 管理控制台（安全性 › API 控制元件 › 管理第三方應用程式存取權限）中將此 Google 應用程式標記為「可信」：{{clientId}}"
@@ -978,7 +978,7 @@
         "stayed": "保留在 {{app}}：{{things}}。{{app}} 中的內容皆未變更。",
         "unchanged": "{{app}} 中的內容皆未變更。",
         "paused": "自動化已暫停，以免重複執行。請在 {{app}} 中關閉舊機器人後再開啟它們。",
-        "soulOnComputer": "請在電腦上的 Orca 中開啟靈魂與記憶。"
+        "soulOnComputer": "請在電腦上的 Adehone 中開啟靈魂與記憶。"
       },
       "importPlan": {
         "comes": "將匯入",
@@ -1006,8 +1006,8 @@
         "checkAgain": "重新檢查",
         "connectTitle": "連線 {{app}}",
         "connecting": "正在等待你在瀏覽器中完成登入",
-        "connectKeyNote": "將開啟 Composio，以輸入你的 {{app}} API 金鑰。該金鑰由 Composio 保管，而非 Orca。",
-        "connectNote": "將在瀏覽器中開啟 Composio 提供的 {{app}} 登入頁面。此登入資訊由 Composio 保管，而非 Orca。",
+        "connectKeyNote": "將開啟 Composio，以輸入你的 {{app}} API 金鑰。該金鑰由 Composio 保管，而非 Adehone。",
+        "connectNote": "將在瀏覽器中開啟 Composio 提供的 {{app}} 登入頁面。此登入資訊由 Composio 保管，而非 Adehone。",
         "signInOnComposio": "請在 Composio 頁面上登入 {{app}}。",
         "openAgain": "再次開啟",
         "cancel": "取消",
@@ -1017,10 +1017,10 @@
         "byHandPaste": "在 Composio 中開啟專案設定，進入 Webhooks，然後貼上該位址。",
         "byHandOpen": "開啟 Composio",
         "byHandDone": "完成",
-        "byHandDoneNote": "隨後 Orca 會啟用 {{trigger}}，並儲存 Composio 的簽名金鑰。",
+        "byHandDoneNote": "隨後 Adehone 會啟用 {{trigger}}，並儲存 Composio 的簽名金鑰。",
         "eventsTitle": "讓 Composio 在 {{trigger}} 觸發時呼叫 {{bot}}",
         "eventsReplaceNote": "你的 Composio 專案已將事件傳送到另一個位址。完成此設定後，事件將改為傳送到這裡，原位址將不再收到事件。",
-        "eventsOneAddressNote": "Orca 會為你登入的帳戶啟用 {{trigger}}。你的 Composio 專案的事件都會傳送到 Orca 的同一個位址，再分別轉給對應的機器人。",
+        "eventsOneAddressNote": "Adehone 會為你登入的帳戶啟用 {{trigger}}。你的 Composio 專案的事件都會傳送到 Adehone 的同一個位址，再分別轉給對應的機器人。",
         "eventsDone": "✓ 已設定",
         "eventsChosenByHand": "在 Composio 中手動設定",
         "eventsReplace": "取代並設定",
@@ -1047,7 +1047,7 @@
         "goneDetail": "請在機器人的「工具」中重新設定。",
         "readyAs": "已以 {{label}} 身份連線。你的應用程式登入資訊由 Composio 保管。",
         "custody": "你的應用程式登入資訊由 Composio 保管。",
-        "browseOnComputer": "在電腦上的 Orca 中，從機器人的「工具」瀏覽更多應用程式。",
+        "browseOnComputer": "在電腦上的 Adehone 中，從機器人的「工具」瀏覽更多應用程式。",
         "browse": "瀏覽更多應用程式"
       },
       "webhookSetup": {
@@ -1129,7 +1129,7 @@
       },
       "title": "MCP 伺服器",
       "notRunning": "MCP 伺服器會在您傳送下一則訊息時連線。",
-      "unsupported": "更新此聊天主機上的 Orca，即可在這裡管理 MCP 伺服器。",
+      "unsupported": "更新此聊天主機上的 Adehone，即可在這裡管理 MCP 伺服器。",
       "readFailed": "無法載入 MCP 伺服器。",
       "retry": "重試",
       "empty": "此聊天尚未設定任何 MCP 伺服器。",
@@ -1188,7 +1188,7 @@
       "copyFailed": "無法複製",
       "copyPrompt": "複製提示詞",
       "statusUnreadable": "無法讀取此主機的狀態。正在重試…",
-      "updateRequired": "更新此主機上的 Orca 後，即可從手機啟動代理程式。"
+      "updateRequired": "更新此主機上的 Adehone 後，即可從手機啟動代理程式。"
     },
     "agentSpinner": {
       "monitoring": "監控背景任務",
@@ -1203,7 +1203,7 @@
     },
     "authFailedBannerActions": {
       "repair": "重新配對",
-      "webNote": "請在 Orca 應用程式中重新連線或移除此主機。"
+      "webNote": "請在 Adehone 應用程式中重新連線或移除此主機。"
     },
     "codexResetCredit": {
       "alreadyAppliedTitle": "已套用重設",
@@ -1319,7 +1319,7 @@
       "terminalLabel": "{{title}} ({{id}})",
       "unsentNotes_one": "{{count}} 則未傳送的備註",
       "unsentNotes_other": "{{count}} 則未傳送的備註",
-      "updateRequired": "請更新此主機上的 Orca"
+      "updateRequired": "請更新此主機上的 Adehone"
     },
     "diffReviewFileSummary": {
       "changed": "已變更",
@@ -1380,10 +1380,10 @@
     },
     "jiraConnectPrompt": {
       "checkAgain": "再次檢查",
-      "connectHint": "在 Orca 桌面版的「設定 → 整合」中新增 Jira 網站，然後再次檢查。",
+      "connectHint": "在 Adehone 桌面版的「設定 → 整合」中新增 Jira 網站，然後再次檢查。",
       "connectOnDesktop": "在電腦上連線至 Jira",
       "credentialUnreadable": "Jira 憑證已儲存，但無法讀取：{{credentialError}}",
-      "updateDesktop": "更新此主機上的 Orca"
+      "updateDesktop": "更新此主機上的 Adehone"
     },
     "markdownBlocks": {
       "copyCode": "複製程式碼",
@@ -1449,23 +1449,23 @@
     },
     "protocolBlockScreen": {
       "backToHosts": "返回主機清單",
-      "desktopTooOldBody": "此主機上的 Orca 版本過舊，無法搭配目前的 Orca Mobile 使用。請更新此主機上的 Orca，再重新連線。",
-      "getVersion": "取得 Orca {{version}}",
-      "mobileTooOldAppStore": "此主機需要較新版本的 Orca Mobile。請從 App Store 更新 Orca Mobile，再重新連線至此主機。",
-      "mobileTooOldGooglePlay": "此主機需要較新版本的 Orca Mobile。請從 Google Play 更新 Orca Mobile，再重新連線至此主機。",
-      "mobileTooOldGitHubReleases": "此主機需要較新版本的 Orca Mobile。請從 GitHub Releases 更新 Orca Mobile，再重新連線至此主機。",
+      "desktopTooOldBody": "此主機上的 Adehone 版本過舊，無法搭配目前的 Adehone Mobile 使用。請更新此主機上的 Adehone，再重新連線。",
+      "getVersion": "取得 Adehone {{version}}",
+      "mobileTooOldAppStore": "此主機需要較新版本的 Adehone Mobile。請從 App Store 更新 Adehone Mobile，再重新連線至此主機。",
+      "mobileTooOldGooglePlay": "此主機需要較新版本的 Adehone Mobile。請從 Google Play 更新 Adehone Mobile，再重新連線至此主機。",
+      "mobileTooOldGitHubReleases": "此主機需要較新版本的 Adehone Mobile。請從 GitHub Releases 更新 Adehone Mobile，再重新連線至此主機。",
       "openAppStore": "開啟 App Store",
       "openGooglePlay": "開啟 Google Play",
       "openGitHubReleases": "開啟 GitHub Releases",
       "refreshRecoveryNote": "如果仍顯示此訊息，請移除此主機並重新配對。",
       "refreshWorkspaceBody": "此主機的工作區快取版本低於主機要求的版本。請重新連線至此主機，以下載目前版本。",
       "refreshWorkspaceTitle": "重新整理行動版工作區",
-      "updateDesktopTitle": "更新此主機上的 Orca",
-      "updateMobileTitle": "更新 Orca Mobile",
+      "updateDesktopTitle": "更新此主機上的 Adehone",
+      "updateMobileTitle": "更新 Adehone Mobile",
       "updateRecoveryNote": "已經更新了嗎？請返回「主機」並重新整理連線。如果仍顯示此訊息，請移除此主機並重新配對。",
-      "workspaceNeedsUpdateAppStore": "此主機的行動版工作區需要較新版本的 Orca Mobile。請從 App Store 更新 Orca Mobile，再重新連線至此主機。",
-      "workspaceNeedsUpdateGooglePlay": "此主機的行動版工作區需要較新版本的 Orca Mobile。請從 Google Play 更新 Orca Mobile，再重新連線至此主機。",
-      "workspaceNeedsUpdateGitHubReleases": "此主機的行動版工作區需要較新版本的 Orca Mobile。請從 GitHub Releases 更新 Orca Mobile，再重新連線至此主機。"
+      "workspaceNeedsUpdateAppStore": "此主機的行動版工作區需要較新版本的 Adehone Mobile。請從 App Store 更新 Adehone Mobile，再重新連線至此主機。",
+      "workspaceNeedsUpdateGooglePlay": "此主機的行動版工作區需要較新版本的 Adehone Mobile。請從 Google Play 更新 Adehone Mobile，再重新連線至此主機。",
+      "workspaceNeedsUpdateGitHubReleases": "此主機的行動版工作區需要較新版本的 Adehone Mobile。請從 GitHub Releases 更新 Adehone Mobile，再重新連線至此主機。"
     },
     "richMarkdownEditor": {
       "imageUrl": "圖片網址",
@@ -1654,7 +1654,7 @@
       "disconnected": "已中斷連線",
       "hostFallback": "主機",
       "hostOffline": "{{host}} 已離線",
-      "hostOfflineDetail": "確認電腦已喚醒、Orca 正在執行，且您已登入",
+      "hostOfflineDetail": "確認電腦已喚醒、Adehone 正在執行，且您已登入",
       "labelWithHint": "{{label}} — {{hint}}",
       "pairingInvalid": "配對已失效，請重新與電腦配對",
       "rePairDetail": "重新與電腦配對",
@@ -1662,7 +1662,7 @@
       "relayAccessRefused": "Relay 拒絕了對 {{host}} 的存取",
       "relayConnectFailed": "無法透過 Relay 連線",
       "relayUnreachable": "無法連上 Relay",
-      "signInDetail": "在電腦上登入 Orca 即可重新連線",
+      "signInDetail": "在電腦上登入 Adehone 即可重新連線",
       "signInRequired": "請在 {{host}} 上登入",
       "tailscaleHint": "檢查 Tailscale"
     },
@@ -1730,21 +1730,21 @@
       "title": "工作區更新"
     },
     "troubleshootCommonIssues": {
-      "allowNotifications": "確認系統設定允許 Orca 傳送通知，且「專注模式」或「勿擾模式」已關閉。",
+      "allowNotifications": "確認系統設定允許 Adehone 傳送通知，且「專注模式」或「勿擾模式」已關閉。",
       "checkTailnet": "確認電腦未進入睡眠，且在您的 tailnet 中顯示為已連線。",
       "desktopTitle": "桌面版應用程式未執行",
       "disableVpn": "停用該 VPN，或啟用分割通道／「允許 LAN」。",
       "firewallTitle": "防火牆封鎖連接埠 {{port}}",
       "linuxFirewall": "Linux: sudo ufw allow {{port}}",
       "keepTailscaleOn": "100.x.x.x 或 *.ts.net 等主機位址會透過 Tailscale 連線，請保持 Tailscale 開啟。",
-      "macosFirewall": "macOS：「系統設定」→「網路」→「防火牆」，允許 Orca 連線。",
+      "macosFirewall": "macOS：「系統設定」→「網路」→「防火牆」，允許 Adehone 連線。",
       "notificationNetwork": "試著改用行動網路或其他 Wi-Fi 網路。若切換後能收到通知，原本的網路可能導致通知延遲送達。",
       "notificationsTitle": "推播通知",
-      "openDesktop": "必須在電腦上開啟 Orca，才能接受連線。",
+      "openDesktop": "必須在電腦上開啟 Adehone，才能接受連線。",
       "pairAfterUpdate": "更新後，可能需要透過 QR Code 重新配對。",
       "reconnectWifi": "試著讓兩部裝置重新連上 WiFi。",
       "restartBothApps": "若持續逾時，請重新啟動兩端的應用程式。",
-      "restartDesktop": "試著重新啟動 Orca，行動版連線伺服器會隨之啟動。",
+      "restartDesktop": "試著重新啟動 Adehone，行動版連線伺服器會隨之啟動。",
       "restartTailscale": "iOS/Android 可能導致通道卡住而沒有任何提示。請在 Tailscale 應用程式中關閉 Tailscale，再重新開啟。",
       "restrictedNetwork": "公司或學校的網路可能封鎖 P2P，請試著改用個人熱點。",
       "retryHost": "返回主機清單，點一下主機以重試。",
@@ -1757,7 +1757,7 @@
       "vpnTitle": "其他 VPN 干擾",
       "wifiSignal": "檢查手機的 WiFi 訊號強度。",
       "wifiTitle": "不同的 WiFi 網路",
-      "windowsFirewall": "Windows：「Defender 防火牆」→「允許應用程式」，勾選 Orca 的「私人」選項。"
+      "windowsFirewall": "Windows：「Defender 防火牆」→「允許應用程式」，勾選 Adehone 的「私人」選項。"
     },
     "troubleshootView": {
       "commonIssues": "常見問題",
@@ -1831,15 +1831,15 @@
   },
   "dictation": {
     "setup": {
-      "alreadyActive": "電腦或另一支手機正在使用聽寫功能。請更新電腦上的 Orca，以便在多台裝置上同時聽寫。",
+      "alreadyActive": "電腦或另一支手機正在使用聽寫功能。請更新電腦上的 Adehone，以便在多台裝置上同時聽寫。",
       "cloudModelNeedsKey": "需要 OpenAI 金鑰",
       "deleteFailed": "無法刪除模型",
-      "desktopUpdateRequired": "請更新已配對電腦上的 Orca 桌面版，以使用行動版語音設定。",
+      "desktopUpdateRequired": "請更新已配對電腦上的 Adehone 桌面版，以使用行動版語音設定。",
       "downloadFailed": "無法開始下載",
       "loadFailed": "無法載入聽寫模型",
       "modelBusy": "另一台裝置正在使用不同的語音模型聽寫。請等它結束後再試。",
       "repairRequired": "請將這支手機與電腦重新配對，以使用聽寫功能。",
-      "serverUpdateRequired": "請更新此伺服器上的 Orca，以使用語音聽寫。",
+      "serverUpdateRequired": "請更新此伺服器上的 Adehone，以使用語音聽寫。",
       "sessionLimit": "這台電腦上正在聽寫的裝置過多。請等其中一台結束後再試。",
       "sessionLost": "聽寫功能與電腦的連線已中斷。請再試一次。",
       "updateFailed": "無法更新聽寫設定"
@@ -1993,7 +1993,7 @@
       "open": "開啟 PDF",
       "openFailed": "無法開啟此 PDF",
       "opening": "正在開啟 PDF…",
-      "updateRequired": "請更新 Orca Mobile 以開啟 PDF"
+      "updateRequired": "請更新 Adehone Mobile 以開啟 PDF"
     },
     "unsavedEditsOffer": {
       "changedSince": "自你 {{time}} 的編輯後，已在電腦上變更",
@@ -2005,9 +2005,9 @@
   },
   "home": {
     "appUpdateCard": {
-      "dismissAccessibilityLabel": "關閉 Orca {{version}} 更新提示",
-      "title": "Orca {{version}} 已推出",
-      "updateAccessibilityLabel": "Orca {{version}} 已推出，點一下即可更新"
+      "dismissAccessibilityLabel": "關閉 Adehone {{version}} 更新提示",
+      "title": "Adehone {{version}} 已推出",
+      "updateAccessibilityLabel": "Adehone {{version}} 已推出，點一下即可更新"
     },
     "automationsTab": {
       "connectDesktop": "請連線 {{desktop}}，才能檢視及執行自動化。",
@@ -2021,14 +2021,14 @@
       "scheduled": "已排定",
       "showFor": "選擇要顯示自動化的電腦",
       "toggleFailed": "無法更新 {{name}}",
-      "updateDesktop": "請更新 {{desktop}} 上的 Orca，以使用自動化。"
+      "updateDesktop": "請更新 {{desktop}} 上的 Adehone，以使用自動化。"
     },
     "emptyState": {
       "connectedDescription": "您的電腦會顯示在這裡。所有資料皆採端對端加密。",
       "connectedTitle": "已連線",
-      "description": "與電腦上的 Orca 配對，即可用手機查看代理程式狀態、開啟任何終端機，並推進工作。",
+      "description": "與電腦上的 Adehone 配對，即可用手機查看代理程式狀態、開啟任何終端機，並推進工作。",
       "openDesktopDescription": "前往「設定」→「行動版」，產生配對用的 QR Code。",
-      "openDesktopTitle": "開啟 Orca 桌面版",
+      "openDesktopTitle": "開啟 Adehone 桌面版",
       "scanCodeTitle": "掃描 QR Code",
       "title": "連線至您的電腦"
     },
@@ -2134,8 +2134,8 @@
     },
     "hostScreenOverlays": {
       "deleteConfirmMessage": "要刪除「{{name}}」（{{branch}}）嗎？",
-      "deleteDestroysEnvironment": "這也會銷毀 Orca 為其建立的環境「{{environment}}」，包括其中未提交的變更和正在執行的終端機。",
-      "deleteKeepsEnvironment": "Orca 為其建立的環境「{{environment}}」會繼續執行：其配方沒有銷毀步驟。",
+      "deleteDestroysEnvironment": "這也會銷毀 Adehone 為其建立的環境「{{environment}}」，包括其中未提交的變更和正在執行的終端機。",
+      "deleteKeepsEnvironment": "Adehone 為其建立的環境「{{environment}}」會繼續執行：其配方沒有銷毀步驟。",
       "pin": "固定",
       "primaryWorktreeDeleteHint": "主工作樹不能刪除。請改為移除專案。",
       "removeHost": "移除主機",
@@ -2151,7 +2151,7 @@
       "closed": "已關閉",
       "createdByAutomation": "由自動化建立",
       "createdByNamedAutomation": "由自動化「{{name}}」建立",
-      "createdFromCli": "透過 Orca CLI 建立",
+      "createdFromCli": "透過 Adehone CLI 建立",
       "draft": "草稿",
       "merged": "已合併",
       "openLink": "開啟 {{label}}",
@@ -2260,7 +2260,7 @@
   "notifications": {
     "desktopChannel": {
       "name": "桌面通知",
-      "silentName": "Orca 靜音通知"
+      "silentName": "Adehone 靜音通知"
     },
     "notificationDeliverySection": {
       "footer": "通知類型依各台已配對電腦的通知設定而定。若連續 7 天未使用此應用程式，通知將暫停；開啟應用程式並重新連線即可恢復。",
@@ -2285,7 +2285,7 @@
       "keepTerminal": "繼續使用終端機",
       "notNow": "暫時不要",
       "notificationsDescription": "即使未使用應用程式，代理程式完成工作或等待您回應時，此手機也會收到通知。",
-      "notificationsDisclosure": "電腦閒置 3 分鐘後，便會透過 Orca 推播服務傳送通知。您隨時可在「設定」中變更。",
+      "notificationsDisclosure": "電腦閒置 3 分鐘後，便會透過 Adehone 推播服務傳送通知。您隨時可在「設定」中變更。",
       "notificationsTitle": "代理程式需要您時，別錯過通知",
       "openInChatUi": "以聊天介面開啟工作階段",
       "openInTerminal": "在終端機中開啟工作階段",
@@ -2519,8 +2519,8 @@
     },
     "aiVaultResumePreparation": {
       "openInChat": "此 {{agent}} 對話已在聊天中開啟。請重新整理工作階段歷史記錄以開啟它。",
-      "ownershipUnknown": "Orca 無法確認此 {{agent}} 對話的歸屬。請重新整理工作階段歷史記錄並重試。",
-      "preparationRefused": "Orca 無法準備此 {{agent}} 對話。請開啟新聊天以繼續。",
+      "ownershipUnknown": "Adehone 無法確認此 {{agent}} 對話的歸屬。請重新整理工作階段歷史記錄並重試。",
+      "preparationRefused": "Adehone 無法準備此 {{agent}} 對話。請開啟新聊天以繼續。",
       "prepareFailed": "無法準備此舊版 Codex 工作階段。請再次嘗試恢復。"
     },
     "backgroundTask": {
@@ -2616,7 +2616,7 @@
       "committedDiffUnavailable": "無法取得已提交的差異",
       "commitLoadFailed": "無法載入此提交",
       "commitDiffUnavailable": "無法取得提交的差異",
-      "desktopUpdateRequired": "請更新此主機上的 Orca，以便在手機上審查變更。",
+      "desktopUpdateRequired": "請更新此主機上的 Adehone，以便在手機上審查變更。",
       "diffLoadFailed": "無法載入差異",
       "reviewNotesLoadFailed": "無法載入審查備註"
     },
@@ -2647,7 +2647,7 @@
       "forkOriginalLatestOnly": "{{agent}} 只能從原始聊天的最新回覆建立分支。請開啟該聊天，待最新回覆完成後再從中建立分支。",
       "forkOriginalLatestOnlyNamed": "{{agent}} 只能從「{{detail}}」的最新回覆建立分支。請開啟該聊天，待最新回覆完成後再從中建立分支。",
       "accountSwitchInProgress": "{{agent}} 在此主機上的設定正在變更。請在完成後重試。",
-      "agentCommandNotRunnable": "{{agent}} 在「設定 → 代理程式」中的命令必須是 Orca 能找到的程式路徑或名稱，且不能包含引數或變數。請修改或重設。",
+      "agentCommandNotRunnable": "{{agent}} 在「設定 → 代理程式」中的命令必須是 Adehone 能找到的程式路徑或名稱，且不能包含引數或變數。請修改或重設。",
       "agentCommandFailed": "{{agent}} 在「設定 → 代理程式」中的命令未能啟動 {{agent}}：{{detail}}。請修改或重設。",
       "agentCommandNotSignedIn": "請在執行此聊天的電腦上使用 `{{loginCommand}}` 登入 {{agent}}。",
       "agentNotSignedIn": "請登入 {{agent}}。",
@@ -2710,16 +2710,16 @@
       "emptyMessage": "此訊息為空，因此未傳送。",
       "fullAccessAsRoot": "{{agent}} 以 root 身分執行時不會使用「完整存取權」。請在執行此聊天的電腦上，前往「設定 → 代理程式」為 {{agent}} 選擇其他權限，然後開始新的聊天。",
       "botToolsNeedStatusHooks": "{{agent}} 機器人需要代理程式狀態鉤子：機器人的工具正是透過它們以機器人身分運作。請在「設定 → 代理程式」中為 {{agent}} 開啟，然後開始新的聊天。",
-      "botToolsGatewayOutdated": "{{agent}} 的閘道仍在執行舊版 Orca 外掛，因此此機器人的工具無法以機器人身分運作。請執行 `hermes gateway stop`，然後開始新的聊天。",
+      "botToolsGatewayOutdated": "{{agent}} 的閘道仍在執行舊版 Adehone 外掛，因此此機器人的工具無法以機器人身分運作。請執行 `hermes gateway stop`，然後開始新的聊天。",
       "historyInOtherAccount": "此聊天的歷史記錄位於另一個 Claude 帳戶中。請切換回該帳戶以繼續此聊天。",
       "historyTooLarge": "此對話的歷史記錄過大，無法在此恢復。",
-      "hostFault": "Orca 遇到問題，因此此操作未完成。",
-      "hostFaultTryAgain": "Orca 遇到問題，因此此操作未完成。請重試。",
-      "hostRestarted": "此訊息傳送前 Orca 已重新啟動。",
-      "hostStopped": "{{agent}} 始終未完成啟動，因此 Orca 已將其停止。",
+      "hostFault": "Adehone 遇到問題，因此此操作未完成。",
+      "hostFaultTryAgain": "Adehone 遇到問題，因此此操作未完成。請重試。",
+      "hostRestarted": "此訊息傳送前 Adehone 已重新啟動。",
+      "hostStopped": "{{agent}} 始終未完成啟動，因此 Adehone 已將其停止。",
       "interactiveAgentNotSignedIn": "請在執行此聊天的電腦上啟動 `{{loginCommand}}` 並使用 `{{slashCommand}}` 登入 {{agent}}。",
       "launchFolderMissing": "此聊天執行所在的資料夾已不存在。請恢復該資料夾以繼續此聊天。",
-      "launchPreparationFailed": "Orca 無法在執行此聊天的電腦上準備啟動 {{agent}}。",
+      "launchPreparationFailed": "Adehone 無法在執行此聊天的電腦上準備啟動 {{agent}}。",
       "managedAccountEnvOverride": "此次 Claude 啟動設定了自己的 Anthropic 登入變數。請移除這些變數以使用受管理的 Claude 帳戶。",
       "managedAccountUnsupported": "雖然已在 WSL 中新增 Claude 帳戶，Claude 聊天仍需要 Windows Claude 帳戶。",
       "modelUnavailable": "{{agent}} 無法使用 {{detail}}。請選擇其他模型並重新傳送。",
@@ -2752,7 +2752,7 @@
       "quitTerminalAgent": "請結束該代理程式，以便在此處繼續聊天。",
       "runCommandAgain": "請重新執行 /{{command}}。",
       "runCommandWhenDone": "完成後再執行 /{{command}}。",
-      "runtimeNotInstalled": "執行此聊天的電腦上未安裝 {{agent}}。請在新版 Orca 中從聊天裡安裝。",
+      "runtimeNotInstalled": "執行此聊天的電腦上未安裝 {{agent}}。請在新版 Adehone 中從聊天裡安裝。",
       "sendAgainToTryOnceMore": "請重新傳送您的訊息，再試一次。",
       "sendToTryAgain": "請傳送您的訊息以重試。",
       "sessionNotRestored": "{{agent}} 無法重新開啟之前的工作階段，因此此聊天將在新工作階段中繼續。{{agent}} 不記得之前的訊息。",
@@ -2777,7 +2777,7 @@
       "usageLimitWindowWeeklyModel": "模型每週",
       "waitForBackgroundTasks": "請等待背景任務完成。",
       "waitForStart": "請等待代理程式完成啟動。",
-      "writeFailed": "Orca 無法將此訊息交給代理程式，因此訊息未傳送。",
+      "writeFailed": "Adehone 無法將此訊息交給代理程式，因此訊息未傳送。",
       "pluginInputRequired": "{{agent}} 已停止，因為「{{plugin}}」外掛正在終端機窗格中等待輸入。請在聊天工作階段中停用此外掛，或在 {{agent}} 終端機中執行任務。"
     },
     "fileReader": {
@@ -2892,7 +2892,7 @@
       "emptyPrompt": "此動作儲存的提示詞為空白。請在電腦上更新「原始碼控制 AI」設定。",
       "loadFailed": "無法載入可用的代理程式。",
       "promptNotSent": "代理程式已啟動，但提示詞未傳送。",
-      "updateRequired": "更新此主機上的 Orca 後，即可從手機啟動代理程式。"
+      "updateRequired": "更新此主機上的 Adehone 後，即可從手機啟動代理程式。"
     },
     "prSidebarState": {
       "loadFailed": "無法載入 PR"
@@ -2929,7 +2929,7 @@
       "globalScope": "全域",
       "label": "名稱",
       "labelPlaceholder": "啟動開發伺服器",
-      "olderHostPromptTooLong": "對此主機來說過長。請在主機上更新 Orca 以儲存更長的提示詞。",
+      "olderHostPromptTooLong": "對此主機來說過長。請在主機上更新 Adehone 以儲存更長的提示詞。",
       "projectScope": "專案",
       "prompt": "提示詞",
       "promptHint": "支援技能、檔案路徑及內建命令。",
@@ -3085,7 +3085,7 @@
     },
     "useCloseActions": {
       "closeFailed": "無法關閉分頁。請再試一次。",
-      "closeFailedDesktopNotReady": "無法關閉分頁。電腦上的 Orca 仍在載入中，請稍後再試。"
+      "closeFailedDesktopNotReady": "無法關閉分頁。電腦上的 Adehone 仍在載入中，請稍後再試。"
     },
     "useContentCreateActions": {
       "browserCommandFailed": "瀏覽器命令執行失敗",
@@ -3110,7 +3110,7 @@
     },
     "useDiffReviewController": {
       "loadFailed": "無法載入審查",
-      "commitMissing": "請更新 Orca 應用程式，以便在此開啟提交中的檔案。",
+      "commitMissing": "請更新 Adehone 應用程式，以便在此開啟提交中的檔案。",
       "missingWorktree": "找不到工作樹"
     },
     "useDiffReviewDiffLoading": {
@@ -3187,7 +3187,7 @@
       "liveInputInterrupted": "即時輸入已中斷，輸入框已清空。繼續前請檢查終端。"
     },
     "useStartup": {
-      "wakeAgents": "請在主機上開啟 Orca，以喚醒休眠中的代理程式。"
+      "wakeAgents": "請在主機上開啟 Adehone，以喚醒休眠中的代理程式。"
     },
     "useTerminalCreateActions": {
       "createFailed": "建立終端機失敗",
@@ -3222,10 +3222,10 @@
       "attachmentExpired": "此附件已過期。",
       "backgroundTasksRunning": "背景任務仍在執行。",
       "cancelNotSaved": "無法取消此問題或核准要求。",
-      "cannotRunHere": "Orca 無法在此處以聊天方式執行此代理程式。",
-      "capacity": "執行此聊天的電腦上的 Orca 已達到請求上限。請在那臺電腦上更新 Orca，然後重試。",
-      "chatNotFound": "Orca 找不到此聊天。",
-      "chatSavedByNewerOrca": "此聊天由更新版本的 Orca 儲存。",
+      "cannotRunHere": "Adehone 無法在此處以聊天方式執行此代理程式。",
+      "capacity": "執行此聊天的電腦上的 Adehone 已達到請求上限。請在那臺電腦上更新 Adehone，然後重試。",
+      "chatNotFound": "Adehone 找不到此聊天。",
+      "chatSavedByNewerOrca": "此聊天由更新版本的 Adehone 儲存。",
       "clearAfterAnswer": "請先回答代理程式的問題或回應核准要求，然後再執行 /clear。",
       "clearAfterRetry": "請先重試您之前的訊息，然後再執行 /clear。",
       "clearAfterSending": "您之前的訊息仍在傳送中。傳送完成後再執行 /clear。",
@@ -3237,13 +3237,13 @@
       "continuationSuperseded": "此聊天已有後續進展。請先查看最新訊息再繼續。",
       "conversationCleared": "此對話已被清除。",
       "goalsUnsupported": "此代理程式不支援目標。",
-      "historyUnavailable": "Orca 目前無法開啟此聊天的歷史記錄。",
+      "historyUnavailable": "Adehone 目前無法開啟此聊天的歷史記錄。",
       "diskFull": "執行此聊天的電腦磁碟已滿。",
       "freeDiskSpace": "請釋放該磁碟空間後重試。",
       "savedInOtherFolder": "此對話儲存在另一個資料夾中。",
-      "historyUnreadable": "Orca 無法讀取此聊天的已儲存歷史記錄。",
+      "historyUnreadable": "Adehone 無法讀取此聊天的已儲存歷史記錄。",
       "historyUnusable": "無法載入此聊天。",
-      "hostReconciling": "Orca 重啟後仍在檢查此聊天。",
+      "hostReconciling": "Adehone 重啟後仍在檢查此聊天。",
       "messageNotSaved": "無法儲存您的訊息。",
       "messageTooLarge": "已超過每則訊息 256 KB 的上限。",
       "messagesUnsettled": "您之前傳送的一則訊息尚未確認。",
@@ -3260,7 +3260,7 @@
       "notDoneStopTasks": "背景任務未停止。",
       "openCurrentConversation": "請開啟目前對話以繼續。",
       "optionRejected": "代理程式未接受此設定。",
-      "outcomeUnknown": "Orca 無法確認發生了什麼。請檢視聊天。",
+      "outcomeUnknown": "Adehone 無法確認發生了什麼。請檢視聊天。",
       "ownerUnproven": "此聊天之前的代理程式可能仍在執行。",
       "pendingWork": "請等候待處理的工作和訊息處理完畢，再使用此命令。",
       "promptPending": "代理程式正在等待您回答問題或回應核准要求。",
@@ -3269,15 +3269,15 @@
       "quitTerminalAgent": "請結束該代理程式，以便在此處繼續聊天。",
       "reattachFile": "請將其移除後重新附加。",
       "reattachFiles": "請將它們移除後重新附加。",
-      "recordFailed": "Orca 無法將此內容儲存到聊天歷史記錄中。",
-      "recordUnreadable": "Orca 無法讀取此聊天的已儲存狀態。",
-      "mailOwnerUnconfirmed": "Orca 無法確認此訊息是否仍應送往此聊天。",
+      "recordFailed": "Adehone 無法將此內容儲存到聊天歷史記錄中。",
+      "recordUnreadable": "Adehone 無法讀取此聊天的已儲存狀態。",
+      "mailOwnerUnconfirmed": "Adehone 無法確認此訊息是否仍應送往此聊天。",
       "reopenChat": "請重新開啟聊天以再次檢查。",
       "restartFailed": "代理程式無法重新啟動。",
       "runClearWhenDone": "完成後再執行 /clear。",
       "runCompactWhenDone": "完成後再執行 /compact。",
-      "savedByNewerOrca": "這些聊天由更新版本的 Orca 儲存。",
-      "sendOutcomeLost": "Orca 無法確認你的訊息已送達代理程式。請檢視聊天，如有需要請重新傳送。",
+      "savedByNewerOrca": "這些聊天由更新版本的 Adehone 儲存。",
+      "sendOutcomeLost": "Adehone 無法確認你的訊息已送達代理程式。請檢視聊天，如有需要請重新傳送。",
       "settleEarlierMessage": "請等待之前的訊息送達，或重試該訊息。",
       "shortenMessage": "請縮短或分割內容後再重新傳送。",
       "shrinkQueue": "請刪除一則排隊的訊息，或等待其送達，然後重試。",
@@ -3286,10 +3286,10 @@
       "tryAgain": "請重試。",
       "tryAgainComposerSend": "請重新傳送。",
       "turnActive": "代理程式仍在回覆。",
-      "unreachable": "Orca 無法連線到代理程式。",
-      "unsupported": "執行此聊天的電腦需要更新版本的 Orca。請在該電腦上更新 Orca 後重試。",
-      "updateOrcaToKeepUsing": "請更新 Orca 以繼續使用這些聊天。",
-      "updateOrcaToOpenChat": "請更新 Orca 以開啟它。",
+      "unreachable": "Adehone 無法連線到代理程式。",
+      "unsupported": "執行此聊天的電腦需要更新版本的 Adehone。請在該電腦上更新 Adehone 後重試。",
+      "updateOrcaToKeepUsing": "請更新 Adehone 以繼續使用這些聊天。",
+      "updateOrcaToOpenChat": "請更新 Adehone 以開啟它。",
       "waitForBackgroundTasks": "請等待背景任務完成。",
       "waitForCommand": "請等待 /compact 或 /clear 完成。",
       "waitForStart": "請等待代理程式完成啟動。",
@@ -3341,15 +3341,15 @@
     "structuredOpen": {
       "goneGeneric": "代理程式的聊天已不在此主機上，因此無法在此重新開啟。",
       "unknownGeneric": "在此主機上找不到代理程式的聊天。請重新連線至其所在的電腦，然後再試一次。",
-      "unsupportedGeneric": "必須更新 Orca，才能重新開啟代理程式的聊天。",
+      "unsupportedGeneric": "必須更新 Adehone，才能重新開啟代理程式的聊天。",
       "unreachableGeneric": "代理程式的聊天尚無法使用。請稍後重試。",
       "gone": "{{agent}} 的聊天已不在此主機上，因此無法在此重新開啟。",
       "unknown": "在此主機上找不到 {{agent}} 的聊天。請重新連線至其所在的電腦，然後再試一次。",
-      "unsupported": "必須更新 Orca，才能重新開啟 {{agent}} 的聊天。",
+      "unsupported": "必須更新 Adehone，才能重新開啟 {{agent}} 的聊天。",
       "unreachable": "{{agent}} 的聊天尚無法使用。請稍後重試。",
       "paneUnavailable": "代理程式的窗格不再可用。",
       "worktreeDeleted": "工作樹已刪除。",
-      "projectRemoved": "專案已從 Orca 移除。",
+      "projectRemoved": "專案已從 Adehone 移除。",
       "folderWorkspaceRemoved": "資料夾工作區已移除。"
     },
     "nativeChatView": {
@@ -3373,7 +3373,7 @@
       "outsideWorkspace": "此檔案位於工作區之外。請在電腦上開啟以檢視。"
     },
     "linkActionSheet": {
-      "openInOrca": "在 Orca 瀏覽器中開啟",
+      "openInOrca": "在 Adehone 瀏覽器中開啟",
       "openInBrowser": "在系統瀏覽器中開啟",
       "copyLink": "複製連結"
     },
@@ -3446,11 +3446,11 @@
   "settings": {
     "aboutScreen": {
       "openLinkFailed": "無法開啟連結，請再試一次。",
-      "socialProfile": "Orca 的 X 帳號",
-      "sourceCode": "Orca 原始碼",
+      "socialProfile": "Adehone 的 X 帳號",
+      "sourceCode": "Adehone 原始碼",
       "tagline": "助開發者發揮 100 倍效率的開源代理程式 IDE",
       "title": "關於",
-      "website": "Orca 網站"
+      "website": "Adehone 網站"
     },
     "appUpdateSettingsRows": {
       "checkFailed": "無法檢查",
@@ -3468,7 +3468,7 @@
       "neverChecked": "從未",
       "upToDate": "已是最新",
       "update": "更新",
-      "updateToVersion": "更新至 Orca {{version}}"
+      "updateToVersion": "更新至 Adehone {{version}}"
     },
     "appearance": {
       "language": {
@@ -3487,8 +3487,8 @@
     },
     "browserSettingsScreen": {
       "askEachTime": "每次詢問",
-      "askEachTimeDescription": "每次選擇 Orca 瀏覽器、手機瀏覽器或複製連結。",
-      "desktopBrowser": "電腦上的 Orca 瀏覽器",
+      "askEachTimeDescription": "每次選擇 Adehone 瀏覽器、手機瀏覽器或複製連結。",
+      "desktopBrowser": "電腦上的 Adehone 瀏覽器",
       "desktopBrowserDescription": "在已配對電腦的瀏覽器中開啟，並串流至手機。",
       "terminalAndChatLinksDescription": "選擇點按終端機輸出和聊天中的網頁連結時，要在哪裡開啟。",
       "linksHeading": "連結",
@@ -3524,18 +3524,18 @@
     "nativeNotificationDeliverySettings": {
       "loadFailed": "無法載入通知傳送設定。請重新開啟此畫面再試一次。",
       "saveFailed": "無法儲存通知傳送設定，請再試一次。",
-      "updateDesktopHint": "請配對已更新 Orca 的主機，即可在此手機上接收通知。"
+      "updateDesktopHint": "請配對已更新 Adehone 的主機，即可在此手機上接收通知。"
     },
     "notificationDisplayTest": {
-      "accepted": "Orca 的推播服務已接受請求。請查看是否收到通知。",
+      "accepted": "Adehone 的推播服務已接受請求。請查看是否收到通知。",
       "connectDesktop": "請先連線至電腦，再試一次。",
       "description": "測試推播送達；推播無法使用時，測試本機通知。",
       "desktopUnreachable": "無法連線至電腦，請再試一次。",
       "loadFailed": "無法載入已配對的電腦。",
       "pairDesktop": "請先配對電腦，再試一次。",
-      "pushServiceFailed": "無法透過 Orca 的推播服務傳送，請再試一次。",
-      "hostClockSkew": "{{host}} 的時鐘偏差了 {{seconds}} 秒，因此 Orca 的推播服務拒絕了它。請將時鐘設定為正確時間後再試一次。",
-      "hostClockSkewDuration": "{{host}} 的時鐘偏差了 {{duration}}，因此 Orca 的推播服務拒絕了它。請將時鐘設定為正確時間後再試一次。",
+      "pushServiceFailed": "無法透過 Adehone 的推播服務傳送，請再試一次。",
+      "hostClockSkew": "{{host}} 的時鐘偏差了 {{seconds}} 秒，因此 Adehone 的推播服務拒絕了它。請將時鐘設定為正確時間後再試一次。",
+      "hostClockSkewDuration": "{{host}} 的時鐘偏差了 {{duration}}，因此 Adehone 的推播服務拒絕了它。請將時鐘設定為正確時間後再試一次。",
       "rateLimited": "通知過多，請稍後再試。",
       "sendButton": "傳送測試通知",
       "sendFailed": "無法傳送測試推播。",
@@ -3545,12 +3545,12 @@
       "localTitle": "測試通知",
       "localBody": "來自此手機的本機通知測試。",
       "localScheduled": "{{reason}} 已安排本機測試。請檢查通知。此測試僅驗證顯示，不驗證代理程式提醒是否送達。",
-      "disabled": "Orca 中的通知已關閉。請啟用通知後再試。",
+      "disabled": "Adehone 中的通知已關閉。請啟用通知後再試。",
       "osDisabled": "系統設定中的通知已關閉。請允許通知後再試。",
       "noToken": "此手機上沒有可用的推播權杖。",
       "unsupportedHost": "此桌面端不支援推播通知。請更新以接收推播。",
       "registrationPending": "此桌面端的推播註冊尚未就緒。請稍後再試。",
-      "liveFallbackScheduled": "{{reason}} 已安排本機測試。請檢查通知。Orca 執行且保持連線時，可接收即時提醒。"
+      "liveFallbackScheduled": "{{reason}} 已安排本機測試。請檢查通知。Adehone 執行且保持連線時，可接收即時提醒。"
     },
     "notificationSettingsScreen": {
       "description": "當代理程式需要您的回應或完成任務時，在此裝置上接收通知。",
@@ -3630,12 +3630,12 @@
         "empty": "還沒有更改。"
       },
       "githubStatus": {
-        "notInstalled": "未安裝 Orca",
+        "notInstalled": "未安裝 Adehone",
         "unlinked": "未連結"
       },
       "linearStatus": {
         "unlinked": "未連結",
-        "notInstalled": "未安裝 Orca"
+        "notInstalled": "未安裝 Adehone"
       }
     },
     "sharedLinks": {
@@ -3886,7 +3886,7 @@
     },
     "loaders": {
       "loadFailed": "無法載入原始碼控制",
-      "updateDesktop": "請更新此主機上的 Orca，才能在行動裝置上使用原始碼控制。"
+      "updateDesktop": "請更新此主機上的 Adehone，才能在行動裝置上使用原始碼控制。"
     },
     "modals": {
       "currentBranch": "目前分支",
@@ -3914,14 +3914,14 @@
       "createFailed": "無法在 {{repo}} 中建立工作樹。",
       "loadReposRetry": "載入存放庫",
       "setupChoiceTitle": "要略過設定並重試嗎？",
-      "setupChoiceMessage": "Orca 無法確認上次在 {{repo}} 中的建立作業。重試時需要選擇設定方式；工作樹將在不執行存放庫設定的情況下建立。",
+      "setupChoiceMessage": "Adehone 無法確認上次在 {{repo}} 中的建立作業。重試時需要選擇設定方式；工作樹將在不執行存放庫設定的情況下建立。",
       "setupChoiceSkip": "略過設定並重試",
       "checking": "{{repo}} 的工作樹可能已建立。正在檢查資料夾…"
     },
     "prCreate": {
       "authRequired": "請在建立 {{reviewLabel}} 之前完成身分驗證。",
       "baseNotOnRemote": "建立 {{reviewLabel}} 前，請先推送基準分支。",
-      "createdNotRefreshed": "{{titleLabel}} 已建立，但 Orca 尚無法重新整理其資訊。",
+      "createdNotRefreshed": "{{titleLabel}} 已建立，但 Adehone 尚無法重新整理其資訊。",
       "defaultBranch": "請在建立 {{reviewLabel}} 之前切換到功能分支。",
       "detachedHead": "請在建立 {{reviewLabel}} 之前檢出分支。",
       "dirty": "請在建立 {{reviewLabel}} 之前提交變更。",
@@ -3929,7 +3929,7 @@
       "existingNumber": "{{titleLabel}} #{{number}} 已開啟。",
       "existingReview": "此分支已有 {{reviewLabel}}。",
       "forkHeadUnsupported": "不支援從此分叉存放庫建立 {{reviewLabel}}。",
-      "lookupUnconfirmed": "Orca 無法確認此分支是否已有 {{reviewLabel}}。請稍後再試。",
+      "lookupUnconfirmed": "Adehone 無法確認此分支是否已有 {{reviewLabel}}。請稍後再試。",
       "needsSync": "請在建立 {{reviewLabel}} 之前同步此分支。",
       "noUpstream": "請在建立 {{reviewLabel}} 之前發布提交。",
       "notReady": "此分支尚未準備好建立 {{reviewLabel}}。",
@@ -4079,7 +4079,7 @@
       "kimiSessionNotFound": "Kimi 找不到要求的工作階段。請使用現有的工作階段或啟動新的工作階段。",
       "kimiSessionOccupied": "Kimi 無法使用此工作階段，因為它正在另一個用戶端中使用。請在該用戶端停止工作階段或結束該用戶端，然後再試一次。",
       "kimiSessionOtherDirectory": "此 Kimi 工作階段屬於另一個目錄。請在該目錄中繼續工作階段，或使用為此工作區建立的工作階段。",
-      "kimiUnreadableOutput": "Kimi 傳回 Orca 無法讀取的輸出。請再試一次。",
+      "kimiUnreadableOutput": "Kimi 傳回 Adehone 無法讀取的輸出。請再試一次。",
       "noBranchChanges": "沒有可供產生摘要的分支變更。",
       "noModelForAgent": "{{label}} 沒有可用的模型。",
       "noStagedChanges": "沒有可供產生摘要的已暫存變更。",
@@ -4100,7 +4100,7 @@
       "sourceControlCustomCommandEmpty": "自訂命令為空白。請在「設定 -> Git -> 原始碼控制 AI」中新增。",
       "stagedChangesReadFailed": "無法讀取已暫存的變更。",
       "timedOut": "產生作業在 {{seconds}} 秒後逾時。",
-      "windowsBatchUnsafeArguments": "{{label}} 透過 Windows 批次指令碼執行，該指令碼無法將多行提示詞作為引數接收。請在「設定」中指定代理程式的執行檔，或使用不含 {prompt} 的自訂命令，讓 Orca 透過 stdin 傳送提示詞。"
+      "windowsBatchUnsafeArguments": "{{label}} 透過 Windows 批次指令碼執行，該指令碼無法將多行提示詞作為引數接收。請在「設定」中指定代理程式的執行檔，或使用不含 {prompt} 的自訂命令，讓 Adehone 透過 stdin 傳送提示詞。"
     },
     "useMobileCommitFailureRecovery": {
       "launchFailed": "無法啟動代理程式"
@@ -4118,7 +4118,7 @@
     },
     "conflictActions": {
       "resolveFile": "{{action}}：{{path}}",
-      "needsNewerHost": "請更新執行此工作區的電腦上的 Orca，才能從手機解決合併衝突。",
+      "needsNewerHost": "請更新執行此工作區的電腦上的 Adehone，才能從手機解決合併衝突。",
       "markResolved": "標記為已解決",
       "keepFile": "保留檔案",
       "keepDeletion": "保留刪除",
@@ -4336,7 +4336,7 @@
       "searchProjects": "搜尋專案",
       "subtitle": "選擇要在「任務」頁面使用的專案檢視。",
       "title": "GitHub 專案",
-      "unsupportedLayout": "Orca 尚不支援此 GitHub 專案版面配置。",
+      "unsupportedLayout": "Adehone 尚不支援此 GitHub 專案版面配置。",
       "view": "專案檢視"
     },
     "githubViewControls": {
@@ -4442,8 +4442,8 @@
       "connectLinearMessage": "直接從「任務」瀏覽並開始處理指派給您的 Linear 議題。",
       "connectLinearTitle": "連線您的 Linear 帳戶",
       "jiraStatusFailed": "無法讀取 Jira 狀態",
-      "updateDesktopMessage": "此行動版「任務」檢視需要此主機上較新版的 Orca。",
-      "updateDesktopTitle": "更新此主機上的 Orca"
+      "updateDesktopMessage": "此行動版「任務」檢視需要此主機上較新版的 Adehone。",
+      "updateDesktopTitle": "更新此主機上的 Adehone"
     },
     "options": {
       "all": "全部",
@@ -4540,7 +4540,7 @@
       "show": "顯示"
     },
     "projectDetailDrawer": {
-      "addRepositoryFromDesktop": "{{repository}} 尚未新增至 Orca。請先從桌面版應用程式新增此存放庫，再重新整理行動版的「任務」頁面。",
+      "addRepositoryFromDesktop": "{{repository}} 尚未新增至 Adehone。請先從桌面版應用程式新增此存放庫，再重新整理行動版的「任務」頁面。",
       "clearType": "清除類型",
       "closeItem": "關閉項目",
       "copyGitHubLink": "複製 GitHub 連結",
@@ -4551,7 +4551,7 @@
       "issueType": "議題類型",
       "loadingIssueTypes": "正在載入議題類型…",
       "mergePullRequest": "合併 PR",
-      "mergeRepositoryRequirement": "必須先將此存放庫新增至 Orca，才能合併。",
+      "mergeRepositoryRequirement": "必須先將此存放庫新增至 Adehone，才能合併。",
       "noIssueTypes": "此存放庫尚未設定議題類型。",
       "noType": "無類型",
       "openInGitHub": "在 GitHub 中開啟",
@@ -4559,7 +4559,7 @@
       "projectSubtitle": "GitHub 專案 · {{repository}}{{itemNumber}}",
       "pullRequest": "PR",
       "reopenItem": "重新開啟項目",
-      "repositoryNotInOrca": "存放庫不在 Orca 中",
+      "repositoryNotInOrca": "存放庫不在 Adehone 中",
       "status": "狀態",
       "type": "類型",
       "workspaceCreationRequirement": "僅能從 GitHub 議題和 PR 建立工作區。"
@@ -4860,7 +4860,7 @@
       "automaticName": "自動命名",
       "existing": "現有分支",
       "existingHint": "新提交會加入此分支。",
-      "hostUpdateRequired": "請更新工作區主機上的 Orca，才能重複使用分支或明確選擇建立獨立分支。",
+      "hostUpdateRequired": "請更新工作區主機上的 Adehone，才能重複使用分支或明確選擇建立獨立分支。",
       "newHint": "建立新的本機分支",
       "newName": "新分支名稱",
       "title": "此工作樹的分支"
@@ -4891,7 +4891,7 @@
       "working": "執行中"
     },
     "hostWorkspaceListStates": {
-      "checkHost": "確認電腦已喚醒，且 Orca 正在執行",
+      "checkHost": "確認電腦已喚醒，且 Adehone 正在執行",
       "empty": "沒有工作區",
       "loadFailed": "無法從此主機載入工作區",
       "noFilterMatches": "沒有符合篩選條件的工作區",
@@ -5043,7 +5043,7 @@
       "invalidDestination": "此管理端不再提供該主機。請選擇主機後再試。",
       "agentDiscoveryUnavailable": "此專案主機無法探索代理程式。已儲存的代理程式選擇會保留。",
       "agentVerificationUnavailable": "此主機無法驗證此專案的代理程式。請更新主機後再試。",
-      "hostUnavailable": "此主機無法使用自動化。請更新該主機上的 Orca 後重新連線。",
+      "hostUnavailable": "此主機無法使用自動化。請更新該主機上的 Adehone 後重新連線。",
       "hostUnreachable": "無法連線至此主機。請重新連線並重新整理以檢查其目前狀態。",
       "actionFailed": "無法在主機上完成此操作。請重新整理後再試。",
       "dispatched": "已派送",
@@ -5081,19 +5081,19 @@
       "workspaceHostAmbiguous": "其工作區跨越多個主機，因此沒有唯一的擁有者。"
     },
     "runFailures": {
-      "noDispatchHost": "沒有可用來啟動自動化的 Orca 視窗。",
-      "unevaluableSchedule": "Orca 無法評估此自動化，已略過此次執行。",
+      "noDispatchHost": "沒有可用來啟動自動化的 Adehone 視窗。",
+      "unevaluableSchedule": "Adehone 無法評估此自動化，已略過此次執行。",
       "noRunnableHost": "此自動化沒有可供執行的主機。",
-      "wslMoveInProgress": "此自動化的專案正在移至其 WSL 主機，因此 Orca 略過了此次執行。移動完成後便會恢復執行。",
-      "wslMoveOwnedByHost": "此自動化的專案現在在其 WSL 主機上執行，自動化本身也由該主機執行。Orca 不再執行這個本機副本。",
+      "wslMoveInProgress": "此自動化的專案正在移至其 WSL 主機，因此 Adehone 略過了此次執行。移動完成後便會恢復執行。",
+      "wslMoveOwnedByHost": "此自動化的專案現在在其 WSL 主機上執行，自動化本身也由該主機執行。Adehone 不再執行這個本機副本。",
       "managedHostServer": "需要遷移到 {{host}}",
-      "missedGraceWindow": "Orca 再次檢查時，此次執行的補執行寬限期已過。",
+      "missedGraceWindow": "Adehone 再次檢查時，此次執行的補執行寬限期已過。",
       "targetMissing": "自動化主機已不在註冊清單中，因此已無處執行此自動化。",
       "targetReplaced": "自動化主機已被移除並重新註冊，因此必須為此自動化重新建立關聯後才能執行。",
-      "workspaceHostAmbiguous": "自動化工作區橫跨多個主機，因此 Orca 無法判斷應在哪個主機上執行。",
-      "legacyTwinHosts": "此自動化是在 Orca 開始記錄執行主機之前儲存的，且其專案位於多個主機上。請開啟自動化，選擇應執行它的主機。",
+      "workspaceHostAmbiguous": "自動化工作區橫跨多個主機，因此 Adehone 無法判斷應在哪個主機上執行。",
+      "legacyTwinHosts": "此自動化是在 Adehone 開始記錄執行主機之前儲存的，且其專案位於多個主機上。請開啟自動化，選擇應執行它的主機。",
       "targetUnavailable": "自動化執行目標已無法使用。",
-      "remoteSchedulingUnavailable": "此 Orca 用戶端尚無法設定遠端伺服器上的自動化排程。請在遠端伺服器上執行此自動化，或等支援持久性遠端排程後再更新 Orca。",
+      "remoteSchedulingUnavailable": "此 Adehone 用戶端尚無法設定遠端伺服器上的自動化排程。請在遠端伺服器上執行此自動化，或等支援持久性遠端排程後再更新 Adehone。",
       "projectSetupMissing": "所選自動化主機上已沒有此專案的設定。",
       "targetSetupMismatch": "自動化執行目標與專案所選主機的設定已不相符。",
       "repoUnavailable": "所選自動化主機的存放庫已無法使用。",
@@ -5105,7 +5105,7 @@
       "agentNeverStarted": "送出提示詞後，自動化代理程式始終未啟動。",
       "agentNoCompletion": "自動化代理程式未回報完成。",
       "agentInterrupted": "代理程式在完成此次執行前被中斷。",
-      "watchTimedOut": "6 小時內未收到完成訊號，Orca 已停止監看此次執行。",
+      "watchTimedOut": "6 小時內未收到完成訊號，Adehone 已停止監看此次執行。",
       "projectSetupState": {
         "notSetUp": "專案尚未在所選自動化主機上完成設定。",
         "settingUp": "專案仍在所選自動化主機上進行設定。",
@@ -5113,11 +5113,11 @@
         "unsupported": "所選自動化主機不支援此專案。"
       },
       "wslDistroStopped": "WSL 發行版 {{distro}} 已停止，因此這次排程執行沒有啟動它。請啟動該發行版或使用「立即執行」；它執行期間，之後的排程會照常進行。",
-      "botsOff": "設定中已關閉機器人，因此 Orca 略過了這次執行。",
-      "botsOffByTeam": "你的團隊已關閉機器人，因此 Orca 略過了這次執行。",
+      "botsOff": "設定中已關閉機器人，因此 Adehone 略過了這次執行。",
+      "botsOffByTeam": "你的團隊已關閉機器人，因此 Adehone 略過了這次執行。",
       "botMissing": "執行這個自動化的機器人已不存在。",
       "botFolderMissing": "機器人的資料夾已無法使用。",
-      "botPaused": "{{bot}} 已暫停，因此 Orca 略過了這次執行。"
+      "botPaused": "{{bot}} 已暫停，因此 Adehone 略過了這次執行。"
     },
     "botTarget": {
       "fieldLabel": "機器人或專案",
@@ -5272,7 +5272,7 @@
             "cursor": {
               "expired": {
                 "label": "登入已過期",
-                "message": "請在執行 Orca 的電腦上的終端機中執行 cursor-agent login，然後重新整理用量。"
+                "message": "請在執行 Adehone 的電腦上的終端機中執行 cursor-agent login，然後重新整理用量。"
               }
             },
             "usage": {
@@ -5283,8 +5283,8 @@
             "7ad719c4bf": "受限",
             "e740f92596": "重新整理失敗",
             "2c35eca8d4": "無法取得用量",
-            "d1b7f509ac": "在執行 Orca 的電腦上的終端機中執行 grok，並等待其啟動。如有提示，請完成登入，然後重試用量檢查。您無需傳送聊天訊息。",
-            "a37e8c15d4": "在執行 Orca 的電腦上的終端機中執行 kimi，等待其啟動，然後重試用量檢查。",
+            "d1b7f509ac": "在執行 Adehone 的電腦上的終端機中執行 grok，並等待其啟動。如有提示，請完成登入，然後重試用量檢查。您無需傳送聊天訊息。",
+            "a37e8c15d4": "在執行 Adehone 的電腦上的終端機中執行 kimi，等待其啟動，然後重試用量檢查。",
             "3d3c9c0c1f": "正在執行的 Claude 終端機輪替憑證後，Claude 用量會重新整理。",
             "42fdd4da1d": "正在重新整理 Claude 登入。代理程式工作階段可能仍處於登入狀態。",
             "c06c1d215d": "由於網路請求失敗，無法重新整理 Claude 用量。",
@@ -5370,7 +5370,7 @@
       "clear": "清除"
     },
     "activity": {
-      "needsWindow": "無法更新。請在 {{desktop}} 上開啟 Orca。",
+      "needsWindow": "無法更新。請在 {{desktop}} 上開啟 Adehone。",
       "failed": "無法更新代理程式清單。"
     }
   },
@@ -5384,14 +5384,14 @@
       "pairRequired": "若要開啟此連結，請將這部手機與電腦配對，然後重新開啟該連結。",
       "pairAction": "配對電腦",
       "openFailed": "無法開啟此連結",
-      "ambiguous": "此 bot 位於 {{names}}。請在你想用的電腦上透過 Orca 開啟聊天。",
+      "ambiguous": "此 bot 位於 {{names}}。請在你想用的電腦上透過 Adehone 開啟聊天。",
       "computer": "你的電腦",
-      "updateNeeded": "請更新 {{names}} 上的 Orca 以開啟此連結。",
-      "unreachable": "無法連線至 {{names}}。請確認其中一台電腦正在執行 Orca，然後重試。",
+      "updateNeeded": "請更新 {{names}} 上的 Adehone 以開啟此連結。",
+      "unreachable": "無法連線至 {{names}}。請確認其中一台電腦正在執行 Adehone，然後重試。",
       "missing": "你配對的電腦上都沒有此 bot。",
       "offline": "{{name}} 已離線。請在它重新上線後再次開啟連結。",
       "chatOpenFailed": "{{name}} 無法開啟此聊天。請重試此連結。",
-      "unreachableSingle": "無法連線至 {{name}}。請確認該電腦正在執行 Orca，然後重試。",
+      "unreachableSingle": "無法連線至 {{name}}。請確認該電腦正在執行 Adehone，然後重試。",
       "workspaceDeleted": "此聊天的工作區已在 {{name}} 上被刪除。"
     },
     "settings": {
@@ -5418,8 +5418,8 @@
       "whoCanAsk": "誰可以提問",
       "deleteBot": "刪除機器人…",
       "accountChecking": "檢查中…",
-      "signedOut": "已登出 Orca",
-      "orcaAccount": "Orca 帳戶",
+      "signedOut": "已登出 Adehone",
+      "orcaAccount": "Adehone 帳戶",
       "folder": "資料夾",
       "copyPath": "複製路徑",
       "pathCopied": "已複製路徑",
@@ -5432,7 +5432,7 @@
       "model": "模型",
       "effort": "推理強度",
       "modelDefault": "預設",
-      "signInChanged": "Orca 登入已變更",
+      "signInChanged": "Adehone 登入已變更",
       "whoCanAskName": "誰可以向 {{name}} 提問",
       "you": "你",
       "owner": "擁有者",
@@ -5504,7 +5504,7 @@
       "remoteMayAnswer": "可能仍會在 {{computer}} 上回答。",
       "remoteShortened": "已縮短。完整回答在 {{computer}} 上。",
       "needsLocalBot": "此群組至少需要一個位於這台電腦上的機器人。",
-      "remoteOnComputer": "請在 {{host}} 上的 Orca 中新增或移除其他電腦上的機器人。",
+      "remoteOnComputer": "請在 {{host}} 上的 Adehone 中新增或移除其他電腦上的機器人。",
       "handoffsPaused": "移交 {{count}} 次後已暫停。回覆即可繼續。",
       "stopCouldNotBeConfirmed": "無法確認是否已停止。",
       "notStarted": "尚未啟動",
@@ -5711,8 +5711,8 @@
     },
     "accessDecide": {
       "expired": "此請求已被回覆或已過期。",
-      "grantedNotAdded": "已授予存取權限，但 {{person}} 還未列出。Orca 會新增他們。",
-      "signedOut": "請在電腦上登入 Orca 以回覆請求。",
+      "grantedNotAdded": "已授予存取權限，但 {{person}} 還未列出。Adehone 會新增他們。",
+      "signedOut": "請在電腦上登入 Adehone 以回覆請求。",
       "whatTheyCanDoMany": "他們可以做什麼"
     },
     "tabs": {
@@ -5736,7 +5736,7 @@
       "resume": "繼續",
       "pause": "暫停",
       "more": "更多操作",
-      "orphanedNote": "{{bot}} 的 Orca 已不再列出此自動化，因此呼叫不會執行。",
+      "orphanedNote": "{{bot}} 的 Adehone 已不再列出此自動化，因此呼叫不會執行。",
       "url": "網址",
       "copy": "複製",
       "copyUrl": "複製網址",
@@ -5773,9 +5773,9 @@
         "changeTitle": "更改簽名金鑰",
         "addTitle": "新增簽名金鑰",
         "sender": "傳送方",
-        "modeGenerate": "由 Orca 生成",
+        "modeGenerate": "由 Adehone 生成",
         "modePaste": "貼上傳送方的金鑰",
-        "generateNote": "此金鑰由 Orca 生成。接下來請把它複製到 {{sender}}。",
+        "generateNote": "此金鑰由 Adehone 生成。接下來請把它複製到 {{sender}}。",
         "paste": "{{sender}} 金鑰",
         "save": "儲存",
         "saved": "簽名金鑰已儲存",
@@ -5838,7 +5838,7 @@
       },
       "everyCall": "每次呼叫",
       "hostOffline": "{{bot}} 的電腦已離線",
-      "hostNeedsUpdate": "你的 Orca 需要更新，{{bot}} 才能執行此操作。",
+      "hostNeedsUpdate": "你的 Adehone 需要更新，{{bot}} 才能執行此操作。",
       "errors": {
         "notFound": "此 Webhook 已刪除。",
         "unavailable": "Webhook 當前不可用。"
@@ -5895,9 +5895,9 @@
       "reading": "正在瞭解你的環境…",
       "read": "正在瞭解你的環境",
       "namesMore": "{{names}} 等另外 {{count}} 個",
-      "projectsReading": "專案：正在檢視你在 Orca 中有什麼…",
+      "projectsReading": "專案：正在檢視你在 Adehone 中有什麼…",
       "projectsDone": "已檢視你的專案",
-      "projectsNone": "Orca 中還沒有專案",
+      "projectsNone": "Adehone 中還沒有專案",
       "projectsOne": "找到 1 個專案：{{names}}",
       "projectsMany": "找到 {{count}} 個專案：{{names}}",
       "githubReading": "GitHub：正在讀取你未關閉的 PR…",
@@ -5927,7 +5927,7 @@
     "picture": {
       "invalid": "無法使用該圖片。請選擇 PNG 或 JPG 圖片。",
       "permissionDenied": "照片存取權限遭拒",
-      "unreadable": "Orca 無法讀取該圖片。請嘗試 PNG 或 JPEG。",
+      "unreadable": "Adehone 無法讀取該圖片。請嘗試 PNG 或 JPEG。",
       "colorSky": "天藍",
       "colorWhite": "白色",
       "colorPink": "粉色的",
@@ -5998,7 +5998,7 @@
         "needsSignIn": "需要登入",
         "finishInBrowser": "在瀏覽器中完成",
         "finishing": "正在完成登入…",
-        "updateHost": "更新 {{host}} 上的 Orca",
+        "updateHost": "更新 {{host}} 上的 Adehone",
         "cantReach": "無法連線",
         "unsupported": "暫不支援此應用程式"
       },
@@ -6012,13 +6012,13 @@
         "step2": "複製網址",
         "step2Detail": "最後一個頁面無法載入。這是正常情況。請複製該頁面的網址。",
         "step3": "在此貼上",
-        "step3Detail": "Orca 會在 {{host}} 上完成登入。",
+        "step3Detail": "Adehone 會在 {{host}} 上完成登入。",
         "title": "登入 {{app}}",
         "pastePlaceholder": "貼上網址",
         "open": "開啟登入頁面",
         "notThisSignIn": "這個網址不屬於此次登入。請貼上你最後停留的頁面網址。"
       },
-      "updateHost": "請更新 {{host}} 上的 Orca 以登入應用程式",
+      "updateHost": "請更新 {{host}} 上的 Adehone 以登入應用程式",
       "none": "無",
       "from": "來自 {{agent}} 的 {{count}} 個",
       "more": "來自 {{agent}} 的另外 {{count}} 個",
@@ -6060,7 +6060,7 @@
         "unsupported": "尚不支援此應用程式。",
         "unavailable": "無法連線到此應用程式。請檢查網址後再試一次。",
         "noTool": "這個機器人已經沒有那個工具了。",
-        "desktopOnly": "請在 {{host}} 上的 Orca 中登入。",
+        "desktopOnly": "請在 {{host}} 上的 Adehone 中登入。",
         "denied": "未獲准存取。",
         "expired": "登入已逾期。請再試一次。",
         "couldNotSignIn": "無法登入。請再試一次。"
@@ -6146,7 +6146,7 @@
     "failures": {
       "lookUnfinished": "上次四處檢視沒有完成。",
       "lookTimedOut": "上次四處檢視在 {{minutes}} 分鐘後被停止。",
-      "lookInterrupted": "上次四處檢視期間 Orca 停止了。",
+      "lookInterrupted": "上次四處檢視期間 Adehone 停止了。",
       "lookCouldNotStart": "上次四處檢視無法開始。",
       "lookAsleep": "這台電腦處於睡眠狀態，錯過了上次四處檢視。",
       "tidyUpUnfinished": "上次整理沒有完成。",
@@ -6155,11 +6155,11 @@
       "tidyUpAsleep": "這台電腦處於睡眠狀態，錯過了上次整理。",
       "tidyUpUnreadChats": "上次整理無法讀取它的聊天，因此沒有執行。",
       "tidyUpNoDraft": "上次整理沒有回覆新的 MEMORY.md。",
-      "tidyUpNoOps": "上次整理的回覆不是 Orca 能讀取的變更清單。",
-      "tidyUpAllSkipped": "Orca 略過了上次整理要求的所有變更，因此沒有任何變化。（{{detail}}）",
+      "tidyUpNoOps": "上次整理的回覆不是 Adehone 能讀取的變更清單。",
+      "tidyUpAllSkipped": "Adehone 略過了上次整理要求的所有變更，因此沒有任何變化。（{{detail}}）",
       "tidyUpNotListLines": "上次整理沒有執行：MEMORY.md 中有不少不是清單行的內容，而整理只讀取清單行。",
-      "tidyUpMovedOnly": "上次整理把狀態行移到了 memory/journal/，但 Orca 無法使用它回覆的其餘部分。（{{detail}}）",
-      "tidyUpBadTopic": "上次整理指定了 Orca 無法寫入的主題檔案，因此沒有任何變化。",
+      "tidyUpMovedOnly": "上次整理把狀態行移到了 memory/journal/，但 Adehone 無法使用它回覆的其餘部分。（{{detail}}）",
+      "tidyUpBadTopic": "上次整理指定了 Adehone 無法寫入的主題檔案，因此沒有任何變化。",
       "tidyUpTooLong": "上次整理的 MEMORY.md 超過 {{max}} 行且沒有變短，因此沒有任何變化。",
       "tidyUpTooManyRemoved": "上次整理一次刪去了太多行，因此沒有任何變化。",
       "tidyUpTooManyAdded": "上次整理一次新增了太多新行，因此沒有任何變化。",
@@ -6173,9 +6173,9 @@
       "toolSavedValueGone": "那個已儲存的值不再可用。請重新輸入，或刪除它所在的列。",
       "toolValueMissing": "請為每一列輸入值，或刪除該列。",
       "toolCredentialsUnreadable": "無法讀取機器人已儲存的工具憑證。請重新輸入該工具的值。",
-      "toolSignInManaged": "這個工具由 Orca 登入。請改為登入或登出它。",
-      "toolCredentialsRaced": "機器人的工具憑證已在另一個 Orca 中變更。請重試。",
-      "toolSourceManaged": "這個工具由 Orca 管理。請到你設定它的地方變更。",
+      "toolSignInManaged": "這個工具由 Adehone 登入。請改為登入或登出它。",
+      "toolCredentialsRaced": "機器人的工具憑證已在另一個 Adehone 中變更。請重試。",
+      "toolSourceManaged": "這個工具由 Adehone 管理。請到你設定它的地方變更。",
       "toolValuesUnmoved": "有個工具仍保存著它的值。請重新開啟機器人的工具以移轉這些值。",
       "googleAccountsChanged": "自你開啟後，它的 Google 帳戶已變更。請檢查後再儲存一次。",
       "toolCodexCheckFailed": "Codex 無法檢查或連線這些工具。請檢查它的設定後重試。",
@@ -6191,7 +6191,7 @@
       "toolSignInEnded": "登入已經結束或逾時。請用「連線」重新開始。",
       "toolNotFound": "這個機器人沒有名為 {{name}} 的工具。",
       "toolNeedsNoSignIn": "{{name}} 使用已儲存的值，無需登入。",
-      "toolSignInAgentUnsupported": "Orca 只為 Claude Code 和 Codex 登入 {{name}}。請改為用它的登入值新增。",
+      "toolSignInAgentUnsupported": "Adehone 只為 Claude Code 和 Codex 登入 {{name}}。請改為用它的登入值新增。",
       "toolCodexNoSignInPage": "Codex 沒有提供 {{name}} 的登入頁面。",
       "toolClaudeSignInFailed": "Claude 無法開始登入 {{name}}。",
       "toolClaudeNoSignInPage": "Claude 沒有開啟 {{name}} 的登入頁面。",
@@ -6210,7 +6210,7 @@
       "groupNeedsLocalBot": "這個群組至少需要一個在這台電腦上的機器人。",
       "groupNameTaken": "{{name}} 已在這個群組中。成員需要不同的名稱，提及才不會混淆。",
       "groupPostFromHost": "要在包含其他電腦上機器人的群組中發文，請使用 {{host}}。",
-      "groupPeerTooOld": "請更新 {{host}} 上的 Orca，才能把它的機器人加入群組。",
+      "groupPeerTooOld": "請更新 {{host}} 上的 Adehone，才能把它的機器人加入群組。",
       "attachmentUnreadable": "無法讀取 {{name}}。",
       "attachmentTooLarge": "{{name}} 超過 {{maxMb}} MB。",
       "attachmentUploading": "{{name}} 仍在上傳。",
@@ -6236,7 +6236,7 @@
       "groupRemoteUnreachableRetry": "無法連線到 {{host}}。{{detail}} 重新發布即可重試。",
       "composioKeyCantCreateSessions": "此 Composio 金鑰無法建立工作階段。它需要 {{permission}}。",
       "composioKeyNeedsPermission": "此 Composio 金鑰缺少一項權限。它需要 {{permission}}。",
-      "composioKeyMissingPermission": "此 Composio 金鑰缺少 Orca 需要的權限。"
+      "composioKeyMissingPermission": "此 Composio 金鑰缺少 Adehone 需要的權限。"
     },
     "pairedServers": {
       "heading": "已配對的伺服器",
@@ -6371,9 +6371,9 @@
       "safetyCheck": "安全檢查",
       "done": "完成",
       "waitingSignIn": "正在等待在瀏覽器中登入",
-      "signInFor": "讓 {{host}} 登入 Orca。",
+      "signInFor": "讓 {{host}} 登入 Adehone。",
       "cancelSignIn": "取消登入",
-      "signIn": "請登入 Orca 以分享。",
+      "signIn": "請登入 Adehone 以分享。",
       "signInToPublish": "登入以發布",
       "reload": "重新載入",
       "updateLink": "更新連結",
@@ -6428,11 +6428,11 @@
         "prepareAgain": "在此期間，此機器人已從另一個視窗分享。請重新開啟「分享機器人」。",
         "stopped": "此連結已停用。發布即可產生新連結。",
         "moved": "此連結已在其他地方更新。請重新開啟「分享機器人」檢視。",
-        "unavailable": "Orca Cloud 暫不支援分享機器人。",
-        "avatarRefused": "Orca Cloud 拒絕了此機器人的頭像。請換一張圖片後重試。",
+        "unavailable": "Adehone Cloud 暫不支援分享機器人。",
+        "avatarRefused": "Adehone Cloud 拒絕了此機器人的頭像。請換一張圖片後重試。",
         "tooLarge": "此機器人太大，無法分享。請去掉部分記憶或技能後重試。"
       },
-      "reconnect": "請重新登入 Orca 以分享。",
+      "reconnect": "請重新登入 Adehone 以分享。",
       "flag": {
         "secret": "機密資訊",
         "pipeToShell": "執行下載的指令碼",
@@ -6488,7 +6488,7 @@
     },
     "new": {
       "purposeLabel": "身分",
-      "purposeTooLongForHost": "{{host}} 上的 Orca 最多接受 200 個字元的用途說明。請縮短內容，或更新 {{host}} 上的 Orca。",
+      "purposeTooLongForHost": "{{host}} 上的 Adehone 最多接受 200 個字元的用途說明。請縮短內容，或更新 {{host}} 上的 Adehone。",
       "purposePlaceholder": "它是誰，負責做什麼",
       "noAgent": "無",
       "noChatAgents": "{{host}} 上沒有可用的聊天代理程式。"
