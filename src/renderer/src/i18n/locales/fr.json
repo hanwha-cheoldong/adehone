@@ -8594,7 +8594,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "Le préfixe ne peut pas contenir d'espaces ni de caractères spéciaux comme ~ ^ : ? * [ \\",
-          "64d70b156a": "Les branches seront nommées {{example}}",
           "808f9a726e": "Aucun préfixe ne sera appliqué"
         },
         "GitPane": {
@@ -8612,7 +8611,6 @@
           "813e15b346": "custom",
           "2351aa5a31": "nom d'utilisateur git",
           "cc63fce906": "nommage des branches",
-          "b559bf9899": "p. ex. feature",
           "aefa1ecb59": "Aucun nom d'utilisateur git configuré",
           "3d172725cc": "Aucun",
           "1f32ba27a6": "Personnalisé",

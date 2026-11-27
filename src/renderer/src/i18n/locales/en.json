@@ -9754,7 +9754,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "Prefix cannot contain spaces or special characters like ~ ^ : ? * [ \\",
-          "64d70b156a": "Branches will be named {{example}}",
           "808f9a726e": "No prefix will be applied"
         },
         "GitPane": {
@@ -9772,7 +9771,6 @@
           "813e15b346": "custom",
           "2351aa5a31": "git username",
           "cc63fce906": "branch naming",
-          "b559bf9899": "e.g. feature",
           "aefa1ecb59": "No git username configured",
           "3d172725cc": "None",
           "1f32ba27a6": "Custom",
@@ -24239,7 +24237,9 @@
         "updateFailed": "Couldn't update the setting on {{host}}."
       },
       "git": {
-        "branchPrefixHostGitUsername": "Git username on {{host}}"
+        "branchPrefixHostGitUsername": "Git username on {{host}}",
+        "branchPrefixCustomPlaceholder": "e.g. your-name",
+        "generatedBranchExample": "Example branch for issue 98"
       }
     },
     "agentChildRow": {
@@ -24291,6 +24291,14 @@
         "yamlSource": "orca.yaml",
         "bothSources": "orca.yaml + local",
         "localSource": "local settings"
+      },
+      "generatedBranch": {
+        "invalidTypedName": "Git does not accept this branch name. Edit it before creating.",
+        "type": "Branch type",
+        "auto": "From the name, otherwise feat",
+        "invalidPrefix": "Git does not accept the branch prefix \"{{prefix}}\". Change it in Settings → Git.",
+        "expected": "Expected branch",
+        "randomName": "The name has no letters a-z, digits or Hangul and no issue is linked, so the branch is named workspace with a random value chosen at create."
       }
     },
     "JiraIssueWorkspace": {

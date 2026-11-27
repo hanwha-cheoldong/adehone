@@ -53,6 +53,7 @@ import {
 import { getOptionalLinearIssueLinkFlag } from './worktree-linear-issue-link'
 import { getWorktreeReadFlags } from './worktree-unread-flag'
 import { getReviewTargetLinkFlags } from './worktree-review-link-flags'
+import { assertBranchTypeSupported, getBranchTypeFlag } from './worktree-branch-type-flag'
 import {
   getOptionalSetupDecision,
   withSetupDecisionRecovery
@@ -110,6 +111,7 @@ export const WORKTREE_HANDLERS: Record<string, CommandHandler> = {
     assertWorktreeParentFlagsCompatible(flags)
     assertWorkspaceTargetFlagsCompatible(flags)
     const branchNameOverride = getPresentStringFlag(flags, 'branch')
+    const branchType = getBranchTypeFlag(flags, branchNameOverride)
     const reviewLinks = getReviewTargetLinkFlags(flags)
     const callerTerminalHandle = process.env.ORCA_TERMINAL_HANDLE || undefined
     const explicitParent = await resolveCreateParentSelector(flags, cwd, client)
@@ -159,6 +161,9 @@ export const WORKTREE_HANDLERS: Record<string, CommandHandler> = {
     if (linkedItems) {
       await assertReferenceWritesSupported(client)
     }
+    if (branchType) {
+      await assertBranchTypeSupported(client)
+    }
     const create = {
       // Older hosts drop `repoHostId` and keep refusing an id on several hosts, as before.
       ...repoTarget,
@@ -167,6 +172,7 @@ export const WORKTREE_HANDLERS: Record<string, CommandHandler> = {
       displayNameKind: 'user',
       baseBranch: getOptionalStringFlag(flags, 'base-branch'),
       branchNameOverride,
+      ...(branchType ? { branchType } : {}),
       ...reviewLinks,
       ...linearIssueLink,
       ...(linkedItems ? { linkedItems } : {}),

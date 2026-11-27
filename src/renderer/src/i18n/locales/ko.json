@@ -8960,7 +8960,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "접두사에는 공백이나 ~ ^ : ? * [ \\ 같은 특수 문자를 사용할 수 없습니다",
-          "64d70b156a": "브랜치 이름은 {{example}}(으)로 지정됩니다",
           "808f9a726e": "접두사가 적용되지 않습니다"
         },
         "GitPane": {
@@ -8978,7 +8977,6 @@
           "813e15b346": "custom",
           "2351aa5a31": "Git 사용자 이름",
           "cc63fce906": "브랜치 이름 지정",
-          "b559bf9899": "예: feature",
           "aefa1ecb59": "Git 사용자 이름이 구성되지 않았습니다.",
           "3d172725cc": "없음",
           "1f32ba27a6": "사용자 정의",
@@ -23506,7 +23504,9 @@
         "updateFailed": "{{host}}의 설정을 업데이트하지 못했습니다."
       },
       "git": {
-        "branchPrefixHostGitUsername": "{{host}}의 Git 사용자 이름"
+        "branchPrefixHostGitUsername": "{{host}}의 Git 사용자 이름",
+        "branchPrefixCustomPlaceholder": "예: your-name",
+        "generatedBranchExample": "이슈 98의 브랜치 예시"
       }
     },
     "agentChildRow": {
@@ -23563,6 +23563,14 @@
         "yamlSource": "orca.yaml",
         "bothSources": "orca.yaml + 로컬",
         "localSource": "로컬 설정"
+      },
+      "generatedBranch": {
+        "invalidTypedName": "Git이 받아들이지 않는 브랜치 이름입니다. 만들기 전에 수정하세요.",
+        "type": "브랜치 유형",
+        "auto": "이름의 유형 표기, 없으면 feat",
+        "invalidPrefix": "Git이 브랜치 접두사 \"{{prefix}}\"을(를) 받아들이지 않습니다. 설정 → Git에서 바꾸세요.",
+        "expected": "예상 브랜치",
+        "randomName": "이름에 영문 a-z, 숫자, 한글이 없고 연결된 이슈도 없어 브랜치는 workspace-랜덤값이 됩니다. 실제 값은 생성할 때 정해집니다."
       }
     },
     "JiraIssueWorkspace": {

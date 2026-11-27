@@ -3,6 +3,7 @@ import type { ComposerModel } from '../composer-model'
 type IssueSourceActionsInput = Pick<
   ComposerModel,
   | 'baseBranch'
+  | 'branchNameOverride'
   | 'baseBranchNamesWorkspace'
   | 'branchAutoNameRef'
   | 'isProjectGroupTarget'
@@ -45,7 +46,6 @@ import {
   getLinkedItemDisplayName,
   getSmartNameSelection as getFolderSmartNameSelection
 } from '@/components/sidebar/workspace-creation/folder/folder-workspace-source-selection'
-import { getLinearLinkedWorkItemBranchName } from '@/lib/work-items/linear/linear-linked-work-item'
 import {
   getLinearIssueWorkspaceName,
   getLinkedWorkItemSuggestedName,
@@ -60,6 +60,7 @@ import type { TaskSourceContext } from '../../../../../shared/work-items/task-so
 export function useIssueSourceActions(input: IssueSourceActionsInput) {
   const {
     baseBranch,
+    branchNameOverride,
     baseBranchNamesWorkspace,
     branchAutoNameRef,
     isProjectGroupTarget,
@@ -134,17 +135,20 @@ export function useIssueSourceActions(input: IssueSourceActionsInput) {
         setName(suggestedName)
         lastAutoNameRef.current = suggestedName
       }
-      const linearBranchName = getLinearLinkedWorkItemBranchName(linkedLinearIssue)
-      setBranchNameOverride(linearBranchName)
-      setBranchNameOverridePreservesNameEdits(Boolean(linearBranchName))
+      // The issue names a generated branch; only a branch name the user typed stays as written.
+      const typedBranchName =
+        !linkedWorkItem && !branchAutoNameRef.current ? branchNameOverride : undefined
+      setBranchNameOverride(typedBranchName)
+      setBranchNameOverridePreservesNameEdits(Boolean(typedBranchName))
       setForkPushWarning(null)
-      branchAutoNameRef.current = linearBranchName ?? ''
+      branchAutoNameRef.current = ''
       // Source selection must not inject user instructions through note prefill; match GitHub behavior.
     },
     [
       isProjectGroupTarget,
       name,
       linkedWorkItem,
+      branchNameOverride,
       branchAutoNameRef,
       lastAutoNameRef,
       setBranchNameOverride,

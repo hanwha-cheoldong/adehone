@@ -15,7 +15,6 @@ export type WorkspaceSourceProvider = FolderWorkspaceLinkedTask['provider']
 export type WorkspaceSourceLinkedItem = FolderWorkspaceLinkedTask & {
   linearWorkspaceId?: string
   linearOrganizationUrlKey?: string
-  linearBranchName?: string
 }
 
 export type GitHubWorkspaceSource = WorkspaceSourceLinkedItem & {
@@ -121,15 +120,13 @@ export function buildGitLabWorkspaceSource(item: {
 export function getUsableLinearBranchName(
   branchName: string | null | undefined
 ): string | undefined {
-  // Only nonblank values enter exact Git-ref overrides; missing names retain generated fallback.
   return branchName?.trim() || undefined
 }
 
 export function buildLinearWorkspaceSource(
-  issue: Pick<LinearIssue, 'identifier' | 'title' | 'url' | 'workspaceId' | 'branchName'>
+  issue: Pick<LinearIssue, 'identifier' | 'title' | 'url' | 'workspaceId'>
 ): LinearWorkspaceSource {
   const organizationUrlKey = getLinearOrganizationUrlKeyFromIssueUrl(issue.url)
-  const branchName = getUsableLinearBranchName(issue.branchName)
   return {
     provider: 'linear',
     type: 'issue',
@@ -139,8 +136,7 @@ export function buildLinearWorkspaceSource(
     url: issue.url,
     linearIdentifier: issue.identifier,
     ...(issue.workspaceId ? { linearWorkspaceId: issue.workspaceId } : {}),
-    ...(organizationUrlKey ? { linearOrganizationUrlKey: organizationUrlKey } : {}),
-    ...(branchName ? { linearBranchName: branchName } : {})
+    ...(organizationUrlKey ? { linearOrganizationUrlKey: organizationUrlKey } : {})
   }
 }
 

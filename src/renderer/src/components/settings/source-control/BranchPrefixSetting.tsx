@@ -4,6 +4,7 @@ import { Input } from '../../ui/input'
 import { Label } from '../../ui/label'
 import { SearchableSetting } from '../section-layout/SearchableSetting'
 import { BranchPrefixFeedback } from './BranchPrefixFeedback'
+import { previewGeneratedBranch } from '@/components/new-workspace/composer/generated-branch-preview'
 import type { SettingsHostScope } from '../host-scope/settings-host-scope'
 import {
   getHostSettingUnsupportedNote,
@@ -57,6 +58,17 @@ export function BranchPrefixSetting({
   const usesGitUsername = branchPrefix === 'git-username'
   const inputValue = usesGitUsername ? (onServer ? '' : displayedGitUsername) : customPrefixDraft
   const showInput = branchPrefix !== null && branchPrefix !== 'none'
+  const example =
+    branchPrefix === null
+      ? null
+      : previewGeneratedBranch({
+          name: 'Confluence integration',
+          type: undefined,
+          ticketSource: { linkedIssue: 98 },
+          prefixStrategy: branchPrefix,
+          customPrefix: inputValue,
+          gitUsername: inputValue || undefined
+        })
 
   return (
     <SearchableSetting
@@ -120,13 +132,19 @@ export function BranchPrefixSetting({
                     { host: hostLabel }
                   )
                 : t('auto.components.settings.GitPane.aefa1ecb59', 'No git username configured')
-              : t('auto.components.settings.GitPane.b559bf9899', 'e.g. feature')
+              : t('components.settings.git.branchPrefixCustomPlaceholder', 'e.g. your-name')
           }
           className="max-w-xs"
           readOnly={usesGitUsername || !ready}
         />
       )}
       {showInput && <BranchPrefixFeedback rawPrefix={inputValue} />}
+      {example && example.kind !== 'invalid-prefix' ? (
+        <p className="text-xs text-muted-foreground">
+          {t('components.settings.git.generatedBranchExample', 'Example branch for issue 98')}:{' '}
+          <span className="font-mono break-all text-foreground">{example.branch}</span>
+        </p>
+      ) : null}
     </SearchableSetting>
   )
 }

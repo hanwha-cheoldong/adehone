@@ -6,6 +6,7 @@ import { TaskSourceContextSchema } from '../../work-items/task-source-context-sc
 import { workspaceSourceSchema } from '../../telemetry/schemas/telemetry-property-schemas'
 import { RUNTIME_NAVIGATION_TARGETS } from '../../remote-runtime/session-graph/runtime-navigation'
 import { sleepingAgentLaunchConfigSchema } from '../../workspace-session/workspace-session-sleeping-agents'
+import { parseBranchWorkType } from '../../git/branches/conventional-branch-name'
 import { isTuiAgent } from '../../agent-launch/catalog/tui-agent-config'
 import { AgentArgs, LaunchPreferences } from '../terminal/agent-session-params'
 import { LaunchSourceParam } from '../agent-launch/launch-source-param'
@@ -42,6 +43,11 @@ export const WorktreeCreate = lazyZodSchema(() =>
       branchNameOverride: OptionalString,
       branchIntent: z
         .enum(['open-existing', 'open-existing-v2', 'create-new', 'create-exact'])
+        .optional(),
+      // Lenient: a type a newer client adds falls back to the host's own reading of the name.
+      branchType: z
+        .unknown()
+        .transform((value) => (typeof value === 'string' ? parseBranchWorkType(value) : undefined))
         .optional(),
       linkedIssue: TriStateLinkedIssue,
       linkedPR: TriStateLinkedIssue,

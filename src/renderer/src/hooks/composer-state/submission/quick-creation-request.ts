@@ -40,6 +40,7 @@ export type QuickCreationRequestInput = {
   linkedLinearIssueOrganizationUrlKey: string | undefined
   branchNameOverride: string | undefined
   branchIntent?: WorktreeCreationRequest['branchIntent']
+  branchType?: WorktreeCreationRequest['branchType']
   parentWorktreeId: string | null
   workspaceStatus: WorktreeCreationRequest['workspaceStatus']
   linkedGitLabMR: number | null
@@ -114,6 +115,9 @@ export function buildQuickCreationRequest(
       : {}),
     ...(input.branchNameOverride ? { branchNameOverride: input.branchNameOverride } : {}),
     ...(input.branchIntent ? { branchIntent: input.branchIntent } : {}),
+    ...(input.selectedRepoIsGit && input.branchType && !input.branchNameOverride
+      ? { branchType: input.branchType }
+      : {}),
     ...(input.parentWorktreeId ? { parentWorktreeId: input.parentWorktreeId } : {}),
     ...(input.workspaceStatus ? { workspaceStatus: input.workspaceStatus } : {}),
     ...(input.includeGitLabLinks && input.linkedGitLabMR != null

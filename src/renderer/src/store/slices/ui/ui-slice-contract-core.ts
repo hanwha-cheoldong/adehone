@@ -108,7 +108,6 @@ export type NewWorkspaceDraft = {
     title: string
     url: string
     linearIdentifier?: string
-    linearBranchName?: string
     jiraIdentifier?: string
     repoId?: string
   } | null

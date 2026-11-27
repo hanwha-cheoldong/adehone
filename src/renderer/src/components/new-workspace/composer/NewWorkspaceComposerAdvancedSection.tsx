@@ -16,6 +16,11 @@ import {
 } from '@/lib/text-input/paste/text-control-paste'
 import { translate } from '@/i18n/i18n'
 import { useTranslate } from '@/i18n/use-translate'
+import {
+  ComposerGeneratedBranchPreview,
+  ComposerTypedBranchNameError
+} from './ComposerGeneratedBranchPreview'
+import { isAcceptableTypedBranchName } from './generated-branch-preview'
 import { ComposerParentWorktreePicker } from '../branch-selection/ComposerParentWorktreePicker'
 import type { NewWorkspaceComposerCardProps } from './new-workspace-composer-card-props'
 
@@ -32,6 +37,7 @@ type NewWorkspaceComposerAdvancedSectionProps = Pick<
   | 'canReuseSelectedBranch'
   | 'branchNameOverride'
   | 'onBranchNameOverrideChange'
+  | 'generatedBranch'
   | 'parentWorktreeId'
   | 'onParentWorktreeIdChange'
   | 'selectedRepoExecutionHostId'
@@ -76,6 +82,7 @@ export function NewWorkspaceComposerAdvancedSection({
   branchNameInputId,
   branchNameOverride,
   onBranchNameOverrideChange,
+  generatedBranch,
   parentWorktreeId = null,
   onParentWorktreeIdChange,
   selectedRepoExecutionHostId,
@@ -133,6 +140,10 @@ export function NewWorkspaceComposerAdvancedSection({
       .catch(() => {})
   }, [])
 
+  const createsBranch = selectedRepoIsGit && branchesEnabled && !canReuseSelectedBranch
+  const showBranchNameInput =
+    createsBranch && (!smartNameSelection || smartNameSelection.kind === 'branch')
+
   return (
     <div
       className={cn(
@@ -171,10 +182,7 @@ export function NewWorkspaceComposerAdvancedSection({
             </div>
           ) : null}
 
-          {selectedRepoIsGit &&
-          branchesEnabled &&
-          !canReuseSelectedBranch &&
-          (!smartNameSelection || smartNameSelection.kind === 'branch') ? (
+          {showBranchNameInput ? (
             <div className="space-y-1">
               <label
                 htmlFor={branchNameInputId}
@@ -187,13 +195,36 @@ export function NewWorkspaceComposerAdvancedSection({
                 type="text"
                 value={branchNameOverride ?? ''}
                 onChange={(event) => onBranchNameOverrideChange(event.target.value)}
+                aria-invalid={
+                  branchNameOverride && !isAcceptableTypedBranchName(branchNameOverride)
+                    ? true
+                    : undefined
+                }
                 placeholder={t(
                   'auto.components.NewWorkspaceComposerCard.branchNamePlaceholder',
                   'feature/my-branch'
                 )}
-                className="w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1.5 text-sm shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                className="w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1.5 text-sm shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive"
               />
+              {branchNameOverride ? (
+                <ComposerTypedBranchNameError branchName={branchNameOverride} />
+              ) : null}
             </div>
+          ) : null}
+
+          {createsBranch && !showBranchNameInput && branchNameOverride ? (
+            <p className="text-xs text-muted-foreground">
+              {t('auto.components.NewWorkspaceComposerCard.branchName', 'Branch name')}:{' '}
+              <span className="font-mono break-all text-foreground">{branchNameOverride}</span>
+            </p>
+          ) : null}
+
+          {advancedOpen && createsBranch && generatedBranch && !branchNameOverride && repoId ? (
+            <ComposerGeneratedBranchPreview
+              repoId={repoId}
+              executionHostId={selectedRepoExecutionHostId}
+              generatedBranch={generatedBranch}
+            />
           ) : null}
 
           {selectedRepoIsGit && branchesEnabled && onParentWorktreeIdChange ? (

@@ -1,3 +1,4 @@
+import type { ComposerGeneratedBranch } from './ComposerGeneratedBranchPreview'
 import type {
   AgentPickerDraft,
   AgentPickerEntry
@@ -81,6 +82,8 @@ export type NewWorkspaceComposerCardProps = {
   onNameValueChange: (value: string) => void
   branchNameOverride: string | undefined
   onBranchNameOverrideChange: (value: string | undefined) => void
+  /** What a generated branch is built from; absent where no branch is generated. */
+  generatedBranch?: ComposerGeneratedBranch
   baseBranch?: string
   onBaseBranchChange?: (value: string | undefined) => void
   startFromResetHint?: string | null

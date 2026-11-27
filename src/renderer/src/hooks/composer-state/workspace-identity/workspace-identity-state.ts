@@ -5,7 +5,6 @@ type WorkspaceIdentityStateInput = Pick<
   ComposerModel,
   | 'initialBaseBranch'
   | 'initialParentWorktreeId'
-  | 'initialLinearBranchName'
   | 'initialLinkedWorkItem'
   | 'linkedWorkItem'
   | 'linkedWorkItemSeedIdentity'
@@ -18,6 +17,7 @@ type WorkspaceIdentityStateInput = Pick<
 > & { agentLaunchWorkspace: ComposerAgentRows['target']['workspace'] | undefined }
 
 import { useState, useMemo, useCallback, type SetStateAction } from 'react'
+import type { BranchWorkType } from '../../../../../shared/git/branches/conventional-branch-name'
 import type { CreateWorktreeArgs } from '../../../../../shared/worktree/create-types'
 import {
   getWorkspaceSourceProvider,
@@ -51,7 +51,6 @@ export function useWorkspaceIdentityState(input: WorkspaceIdentityStateInput) {
     agentLaunchWorkspace,
     initialBaseBranch,
     initialParentWorktreeId,
-    initialLinearBranchName,
     initialLinkedWorkItem,
     linkedWorkItem,
     linkedWorkItemSeedIdentity,
@@ -123,9 +122,8 @@ export function useWorkspaceIdentityState(input: WorkspaceIdentityStateInput) {
     persistDraft ? newWorkspaceDraft?.compareBaseRef : undefined
   )
 
-  const [branchNameOverride, updateBranchNameOverride] = useState<string | undefined>(
-    initialLinearBranchName
-  )
+  const [branchNameOverride, updateBranchNameOverride] = useState<string | undefined>(undefined)
+  const [branchType, setBranchType] = useState<BranchWorkType>()
   const [branchIntent, setBranchIntent] = useState<CreateWorktreeArgs['branchIntent']>()
   const setBranchNameOverride = useCallback((value: SetStateAction<string | undefined>) => {
     setBranchIntent(undefined)
@@ -136,9 +134,8 @@ export function useWorkspaceIdentityState(input: WorkspaceIdentityStateInput) {
     initialParentWorktreeId ?? null
   )
 
-  const [branchNameOverridePreservesNameEdits, setBranchNameOverridePreservesNameEdits] = useState(
-    Boolean(initialLinearBranchName)
-  )
+  const [branchNameOverridePreservesNameEdits, setBranchNameOverridePreservesNameEdits] =
+    useState(false)
 
   const [smartNameMode, setSmartNameMode] = useState<SmartNameMode>('smart')
 
@@ -237,6 +234,8 @@ export function useWorkspaceIdentityState(input: WorkspaceIdentityStateInput) {
     compareBaseRef,
     setCompareBaseRef,
     branchNameOverride,
+    branchType,
+    setBranchType,
     branchIntent,
     setBranchIntent,
     setBranchNameOverride,

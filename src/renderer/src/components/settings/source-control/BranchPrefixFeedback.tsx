@@ -24,17 +24,7 @@ export function BranchPrefixFeedback({ rawPrefix }: BranchPrefixFeedbackProps): 
         )}
       </span>
     )
-  } else if (normalized) {
-    message = (
-      <span className="text-muted-foreground">
-        {t(
-          'auto.components.settings.BranchPrefixFeedback.64d70b156a',
-          'Branches will be named {{example}}',
-          { example: `${normalized}/feature` }
-        )}
-      </span>
-    )
-  } else if (rawPrefix.trim()) {
+  } else if (!normalized && rawPrefix.trim()) {
     message = (
       <span className="text-muted-foreground">
         {t('auto.components.settings.BranchPrefixFeedback.808f9a726e', 'No prefix will be applied')}

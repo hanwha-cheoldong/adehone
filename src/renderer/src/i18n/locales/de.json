@@ -9418,7 +9418,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "Das Präfix darf keine Leerzeichen oder Sonderzeichen enthalten, etwa ~ ^ : ? * [ \\",
-          "64d70b156a": "Branches heißen dann {{example}}",
           "808f9a726e": "Es wird kein Präfix verwendet"
         },
         "GitPane": {
@@ -9436,7 +9435,6 @@
           "813e15b346": "Benutzerdefiniert",
           "2351aa5a31": "Git-Benutzername",
           "cc63fce906": "Branch-Benennung",
-          "b559bf9899": "z. B. feature",
           "aefa1ecb59": "Kein Git-Benutzername konfiguriert",
           "3d172725cc": "Keines",
           "1f32ba27a6": "Benutzerdefiniert",

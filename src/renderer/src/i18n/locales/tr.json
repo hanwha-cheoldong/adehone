@@ -9688,7 +9688,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "Önek boşluk veya ~ ^ : ? * [ \\ gibi özel karakterler içeremez",
-          "64d70b156a": "Branch'ler {{example}} olarak adlandırılacak",
           "808f9a726e": "Hiçbir önek uygulanmayacak"
         },
         "GitPane": {
@@ -9706,7 +9705,6 @@
           "813e15b346": "özel",
           "2351aa5a31": "git kullanıcı adı",
           "cc63fce906": "branch adlandırma",
-          "b559bf9899": "e.g. feature",
           "aefa1ecb59": "Yapılandırılmış git kullanıcı adı yok",
           "3d172725cc": "Yok",
           "1f32ba27a6": "Özel",

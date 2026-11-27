@@ -22,6 +22,7 @@ export type ComposerModel = ComposerTargetModel & ComposerSourceModel & Composer
 
 export type QuickCreationExecutionInput = Pick<
   ComposerModel,
+  | 'branchType'
   | 'clearNewWorkspaceDraft'
   | 'createMultiple'
   | 'effectivePresetId'

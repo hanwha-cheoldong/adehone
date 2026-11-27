@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 
 import { join } from 'node:path'
 
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { Repo } from '../../../../shared/repository/repo-types'
 import type { CreateWorktreeArgs } from '../../../../shared/worktree/create-types'
 import { removeTempDirs } from '../../../../shared/testing/remove-temp-dirs.test-support'
@@ -299,7 +299,7 @@ describe('cleanup ownership before candidate fallbacks', () => {
       repoId: 'repo',
       repoPath: f.repoPath,
       worktreePath: path,
-      branch: 'nautilus',
+      branch: 'feat/nautilus',
       head: f.initialTip,
       deleteBranch: true,
       force: true,
@@ -314,7 +314,7 @@ describe('cleanup ownership before candidate fallbacks', () => {
         branchIntent: 'create-new'
       })
       expect(generated.worktreePath).toBe(join(f.workspaceRoot, 'nautilus-2'))
-      expect(generated.branchName).toBe('nautilus-2')
+      expect(generated.branchName).toBe('feat/nautilus-2')
       await git(f.repoPath, 'branch', 'occupied')
       const ordinary = await f.candidate({
         name: 'ordinary',
@@ -339,11 +339,11 @@ describe('exact-name create with real Git', () => {
 
   // Branch prefix none, so each existing branch is the candidate's own twin after host naming.
   it.each([
-    ['release..fix', 'release.fix'],
-    ['Login fix', 'login-fix'],
-    ['🚀 launch', 'rocket-launch'],
+    ['release..fix', 'feat/release.fix'],
+    ['Login fix', 'feat/login-fix'],
+    ['🚀 launch', 'feat/rocket-launch'],
     // The default intent would adopt this unchecked-out branch.
-    ['reusable', 'reusable']
+    ['reusable', 'feat/reusable']
   ])('refuses %s when branch %s exists', async (name, existing) => {
     const f = await fixture()
     await git(f.repoPath, 'branch', existing)
@@ -352,12 +352,12 @@ describe('exact-name create with real Git', () => {
 
   it('creates under this host prefix when only another prefix has the leaf', async () => {
     const f = await fixture('origin', { branchPrefix: 'custom', branchPrefixCustom: 'brennan' })
-    await git(f.repoPath, 'branch', 'alice/login-fix')
+    await git(f.repoPath, 'branch', 'alice/feat/login-fix')
     const picked = await f.create(exact('login fix'))
-    expect(picked.branchName).toBe('brennan/login-fix')
+    expect(picked.branchName).toBe('brennan/feat/login-fix')
     expect(picked.worktreePath).toBe(join(f.workspaceRoot, 'login-fix'))
     expect(await git(picked.worktreePath, 'symbolic-ref', 'HEAD')).toBe(
-      'refs/heads/brennan/login-fix'
+      'refs/heads/brennan/feat/login-fix'
     )
   })
 
@@ -415,12 +415,12 @@ describe('derived slash branches with real Git', () => {
     const first = await f.create(request)
     expect(first.worktreePath).toBe(join(f.workspaceRoot, 'feature-tti_fix_1440'))
     expect(await git(first.worktreePath, 'symbolic-ref', 'HEAD')).toBe(
-      'refs/heads/team/feature/tti_fix_1440'
+      'refs/heads/team/feat/tti-fix-1440'
     )
     const second = await f.create(request)
     expect(second.worktreePath).toBe(join(f.workspaceRoot, 'feature-tti_fix_1440-2'))
     expect(await git(second.worktreePath, 'symbolic-ref', 'HEAD')).toBe(
-      'refs/heads/team/feature/tti_fix_1440-2'
+      'refs/heads/team/feat/tti-fix-1440-2'
     )
   })
 
@@ -435,7 +435,7 @@ describe('derived slash branches with real Git', () => {
       join(f.workspaceRoot, 'feature.lock-.中文-fix.-item.lock.lock')
     )
     expect(await git(picked.worktreePath, 'symbolic-ref', 'HEAD')).toBe(
-      'refs/heads/feature-lock/中文-fix/item.lock-lock'
+      'refs/heads/feat/feature-lock-fix-item.lock-lock'
     )
   })
 })
@@ -445,25 +445,88 @@ describe('derived branch namespace conflicts with real Git', () => {
     'refuses an occupied parent without changing the requested hierarchy (%s)',
     async (branchIntent) => {
       const f = await fixture()
-      await git(f.repoPath, 'branch', 'feature')
+      await git(f.repoPath, 'branch', 'feat')
       await expect(
         f.candidate({ name: 'feature/x', branchNameOverride: undefined, branchIntent })
       ).rejects.toBeInstanceOf(WorktreeCreateCollisionError)
       expect(await git(f.repoPath, 'for-each-ref', '--format=%(refname)', 'refs/heads/')).toBe(
-        'refs/heads/feature\nrefs/heads/main'
+        'refs/heads/feat\nrefs/heads/main'
       )
     }
   )
 
   it('suffixes a name occupied by descendants while keeping the checkout flat', async () => {
     const f = await fixture()
-    await git(f.repoPath, 'branch', 'feature/x')
+    await git(f.repoPath, 'branch', 'feat/feature/x')
     const picked = await f.create({
       name: 'feature',
       branchNameOverride: undefined,
       branchIntent: 'create-new'
     })
     expect(picked.worktreePath).toBe(join(f.workspaceRoot, 'feature-2'))
-    expect(await git(picked.worktreePath, 'symbolic-ref', 'HEAD')).toBe('refs/heads/feature-2')
+    expect(await git(picked.worktreePath, 'symbolic-ref', 'HEAD')).toBe('refs/heads/feat/feature-2')
+  })
+})
+
+describe('Conventional Branch names with real Git', () => {
+  const generated = (name: string, extra: Partial<CreateWorktreeArgs> = {}) => ({
+    name,
+    branchNameOverride: undefined,
+    branchIntent: 'create-new' as const,
+    ...extra
+  })
+  const head = (path: string) => git(path, 'symbolic-ref', '--short', 'HEAD')
+
+  it.each([
+    [{ branchPrefix: 'none' }, 'feat/issue-98-confluence-integration'],
+    [
+      { branchPrefix: 'custom', branchPrefixCustom: 'hanwha-cheoldong' },
+      'hanwha-cheoldong/feat/issue-98-confluence-integration'
+    ]
+  ])('names a linked issue under prefix %o', async (prefix, expected) => {
+    const f = await fixture('origin', prefix)
+    const picked = await f.create(generated('Confluence Integration', { linkedIssue: 98 }))
+    expect(await head(picked.worktreePath)).toBe(expected)
+  })
+
+  it('suffixes duplicates, keeps Hangul from decomposed input and refuses a taken exact name', async () => {
+    const f = await fixture()
+    const name = '로그인 오류 수정'.normalize('NFD')
+    const first = await f.create(generated(name))
+    expect(await head(first.worktreePath)).toBe('feat/로그인-오류-수정')
+    const second = await f.create(generated('로그인 오류 수정'))
+    expect(await head(second.worktreePath)).toBe('feat/로그인-오류-수정-2')
+    await expect(
+      f.candidate(generated(name, { branchIntent: 'create-exact' }))
+    ).rejects.toMatchObject({ code: 'worktree_create_exact_name_taken' })
+  })
+
+  it('names a name with no usable letters workspace-<random> once for every candidate', async () => {
+    const f = await fixture()
+    const random = vi.spyOn(Math, 'random').mockReturnValue(0)
+    try {
+      const first = await f.create(generated('fix/修复登录'))
+      expect(await head(first.worktreePath)).toBe('fix/workspace-aaaaaa')
+      // The taken name gets a suffix on the same seed; a second random draw would hide the collision.
+      const second = await f.create(generated('fix/修复登录'))
+      expect(await head(second.worktreePath)).toBe('fix/workspace-aaaaaa-2')
+      expect(random).toHaveBeenCalledTimes(12)
+    } finally {
+      random.mockRestore()
+    }
+    const linked = await f.create(generated('修复登录', { linkedIssue: 7 }))
+    expect(await head(linked.worktreePath)).toBe('feat/issue-7')
+    const again = await f.create(generated('修复登录', { linkedIssue: 7 }))
+    expect(await head(again.worktreePath)).toBe('feat/issue-7-2')
+  })
+
+  it('refuses a typed name Git rejects with an editable error and creates nothing', async () => {
+    const f = await fixture()
+    await expect(f.candidate(generated('x', { branchNameOverride: 'bad..name' }))).rejects.toThrow(
+      'Git does not accept "bad..name" as a branch name. Edit the branch name and try again.'
+    )
+    expect(await git(f.repoPath, 'for-each-ref', '--format=%(refname)', 'refs/heads/')).toBe(
+      'refs/heads/main'
+    )
   })
 })

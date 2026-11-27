@@ -52,6 +52,7 @@ export function useComposerSourceState(
   const attachmentDropState = useComposerAttachmentDropState(target)
   const targetChangeActions = useTargetChangeActions({
     baseBranch: target.workspaceIdentityState.baseBranch,
+    branchNameOverride: target.workspaceIdentityState.branchNameOverride,
     branchAutoNameRef: target.asyncComposerState.branchAutoNameRef,
     decisions: target.composerTargetStore.decisions,
     folderSourceRepos: target.runtimeTargetSelection.folderSourceRepos,
@@ -238,6 +239,7 @@ export function useComposerSourceState(
   })
   const issueSourceActions = useIssueSourceActions({
     baseBranch: target.workspaceIdentityState.baseBranch,
+    branchNameOverride: target.workspaceIdentityState.branchNameOverride,
     baseBranchNamesWorkspace: target.workspaceIdentityState.baseBranchNamesWorkspace,
     branchAutoNameRef: target.asyncComposerState.branchAutoNameRef,
     isProjectGroupTarget: target.runtimeTargetSelection.isProjectGroupTarget,

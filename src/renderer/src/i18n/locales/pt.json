@@ -7411,7 +7411,6 @@
           "813e15b346": "personalizado",
           "2351aa5a31": "nome de usuário do git",
           "cc63fce906": "nomenclatura de branch",
-          "b559bf9899": "ex.: feature",
           "aefa1ecb59": "Nenhum nome de usuário do git configurado",
           "3d172725cc": "Nenhum",
           "1f32ba27a6": "Personalizado",
@@ -9964,7 +9963,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "O prefixo não pode conter espaços ou caracteres especiais como ~ ^ : ? * [ \\",
-          "64d70b156a": "As branches serão nomeadas {{example}}",
           "808f9a726e": "Nenhum prefixo será aplicado"
         },
         "HiddenExperimentalGroup": {
