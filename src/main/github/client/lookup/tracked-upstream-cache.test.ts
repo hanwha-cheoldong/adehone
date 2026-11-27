@@ -47,7 +47,7 @@ function entryWithSignature(
   signatureRepoPath?: string
 ): TrackedUpstreamSnapshotCacheEntry {
   return {
-    expiresAt: Date.now() + 60_000,
+    expiresAt: Number.MAX_SAFE_INTEGER,
     gitConfigSignature: signature,
     ...(signatureRepoPath ? { gitConfigSignatureRepoPath: signatureRepoPath } : {}),
     upstreamsByBranchName: new Map()

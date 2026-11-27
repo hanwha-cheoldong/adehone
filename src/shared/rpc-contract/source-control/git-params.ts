@@ -1,6 +1,7 @@
 import { isGitHistoryRefName } from '../../git/history/git-history-revisions'
 import { normalizeSourceControlAiActionDefaults } from '../../source-control/ai/recipes/source-control-ai-actions'
 import { z } from 'zod'
+import { lazyZodSchema } from '../../schema/lazy-zod-schema'
 import { OptionalGitAdmissionTier } from './git-admission-tier-params'
 import { OptionalTuiAgent } from '../workspaces/worktree-params'
 import { isTuiAgent } from '../../agent-launch/catalog/tui-agent-config'
@@ -53,13 +54,15 @@ export const GitResolveConflict = GitFilePath.extend({
   resolution: z.enum(CONFLICT_RESOLUTIONS)
 })
 
-export const GitAddToGitignore = WorktreeSelector.extend({
-  relativePath: z
-    .unknown()
-    .transform((v) => (typeof v === 'string' ? v : ''))
-    .pipe(z.string().min(1, 'Missing path')),
-  isDirectory: z.boolean()
-})
+export const GitAddToGitignore = lazyZodSchema(() =>
+  WorktreeSelector.extend({
+    relativePath: z
+      .unknown()
+      .transform((v) => (typeof v === 'string' ? v : ''))
+      .pipe(z.string().min(1, 'Missing path')),
+    isDirectory: z.boolean()
+  })
+)
 
 export const GitDiff = GitFilePath.extend({
   staged: z.boolean(),

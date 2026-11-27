@@ -7,10 +7,7 @@ import {
   hydrateShellPath,
   mergePathSegments
 } from '../startup/shell-environment/hydrate-shell-path'
-import { getAzureDevOpsAuthStatus } from '../azure-devops/client'
-import { getBitbucketAuthStatus } from '../bitbucket/client'
-import { getBitbucketDataCenterAuthStatus } from '../bitbucket-datacenter/client'
-import { getGiteaAuthStatus } from '../gitea/client'
+import { probeHostedReviewProviderAuth } from './hosted-review-provider-auth'
 import { _resetKnownHostsCache } from '../gitlab/projects/gitlab-known-host-probe'
 import { mergePersistedWindowsPathAsync } from '../pty/environment/windows-environment-path'
 import type { WslPreflightTarget } from '../ipc/preflight/preflight-wsl-agent-detection'
@@ -330,24 +327,17 @@ async function executePreflightCheck(
     detectCommandRuntime('glab', context)
   ])
 
-  const [ghAuthenticated, glabAuthenticated, bitbucket, bitbucketDataCenter, azureDevOps, gitea] =
-    await Promise.all([
-      ghProbe.installed ? isGhAuthenticated(ghProbe) : Promise.resolve(false),
-      glabProbe.installed ? isGlabAuthenticated(glabProbe) : Promise.resolve(false),
-      getBitbucketAuthStatus(),
-      getBitbucketDataCenterAuthStatus(),
-      getAzureDevOpsAuthStatus(),
-      getGiteaAuthStatus()
-    ])
+  const [ghAuthenticated, glabAuthenticated, providerAuth] = await Promise.all([
+    ghProbe.installed ? isGhAuthenticated(ghProbe) : Promise.resolve(false),
+    glabProbe.installed ? isGlabAuthenticated(glabProbe) : Promise.resolve(false),
+    probeHostedReviewProviderAuth()
+  ])
 
   const status = {
     git: { installed: gitProbe.installed },
     gh: { installed: ghProbe.installed, authenticated: ghAuthenticated },
     glab: { installed: glabProbe.installed, authenticated: glabAuthenticated },
-    bitbucket,
-    bitbucketDataCenter,
-    azureDevOps,
-    gitea
+    ...providerAuth
   }
   if (glabProbe.absent) {
     nativeGlabAbsent.add(status)

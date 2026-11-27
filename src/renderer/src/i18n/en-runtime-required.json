@@ -150,7 +150,7 @@
       },
       "NewWorkspaceComposerCard": {
         "addRemoteOrcaServer": "Add Remote Adehone Server",
-        "addRemoteOrcaServerHint": "Pair another Adehone runtime"
+        "addRemoteOrcaServerHint": "Adehone on another computer"
       },
       "PullRequestPage": {
         "filesViewed_one": "{{viewed}} / {{count}} file viewed",
@@ -2127,7 +2127,7 @@
           "identityFileFromConfigHint": "Left empty on purpose: Adehone uses every key ~/.ssh/config resolves for {{value0}}. Type a path to use just that key.",
           "nameInOrca": "Name in Adehone",
           "pairingHelpShareComputer": "Create this under Settings → Remote Adehone Servers → Share this computer on the other computer.",
-          "serverDescription": "Pair with Adehone running on another computer.",
+          "serverDescription": "Pair with Adehone on another computer on the same network.",
           "sshAlreadyExists": "That SSH host is already in Adehone.",
           "sshConfigPickerAddAllEmpty": "Add all to Adehone",
           "sshConfigPickerImportDescription": "Pick a host to fill the form, or add every new host to Adehone’s host list.",
@@ -2144,7 +2144,7 @@
         "AddRepoHostSelector": {
           "addRemoteHostDetail": "SSH host or Adehone server",
           "addRemoteHostDetailWithWsl": "SSH host, Adehone server, or WSL distro",
-          "addRemoteServerDetail": "Pair with Adehone running on another computer.",
+          "addRemoteServerDetail": "Adehone on another computer, no SSH needed.",
           "addWslHostDetail": "Run an Adehone server inside a WSL 2 distro. Experimental."
         },
         "AddRepoNestedImportStep": {
@@ -2158,9 +2158,6 @@
         "AddWslHostFormPanel": {
           "addingHint": "Installing and starting the Adehone server in the distro. The first time can take a minute.",
           "wsl1Reason": "WSL 1 can’t run an Adehone host; convert with {{command}}"
-        },
-        "AutoRenameFailedDialog": {
-          "couldNotGenerateBranchName": "Adehone couldn't generate a branch name for <name>{{name}}</name> from the first agent message."
         },
         "DeleteWorktreeDialog": {
           "removeBatchFolder_one": "Remove <target>{{count}} workspace</target> from Adehone. Project folders on disk will not be deleted.",
@@ -3152,8 +3149,6 @@
           "3b57982bf6": "Git could not safely delete branch \"{{value0}}\" after deleting workspace \"{{value1}}\", so Adehone kept it to avoid losing local commits.",
           "78e08cd877": "Git could not safely delete branch \"{{value0}}\", so Adehone kept it to avoid losing local commits.",
           "81f13f48d2": "Git could not safely delete branch \"{{value0}}\" after deleting worktree \"{{value1}}\", so Adehone kept it to avoid losing local commits.",
-          "903b51c2ed": "Workspace created from {{value0}}, but Adehone could not fast-forward local {{value1}}. {{value2}}",
-          "localBaseRefRefreshFailedDescriptionNamed": "Workspace \"{{value0}}\" was created from {{value1}}, but Adehone could not fast-forward local {{value2}}. {{value3}}",
           "localBaseRefRefreshTurnOffTooltip": "Turns off the Adehone setting {{value0}}. Adehone will stop updating local {{value1}} when you create a workspace, and this warning will stop appearing. New workspaces are unaffected. Turn it back on anytime in Settings › Git.",
           "localBaseRefRefreshTurnedOff": "Adehone will no longer update local {{value0}}",
           "localBaseRefShallowHistory": "Your workspace was created from {{value0}} and is unaffected. Adehone could not also update your local {{value1}} branch because this clone only has recent history, so Git cannot confirm local {{value1}} is just behind. To fix this for every new workspace, run once:",
