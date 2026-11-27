@@ -28,7 +28,7 @@ export type HostOwnedSettingKey = keyof HostOwnedSettings
 
 /** What the host acts on when its profile has no value. */
 const HOST_OWNED_SETTING_FALLBACKS: HostOwnedSettings = {
-  branchPrefix: 'git-username',
+  branchPrefix: 'none',
   branchPrefixCustom: '',
   nestWorkspaces: true,
   refreshLocalBaseRefOnWorktreeCreate: false,

@@ -68,6 +68,13 @@ export function resolveWorkItemAutoName(item: {
   return getWorkspaceSourceName({ ...item, url: '' }).seedName
 }
 
+/** As desktop: an issue names a generated branch, while a typed branch name stays as written. */
+export function keepTypedBranchName(base: { branchNameOverride?: string }): {
+  branchNameOverride?: string
+} {
+  return { branchNameOverride: base.branchNameOverride }
+}
+
 export function resolveLinearAutoName(issue: { identifier: string; title: string }): string {
   return getLinearIssueWorkspaceName(issue)
 }

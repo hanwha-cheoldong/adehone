@@ -46,6 +46,7 @@ export function buildManagedWorktreeCreateArgs(
     baseBranch: params.baseBranch,
     compareBaseRef: params.compareBaseRef,
     branchNameOverride: params.branchNameOverride,
+    ...(params.branchType ? { branchType: params.branchType } : {}),
     ...(params.branchIntent ? { branchIntent: params.branchIntent } : {}),
     linkedIssue: params.linkedIssue,
     linkedPR: params.linkedPR,

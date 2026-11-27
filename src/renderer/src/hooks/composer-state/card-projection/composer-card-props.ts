@@ -1,3 +1,4 @@
+import { composerGeneratedBranch } from './composer-generated-branch'
 import { composerSetupCardProps } from './composer-setup-card-props'
 import { resolveComposerAttachmentTarget } from '../attachments/composer-attachment-target'
 import { getAttachmentLabel } from '@/lib/workspace/creation/new-workspace'
@@ -166,6 +167,7 @@ export function buildComposerCardProps(state: ComposerModel) {
     name,
     onNameValueChange: handleNameValueChange,
     branchNameOverride: isProjectGroupTarget ? undefined : branchNameOverride,
+    generatedBranch: isProjectGroupTarget ? undefined : composerGeneratedBranch(state),
     onBranchNameOverrideChange: isProjectGroupTarget ? () => {} : handleBranchNameOverrideChange,
     parentWorktreeId: isProjectGroupTarget ? null : parentWorktreeId,
     onParentWorktreeIdChange: isProjectGroupTarget ? () => {} : setParentWorktreeId,

@@ -5,7 +5,6 @@ import {
   computeWorktreePath,
   ensurePathWithinWorkspace,
   sanitizeWorktreeName,
-  sanitizeWorktreeBranchName,
   type getWorktreePathSettings
 } from '../../../ipc/worktrees/paths/worktree-logic'
 import { resolveWorktreeCreateDisplayNameRequest } from '../../../ipc/worktrees/creation/worktree-display-name'
@@ -41,6 +40,7 @@ import {
   getSelectedHostedReviewForBranch,
   resolveCreateBranchName
 } from './runtime-worktree-create-git'
+import { createBranchNameSeed } from '../../../ipc/worktrees/creation/worktree-branch-name'
 import { runtimePathExists } from '../catalog/runtime-worktree-filesystem'
 import { assertNoPendingWorktreeRemovalConflict } from '../../../workspaces/removal/worktree-removal-table'
 import { isWorktreePathReserved } from '../../../workspaces/creation/reserved-worktree-path'
@@ -69,7 +69,7 @@ export async function resolveRuntimeLocalWorktreeCreateCandidate(args: {
   pathClaim: WorktreeCreatePathClaim
 }): Promise<RuntimeLocalWorktreeCreateCandidate> {
   const sanitizedName = sanitizeWorktreeName(args.request.name)
-  const branchSafeName = sanitizeWorktreeBranchName(args.request.name)
+  const branchSeed = createBranchNameSeed(args.request)
   let effectiveRequestedName = args.request.name
   let effectiveSanitizedName = sanitizedName
   let branchName = ''
@@ -108,7 +108,7 @@ export async function resolveRuntimeLocalWorktreeCreateCandidate(args: {
         (await resolveCreateBranchName(
           args.repo.path,
           undefined,
-          branchSafeName,
+          branchSeed,
           args.settings,
           args.username,
           args.localWorktreeGitOptions
@@ -168,9 +168,12 @@ export async function resolveRuntimeLocalWorktreeCreateCandidate(args: {
       args.repo.path,
       selectedExistingLocalBranchName ??
         getBranchNameOverrideCandidate(args.request.branchNameOverride, suffix),
-      shouldRetireGeneratedName
-        ? effectiveSanitizedName
-        : getWorktreeCreateCandidate(branchSafeName, suffix),
+      {
+        ...branchSeed,
+        description: shouldRetireGeneratedName
+          ? effectiveSanitizedName
+          : getWorktreeCreateCandidate(branchSeed.description, suffix)
+      },
       args.settings,
       args.username,
       args.localWorktreeGitOptions

@@ -1,3 +1,4 @@
+import { DEFAULT_BRANCH_WORK_TYPE } from '../../../../shared/git/branches/conventional-branch-name'
 import type { RuntimeManagedWorktreeCreateArgs } from './runtime-managed-worktree-create-types'
 import { getBranchConflictKind } from '../../../git/refs/resolution/repo-branch-conflict'
 import { getSelectedReviewBranch } from '../../integrations/reviews/selected-review-branch'
@@ -23,7 +24,8 @@ export async function resolveLegacyRemoteBranch(args: {
   const branch = await resolveCreateBranchName(
     args.repo.path,
     args.request.branchNameOverride,
-    args.sanitizedName,
+    // Only the explicit override is read here.
+    { type: DEFAULT_BRANCH_WORK_TYPE, description: args.sanitizedName },
     args.settings,
     args.username,
     args.localWorktreeGitOptions

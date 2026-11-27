@@ -17,6 +17,7 @@ import { resolveAgentSessionLaunchRoute } from '@/lib/agent-session/launch/routi
 
 export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
   const {
+    branchType,
     clearNewWorkspaceDraft,
     createMultiple,
     effectivePresetId,
@@ -204,6 +205,7 @@ export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
         linkedLinearIssueOrganizationUrlKey,
         branchNameOverride: effectiveBranchNameOverride,
         branchIntent,
+        branchType,
         parentWorktreeId,
         // A lane's host-only column applies only when creating on that host.
         workspaceStatus:
@@ -267,6 +269,7 @@ export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
       }
     },
     [
+      branchType,
       clearNewWorkspaceDraft,
       createMultiple,
       effectivePresetId,

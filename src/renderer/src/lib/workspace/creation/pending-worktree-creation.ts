@@ -114,6 +114,7 @@ export type WorktreeCreationRequest = {
   linkedLinearIssueOrganizationUrlKey?: string | null
   branchNameOverride?: string
   branchIntent?: CreateWorktreeArgs['branchIntent']
+  branchType?: CreateWorktreeArgs['branchType']
   /** Parent picked in the composer's Advanced drawer. Sidebar nesting only, no git effect. */
   parentWorktreeId?: string
   workspaceStatus?: WorkspaceStatus

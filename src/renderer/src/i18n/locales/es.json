@@ -8861,7 +8861,6 @@
         },
         "BranchPrefixFeedback": {
           "6c40c0908f": "El prefijo no puede contener espacios ni caracteres especiales como ~ ^ : ? * [ \\",
-          "64d70b156a": "Las ramas se llamarán {{example}}",
           "808f9a726e": "No se aplicará ningún prefijo"
         },
         "GitPane": {
@@ -8879,7 +8878,6 @@
           "813e15b346": "personalizado",
           "2351aa5a31": "usuario de Git",
           "cc63fce906": "nombres de rama",
-          "b559bf9899": "p. ej. feature",
           "aefa1ecb59": "No hay ningún usuario de Git configurado",
           "3d172725cc": "Ninguno",
           "1f32ba27a6": "Personalizado",

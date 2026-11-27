@@ -1,3 +1,4 @@
+import { resolveBranchTicket } from '../../../shared/git/branches/branch-ticket'
 import { access } from 'node:fs/promises'
 import { parseWorkspaceKey } from '../../../shared/workspace/identity/workspace-scope'
 import { LOCAL_EXECUTION_HOST_ID } from '../../../shared/execution-host/execution-host'
@@ -102,6 +103,10 @@ export function firstWorkRenameDeps(
         meta.preserveBranchOnDelete !== true &&
         meta.branchNameIsUserChosen !== true
       )
+    },
+    getBranchTicket: (worktreeId) => {
+      const meta = localMeta(worktreeId)
+      return meta ? resolveBranchTicket(meta) : undefined
     },
     setDisplayName: (worktreeId, displayName) => {
       rememberBranchRenameFailureOutput(worktreeId, null)

@@ -70,7 +70,8 @@ const COMMAND_SCOPED_FLAG_HELP: Record<string, Record<string, string>> = {
     limit: '--limit <n>            Maximum matching workspaces (default 50)'
   },
   'worktree create': {
-    branch: '--branch <name>        Git branch name to use instead of the prefixed default',
+    branch: '--branch <name>        Git branch name to use instead of the generated one',
+    type: '--type <type>          Generated branch type: feat, fix, hotfix, release or chore',
     reference:
       '--reference <url-or-jira-key> Attach an issue/review URL or Jira key; repeat for several',
     'reference-site': '--reference-site <id> Jira site for bare keys; see orca jira connection',
