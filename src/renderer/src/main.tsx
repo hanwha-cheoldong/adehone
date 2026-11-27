@@ -58,7 +58,6 @@ if (
   })
 ) {
   void import('react-grab').then(({ init }) => init())
-  void import('react-grab/styles.css')
 }
 
 applyWindowMaterialToDocument()
