@@ -452,6 +452,14 @@
     },
     "templateSkills": {
       "lines": {
+        "adehone-build-resolver": "Minimal-change build and typecheck fixes, stopping when the same error survives 3 attempts.",
+        "adehone-code-review": "Severity-ranked review of correctness, TypeScript, React, Electron boundaries, and repository rules.",
+        "adehone-electron-architecture": "Main, preload, and renderer roles, and IPC contracts with sender checks, input validation, and no generic bridge.",
+        "adehone-electron-security": "The 20-item Electron security checklist, secrets, and review-only guidance for packaging, signing, and auto-update.",
+        "adehone-planner": "Reads repository rules and work-item contracts, reports feasibility questions first, and checks platform, remote, mobile, and folder workspace impact.",
+        "adehone-react-ui": "The repository design system first, then React state, effects, accessibility, and performance.",
+        "adehone-testing-proof": "Proof by running, committed tests only as an exception, and hidden background UI checks.",
+        "adehone-verification-loop": "The repository gate plus diff, execution proof, security, and environment checks; unchecked means unverified.",
         "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.",
         "android-compose-patterns": "Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.",
         "android-java-legacy": "Legacy Android Java maintenance, Java-Kotlin interop, memory leak fixes, JUnit+Mockito tests, and Desugaring.",
@@ -500,6 +508,28 @@
       }
     },
     "templates": {
+      "adehone-dev": {
+        "does": "Plans and implements Electron process, IPC, security, and React UI work, fixes build errors, and reviews changes across desktop platforms, remote hosts, mobile impact, and folder workspaces.",
+        "events": {
+          "pr-verify": {
+            "action": "Verify and review it",
+            "trigger": "When a pull request is opened or updated"
+          }
+        },
+        "example1": "Reported two feasibility questions on a work item before editing, then proved each done criterion with a hidden background run; Windows and SSH: unverified.",
+        "example2": "Flagged a new IPC handler with no sender check and a preload method that accepted any channel name.",
+        "firstChat": "Point it at an Adehone workspace or give it a task or a product planning work item. It reads the repository’s own rules first, reports feasibility problems and questions before editing, then builds, proves the change by running it, verifies, and reviews. Anything it did not check is reported as unverified.",
+        "line": "Plans, builds, proves, and reviews Adehone features and fixes with Electron architecture and security guides.",
+        "name": "Adehone development",
+        "reports": "Here, after verification and when its checks run",
+        "schedules": {
+          "daily-morning-check": {
+            "what": "Daily Adehone typecheck healthcheck",
+            "when": "Weekdays at 9 AM"
+          }
+        },
+        "watches": "Adehone workspaces, tasks, work items, and pull requests you hand it"
+      },
       "android-dev": {
         "does": "Plans and implements Clean Architecture, Compose, Coroutines/Flows, TDD tests, Gradle fixes, and hardened WebView/security code.",
         "events": {

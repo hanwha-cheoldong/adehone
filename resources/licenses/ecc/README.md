@@ -22,3 +22,19 @@ In the built-in `ios-dev` bot template, the skills are Orca's own text except fo
 | `swift-code-review` | review report format shared by ECC's reviewer agents |
 | `xcode-build-resolver`, `ios-verification-loop` | `agents/swift-build-resolver.md` |
 | `swift-tdd-testing` | `rules/swift/testing.md` |
+
+## Adehone skills
+
+In the built-in `adehone-dev` bot template, the skills are Orca's own text except for passages like these.
+ECC's test-first and coverage-target rules are not included.
+
+| Orca skill | ECC source |
+|---|---|
+| `adehone-planner` | `agents/planner.md` |
+| `adehone-electron-security` | `agents/security-reviewer.md` |
+| `adehone-react-ui` | `rules/react/hooks.md`, `rules/react/patterns.md`, `agents/react-reviewer.md` |
+| `adehone-build-resolver` | `agents/build-error-resolver.md`, `agents/react-build-resolver.md` |
+| `adehone-code-review` | `agents/code-reviewer.md`, `agents/react-reviewer.md`, `agents/typescript-reviewer.md` |
+| `adehone-verification-loop` | `skills/verification-loop` |
+
+These skills carry the notice in their own `references/ecc-license.md`.

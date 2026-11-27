@@ -5185,6 +5185,28 @@
             "action": "Gradle 테스트 및 브리지/R8 검증 실행"
           }
         }
+      },
+      "adehone-dev": {
+        "name": "Adehone 개발",
+        "line": "Electron 구조·보안 가이드로 Adehone 기능과 버그 수정을 계획·구현·증명·리뷰합니다.",
+        "firstChat": "Adehone 워크스페이스를 지정하거나 작업 또는 제품 기획 일감을 전달하세요. 저장소의 규칙을 먼저 읽고, 코드를 고치기 전에 실현성 문제와 질문을 보고한 뒤 구현, 실행 증명, 검증, 리뷰를 진행합니다. 확인하지 않은 것은 미확인으로 보고합니다.",
+        "watches": "전달한 Adehone 워크스페이스, 작업, 일감, 풀 리퀘스트",
+        "does": "Electron 프로세스·IPC·보안·React UI 작업을 계획·구현하고 빌드 오류를 해결하며, 데스크톱 플랫폼·원격 호스트·모바일 영향·폴더 워크스페이스를 고려해 변경을 리뷰합니다.",
+        "reports": "여기, 검증 후와 예약 점검 실행 시",
+        "example1": "일감의 실현성 질문 2건을 코드 수정 전에 보고한 뒤 각 완료 조건을 숨김 백그라운드 실행으로 증명했습니다. Windows와 SSH는 미확인입니다.",
+        "example2": "sender 확인이 없는 새 IPC 핸들러와 아무 채널 이름이나 받는 preload 메서드를 발견했습니다.",
+        "schedules": {
+          "daily-morning-check": {
+            "when": "평일 오전 9시",
+            "what": "일일 Adehone 타입체크 헬스체크"
+          }
+        },
+        "events": {
+          "pr-verify": {
+            "trigger": "풀 리퀘스트가 열리거나 업데이트될 때",
+            "action": "검증하고 리뷰"
+          }
+        }
       }
     },
     "tidyUp": {
@@ -5286,7 +5308,15 @@
         "mobile-web-build-resolver": "최소 변경으로 빌드·타입 체크·번들러 오류를 해결하고, 3번 시도 후 실패하면 중단하며, 주요 버전 업그레이드는 승인을 받습니다.",
         "mobile-web-verification-loop": "6단계 검증 게이트(빌드/번들 예산, 타입체크/린트, 단위·E2E, 보안·브리지 diff, Vitals·a11y, 인수 승인).",
         "mobile-web-webview-bridge": "Android/iOS 통합 JS 브리지 클라이언트(11종 디바이스 API), 오리진 검증, 브라우저 폴백, 크로스봇 동기화.",
-        "mobile-web-performance-pwa": "Core Web Vitals 목표, 번들 예산, 이미지·폰트 로딩, 컴포지터 전용 애니메이션, 안전한 PWA 캐싱 전략."
+        "mobile-web-performance-pwa": "Core Web Vitals 목표, 번들 예산, 이미지·폰트 로딩, 컴포지터 전용 애니메이션, 안전한 PWA 캐싱 전략.",
+        "adehone-planner": "저장소 규칙과 일감 계약을 읽고, 실현성 질문을 먼저 보고하며, 플랫폼·원격·모바일·폴더 워크스페이스 영향을 확인합니다.",
+        "adehone-electron-architecture": "main·preload·renderer 역할과, sender 확인·입력 검증을 거치고 범용 브리지가 없는 IPC 계약.",
+        "adehone-electron-security": "Electron 보안 체크리스트 20개 항목, 비밀값, 패키징·서명·자동 업데이트 검토 전용 지침.",
+        "adehone-react-ui": "저장소 디자인 시스템을 우선하고, React 상태·effect·접근성·성능을 다룹니다.",
+        "adehone-testing-proof": "실행으로 증명하고, 테스트 커밋은 예외로 두며, UI는 숨김 백그라운드에서 확인합니다.",
+        "adehone-build-resolver": "최소 변경으로 빌드·타입체크를 고치고, 같은 오류가 3번 수정 후에도 남으면 중단합니다.",
+        "adehone-code-review": "정확성, TypeScript, React, Electron 경계, 저장소 규칙을 심각도 순으로 리뷰합니다.",
+        "adehone-verification-loop": "저장소 게이트에 diff·실행 증명·보안·환경 점검을 더하며, 확인하지 않은 것은 미확인입니다."
       },
       "androidPlanner": "안드로이드 플래너",
       "androidCleanArchitecture": "클린 아키텍처",
@@ -5315,7 +5345,15 @@
       "mobileWebBuildResolver": "빌드 오류 해결",
       "mobileWebVerificationLoop": "6단계 검증 루프",
       "mobileWebWebviewBridge": "WebView JS 브리지 · 11종 디바이스 API",
-      "mobileWebPerformancePwa": "성능 및 PWA 규칙"
+      "mobileWebPerformancePwa": "성능 및 PWA 규칙",
+      "adehonePlanner": "Adehone 플래너",
+      "adehoneElectronArchitecture": "Adehone Electron 구조와 IPC",
+      "adehoneElectronSecurity": "Adehone Electron 보안",
+      "adehoneReactUi": "Adehone React UI",
+      "adehoneTestingProof": "Adehone 실행 증명",
+      "adehoneBuildResolver": "Adehone 빌드 오류 해결",
+      "adehoneCodeReview": "Adehone 코드 리뷰",
+      "adehoneVerificationLoop": "Adehone 검증 루프"
     },
     "waits": {
       "cancel": "취소",
