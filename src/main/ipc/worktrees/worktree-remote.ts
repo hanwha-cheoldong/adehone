@@ -81,7 +81,6 @@ type CreateWorktreeArgsWithSystemProvenance = CreateWorktreeArgs & {
 }
 import {
   sanitizeWorktreeName,
-  sanitizeWorktreeBranchName,
   computeWorktreePath,
   computeWorkspaceRootAsync,
   ensurePathWithinWorkspace,
@@ -92,7 +91,12 @@ import {
   resolveWorktreeCreateDisplayNameRequest,
   resolveWorktreeCreateDisplayNameMeta
 } from './creation/worktree-display-name'
-import { computeValidatedBranchName } from './creation/worktree-branch-name'
+import {
+  computeValidatedBranchName,
+  createBranchNameSeed,
+  explicitBranchNameError
+} from './creation/worktree-branch-name'
+import type { ConventionalBranchParts } from '../../../shared/git/branches/conventional-branch-name'
 import { mergeWorktree } from './metadata/worktree-metadata-merge'
 import { resolveCreatedWorktree } from './creation/created-worktree-reconciliation'
 import { notifyLineageRepos } from '../../workspaces/catalog/worktree-lineage-change-notification'
@@ -533,21 +537,25 @@ async function spawnLocalStartupAndSetupTerminals(args: {
 async function resolveCreateBranchName(
   repoPath: string,
   branchNameOverride: string | undefined,
-  sanitizedName: string,
+  generated: ConventionalBranchParts,
   settings: BranchPrefixSettings,
   username: string | null,
   gitOptions: { wslDistro?: string } = {}
 ): Promise<string> {
   if (!branchNameOverride) {
-    return computeValidatedBranchName(sanitizedName, settings, username)
+    return computeValidatedBranchName(generated, settings, username)
   }
   if (branchNameOverride.startsWith('-')) {
     throw new Error('Branch name must not start with "-"')
   }
-  await gitExecFileAsync(['check-ref-format', '--branch', branchNameOverride], {
-    cwd: repoPath,
-    ...gitOptions
-  })
+  try {
+    await gitExecFileAsync(['check-ref-format', '--branch', branchNameOverride], {
+      cwd: repoPath,
+      ...gitOptions
+    })
+  } catch (error) {
+    throw explicitBranchNameError(branchNameOverride, error)
+  }
   return branchNameOverride
 }
 
@@ -1080,7 +1088,7 @@ async function performLocalWorktreeCreate(
 
   const requestedName = args.name
   const sanitizedName = sanitizeWorktreeName(args.name)
-  const branchSafeName = sanitizeWorktreeBranchName(args.name)
+  const branchSeed = createBranchNameSeed(args)
   const displayNameRequest = resolveWorktreeCreateDisplayNameRequest(
     args.displayName,
     args.displayNameKind,
@@ -1245,7 +1253,7 @@ async function performLocalWorktreeCreate(
         (await resolveCreateBranchName(
           repo.path,
           undefined,
-          branchSafeName,
+          branchSeed,
           settings,
           username,
           localWorktreeGitOptions
@@ -1261,7 +1269,7 @@ async function performLocalWorktreeCreate(
     branchName = await resolveCreateBranchName(
       repo.path,
       args.branchNameOverride,
-      branchSafeName,
+      branchSeed,
       settings,
       username,
       localWorktreeGitOptions
@@ -1285,7 +1293,7 @@ async function performLocalWorktreeCreate(
     branchName = await resolveCreateBranchName(
       repo.path,
       args.branchNameOverride,
-      branchSafeName,
+      branchSeed,
       settings,
       username,
       localWorktreeGitOptions
@@ -1373,9 +1381,12 @@ async function performLocalWorktreeCreate(
         selectedExistingLocalBranchName
           ? selectedExistingLocalBranchName
           : getBranchNameOverrideCandidate(args.branchNameOverride, suffix),
-        shouldRetireGeneratedName
-          ? effectiveSanitizedName
-          : getWorktreeCreateCandidate(branchSafeName, suffix),
+        {
+          ...branchSeed,
+          description: shouldRetireGeneratedName
+            ? effectiveSanitizedName
+            : getWorktreeCreateCandidate(branchSeed.description, suffix)
+        },
         settings,
         username,
         localWorktreeGitOptions

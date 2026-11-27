@@ -85,13 +85,15 @@ describe('adehone build version patterns', () => {
   })
 
   it('formats display version cleanly without redundant adehone prefix in orca portion', () => {
-    expect(ADEHONE_VERSION).toBe('0.1')
+    expect(ADEHONE_VERSION).toBe('0.1.0')
     expect(formatAdehoneDisplayVersion('0.1.0-1.4.214-daily.202611160530')).toBe(
-      '0.1 (Orca 1.4.214-daily.202611160530)'
+      '0.1.0 (Orca 1.4.214-daily.202611160530)'
     )
     expect(formatAdehoneDisplayVersion('0.1-1.4.214-daily.202611160530')).toBe(
-      '0.1 (Orca 1.4.214-daily.202611160530)'
+      '0.1.0 (Orca 1.4.214-daily.202611160530)'
     )
-    expect(formatAdehoneDisplayVersion('1.4.214')).toBe('0.1 (Orca 1.4.214)')
+    expect(formatAdehoneDisplayVersion('1.4.214')).toBe('0.1.0 (Orca 1.4.214)')
+    expect(formatAdehoneDisplayVersion('0.1')).toBe('0.1.0')
+    expect(formatAdehoneDisplayVersion('0.1.0')).toBe('0.1.0')
   })
 })

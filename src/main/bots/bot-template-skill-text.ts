@@ -1,5 +1,13 @@
 // Our own SKILL.md and optional extra files (e.g. references/) for each template skill.
 import type { BotTemplateSkill } from '../../shared/bots/bot-templates'
+import * as adehoneBuildResolver from './bot-template-skills/adehone-build-resolver'
+import * as adehoneCodeReview from './bot-template-skills/adehone-code-review'
+import * as adehoneElectronArchitecture from './bot-template-skills/adehone-electron-architecture'
+import * as adehoneElectronSecurity from './bot-template-skills/adehone-electron-security'
+import * as adehonePlanner from './bot-template-skills/adehone-planner'
+import * as adehoneReactUi from './bot-template-skills/adehone-react-ui'
+import * as adehoneTestingProof from './bot-template-skills/adehone-testing-proof'
+import * as adehoneVerificationLoop from './bot-template-skills/adehone-verification-loop'
 import * as androidCleanArchitecture from './bot-template-skills/android-clean-architecture'
 import * as androidComposePatterns from './bot-template-skills/android-compose-patterns'
 import * as androidJavaLegacy from './bot-template-skills/android-java-legacy'
@@ -95,6 +103,14 @@ const BOT_TEMPLATE_SKILL_MODULES: Record<BotTemplateSkill, SkillModule> = {
   'mobile-web-verification-loop': mobileWebVerificationLoop,
   'mobile-web-webview-bridge': mobileWebWebviewBridge,
   'mobile-web-performance-pwa': mobileWebPerformancePwa,
+  'adehone-planner': adehonePlanner,
+  'adehone-electron-architecture': adehoneElectronArchitecture,
+  'adehone-electron-security': adehoneElectronSecurity,
+  'adehone-react-ui': adehoneReactUi,
+  'adehone-testing-proof': adehoneTestingProof,
+  'adehone-build-resolver': adehoneBuildResolver,
+  'adehone-code-review': adehoneCodeReview,
+  'adehone-verification-loop': adehoneVerificationLoop,
   'product-lens': productLens,
   'prd-authoring': prdAuthoring,
   'product-capability': productCapability,

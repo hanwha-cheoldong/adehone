@@ -20,6 +20,7 @@ import { assertRuntimeEnvironmentCapability } from '../../../../runtime/rpc/comp
 import { runtimeTargetSupportsCapability } from '../../../../runtime/rpc/compatibility/runtime-target-capability'
 import { runtimeTargetForRepoOwner } from '@/lib/workspace/ownership/repo-runtime-owner'
 import {
+  WORKTREE_CREATE_BRANCH_TYPE_RUNTIME_CAPABILITY,
   WORKTREE_LINKED_WORK_ITEM_CONTEXT_RUNTIME_CAPABILITY,
   WORKTREE_OPEN_EXISTING_BRANCH_RUNTIME_CAPABILITY,
   WORKTREE_OPEN_EXISTING_BRANCH_V2_RUNTIME_CAPABILITY,
@@ -137,6 +138,15 @@ export function createCreateWorktree(
           )
         }
         request.branchIntent = options.branchIntent
+      }
+      if (
+        options?.branchType &&
+        !(await runtimeTargetSupportsCapability(
+          target,
+          WORKTREE_CREATE_BRANCH_TYPE_RUNTIME_CAPABILITY
+        ))
+      ) {
+        throw new Error('Update Adehone on the workspace host to choose a branch type.')
       }
       // Why outside the retry loop: a branch-name conflict retry must not re-warn about the same dropped pick.
       const parent = resolveWorktreeCreateParent(get(), options?.parentWorktreeId, creationHostId)

@@ -3,6 +3,7 @@ import type { ComposerModel } from '../composer-model'
 type TargetChangeActionsInput = Pick<
   ComposerModel,
   | 'baseBranch'
+  | 'branchNameOverride'
   | 'branchAutoNameRef'
   | 'decisions'
   | 'folderSourceRepos'
@@ -37,10 +38,7 @@ type TargetChangeActionsInput = Pick<
 >
 
 import { useCallback } from 'react'
-import {
-  isLinearLinkedWorkItem,
-  getLinearLinkedWorkItemBranchName
-} from '@/lib/work-items/linear/linear-linked-work-item'
+import { isLinearLinkedWorkItem } from '@/lib/work-items/linear/linear-linked-work-item'
 import { shouldPreserveWorkspaceSourceOnRepoChange } from '../../../../../shared/new-workspace/workspace-source'
 import {
   buildProjectHostSetupOptions,
@@ -55,6 +53,7 @@ import { getNewWorkspaceDialogEligibleRepos } from '../../../../../shared/new-wo
 export function useTargetChangeActions(input: TargetChangeActionsInput) {
   const {
     baseBranch,
+    branchNameOverride,
     branchAutoNameRef,
     decisions,
     folderSourceRepos,
@@ -116,9 +115,9 @@ export function useTargetChangeActions(input: TargetChangeActionsInput) {
         }
       }
       const preserveLinearLinkedWorkItem = isLinearLinkedWorkItem(linkedWorkItem)
-      const preservedLinearBranchName = preserveLinearLinkedWorkItem
-        ? getLinearLinkedWorkItemBranchName(linkedWorkItem)
-        : undefined
+      // A branch name typed for a workspace-scoped Linear issue is not tied to the repo.
+      const preservedBranchName =
+        preserveLinearLinkedWorkItem && !branchAutoNameRef.current ? branchNameOverride : undefined
       setRepoId(value)
       if (!options.preserveStartFrom) {
         setSelectedProjectHostSetupOverrideId(null)
@@ -158,11 +157,10 @@ export function useTargetChangeActions(input: TargetChangeActionsInput) {
         setBaseBranch(undefined)
         setCompareBaseRef(undefined)
         setPushTarget(undefined)
-        // Why: Linear sources are workspace-scoped, so their canonical branch survives choosing a different implementation repo.
-        setBranchNameOverride(preservedLinearBranchName)
-        setBranchNameOverridePreservesNameEdits(Boolean(preservedLinearBranchName))
-        branchAutoNameRef.current = preservedLinearBranchName ?? ''
-        // Clear branch-reuse state on repo switch even when a workspace-scoped Linear override survives (#5181).
+        setBranchNameOverride(preservedBranchName)
+        setBranchNameOverridePreservesNameEdits(Boolean(preservedBranchName))
+        branchAutoNameRef.current = ''
+        // Clear branch-reuse state on repo switch even when a typed branch name survives (#5181).
         setReuseEligibleBranch(null)
         setReuseSelectedBranch(false)
         setForkPushWarning(null)
@@ -172,6 +170,7 @@ export function useTargetChangeActions(input: TargetChangeActionsInput) {
     [
       baseBranch,
       linkedWorkItem,
+      branchNameOverride,
       repoId,
       retargetGitHubPrStartPointSelection,
       setRepoId,

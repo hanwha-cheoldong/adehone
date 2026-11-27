@@ -49,7 +49,7 @@ export function resolveWorkItemSourceRow(
     }
   }
   if (row.kind === 'linear') {
-    const { linearBranchName: _branchName, ...source } = buildLinearWorkspaceSource(row.issue)
+    const source = buildLinearWorkspaceSource(row.issue)
     return {
       ...source,
       identifier: row.issue.identifier,

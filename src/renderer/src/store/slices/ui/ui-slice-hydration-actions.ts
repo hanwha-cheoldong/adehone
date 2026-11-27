@@ -75,6 +75,7 @@ import {
 import { hydrateWslMovedSection } from './ui-slice-wsl-moved-section-actions'
 import { hydrateBrowserPaneLayout } from './browser-pane-layout-hydration'
 import { hydrateStatusBarItems } from './ui-slice-hydration-status-bar-items'
+import { hydrateSetupGuide } from './ui-slice-setup-guide-hydration'
 
 const MAX_LEFT_SIDEBAR_WIDTH = 500
 const MAX_RIGHT_SIDEBAR_WIDTH = 4000
@@ -253,10 +254,7 @@ export function createUiHydrationActions(set: UISliceSet, _get: UISliceGet): Par
                   ),
                   s.wslMovedProjects
                 ),
-          setupGuideSidebarDismissed: ui.setupGuideSidebarDismissed === true,
-          setupGuideBrowserMilestoneMigrated: ui.setupGuideBrowserMilestoneMigrated === true,
-          setupGuideBrowserMilestoneLegacyComplete:
-            ui.setupGuideBrowserMilestoneLegacyComplete === true,
+          ...hydrateSetupGuide(ui),
           browserImportHintHidden: ui.browserImportHintHidden === true,
           mobileEmulatorTabIntroDismissed: ui.mobileEmulatorTabIntroDismissed === true,
           mobileEmulatorAgentSetupDismissed: ui.mobileEmulatorAgentSetupDismissed === true,

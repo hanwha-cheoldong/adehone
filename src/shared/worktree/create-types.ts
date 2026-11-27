@@ -1,3 +1,4 @@
+import type { BranchWorkType } from '../git/branches/conventional-branch-name'
 import type { WorktreeCatalogVersion } from './catalog/catalog-version'
 import type { ExecutionHostId } from '../execution-host/execution-host'
 import type { ArchiveHookOverride } from './removal/archive-hook-removal-gate'
@@ -107,6 +108,8 @@ export type CreateWorktreeArgs = {
   compareBaseRef?: string
   /** Existing local branches may contain slashes that the filesystem-safe worktree name cannot. */
   branchNameOverride?: string
+  /** Type of a generated branch; absent reads it from the name, else `feat`. Older hosts ignore it. */
+  branchType?: BranchWorkType
   /** V1 open-existing retains legacy tip/collision policy; V2 pins explicit reuse regardless of remote divergence.
    * create-exact makes only the unsuffixed new branch, or refuses before creating anything. */
   branchIntent?: 'open-existing' | 'open-existing-v2' | 'create-new' | 'create-exact'

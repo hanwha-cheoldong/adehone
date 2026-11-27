@@ -20,6 +20,7 @@ import type { WorkspaceLinkedItem } from '../../../../../../shared/worktree/type
 /** Trailing bag for `createWorktree` args that outgrew its positional list. */
 export type CreateWorktreeCallOptions = {
   branchIntent?: CreateWorktreeArgs['branchIntent']
+  branchType?: CreateWorktreeArgs['branchType']
   /** Captured before background preparation so navigation cannot retarget creation. */
   executionHostId?: ExecutionHostId
   linkedWorkItem?: WorkspaceLinkedItem | null
@@ -67,7 +68,10 @@ export type CreatedWorktreeResult = CreateWorktreeResult & {
 }
 
 /** Pack create inputs once for both transports; retry-specific fields live in WorktreeCreateAttempt. */
-export type WorktreeCreateRequest = Omit<CreateWorktreeArgs, 'parentWorkspace' | 'manualOrder'> & {
+export type WorktreeCreateRequest = Omit<
+  CreateWorktreeArgs,
+  'parentWorkspace' | 'manualOrder' | 'branchType'
+> & {
   options?: CreateWorktreeCallOptions
 }
 
@@ -95,6 +99,7 @@ function sharedCreateFields(
     baseBranch: request.baseBranch,
     ...(request.compareBaseRef ? { compareBaseRef: request.compareBaseRef } : {}),
     ...(attempt.branchNameOverride ? { branchNameOverride: attempt.branchNameOverride } : {}),
+    ...(options?.branchType ? { branchType: options.branchType } : {}),
     ...(request.branchIntent ? { branchIntent: request.branchIntent } : {}),
     setupDecision: request.setupDecision,
     ...(options ? pickApprovedSetupHashes(options) : {}),

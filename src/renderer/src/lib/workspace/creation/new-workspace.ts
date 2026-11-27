@@ -24,7 +24,6 @@ export type LinkedWorkItemSummary = Omit<FolderWorkspaceLinkedTask, 'provider'> 
   provider?: FolderWorkspaceLinkedTask['provider']
   linearWorkspaceId?: string
   linearOrganizationUrlKey?: string
-  linearBranchName?: string
   linkedContext?: LinkedWorkItemContext
 }
 

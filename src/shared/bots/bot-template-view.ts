@@ -86,6 +86,22 @@ export const BOT_TEMPLATE_SKILL_LINES: Record<BotTemplateSkill, string> = {
     'Unified JS bridge client for Android/iOS (11 Device APIs), origin checks, browser fallback, and cross-bot sync.',
   'mobile-web-performance-pwa':
     'Core Web Vitals targets, bundle budgets, image/font loading, compositor-only motion, and safe PWA caching.',
+  'adehone-planner':
+    'Reads repository rules and work-item contracts, reports feasibility questions first, and checks platform, remote, mobile, and folder workspace impact.',
+  'adehone-electron-architecture':
+    'Main, preload, and renderer roles, and IPC contracts with sender checks, input validation, and no generic bridge.',
+  'adehone-electron-security':
+    'The 20-item Electron security checklist, secrets, and review-only guidance for packaging, signing, and auto-update.',
+  'adehone-react-ui':
+    'The repository design system first, then React state, effects, accessibility, and performance.',
+  'adehone-testing-proof':
+    'Proof by running, committed tests only as an exception, and hidden background UI checks.',
+  'adehone-build-resolver':
+    'Minimal-change build and typecheck fixes, stopping when the same error survives 3 attempts.',
+  'adehone-code-review':
+    'Severity-ranked review of correctness, TypeScript, React, Electron boundaries, and repository rules.',
+  'adehone-verification-loop':
+    'The repository gate plus diff, execution proof, security, and environment checks; unchecked means unverified.',
   'product-lens':
     'Validate the why before building: product diagnostic (PRODUCT-BRIEF.md), user journey audit, and ICE prioritization.',
   'prd-authoring':

@@ -20,6 +20,8 @@ export type ComposerIdentityModel = {
   compareBaseRef: string | undefined
   setCompareBaseRef: React.Dispatch<React.SetStateAction<string | undefined>>
   branchNameOverride: string | undefined
+  branchType?: CreateWorktreeArgs['branchType']
+  setBranchType: React.Dispatch<React.SetStateAction<CreateWorktreeArgs['branchType']>>
   branchIntent?: CreateWorktreeArgs['branchIntent']
   setBranchIntent: React.Dispatch<React.SetStateAction<CreateWorktreeArgs['branchIntent']>>
   setBranchNameOverride: React.Dispatch<React.SetStateAction<string | undefined>>

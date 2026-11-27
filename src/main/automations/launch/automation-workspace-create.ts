@@ -16,8 +16,9 @@ export function buildHeadlessAutomationWorkspaceName(
 ): string {
   // Bound names for branch/path displays while retaining a deterministic run timestamp.
   const slug = runTitle
+    .normalize('NFC')
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^a-z0-9\p{Script=Hangul}]+/gu, '-')
     .replace(/^-|-$/g, '')
     .slice(0, 40)
   const stamp = new Date(scheduledFor).toISOString().replace(/[-:]/g, '').slice(0, 13)

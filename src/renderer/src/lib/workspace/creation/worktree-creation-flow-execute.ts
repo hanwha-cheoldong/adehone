@@ -93,6 +93,7 @@ export async function executeWorktreeCreation(
         {
           ...setupCreateArgs(preparedRequest),
           ...(preparedRequest.branchIntent ? { branchIntent: preparedRequest.branchIntent } : {}),
+          ...(preparedRequest.branchType ? { branchType: preparedRequest.branchType } : {}),
           ...(hostAgentLaunch ? { hostAgentLaunch } : {}),
           ...worktreeCreationAgentLaunchOptions(preparedRequest),
           executionHostId: creationHostId,

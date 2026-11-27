@@ -1,3 +1,4 @@
+import { DEFAULT_BRANCH_WORK_TYPE } from '../../../../shared/git/branches/conventional-branch-name'
 import { WorktreeCreateCollisionError } from '../../../../shared/new-workspace/worktree-create-collision'
 import { getBranchConflictKind } from '../../../git/refs/resolution/repo-branch-conflict'
 import { getSelectedReviewBranch } from '../../integrations/reviews/selected-review-branch'
@@ -34,7 +35,8 @@ export async function resolveExplicitReuseBranch(args: {
   const branchName = await resolveCreateBranchName(
     args.repo.path,
     args.request.branchNameOverride,
-    args.sanitizedName,
+    // Only the explicit override is read here.
+    { type: DEFAULT_BRANCH_WORK_TYPE, description: args.sanitizedName },
     args.settings,
     args.username,
     args.localWorktreeGitOptions

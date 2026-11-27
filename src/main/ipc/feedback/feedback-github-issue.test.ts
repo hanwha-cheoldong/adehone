@@ -150,7 +150,7 @@ describe('Adehone feedback URL and environment footer', () => {
       osRelease: '24.0.0',
       arch: 'arm64'
     })
-    expect(footer).toBe('---\nAdehone: 0.1 (Orca 1.4.214)\nOS: darwin 24.0.0 (arm64)')
+    expect(footer).toBe('---\nAdehone: 0.1.0 (Orca 1.4.214)\nOS: darwin 24.0.0 (arm64)')
     expect(stripClientEnvironmentFooter(`Hello\n\n${footer}`)).toBe('Hello\n\n')
     expect(stripClientEnvironmentFooter('Hello\n\n---\nOrca: 1.4.214\nOS: darwin (arm64)')).toBe(
       'Hello\n\n'
@@ -161,6 +161,6 @@ describe('Adehone feedback URL and environment footer', () => {
       'https://github.com/hanwha-cheoldong/adehone/issues/new'
     )
     expect(parsed.searchParams.get('title')).toBe('[Feedback]: Hello world')
-    expect(parsed.searchParams.get('body')).toContain('Adehone: 0.1 (Orca 1.4.214)')
+    expect(parsed.searchParams.get('body')).toContain('Adehone: 0.1.0 (Orca 1.4.214)')
   })
 })

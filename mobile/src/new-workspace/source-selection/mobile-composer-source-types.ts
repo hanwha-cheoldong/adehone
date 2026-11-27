@@ -2,7 +2,15 @@ import type {
   WorkspaceSourceLinkedItem as MobileLinkedWorkItem,
   WorkspaceSourceSelection
 } from '../../../../src/shared/new-workspace/workspace-source'
+import type { RpcClient } from '../../transport/rpc/rpc-client-contract'
 import type { GitPushTarget as WorkspaceCreateGitPushTarget } from '../../../../src/shared/worktree/types'
+
+export type UseMobileComposerSourceArgs = {
+  client: RpcClient | null
+  selectedRepoId: string | null
+  worktreeBranches?: readonly string[]
+  onError?: (message: string) => void
+}
 
 export type ComposerBaseState = {
   baseBranch?: string

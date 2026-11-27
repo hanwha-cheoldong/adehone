@@ -135,7 +135,7 @@ function writeServers(
         current ? undefined : { url, grant: 0, record: { resource: url } }
       )
       if (!entry) {
-        throw new Error('The bot’s tool credentials changed in another Orca. Try again.')
+        throw new Error('The bot’s tool credentials changed in another Adehone. Try again.')
       }
       created.push(id)
     }

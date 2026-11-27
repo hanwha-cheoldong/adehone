@@ -1,6 +1,8 @@
 {
   "accounts": {
     "antigravity": {
+      "adcHint": "Optional. Adehone uses your gcloud project and the global location. Run gcloud auth application-default login once first.",
+      "apiKeySaveFailed": "Adehone couldn't save the key. Try again.",
       "settingsLoadFailed": "Adehone couldn't load your Antigravity sign-in settings. Try again.",
       "settingsSaveFailed": "Adehone couldn't save your Antigravity sign-in settings. Try again."
     },
@@ -25,11 +27,17 @@
       "description": "Add accounts by running this command in a terminal on the Adehone host. Selection applies to new explicit agent launches on that host; direct SSH relay and Windows-hosted WSL launches use their own credentials.",
       "upgrade": "If accounts do not appear, update or restart the Adehone host."
     },
+    "rename": {
+      "description": "Only the name Adehone shows changes. Leave it blank to show {{email}}.",
+      "unsupportedHost": "Update Adehone on {{host}} to change this setting there."
+    },
     "wslAccountNotApplied": {
       "description": "Agents there use the distro's default Claude and Codex accounts until Adehone in WSL is updated."
     }
   },
   "agentCliUpdate": {
+    "failedDescription": "Adehone ran <code>{{command}}</code> on <strong>{{host}}</strong> to update your {{product}} from <strong>{{installedVersion}}</strong> to <strong>{{latestVersion}}</strong>, and it failed.",
+    "failedDescriptionNoCommand": "Adehone couldn't update your {{product}} on <strong>{{host}}</strong>.",
     "heading_one": "{{count}} CLI update available",
     "heading_other": "{{count}} CLI updates available",
     "statusCount_one": "{{count}} CLI update",
@@ -50,6 +58,11 @@
     "reconnectServer": "Reconnect to this workspace’s Adehone server, then try again.",
     "terminalPromptFailed": "Adehone opened a terminal for {{value0}}, but could not pass it your prompt. Send the prompt in that terminal.",
     "updateServer": "Update Adehone on this workspace’s server, then try again."
+  },
+  "agentSendTargets": {
+    "disabledReason": {
+      "hostUpdateRequired": "Update Adehone on this host to send to this agent"
+    }
   },
   "aiVault": {
     "scanIssues": {
@@ -122,6 +135,9 @@
         "aa57fa4f80": "Command copied. Quit Adehone, run it in a system terminal to install {{value0}}, then reopen Adehone.",
         "b7e7c5bc95": "Adehone checks the downloaded file against the release metadata at the moment it builds this command. The system package itself is not signature-checked, and Adehone cannot vouch for the file after that point."
       },
+      "NativeChatResumeFailureGuidance": {
+        "unsupportedShort": "Adehone can’t resume this agent."
+      },
       "NativeChatResumeOnRestartModal": {
         "activityMonitorCount_one": "Monitoring {{count}} background task",
         "activityMonitorCount_other": "Monitoring {{count}} background tasks",
@@ -129,6 +145,7 @@
         "activitySubagentCount_other": "{{count}} subagents running"
       },
       "NativeChatResumeToast": {
+        "asked": "Adehone asked agents to continue. Queued messages may be sent.",
         "partial_one": "Resumed {{resumed}} of {{total}} agents. {{count}} needs you.",
         "partial_other": "Resumed {{resumed}} of {{total}} agents. {{count}} need you.",
         "resumedOn_one": "Resumed {{count}} agent on {{machine}}.",
@@ -143,14 +160,15 @@
         "resuming_other": "Resuming {{count}} agents…",
         "stoppedOn_one": "{{count}} agent stopped on {{machine}}.",
         "stoppedOn_other": "{{count}} agents stopped on {{machine}}.",
-        "stoppedRestart_one": "{{count}} agent stopped when Orca closed.",
-        "stoppedRestart_other": "{{count}} agents stopped when Orca closed.",
-        "stoppedUpdate_one": "{{count}} agent stopped when Orca updated.",
-        "stoppedUpdate_other": "{{count}} agents stopped when Orca updated."
+        "stoppedRestart_one": "{{count}} agent stopped when Adehone closed.",
+        "stoppedRestart_other": "{{count}} agents stopped when Adehone closed.",
+        "stoppedUpdate_one": "{{count}} agent stopped when Adehone updated.",
+        "stoppedUpdate_other": "{{count}} agents stopped when Adehone updated.",
+        "willAsk": "Adehone asks agents to continue. Queued messages may be sent."
       },
       "NewWorkspaceComposerCard": {
         "addRemoteOrcaServer": "Add Remote Adehone Server",
-        "addRemoteOrcaServerHint": "Pair another Adehone runtime"
+        "addRemoteOrcaServerHint": "Adehone on another computer"
       },
       "PullRequestPage": {
         "filesViewed_one": "{{viewed}} / {{count}} file viewed",
@@ -354,7 +372,6 @@
       "browser-pane": {
         "markup": {
           "errorAttach": "Could not attach the markup screenshot.",
-          "errorCapture": "Could not capture the page to draw on.",
           "errorUnavailable": "Screenshot markup is not available on this page."
         }
       },
@@ -375,6 +392,11 @@
               "step": {
                 "copy": {
                   "browser": {
+                    "extensions": {
+                      "intro": {
+                        "everydayTitle": "Your everyday browser tools, in Adehone"
+                      }
+                    },
                     "logins": {
                       "body": "Bring your existing logins into Adehone to stay signed in immediately."
                     }
@@ -529,6 +551,9 @@
             }
           }
         },
+        "fileLoadError": {
+          "remotePagedReadUnsupported": "Remote file is larger than the 512 KB this Adehone server can send. Update the server to open it."
+        },
         "richMarkdownBlobImagePaste": {
           "saveFailed": "Couldn't save a pasted image beside the document. It may not load after Adehone restarts."
         }
@@ -575,6 +600,13 @@
           "FeatureTipsModal": {
             "1da82af45b": "Adehone CLI needs attention",
             "cliInstallFailed": "Failed to install Adehone CLI."
+          },
+          "feature": {
+            "tip": {
+              "copy": {
+                "3eacedec93": "Let agents drive Adehone with the Adehone CLI"
+              }
+            }
           }
         },
         "wall": {
@@ -816,6 +848,11 @@
           "PluginDeclarativeView": {
             "unsupported": "{{value0}} is not available in this version of Adehone"
           }
+        },
+        "list": {
+          "PluginsSectionDescription": {
+            "openWith": "Open with (except while typing in an Adehone text field)"
+          }
         }
       },
       "prCheckCounts": {
@@ -1031,7 +1068,7 @@
                     "title": "Host disconnected"
                   },
                   "host_off": {
-                    "body": "Orca refreshes {{reviewLabel}} status through this project’s WSL host, which is off. Reconnect it to refresh.",
+                    "body": "Adehone refreshes {{reviewLabel}} status through this project’s WSL host, which is off. Reconnect it to refresh.",
                     "title": "WSL host is off"
                   },
                   "not_git": {
@@ -1190,6 +1227,9 @@
           "hostUnavailable": "Adehone can't install skills on this workspace's machine yet.",
           "replaceWithOrcaCopy": "Replace with Adehone’s"
         },
+        "AgentsPane": {
+          "codexSessionSourceTooltip": "While history is shared across accounts, Adehone copies this Codex home's conversations into ~/.codex so /resume lists them. Turns added in this folder after a conversation is copied don't reach the copy."
+        },
         "AppearancePane": {
           "61d842eca0": "Show the Adehone Mobile shortcut in the sidebar. It remains available from Toolbox.",
           "b707773a0d": "When enabled, closing the window keeps Adehone running in the system tray instead of quitting.",
@@ -1259,6 +1299,9 @@
           "f903bf20b5": "Allows terminals and development tools to connect to services on your local network. macOS does not report this permission's current status to Adehone.",
           "localNetworkPromptGuidance": "If prompted, choose Allow. If no prompt appears, open System Settings and enable Adehone under Privacy & Security → Local Network."
         },
+        "EphemeralVmRuntimesSection": {
+          "untrackedRuntimeHint": "Adehone never received this VM’s details. Cleanup runs destroy with only instance ID {{instanceId}}; if it fails, delete the VM in your provider, then remove it from this list."
+        },
         "EphemeralVmsPane": {
           "whatScaffold": "Writes the recipe & scripts for your provider — connected over an Adehone server or SSH."
         },
@@ -1283,13 +1326,16 @@
           "fdd271abf0": "Remote Adehone servers"
         },
         "GeneralUpdateSettingsSection": {
-          "ceb579abaf": "Check for app updates and install a newer Adehone version."
+          "ceb579abaf": "Check for app updates and install a newer Adehone version.",
+          "externallyManagedVersionAvailable": "Version {{version}} is available. Update Adehone through your system package manager — Adehone cannot install this release itself."
         },
         "GeneralWorkspaceSettingsSection": {
           "externalWorktreesDescription": "Choose which worktrees created outside Adehone appear by default on this host."
         },
         "GitPane": {
           "jiraIssueKeyCasingDescription": "Casing of the Jira issue key in the workspace and branch names Adehone suggests for new Jira-linked workspaces, such as PROJ-123-fix-login instead of proj-123-fix-login. Existing workspaces and names you type are never changed.",
+          "prAutoRefreshDescription": "How often Adehone checks GitHub for pull request and CI changes.",
+          "prAutoRefreshUnsupportedHost": "Update Adehone on {{host}} to change this",
           "refreshLocalBaseDescription": "When you create a workspace, Adehone refreshes the remote base and safely fast-forwards your matching local branch, such as <mainBranch>main</mainBranch> or <masterBranch>master</masterBranch>. This keeps commands like <diffCommand>git diff main...HEAD</diffCommand> from comparing against stale history. Adehone skips the update if that branch has uncommitted changes or local-only commits."
         },
         "GrokAccountsSection": {
@@ -1446,8 +1492,15 @@
         },
         "PluginUpdateAllDialog": {
           "needsOrca": "Needs Adehone {{value0}} or later",
+          "newEvents": "Reacts to more Adehone events",
           "newHooks": "Can change or stop what Adehone and your agents do",
           "replacesAction": "{{value0}} runs instead of Adehone’s {{value1}}"
+        },
+        "PluginUpdateReview": {
+          "uncompared": "Adehone couldn’t compare this version with the one you approved. Check what it can access before you update."
+        },
+        "PluginUpdateReviewToast": {
+          "uncompared": "Adehone couldn’t compare it with the version you approved."
         },
         "PluginsSettingsSection": {
           "empty": "Browse the All tab to install plugins from a catalog.",
@@ -1530,6 +1583,7 @@
           "b2290ed203": "Adehone will focus this host and load its projects. Existing terminals and browser tabs on other hosts stay alive.",
           "ed3e3f069d": "This removes the saved server from Adehone. It does not change the default host for new projects.",
           "managedAccessRevoked": "{{value0}} no longer accepts this computer, and Adehone couldn't pair with it again over SSH. Connect to try again.",
+          "serverReplaced": "{{value0}} is not the Adehone server this computer paired with: Adehone connects to the host as a different SSH user, or its server was reinstalled. Open the ⋯ menu here and choose Forget…, then connect the SSH host to pair with its current server.",
           "serverRuntimeUnavailable": "Adehone unavailable",
           "serverRuntimeUnavailableDescription": "SSH transport is connected, but the Adehone runtime did not answer. The host may still be running."
         },
@@ -1597,6 +1651,9 @@
         "SshTargetList": {
           "addedInOrca": "Added in Adehone",
           "selectManualGroup": "Select all hosts added in Adehone"
+        },
+        "StatusBarUsageFormatSetting": {
+          "previewBuiltin": "Leave empty to use Adehone’s built-in format."
         },
         "TaskSourceLinearSetup": {
           "connectDescription": "Add a Personal API key so Adehone can browse issues and open workspaces with ticket context."
@@ -1753,6 +1810,7 @@
           }
         },
         "bundledSkillSetupCopy": {
+          "attentionDiffersFromOrca": "Needs attention · This copy differs from Adehone's",
           "attentionSharedNotCurrent": "Needs attention · The shared copy this folder uses is not Adehone’s",
           "attentionUnreadable": "Needs attention · Adehone can't read every file in this copy",
           "attentionUnwritable": "Needs attention · Adehone can't write to {{folder}}"
@@ -1819,6 +1877,7 @@
           "reassurance": "Runs on each host, reached over your own SSH connection. Your code and files stay where they are. Only Adehone’s list of projects, tabs and terminals moves to the host.",
           "row": {
             "forceUpdate": "Terminals are running on this host. They keep running through the update, and their panes reconnect when Adehone’s server restarts.",
+            "forceUpdateUncounted": "Adehone couldn’t count the terminals on this host. The update goes ahead only if no terminal daemon is running there, and any terminals Adehone’s server runs itself will end.",
             "orcaVersion": "Adehone on this host: {{version}}",
             "stopOrcaDescription": "Stops Adehone on the SSH host and removes it from this list.",
             "updateOrcaOnHost": "Update Adehone on this host"
@@ -1869,8 +1928,10 @@
           "account": "Adehone account",
           "artifactsDescription": "Publish HTML and Markdown files, then manage every shared link from Adehone.",
           "description": "Share work instantly and reach your desktop from Adehone Mobile wherever you are.",
+          "managed": "Your team manages some Adehone settings.",
           "relayDescription": "Connect Adehone Mobile to this desktop across cellular or any Wi-Fi.",
           "relayTitle": "Adehone Relay",
+          "reportingDisclosure": "The Devices view shows your Adehone version, release channel, device name, platform, update status, required plugins Adehone couldn’t install, and when the device last reported.",
           "searchDescription": "Sign in or out of the account used by Artifacts and Adehone Relay.",
           "signIn": "Sign in to Adehone",
           "signedOut": "Sign in to extend Adehone with cloud features, including Artifacts and Adehone Relay.",
@@ -1943,6 +2004,7 @@
           "setUpDone": "Adehone is set up on {{name}}.",
           "setUpOnSshHost": "Set up Adehone on an SSH host",
           "settingUpInBackground": "Setting up Adehone on {{name}} in the background. It appears in the list when it’s ready.",
+          "shareRowHint": "Let another Adehone connect here.",
           "sshDialogDescription": "Use this when the server isn’t reachable directly. Adehone opens a tunnel through an SSH host.",
           "unreachableHint": "Check that Adehone is running on the server and that this computer can reach its address.",
           "unreachableLead": "Adehone couldn’t reach this server.",
@@ -2098,7 +2160,10 @@
           "over_limit_other": "Importing these themes would exceed the {{value0}} custom terminal theme limit. Deselect {{value1}} new themes and try again."
         },
         "wslHosts": {
-          "description": "Adehone runs a server inside each distro. To start a stopped distro, click Start, open a terminal, or connect it here."
+          "description": "Adehone runs a server inside each distro. To start a stopped distro, click Start, open a terminal, or connect it here.",
+          "restartAsWslHost": {
+            "description": "Ends every terminal and agent on {{host}}, including ones an SSH host opened, then restarts Adehone’s server as a WSL host."
+          }
         },
         "wslHostsExperimental": {
           "description": "Run Adehone’s server inside a WSL 2 distro, so git, files and terminals run natively in Linux."
@@ -2128,7 +2193,7 @@
           "identityFileFromConfigHint": "Left empty on purpose: Adehone uses every key ~/.ssh/config resolves for {{value0}}. Type a path to use just that key.",
           "nameInOrca": "Name in Adehone",
           "pairingHelpShareComputer": "Create this under Settings → Remote Adehone Servers → Share this computer on the other computer.",
-          "serverDescription": "Pair with Adehone running on another computer.",
+          "serverDescription": "Pair with Adehone on another computer on the same network.",
           "sshAlreadyExists": "That SSH host is already in Adehone.",
           "sshConfigPickerAddAllEmpty": "Add all to Adehone",
           "sshConfigPickerImportDescription": "Pick a host to fill the form, or add every new host to Adehone’s host list.",
@@ -2145,7 +2210,7 @@
         "AddRepoHostSelector": {
           "addRemoteHostDetail": "SSH host or Adehone server",
           "addRemoteHostDetailWithWsl": "SSH host, Adehone server, or WSL distro",
-          "addRemoteServerDetail": "Pair with Adehone running on another computer.",
+          "addRemoteServerDetail": "Adehone on another computer, no SSH needed.",
           "addWslHostDetail": "Run an Adehone server inside a WSL 2 distro. Experimental."
         },
         "AddRepoNestedImportStep": {
@@ -2161,7 +2226,14 @@
           "wsl1Reason": "WSL 1 can’t run an Adehone host; convert with {{command}}"
         },
         "AutoRenameFailedDialog": {
-          "couldNotGenerateBranchName": "Adehone couldn't generate a branch name for <name>{{name}}</name> from the first agent message."
+          "reasonBranchChanged": "The branch changed while Adehone was naming it.",
+          "reasonBranchPushed": "The branch was pushed, so Adehone kept its name.",
+          "reasonBranchRenamed": "The branch was renamed, so Adehone kept its name.",
+          "reasonFirstMessageUnavailable": "Adehone couldn't find this workspace's first message.",
+          "reasonHistoryUnreadable": "Adehone couldn't read this workspace's history. Try again.",
+          "reasonInterrupted": "Adehone couldn't finish naming the branch. Try again.",
+          "reasonNameChosen": "This branch name was chosen by hand, so Adehone kept it.",
+          "reasonUnavailable": "Adehone can't name this branch anymore."
         },
         "DeleteWorktreeDialog": {
           "removeBatchFolder_one": "Remove <target>{{count}} workspace</target> from Adehone. Project folders on disk will not be deleted.",
@@ -2231,8 +2303,8 @@
           "removeContainedProjects_other": "Remove {{count}} contained projects"
         },
         "RemoveFolderDialog": {
-          "linkedWorkspaceWarning_one": "{{count}} workspace in this project will also be removed from Orca.",
-          "linkedWorkspaceWarning_other": "{{count}} workspaces in this project will also be removed from Orca.",
+          "linkedWorkspaceWarning_one": "{{count}} workspace in this project will also be removed from Adehone.",
+          "linkedWorkspaceWarning_other": "{{count}} workspaces in this project will also be removed from Adehone.",
           "openTerminalWarning_one": "{{count}} open terminal in this project will be closed.",
           "openTerminalWarning_other": "{{count}} open terminals in this project will be closed.",
           "removeDescriptionLocal": "This only removes {{name}} from Adehone. It is still on your disk.",
@@ -2364,7 +2436,7 @@
                 "6310412304": "Review {{count}} Branches",
                 "6310412304_one": "Review {{count}} Branch",
                 "6310412304_other": "Review {{count}} Branches",
-                "a3cdd9d9e6": "Git kept {{count}} local branches because they may contain unmerged commits. Kept branches do not retain workspace folders; their commits remain in the repository. Orca may continue freeing workspace disk space in the background.",
+                "a3cdd9d9e6": "Git kept {{count}} local branches because they may contain unmerged commits. Kept branches do not retain workspace folders; their commits remain in the repository. Adehone may continue freeing workspace disk space in the background.",
                 "a3cdd9d9e6_one": "Git kept {{count}} local branch because it may contain unmerged commits. Kept branches do not retain workspace folders; their commits remain in the repository. Adehone may continue freeing workspace disk space in the background.",
                 "a3cdd9d9e6_other": "Git kept {{count}} local branches because they may contain unmerged commits. Kept branches do not retain workspace folders; their commits remain in the repository. Adehone may continue freeing workspace disk space in the background.",
                 "cea24c2b7d": "{{count}} workspaces removed",
@@ -2540,6 +2612,9 @@
           "uncertainTitle": "Adehone couldn't confirm the skill update on {{value0}}"
         },
         "skillPlanOpCopy": {
+          "differsFromOrca": "This copy differs from Adehone's",
+          "otherBuild": "Installed by another Adehone version",
+          "otherBuildKept": "Kept: written by another Adehone version",
           "sharedNotCurrent": "The shared copy isn't Adehone's",
           "unreadable": "Adehone can't read every file",
           "unwritable": "Adehone can't write to this folder"
@@ -2564,6 +2639,9 @@
         },
         "ShareUsageCard": {
           "0eb31e79ee": "Adehone IDE"
+        },
+        "StatsHostScope": {
+          "tooOldBody": "It runs an older version of Adehone. Update Adehone on {{value0}} to see its token usage here."
         },
         "UsageOverviewPane": {
           "sessionCount_one": "{{formatted}} session",
@@ -2788,6 +2866,9 @@
             "streamStalledBody": "{{server}} stopped sending this terminal's output. Adehone is reattaching it automatically.",
             "waitingBody": "Adehone reattaches this terminal when the server offers it again or the connection changes. Reconnect to try now."
           },
+          "legacyRelayBridge": {
+            "unreachable": "This terminal is still running on the host under an older version of Adehone. Reconnecting to it…"
+          },
           "osc52": {
             "clipboard": {
               "failed": {
@@ -2878,7 +2959,10 @@
     },
     "lib": {
       "activateAiVaultStructuredSession": {
-        "hostCannotOpen": "This chat can't be reopened until Adehone is updated."
+        "hostCannotOpen": "This chat can't be reopened until Adehone is updated.",
+        "notLocated": "Adehone can't find where this agent is running, so it can't open it.",
+        "notLocatedNamed": "Adehone can't find where {{agent}} is running, so it can't open it.",
+        "projectRemoved": "The project was removed from Adehone."
       },
       "agent": {
         "skill": {
@@ -2944,24 +3028,27 @@
         "detail": {
           "devLauncherOnly": "Development mode uses a generated launcher for validation only.",
           "differentLauncher": "{{path}} points to a different launcher.",
-          "launcherMissing": "The bundled CLI launcher is missing from this Orca build.",
+          "launcherMissing": "The bundled CLI launcher is missing from this Adehone build.",
           "noWslDistro": "No WSL distribution is available.",
-          "notOrcaLauncherScript": "{{path}} exists but is not an Orca launcher script.",
-          "notOrcaSymlink": "{{path}} exists but is not an Orca symlink.",
-          "olderLauncher": "{{path}} contains an older Orca launcher.",
+          "notOrcaLauncherScript": "{{path}} exists but is not an Adehone launcher script.",
+          "notOrcaSymlink": "{{path}} exists but is not an Adehone symlink.",
+          "olderLauncher": "{{path}} contains an older Adehone launcher.",
           "platformUnsupported": "CLI registration is not implemented on this platform.",
-          "readlinkPermissionDenied": "Orca does not have permission to inspect {{path}}. Check the path and its parent directory permissions, then try again.",
+          "readlinkPermissionDenied": "Adehone does not have permission to inspect {{path}}. Check the path and its parent directory permissions, then try again.",
+          "registerForTerminal": "Register {{path}} to use Adehone from the terminal.",
+          "registerForWindowsShell": "Register {{path}} to use Adehone from Command Prompt or PowerShell.",
+          "registerForWsl": "Register {{path}} to use Adehone from WSL.",
           "registeredAt": "Registered at {{path}}.",
           "registeredInDistroAt": "Registered in {{distro}} at {{path}}.",
           "registrationUnavailable": "CLI registration is unavailable on this build.",
           "unreadableSymlink": "{{path}} cannot be read. Register again to repair it.",
-          "windowsLauncherMissing": "The Windows Orca CLI launcher is missing.",
-          "windowsPathCheckFailed": "The Orca launcher exists, but Orca could not check your Windows user PATH.",
+          "windowsLauncherMissing": "The Windows Adehone CLI launcher is missing.",
+          "windowsPathCheckFailed": "The Adehone launcher exists, but Adehone could not check your Windows user PATH.",
           "windowsPathTimedOut": "Windows PATH command timed out after {{ms}}ms.",
           "wslCommandTimedOut": "WSL command timed out after {{ms}}ms.",
           "wslDistroUnreachable": "Could not reach the WSL distro. Try again.",
           "wslHomeUnresolved": "Unable to resolve the WSL home directory.",
-          "wslInteropUnavailable": "WSL Windows interop is unavailable; Orca cannot launch the Windows CLI from WSL.",
+          "wslInteropUnavailable": "WSL Windows interop is unavailable; Adehone cannot launch the Windows CLI from WSL.",
           "wslRegistrationUnavailable": "WSL CLI registration is unavailable.",
           "wslWindowsOnly": "WSL CLI registration is only available on Windows."
         }
@@ -2992,6 +3079,21 @@
       "emulator": {
         "androidSdkNotFound": "Android SDK not found. Install Android Studio and set ANDROID_HOME.",
         "xcodeSimulatorToolsUnavailable": "Xcode Simulator tools are unavailable. Install full Xcode, open it once, then select it with `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer`."
+      },
+      "ephemeralVm": {
+        "provisionedRootNeedsUpdate": "The Adehone server on this VM cannot adopt a provisioned root. Update Adehone on the VM."
+      },
+      "executionHostFacts": {
+        "hostUnresolvedWithheld": "Adehone cannot tell which host owns this workspace yet.",
+        "runtimePlatformUpdate": "This Adehone server does not report its operating system. Update the server to launch agents on it.",
+        "runtimePlatformWithheld": "The Adehone server has not reported its operating system yet. Reconnect to it and try again."
+      },
+      "floating": {
+        "workspace": {
+          "availability": {
+            "web": "The floating workspace runs on your own computer, so it is only available in the Adehone desktop app."
+          }
+        }
       },
       "folderWorkspacePathStatus": {
         "createError": {
@@ -3039,7 +3141,7 @@
           "grokBillingConfigMissing": "Grok billing response did not include config",
           "grokBillingUsageMissing": "Grok billing response did not include credit usage",
           "grokNotSignedIn": "Not signed in to Grok — run grok login",
-          "grokSignInExpired": "Grok sign-in expired — run grok on the computer running Orca; sign in if prompted. No chat message is needed.",
+          "grokSignInExpired": "Grok sign-in expired — run grok on the computer running Adehone; sign in if prompted. No chat message is needed.",
           "grokUsageFailedHttp": "Grok usage request failed (HTTP {{status}})",
           "grokUsageRequestFailed": "Grok usage request failed",
           "grokUsageUnauthorizedHttp": "Grok usage request unauthorized (HTTP {{status}})",
@@ -3093,12 +3195,32 @@
               "37cf0bc991": "Adehone could not resolve a usable base ref for this workspace."
             }
           }
+        },
+        "ports": {
+          "serverPortForward": {
+            "updateServer": "Couldn't forward port {{port}} from {{host}}. Update Adehone on {{host}} and try again."
+          }
+        }
+      }
+    },
+    "main": {
+      "window": {
+        "dashboard": {
+          "popout": {
+            "window": {
+              "title": "Adehone Agent Dashboard"
+            }
+          }
         }
       }
     },
     "runtime": {
       "githubCheckDetailsTimeout": {
         "timedOut": "Timed out loading check details."
+      },
+      "jira": {
+        "currentSprintNeedsUpdate": "Update the remote Adehone server to filter preset issues by current sprint.",
+        "transitionFieldsNeedsUpdate": "Update the remote Adehone server to submit required transition fields, or complete the transition in Jira."
       },
       "remoteServerUpdateErrors": {
         "requestedVersionUnavailable": "The server updater did not offer the requested Adehone version."
@@ -3128,7 +3250,8 @@
       "slices": {
         "orca": {
           "profiles": {
-            "8b8fa73174": "Adehone Cloud sign-in is not configured"
+            "8b8fa73174": "Adehone Cloud sign-in is not configured",
+            "a37b5e6d37": "Signed out of Adehone"
           }
         },
         "repos": {
@@ -3153,8 +3276,6 @@
           "3b57982bf6": "Git could not safely delete branch \"{{value0}}\" after deleting workspace \"{{value1}}\", so Adehone kept it to avoid losing local commits.",
           "78e08cd877": "Git could not safely delete branch \"{{value0}}\", so Adehone kept it to avoid losing local commits.",
           "81f13f48d2": "Git could not safely delete branch \"{{value0}}\" after deleting worktree \"{{value1}}\", so Adehone kept it to avoid losing local commits.",
-          "903b51c2ed": "Workspace created from {{value0}}, but Adehone could not fast-forward local {{value1}}. {{value2}}",
-          "localBaseRefRefreshFailedDescriptionNamed": "Workspace \"{{value0}}\" was created from {{value1}}, but Adehone could not fast-forward local {{value2}}. {{value3}}",
           "localBaseRefRefreshTurnOffTooltip": "Turns off the Adehone setting {{value0}}. Adehone will stop updating local {{value1}} when you create a workspace, and this warning will stop appearing. New workspaces are unaffected. Turn it back on anytime in Settings › Git.",
           "localBaseRefRefreshTurnedOff": "Adehone will no longer update local {{value0}}",
           "localBaseRefShallowHistory": "Your workspace was created from {{value0}} and is unaffected. Adehone could not also update your local {{value1}} branch because this clone only has recent history, so Git cannot confirm local {{value1}} is just behind. To fix this for every new workspace, run once:",
@@ -3200,6 +3321,10 @@
         "slackChannel_other": "{{count}} Slack channels"
       }
     },
+    "botTarget": {
+      "hostNeedsUpdate": "Update the Adehone server on {host} so its bots can have automations.",
+      "resultsToThreadUnsupported": "The event's thread (Adehone Cloud doesn't support this yet)"
+    },
     "extraAgentArgs": {
       "errors": {
         "controlCharacters": "Extra arguments cannot contain control characters or line breaks.",
@@ -3223,9 +3348,9 @@
       "automationChanged": "The automation changed before this run could launch.",
       "botFolderMissing": "The bot's folder is no longer available.",
       "botMissing": "The bot this automation runs as no longer exists.",
-      "botPaused": "{{bot}} is paused, so Orca skipped this run.",
-      "botsOff": "Bots are turned off in Settings, so Orca skipped this run.",
-      "botsOffByTeam": "Bots are turned off by your team, so Orca skipped this run.",
+      "botPaused": "{{bot}} is paused, so Adehone skipped this run.",
+      "botsOff": "Bots are turned off in Settings, so Adehone skipped this run.",
+      "botsOffByTeam": "Bots are turned off by your team, so Adehone skipped this run.",
       "destinationChanged": "The automation destination changed before this run could launch.",
       "hooksReviewBlocked": "The agent is waiting for someone to review new or changed hooks (\"Hooks need review\"). Open this run and trust them, or remove them. Scheduled runs keep going and succeed once nothing needs review.",
       "legacyTwinHosts": "This automation was saved before Adehone tracked which host it runs on, and its project is on more than one host. Open the automation and pick the host it should run on.",
@@ -3254,7 +3379,9 @@
       "reviewBody": "A run skipped setup because its branch's <code>adehone.yaml</code> setup commands changed. Approving lets later runs use these commands. Only approve if you trust <repo/>.",
       "skippedReview": "Setup didn't run: this run's branch has different adehone.yaml setup commands than the ones approved for this automation. Review them to run setup in later runs.",
       "skippedSinceApproved": "Setup didn't run for this run because its branch's adehone.yaml setup commands changed. They've since been approved, so later runs run them."
-    }
+    },
+    "webhooksOff": "Won’t run: Adehone Cloud doesn’t support webhooks yet",
+    "webhooksOffScheduled": "Runs on its schedule only: Adehone Cloud doesn’t support webhooks yet"
   },
   "bots": {
     "access": {
@@ -3340,8 +3467,11 @@
       "full": "Remove someone before adding {{person}}.",
       "heading": "Asking for access",
       "notHere": "This request is for a bot on another computer. Open the link on the computer that runs it.",
-      "notOwner": "This request is for another Orca account. Sign in as the bot’s owner to review it.",
+      "notOwner": "This request is for another Adehone account. Sign in as the bot’s owner to review it.",
       "reviewButton": "Review…"
+    },
+    "agentSwitch": {
+      "threads": "Slack threads with an existing Adehone chat keep that chat's agent"
     },
     "apps": {
       "composioLine": {
@@ -3392,6 +3522,16 @@
         "zapier": "Run actions in the apps you set up in Zapier"
       }
     },
+    "avatar": {
+      "intake": {
+        "type": "Adehone can't read that image. Try PNG or JPEG."
+      }
+    },
+    "chat": {
+      "mentionChatOlderHost": "The Adehone on {{host}} can't send to a specific chat yet.",
+      "mentionChatOlderHostHere": "This Adehone can't send to a specific chat yet.",
+      "mentionChatUnverifiable": "Adehone can't confirm this chat can take messages."
+    },
     "chats": {
       "moreMatches_one": "{{count}} more match. Search for more of a name to narrow it.",
       "moreMatches_other": "{{count}} more matches. Search for more of a name to narrow it.",
@@ -3399,9 +3539,42 @@
       "showMoreWorkers_one": "Show {{count}} more worker",
       "showMoreWorkers_other": "Show {{count}} more workers"
     },
+    "cloudSignIn": {
+      "accessRequests": "Access requests need Adehone sign-in.",
+      "automationPaused": "Paused while signed out of Adehone",
+      "automationScheduledOnly": "Runs on its schedule only: its events are paused while signed out of Adehone",
+      "botOff": "Signed out of Adehone · Slack, events, sharing off",
+      "eventsChat": "{{source}} events need Adehone Cloud sign-in. I’ll save this rule once you’re in.",
+      "eventsHostChat": "{{source}} events need {{host}} signed in to Adehone Cloud. I’ll save this rule once it is.",
+      "github": "GitHub connects through Adehone Cloud. Sign in to Adehone to continue.",
+      "linear": "Linear connects through Adehone Cloud. Sign in to Adehone to continue.",
+      "signedIn": "Signed in to Adehone",
+      "slack": "Slack connects through Adehone Cloud. Sign in to Adehone to continue.",
+      "toldBot": "I’m signed in to Adehone Cloud now.",
+      "webhooksChat": "Webhooks need Adehone Cloud sign-in. I’ll make it once you’re in.",
+      "webhooksHostChat": "Webhooks need {{host}} signed in to Adehone Cloud. I’ll make it once it is.",
+      "webhooksNotReaching": "Adehone Cloud isn’t reaching {{name}}, so it can’t make webhooks yet."
+    },
+    "composio": {
+      "byHand": {
+        "doneNote": "Adehone then turns on {{trigger}} and saves Composio’s signing secret."
+      },
+      "card": {
+        "connectKeyNote": "Opens Composio to enter your {{app}} API key. Composio keeps it, not Adehone.",
+        "connectNote": "Opens {{app}}’s sign-in from Composio in your browser. Composio keeps this sign-in, not Adehone."
+      },
+      "events": {
+        "oneAddressNote": "Adehone turns on {{trigger}} for your sign-in. Your Composio project’s events come to Adehone at one address, and each goes to the bot it’s for."
+      },
+      "signInsUnreadNote": "Adehone couldn’t ask Composio which apps {{bot}} uses."
+    },
     "connectors": {
       "needYou_one": "{{count}} needs you",
-      "needYou_other": "{{count}} need you"
+      "needYou_other": "{{count}} need you",
+      "signInChanged": "This computer’s Adehone sign-in changed. Sign in again to reconnect."
+    },
+    "deepLink": {
+      "updateNeeded": "Update Adehone on {{hosts}} to open this bot here."
     },
     "errors": {
       "purposeTooLongForHost": "Adehone on {{host}} takes up to 200 characters for what it's for. Shorten it, or update Adehone on {{host}}."
@@ -3419,6 +3592,9 @@
       "commentImageNotStored": "Only pasted or attached images can go on a comment.",
       "commentImagesTooLarge": "These images add up to {{totalMb}} MB. A comment takes up to {{maxMb}} MB.",
       "commentImagesTooMany": "Comments take up to {{max}} images.",
+      "composioKeyCantCreateSessions": "This Composio key can’t create sessions. It needs {{permission}}.",
+      "composioKeyMissingPermission": "This Composio key is missing a permission Adehone needs.",
+      "composioKeyNeedsPermission": "This Composio key is missing a permission. It needs {{permission}}.",
       "googleAccountsChanged": "Its Google accounts changed since you opened them. Check them and save again.",
       "groupAttachFailed": "Couldn't attach the files. Try sending again in a moment.",
       "groupAttachmentsUnavailable": "This computer can't take attachments right now. Try sending again in a moment.",
@@ -3439,7 +3615,7 @@
       "groupMessageIdReused": "Message identity was already used.",
       "groupNameTaken": "{{name}} is already in this group. Members need different names so mentions stay unambiguous.",
       "groupNeedsLocalBot": "This group needs at least one bot on this computer.",
-      "groupPeerTooOld": "Update Orca on {{host}} to add its bots to a group.",
+      "groupPeerTooOld": "Update Adehone on {{host}} to add its bots to a group.",
       "groupPostFromHost": "To post in a group with bots on other computers, use {{host}}.",
       "groupRemoteUnreachable": "Couldn't reach {{host}}. {{detail}}",
       "groupRemoteUnreachableRetry": "Couldn't reach {{host}}. {{detail}} Post again to retry.",
@@ -3449,17 +3625,17 @@
       "groupTurnInactive": "This group request or member is no longer active.",
       "lookAsleep": "The last look was missed because this computer was asleep.",
       "lookCouldNotStart": "The last look couldn't start.",
-      "lookInterrupted": "Orca stopped during the last look.",
+      "lookInterrupted": "Adehone stopped during the last look.",
       "lookTimedOut": "The last look was stopped after {{minutes}} min.",
       "lookUnfinished": "The last look didn't finish.",
-      "tidyUpAllSkipped": "Orca skipped every change the last tidy-up asked for, so nothing changed. ({{detail}})",
+      "tidyUpAllSkipped": "Adehone skipped every change the last tidy-up asked for, so nothing changed. ({{detail}})",
       "tidyUpAsleep": "The last tidy-up was missed because this computer was asleep.",
-      "tidyUpBadTopic": "The last tidy-up named a topic file Orca can't write, so nothing changed.",
+      "tidyUpBadTopic": "The last tidy-up named a topic file Adehone can't write, so nothing changed.",
       "tidyUpChanged": "MEMORY.md changed during the last tidy-up, so nothing changed.",
       "tidyUpCouldNotStart": "The last tidy-up couldn't start.",
-      "tidyUpMovedOnly": "The last tidy-up moved status lines to memory/journal/, but Orca could not use the rest of its reply. ({{detail}})",
+      "tidyUpMovedOnly": "The last tidy-up moved status lines to memory/journal/, but Adehone could not use the rest of its reply. ({{detail}})",
       "tidyUpNoDraft": "The last tidy-up didn't reply with a new MEMORY.md.",
-      "tidyUpNoOps": "The last tidy-up's reply wasn't a list of changes Orca could read.",
+      "tidyUpNoOps": "The last tidy-up's reply wasn't a list of changes Adehone could read.",
       "tidyUpNotApplied": "The last tidy-up's changes couldn't be saved, so nothing changed.",
       "tidyUpNotCopied": "The last tidy-up filed a line MEMORY.md doesn't have; new facts go in MEMORY.md, so nothing changed.",
       "tidyUpNotListLines": "The last tidy-up didn't run: MEMORY.md has more than a few lines that aren't list lines, and ops Tidy-up reads only list lines.",
@@ -3476,7 +3652,7 @@
       "toolCodexCheckFailed": "Codex could not check or connect the tools. Check its setup and try again.",
       "toolCodexNoSignInPage": "Codex gave no sign-in page for {{name}}.",
       "toolCodexNoThread": "Codex started no thread to check the tools in.",
-      "toolCredentialsRaced": "The bot’s tool credentials changed in another Orca. Try again.",
+      "toolCredentialsRaced": "The bot’s tool credentials changed in another Adehone. Try again.",
       "toolCredentialsUnreadable": "The bot’s saved tool credentials are unreadable. Re-enter the tool’s values.",
       "toolDestinationChanged": "The credential destination changed. Re-enter saved values or remove their rows.",
       "toolDetailsInvalid": "Tool details are invalid. Check the name, URL or executable and values.",
@@ -3490,15 +3666,39 @@
       "toolSavedValueGone": "That saved value is no longer available. Re-enter it or remove its row.",
       "toolSignInAddressIncomplete": "Paste the whole address the sign-in page ended on.",
       "toolSignInAddressWrong": "That isn't the address this sign-in ends on. Start it again with Connect, sign in, then paste the address your browser shows.",
-      "toolSignInAgentUnsupported": "Orca signs {{name}} in only for Claude Code and Codex. Add it with its sign-in values instead.",
+      "toolSignInAgentUnsupported": "Adehone signs {{name}} in only for Claude Code and Codex. Add it with its sign-in values instead.",
       "toolSignInEnded": "The sign-in had already ended or timed out. Start it again with Connect.",
       "toolSignInFolderFailed": "Couldn't prepare the sign-in folder: {{detail}}",
-      "toolSignInManaged": "Orca signs in to this tool. Sign it in or out instead.",
-      "toolSourceManaged": "Orca manages this tool. Change it where you set it up.",
+      "toolSignInManaged": "Adehone signs in to this tool. Sign it in or out instead.",
+      "toolSourceManaged": "Adehone manages this tool. Change it where you set it up.",
       "toolValueMissing": "Enter a value for each row, or remove the row.",
       "toolValuesUnmoved": "A tool still holds its saved values. Reopen the bot’s tools to move them."
     },
+    "firstScreen": {
+      "projectsNone": "No projects in Adehone yet",
+      "projectsReading": "Projects: looking at what you have in Adehone…"
+    },
     "github": {
+      "account": {
+        "linkFromApp": "Link GitHub from Adehone on a computer paired to {{host}}.",
+        "linked": "Linked to this Adehone account",
+        "linkedOnHost": "Linked to {{host}}’s Adehone account"
+      },
+      "connect": {
+        "notInstalled": "The Adehone app is not on any of your repositories yet.",
+        "readsOnly": "Adehone only reads your GitHub username and id.",
+        "requested": "An owner of the organization has been asked to approve the Adehone app."
+      },
+      "connection": {
+        "notInstalled": "Signed in as @{{login}}. Install the Adehone app on the repositories it may work in.",
+        "removeNote": "People can no longer ask it on GitHub, and its GitHub people are cleared. The Adehone app stays installed."
+      },
+      "errors": {
+        "alreadyLinked": "This Adehone account is linked to another GitHub user. Unlink it in Settings › Bots › GitHub first.",
+        "signedOut": "Sign in to Adehone Cloud to connect GitHub.",
+        "unreachable": "Adehone Cloud could not be reached. Check your connection and try again.",
+        "wrongAccount": "This sign-in was started from another Adehone account. Sign in with GitHub again from this one."
+      },
       "pill": {
         "addedRepositories_one": "Added {{count}} repository",
         "addedRepositories_other": "Added {{count}} repositories"
@@ -3508,6 +3708,42 @@
       "setup": {
         "repoCount_one": "{{count}} repo",
         "repoCount_other": "{{count}} repos"
+      }
+    },
+    "google": {
+      "disconnect": {
+        "revokeNote": "Bots stop using this account here, and Google cancels Adehone’s access everywhere it was allowed."
+      },
+      "hostChoice": {
+        "orca": "Adehone hosted"
+      },
+      "links": {
+        "owner": "You’re the owner of this Google app; these links just point to Adehone."
+      },
+      "notes": {
+        "branding": {
+          "name": "App name <b>Adehone</b>, and your email as the support email."
+        },
+        "client": {
+          "download": "Click <b>Download JSON</b>. Adehone saves the key."
+        }
+      },
+      "updateToAdd": "Update Adehone on {{host}} to add another Google account.",
+      "updateToChooseAccounts": "Update Adehone on {{host}} to choose accounts.",
+      "updateToSetUpNewApp": "Update Adehone on {{host}} to set up a new Google app."
+    },
+    "googleSetup": {
+      "blocker": {
+        "checkFailed": "Adehone couldn’t check {{services}}.",
+        "noKey": "Adehone needs the app’s key first."
+      },
+      "connect": {
+        "noteOnHost": "Adehone’s browser for {{host}} opens Google’s sign-in. Your Google sign-in stays on {{host}}.",
+        "warning": "Google will show a warning because this app is yours and brand new. Choose Advanced, then Go to Adehone, and tick every box on the next screen."
+      },
+      "keyMissed": "Downloaded the key and Adehone didn’t pick it up?",
+      "path": {
+        "guideHereNote": "You click, in Adehone"
       }
     },
     "groups": {
@@ -3524,6 +3760,32 @@
       "remoteStopped": "Stopped here",
       "remoteUnknown": "Delivery unknown",
       "unavailableBot": "Unavailable bot"
+    },
+    "host": {
+      "errors": {
+        "accountChanged": "{{host}}’s Adehone sign-in changed. Start again.",
+        "accountChangedHere": "This computer’s Adehone sign-in changed. Start again.",
+        "notRouted": "{{service}}’s page has to open in Adehone’s browser for {{host}}. Reconnect {{host}}, then start again.",
+        "signedOut": "Sign {{host}} in to Adehone Cloud to connect {{service}}."
+      },
+      "notice": {
+        "cantSave": "{{host}} can’t save an Adehone sign-in: {{reason}}",
+        "cantSaveNext": "Unlock or set up a keychain on {{host}} and restart Adehone there, then sign it in here.",
+        "lapsed": "{{host}}’s Adehone sign-in for {{email}} changed.",
+        "lapsedNoEmail": "{{host}}’s Adehone sign-in changed.",
+        "linksBelongElsewhere": "{{name}}’s connectors belong to another Adehone account.",
+        "signedOut": "{{host}} is signed out of Adehone.",
+        "signedOutFirst": "{{host}} is signed out of Adehone, so {{name}} can’t use Slack, Linear or GitHub yet.",
+        "unreachable": "{{host}} can’t reach Adehone Cloud.",
+        "updateNeeded": "Update Adehone on {{host}} to set up {{name}}’s connectors from here."
+      },
+      "signIn": {
+        "unconfigured": "Adehone on {{host}} was built without Adehone Cloud sign-in. Install Adehone’s release build there to sign it in.",
+        "unread": "Couldn’t read {{host}}’s Adehone sign-in.",
+        "updateFirst": "Update Adehone on {{host}}, then sign it in from here.",
+        "waiting": "Approve in Adehone’s browser for {{host}}. Check the page shows {{code}}.",
+        "waitingFirst": "Log in with the Adehone account {{host}} should use, in Adehone’s browser for {{host}}. Check the page shows {{code}}."
+      }
     },
     "hover": {
       "itemsNeedYou_one": "{{count}} item it flagged for you",
@@ -3554,18 +3816,51 @@
         "confirm_other": "Cancel {{count}} stale items?"
       }
     },
+    "linear": {
+      "account": {
+        "linkFromApp": "Link Linear from Adehone on a computer paired to {{host}}.",
+        "linkHelp": "To link your Linear account, or move it here from another Adehone account, connect Linear from a bot’s Connectors."
+      },
+      "connect": {
+        "stuck": "Stuck on a Linear page that says “Could not find OAuth client”? Adehone’s Linear app isn’t open to this workspace yet. An admin of the workspace that owns the app must make it public."
+      },
+      "connection": {
+        "removeNote": "People in {{workspace}} can no longer hand it issues, and its Linear people are cleared. Adehone stays installed there."
+      },
+      "errors": {
+        "alreadyLinked": "This Adehone account is linked to another Linear user in that workspace. Unlink it in Settings › Bots › Linear first.",
+        "signedOut": "Sign in to Adehone Cloud to connect Linear.",
+        "unreachable": "Adehone Cloud could not be reached. Check your connection and try again.",
+        "wrongAccount": "This sign-in was started from another Adehone account. Connect Linear again from this one."
+      },
+      "setup": {
+        "actsAsYou": "Adehone acts as you in Linear from this computer.",
+        "actsOnHost": "Adehone acts as that Linear user from {{host}}.",
+        "install": "Adehone is not installed in {{workspace}} yet. A Linear admin installs it once for everyone.",
+        "noInstallYet": "Adehone isn’t installed there yet."
+      }
+    },
     "new": {
+      "computerAccountHint": "Where the bot runs, signed in to Adehone as {{account}}.",
+      "hostNeedsServer": "Needs Adehone server",
+      "hostNeedsServerHint": "Set up an Adehone server on {{host}} in Settings → Remote Adehone Servers to run bots.",
+      "hostNoBots": "Adehone on {{host}} can’t run bots yet",
+      "hostUpdate": "Update Adehone on {{host}}",
       "parts": {
         "automations_one": "{{count}} automation",
         "automations_other": "{{count}} automations",
         "needsApps_one": "Needs {{count}} app",
         "needsApps_other": "Needs {{count}} apps",
+        "olderHost": "{{host}} needs an Adehone update to add skills and schedules",
         "schedules_one": "{{count}} schedule",
         "schedules_other": "{{count}} schedules",
         "skillsKept_one": "{{kept}}/{{count}} skill",
         "skillsKept_other": "{{kept}}/{{count}} skills",
         "skills_one": "{{count}} skill",
         "skills_other": "{{count}} skills"
+      },
+      "validation": {
+        "updateOrca": "Update Adehone"
       },
       "wslSetup": {
         "failedGeneric": "Adehone’s server didn’t start in the distro. Details say what stopped it.",
@@ -3586,6 +3881,10 @@
     "options": {
       "activeFilters_one": "Bot options ({{count}} filter active)",
       "activeFilters_other": "Bot options ({{count}} filters active)"
+    },
+    "page": {
+      "serverDownBody": "Check that Adehone is running on {{host}}, then reconnect.",
+      "serverReconnectingBody": "The connection to the server dropped. Adehone is retrying automatically."
     },
     "palette": {
       "scopedStatus_one": "Showing only bots. {{count}} result found.",
@@ -3620,17 +3919,62 @@
     "settingsView": {
       "memoryFiles_one": "{{count}} file",
       "memoryFiles_other": "{{count}} files",
+      "orcaAccount": "Adehone account",
       "youAndOthers_one": "You and {{count}} other",
       "youAndOthers_other": "You and {{count}} others"
     },
+    "share": {
+      "error": {
+        "avatarRefused": "Adehone Cloud refused the bot's picture. Pick another picture, then try again.",
+        "unavailable": "Adehone Cloud doesn't accept bot shares yet."
+      },
+      "openFailed": "Adehone could not open this file.",
+      "reconnect": "Sign in to Adehone again to share.",
+      "signIn": "Sign in to Adehone to share."
+    },
     "slack": {
+      "approve": {
+        "note": "Works once. Sign in to Slack as yourself there; Adehone Cloud passes the approval back to {{host}}.",
+        "noteUntil": "Works once, until {{time}}. Sign in to Slack as yourself there; Adehone Cloud passes the approval back to {{host}}."
+      },
+      "errors": {
+        "signedOut": "Sign in to Adehone Cloud to connect Slack.",
+        "unknownBot": "Adehone Cloud has not seen this bot yet. Try again in a minute.",
+        "unreachable": "Adehone Cloud could not be reached. Check your connection and try again."
+      },
+      "handOff": {
+        "confirm": "Adehone on this computer creates the Slack app with {{email}}’s token. {{host}} gets only this bot’s app.",
+        "confirmMac": "Adehone on this Mac creates the Slack app with {{email}}’s token. {{host}} gets only this bot’s app.",
+        "offer": "This computer is signed in to Adehone as {{email}}, which already has a token for {{workspace}}.",
+        "offerMac": "This Mac is signed in to Adehone as {{email}}, which already has a token for {{workspace}}."
+      },
       "postAs": {
-        "line": "When you reply to a Slack thread from Orca, it posts as <picker>{{name}}</picker>"
+        "line": "When you reply to a Slack thread from Adehone, it posts as <picker>{{name}}</picker>",
+        "orcaUser": "Adehone user",
+        "viaOrca": "{{name}} (via Adehone)"
+      },
+      "problem": {
+        "offline": "Adehone can’t reach {{host}}.",
+        "offlineNext": "Check that Adehone is running on {{host}}, then reconnect. Slack setup starts again once {{host}} is back.",
+        "reconnectFailed": "Adehone still can’t reach {{host}}."
+      },
+      "reconnect": {
+        "kept": "Adehone Cloud keeps the new token encrypted, so your next bots here need one click.",
+        "whyNeeded": "Adehone has no working Slack token for this workspace."
       },
       "setup": {
         "preview": {
           "ask": "<mention/> summarize this thread"
-        }
+        },
+        "uncertain": "Slack may have created an app named {{name}} that Adehone cannot use. Delete it in Slack app settings if it is there, then set up again."
+      },
+      "token": {
+        "kept": "Adehone Cloud keeps this token encrypted, so your next bots in this workspace need one click."
+      },
+      "workspaces": {
+        "description": "For Slack, Adehone Cloud keeps one encrypted token per workspace to create each bot’s app.",
+        "descriptionFor": "Adehone Cloud keeps one encrypted token per workspace for {{account}}. The Slack user who connected it owns the bots it installs.",
+        "otherTeam": "That token is for another workspace. Adehone keeps it for that workspace."
       }
     },
     "soul": {
@@ -3644,6 +3988,14 @@
     },
     "templateSkills": {
       "lines": {
+        "adehone-build-resolver": "Minimal-change build and typecheck fixes, stopping when the same error survives 3 attempts.",
+        "adehone-code-review": "Severity-ranked review of correctness, TypeScript, React, Electron boundaries, and repository rules.",
+        "adehone-electron-architecture": "Main, preload, and renderer roles, and IPC contracts with sender checks, input validation, and no generic bridge.",
+        "adehone-electron-security": "The 20-item Electron security checklist, secrets, and review-only guidance for packaging, signing, and auto-update.",
+        "adehone-planner": "Reads repository rules and work-item contracts, reports feasibility questions first, and checks platform, remote, mobile, and folder workspace impact.",
+        "adehone-react-ui": "The repository design system first, then React state, effects, accessibility, and performance.",
+        "adehone-testing-proof": "Proof by running, committed tests only as an exception, and hidden background UI checks.",
+        "adehone-verification-loop": "The repository gate plus diff, execution proof, security, and environment checks; unchecked means unverified.",
         "android-clean-architecture": "Clean Architecture module boundaries, pure-Kotlin domain, UseCases, Repositories, Mappers, and Hilt DI.",
         "android-compose-patterns": "Android Jetpack Compose state management, Event Sink, Type-Safe Navigation, WindowInsets, and TalkBack a11y.",
         "android-java-legacy": "Legacy Android Java maintenance, Java-Kotlin interop, memory leak fixes, JUnit+Mockito tests, and Desugaring.",
@@ -3692,6 +4044,42 @@
       }
     },
     "templates": {
+      "adehone-dev": {
+        "does": "Plans and implements Electron process, IPC, security, and React UI work, fixes build errors, and reviews changes across desktop platforms, remote hosts, mobile impact, and folder workspaces.",
+        "events": {
+          "pr-verify": {
+            "action": "Verify and review it",
+            "trigger": "When a pull request is opened or updated"
+          }
+        },
+        "example1": "Reported two feasibility questions on a work item before editing, then proved each done criterion with a hidden background run; Windows and SSH: unverified.",
+        "example2": "Flagged a new IPC handler with no sender check and a preload method that accepted any channel name.",
+        "firstChat": "Point it at an Adehone workspace or give it a task or a product planning work item. It reads the repository’s own rules first, reports feasibility problems and questions before editing, then builds, proves the change by running it, verifies, and reviews. Anything it did not check is reported as unverified.",
+        "line": "Plans, builds, proves, and reviews Adehone features and fixes with Electron architecture and security guides.",
+        "name": "Adehone development",
+        "reports": "Here, after verification and when its checks run",
+        "schedules": {
+          "daily-morning-check": {
+            "what": "Daily Adehone typecheck healthcheck",
+            "when": "Weekdays at 9 AM"
+          }
+        },
+        "soulDo": {
+          "0": "Before working, read the Adehone workspace’s `AGENTS.md` and the documents it points to; they win over every template skill. If a skill named here is not installed, follow those documents and say so. Reply in Korean unless asked for another language.",
+          "1": "Plan non-trivial work with `adehone-planner` before editing code: for a product planning work item, read its contract, done criteria, and excluded scope, ask for anything missing, and report feasibility problems and questions first.",
+          "2": "Load `adehone-electron-architecture`, `adehone-electron-security`, or `adehone-react-ui` for process/IPC, security, or UI work, and consider macOS/Linux/Windows, remote hosts, mobile, and folder workspaces.",
+          "3": "When a build or typecheck fails, load `adehone-build-resolver` before editing. When asked to review a change, load `adehone-code-review` first.",
+          "4": "Before reporting done, prove the change by running it (`adehone-testing-proof`) and run `adehone-verification-loop`; report anything you did not check as unverified."
+        },
+        "soulDont": {
+          "0": "Never report platform, remote host, mobile, or UI behaviour you did not verify as passing.",
+          "1": "Never, without explicit owner approval, upgrade Electron or a key dependency across a major version, relax security settings (context isolation, sandbox, CSP, `webSecurity`, fuses, permission handling), run a release, publish, or signing step, push, or merge a pull request.",
+          "2": "Never commit or print signing material, tokens, or other secrets.",
+          "3": "Never give a renderer raw `ipcRenderer`, or a bridge that accepts any channel name.",
+          "4": "Never take on `[AND]`, `[IOS]`, `[MWB]`, or other platform bots’ work items, use `--no-verify`, show or focus app windows during checks, or check Adehone/Adehone UI with computer-use."
+        },
+        "watches": "Adehone workspaces, tasks, work items, and pull requests you hand it"
+      },
       "android-dev": {
         "does": "Plans and implements Clean Architecture, Compose, Coroutines/Flows, TDD tests, Gradle fixes, and hardened WebView/security code.",
         "events": {
@@ -4031,6 +4419,7 @@
         },
         "watches": "Mobile web workspaces, [MWB] tasks, WebView bridge specs, and pull requests you hand it"
       },
+      "official": "Official Adehone template",
       "oncall-handoff": {
         "does": "Summarizes the week’s alerts and incidents, and lists open follow-ups.",
         "example1": "12 alerts, 2 incidents. Disk alert on cell-3 fired 5 times.",
@@ -4082,7 +4471,9 @@
           "0": "Validate the problem and \"why\" with `product-lens` before committing to a full spec when an idea is vague or unprioritized.",
           "1": "Draft lean, problem-first PRDs with `prd-authoring` (FRAME -> GROUND -> DECIDE -> GENERATE), including a 3-platform parity matrix for Android, iOS, and Mobile Web.",
           "2": "Lock down platform constraints and shared SSOT contracts (WebView JS bridge, deep links, APIs, invariants) in a `product-capability` contract before delegating.",
-          "3": "Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms."
+          "3": "Break approved plans into platform-tagged work items (`[AND]`, `[IOS]`, `[MWB]`) with `work-breakdown`, propagating any dev-bot review changes across all affected platforms.",
+          "4": "When planning is complete, ask my owner whether to hand it off to dev bots, naming each bot I chose and why. Send nothing to a dev bot until they agree, and ask again before adding a bot or changing the scope they agreed to.",
+          "5": "Choose the dev bots myself from the work, what my owner’s projects cover, and what `bot list` says each bot is for; never ask my owner to pick one. When the work spans several areas (for example, both Android and iOS), hand off to every matching bot, each with its own scope and acceptance criteria. When no bot fits all or part of the work, tell my owner."
         },
         "soulDont": {
           "0": "Never invent requirements, user evidence, or metrics; mark unknowns as `TBD` or `OPEN`.",
@@ -4092,6 +4483,7 @@
         },
         "watches": "Product ideas, docs, Linear issues, and Android/iOS/Mobile Web bot feedback"
       },
+      "publisher": "by Adehone",
       "release-notes": {
         "does": "Drafts release notes for users in three groups: new, fixed, changed.",
         "example1": "Draft for 1.5: 4 new, 9 fixed, 2 changed.",
@@ -4186,7 +4578,7 @@
         "does": "Lists workspaces whose agent finished with changes nobody reviewed or opened a pull request for.",
         "example1": "mobile-pairing finished yesterday with a 340-line diff, no pull request.",
         "example2": "2 more finished this week.",
-        "firstChat": "Lists workspaces whose agent finished with changes you haven’t reviewed or turned into a pull request. Orca already tells you when an agent is waiting on you; this covers what’s done.",
+        "firstChat": "Lists workspaces whose agent finished with changes you haven’t reviewed or turned into a pull request. Adehone already tells you when an agent is waiting on you; this covers what’s done.",
         "line": "A daily list of finished agent work nobody has looked at yet.",
         "name": "Unreviewed agent work",
         "reports": "Here, weekdays at 9 AM",
@@ -4196,7 +4588,7 @@
             "when": "Weekdays at 9 AM"
           }
         },
-        "watches": "Your Orca workspaces"
+        "watches": "Your Adehone workspaces"
       },
       "workspace-cleanup": {
         "does": "Lists workspaces that are done or abandoned, with uncommitted changes; removes only the ones you pick.",
@@ -4212,7 +4604,18 @@
             "when": "Fridays at 4 PM"
           }
         },
-        "watches": "Your Orca workspaces and their pull requests"
+        "watches": "Your Adehone workspaces and their pull requests"
+      }
+    },
+    "toolApp": {
+      "updateHost": "Update Adehone on {{host}} to sign in to apps",
+      "updateHostShort": "Update Adehone on {{host}}",
+      "updateServer": "Update Adehone on the server to sign in to apps",
+      "updateServerShort": "Update Adehone on the server"
+    },
+    "tools": {
+      "signInFailure": {
+        "desktopOnly": "Sign in from Adehone on {{host}}."
       }
     },
     "upNext": {
@@ -4225,9 +4628,16 @@
         "starts": "Webhook · starts “{{automation}}”",
         "title": "Webhook"
       },
+      "errors": {
+        "signedOut": "Paused while signed out of Adehone."
+      },
+      "fallback": "This webhook is live. Copy its URL from Adehone on a computer, in the bot’s settings under Webhooks. To pause or delete it, ask the bot here.",
+      "fallbackNamed": "Webhook “{{automation}}” is live. Copy its URL from Adehone on a computer: Settings › Bots › {{bot}} › Webhooks. To pause or delete it, ask {{bot}} here.",
       "hookCount": "{{count}} hooks",
       "hookCount_one": "{{count}} hook",
       "hookCount_other": "{{count}} hooks",
+      "hostNeedsUpdate": "Your Adehone needs an update before {{bot}} can do this.",
+      "orphanedNote": "{{bot}}’s Adehone no longer lists this automation, so calls aren’t run.",
       "rotate": {
         "stopCancels": "For a leaked key. {{count}} waiting calls it let in are cancelled.",
         "stopCancels_one": "For a leaked key. {{count}} waiting call it let in is cancelled.",
@@ -4239,7 +4649,10 @@
       },
       "secret": {
         "add": "Add signing secret…",
-        "change": "Signing secret: {{sender}} · Change…"
+        "change": "Signing secret: {{sender}} · Change…",
+        "generateNote": "Adehone makes this secret. You copy it into {{sender}} next.",
+        "modeGenerate": "Adehone makes one",
+        "note": "Adehone then accepts only calls signed with this secret, so a leaked URL alone can’t start “{{automation}}”."
       }
     },
     "workspaces": {
@@ -4280,10 +4693,8 @@
         "sshHostDisconnected": "This page is no longer connected through its SSH host. Reconnect and try again."
       },
       "notice": {
-        "importedMore_one": "Imported {{count}} cookie for {{domains}} +{{more}} more. Reload the page to use them.",
-        "importedMore_other": "Imported {{count}} cookies for {{domains}} +{{more}} more. Reload the page to use them.",
-        "imported_one": "Imported {{count}} cookie for {{domains}}. Reload the page to use them.",
-        "imported_other": "Imported {{count}} cookies for {{domains}}. Reload the page to use them."
+        "importedCount_one": "Imported {{countLabel}} cookie",
+        "importedCount_other": "Imported {{countLabel}} cookies"
       }
     },
     "googleCookieClear": {
@@ -4404,7 +4815,13 @@
     "RepositoryBrowserProfileSection": {
       "keywordCookies": "cookies",
       "keywordProfile": "browser profile",
-      "keywordSignIn": "sign in"
+      "keywordSignIn": "sign in",
+      "saveFailed": "Couldn't save the browser profile. The Adehone on this project's host may need an update."
+    },
+    "agentNotes": {
+      "activeSubmitFailed": "The notes may already be pasted in the active terminal, but Adehone could not submit them.",
+      "hostUpdateRequired": "Update Adehone on the {{target}} agent's host to send it notes.",
+      "selectedSubmitFailed": "The notes may already be pasted in the selected terminal, but Adehone could not submit them."
     },
     "agentSessionContinuation": {
       "deliveryUnconfirmed": "Adehone could not confirm {{agent}} received the session context. Check the new session, and paste it yourself if its input is empty."
@@ -4412,9 +4829,29 @@
     "jiraIssueTitleField": {
       "hostUpdateRequired": "Generating Jira titles requires a newer Adehone server. Update the Jira connection’s host and try again."
     },
+    "link": {
+      "routing": {
+        "preference": {
+          "dialog": {
+            "keepInOrcaTitle": "Keep terminal links in Adehone?",
+            "openInOrcaTitle": "Open terminal links in Adehone?"
+          }
+        }
+      }
+    },
+    "managed-runtime": {
+      "installedByOrca": "Installed by Adehone · {{version}}"
+    },
     "native-chat": {
       "agentMessage": {
         "senderAmbiguous": "Adehone can't tell which terminal {{name}} is running in. Open it from the sidebar."
+      },
+      "antigravityAuth": {
+        "apiKeySaved": "Saved in Adehone",
+        "askApiKeySaved": "Use the Gemini API key saved in Adehone instead?",
+        "orcasAgy": "Adehone's agy",
+        "orcasAgyVersion": "Adehone's agy · v{{version}}",
+        "switchFailed": "Adehone couldn't change how Antigravity signs in. Try again."
       },
       "approval": {
         "allow": "Allow",
@@ -4682,6 +5119,7 @@
         "draftNotSaved": "This draft couldn't be saved yet. Adehone keeps trying.",
         "fileCount_one": "{{count}} file",
         "fileCount_other": "{{count}} files",
+        "permissionAgentSettingsUnnamedHint": "Uses your {{agent}} permission settings. Adehone can't show this mode.",
         "placeholder": "Ask anything, @ to mention files, / for commands"
       },
       "composerErrors": {
@@ -4699,6 +5137,9 @@
         "earlierMessages": "{{count}} earlier messages in the thread",
         "earlierMessages_one": "{{count}} earlier message in the thread",
         "earlierMessages_other": "{{count}} earlier messages in the thread"
+      },
+      "connectorOffer": {
+        "linearAsYou": "It can also work in Linear as you, through your own Linear sign-in in Adehone."
       },
       "contextMenu": {
         "copyOrcaSessionId": "Copy Adehone Session ID",
@@ -4734,7 +5175,7 @@
         "attachmentsExpired": "{{names}} expired.",
         "backgroundTaskNotStopped": "The background task wasn't stopped.",
         "backgroundTasksNotStopped": "The background tasks weren't stopped.",
-        "botToolsGatewayOutdated": "{{agent}}'s gateway is still running an older copy of Orca's plugin, so this bot's tools can't act as the bot. Run `hermes gateway stop`, then start a new chat.",
+        "botToolsGatewayOutdated": "{{agent}}'s gateway is still running an older copy of Adehone's plugin, so this bot's tools can't act as the bot. Run `hermes gateway stop`, then start a new chat.",
         "botToolsNeedStatusHooks": "{{agent}} bots need Agent status hooks: they are how a bot's tools act as the bot. Turn them on for {{agent}} in Settings → Agents, then start a new chat.",
         "cancelUnconfirmed": "Cancellation was not confirmed.",
         "cancelled": "This message was withdrawn before the agent started it.",
@@ -4870,7 +5311,8 @@
         "summary": {
           "needsAuth_one": "{{count}} needs sign-in",
           "needsAuth_other": "{{count}} need sign-in"
-        }
+        },
+        "unsupported": "Update Adehone on this chat’s host to manage them here"
       },
       "memoryUpdated": {
         "added": "Added",
@@ -4896,10 +5338,10 @@
         "orcaStopUnnamedServer": "the remote server",
         "orcaStopUpdate": "Adehone on {{machine}} restarted for an update while this response was in progress.",
         "plan": "Plan",
-        "restartContinueRefused": "Orca couldn't continue this chat after the restart. Send a message to continue it.",
-        "restartContinueUnconfirmed": "Orca asked this agent to continue after the restart but couldn't confirm it did. Check its latest reply before sending another message.",
-        "restartContinued": "Orca asked this agent to continue after a restart. Your own prompt was not re-sent.",
-        "restartNotConnected": "Orca couldn't reconnect this chat after the restart, so it didn't ask the agent to continue.",
+        "restartContinueRefused": "Adehone couldn't continue this chat after the restart. Send a message to continue it.",
+        "restartContinueUnconfirmed": "Adehone asked this agent to continue after the restart but couldn't confirm it did. Check its latest reply before sending another message.",
+        "restartContinued": "Adehone asked this agent to continue after a restart. Your own prompt was not re-sent.",
+        "restartNotConnected": "Adehone couldn't reconnect this chat after the restart, so it didn't ask the agent to continue.",
         "stoppedBeforeStart": "Stopped manually"
       },
       "openedPullRequests": {
@@ -4955,15 +5397,15 @@
       },
       "slackMirror": {
         "channel": "Also posts to {{channel}} thread",
-        "detailChannel": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them. Tool calls and workers stay in Orca.",
-        "detailExternal": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them, including people outside your workspace. Tool calls and workers stay in Orca.",
+        "detailChannel": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them. Tool calls and workers stay in Adehone.",
+        "detailExternal": "Your messages and {{bot}}'s replies. Everyone in {{channel}} can see them, including people outside your workspace. Tool calls and workers stay in Adehone.",
         "detailFallback": "Posts as {{bot}} with your name. Update in Slack to post under your name.",
-        "detailOwnDm": "Your messages and {{bot}}'s replies. Only you see this DM. Tool calls and workers stay in Orca.",
+        "detailOwnDm": "Your messages and {{bot}}'s replies. Only you see this DM. Tool calls and workers stay in Adehone.",
         "detailRemoved": "{{bot}} was removed from the channel.",
         "detailRemovedFrom": "{{bot}} was removed from {{channel}}.",
-        "detailSomeonesDm": "Your messages and {{bot}}'s replies. The person in this DM sees them. Tool calls and workers stay in Orca.",
-        "detailTheirDm": "Your messages and {{bot}}'s replies. {{name}} sees them in their DM. Tool calls and workers stay in Orca.",
-        "detailThread": "Your messages and {{bot}}'s replies. Everyone in the channel can see them. Tool calls and workers stay in Orca.",
+        "detailSomeonesDm": "Your messages and {{bot}}'s replies. The person in this DM sees them. Tool calls and workers stay in Adehone.",
+        "detailTheirDm": "Your messages and {{bot}}'s replies. {{name}} sees them in their DM. Tool calls and workers stay in Adehone.",
+        "detailThread": "Your messages and {{bot}}'s replies. Everyone in the channel can see them. Tool calls and workers stay in Adehone.",
         "detailUnavailable": "This Slack thread was deleted or its channel archived.",
         "failed": "Not posted to Slack",
         "failedEmpty": "Not posted to Slack · nothing to post",
@@ -4972,17 +5414,19 @@
         "headingChannel": "Slack thread in {{channel}}",
         "headingDm": "Slack DM",
         "headingThread": "Slack thread",
-        "off": "Only in Orca",
-        "offNotInChannel": "Only in Orca · not in channel",
-        "offUnavailable": "Only in Orca · thread unavailable",
+        "off": "Only in Adehone",
+        "offNotInChannel": "Only in Adehone · not in channel",
+        "offUnavailable": "Only in Adehone · thread unavailable",
         "ownDm": "Also posts to your DM with {{bot}}",
+        "postedFrom": "Posted to {{place}} from Adehone",
         "posting": "Posting to Slack…",
         "shortChannel": "{{channel}} thread",
         "shortDm": "Slack DM",
         "shortThread": "Slack thread",
         "someonesDm": "Also posts to a DM with {{bot}}",
         "theirDm": "Also posts to {{name}}'s DM with {{bot}}",
-        "thread": "Also posts to the Slack thread"
+        "thread": "Also posts to the Slack thread",
+        "tooltipOff": "Your messages stay in Adehone"
       },
       "state": {
         "empty": {
@@ -5122,6 +5566,12 @@
         "changedFiles_other": "{{count}} changed files",
         "hidden": "Adehone won't show turn diffs anymore"
       },
+      "usageLimitActions": {
+        "statusCanContinueAtAuto": "You can continue at {{time}}. Adehone will continue this chat at {{autoTime}}.",
+        "statusCanContinueAtNoAuto": "You can continue at {{time}}. Adehone won't continue this chat automatically.",
+        "statusCanContinueNowAuto": "{{agent}} can continue now. Adehone will continue this chat at {{time}}.",
+        "statusHasUsageAuto": "{{agent}} has usage again. Adehone will continue this chat at {{time}}."
+      },
       "usageLimitAutoContinue": {
         "scheduled": "Adehone will continue this chat at {{time}}."
       },
@@ -5132,6 +5582,9 @@
         "newQuestions_other": "{{count}} new worker questions waiting on you",
         "workerCount_one": "{{count}} worker",
         "workerCount_other": "{{count}} workers"
+      },
+      "workers": {
+        "stopUnconfirmed": "Adehone couldn’t confirm the worker stopped."
       },
       "writeNotice": {
         "agentRefused": "The agent turned this down.",
@@ -5244,9 +5697,35 @@
       "workers_other": "{{count}} workers"
     },
     "settings": {
+      "agents": {
+        "deleteHistoryWithWorkspace": {
+          "confirmDescription": "Adehone will delete Adehone, Claude Code and Codex chats from workspaces that no longer exist, including ones deleted before today. Chats from workspaces you still have are kept. Deleted chats can't be recovered.",
+          "description": "Adehone, Claude Code and Codex chats from deleted workspaces are removed automatically to free disk space. They can't be recovered.",
+          "unsupported": "Update Adehone on {{host}} to use this setting there."
+        }
+      },
+      "hostScope": {
+        "updateHostToChange": "Update Adehone on {{host}} to change this setting there."
+      },
       "nativeChat": {
         "linkPreviewsCopy": "Hovering a web link shows a preview card. Adehone fetches the page to build it, so the site can see the request.",
-        "usageLimitContinueCopy": "Adehone sends \"Continue where you left off.\" when the limit resets. Applies to all chats with a known reset time."
+        "usageLimitContinueCopy": "Adehone sends \"Continue where you left off.\" when the limit resets. Applies to all chats with a known reset time.",
+        "usageLimitContinueUnsupported": "Update Adehone on {{host}} to change this setting there."
+      },
+      "notifications": {
+        "server": {
+          "unsupported": "Update Adehone on {{host}} to change its notifications here."
+        }
+      },
+      "orcaAccount": {
+        "server": {
+          "sectionDescription": "The Adehone account {{host}} runs as, for its bots’ Slack, GitHub, Linear and webhooks.",
+          "unread": "Can’t read {{host}}’s Adehone account. Update or reconnect {{host}}."
+        }
+      },
+      "recoverServer": {
+        "confirmCheckHomeFolder": "No other machine sharing this home folder is running Adehone",
+        "summary": "An earlier run left a lock, so Adehone’s server can’t start."
       },
       "terminal": {
         "claudeCodeThemeSync": {
@@ -5254,6 +5733,11 @@
         }
       },
       "voice": {
+        "cleanup": {
+          "consent": {
+            "description": "After each dictation, Adehone sends the text to {{agent}} to tidy it before it lands."
+          }
+        },
         "vocabulary": {
           "repoSaveFailed": "Couldn't save the repo's terms. The host running this repo may need an Adehone update."
         }
@@ -5273,6 +5757,7 @@
           "description_one": "This change makes 1 more workspace match right now. It'll be deleted a few seconds after you apply it.",
           "description_other": "This change makes {{count}} more workspaces match right now. They'll be deleted a few seconds after you apply it."
         },
+        "description": "Remove workspaces you're done with. Before removing anything, Adehone checks again for unsaved work.",
         "disableIgnoredFiles": {
           "matches_one": "Without pinning, {{count}} additional workspace will be deleted a few seconds after you turn off protection.",
           "matches_other": "Without pinning, {{count}} additional workspaces will be deleted a few seconds after you turn off protection."
@@ -5296,7 +5781,13 @@
           "lastRunFreed_other": "Last run {{when}} removed {{count}} workspaces and freed {{size}}.",
           "lastRunRemoved_one": "Last run {{when}} removed 1 workspace.",
           "lastRunRemoved_other": "Last run {{when}} removed {{count}} workspaces."
-        }
+        },
+        "unsupportedHost": "This host runs an Adehone version without automatic cleanup. Update Adehone on it to use these settings."
+      }
+    },
+    "sidebar": {
+      "ForgetSshWorkspaceDialog": {
+        "removeFromOrcaTitle": "Remove {{name}} from Adehone?"
       }
     },
     "tab": {
@@ -5312,6 +5803,12 @@
       }
     },
     "terminalPane": {
+      "TerminalContextMenu": {
+        "copyOrcaSessionId": "Copy Adehone Session ID",
+        "orcaSessionIdCopied": "Adehone session ID copied",
+        "orcaSessionIdCopyFailed": "Unable to copy Adehone session ID",
+        "orcaSessionIdTooltip": "Adehone's ID for this agent, separate from the agent CLI's own session ID. Agents use it to refer to each other through Adehone."
+      },
       "hostFile": {
         "updateHostForOutsideFiles": "Update Adehone on {{value0}} to open files outside its workspaces"
       }
@@ -5343,8 +5840,10 @@
           "delete_other": "Delete {{count}} workspaces"
         },
         "row": {
+          "notGit": "Not a git workspace. Remove the project from Adehone instead.",
           "uncommittedFiles_one": "{{count}} uncommitted file",
-          "uncommittedFiles_other": "{{count}} uncommitted files"
+          "uncommittedFiles_other": "{{count}} uncommitted files",
+          "unreachable": "Can't reach {{host}}. Reconnect to delete, or remove it from Adehone."
         },
         "scan": {
           "multipleErrorsCount_one": "Could not check {{count}} repository ({{names}}). Some workspaces may be missing. Refresh to try again.",
@@ -5373,6 +5872,12 @@
           "line_other": "Unsaved edits in {{count}} files will be discarded: {{files}}"
         }
       }
+    }
+  },
+  "crashReport": {
+    "freeze": {
+      "notes": "Optional: what were you doing before Adehone froze?",
+      "summary": "Adehone stopped responding"
     }
   },
   "dashboard": {
@@ -5469,6 +5974,9 @@
     }
   },
   "featureTips": {
+    "botsTeammate": {
+      "product": "Adehone Bots"
+    },
     "chatUiHere": {
       "onIntro": "Chat UI is out of Experimental and now part of Adehone. Your agents keep opening as chats, with rich messages, visuals and images."
     },
@@ -5541,8 +6049,10 @@
     }
   },
   "languages": {
+    "offerSentence": "Adehone is available in {{language}} as a community translation.",
     "pluginsDisabledCount_one": "{{count}} community translation needs plugins turned on.",
-    "pluginsDisabledCount_other": "{{count}} community translations need plugins turned on."
+    "pluginsDisabledCount_other": "{{count}} community translations need plugins turned on.",
+    "suggestionTitle": "Adehone in <lang>{{language}}</lang>"
   },
   "localBuild": {
     "chooseTitle": "Choose a Local Adehone Build",
@@ -5553,6 +6063,10 @@
     "signatureRequirement": "The build must have the same valid code signature as Adehone or installation will stop."
   },
   "macosUpdateRequirement": {
+    "description": "Adehone {{version}} requires macOS {{macos}} or later. This version keeps working, but it won’t get new updates on this Mac.",
+    "settingsStatus": "Adehone {{version}} requires macOS {{macos}} or later. This is the latest version for this Mac.",
+    "title": "Adehone updates now need macOS {{macos}}",
+    "upgradeDescription": "Your Mac can upgrade. Update macOS to get the latest Adehone.",
     "whyIntro": "We updated parts of Adehone’s foundation, like Electron and the on-device speech engine, to bring:"
   },
   "mcpServers": {
@@ -5643,10 +6157,13 @@
     "displayText": {
       "t0b4f7e19": "Unofficial ports of VS Code's default color themes: Dark Modern, Light Modern, Dark+ and Light+.",
       "t0f9f5503": "GitHub's own VS Code themes: Light Default, Dark Default, Dark Dimmed and the high-contrast variants.",
-      "tb0b38488": "GitHub Themes for Orca",
-      "tb8aa98fc": "VS Code Default Themes for Orca",
+      "tb0b38488": "GitHub Themes for Adehone",
+      "tb8aa98fc": "VS Code Default Themes for Adehone",
       "tc86eed7d": "A reviewed starter lifecycle for disposable Multipass workspaces.",
       "tfc425a57": "Multipass VM Recipes"
+    },
+    "requiredFailures": {
+      "body": "Adehone couldn’t install {{plugin}}."
     }
   },
   "profileState": {
@@ -5724,6 +6241,14 @@
     "description": "Agents on this SSH host can open and use Adehone browser tabs in its workspaces. Tabs it controls show its name. You can change this in Settings > SSH.",
     "stopped": "{{host}} stopped controlling browser tabs until Adehone restarts."
   },
+  "renderer": {
+    "lib": {
+      "filePreview": {
+        "remoteFileUnsupported": "Open in Adehone Browser is only available for local files.",
+        "twinFileUnsupported": "This project is on more than one host, so Adehone cannot tell which copy to open."
+      }
+    }
+  },
   "rendererRecovery": {
     "crashLoopDetail": "Adehone tried to recover {{recoveryCount}} times in a row without success.",
     "genericDetail": "This is often a graphics-driver or installation problem. Reload to try again, or quit and relaunch Adehone.",
@@ -5735,6 +6260,10 @@
     "title": "Adehone keeps failing to load"
   },
   "resourceManager": {
+    "owner": {
+      "orca": "Adehone",
+      "privateBytes": "Committed by Adehone, agents and terminals"
+    },
     "pty": {
       "copyFailed": "Could not copy Adehone session ID",
       "copyId": "Copy Adehone session ID",
@@ -5807,6 +6336,10 @@
     }
   },
   "settings": {
+    "accounts": {
+      "claudeRemoveProfile": "Adehone deletes this account's own Claude folder and the sign-in saved in it on {{host}}. Your System default login and chat history shared with it stay. If it is selected, the next Claude you start uses System default.",
+      "codexRemoveHome": "Adehone deletes this account's Codex folder on {{host}}, including its sign-in and MCP logins. This cannot be undone. If it is selected, the next Codex you start uses System default."
+    },
     "agents": {
       "autoUnsupported": "Approve for me needs a newer Adehone on this host.",
       "codexHistorySharing": {
@@ -5819,6 +6352,7 @@
       "defaultSurfaceKeptChat_other": "{{agents}} stay as chats, as you set.",
       "defaultSurfaceKeptTerminal_one": "{{agents}} stays in the terminal, as you set.",
       "defaultSurfaceKeptTerminal_other": "{{agents}} stay in the terminal, as you set.",
+      "modelListFallback": "Built-in list. Adehone could not get a model list from this host.",
       "permissionArgsTerminalOnly": "These arguments may control {{agent}}’s terminal permissions, so Adehone adds no flag. Chats use the Permissions choice above.",
       "permissionOverrideMore_one": "and {{count}} more",
       "permissionOverrideMore_other": "and {{count}} more",
@@ -5839,10 +6373,28 @@
         "sshToggleDescription": "Show configured SSH and remote Adehone hosts when any are available."
       }
     },
+    "automaticUpdates": {
+      "description": "On supported desktop installs, Adehone downloads eligible updates on its regular check schedule and restarts to install them automatically."
+    },
     "bots": {
       "connectorRequests": "{{count}} requests",
       "connectorRequests_one": "{{count}} request",
       "connectorRequests_other": "{{count}} requests",
+      "githubStatus": {
+        "notInstalled": "Adehone not installed"
+      },
+      "group": {
+        "noAccount": "Adehone account",
+        "signInChanged": "Adehone sign-in changed",
+        "signedOut": "Signed out of Adehone",
+        "updateNeeded": "Update Adehone on {{host}} to manage its bots here"
+      },
+      "linearStatus": {
+        "notInstalled": "Adehone not installed"
+      },
+      "lookAround": {
+        "whileRunning": "Adehone must be running on this computer."
+      },
       "memoryHistory": {
         "aChat": "A chat",
         "added": "Added: {{fact}}",
@@ -5854,7 +6406,7 @@
         "edited": "Edited: {{fact}}",
         "forgot": "Forgot: {{fact}}",
         "forgotMany": "Forgot {{count}} lines",
-        "kept": "Orca · {{chat}} wrote over it",
+        "kept": "Adehone · {{chat}} wrote over it",
         "keptMany": "Kept {{count}} lines other chats wrote over",
         "keptOne": "Kept a line another chat wrote over",
         "owner": "You, in Settings",
@@ -5865,7 +6417,11 @@
       },
       "skills": {
         "count_one": "{{count}} skill",
-        "count_other": "{{count}} skills"
+        "count_other": "{{count}} skills",
+        "missing": "This project is no longer in Adehone."
+      },
+      "tidyUp": {
+        "whileRunning": "Adehone must be running on this computer."
       }
     },
     "browser": {
@@ -5909,6 +6465,10 @@
         "skillTitle": "Adehone skill for agents"
       }
     },
+    "groupHooks": {
+      "invalidArchive": "The file is present, but Adehone could not find a valid setup or archive script.",
+      "invalidSetup": "The file is present, but Adehone could not find a valid setup script."
+    },
     "mcp": {
       "serverCount_one": "{{count}} server",
       "serverCount_other": "{{count}} servers"
@@ -5929,7 +6489,24 @@
         "allTitle": "Move {{count}} servers to Adehone?",
         "line": "Adehone removes it from {{agents}} settings and keeps a backup.",
         "title": "Move {{name}} to Adehone?"
+      },
+      "toast": {
+        "restart_one": "Restart {{count}} session",
+        "restart_other": "Restart {{count}} sessions",
+        "staleTerminalsOnHost_one": "{{count}} agent terminal on {{host}} uses an older MCP setup",
+        "staleTerminalsOnHost_other": "{{count}} agent terminals on {{host}} use an older MCP setup",
+        "staleTerminalsRestartManual_one": "Restart it yourself to reconnect Adehone’s MCP servers.",
+        "staleTerminalsRestartManual_other": "Restart them yourself to reconnect Adehone’s MCP servers.",
+        "staleTerminalsRestartSome_one": "{{restartable}} can be resumed here. Restart the other one yourself.",
+        "staleTerminalsRestartSome_other": "{{restartable}} can be resumed here. Restart the other {{count}} yourself.",
+        "staleTerminalsRestart_one": "Restart it to reconnect Adehone’s MCP servers.",
+        "staleTerminalsRestart_other": "Restart them to reconnect Adehone’s MCP servers.",
+        "staleTerminals_one": "{{count}} agent terminal uses an older MCP setup",
+        "staleTerminals_other": "{{count}} agent terminals use an older MCP setup"
       }
+    },
+    "mobile": {
+      "teamDisabledRelay": "Adehone Relay is turned off by your team. Use LAN."
     },
     "network": {
       "proxyUrlErrors": {
@@ -6013,21 +6590,43 @@
         "administratorScope": "Permissions for the Adehone app. Existing terminals may differ.",
         "administratorSearchDescription": "See Adehone’s Windows permissions or restart with administrator approval.",
         "closeLocalSessions": "Save your work, close all local terminal sessions, then exit Adehone.",
+        "confirmOrcaAdministratorRestart": "Restart Adehone as administrator?",
         "launchAdministrator": "In the Windows Start menu, right-click Adehone and choose Run as administrator. Approve the Windows prompt using your usual account.",
-        "launchStandard": "Open Adehone normally from the Windows Start menu."
+        "launchStandard": "Open Adehone normally from the Windows Start menu.",
+        "orcaCouldNotRestart": "Adehone couldn’t restart."
       }
     },
     "uninstall": {
+      "agentStatusOff": "Agent status is off. Adehone won't add hooks again unless you turn it on in Settings → Agents.",
+      "finishFailed": "Adehone could not do that.",
       "hookTargets": {
         "agents_one": "1 agent",
         "agents_other": "{{count}} agents",
         "sshHosts_one": "1 SSH host",
         "sshHosts_other": "{{count}} SSH hosts"
       },
+      "keeps": "Projects, worktrees and Adehone settings stay.",
+      "loadFailed": "Adehone could not check what it installed.",
+      "next": {
+        "appImage": "Quit Adehone, then delete <path>{{path}}</path>.",
+        "homebrew": "Adehone was installed with Homebrew. Run this to remove the app:",
+        "macApp": "Quit Adehone, then drag it from Applications to the Trash.",
+        "unknown": "Quit Adehone, then delete the app.",
+        "windows": "Finish in the Windows uninstaller. Adehone quits when it opens."
+      },
+      "path": {
+        "appData": "Adehone app data",
+        "codexAccount": "Adehone-managed Codex account"
+      },
+      "quit": "Quit Adehone",
+      "stepFailed": "Adehone could not finish this step.",
       "summary": {
+        "loading": "Checking what Adehone installed…",
         "problems_one": "1 item needs you before you delete the app.",
-        "problems_other": "{{count}} items need you before you delete the app."
-      }
+        "problems_other": "{{count}} items need you before you delete the app.",
+        "stillInUse": "Some Adehone files are still in use, so they stay for now."
+      },
+      "title": "Uninstall Adehone"
     },
     "updateDelay": {
       "clearedTitle": "Adehone {{version}} is ready",
@@ -6109,6 +6708,11 @@
         "targetNotFolder": "\"{{name}}\" already exists at this location and is not a folder."
       }
     },
+    "hiddenProjects": {
+      "hideFailed": "Couldn't hide {{name}}. Its host may need an Adehone update.",
+      "settingsDescription": "Hides this host's copy of the project from the sidebar, project pickers and the workspace switcher. Its terminals, agents and automations keep running. On a paired Adehone server, this hides it for everyone connected to that server.",
+      "undoGone": "{{name}} was removed from Adehone."
+    },
     "wslHosts": {
       "addErrors": {
         "alreadyAdded": "{{distro}} is already a host.",
@@ -6120,11 +6724,11 @@
       },
       "statusDetails": {
         "guestUnanswered": "The distro is running but didn’t answer Adehone’s check.",
-        "installLockWaitGivesUp_one": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca stops waiting in about {{count}} minute.",
-        "installLockWaitGivesUp_other": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca stops waiting in about {{count}} minutes.",
-        "installLockWaitHolderGone": "The other Orca install in this distro stopped. Orca takes over in a few seconds.",
-        "installLockWait_one": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca takes over in about {{count}} minute.",
-        "installLockWait_other": "Waiting for another Orca install in this distro to finish. If it doesn’t, Orca takes over in about {{count}} minutes.",
+        "installLockWaitGivesUp_one": "Waiting for another Adehone install in this distro to finish. If it doesn’t, Adehone stops waiting in about {{count}} minute.",
+        "installLockWaitGivesUp_other": "Waiting for another Adehone install in this distro to finish. If it doesn’t, Adehone stops waiting in about {{count}} minutes.",
+        "installLockWaitHolderGone": "The other Adehone install in this distro stopped. Adehone takes over in a few seconds.",
+        "installLockWait_one": "Waiting for another Adehone install in this distro to finish. If it doesn’t, Adehone takes over in about {{count}} minute.",
+        "installLockWait_other": "Waiting for another Adehone install in this distro to finish. If it doesn’t, Adehone takes over in about {{count}} minutes.",
         "orcadUnanswered": "Adehone’s server in the distro didn’t answer.",
         "peerCheckFailed": "Adehone couldn’t ask the WSL host whether another Adehone on this computer still uses it: {{detail}}",
         "removalUnrecorded": "Adehone couldn’t record what this Remove left running: {{detail}}",
@@ -6190,9 +6794,6 @@
         "agentCouldNotStart": "{{label}} could not be started. Check the agent command in Settings and try again.",
         "agentFailedToStart": "{{label}} failed to start. Check the agent command in Settings and try again.",
         "agentReportedError": "{{label}} reported an error.",
-        "antigravityInvalidEvents": "Antigravity returned invalid JSON events.",
-        "antigravityInvalidResult": "Antigravity returned an invalid result.",
-        "antigravityNoFinalResult": "Antigravity returned no final result.",
         "chatNameAgentUnsupported": "Choose a supported chat name agent for this action in Settings -> Chat -> Chat names. Supported agents: {{agents}}, or Custom command.",
         "chatNameCustomCommandEmpty": "Custom command is empty. Add one in Settings -> Chat -> Chat names.",
         "cliFailed": "{{label}} CLI command failed with code {{exitCode}}.",
@@ -6267,6 +6868,9 @@
       "basePrompt": "Adehone’s built-in prompt for this action, including the context Adehone knows how to gather safely."
     }
   },
+  "sparsePreset": {
+    "updateServerToRemove": "Update Adehone on this project’s server to remove its presets."
+  },
   "startupFailure": {
     "finishFailed": "Adehone could not finish starting: {{detail}}",
     "title": "Adehone could not start"
@@ -6325,6 +6929,8 @@
       "title": "Match Claude Code to your Adehone theme?"
     },
     "codexSharedServerBanner": {
+      "alsoStop": "Also stop the running server (closes all Codex sessions using it, including outside Adehone)",
+      "dialogSummary": "Turns off Codex server sharing, also outside Adehone.",
       "openedBeforeUpdateBody": "This terminal was opened before Adehone started giving each Codex its own server."
     },
     "codexSharedSettingsNotice": {
@@ -6362,9 +6968,18 @@
     "openOrca": "Open Adehone"
   },
   "updates": {
+    "automatic": {
+      "downloading": "Downloading Adehone {{version}}…",
+      "installing": "Installing Adehone {{version}}…",
+      "restarting": "Adehone will restart automatically."
+    },
+    "emergencyRequired": {
+      "summary": "Adehone {{version}} is required. Restart to update.",
+      "title": "Adehone {{version}} is required"
+    },
     "failure": {
-      "automaticInstallCheckpointFailed": "Orca could not save the current window before restarting. Try installing the update again.",
-      "automaticInstallTerminalBusy": "Some terminals would end on restart. Orca will try again on a later update check.",
+      "automaticInstallCheckpointFailed": "Adehone could not save the current window before restarting. Try installing the update again.",
+      "automaticInstallTerminalBusy": "Some terminals would end on restart. Adehone will try again on a later update check.",
       "channelUnsupportedPlatform": "{{channel}} builds are produced only for macOS and Windows.",
       "invalidReleaseTag": "\"{{tag}}\" is not a valid release tag.",
       "linuxPackageExternallyManaged": "This copy of Adehone is managed by your system package manager, so Adehone cannot install updates itself. Update Adehone through your distribution instead.",
@@ -6378,7 +6993,7 @@
       "linuxPackageNoSudo": "No sudo command was found in the system directories, so Adehone cannot build a safe install command. Show the package and install it with your package manager.",
       "linuxPackageNotRegular": "The downloaded package is no longer a valid file in the update cache. Download the update again, or get it from the official release page.",
       "linuxPackageReadFailed": "Adehone could not read the downloaded package. Download the update again, or get it from the official release page.",
-      "macStagingTimeout": "macOS is still preparing the update. If this persists, quit and reopen Orca.",
+      "macStagingTimeout": "macOS is still preparing the update. If this persists, quit and reopen Adehone.",
       "rateLimitedInMinute": "GitHub rate limit reached. Try again in about a minute.",
       "rateLimitedInMinuteSignedOut": "GitHub rate limit reached. Try again in about a minute, or run `gh auth login` so Adehone can use your account's higher limit.",
       "rateLimitedInMinutesSignedOut_one": "GitHub rate limit reached. Try again in about {{count}} minute, or run `gh auth login` so Adehone can use your account's higher limit.",
@@ -6391,6 +7006,7 @@
       "releaseListUnreadable": "Could not read the {{channel}} release list.",
       "releaseNotReady": "A newer release isn't available for this device yet. Check again later.",
       "releaseRepoNotFound": "No releases repository found at {{repo}}.",
+      "teamUpdatePolicy": "Your team manages Adehone updates.",
       "unknownReleaseChannel": "Unknown release channel \"{{channel}}\".",
       "unsignedDevChannel": "{{channel}} builds are unsigned, and this signed build only installs updates signed by Adehone's publisher. Download the installer from the release page and run it once — updates work normally from there, including back to Stable.",
       "updateServerUnreachable": "Couldn't reach the update server. Try again in a few minutes."
@@ -6411,6 +7027,18 @@
       "unresponsiveSummary": "Adehone could not finish pausing its background servers for the update.",
       "waitingAriaLabel": "Update waiting for other Adehone instances. Click to expand.",
       "windowLabel": "Other Adehone window"
+    },
+    "installOnQuit": {
+      "quit": "Quit Adehone",
+      "summary": "Quit Adehone. Reopen after installation."
+    },
+    "teamRequired": {
+      "countdown": "Adehone will save your sessions and restart after the countdown. Active agents may delay the restart.",
+      "deadline": "Restart by {{deadline}}. Adehone saves your sessions before restarting.",
+      "retry": "Adehone will retry this update the next time it starts.",
+      "summary": "Your team requires Adehone {{version}}. Restart to update.",
+      "title": "Your team requires Adehone {{version}}",
+      "waiting": "Adehone is waiting for active agents before restarting."
     }
   },
   "workspace": {
@@ -6500,7 +7128,10 @@
     "refusal": {
       "alreadyInFlightPreview": "A move of {{distro}} is still finishing. Starting this move first finishes or undoes it where Adehone can.",
       "finishedEarlierMove": "Adehone first finished an earlier move into {{distro}}. Reload the window, then start this move again.",
+      "hostLaunchUnproven": "The Adehone server in {{distro}} runs this version of Adehone but can't take these projects, so updating won't help. It may have been started outside WSL hosts, such as by an SSH host. Remove the {{distro}} host in Settings, then add it again.",
+      "hostNotWslLaunched": "The Adehone server in {{distro}} was not started as a WSL host (an SSH host for this distro usually started it), so it can't take these projects. Updating won't help. Choose Restart as WSL host on the {{distro}} host in Settings, then try again.",
       "hostUpdateRequired": "The {{distro}} host runs an older version of Adehone. Update it in Settings, then try again.",
+      "mappedDriveUnverifiable": "Adehone could not check a drive letter some projects are saved on. Make sure the drive is connected, then try again.",
       "pauseFailed": "Adehone could not pause the terminals in these projects, so nothing was moved. Paused terminals start again when you open them. Try again.",
       "previewFailed": "Adehone could not check these projects. Try again.",
       "startFailed": "Adehone lost contact with the move. Open this dialog again to see where it stands."
@@ -6512,6 +7143,10 @@
       "moved": "Reload this window to see the projects under the {{distro}} host. Adehone backs up unsaved files before it reloads.",
       "reloadCheckpointRefused": "Adehone could not back up unsaved files, so the window did not reload. Close this dialog, save or close those files, then use Reload now in the notice that stays open.",
       "waiting": "The move may have reached the {{distro}} host, but the host is not answering. These projects stay read-only here until it does. Connect the host in Settings, then open this dialog again and start a move: Adehone finishes or undoes this one first."
+    },
+    "scopeRefused": {
+      "gitUnreadable": "Adehone couldn’t read its Git details in time to check them, so it stays on this computer. Check again in a moment.",
+      "mappedDriveUnverifiable": "Adehone couldn’t check where its drive letter points just now. Make sure the drive is connected, then check again."
     },
     "unfinished": {
       "many": "{{n}} automations moved to the {{distro}} host are still off. Adehone keeps asking the host to turn them back on.",

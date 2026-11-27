@@ -48,7 +48,7 @@
       "title": "Ajan Oturum Geçmişi",
       "unavailable": "Ajan Oturum Geçmişi Kullanılamıyor",
       "unknownHostPlatform": "Sunucunun platformu belirlenemedi.",
-      "updateHost": "Ajan oturum geçmişine göz atmak için bu sunucudaki Orca'yı güncelleyin.",
+      "updateHost": "Ajan oturum geçmişine göz atmak için bu sunucudaki Adehone'yı güncelleyin.",
       "waitingForHost": "Sunucu bekleniyor…",
       "workspace": "Çalışma Alanı",
       "hideDetails": "Ayrıntıları gizle",
@@ -128,7 +128,7 @@
       "stepProgress": "{{total}} adımın {{step}}. adımı"
     },
     "notifications": {
-      "description": "Uygulama kapalıyken bile ajan uyarıları alın. Uyarılar Orca'nın anlık bildirim hizmeti ve Apple veya Google üzerinden iletilir."
+      "description": "Uygulama kapalıyken bile ajan uyarıları alın. Uyarılar Adehone'nın anlık bildirim hizmeti ve Apple veya Google üzerinden iletilir."
     },
     "pair": {
       "backToHome": "Ana ekrana dön",
@@ -147,13 +147,13 @@
     "pairScan": {
       "cameraDisabledDescription": "Ayarlar bölümünde kamera erişimini etkinleştirin veya eşleştirme kodunu yapıştırın.",
       "cameraDisabledTitle": "Kamera Erişimi Devre Dışı",
-      "cameraPermissionDescription": "Masaüstünüzdeki Orca'da gösterilen QR kodunu tarayın veya eşleştirme kodunu yapıştırın.",
+      "cameraPermissionDescription": "Masaüstünüzdeki Adehone'da gösterilen QR kodunu tarayın veya eşleştirme kodunu yapıştırın.",
       "connectTimedOut": "{{seconds}} saniye içinde bağlantı kurulamadı — işlemin nerede takıldığını görmek için aşağıdaki günlüğe bakın",
       "connecting": "Bağlanılıyor…",
       "invalidPairingCode": "Geçerli bir eşleştirme kodu değil — bilgisayarınızdan kopyalayıp yeniden yapıştırın",
-      "invalidQrCode": "Geçerli bir Orca QR kodu değil",
+      "invalidQrCode": "Geçerli bir Adehone QR kodu değil",
       "downloadQrCode": "Bu indirme kodu. Bilgisayarınızdaki 2. adımda bulunan eşleştirme kodunu tarayın.",
-      "openDesktopStep": "Bilgisayarınızda Orca'yı açın",
+      "openDesktopStep": "Bilgisayarınızda Adehone'yı açın",
       "openMobileSettingsStep": "Ayarlar → Mobil bölümüne gidin",
       "openSettings": "Ayarları Aç",
       "pairingFailed": "Eşleştirme yapılamadı: {{error}}",
@@ -167,11 +167,11 @@
       "title": "Masaüstüyle eşleştir",
       "tryAgain": "Tekrar Dene",
       "codeNoLongerValid": "Bu eşleştirme kodunun süresi doldu, kod zaten kullanıldı veya değiştirildi. Bilgisayarınızda yeni bir kod gösterip tekrar tarayın.",
-      "runtimeAccessLink": "Bu bağlantı başka bir Orca uygulaması için. Bilgisayarınızda Ayarlar → Mobil bölümündeki kodu tarayın veya sunucunuzda orca pair --mobile komutunu çalıştırın."
+      "runtimeAccessLink": "Bu bağlantı başka bir Adehone uygulaması için. Bilgisayarınızda Ayarlar → Mobil bölümündeki kodu tarayın veya sunucunuzda orca pair --mobile komutunu çalıştırın."
     },
     "terminalSettings": {
       "keepPhoneSize": "Telefon boyutunda tut (varsayılan)",
-      "leaveAppDescription": "Telefonunuzda terminal kullanırken Orca, terminali ekranınıza sığacak şekilde küçültür. Uygulamayı kapattığınızda veya başka bir uygulamaya geçtiğinizde bu ayar, terminalin telefon boyutunda kalmasını (etkileşimli CLI araçlarının düzeninin değişmemesi için) ya da masaüstü boyutuna geri dönmesini belirler. Boyutu elle değiştirmek için masaüstündeki bildirim çubuğunda Geri yükle seçeneğini her zaman kullanabilirsiniz.",
+      "leaveAppDescription": "Telefonunuzda terminal kullanırken Adehone, terminali ekranınıza sığacak şekilde küçültür. Uygulamayı kapattığınızda veya başka bir uygulamaya geçtiğinizde bu ayar, terminalin telefon boyutunda kalmasını (etkileşimli CLI araçlarının düzeninin değişmemesi için) ya da masaüstü boyutuna geri dönmesini belirler. Boyutu elle değiştirmek için masaüstündeki bildirim çubuğunda Geri yükle seçeneğini her zaman kullanabilirsiniz.",
       "leaveAppHeading": "UYGULAMADAN AYRILDIĞINIZDA",
       "noPairedDesktops": "Henüz eşleştirilmiş masaüstü yok. Terminal davranışını ayarlamak için bir masaüstü eşleştirin.",
       "restoreAfterMinutes_one": "{{count}} dakika sonra",
@@ -201,7 +201,7 @@
       "weightMedium": "Orta",
       "fontPickerTitle": "Terminal yazı tipi",
       "fontsOnDevice": "Bu cihazda",
-      "fontsIncluded": "Orca ile gelenler",
+      "fontsIncluded": "Adehone ile gelenler",
       "systemMono": "Sistemin eş aralıklı yazı tipi",
       "defaultFont": "Varsayılan",
       "resetFont": "Yazı tipi ayarlarını sıfırla"
@@ -209,15 +209,15 @@
   },
   "appMove": {
     "play": {
-      "title": "Orca artık Google Play'de",
+      "title": "Adehone artık Google Play'de",
       "description": "Bu uygulama çalışmaya devam ediyor, ancak güncellemeler artık Google Play üzerinden geliyor. Geçiş birkaç dakika sürer.",
-      "installTitle": "Orca'yı Google Play'den yükleyin",
+      "installTitle": "Adehone'yı Google Play'den yükleyin",
       "installDescription": "Bunu şimdi, nerede olursanız olun yapabilirsiniz.",
       "openGooglePlay": "Google Play'i aç",
       "cantUseGooglePlay": "Google Play'i kullanamıyorum"
     },
     "download": {
-      "title": "Yeni Orca uygulamasını edinin",
+      "title": "Yeni Adehone uygulamasını edinin",
       "description": "Bu uygulama çalışmaya devam ediyor, ancak güncellemeler ve güvenlik düzeltmeleri artık yeni uygulama üzerinden geliyor. Geçiş birkaç dakika sürer.",
       "installTitle": "Yeni uygulamayı indirin",
       "installDescription": "Telefonunuz sorarsa tarayıcınızın uygulama yüklemesine izin verin.",
@@ -226,7 +226,7 @@
       "keepThisVersionNote": "Güvenlik düzeltmelerini kaçıracaksınız. Size bir hafta sonra hatırlatacağız."
     },
     "pairTitle": "Bilgisayarınızla eşleştirin",
-    "pairDescription": "Bilgisayarınızdaki Orca'da Ayarlar → Mobil bölümüne gidin ve kodu tarayın.",
+    "pairDescription": "Bilgisayarınızdaki Adehone'da Ayarlar → Mobil bölümüne gidin ve kodu tarayın.",
     "deleteTitle": "Bu uygulamayı silin",
     "deleteDescription": "Yeni uygulama ajanlarınızı gösterdiğinde. O zamana kadar bunu kullanmaya devam edin.",
     "dataKept": "Ajanlarınız, sohbetleriniz ve çalışma alanlarınız bilgisayarınızda kayıtlı, bu yüzden hepsini yeni uygulamada göreceksiniz.",
@@ -275,15 +275,15 @@
       "connectionNotSecure": "Bağlantı güvenli değil",
       "certificateNameMismatch": "Sertifika {{value0}} ile eşleşmiyor.",
       "certificateDateInvalid": "{{value0}} için sertifika, geçerli tarih ve saatte geçerli değil.",
-      "certificateAuthorityInvalid": "Orca, {{value0}} için sertifikayı veren yetkiliye güvenmiyor.",
-      "certificateVerificationFailed": "Orca, {{value0}} için sertifikayı doğrulayamadı.",
+      "certificateAuthorityInvalid": "Adehone, {{value0}} için sertifikayı veren yetkiliye güvenmiyor.",
+      "certificateVerificationFailed": "Adehone, {{value0}} için sertifikayı doğrulayamadı.",
       "proceedUnsafe": "Yine de Devam Et (Güvenli Değil)",
       "connecting": "Bağlanıyor…",
       "certificateChallengeExpired": "Bu sertifika onayının süresi doldu. Yeni bir onay istemek için sayfayı yeniden deneyin.",
       "certificateChallengeChanged": "Sertifika isteği değişti. Sayfayı yeniden deneyin ve yeni uyarıyı inceleyin.",
-      "certificateProceedFailed": "Orca bu sertifika isteğini onaylayamadı. Sayfayı yeniden deneyin ve tekrar deneyin.",
+      "certificateProceedFailed": "Adehone bu sertifika isteğini onaylayamadı. Sayfayı yeniden deneyin ve tekrar deneyin.",
       "certificateChallengeUnavailable": "Bu sertifika isteği artık kullanılamıyor. Yeni bir istek için sayfayı yeniden deneyin.",
-      "certificateProceedNeedsHostUpdate": "Telefonunuzdan sertifika uyarılarını kabul etmek için ana bilgisayardaki Orca’yı güncelleyin."
+      "certificateProceedNeedsHostUpdate": "Telefonunuzdan sertifika uyarılarını kabul etmek için ana bilgisayardaki Adehone’yı güncelleyin."
     },
     "pagePrompt": {
       "downloadStarted": "Sunucuda {{path}} konumuna indiriliyor",
@@ -321,7 +321,7 @@
       "password": "Parola"
     },
     "stream": {
-      "updateApp": "Tarayıcı sekmelerini burada görüntülemek için Orca uygulamasını güncelleyin.",
+      "updateApp": "Tarayıcı sekmelerini burada görüntülemek için Adehone uygulamasını güncelleyin.",
       "hostCannotStream": "Bu cihaz tarayıcı sekmelerini buraya aktaramıyor.",
       "checking": "Masaüstü tarayıcı aktarım desteği denetleniyor.",
       "pageUnavailable": "Tarayıcı sayfası henüz kullanılamıyor.",
@@ -418,7 +418,7 @@
       "copyFailed": "Görsel kopyalanamadı",
       "saveFailed": "Görsel kaydedilemedi",
       "shareFailed": "Görsel paylaşılamadı",
-      "photosAccessDenied": "Ayarlar'da Orca'nın fotoğraf eklemesine izin verin",
+      "photosAccessDenied": "Ayarlar'da Adehone'nın fotoğraf eklemesine izin verin",
       "imageTooLarge": "Bu görsel çok büyük",
       "previousImage": "Önceki görsel",
       "nextImage": "Sonraki görsel"
@@ -495,11 +495,11 @@
     },
     "orcaStop": {
       "canContinue": "Bu konuşmada devam edebilirsiniz.",
-      "crash": "Bu yanıt hazırlanırken {{machine}} üzerindeki Orca beklenmedik biçimde durdu.",
-      "quit": "Bu yanıt hazırlanırken {{machine}} üzerindeki Orca kapatıldı.",
-      "remote": "Bu yanıt hazırlanırken {{machine}} üzerindeki Orca durdu.",
+      "crash": "Bu yanıt hazırlanırken {{machine}} üzerindeki Adehone beklenmedik biçimde durdu.",
+      "quit": "Bu yanıt hazırlanırken {{machine}} üzerindeki Adehone kapatıldı.",
+      "remote": "Bu yanıt hazırlanırken {{machine}} üzerindeki Adehone durdu.",
       "unnamedServer": "uzak sunucu",
-      "update": "Bu yanıt hazırlanırken {{machine}} üzerindeki Orca bir güncelleme için yeniden başlatıldı."
+      "update": "Bu yanıt hazırlanırken {{machine}} üzerindeki Adehone bir güncelleme için yeniden başlatıldı."
     },
     "interruptedContinue": {
       "failed": "Bu sohbete devam edilemedi. Yeniden deneyin veya bir mesaj gönderin.",
@@ -510,7 +510,7 @@
     },
     "permission": {
       "needsAccessTo": "Erişim gereken konum: ",
-      "newerVersionRequired": "Bu istek için Orca'nın daha yeni bir sürümü gerekiyor.",
+      "newerVersionRequired": "Bu istek için Adehone'nın daha yeni bir sürümü gerekiyor.",
       "planFile": "Plan dosyası: {{filePath}}",
       "reason": "Neden: "
     },
@@ -541,7 +541,7 @@
       "waitingFor": "{{host}} geri geldiğinde gönderilecek",
       "waiting": "Masaüstü geri geldiğinde gönderilecek",
       "behind": "Bekliyor — öndeki bir mesajın ilgilenilmesi gerekiyor",
-      "closed": "Orca kapanmadan önce gönderilmedi"
+      "closed": "Adehone kapanmadan önce gönderilmedi"
     },
     "receipt": {
       "cancelled": "İptal edildi",
@@ -772,9 +772,9 @@
       "autoContinueCancel": "Devam etme",
       "statusResetAt": "{{time}} saatinde sıfırlandı",
       "statusResetsAt": "{{time}} saatinde sıfırlanır",
-      "statusContinuesShortly": "Orca birazdan devam edecek",
-      "statusContinuesThen": "Orca o zaman devam edecek",
-      "statusWontContinue": "Orca otomatik olarak devam etmeyecek"
+      "statusContinuesShortly": "Adehone birazdan devam edecek",
+      "statusContinuesThen": "Adehone o zaman devam edecek",
+      "statusWontContinue": "Adehone otomatik olarak devam etmeyecek"
     },
     "useImageUpload": {
       "attachFailed": "Eklenemedi",
@@ -787,7 +787,7 @@
       "incompleteReply": "Ek değişti veya yanıtı eksikti. Kapatıp tekrar deneyin.",
       "notText": "Bu dosya metin olarak önizlenemez. Başka bir uygulamada açmak için kaydedin.",
       "openFailed": "Ek açılamadı. Tekrar deneyin.",
-      "hostUpdate": "Bu ana makine henüz metin eklerini açamıyor. O ana makinede Orca’yı güncelleyip tekrar deneyin.",
+      "hostUpdate": "Bu ana makine henüz metin eklerini açamıyor. O ana makinede Adehone’yı güncelleyip tekrar deneyin.",
       "copyTooLarge": "Bu dosya kopyalanamayacak kadar büyük. Bunun yerine kaydedin.",
       "connectionChanged": "Bağlantı değişti. Eki yeniden açmayı deneyin.",
       "hostChanged": "Ekin ana makinesi değişti. Eki kapatıp yeniden açın.",
@@ -838,10 +838,10 @@
       "historyLimit": "Bu sohbet geri dönülemeyecek kadar uzun. Hiçbir şey değiştirilmedi.",
       "providerRefused": "Ajan bu mesaja dönemedi.",
       "proofMismatch": "Ajanın geçmişi bu sohbetle eşleşmedi. Devam etmeden önce sohbeti kontrol edin.",
-      "outcomeUnknown": "Orca, sohbette önceki bir mesaja dönülüp dönülmediğini doğrulayamadı. Bir sonraki mesajınız gönderilmeden önce kontrol edecek.",
-      "refused": "Orca bu mesaja dönemedi. Devam etmeden önce sohbeti kontrol edin.",
+      "outcomeUnknown": "Adehone, sohbette önceki bir mesaja dönülüp dönülmediğini doğrulayamadı. Bir sonraki mesajınız gönderilmeden önce kontrol edecek.",
+      "refused": "Adehone bu mesaja dönemedi. Devam etmeden önce sohbeti kontrol edin.",
       "unavailable": "Sohbet bağlantısının tamamlanmasını bekleyin.",
-      "outcomeUnknownReturned": "Orca, sohbette bu mesaja dönülüp dönülmediğini doğrulayamadı. Mesajınız yazma kutusuna geri getirildi. Orca, bir sonraki mesajınız gönderilmeden önce sohbeti kontrol edecek.",
+      "outcomeUnknownReturned": "Adehone, sohbette bu mesaja dönülüp dönülmediğini doğrulayamadı. Mesajınız yazma kutusuna geri getirildi. Adehone, bir sonraki mesajınız gönderilmeden önce sohbeti kontrol edecek.",
       "timeout": "Bu mesaja dönüldükten sonra sohbet güncellenmedi. Son durumu görmek için sohbeti yeniden açın.",
       "pending": "Sohbetin önceki mesaja dönmesini bekleyin."
     },
@@ -884,7 +884,7 @@
       },
       "title": "MCP sunucuları",
       "notRunning": "MCP sunucuları sonraki mesajınızı gönderdiğinizde bağlanır.",
-      "unsupported": "MCP sunucularını burada yönetmek için bu sohbetin ana makinesindeki Orca’yı güncelleyin.",
+      "unsupported": "MCP sunucularını burada yönetmek için bu sohbetin ana makinesindeki Adehone’yı güncelleyin.",
       "readFailed": "MCP sunucuları yüklenemedi.",
       "retry": "Yeniden dene",
       "empty": "Bu sohbet için ayarlanmış MCP sunucusu yok.",
@@ -907,10 +907,10 @@
       "pasteHint": "Tarayıcı yüklenmeyen bir sayfaya yönlendiğinde adresi kopyalayıp buraya yapıştırın."
     },
     "restartNote": {
-      "continued": "Orca, yeniden başlatmanın ardından bu ajandan devam etmesini istedi. İsteminiz yeniden gönderilmedi.",
-      "refused": "Orca yeniden başlatmanın ardından bu sohbeti sürdüremedi. Devam etmek için bir mesaj gönderin.",
-      "unconfirmed": "Orca yeniden başlatmanın ardından ajandan devam etmesini istedi ancak devam ettiğini doğrulayamadı. Yeni bir mesaj göndermeden önce son yanıtını kontrol edin.",
-      "notConnected": "Orca yeniden başlatmanın ardından bu sohbete yeniden bağlanamadığı için ajandan devam etmesini istemedi."
+      "continued": "Adehone, yeniden başlatmanın ardından bu ajandan devam etmesini istedi. İsteminiz yeniden gönderilmedi.",
+      "refused": "Adehone yeniden başlatmanın ardından bu sohbeti sürdüremedi. Devam etmek için bir mesaj gönderin.",
+      "unconfirmed": "Adehone yeniden başlatmanın ardından ajandan devam etmesini istedi ancak devam ettiğini doğrulayamadı. Yeni bir mesaj göndermeden önce son yanıtını kontrol edin.",
+      "notConnected": "Adehone yeniden başlatmanın ardından bu sohbete yeniden bağlanamadığı için ajandan devam etmesini istemedi."
     },
     "agentMessage": {
       "open": "{{name}} öğesini aç",
@@ -1039,7 +1039,7 @@
           "guideHere": "Burada bana yol göster",
           "guideBrowser": "Tarayıcımda bana yol göster",
           "doItNote": "{{bot}} adımları uygular",
-          "guideHereNote": "Orca içinden siz tıklarsınız",
+          "guideHereNote": "Adehone içinden siz tıklarsınız",
           "guideBrowserNote": "Tarayıcınızda siz tıklarsınız"
         },
         "notNow": "Şimdi değil",
@@ -1066,7 +1066,7 @@
         "connect": {
           "titleAccount": "{{email}} hesabını bağlamak için oturum açın",
           "title": "Bağlanmak için oturum açın",
-          "onComputer": "Bilgisayarınızdaki Orca’da Google hesabınızla oturum açın.",
+          "onComputer": "Bilgisayarınızdaki Adehone’da Google hesabınızla oturum açın.",
           "signIn": "Google’da oturum aç"
         },
         "movedDown": "Devamı aşağıda.",
@@ -1076,7 +1076,7 @@
         },
         "copied": "Kopyalandı. Google yöneticinize gönderin.",
         "action": {
-          "onComputer": "“{{action}}” işlemi için bilgisayarınızdaki Orca’yı kullanın.",
+          "onComputer": "“{{action}}” işlemi için bilgisayarınızdaki Adehone’yı kullanın.",
           "makeNewKey": "Yeni anahtar oluştur",
           "importKey": "Anahtar dosyasını içe aktar",
           "allow": "{{services}} için izin ver",
@@ -1126,7 +1126,7 @@
           },
           "branding": {
             "start": "<b>Get started</b> düğmesine tıklayın.",
-            "name": "Uygulama adı olarak <b>Orca</b>, destek e-postası olarak kendi e-posta adresinizi girin.",
+            "name": "Uygulama adı olarak <b>Adehone</b>, destek e-postası olarak kendi e-posta adresinizi girin.",
             "external": "Audience: <b>External</b>.",
             "internal": "Audience: <b>Internal</b>.",
             "either": "Audience olarak Gmail hesabı için <b>External</b>, iş hesabı için <b>Internal</b> seçin.",
@@ -1145,7 +1145,7 @@
           "client": {
             "type": "Application type olarak <b>Desktop app</b> seçin, ardından <b>Create</b> düğmesine tıklayın.",
             "agent": "<b>Use this client for an AI-powered agent</b> seçeneği görünüyorsa işaretleyin.",
-            "download": "<b>Download JSON</b> düğmesine tıklayın. Orca anahtarı kaydeder."
+            "download": "<b>Download JSON</b> düğmesine tıklayın. Adehone anahtarı kaydeder."
           }
         },
         "blocker": {
@@ -1153,7 +1153,7 @@
           "stopped": "Kurulum durduruldu.",
           "paused": "Kurulum {{step}} adımında duraklatıldı. Şu ana kadarki işlemler kaydedildi.",
           "yourTurn": "Sıra sizde: {{step}}.",
-          "noKey": "Orca’nın önce uygulama anahtarına ihtiyacı var.",
+          "noKey": "Adehone’nın önce uygulama anahtarına ihtiyacı var.",
           "keyGone": "Uygulama anahtarı artık çalışmıyor: Google Cloud’dan kaldırılmış.",
           "keyOtherProject": "Kayıtlı anahtar {{project}} projesine değil, {{keyProject}} projesine ait.",
           "otherAccount": "{{signedIn}} hesabıyla oturum açtınız; bu kurulum {{wanted}} hesabı içindi.",
@@ -1161,7 +1161,7 @@
           "needsPermission": "Son adım: {{services}} hizmetlerine izin verin. Google her hizmet için bir kutu gösterir; hepsini işaretleyin.",
           "apiOff": "{{services}} hizmetleri Google Cloud’da kapalı.",
           "adminBlocked": "Şirketinizin Google yöneticisi şu hizmetleri engelledi: {{services}}.",
-          "checkFailed": "Orca şu hizmetleri kontrol edemedi: {{services}}."
+          "checkFailed": "Adehone şu hizmetleri kontrol edemedi: {{services}}."
         },
         "ownerStep": "3 adımdan {{step}}. adım",
         "adminRequest": "Lütfen Admin console’da (Security › API controls › Manage third-party app access) bu Google uygulamasını Trusted olarak işaretleyin: {{clientId}}"
@@ -1173,7 +1173,7 @@
         "stayed": "{{app}} içinde kalanlar: {{things}}. {{app}} içinde hiçbir şey değiştirilmedi.",
         "unchanged": "{{app}} uygulamasında hiçbir şey değişmedi.",
         "paused": "İşlerin iki kez çalışmasını önlemek için otomasyonlar duraklatıldı. {{app}} içinde eski botu kapattıktan sonra otomasyonları açın.",
-        "soulOnComputer": "Botun kişilik ve bellek dosyalarını bilgisayarınızda Orca ile açın."
+        "soulOnComputer": "Botun kişilik ve bellek dosyalarını bilgisayarınızda Adehone ile açın."
       },
       "importPlan": {
         "comes": "Aktarılır",
@@ -1201,8 +1201,8 @@
         "checkAgain": "Yeniden kontrol et",
         "connectTitle": "{{app}} uygulamasına bağlan",
         "connecting": "Tarayıcınızda oturum açmanız bekleniyor",
-        "connectKeyNote": "{{app}} API anahtarınızı girmeniz için Composio açılır. Anahtarınızı yalnızca Composio saklar; Orca saklamaz.",
-        "connectNote": "Composio üzerinden tarayıcınızda {{app}} oturum açma sayfası açılır. Oturum bilgilerinizi Composio saklar; Orca saklamaz.",
+        "connectKeyNote": "{{app}} API anahtarınızı girmeniz için Composio açılır. Anahtarınızı yalnızca Composio saklar; Adehone saklamaz.",
+        "connectNote": "Composio üzerinden tarayıcınızda {{app}} oturum açma sayfası açılır. Oturum bilgilerinizi Composio saklar; Adehone saklamaz.",
         "signInOnComposio": "Composio sayfasından {{app}} hesabınızda oturum açın.",
         "openAgain": "Yeniden aç",
         "cancel": "İptal",
@@ -1212,10 +1212,10 @@
         "byHandPaste": "Composio’da proje ayarlarını açın. “Webhooks” bölümüne gidip adresi yapıştırın.",
         "byHandOpen": "Composio’yu aç",
         "byHandDone": "Tamam",
-        "byHandDoneNote": "Ardından Orca, {{trigger}} tetikleyicisini etkinleştirir ve Composio’nun imzalama anahtarını kaydeder.",
+        "byHandDoneNote": "Ardından Adehone, {{trigger}} tetikleyicisini etkinleştirir ve Composio’nun imzalama anahtarını kaydeder.",
         "eventsTitle": "{{trigger}} tetiklendiğinde Composio, {{bot}} botunu çağırsın",
         "eventsReplaceNote": "Composio projeniz şu anda olayları başka bir adrese gönderiyor. Kurulumu tamamlarsanız olaylar buraya gönderilir; önceki adrese artık ulaşmaz.",
-        "eventsOneAddressNote": "Orca, oturumunuz için {{trigger}} tetikleyicisini etkinleştirir. Composio projenizdeki tüm olaylar tek bir adresten Orca’ya ulaşır ve her biri ilgili bota iletilir.",
+        "eventsOneAddressNote": "Adehone, oturumunuz için {{trigger}} tetikleyicisini etkinleştirir. Composio projenizdeki tüm olaylar tek bir adresten Adehone’ya ulaşır ve her biri ilgili bota iletilir.",
         "eventsDone": "✓ Kuruldu",
         "eventsChosenByHand": "Bu adımı Composio’da yapıyorum",
         "eventsReplace": "Değiştir ve kur",
@@ -1242,7 +1242,7 @@
         "goneDetail": "Botun Araçlar bölümünden yeniden kurun.",
         "readyAs": "{{label}} olarak bağlısınız. Uygulamalarınızın oturum bilgilerini Composio saklar.",
         "custody": "Uygulamalarınızın oturum bilgilerini Composio saklar.",
-        "browseOnComputer": "Daha fazla uygulama görmek için bilgisayarınızda Orca’yı açıp botun Araçlar bölümüne gidin.",
+        "browseOnComputer": "Daha fazla uygulama görmek için bilgisayarınızda Adehone’yı açıp botun Araçlar bölümüne gidin.",
         "browse": "Daha fazla uygulamaya göz at"
       },
       "webhookSetup": {
@@ -1329,7 +1329,7 @@
     "offline": {
       "waitingFor": "{{host}} bekleniyor",
       "waiting": "Cihaz bekleniyor",
-      "message": "Cihazın uyanık ve Orca’nın çalışıyor olduğunu kontrol edin.",
+      "message": "Cihazın uyanık ve Adehone’nın çalışıyor olduğunu kontrol edin.",
       "reconnect": "Yeniden bağlan"
     },
     "noMatch": {
@@ -1345,7 +1345,7 @@
       "copyFailed": "Kopyalanamadı",
       "copyPrompt": "İstemi kopyala",
       "statusUnreadable": "Bu sunucunun durumu okunamadı. Yeniden deneniyor…",
-      "updateRequired": "Telefonunuzdan ajan başlatmak için bu sunucudaki Orca'yı güncelleyin."
+      "updateRequired": "Telefonunuzdan ajan başlatmak için bu sunucudaki Adehone'yı güncelleyin."
     },
     "agentSpinner": {
       "monitoring": "Arka plan görevleri izleniyor",
@@ -1360,7 +1360,7 @@
     },
     "authFailedBannerActions": {
       "repair": "Yeniden eşleştir",
-      "webNote": "Orca uygulamasından bu sunucuya yeniden bağlanın veya sunucuyu kaldırın."
+      "webNote": "Adehone uygulamasından bu sunucuya yeniden bağlanın veya sunucuyu kaldırın."
     },
     "codexResetCredit": {
       "alreadyAppliedTitle": "Sıfırlama zaten uygulandı",
@@ -1480,7 +1480,7 @@
       "terminalLabel": "{{title}} ({{id}})",
       "unsentNotes_one": "{{count}} gönderilmemiş not",
       "unsentNotes_other": "{{count}} gönderilmemiş not",
-      "updateRequired": "Bu sunucudaki Orca'yı güncelleyin",
+      "updateRequired": "Bu sunucudaki Adehone'yı güncelleyin",
       "viewedFiles_one": "{{count}} dosya görüntülendi",
       "viewedFiles_other": "{{count}} dosya görüntülendi",
       "notes_one": "{{count}} not",
@@ -1566,10 +1566,10 @@
     },
     "jiraConnectPrompt": {
       "checkAgain": "Yeniden kontrol et",
-      "connectHint": "Orca masaüstü uygulamasında Ayarlar → Entegrasyonlar bölümüne Jira sitenizi ekleyin, ardından yeniden kontrol edin.",
+      "connectHint": "Adehone masaüstü uygulamasında Ayarlar → Entegrasyonlar bölümüne Jira sitenizi ekleyin, ardından yeniden kontrol edin.",
       "connectOnDesktop": "Bilgisayarınızda Jira'yı bağlayın",
       "credentialUnreadable": "Jira bağlantısı kayıtlı ancak okunamıyor: {{credentialError}}",
-      "updateDesktop": "Bu sunucudaki Orca'yı güncelleyin"
+      "updateDesktop": "Bu sunucudaki Adehone'yı güncelleyin"
     },
     "markdownBlocks": {
       "copyCode": "Kodu kopyala",
@@ -1640,23 +1640,23 @@
     },
     "protocolBlockScreen": {
       "backToHosts": "Sunucular bölümüne dön",
-      "desktopTooOldBody": "Bu sunucudaki Orca, mevcut Orca Mobile sürümünüz için çok eski. Bu sunucudaki Orca'yı güncelleyin, ardından bağlanmayı tekrar deneyin.",
-      "getVersion": "Orca {{version}} Sürümünü İndir",
-      "mobileTooOldAppStore": "Bu sunucu, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı App Store üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
-      "mobileTooOldGooglePlay": "Bu sunucu, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı Google Play üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
-      "mobileTooOldGitHubReleases": "Bu sunucu, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı GitHub Releases üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
+      "desktopTooOldBody": "Bu sunucudaki Adehone, mevcut Adehone Mobile sürümünüz için çok eski. Bu sunucudaki Adehone'yı güncelleyin, ardından bağlanmayı tekrar deneyin.",
+      "getVersion": "Adehone {{version}} Sürümünü İndir",
+      "mobileTooOldAppStore": "Bu sunucu, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı App Store üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
+      "mobileTooOldGooglePlay": "Bu sunucu, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı Google Play üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
+      "mobileTooOldGitHubReleases": "Bu sunucu, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı GitHub Releases üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
       "openAppStore": "App Store'u Aç",
       "openGooglePlay": "Google Play'i Aç",
       "openGitHubReleases": "GitHub Releases Sayfasını Aç",
       "refreshRecoveryNote": "Bu mesaj görünmeye devam ederse bu sunucuyu kaldırıp yeniden eşleştirin.",
       "refreshWorkspaceBody": "Bu sunucu için önbelleğe alınan çalışma alanı, sunucunun beklediğinden daha eski. Güncel sürümü indirmek için bu sunucuya yeniden bağlanın.",
       "refreshWorkspaceTitle": "Mobil çalışma alanını yenileyin",
-      "updateDesktopTitle": "Bu sunucudaki Orca'yı güncelleyin",
-      "updateMobileTitle": "Orca Mobile'ı güncelleyin",
+      "updateDesktopTitle": "Bu sunucudaki Adehone'yı güncelleyin",
+      "updateMobileTitle": "Adehone Mobile'ı güncelleyin",
       "updateRecoveryNote": "Zaten güncellediniz mi? Sunucular bölümüne dönüp bağlantıyı yenileyin. Bu mesaj görünmeye devam ederse bu sunucuyu kaldırıp yeniden eşleştirin.",
-      "workspaceNeedsUpdateAppStore": "Bu sunucunun mobil çalışma alanı, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı App Store üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
-      "workspaceNeedsUpdateGooglePlay": "Bu sunucunun mobil çalışma alanı, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı Google Play üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
-      "workspaceNeedsUpdateGitHubReleases": "Bu sunucunun mobil çalışma alanı, Orca Mobile'ın daha yeni bir sürümünü gerektiriyor. Orca Mobile'ı GitHub Releases üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin."
+      "workspaceNeedsUpdateAppStore": "Bu sunucunun mobil çalışma alanı, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı App Store üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
+      "workspaceNeedsUpdateGooglePlay": "Bu sunucunun mobil çalışma alanı, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı Google Play üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin.",
+      "workspaceNeedsUpdateGitHubReleases": "Bu sunucunun mobil çalışma alanı, Adehone Mobile'ın daha yeni bir sürümünü gerektiriyor. Adehone Mobile'ı GitHub Releases üzerinden güncelleyin, ardından bu sunucuya bağlanmayı tekrar deneyin."
     },
     "richMarkdownEditor": {
       "imageUrl": "Görsel URL'si",
@@ -1961,7 +1961,7 @@
       "disconnected": "Bağlantı kesildi",
       "hostFallback": "Sunucu",
       "hostOffline": "{{host}} çevrimdışı",
-      "hostOfflineDetail": "Bilgisayarınızın uyanık, Orca'nın çalışır durumda ve oturumunuzun açık olduğunu kontrol edin",
+      "hostOfflineDetail": "Bilgisayarınızın uyanık, Adehone'nın çalışır durumda ve oturumunuzun açık olduğunu kontrol edin",
       "labelWithHint": "{{label}} — {{hint}}",
       "pairingInvalid": "Eşleştirme geçersiz — bilgisayarınızla yeniden eşleştirin",
       "rePairDetail": "Bilgisayarınızla yeniden eşleştirin",
@@ -1969,7 +1969,7 @@
       "relayAccessRefused": "Relay, {{host}} için erişimi reddetti",
       "relayConnectFailed": "Relay üzerinden bağlanılamadı",
       "relayUnreachable": "Relay'e ulaşılamadı",
-      "signInDetail": "Yeniden bağlanmak için bilgisayarınızda Orca'da oturum açın",
+      "signInDetail": "Yeniden bağlanmak için bilgisayarınızda Adehone'da oturum açın",
       "signInRequired": "{{host}} üzerinde oturum açılması gerekiyor",
       "tailscaleHint": "Tailscale'i kontrol edin"
     },
@@ -2037,21 +2037,21 @@
       "title": "Çalışma alanı güncellemeleri"
     },
     "troubleshootCommonIssues": {
-      "allowNotifications": "Sistem ayarlarında Orca bildirimlerine izin verildiğini ve Focus veya Do Not Disturb modunun kapalı olduğunu kontrol edin.",
+      "allowNotifications": "Sistem ayarlarında Adehone bildirimlerine izin verildiğini ve Focus veya Do Not Disturb modunun kapalı olduğunu kontrol edin.",
       "checkTailnet": "Bilgisayarınızın uyku modunda olmadığını ve tailnet ağınızda bağlı göründüğünü kontrol edin.",
       "desktopTitle": "Masaüstü Uygulaması Çalışmıyor",
       "disableVpn": "Bu VPN'i devre dışı bırakın veya bölünmüş tünellemeyi / \"Allow LAN\" seçeneğini etkinleştirin.",
       "firewallTitle": "Güvenlik Duvarı {{port}} Portunu Engelliyor",
       "linuxFirewall": "Linux: sudo ufw allow {{port}}",
       "keepTailscaleOn": "100.x.x.x veya *.ts.net gibi sunucu adreslerine Tailscale üzerinden bağlanılır — Tailscale'i AÇIK tutun.",
-      "macosFirewall": "macOS: System Settings → Network → Firewall — Orca'ya izin verin.",
+      "macosFirewall": "macOS: System Settings → Network → Firewall — Adehone'ya izin verin.",
       "notificationNetwork": "Hücresel bağlantıyı veya başka bir Wi-Fi ağını deneyin. Ağ değiştirdikten sonra bildirimler geliyorsa ağınız iletimi geciktiriyor olabilir.",
       "notificationsTitle": "Anlık Bildirimler",
-      "openDesktop": "Bağlantıları kabul edebilmesi için bilgisayarınızda Orca açık olmalıdır.",
+      "openDesktop": "Bağlantıları kabul edebilmesi için bilgisayarınızda Adehone açık olmalıdır.",
       "pairAfterUpdate": "Güncellemeden sonra QR koduyla yeniden eşleştirme yapmanız gerekebilir.",
       "reconnectWifi": "Her iki cihazda da WiFi ağına yeniden bağlanmayı deneyin.",
       "restartBothApps": "Zaman aşımı devam ederse her iki uygulamayı da yeniden başlatın.",
-      "restartDesktop": "Orca'yı yeniden başlatmayı deneyin — mobil bağlantı sunucusu uygulama açıldığında başlar.",
+      "restartDesktop": "Adehone'yı yeniden başlatmayı deneyin — mobil bağlantı sunucusu uygulama açıldığında başlar.",
       "restartTailscale": "iOS/Android'de tünel bağlantısı fark edilmeden takılabilir: Tailscale uygulamasında Tailscale'i kapatıp yeniden açın.",
       "restrictedNetwork": "Kurum/okul ağları P2P bağlantılarını engelleyebilir — kişisel erişim noktasını deneyin.",
       "retryHost": "Sunucu listesine dönün ve yeniden denemek için sunucunuza dokunun.",
@@ -2064,7 +2064,7 @@
       "vpnTitle": "Diğer VPN'lerden Kaynaklanan Sorunlar",
       "wifiSignal": "Telefonunuzdaki WiFi sinyal gücünü kontrol edin.",
       "wifiTitle": "Farklı WiFi Ağları",
-      "windowsFirewall": "Windows: Defender Firewall → Allow app — Orca'yı Private ağlarda etkinleştirin."
+      "windowsFirewall": "Windows: Defender Firewall → Allow app — Adehone'yı Private ağlarda etkinleştirin."
     },
     "troubleshootView": {
       "commonIssues": "Yaygın sorunlar",
@@ -2138,15 +2138,15 @@
   },
   "dictation": {
     "setup": {
-      "alreadyActive": "Dikte şu anda bilgisayarda veya başka bir telefonda kullanılıyor. Aynı anda birden fazla cihazdan dikte etmek için bilgisayardaki Orca'yı güncelleyin.",
+      "alreadyActive": "Dikte şu anda bilgisayarda veya başka bir telefonda kullanılıyor. Aynı anda birden fazla cihazdan dikte etmek için bilgisayardaki Adehone'yı güncelleyin.",
       "cloudModelNeedsKey": "OpenAI anahtarı gerekli",
       "deleteFailed": "Model silinemedi",
-      "desktopUpdateRequired": "Mobil ses ayarlarını kullanmak için eşleştirilmiş bilgisayardaki Orca uygulamasını güncelleyin.",
+      "desktopUpdateRequired": "Mobil ses ayarlarını kullanmak için eşleştirilmiş bilgisayardaki Adehone uygulamasını güncelleyin.",
       "downloadFailed": "İndirme başlatılamadı",
       "loadFailed": "Dikte modelleri yüklenemedi",
       "modelBusy": "Başka bir cihaz farklı bir konuşma modeliyle dikte ediyor. O bitince tekrar deneyin.",
       "repairRequired": "Dikteyi kullanmak için bu telefonu bilgisayarla yeniden eşleştirin.",
-      "serverUpdateRequired": "Sesli dikteyi kullanmak için bu sunucudaki Orca'yı güncelleyin.",
+      "serverUpdateRequired": "Sesli dikteyi kullanmak için bu sunucudaki Adehone'yı güncelleyin.",
       "sessionLimit": "Bu bilgisayarda çok fazla cihaz dikte ediyor. Biri bitince tekrar deneyin.",
       "sessionLost": "Diktenin bilgisayarla bağlantısı kesildi. Yeniden deneyin.",
       "updateFailed": "Dikte ayarları güncellenemedi"
@@ -2307,7 +2307,7 @@
       "open": "PDF aç",
       "openFailed": "Bu PDF açılamadı",
       "opening": "PDF açılıyor…",
-      "updateRequired": "PDF'leri açmak için Orca Mobile'ı güncelleyin"
+      "updateRequired": "PDF'leri açmak için Adehone Mobile'ı güncelleyin"
     },
     "unsavedEditsOffer": {
       "changedSince": "Düzenlemelerinizden ({{time}}) sonra masaüstünde değişti",
@@ -2319,9 +2319,9 @@
   },
   "home": {
     "appUpdateCard": {
-      "dismissAccessibilityLabel": "Orca {{version}} güncellemesini gizle",
-      "title": "Orca {{version}} sürümü mevcut",
-      "updateAccessibilityLabel": "Orca {{version}} sürümü mevcut, güncellemek için dokunun",
+      "dismissAccessibilityLabel": "Adehone {{version}} güncellemesini gizle",
+      "title": "Adehone {{version}} sürümü mevcut",
+      "updateAccessibilityLabel": "Adehone {{version}} sürümü mevcut, güncellemek için dokunun",
       "update": "Güncelle"
     },
     "automationsTab": {
@@ -2336,14 +2336,14 @@
       "scheduled": "Zamanlanmış",
       "showFor": "Otomasyonları gösterilecek masaüstü",
       "toggleFailed": "{{name}} güncellenemedi",
-      "updateDesktop": "Otomasyonları kullanmak için {{desktop}} üzerindeki Orca'yı güncelleyin."
+      "updateDesktop": "Otomasyonları kullanmak için {{desktop}} üzerindeki Adehone'yı güncelleyin."
     },
     "emptyState": {
       "connectedDescription": "Masaüstünüz burada görünecek. Her şey uçtan uca şifrelenir.",
       "connectedTitle": "Bağlandınız",
-      "description": "Ajanlarınızı takip etmek, istediğiniz terminale erişmek ve işlerinizi telefonunuzdan yönetmek için bilgisayarınızdaki Orca ile eşleştirin.",
+      "description": "Ajanlarınızı takip etmek, istediğiniz terminale erişmek ve işlerinizi telefonunuzdan yönetmek için bilgisayarınızdaki Adehone ile eşleştirin.",
       "openDesktopDescription": "Ayarlar → Mobil bölümüne gidin ve eşleştirme için bir QR kodu oluşturun.",
-      "openDesktopTitle": "Orca masaüstü uygulamasını açın",
+      "openDesktopTitle": "Adehone masaüstü uygulamasını açın",
       "scanCodeTitle": "Kodu tarayın",
       "title": "Masaüstünüzü bağlayın",
       "pairDesktopButton": "Bilgisayarı eşleştir",
@@ -2410,13 +2410,13 @@
       "noBotsTitle": "Henüz bot yok",
       "pairDesktop": "Botları burada görmek için bir bilgisayarı eşleştirin.",
       "seeAll": "Tüm botları gör",
-      "updateOneBody": "Bu bilgisayardaki Orca sürümü botları henüz telefonunuzda gösteremiyor.",
-      "updateManyTitle": "Bilgisayarlarınızdaki Orca’yı güncelleyin",
-      "updateManyBody": "Bilgisayarlarınızdaki Orca sürümü botları henüz telefonunuzda gösteremiyor.",
-      "offOneBody": "Botları açmak için {{host}} üzerinde Orca’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
-      "offServerBody": "{{host}} üzerindeki botları açmak için {{desktop}} üzerinde Orca’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
+      "updateOneBody": "Bu bilgisayardaki Adehone sürümü botları henüz telefonunuzda gösteremiyor.",
+      "updateManyTitle": "Bilgisayarlarınızdaki Adehone’yı güncelleyin",
+      "updateManyBody": "Bilgisayarlarınızdaki Adehone sürümü botları henüz telefonunuzda gösteremiyor.",
+      "offOneBody": "Botları açmak için {{host}} üzerinde Adehone’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
+      "offServerBody": "{{host}} üzerindeki botları açmak için {{desktop}} üzerinde Adehone’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
       "offManyTitle": "Bilgisayarlarınızda botlar kapalı",
-      "offManyBody": "Botları açmak için her bilgisayarda Orca’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
+      "offManyBody": "Botları açmak için her bilgisayarda Adehone’yı açın ve Ayarlar › Botlar › Botları etkinleştir yolunu izleyin.",
       "waits": {
         "questions_one": "soru",
         "questions_other": "{{count}} soru",
@@ -2460,8 +2460,8 @@
       "removeHost": "Sunucuyu kaldır",
       "updateStepsServiceManager": "Paket yöneticisi veya hizmet yöneticisiyle güncelleyin.",
       "updateStepsSourceCheckout": "Kaynak kodun bulunduğu Git çalışma kopyasından güncelleyin.",
-      "updateStepsServer": "Sunucuda Orca’yı güncelleyip yeniden başlatın.",
-      "orcaVersion": "Orca sürümü"
+      "updateStepsServer": "Sunucuda Adehone’yı güncelleyip yeniden başlatın.",
+      "orcaVersion": "Adehone sürümü"
     }
   },
   "hostScreen": {
@@ -2488,8 +2488,8 @@
     },
     "hostScreenOverlays": {
       "deleteConfirmMessage": "“{{name}}” ({{branch}}) silinsin mi?",
-      "deleteDestroysEnvironment": "Orca'nın bunun için oluşturduğu \"{{environment}}\" ortamı da, içindeki commit edilmemiş değişiklikler ve çalışan terminallerle birlikte yok edilir.",
-      "deleteKeepsEnvironment": "Orca'nın bunun için oluşturduğu \"{{environment}}\" ortamı çalışmaya devam eder: tarifinde yok etme adımı yok.",
+      "deleteDestroysEnvironment": "Adehone'nın bunun için oluşturduğu \"{{environment}}\" ortamı da, içindeki commit edilmemiş değişiklikler ve çalışan terminallerle birlikte yok edilir.",
+      "deleteKeepsEnvironment": "Adehone'nın bunun için oluşturduğu \"{{environment}}\" ortamı çalışmaya devam eder: tarifinde yok etme adımı yok.",
       "pin": "Sabitle",
       "primaryWorktreeDeleteHint": "Birincil worktree, silinemez. Bunun yerine projeyi kaldırın.",
       "removeHost": "Sunucuyu Kaldır",
@@ -2511,7 +2511,7 @@
       "closed": "Kapalı",
       "createdByAutomation": "Otomasyon tarafından oluşturuldu",
       "createdByNamedAutomation": "“{{name}}” otomasyonu tarafından oluşturuldu",
-      "createdFromCli": "Orca CLI ile oluşturuldu",
+      "createdFromCli": "Adehone CLI ile oluşturuldu",
       "draft": "Taslak",
       "merged": "Merge edildi",
       "openLink": "{{label}} bağlantısını aç",
@@ -2604,9 +2604,9 @@
       "ignoredNamesMore": "{{names}} ve diğerleri",
       "ignoredNamesCount": "{{names}} +{{value0}}",
       "ignoredUnchecked": "Yok sayılan dosyalar tam olarak kontrol edilemedi",
-      "needsUpdate": "Bu çalışma alanını telefonunuzdan silebilmek için bilgisayarınızdaki Orca’yı güncelleyin.",
+      "needsUpdate": "Bu çalışma alanını telefonunuzdan silebilmek için bilgisayarınızdaki Adehone’yı güncelleyin.",
       "removeTitle": "Çalışma alanını kaldır",
-      "removeFolderMessage": "“{{name}}” Orca’dan kaldırılsın mı? Diskteki klasör korunur."
+      "removeFolderMessage": "“{{name}}” Adehone’dan kaldırılsın mı? Diskteki klasör korunur."
     },
     "hostBottomBar": {
       "workspaceOptions": "Çalışma alanı seçenekleri",
@@ -2644,7 +2644,7 @@
       "loading": "Yükleniyor"
     },
     "createdSetupReview": {
-      "hostUnsupported": "Onaylandı. Mevcut çalışma alanında kurulumu çalıştırmak için alanın bulunduğu bilgisayarda Orca’yı güncelleyin.",
+      "hostUnsupported": "Onaylandı. Mevcut çalışma alanında kurulumu çalıştırmak için alanın bulunduğu bilgisayarda Adehone’yı güncelleyin.",
       "changedAgain": "Kurulum çalıştırılmadı: Bu çalışma alanının orca.yaml dosyası, siz inceledikten sonra yeniden değişti.",
       "runFailed": "Kurulum başlatılamadı."
     }
@@ -2652,7 +2652,7 @@
   "notifications": {
     "desktopChannel": {
       "name": "Masaüstü Bildirimleri",
-      "silentName": "Orca sessiz bildirimleri"
+      "silentName": "Adehone sessiz bildirimleri"
     },
     "notificationDeliverySection": {
       "footer": "Uyarı türleri, eşleştirilen her bilgisayarın bildirim ayarlarına göre belirlenir. Bu uygulama 7 gün kullanılmazsa bildirimler duraklatılır; sürdürmek için uygulamayı açıp yeniden bağlanın.",
@@ -2679,7 +2679,7 @@
       "keepTerminal": "Terminalle devam et",
       "notNow": "Şimdi değil",
       "notificationsDescription": "Uygulamayı kullanmasanız bile bir ajan işini bitirdiğinde veya beklediğinde bu telefonda bildirim alın.",
-      "notificationsDisclosure": "Bilgisayarınız 3 dakika boşta kaldıktan sonra Orca'nın anlık bildirim hizmeti üzerinden iletilir. Bunu Ayarlar bölümünden istediğiniz zaman değiştirebilirsiniz.",
+      "notificationsDisclosure": "Bilgisayarınız 3 dakika boşta kaldıktan sonra Adehone'nın anlık bildirim hizmeti üzerinden iletilir. Bunu Ayarlar bölümünden istediğiniz zaman değiştirebilirsiniz.",
       "notificationsTitle": "Bir ajanın size ihtiyacı olduğunda haberdar olun",
       "openInChatUi": "Oturumları Sohbet Arayüzü ile aç",
       "openInTerminal": "Oturumları terminalde aç",
@@ -3092,8 +3092,8 @@
     },
     "aiVaultResumePreparation": {
       "openInChat": "Bu {{agent}} konuşması bir sohbette açık. Açmak için Oturum Geçmişi'ni yenileyin.",
-      "ownershipUnknown": "Orca, bu {{agent}} konuşmasının kime ait olduğunu doğrulayamadı. Oturum Geçmişi'ni yenileyip tekrar deneyin.",
-      "preparationRefused": "Orca'da bu {{agent}} konuşması hazırlanamadı. Devam etmek için yeni bir sohbet başlatın.",
+      "ownershipUnknown": "Adehone, bu {{agent}} konuşmasının kime ait olduğunu doğrulayamadı. Oturum Geçmişi'ni yenileyip tekrar deneyin.",
+      "preparationRefused": "Adehone'da bu {{agent}} konuşması hazırlanamadı. Devam etmek için yeni bir sohbet başlatın.",
       "prepareFailed": "Bu eski Codex oturumu hazırlanamadı. Oturumu sürdürmeyi yeniden deneyin."
     },
     "backgroundTask": {
@@ -3187,7 +3187,7 @@
       "committedChangesFailed": "Commit'lenmiş değişiklikler yüklenemedi",
       "committedChangesUnavailable": "Commit'lenmiş değişiklikler kullanılamıyor",
       "committedDiffUnavailable": "Commit'lenmiş diff kullanılamıyor",
-      "desktopUpdateRequired": "Değişiklikleri mobilde incelemek için bu sunucudaki Orca'yı güncelleyin.",
+      "desktopUpdateRequired": "Değişiklikleri mobilde incelemek için bu sunucudaki Adehone'yı güncelleyin.",
       "diffLoadFailed": "Diff yüklenemedi",
       "reviewNotesLoadFailed": "İnceleme notları yüklenemedi",
       "commitLoadFailed": "Bu commit yüklenemedi",
@@ -3214,7 +3214,7 @@
     },
     "failure": {
       "accountSwitchInProgress": "Bu ana makinede {{agent}} yapılandırması değiştiriliyor. İşlem tamamlandıktan sonra yeniden deneyin.",
-      "agentCommandNotRunnable": "Ayarlar → Ajanlar bölümündeki {{agent}} Komut ayarı, Orca'nın bulabileceği bir program yolu veya adı olmalı; argüman ya da değişken içermemelidir. Değiştirin veya sıfırlayın.",
+      "agentCommandNotRunnable": "Ayarlar → Ajanlar bölümündeki {{agent}} Komut ayarı, Adehone'nın bulabileceği bir program yolu veya adı olmalı; argüman ya da değişken içermemelidir. Değiştirin veya sıfırlayın.",
       "agentCommandFailed": "Ayarlar → Ajanlar bölümündeki {{agent}} Komut ayarı {{agent}} uygulamasını başlatmadı: {{detail}}. Değiştirin veya sıfırlayın.",
       "agentCommandNotSignedIn": "Bu sohbetin çalıştığı bilgisayarda `{{loginCommand}}` komutuyla {{agent}} oturumu açın.",
       "agentNotSignedIn": "{{agent}} oturumu açın.",
@@ -3275,16 +3275,16 @@
       "emptyMessage": "Bu mesaj boş olduğu için gönderilmedi.",
       "fullAccessAsRoot": "{{agent}}, root olarak çalışırken Tam erişim iznini kullanmaz. Bu sohbeti çalıştıran bilgisayarda Ayarlar → Ajanlar bölümünden {{agent}} için başka bir izin seçin, ardından yeni bir sohbet başlatın.",
       "botToolsNeedStatusHooks": "{{agent}} botları ajan durumu hook'larına ihtiyaç duyar: bir botun araçları bunlar sayesinde bot olarak çalışır. Ayarlar → Ajanlar bölümünden {{agent}} için açın, ardından yeni bir sohbet başlatın.",
-      "botToolsGatewayOutdated": "{{agent}} ağ geçidi hâlâ Orca eklentisinin eski bir sürümüyle çalışıyor, bu yüzden bu botun araçları bot olarak çalışamıyor. `hermes gateway stop` komutunu çalıştırın, ardından yeni bir sohbet başlatın.",
+      "botToolsGatewayOutdated": "{{agent}} ağ geçidi hâlâ Adehone eklentisinin eski bir sürümüyle çalışıyor, bu yüzden bu botun araçları bot olarak çalışamıyor. `hermes gateway stop` komutunu çalıştırın, ardından yeni bir sohbet başlatın.",
       "historyInOtherAccount": "Bu sohbetin geçmişi başka bir Claude hesabında. Devam etmek için o hesaba geri dönün.",
       "historyTooLarge": "Bu konuşmanın geçmişi burada geri yüklenemeyecek kadar büyük.",
-      "hostFault": "Orca bir sorunla karşılaştığı için bu işlem gerçekleşmedi.",
-      "hostFaultTryAgain": "Orca bir sorunla karşılaştığı için bu işlem gerçekleşmedi. Tekrar deneyin.",
-      "hostRestarted": "Bu mesaj gönderilmeden önce Orca yeniden başlatıldı.",
-      "hostStopped": "{{agent}} başlatma aşamasında kaldığı için Orca onu durdurdu.",
+      "hostFault": "Adehone bir sorunla karşılaştığı için bu işlem gerçekleşmedi.",
+      "hostFaultTryAgain": "Adehone bir sorunla karşılaştığı için bu işlem gerçekleşmedi. Tekrar deneyin.",
+      "hostRestarted": "Bu mesaj gönderilmeden önce Adehone yeniden başlatıldı.",
+      "hostStopped": "{{agent}} başlatma aşamasında kaldığı için Adehone onu durdurdu.",
       "interactiveAgentNotSignedIn": "Bu sohbetin çalıştığı bilgisayarda `{{loginCommand}}` komutunu çalıştırıp `{{slashCommand}}` komutunu kullanarak {{agent}} oturumu açın.",
       "launchFolderMissing": "Bu sohbetin çalıştığı klasör artık yok. Sohbete devam etmek için klasörü geri yükleyin.",
-      "launchPreparationFailed": "Orca, bu sohbetin çalıştığı bilgisayarda {{agent}} için başlatma hazırlıklarını tamamlayamadı.",
+      "launchPreparationFailed": "Adehone, bu sohbetin çalıştığı bilgisayarda {{agent}} için başlatma hazırlıklarını tamamlayamadı.",
       "managedAccountEnvOverride": "Bu Claude başlatma işlemi kendi Anthropic oturum değişkenlerini tanımlıyor. Yönetilen bir Claude hesabını kullanmak için bunları kaldırın.",
       "managedAccountUnsupported": "WSL'de bir Claude hesabı eklenmiş olsa da Claude sohbetleri Windows'ta bir Claude hesabı gerektirir.",
       "modelUnavailable": "{{agent}}, {{detail}} modelini kullanamadı. Başka bir model seçip yeniden gönderin.",
@@ -3317,7 +3317,7 @@
       "quitTerminalAgent": "Sohbete burada devam etmek için o ajandan çıkın.",
       "runCommandAgain": "/{{command}} komutunu yeniden çalıştırın.",
       "runCommandWhenDone": "Tamamlandığında /{{command}} komutunu çalıştırın.",
-      "runtimeNotInstalled": "Bu sohbetin çalıştığı bilgisayarda {{agent}} yüklü değil. Orca'nın güncel bir sürümünde sohbet içinden yükleyin.",
+      "runtimeNotInstalled": "Bu sohbetin çalıştığı bilgisayarda {{agent}} yüklü değil. Adehone'nın güncel bir sürümünde sohbet içinden yükleyin.",
       "sendAgainToTryOnceMore": "Tekrar denemek için mesajınızı yeniden gönderin.",
       "sendToTryAgain": "Tekrar denemek için mesajınızı gönderin.",
       "sessionNotRestored": "{{agent}} önceki oturumunu yeniden açamadığı için bu sohbet yeni bir oturumda devam ediyor. {{agent}} önceki mesajları hatırlamıyor.",
@@ -3342,7 +3342,7 @@
       "usageLimitWindowWeeklyModel": "haftalık model",
       "waitForBackgroundTasks": "Arka plan görevlerinin tamamlanmasını bekleyin.",
       "waitForStart": "Ajanın başlatılmasının tamamlanmasını bekleyin.",
-      "writeFailed": "Orca bu mesajı ajana iletemediği için mesaj gönderilmedi.",
+      "writeFailed": "Adehone bu mesajı ajana iletemediği için mesaj gönderilmedi.",
       "pluginInputRequired": "{{agent}} durdu çünkü \"{{plugin}}\" eklentisi bir terminal bölmesinde girdi bekliyor. Sohbet oturumları için eklentiyi devre dışı bırakın veya görevi bir {{agent}} terminalinde çalıştırın.",
       "forkOriginalMissing": "{{agent}} bu yanıtı asıl sohbette bulamadı. Asıl sohbeti açıp oradan dallandırın.",
       "forkOriginalUnavailable": "{{agent}} bu yanıtı asıl sohbette dallandıramıyor. Asıl sohbeti açıp oradan dallandırın.",
@@ -3465,7 +3465,7 @@
       "emptyPrompt": "Bu işlem için kaydedilen istem boş. Bilgisayarınızda Kaynak Kontrolü AI ayarlarını güncelleyin.",
       "loadFailed": "Kullanılabilir ajanlar yüklenemedi.",
       "promptNotSent": "Ajan başlatıldı, ancak istem gönderilemedi.",
-      "updateRequired": "Telefonunuzdan ajan başlatmak için bu sunucudaki Orca'yı güncelleyin."
+      "updateRequired": "Telefonunuzdan ajan başlatmak için bu sunucudaki Adehone'yı güncelleyin."
     },
     "prSidebarState": {
       "loadFailed": "Pull request yüklenemedi"
@@ -3502,7 +3502,7 @@
       "globalScope": "Genel",
       "label": "Etiket",
       "labelPlaceholder": "Geliştirme sunucusunu başlat",
-      "olderHostPromptTooLong": "Bu sunucu için çok uzun. Daha uzun istemleri kaydetmek için sunucudaki Orca'yı güncelleyin.",
+      "olderHostPromptTooLong": "Bu sunucu için çok uzun. Daha uzun istemleri kaydetmek için sunucudaki Adehone'yı güncelleyin.",
       "projectScope": "Proje",
       "prompt": "İstem",
       "promptHint": "Becerileri, dosya yollarını ve yerleşik komutları destekler.",
@@ -3658,7 +3658,7 @@
     },
     "useCloseActions": {
       "closeFailed": "Sekme kapatılamadı. Tekrar deneyin.",
-      "closeFailedDesktopNotReady": "Sekme kapatılamadı. Orca bilgisayarınızda hâlâ yükleniyor. Birazdan tekrar deneyin."
+      "closeFailedDesktopNotReady": "Sekme kapatılamadı. Adehone bilgisayarınızda hâlâ yükleniyor. Birazdan tekrar deneyin."
     },
     "useContentCreateActions": {
       "browserCommandFailed": "Tarayıcı komutu çalıştırılamadı",
@@ -3684,7 +3684,7 @@
     "useDiffReviewController": {
       "loadFailed": "İnceleme yüklenemedi",
       "missingWorktree": "Worktree eksik",
-      "commitMissing": "Commit dosyalarını burada açmak için Orca uygulamasını güncelleyin."
+      "commitMissing": "Commit dosyalarını burada açmak için Adehone uygulamasını güncelleyin."
     },
     "useDiffReviewDiffLoading": {
       "loadFailed": "Diff yüklenemedi"
@@ -3760,7 +3760,7 @@
       "liveInputInterrupted": "Canlı giriş kesildi. Alan temizlendi; devam etmeden önce terminali kontrol edin."
     },
     "useStartup": {
-      "wakeAgents": "Uykudaki ajanları uyandırmak için sunucuda Orca'yı açın."
+      "wakeAgents": "Uykudaki ajanları uyandırmak için sunucuda Adehone'yı açın."
     },
     "useTerminalCreateActions": {
       "createFailed": "Terminal oluşturulamadı",
@@ -3795,10 +3795,10 @@
       "attachmentExpired": "Bu ekin süresi doldu.",
       "backgroundTasksRunning": "Arka plan görevleri hâlâ çalışıyor.",
       "cancelNotSaved": "Bu soru veya onay isteği iptal edilemedi.",
-      "cannotRunHere": "Orca bu ajanı burada bir sohbette çalıştıramıyor.",
-      "capacity": "Bu sohbeti çalıştıran bilgisayardaki Orca istek sınırına ulaştı. O bilgisayarda Orca'yı güncelleyip yeniden deneyin.",
-      "chatNotFound": "Orca'da bu sohbet bulunamadı.",
-      "chatSavedByNewerOrca": "Bu sohbet daha yeni bir Orca sürümüyle kaydedilmiş.",
+      "cannotRunHere": "Adehone bu ajanı burada bir sohbette çalıştıramıyor.",
+      "capacity": "Bu sohbeti çalıştıran bilgisayardaki Adehone istek sınırına ulaştı. O bilgisayarda Adehone'yı güncelleyip yeniden deneyin.",
+      "chatNotFound": "Adehone'da bu sohbet bulunamadı.",
+      "chatSavedByNewerOrca": "Bu sohbet daha yeni bir Adehone sürümüyle kaydedilmiş.",
       "clearAfterAnswer": "Ajanın sorusuna veya onay isteğine yanıt verin, ardından /clear komutunu çalıştırın.",
       "clearAfterRetry": "Önceki mesajınızı yeniden göndermeyi deneyin, ardından /clear komutunu çalıştırın.",
       "clearAfterSending": "Önceki mesajınız hâlâ gönderiliyor. Gönderildikten sonra /clear komutunu çalıştırın.",
@@ -3810,13 +3810,13 @@
       "continuationSuperseded": "Bu sohbet ilerledi. Devam etmeden önce son mesajları kontrol edin.",
       "conversationCleared": "Bu konuşma temizlendi.",
       "goalsUnsupported": "Bu ajan hedefleri desteklemiyor.",
-      "historyUnavailable": "Orca şu anda bu sohbetin geçmişini açamadı.",
+      "historyUnavailable": "Adehone şu anda bu sohbetin geçmişini açamadı.",
       "diskFull": "Bu sohbeti çalıştıran bilgisayarın diski dolu.",
       "freeDiskSpace": "Bu diskte yer açın, ardından tekrar deneyin.",
       "savedInOtherFolder": "Bu konuşma başka bir klasöre kaydedildi.",
-      "historyUnreadable": "Orca bu sohbetin kayıtlı geçmişini okuyamadı.",
+      "historyUnreadable": "Adehone bu sohbetin kayıtlı geçmişini okuyamadı.",
       "historyUnusable": "Bu sohbet yüklenemiyor.",
-      "hostReconciling": "Orca yeniden başlatma sonrasında bu sohbeti hâlâ kontrol ediyor.",
+      "hostReconciling": "Adehone yeniden başlatma sonrasında bu sohbeti hâlâ kontrol ediyor.",
       "messageNotSaved": "Mesajınız kaydedilemedi.",
       "messageTooLarge": "Tek mesaj için 256 KB sınırını aşıyor.",
       "messagesUnsettled": "Daha önce gönderdiğiniz bir mesajın iletildiği henüz doğrulanmadı.",
@@ -3833,7 +3833,7 @@
       "notDoneStopTasks": "Arka plan görevleri durdurulamadı.",
       "openCurrentConversation": "Devam etmek için mevcut konuşmayı açın.",
       "optionRejected": "Ajan bu ayarı kabul etmedi.",
-      "outcomeUnknown": "Orca ne olduğunu doğrulayamadı. Sohbeti kontrol edin.",
+      "outcomeUnknown": "Adehone ne olduğunu doğrulayamadı. Sohbeti kontrol edin.",
       "ownerUnproven": "Bu sohbetteki önceki ajan hâlâ çalışıyor olabilir.",
       "pendingWork": "Bu komutu kullanmadan önce bekleyen işlerin tamamlanmasını ve mesajların iletilmesini bekleyin.",
       "promptPending": "Ajan, bir soruya yanıt veya onay bekliyor.",
@@ -3842,14 +3842,14 @@
       "quitTerminalAgent": "Sohbete burada devam etmek için o ajandan çıkın.",
       "reattachFile": "Kaldırıp yeniden ekleyin.",
       "reattachFiles": "Kaldırıp yeniden ekleyin.",
-      "recordFailed": "Orca bunu sohbet geçmişine kaydedemedi.",
-      "recordUnreadable": "Orca'da bu sohbetin kayıtlı durumu okunamadı.",
+      "recordFailed": "Adehone bunu sohbet geçmişine kaydedemedi.",
+      "recordUnreadable": "Adehone'da bu sohbetin kayıtlı durumu okunamadı.",
       "reopenChat": "Yeniden kontrol etmek için sohbeti tekrar açın.",
       "restartFailed": "Ajan yeniden başlatılamadı.",
       "runClearWhenDone": "Tamamlandığında /clear komutunu çalıştırın.",
       "runCompactWhenDone": "Tamamlandığında /compact komutunu çalıştırın.",
-      "savedByNewerOrca": "Sohbetler daha yeni bir Orca sürümüyle kaydedildi.",
-      "sendOutcomeLost": "Orca mesajınızın ajana ulaştığını doğrulayamadı. Sohbeti kontrol edip gerekirse yeniden gönderin.",
+      "savedByNewerOrca": "Sohbetler daha yeni bir Adehone sürümüyle kaydedildi.",
+      "sendOutcomeLost": "Adehone mesajınızın ajana ulaştığını doğrulayamadı. Sohbeti kontrol edip gerekirse yeniden gönderin.",
       "settleEarlierMessage": "Önceki mesajınızın iletilmesini bekleyin veya yeniden deneyin.",
       "shortenMessage": "Kısaltın veya bölün, ardından yeniden gönderin.",
       "shrinkQueue": "Kuyruktaki bir mesajı silin veya birinin gönderilmesini bekleyin, ardından yeniden deneyin.",
@@ -3858,16 +3858,16 @@
       "tryAgain": "Tekrar deneyin.",
       "tryAgainComposerSend": "Yeniden gönderin.",
       "turnActive": "Ajan hâlâ yanıt veriyor.",
-      "unreachable": "Orca ajana ulaşamadı.",
-      "unsupported": "Bu işlem, sohbetin çalıştığı bilgisayarda daha yeni bir Orca sürümü gerektiriyor. Oradaki Orca'yı güncelleyip tekrar deneyin.",
-      "updateOrcaToKeepUsing": "Kullanmaya devam etmek için Orca'yı güncelleyin.",
-      "updateOrcaToOpenChat": "Açmak için Orca'yı güncelleyin.",
+      "unreachable": "Adehone ajana ulaşamadı.",
+      "unsupported": "Bu işlem, sohbetin çalıştığı bilgisayarda daha yeni bir Adehone sürümü gerektiriyor. Oradaki Adehone'yı güncelleyip tekrar deneyin.",
+      "updateOrcaToKeepUsing": "Kullanmaya devam etmek için Adehone'yı güncelleyin.",
+      "updateOrcaToOpenChat": "Açmak için Adehone'yı güncelleyin.",
       "waitForBackgroundTasks": "Arka plan görevlerinin tamamlanmasını bekleyin.",
       "waitForCommand": "/compact veya /clear işleminin tamamlanmasını bekleyin.",
       "waitForStart": "Ajanın başlatılmasının tamamlanmasını bekleyin.",
       "waitForTurn": "Ajanın yanıtını tamamlamasını bekleyin veya durdurun.",
       "waitMoment": "Biraz bekleyin.",
-      "mailOwnerUnconfirmed": "Orca bu mesajın hâlâ bu sohbet için olduğunu doğrulayamadı."
+      "mailOwnerUnconfirmed": "Adehone bu mesajın hâlâ bu sohbet için olduğunu doğrulayamadı."
     },
     "workerAutoClose": {
       "running": "Geçici orkestrasyon çalışanı · Tamamlandıktan 2 dakika sonra kapanır",
@@ -3913,15 +3913,15 @@
     },
     "structuredOpen": {
       "worktreeDeleted": "Çalışma ağacı silindi.",
-      "projectRemoved": "Proje Orca’dan kaldırıldı.",
+      "projectRemoved": "Proje Adehone’dan kaldırıldı.",
       "folderWorkspaceRemoved": "Klasör çalışma alanı kaldırıldı.",
       "goneGeneric": "Ajanın sohbeti artık bu cihazda olmadığı için burada yeniden açılamıyor.",
       "unknownGeneric": "Ajanın sohbeti bu cihazda bulunamadı. Bilgisayara yeniden bağlanıp tekrar deneyin.",
-      "unsupportedGeneric": "Ajanın sohbetini yeniden açmak için Orca’yı güncelleyin.",
+      "unsupportedGeneric": "Ajanın sohbetini yeniden açmak için Adehone’yı güncelleyin.",
       "unreachableGeneric": "Ajanın sohbeti henüz kullanılamıyor. Birazdan tekrar deneyin.",
       "gone": "{{agent}} ajanının sohbeti artık bu cihazda olmadığı için burada yeniden açılamıyor.",
       "unknown": "{{agent}} ajanının sohbeti bu cihazda bulunamadı. Bilgisayarına yeniden bağlanıp tekrar deneyin.",
-      "unsupported": "{{agent}} ajanının sohbetini yeniden açmak için Orca’yı güncelleyin.",
+      "unsupported": "{{agent}} ajanının sohbetini yeniden açmak için Adehone’yı güncelleyin.",
       "unreachable": "{{agent}} ajanının sohbeti henüz kullanılamıyor. Birazdan tekrar deneyin.",
       "paneUnavailable": "Ajanın bölmesi artık kullanılamıyor."
     },
@@ -3989,7 +3989,7 @@
       "outsideWorkspace": "Bu dosya çalışma alanının dışında. Görüntülemek için masaüstü uygulamasında açın."
     },
     "linkActionSheet": {
-      "openInOrca": "Orca tarayıcısında aç",
+      "openInOrca": "Adehone tarayıcısında aç",
       "openInBrowser": "Sistem tarayıcısında aç",
       "copyLink": "Bağlantıyı kopyala"
     },
@@ -4019,11 +4019,11 @@
   "settings": {
     "aboutScreen": {
       "openLinkFailed": "Bağlantı açılamadı. Yeniden deneyin.",
-      "socialProfile": "X'te Orca",
-      "sourceCode": "Orca kaynak kodu",
+      "socialProfile": "X'te Adehone",
+      "sourceCode": "Adehone kaynak kodu",
       "tagline": "100 kat daha üretken geliştiriciler için açık kaynaklı ajan IDE'si",
       "title": "Hakkında",
-      "website": "Orca web sitesi"
+      "website": "Adehone web sitesi"
     },
     "appUpdateSettingsRows": {
       "checkFailed": "Kontrol edilemedi",
@@ -4041,7 +4041,7 @@
       "neverChecked": "Hiçbir zaman",
       "upToDate": "Güncel",
       "update": "Güncelle",
-      "updateToVersion": "Orca {{version}} sürümüne güncelle"
+      "updateToVersion": "Adehone {{version}} sürümüne güncelle"
     },
     "appearance": {
       "language": {
@@ -4066,8 +4066,8 @@
     },
     "browserSettingsScreen": {
       "askEachTime": "Her seferinde sor",
-      "askEachTimeDescription": "Her seferinde Orca tarayıcısı, telefon tarayıcısı veya bağlantıyı kopyalama arasında seçim yapın.",
-      "desktopBrowser": "Masaüstündeki Orca tarayıcısı",
+      "askEachTimeDescription": "Her seferinde Adehone tarayıcısı, telefon tarayıcısı veya bağlantıyı kopyalama arasında seçim yapın.",
+      "desktopBrowser": "Masaüstündeki Adehone tarayıcısı",
       "desktopBrowserDescription": "Eşleştirdiğiniz masaüstü bilgisayardan aktarılan tarayıcıda açın.",
       "terminalAndChatLinksDescription": "Terminal çıktısında ve sohbette dokunduğunuz web bağlantılarının nerede açılacağını seçin.",
       "linksHeading": "BAĞLANTILAR",
@@ -4106,15 +4106,15 @@
       "updateDesktopHint": "Bu telefonda bildirim almak için güncel bir sunucuyla eşleştirin."
     },
     "notificationDisplayTest": {
-      "accepted": "Orca'nın anlık bildirim hizmeti tarafından kabul edildi. Bildirimin gelip gelmediğini kontrol edin.",
+      "accepted": "Adehone'nın anlık bildirim hizmeti tarafından kabul edildi. Bildirimin gelip gelmediğini kontrol edin.",
       "connectDesktop": "Bir masaüstü bilgisayara bağlanın ve yeniden deneyin.",
       "description": "Anlık bildirim iletimini veya kullanılamıyorsa yerel bir bildirimi test edin.",
       "desktopUnreachable": "Masaüstü bilgisayara ulaşılamadı. Yeniden deneyin.",
       "loadFailed": "Eşleştirilmiş masaüstü bilgisayarlar yüklenemedi.",
       "pairDesktop": "Bir masaüstü bilgisayarla eşleştirin ve yeniden deneyin.",
-      "pushServiceFailed": "Orca'nın anlık bildirim hizmeti üzerinden gönderilemedi. Yeniden deneyin.",
-      "hostClockSkew": "{{host}} bilgisayarının saati {{seconds}} saniye kaymış, bu yüzden Orca’nın anlık bildirim hizmeti onu reddetti. Saati doğru zamana ayarlayıp tekrar deneyin.",
-      "hostClockSkewDuration": "{{host}} bilgisayarının saati {{duration}} kaymış, bu yüzden Orca’nın anlık bildirim hizmeti onu reddetti. Saati doğru zamana ayarlayıp tekrar deneyin.",
+      "pushServiceFailed": "Adehone'nın anlık bildirim hizmeti üzerinden gönderilemedi. Yeniden deneyin.",
+      "hostClockSkew": "{{host}} bilgisayarının saati {{seconds}} saniye kaymış, bu yüzden Adehone’nın anlık bildirim hizmeti onu reddetti. Saati doğru zamana ayarlayıp tekrar deneyin.",
+      "hostClockSkewDuration": "{{host}} bilgisayarının saati {{duration}} kaymış, bu yüzden Adehone’nın anlık bildirim hizmeti onu reddetti. Saati doğru zamana ayarlayıp tekrar deneyin.",
       "rateLimited": "Çok fazla bildirim gönderildi. Daha sonra yeniden deneyin.",
       "sendButton": "Test bildirimi gönder",
       "sendFailed": "Anlık bildirim testi gönderilemedi.",
@@ -4124,12 +4124,12 @@
       "localTitle": "Test bildirimi",
       "localBody": "Bu telefondan yerel bildirim testi.",
       "localScheduled": "{{reason}} Yerel test planlandı. Bildirimi kontrol edin. Bu test yalnızca gösterimi denetler; ajan uyarılarının iletimini doğrulamaz.",
-      "disabled": "Orca bildirimleri kapalı. Bildirimleri açıp tekrar deneyin.",
+      "disabled": "Adehone bildirimleri kapalı. Bildirimleri açıp tekrar deneyin.",
       "osDisabled": "Sistem ayarlarında bildirimler kapalı. Bildirimlere izin verip tekrar deneyin.",
       "noToken": "Bu telefonda kullanılabilir anlık bildirim belirteci yok.",
       "unsupportedHost": "Bu masaüstü anlık bildirimleri desteklemiyor. Almak için güncelleyin.",
       "registrationPending": "Bu masaüstünde anlık bildirim kaydı henüz hazır değil. Kısa süre sonra tekrar deneyin.",
-      "liveFallbackScheduled": "{{reason}} Yerel test planlandı. Bildirimi kontrol edin. Orca çalışır ve bağlı durumdayken canlı uyarılar alınabilir."
+      "liveFallbackScheduled": "{{reason}} Yerel test planlandı. Bildirimi kontrol edin. Adehone çalışır ve bağlı durumdayken canlı uyarılar alınabilir."
     },
     "notificationSettingsScreen": {
       "description": "Bir ajan sizden yanıt beklediğinde veya bir görevi tamamladığında bu cihazda bildirim alın.",
@@ -4232,12 +4232,12 @@
         "empty": "Henüz değişiklik yok."
       },
       "githubStatus": {
-        "notInstalled": "Orca kurulu değil",
+        "notInstalled": "Adehone kurulu değil",
         "unlinked": "Bağlı değil"
       },
       "linearStatus": {
         "unlinked": "Bağlı değil",
-        "notInstalled": "Orca kurulu değil"
+        "notInstalled": "Adehone kurulu değil"
       }
     },
     "sharedLinks": {
@@ -4489,7 +4489,7 @@
     },
     "loaders": {
       "loadFailed": "Kaynak kontrolü yüklenemedi",
-      "updateDesktop": "Mobilde Kaynak Kontrolü özelliğini kullanmak için bu sunucudaki Orca'yı güncelleyin."
+      "updateDesktop": "Mobilde Kaynak Kontrolü özelliğini kullanmak için bu sunucudaki Adehone'yı güncelleyin."
     },
     "modals": {
       "currentBranch": "geçerli",
@@ -4508,7 +4508,7 @@
     "prCreate": {
       "authRequired": "Bir {{reviewLabel}} oluşturmadan önce kimliğinizi doğrulayın.",
       "baseNotOnRemote": "Bir {{reviewLabel}} oluşturmadan önce temel branch'i push edin.",
-      "createdNotRefreshed": "{{titleLabel}} oluşturuldu ancak Orca tarafından henüz yenilenemedi.",
+      "createdNotRefreshed": "{{titleLabel}} oluşturuldu ancak Adehone tarafından henüz yenilenemedi.",
       "defaultBranch": "Bir {{reviewLabel}} oluşturmadan önce bir özellik branch'ine geçin.",
       "detachedHead": "Bir {{reviewLabel}} oluşturmadan önce bir branch'i checkout edin.",
       "dirty": "Bir {{reviewLabel}} oluşturmadan önce değişiklikleri commit'leyin.",
@@ -4516,7 +4516,7 @@
       "existingNumber": "{{titleLabel}} #{{number}} zaten açık.",
       "existingReview": "Bu branch için zaten bir {{reviewLabel}} var.",
       "forkHeadUnsupported": "Bu fork'tan {{reviewLabel}} oluşturulması desteklenmiyor.",
-      "lookupUnconfirmed": "Bu branch için zaten bir {{reviewLabel}} olup olmadığı Orca tarafından doğrulanamadı. Birazdan yeniden deneyin.",
+      "lookupUnconfirmed": "Bu branch için zaten bir {{reviewLabel}} olup olmadığı Adehone tarafından doğrulanamadı. Birazdan yeniden deneyin.",
       "needsSync": "Bir {{reviewLabel}} oluşturmadan önce bu branch'i senkronize edin.",
       "noUpstream": "Bir {{reviewLabel}} oluşturmadan önce commit'leri yayımlayın.",
       "notReady": "Bu branch henüz bir {{reviewLabel}} için hazır değil.",
@@ -4618,9 +4618,6 @@
       "agentCouldNotStart": "{{label}} başlatılamadı. Ayarlar bölümündeki ajan komutunu kontrol edip yeniden deneyin.",
       "agentFailedToStart": "{{label}} başlatılamadı. Ayarlar bölümündeki ajan komutunu kontrol edip yeniden deneyin.",
       "agentReportedError": "{{label}} bir hata bildirdi.",
-      "antigravityInvalidEvents": "Antigravity geçersiz JSON olayları döndürdü.",
-      "antigravityInvalidResult": "Antigravity geçersiz bir sonuç döndürdü.",
-      "antigravityNoFinalResult": "Antigravity nihai bir sonuç döndürmedi.",
       "chatNameAgentUnsupported": "Bu eylem için Ayarlar -> Sohbet -> Sohbet adları bölümünde desteklenen bir sohbet adı oluşturma ajanı seçin. Desteklenen ajanlar: {{agents}} veya Özel komut.",
       "chatNameCustomCommandEmpty": "Özel komut boş. Ayarlar -> Sohbet -> Sohbet adları bölümünde bir komut ekleyin.",
       "cliFailed": "{{label}} CLI komutu {{exitCode}} hata koduyla sonlandı.",
@@ -4669,7 +4666,7 @@
       "kimiSessionNotFound": "Kimi'de istenen oturum bulunamadı. Mevcut bir oturumu kullanın veya yeni bir oturum başlatın.",
       "kimiSessionOccupied": "Bu oturum başka bir istemcide etkin olduğundan Kimi'de kullanılamadı. Oturumu orada durdurun veya o istemciden çıkın, ardından yeniden deneyin.",
       "kimiSessionOtherDirectory": "Bu Kimi oturumu başka bir dizine ait. Orada devam ettirin veya bu çalışma alanı için oluşturulmuş bir oturum kullanın.",
-      "kimiUnreadableOutput": "Kimi, Orca'nın okuyamadığı bir çıktı döndürdü. Yeniden deneyin.",
+      "kimiUnreadableOutput": "Kimi, Adehone'nın okuyamadığı bir çıktı döndürdü. Yeniden deneyin.",
       "noBranchChanges": "Özetlenecek branch değişikliği yok.",
       "noModelForAgent": "{{label}} için kullanılabilir model yok.",
       "noStagedChanges": "Özetlenecek stage'e eklenmiş değişiklik yok.",
@@ -4690,7 +4687,7 @@
       "sourceControlCustomCommandEmpty": "Özel komut boş. Ayarlar -> Git -> Kaynak Kontrolü AI bölümünde bir komut ekleyin.",
       "stagedChangesReadFailed": "Stage'e eklenen değişiklikler okunamadı.",
       "timedOut": "Oluşturma işlemi {{seconds}} saniye sonra zaman aşımına uğradı.",
-      "windowsBatchUnsafeArguments": "{{label}}, çok satırlı istemi argüman olarak alamayan bir Windows toplu iş betiği üzerinden çalışır. Ayarlar bölümünde ajanın yürütülebilir dosyasını belirtin veya Orca'nın istemi stdin üzerinden göndermesi için {prompt} içermeyen özel bir komut kullanın."
+      "windowsBatchUnsafeArguments": "{{label}}, çok satırlı istemi argüman olarak alamayan bir Windows toplu iş betiği üzerinden çalışır. Ayarlar bölümünde ajanın yürütülebilir dosyasını belirtin veya Adehone'nın istemi stdin üzerinden göndermesi için {prompt} içermeyen özel bir komut kullanın."
     },
     "useMobileCommitFailureRecovery": {
       "launchFailed": "Ajan başlatılamadı"
@@ -4704,7 +4701,7 @@
       "commitFailed": "Commit'lenemedi"
     },
     "conflictActions": {
-      "needsNewerHost": "Birleştirme çakışmalarını telefonunuzdan çözmek için bu çalışma alanının çalıştığı bilgisayarda Orca’yı güncelleyin.",
+      "needsNewerHost": "Birleştirme çakışmalarını telefonunuzdan çözmek için bu çalışma alanının çalıştığı bilgisayarda Adehone’yı güncelleyin.",
       "markResolved": "Çözüldü olarak işaretle",
       "keepFile": "Dosyayı koru",
       "keepDeletion": "Silmeyi koru",
@@ -4723,7 +4720,7 @@
       "createFailed": "{{repo}} içinde worktree oluşturulamadı.",
       "loadReposRetry": "Repository'leri yükle",
       "setupChoiceTitle": "Kurulumu atlayarak yeniden denensin mi?",
-      "setupChoiceMessage": "Orca, {{repo}} içindeki son worktree'nin oluşturulduğunu doğrulayamadı. Yeniden denemek için kurulum seçiminizi belirtmeniz gerekiyor. Bu denemede worktree, repository'nin kurulum adımları çalıştırılmadan oluşturulacak.",
+      "setupChoiceMessage": "Adehone, {{repo}} içindeki son worktree'nin oluşturulduğunu doğrulayamadı. Yeniden denemek için kurulum seçiminizi belirtmeniz gerekiyor. Bu denemede worktree, repository'nin kurulum adımları çalıştırılmadan oluşturulacak.",
       "setupChoiceSkip": "Kurulum olmadan yeniden dene",
       "checking": "{{repo}} için bir worktree zaten oluşturulmuş olabilir. Klasör kontrol ediliyor…"
     },
@@ -4902,7 +4899,7 @@
       "searchProjects": "Proje ara",
       "subtitle": "Görevler sayfası için bir proje görünümü seçin.",
       "title": "GitHub Projects",
-      "unsupportedLayout": "Orca bu GitHub Projects düzenini henüz desteklemiyor.",
+      "unsupportedLayout": "Adehone bu GitHub Projects düzenini henüz desteklemiyor.",
       "view": "Proje Görünümü"
     },
     "githubViewControls": {
@@ -5008,8 +5005,8 @@
       "connectLinearMessage": "Doğrudan Görevler bölümünden size atanan Linear sorunlarına göz atın ve üzerlerinde çalışmaya başlayın.",
       "connectLinearTitle": "Linear hesabınızı bağlayın",
       "jiraStatusFailed": "Jira durumu okunamadı",
-      "updateDesktopMessage": "Bu mobil Görevler görünümü için bu sunucuda Orca'nın daha yeni bir sürümü gerekiyor.",
-      "updateDesktopTitle": "Bu sunucudaki Orca'yı güncelleyin"
+      "updateDesktopMessage": "Bu mobil Görevler görünümü için bu sunucuda Adehone'nın daha yeni bir sürümü gerekiyor.",
+      "updateDesktopTitle": "Bu sunucudaki Adehone'yı güncelleyin"
     },
     "options": {
       "all": "Tümü",
@@ -5106,7 +5103,7 @@
       "show": "Göster"
     },
     "projectDetailDrawer": {
-      "addRepositoryFromDesktop": "{{repository}} Orca'ya eklenmemiş. Bu repository'yi masaüstü uygulamasından ekleyin, ardından mobilde Görevler bölümünü yenileyin.",
+      "addRepositoryFromDesktop": "{{repository}} Adehone'ya eklenmemiş. Bu repository'yi masaüstü uygulamasından ekleyin, ardından mobilde Görevler bölümünü yenileyin.",
       "clearType": "Türü temizle",
       "closeItem": "Öğeyi kapat",
       "copyGitHubLink": "GitHub bağlantısını kopyala",
@@ -5117,7 +5114,7 @@
       "issueType": "Sorun türü",
       "loadingIssueTypes": "Sorun türleri yükleniyor…",
       "mergePullRequest": "Pull request'i merge et",
-      "mergeRepositoryRequirement": "Merge için bu repository'nin Orca'da olması gerekir.",
+      "mergeRepositoryRequirement": "Merge için bu repository'nin Adehone'da olması gerekir.",
       "noIssueTypes": "Bu repository için sorun türü yapılandırılmamış.",
       "noType": "Tür yok",
       "openInGitHub": "GitHub'da aç",
@@ -5125,7 +5122,7 @@
       "projectSubtitle": "GitHub Projesi · {{repository}}{{itemNumber}}",
       "pullRequest": "Pull request",
       "reopenItem": "Öğeyi yeniden aç",
-      "repositoryNotInOrca": "Repository Orca'da değil",
+      "repositoryNotInOrca": "Repository Adehone'da değil",
       "status": "Durum",
       "type": "Tür",
       "workspaceCreationRequirement": "Çalışma alanları yalnızca GitHub sorunlarından ve pull request'lerinden oluşturulabilir."
@@ -5454,15 +5451,20 @@
       "renderProcessGone": "Çalışma alanı yanıt vermeyi durdurdu.",
       "statusUnreadable": "Bu sunucunun durumu okunamadı. Geri dönüp yeniden açın.",
       "tryAgain": "Tekrar dene",
-      "isolationUnavailableAndroid": "Orca için Android System WebView veya Chrome 101 ya da daha yeni bir sürüm gerekir. Play Store’dan güncelleyin veya Geliştirici seçenekleri > WebView uygulaması bölümünden daha yeni bir sürüm seçin.",
-      "webViewInUse": "Bu cihazda {{name}} {{version}} var."
+      "isolationUnavailableAndroid": "Adehone için Android System WebView veya Chrome 101 ya da daha yeni bir sürüm gerekir. Play Store’dan güncelleyin veya Geliştirici seçenekleri > WebView uygulaması bölümünden daha yeni bir sürüm seçin.",
+      "webViewInUse": "Bu cihazda {{name}} {{version}} var.",
+      "downloadingLatestApp": "Uygulamanın son sürümü indiriliyor",
+      "downloadProgressFromHost": "{{host}} sunucusundan · {{progress}}"
     },
     "pageRouteUnavailable": {
-      "updateTitle": "Orca’yı güncelleyin",
-      "updateMessage": "Bu ekran için telefonunuzda veya {{host}} üzerinde daha yeni bir Orca sürümü gerekiyor.",
-      "updateMessageNoHost": "Bu ekran için daha yeni bir Orca sürümü gerekiyor.",
+      "updateTitle": "Adehone’yı güncelleyin",
+      "updateMessage": "Bu ekran için telefonunuzda veya {{host}} üzerinde daha yeni bir Adehone sürümü gerekiyor.",
+      "updateMessageNoHost": "Bu ekran için daha yeni bir Adehone sürümü gerekiyor.",
       "serverTitle": "Bu sunucuya ulaşılamıyor",
       "serverMessage": "Telefonunuz bu çalışma alanının sunucusuna {{host}} üzerinden ulaşamıyor."
+    },
+    "downloadProgress": {
+      "megabytes": "{{received}} / {{total}} MB"
     }
   },
   "workspace": {
@@ -5470,7 +5472,7 @@
       "automaticName": "Otomatik ad",
       "existing": "Mevcut dal",
       "existingHint": "Yeni commitler bu dala eklenir.",
-      "hostUpdateRequired": "Bir branch'i yeniden kullanmak veya ayrı bir branch oluşturmayı seçmek için çalışma alanının bulunduğu bilgisayardaki Orca'yı güncelleyin.",
+      "hostUpdateRequired": "Bir branch'i yeniden kullanmak veya ayrı bir branch oluşturmayı seçmek için çalışma alanının bulunduğu bilgisayardaki Adehone'yı güncelleyin.",
       "newHint": "Yeni bir yerel dal oluştur",
       "newName": "Yeni dal adı",
       "title": "Bu çalışma ağacı için dal"
@@ -5502,7 +5504,7 @@
       "permission": "Dikkat gerekiyor"
     },
     "hostWorkspaceListStates": {
-      "checkHost": "Bilgisayarınızın uyanık ve Orca'nın çalışır durumda olduğunu kontrol edin",
+      "checkHost": "Bilgisayarınızın uyanık ve Adehone'nın çalışır durumda olduğunu kontrol edin",
       "empty": "Çalışma alanı yok",
       "loadFailed": "Bu sunucudan çalışma alanları yüklenemedi",
       "noFilterMatches": "Filtrelerle eşleşen çalışma alanı yok",
@@ -5658,7 +5660,7 @@
       "invalidDestination": "Bu yetkili sunucuda o ana makine artık kullanılamıyor. Bir ana makine seçip tekrar deneyin.",
       "agentDiscoveryUnavailable": "Bu proje ana makinesinde aracı keşfi kullanılamıyor. Kaydedilen aracı seçimleri korunur.",
       "agentVerificationUnavailable": "Bu ana makine projenin aracılarını doğrulayamıyor. Ana makineyi güncelleyip tekrar deneyin.",
-      "hostUnavailable": "Bu ana makinede otomasyonlar kullanılamıyor. Ana makinedeki Orca’yı güncelleyip yeniden bağlanın.",
+      "hostUnavailable": "Bu ana makinede otomasyonlar kullanılamıyor. Ana makinedeki Adehone’yı güncelleyip yeniden bağlanın.",
       "hostUnreachable": "Bu ana makineye ulaşılamadı. Yeniden bağlanıp mevcut durumunu kontrol etmek için yenileyin.",
       "actionFailed": "Bu işlem ana makinede tamamlanamadı. Yenileyip tekrar deneyin.",
       "dispatched": "Gönderildi",
@@ -5697,19 +5699,19 @@
       "workspaceHostAmbiguous": "Çalışma alanı birden fazla ana bilgisayara yayıldığından tek bir sahibi yok."
     },
     "runFailures": {
-      "noDispatchHost": "Otomasyonu başlatmak için kullanılabilir bir Orca penceresi yoktu.",
-      "unevaluableSchedule": "Orca bu otomasyonu değerlendiremedi ve bu çalıştırmayı atladı.",
+      "noDispatchHost": "Otomasyonu başlatmak için kullanılabilir bir Adehone penceresi yoktu.",
+      "unevaluableSchedule": "Adehone bu otomasyonu değerlendiremedi ve bu çalıştırmayı atladı.",
       "noRunnableHost": "Bu otomasyonun çalışacağı bir sunucu yok.",
-      "wslMoveInProgress": "Bu otomasyonun projesi WSL ana makinesine taşınıyor. Bu nedenle Orca bu çalıştırmayı atladı. Taşıma tamamlandığında çalıştırmalar devam edecek.",
-      "wslMoveOwnedByHost": "Bu otomasyonun projesi artık WSL ana makinesinde çalışıyor ve bu otomasyon da orada ana makine tarafından çalıştırılıyor. Orca artık bu yerel kopyayı çalıştırmıyor.",
+      "wslMoveInProgress": "Bu otomasyonun projesi WSL ana makinesine taşınıyor. Bu nedenle Adehone bu çalıştırmayı atladı. Taşıma tamamlandığında çalıştırmalar devam edecek.",
+      "wslMoveOwnedByHost": "Bu otomasyonun projesi artık WSL ana makinesinde çalışıyor ve bu otomasyon da orada ana makine tarafından çalıştırılıyor. Adehone artık bu yerel kopyayı çalıştırmıyor.",
       "managedHostServer": "{{host}} üzerine taşınması gerekiyor",
-      "missedGraceWindow": "Orca'nın bir sonraki kontrolünde bu çalıştırma, kaçırılan çalıştırmalar için tanınan tolerans süresini aşmıştı.",
+      "missedGraceWindow": "Adehone'nın bir sonraki kontrolünde bu çalıştırma, kaçırılan çalıştırmalar için tanınan tolerans süresini aşmıştı.",
       "targetMissing": "Otomasyon sunucusu artık kayıtlı olmadığından bu otomasyonun çalışacağı bir yer yok.",
       "targetReplaced": "Otomasyon sunucusu kaldırılıp yeniden kaydedildiği için bu otomasyonun çalıştırılmadan önce yeniden ilişkilendirilmesi gerekiyor.",
-      "workspaceHostAmbiguous": "Otomasyonun çalışma alanı birden fazla sunucuya yayıldığı için Orca hangi sunucuda çalıştırılacağını belirleyemiyor.",
-      "legacyTwinHosts": "Bu otomasyon, Orca hangi sunucuda çalıştığını izlemeye başlamadan önce kaydedilmiş ve projesi birden fazla sunucuda bulunuyor. Otomasyonu açın ve çalışması gereken sunucuyu seçin.",
+      "workspaceHostAmbiguous": "Otomasyonun çalışma alanı birden fazla sunucuya yayıldığı için Adehone hangi sunucuda çalıştırılacağını belirleyemiyor.",
+      "legacyTwinHosts": "Bu otomasyon, Adehone hangi sunucuda çalıştığını izlemeye başlamadan önce kaydedilmiş ve projesi birden fazla sunucuda bulunuyor. Otomasyonu açın ve çalışması gereken sunucuyu seçin.",
       "targetUnavailable": "Otomasyonun çalıştırma hedefi artık kullanılamıyor.",
-      "remoteSchedulingUnavailable": "Bu Orca istemcisinden uzak sunucu otomasyonlarını zamanlama henüz kullanılamıyor. Bu otomasyonu uzak sunucuda çalıştırın veya kalıcı uzak zamanlama kullanıma sunulduğunda Orca'yı güncelleyin.",
+      "remoteSchedulingUnavailable": "Bu Adehone istemcisinden uzak sunucu otomasyonlarını zamanlama henüz kullanılamıyor. Bu otomasyonu uzak sunucuda çalıştırın veya kalıcı uzak zamanlama kullanıma sunulduğunda Adehone'yı güncelleyin.",
       "projectSetupMissing": "Proje artık seçili otomasyon sunucusunda kurulu değil.",
       "targetSetupMismatch": "Otomasyonun çalıştırma hedefi artık projenin seçili sunucu kurulumuyla eşleşmiyor.",
       "repoUnavailable": "Seçili otomasyon sunucusunun repository'si artık kullanılamıyor.",
@@ -5720,7 +5722,7 @@
       "hooksReviewBlocked": "Ajan, yeni veya değiştirilmiş hook'ların incelenmesini bekliyor (\"Hooks need review\"). Bu çalıştırmayı açıp hook'lara güvenin veya onları kaldırın. Zamanlanmış çalıştırmalar devam eder ve incelenecek bir şey kalmadığında başarıyla tamamlanır.",
       "agentNeverStarted": "İstem gönderildikten sonra otomasyon ajanı hiç başlatılmadı.",
       "agentNoCompletion": "Otomasyon ajanı tamamlanma bildirimi göndermedi.",
-      "watchTimedOut": "Orca, 6 saat boyunca tamamlanma sinyali gelmeyince bu çalıştırmayı izlemeyi durdurdu.",
+      "watchTimedOut": "Adehone, 6 saat boyunca tamamlanma sinyali gelmeyince bu çalıştırmayı izlemeyi durdurdu.",
       "projectSetupState": {
         "notSetUp": "Proje seçili otomasyon sunucusunda kurulu değil.",
         "settingUp": "Proje seçili otomasyon sunucusunda hâlâ kuruluyor.",
@@ -5728,11 +5730,11 @@
         "unsupported": "Seçili otomasyon sunucusu bu projeyi desteklemiyor."
       },
       "wslDistroStopped": "WSL dağıtımı {{distro}} durdurulmuş, bu yüzden bu zamanlanmış çalıştırma onu başlatmadı. Dağıtımı başlatın veya Şimdi çalıştır'ı kullanın; dağıtım çalıştığı sürece sonraki çalıştırmalar devam eder.",
-      "botsOff": "Botlar Ayarlar’da kapalı olduğu için Orca bu çalıştırmayı atladı.",
-      "botsOffByTeam": "Botlar ekibiniz tarafından kapatıldığı için Orca bu çalıştırmayı atladı.",
+      "botsOff": "Botlar Ayarlar’da kapalı olduğu için Adehone bu çalıştırmayı atladı.",
+      "botsOffByTeam": "Botlar ekibiniz tarafından kapatıldığı için Adehone bu çalıştırmayı atladı.",
       "botMissing": "Bu otomasyonun adına çalıştığı bot artık yok.",
       "botFolderMissing": "Botun klasörü artık kullanılamıyor.",
-      "botPaused": "{{bot}} duraklatıldığı için Orca bu çalıştırmayı atladı.",
+      "botPaused": "{{bot}} duraklatıldığı için Adehone bu çalıştırmayı atladı.",
       "agentInterrupted": "Ajan bu çalıştırmayı tamamlayamadan kesintiye uğradı."
     },
     "eventsWontFire": "Yalnızca zamanlamasına göre çalışır: {{connectors}} bağlayıcısı gerekiyor",
@@ -5888,7 +5890,7 @@
             "cursor": {
               "expired": {
                 "label": "Oturum açma süresi doldu",
-                "message": "Orca'nın çalıştığı bilgisayarda bir terminalde cursor-agent login komutunu çalıştırın, ardından kullanım bilgilerini yeniden yüklemeyi deneyin."
+                "message": "Adehone'nın çalıştığı bilgisayarda bir terminalde cursor-agent login komutunu çalıştırın, ardından kullanım bilgilerini yeniden yüklemeyi deneyin."
               }
             },
             "usage": {
@@ -5899,8 +5901,8 @@
             "7ad719c4bf": "Sınırlı",
             "e740f92596": "Yenileme başarısız oldu",
             "2c35eca8d4": "Kullanım alınamadı",
-            "d1b7f509ac": "Orca'yı çalıştıran bilgisayarda bir terminalde grok komutunu çalıştırın ve başlamasını bekleyin. İstenirse oturum açmayı tamamlayın, ardından kullanım bilgilerini almayı yeniden deneyin. Sohbet mesajı göndermenize gerek yok.",
-            "a37e8c15d4": "Orca'yı çalıştıran bilgisayarda bir terminalde kimi'yi çalıştırın, başlamasını bekleyin, ardından kullanımı tekrar deneyin.",
+            "d1b7f509ac": "Adehone'yı çalıştıran bilgisayarda bir terminalde grok komutunu çalıştırın ve başlamasını bekleyin. İstenirse oturum açmayı tamamlayın, ardından kullanım bilgilerini almayı yeniden deneyin. Sohbet mesajı göndermenize gerek yok.",
+            "a37e8c15d4": "Adehone'yı çalıştıran bilgisayarda bir terminalde kimi'yi çalıştırın, başlamasını bekleyin, ardından kullanımı tekrar deneyin.",
             "3d3c9c0c1f": "Claude kullanımı, canlı Claude terminali kimlik bilgilerini döndürdükten sonra yenilenecek.",
             "42fdd4da1d": "Claude oturumu yenileniyor. Ajan oturumları hâlâ açık olabilir.",
             "c06c1d215d": "Ağ isteği başarısız olduğu için Claude kullanımı yenilenemedi.",
@@ -5942,7 +5944,7 @@
           "grokNotSignedIn": "Grok’ta oturum açılmamış. grok login komutunu çalıştırın.",
           "grokAuthInvalid": "Grok kimlik doğrulama dosyası geçersiz",
           "grokAuthUnreadable": "Grok kimlik doğrulama dosyası okunamadı",
-          "grokSignInExpired": "Grok oturumunun süresi doldu. Orca’nın çalıştığı bilgisayarda grok komutunu çalıştırın ve istenirse oturum açın. Sohbet mesajı göndermeniz gerekmez.",
+          "grokSignInExpired": "Grok oturumunun süresi doldu. Adehone’nın çalıştığı bilgisayarda grok komutunu çalıştırın ve istenirse oturum açın. Sohbet mesajı göndermeniz gerekmez.",
           "grokBillingConfigMissing": "Grok faturalandırma yanıtında yapılandırma bilgisi yok",
           "grokBillingUsageMissing": "Grok faturalandırma yanıtında kredi kullanımı bilgisi yok",
           "grokUsageUnauthorizedHttp": "Grok kullanım isteği için yetki yok (HTTP {{status}})",
@@ -6008,11 +6010,11 @@
       "reorder": "Yeniden sırala…"
     },
     "list": {
-      "updateOrcaOn": "{{host}} üzerindeki Orca'yı güncelle",
+      "updateOrcaOn": "{{host}} üzerindeki Adehone'yı güncelle",
       "cantReach": "{{host}} yanıt vermiyor. Yeniden bağlandığında botları görünür.",
       "noBotsYet": "Henüz bot yok.",
       "offline": "Çevrimdışı",
-      "updateToSee": "Botlarını görmek için {{host}} üzerinde Orca’yı güncelleyin.",
+      "updateToSee": "Botlarını görmek için {{host}} üzerinde Adehone’yı güncelleyin.",
       "offEnd": "{{host}} üzerinde botlar kapalı.",
       "readFailed": "{{host}} üzerindeki botlar yüklenemedi."
     },
@@ -6109,8 +6111,8 @@
     },
     "accessDecide": {
       "expired": "Bu istek zaten yanıtlanmış veya süresi dolmuş.",
-      "grantedNotAdded": "Erişim verildi ancak {{person}} henüz listede görünmüyor. Orca bu kişiyi ekleyecek.",
-      "signedOut": "İstekleri yanıtlamak için bilgisayarınızda Orca oturumu açın.",
+      "grantedNotAdded": "Erişim verildi ancak {{person}} henüz listede görünmüyor. Adehone bu kişiyi ekleyecek.",
+      "signedOut": "İstekleri yanıtlamak için bilgisayarınızda Adehone oturumu açın.",
       "whatTheyCanDoMany": "Yapabilecekleri işlemler"
     },
     "tabs": {
@@ -6155,9 +6157,9 @@
     },
     "host": {
       "errors": {
-        "signedOut": "{{service}} bağlantısını kurmak için {{host}} üzerinde Orca Cloud oturumu açın.",
-        "accountChanged": "{{host}} üzerindeki Orca oturumu değişti. Baştan başlayın.",
-        "notRouted": "{{service}} sayfasının {{host}} üzerindeki Orca tarayıcısında açılması gerekiyor. {{host}} bağlantısını yeniden kurup baştan başlayın."
+        "signedOut": "{{service}} bağlantısını kurmak için {{host}} üzerinde Adehone Cloud oturumu açın.",
+        "accountChanged": "{{host}} üzerindeki Adehone oturumu değişti. Baştan başlayın.",
+        "notRouted": "{{service}} sayfasının {{host}} üzerindeki Adehone tarayıcısında açılması gerekiyor. {{host}} bağlantısını yeniden kurup baştan başlayın."
       }
     },
     "slack": {
@@ -6167,10 +6169,10 @@
         "rateLimited": "Çok fazla deneme yapıldı. Bir dakika bekleyip yeniden deneyin.",
         "slackUnavailable": "Slack yanıt vermedi. Yeniden deneyin.",
         "slackRefused": "Slack uygulamanın kurulmasına izin vermedi.",
-        "unknownBot": "Bu bot henüz Orca Cloud’da görünmüyor. Bir dakika sonra yeniden deneyin.",
+        "unknownBot": "Bu bot henüz Adehone Cloud’da görünmüyor. Bir dakika sonra yeniden deneyin.",
         "wrongWorkspace": "Bu botun Slack uygulaması başka bir çalışma alanında. Önce uygulamayı Slack’ten kaldırın.",
         "notInstalled": "Önce bu botu Slack’e ekleyin.",
-        "unreachable": "Orca Cloud’a ulaşılamadı. Bağlantınızı kontrol edip yeniden deneyin."
+        "unreachable": "Adehone Cloud’a ulaşılamadı. Bağlantınızı kontrol edip yeniden deneyin."
       },
       "setup": {
         "checking": "Slack denetleniyor…",
@@ -6187,7 +6189,7 @@
         "approve": "Slack’te onayla",
         "waiting": "Slack bekleniyor…",
         "newLink": "Yeni bağlantı al",
-        "uncertain": "Slack, {{name}} adlı bir uygulama oluşturmuş olabilir ancak Orca bu uygulamayı kullanamıyor. Uygulama Slack’in uygulama ayarlarında görünüyorsa silip kurulumu yeniden başlatın.",
+        "uncertain": "Slack, {{name}} adlı bir uygulama oluşturmuş olabilir ancak Adehone bu uygulamayı kullanamıyor. Uygulama Slack’in uygulama ayarlarında görünüyorsa silip kurulumu yeniden başlatın.",
         "uncertainChecked": "Slack’i kontrol ettim: Böyle bir uygulama yok veya uygulamayı sildim",
         "again": "Yeniden kur",
         "tryIt": "Herhangi bir kanalda veya doğrudan mesajda deneyin",
@@ -6217,10 +6219,10 @@
       "postAs": {
         "title": "Şu adla yayımla",
         "changeOn": "{{host}} üzerinde değiştir",
-        "orcaUser": "Orca kullanıcısı",
-        "viaOrca": "{{name}} (Orca aracılığıyla)",
+        "orcaUser": "Adehone kullanıcısı",
+        "viaOrca": "{{name}} (Adehone aracılığıyla)",
         "sample": "Ardından yayına alın",
-        "linePlain": "Orca’dan bir Slack ileti dizisini yanıtladığınızda {{name}} olarak paylaşılır.",
+        "linePlain": "Adehone’dan bir Slack ileti dizisini yanıtladığınızda {{name}} olarak paylaşılır.",
         "approve": "Slack’te onayla",
         "waitingOn": "{{name}} kimliğine geçmek için {{installer}} kişisinin Slack’te onay vermesi gerekiyor.",
         "waiting": "{{name}} kimliğine geçmek için Slack’te onay gerekiyor."
@@ -6233,7 +6235,7 @@
         "label": "Yapılandırma yenileme belirteci",
         "paste": "Yapıştır",
         "accessPasted": "Bu, erişim belirteci (Access Token). Yanındaki yenileme belirtecini (Refresh Token) kopyalayın.",
-        "kept": "Orca Cloud bu belirteci şifreli olarak saklar. Böylece bu çalışma alanına ekleyeceğiniz diğer botları tek tıklamayla bağlayabilirsiniz.",
+        "kept": "Adehone Cloud bu belirteci şifreli olarak saklar. Böylece bu çalışma alanına ekleyeceğiniz diğer botları tek tıklamayla bağlayabilirsiniz.",
         "step2Title": "Çalışma alanını seçin",
         "step3Title": "Refresh Token’ı yapıştırın"
       },
@@ -6247,7 +6249,7 @@
         "workspace": "Çalışma alanı"
       },
       "reconnect": {
-        "whyNeeded": "Orca’nın bu çalışma alanı için çalışan bir Slack belirteci yok.",
+        "whyNeeded": "Adehone’nın bu çalışma alanı için çalışan bir Slack belirteci yok.",
         "continue": "Devam et",
         "stopped": "Slack, {{host}} sunucusunun kullandığı belirteci artık kabul etmiyor."
       }
@@ -6363,7 +6365,7 @@
       "search": "Projelerde ara",
       "noMatch": "Aramanızla eşleşen proje yok.",
       "remoteShort": "Başka bir sunucuda",
-      "missingShort": "Artık Orca’da yok",
+      "missingShort": "Artık Adehone’da yok",
       "remove": "Kaldır",
       "removeProject": "{{project}} projesini kaldır"
     },
@@ -6394,14 +6396,14 @@
       "errors": {
         "off": "Linear desteği yakında geliyor.",
         "replaced": "Linear bağlantısı tamamlanmadı. Sonradan başlatılan bir Linear veya GitHub bağlantısı bu işlemin yerini almış olabilir. Baştan başlayın.",
-        "wrongAccount": "Oturum açma işlemi başka bir Orca hesabından başlatılmış. Linear’ı bu hesaptan yeniden bağlayın.",
-        "alreadyLinked": "Bu Orca hesabı, o çalışma alanında başka bir Linear kullanıcısına bağlı. Önce Linear sayfasındaki ⋯ menüsünden bağlantıyı kaldırın.",
+        "wrongAccount": "Oturum açma işlemi başka bir Adehone hesabından başlatılmış. Linear’ı bu hesaptan yeniden bağlayın.",
+        "alreadyLinked": "Bu Adehone hesabı, o çalışma alanında başka bir Linear kullanıcısına bağlı. Önce Linear sayfasındaki ⋯ menüsünden bağlantıyı kaldırın.",
         "notAMember": "Linear çalışma alanından kişi seçebilmek için o alanın tam üyesi olmanız gerekir.",
         "rateLimited": "Çok fazla deneme yapıldı. Bir dakika bekleyip yeniden deneyin.",
         "unavailable": "Linear yanıt vermedi. Yeniden deneyin."
       },
       "connection": {
-        "removeNote": "{{workspace}} çalışma alanındaki kişiler artık bota sorun atayamaz. Botun Linear kullanıcı listesi temizlenir. Orca bu çalışma alanında kurulu kalır.",
+        "removeNote": "{{workspace}} çalışma alanındaki kişiler artık bota sorun atayamaz. Botun Linear kullanıcı listesi temizlenir. Adehone bu çalışma alanında kurulu kalır.",
         "removeConfirm": "Kaldır",
         "finishSetup": "Kurulumu tamamla"
       },
@@ -6410,7 +6412,7 @@
         "isOn": "{{name}} Linear’a bağlı",
         "checking": "Linear denetleniyor…",
         "retry": "Yeniden deneyin",
-        "install": "Orca henüz {{workspace}} çalışma alanında kurulu değil. Bir Linear yöneticisinin Orca’yı herkes için bir kez kurması yeterlidir.",
+        "install": "Adehone henüz {{workspace}} çalışma alanında kurulu değil. Bir Linear yöneticisinin Adehone’yı herkes için bir kez kurması yeterlidir.",
         "copyForAdmin": "Yönetici bağlantısını kopyala",
         "installing": "Kurulum bekleniyor…",
         "copied": "Bağlantı kopyalandı.",
@@ -6421,7 +6423,7 @@
       },
       "connect": {
         "another": "Başka bir çalışma alanı kullan",
-        "stuck": "Linear’da “Could not find OAuth client” hatasını mı görüyorsunuz? Orca’nın Linear uygulaması henüz bu çalışma alanına açık değil. Uygulamanın sahibi olan çalışma alanının bir yöneticisi, uygulamayı herkese açık hâle getirmeli.",
+        "stuck": "Linear’da “Could not find OAuth client” hatasını mı görüyorsunuz? Adehone’nın Linear uygulaması henüz bu çalışma alanına açık değil. Uygulamanın sahibi olan çalışma alanının bir yöneticisi, uygulamayı herkese açık hâle getirmeli.",
         "pick": "Bir Linear çalışma alanı seçin.",
         "handoffPick": "Çalışma alanını seçip Authorize’a tıklayın.",
         "signIn": "Linear’da oturum aç",
@@ -6445,8 +6447,8 @@
       "errors": {
         "off": "GitHub desteği yakında geliyor.",
         "replaced": "GitHub bağlantısı tamamlanmadı. Sonradan başlatılan bir Linear veya GitHub bağlantısı bu işlemin yerini almış olabilir. Baştan başlayın.",
-        "wrongAccount": "Oturum açma işlemi başka bir Orca hesabından başlatılmış. Bu Orca hesabından GitHub ile yeniden oturum açın.",
-        "alreadyLinked": "Bu Orca hesabı başka bir GitHub kullanıcısına bağlı. Önce GitHub sayfasındaki ⋯ menüsünden bağlantıyı kaldırın.",
+        "wrongAccount": "Oturum açma işlemi başka bir Adehone hesabından başlatılmış. Bu Adehone hesabından GitHub ile yeniden oturum açın.",
+        "alreadyLinked": "Bu Adehone hesabı başka bir GitHub kullanıcısına bağlı. Önce GitHub sayfasındaki ⋯ menüsünden bağlantıyı kaldırın.",
         "unavailable": "GitHub yanıt vermedi. Yeniden deneyin."
       },
       "setup": {
@@ -6455,7 +6457,7 @@
         "checking": "GitHub denetleniyor…",
         "retry": "Yeniden deneyin",
         "installing": "Kurulumun tamamlanması veya kuruluş sahiplerinden birinin onay vermesi bekleniyor…",
-        "install": "Orca uygulamasını kur",
+        "install": "Adehone uygulamasını kur",
         "finish": "Tamam",
         "connectTitle": "GitHub’a bağlan",
         "close": "Kapat",
@@ -6466,7 +6468,7 @@
         "pushesOnHost": "{{name}}, {{host}} üzerinden kendi Git kimlik bilgilerini kullanarak kod gönderir."
       },
       "connection": {
-        "removeNote": "Kullanıcılar artık GitHub üzerinden bota istekte bulunamaz. Botun GitHub kullanıcı listesi temizlenir. Orca uygulaması kurulu kalır.",
+        "removeNote": "Kullanıcılar artık GitHub üzerinden bota istekte bulunamaz. Botun GitHub kullanıcı listesi temizlenir. Adehone uygulaması kurulu kalır.",
         "removeConfirm": "Kaldır",
         "finishSetup": "Kurulumu tamamla",
         "refresh": "Yenile",
@@ -6481,9 +6483,9 @@
       "addMore": "Repository veya kuruluş ekle",
       "checkingInstalls": "GitHub’daki değişiklikler kontrol ediliyor…",
       "connect": {
-        "readsOnly": "Orca yalnızca GitHub kullanıcı adınızı ve kullanıcı kimliğinizi okur.",
-        "requested": "Kuruluş sahiplerinden birine Orca uygulaması için onay isteği gönderildi.",
-        "notInstalled": "Orca uygulaması henüz hiçbir repository'nizde kurulu değil.",
+        "readsOnly": "Adehone yalnızca GitHub kullanıcı adınızı ve kullanıcı kimliğinizi okur.",
+        "requested": "Kuruluş sahiplerinden birine Adehone uygulaması için onay isteği gönderildi.",
+        "notInstalled": "Adehone uygulaması henüz hiçbir repository'nizde kurulu değil.",
         "handoffPick": "Oturum açıp repository'leri seçin.",
         "signIn": "GitHub’da oturum aç",
         "pickSubtitle": "Çalışabileceği repository'leri seçin"
@@ -6491,13 +6493,13 @@
       "allRepositoriesShort": "tüm repository'ler"
     },
     "connect": {
-      "finishOnHost": "{{host}} üzerinde Orca’yı açıp {{service}} bağlantısını tamamlayın.",
+      "finishOnHost": "{{host}} üzerinde Adehone’yı açıp {{service}} bağlantısını tamamlayın.",
       "otherComputer": "Başka bir bilgisayardaki bot",
       "askEachTime": "Hangi bot olduğunu sor",
       "account": "Hesap",
       "linkedAs": "Bağlı hesap",
       "defaultBot": "İsteklerim için varsayılan bot",
-      "opensOnHost": "{{host}} üzerindeki Orca tarayıcısında açılır.",
+      "opensOnHost": "{{host}} üzerindeki Adehone tarayıcısında açılır.",
       "signedInAs": "{{who}} olarak oturum açıldı",
       "continueOn": "{{host}} üzerinde devam et",
       "openSignInPage": "Oturum açma sayfasını aç",
@@ -6525,7 +6527,7 @@
         "description": "{{bot}} botunun Gmail, Takvim ve Drive hesaplarınıza nasıl giriş yapacağını seçin.",
         "self": "Kendi sunucunuzda",
         "selfNote": "Kendi Google uygulamanız.",
-        "orca": "Orca’da barındırılıyor",
+        "orca": "Adehone’da barındırılıyor",
         "orcaNote": "Google ile oturum açın.",
         "soon": "Yakında"
       },
@@ -6574,7 +6576,7 @@
       },
       "disconnect": {
         "title": "{{email}} bağlantısı kesilsin mi?",
-        "revokeNote": "Botlar bu hesabı burada kullanmayı bırakır ve Google, Orca’nın izin verildiği her yerdeki erişimini iptal eder.",
+        "revokeNote": "Botlar bu hesabı burada kullanmayı bırakır ve Google, Adehone’nın izin verildiği her yerdeki erişimini iptal eder.",
         "removeOneNote": "Botlar bu hesabı burada kullanmayı bırakır.",
         "removeNote": "Botlar bu hesabı burada kullanmayı bırakır. Bot ayarları korunur; “Google’a bağlan” ile hesabı yeniden açabilirsiniz.",
         "promotes": "{{email}} varsayılan hesap olur.",
@@ -6590,7 +6592,7 @@
       "addAccount": "Başka bir hesap ekle",
       "signIn": "Google’da oturum aç",
       "handoff": "Hesabınızı seçip Allow’a tıklayın.",
-      "signInWarning": "Bu uygulama size ait ve yepyeni olduğu için Google bir uyarı gösterecek. Advanced’e, ardından Go to Orca’ya tıklayın ve sonraki ekrandaki tüm kutuları işaretleyin.",
+      "signInWarning": "Bu uygulama size ait ve yepyeni olduğu için Google bir uyarı gösterecek. Advanced’e, ardından Go to Adehone’ya tıklayın ve sonraki ekrandaki tüm kutuları işaretleyin.",
       "signInRun": {
         "failed": "Google oturum açma işlemi başarısız oldu. Yeniden deneyin."
       }
@@ -6600,16 +6602,16 @@
       "pairRequired": "Bu bağlantıyı açmak için bu telefonu bir bilgisayarla eşleyin, ardından bağlantıyı yeniden açın.",
       "pairAction": "Bilgisayar eşleyin",
       "openFailed": "Bu bağlantı açılamadı",
-      "ambiguous": "Bu bot {{names}} üzerinde. İstediğiniz bilgisayarda Orca’yı açıp sohbete gidin.",
+      "ambiguous": "Bu bot {{names}} üzerinde. İstediğiniz bilgisayarda Adehone’yı açıp sohbete gidin.",
       "computer": "bilgisayarınız",
-      "updateNeeded": "Bu bağlantıyı açmak için {{names}} üzerinde Orca’yı güncelleyin.",
-      "unreachable": "{{names}} ile bağlantı kurulamadı. Birinde Orca’nın çalıştığından emin olun ve yeniden deneyin.",
+      "updateNeeded": "Bu bağlantıyı açmak için {{names}} üzerinde Adehone’yı güncelleyin.",
+      "unreachable": "{{names}} ile bağlantı kurulamadı. Birinde Adehone’nın çalıştığından emin olun ve yeniden deneyin.",
       "missing": "Eşlenmiş bilgisayarlarınızda bu bot yok.",
       "offline": "{{name}} çevrimdışı. Yeniden bağlandığında bağlantıyı tekrar açın.",
       "chatOpenFailed": "{{name}} bu sohbeti açamadı. Bağlantıyı yeniden deneyin.",
-      "unreachableSingle": "{{name}} ile bağlantı kurulamadı. Orada Orca’nın çalıştığından emin olun ve yeniden deneyin.",
+      "unreachableSingle": "{{name}} ile bağlantı kurulamadı. Orada Adehone’nın çalıştığından emin olun ve yeniden deneyin.",
       "workspaceDeleted": "Bu sohbetin çalışma alanı {{name}} üzerinde silindi.",
-      "updateOrca": "Orca’yı güncelle",
+      "updateOrca": "Adehone’yı güncelle",
       "openRequestFailed": "İstek açılamadı",
       "botNotFound": "Bot bulunamadı",
       "openOn": "{{name}} öğesini şurada aç"
@@ -6638,8 +6640,8 @@
       "whoCanAsk": "Kimler sorabilir",
       "deleteBot": "Botu sil…",
       "accountChecking": "Kontrol ediliyor…",
-      "signedOut": "Orca oturumu kapatıldı",
-      "orcaAccount": "Orca hesabı",
+      "signedOut": "Adehone oturumu kapatıldı",
+      "orcaAccount": "Adehone hesabı",
       "folder": "Klasör",
       "copyPath": "Yolu kopyala",
       "pathCopied": "Yol kopyalandı",
@@ -6652,7 +6654,7 @@
       "model": "Model",
       "effort": "Çaba",
       "modelDefault": "Varsayılan",
-      "signInChanged": "Orca oturumu değişti",
+      "signInChanged": "Adehone oturumu değişti",
       "sameAsChatsDetail": "Sohbet izin ayarınızı kullanır.",
       "needsPermissionDetail": "Bot veya bir çalışan onayınıza ihtiyaç duyduğunda.",
       "taskCompleteDetail": "Bir ileti dizisi, otomasyon veya çalışan tamamlandığında.",
@@ -6720,10 +6722,10 @@
       "github": "Botu @ ile anarak ona iş verin ve GitHub olaylarında otomasyon başlatın.",
       "heading": "Bir hizmet bağla",
       "connected": "Bağlandı",
-      "paused": "{{host}} üzerinde Orca oturumu açılana kadar duraklatıldı.",
-      "onComputer": "Bağlantıyı kurmak için bilgisayarınızda Orca’yı açıp bu sohbetteki kartı kullanın.",
-      "addGitHubAccess": "Repository veya kuruluş eklemek için bilgisayarınızda Orca’yı açıp bu sohbetteki kartı kullanın.",
-      "addWorkspace": "Başka bir çalışma alanı eklemek için bilgisayarınızda Orca’yı açıp bu sohbetteki kartı kullanın.",
+      "paused": "{{host}} üzerinde Adehone oturumu açılana kadar duraklatıldı.",
+      "onComputer": "Bağlantıyı kurmak için bilgisayarınızda Adehone’yı açıp bu sohbetteki kartı kullanın.",
+      "addGitHubAccess": "Repository veya kuruluş eklemek için bilgisayarınızda Adehone’yı açıp bu sohbetteki kartı kullanın.",
+      "addWorkspace": "Başka bir çalışma alanı eklemek için bilgisayarınızda Adehone’yı açıp bu sohbetteki kartı kullanın.",
       "connect": "{{service}} hizmetine bağlan"
     },
     "groups": {
@@ -6808,7 +6810,7 @@
       "remoteMayAnswer": "{{computer}} üzerinde hâlâ yanıt verebilir.",
       "remoteShortened": "Kısaltıldı. Yanıtın tamamı {{computer}} üzerinde.",
       "needsLocalBot": "Bu grubun bu bilgisayarda en az bir botu olmalı.",
-      "remoteOnComputer": "Başka bilgisayarlardaki botları eklemek veya kaldırmak için {{host}} üzerinde Orca’yı açın."
+      "remoteOnComputer": "Başka bilgisayarlardaki botları eklemek veya kaldırmak için {{host}} üzerinde Adehone’yı açın."
     },
     "templates": {
       "title": "Bot şablonları",
@@ -6833,7 +6835,7 @@
       },
       "blank": "Boş bot",
       "blankLine": "İlk sohbette bota görevini anlatın.",
-      "byOrca": "{{category}} · Orca tarafından hazırlandı",
+      "byOrca": "{{category}} · Adehone tarafından hazırlandı",
       "originTemplateNamed": "{{template}} şablonundan",
       "noMatch": "“{{query}}” ile eşleşen şablon yok",
       "pr-review": {
@@ -6887,8 +6889,8 @@
       "unreviewed-work": {
         "name": "İncelenmemiş ajan çalışmaları",
         "line": "Ajanların tamamladığı ve henüz kimsenin incelemediği işlerin günlük listesi.",
-        "firstChat": "Ajanın çalışmasını tamamladığı, ancak değişiklikleri henüz incelemediğiniz veya pull request'e dönüştürmediğiniz çalışma alanlarını listeler. Orca, bir ajan sizi beklediğinde zaten haber verir; burada tamamlanan işleri görürsünüz.",
-        "watches": "Orca çalışma alanlarınız",
+        "firstChat": "Ajanın çalışmasını tamamladığı, ancak değişiklikleri henüz incelemediğiniz veya pull request'e dönüştürmediğiniz çalışma alanlarını listeler. Adehone, bir ajan sizi beklediğinde zaten haber verir; burada tamamlanan işleri görürsünüz.",
+        "watches": "Adehone çalışma alanlarınız",
         "does": "Ajanın değişiklikleri tamamladığı ancak henüz kimsenin incelemediği veya pull request açmadığı çalışma alanlarını listeler.",
         "reports": "Hafta içi saat 09.00'da, burada",
         "example1": "mobile-pairing dün tamamlandı. 340 satırlık bir diff var; pull request açılmadı.",
@@ -6904,7 +6906,7 @@
         "name": "Çalışma alanı temizliği",
         "line": "Tamamlanmış veya terk edilmiş çalışma alanlarını bulur ve kaldırmayı önerir.",
         "firstChat": "Pull request'i merge edilmiş veya iki haftadır değişmemiş çalışma alanlarını, henüz commit edilmemiş değişiklikleriyle birlikte listeler. Yalnızca seçtiklerinizi kaldırır.",
-        "watches": "Orca çalışma alanlarınız ve bunların pull request'leri",
+        "watches": "Adehone çalışma alanlarınız ve bunların pull request'leri",
         "does": "Tamamlanmış ya da terk edilmiş çalışma alanlarıyla commit edilmemiş değişiklikleri listeler. Yalnızca seçtiğiniz alanları kaldırır.",
         "reports": "Cuma günleri saat 16.00'da, burada",
         "example1": "6 çalışma alanında iş tamamlandı: İlgili pull request'ler bu hafta merge edildi.",
@@ -7533,7 +7535,7 @@
       "resume": "Devam ettir",
       "pause": "Duraklat",
       "more": "Diğer işlemler",
-      "orphanedNote": "{{bot}} botunun Orca'sı bu otomasyonu artık listelemiyor, bu yüzden çağrılar çalıştırılmıyor.",
+      "orphanedNote": "{{bot}} botunun Adehone'sı bu otomasyonu artık listelemiyor, bu yüzden çağrılar çalıştırılmıyor.",
       "url": "URL",
       "copy": "Kopyala",
       "copyUrl": "URL'yi kopyala",
@@ -7570,9 +7572,9 @@
         "changeTitle": "İmzalama sırrını değiştir",
         "addTitle": "İmzalama sırrı ekle",
         "sender": "Gönderici",
-        "modeGenerate": "Orca bir tane oluşturur",
+        "modeGenerate": "Adehone bir tane oluşturur",
         "modePaste": "Göndericininkini yapıştır",
-        "generateNote": "Bu sırrı Orca oluşturur. Ardından onu {{sender}} içine kopyalarsınız.",
+        "generateNote": "Bu sırrı Adehone oluşturur. Ardından onu {{sender}} içine kopyalarsınız.",
         "paste": "{{sender}} sırrı",
         "save": "Kaydet",
         "saved": "İmzalama sırrı kaydedildi",
@@ -7635,7 +7637,7 @@
       },
       "everyCall": "Her çağrı",
       "hostOffline": "{{bot}} botunun bilgisayarı çevrimdışı",
-      "hostNeedsUpdate": "{{bot}} bunu yapabilmeden önce Orca'nızın güncellenmesi gerekiyor.",
+      "hostNeedsUpdate": "{{bot}} bunu yapabilmeden önce Adehone'nızın güncellenmesi gerekiyor.",
       "errors": {
         "notFound": "Bu webhook silindi.",
         "unavailable": "Webhook'lar şu anda kullanılamıyor."
@@ -7692,9 +7694,9 @@
       "reading": "Kurulumunuz tanınıyor…",
       "read": "Kurulumunuz tanınıyor",
       "namesMore": "{{names}} ve {{count}} tane daha",
-      "projectsReading": "Projeler: Orca'da neleriniz olduğuna bakılıyor…",
+      "projectsReading": "Projeler: Adehone'da neleriniz olduğuna bakılıyor…",
       "projectsDone": "Projelerinize bakıldı",
-      "projectsNone": "Orca'da henüz proje yok",
+      "projectsNone": "Adehone'da henüz proje yok",
       "projectsOne": "1 proje bulundu: {{names}}",
       "projectsMany": "{{count}} proje bulundu: {{names}}",
       "githubReading": "GitHub: açık PR'larınız okunuyor…",
@@ -7724,7 +7726,7 @@
     "picture": {
       "invalid": "Bu görsel kullanılamadı. PNG veya JPG bir görsel seçin.",
       "permissionDenied": "Fotoğraflara erişim izni reddedildi",
-      "unreadable": "Orca bu görseli okuyamıyor. PNG veya JPEG deneyin.",
+      "unreadable": "Adehone bu görseli okuyamıyor. PNG veya JPEG deneyin.",
       "colorSky": "Gök Mavisi",
       "colorWhite": "Beyaz",
       "colorPink": "Pembe",
@@ -7795,7 +7797,7 @@
         "needsSignIn": "Giriş gerekli",
         "finishInBrowser": "Tarayıcıda tamamla",
         "finishing": "Oturum açma tamamlanıyor…",
-        "updateHost": "{{host}} üzerindeki Orca'yı güncelle",
+        "updateHost": "{{host}} üzerindeki Adehone'yı güncelle",
         "cantReach": "Ulaşılamıyor",
         "unsupported": "Bu uygulama henüz desteklenmiyor"
       },
@@ -7809,13 +7811,13 @@
         "step2": "Adresi kopyalayın",
         "step2Detail": "Son sayfa yüklenmeyecek. Bu normaldir. Adresini kopyalayın.",
         "step3": "Buraya yapıştırın",
-        "step3Detail": "Orca, oturum açma işlemini {{host}} üzerinde tamamlar.",
+        "step3Detail": "Adehone, oturum açma işlemini {{host}} üzerinde tamamlar.",
         "title": "{{app}} oturumu aç",
         "pastePlaceholder": "Adresi yapıştırın",
         "open": "Oturum açma sayfasını aç",
         "notThisSignIn": "Bu adres bu oturum açma işlemine ait değil. Yönlendirildiğiniz sayfanın adresini yapıştırın."
       },
-      "updateHost": "Uygulamalarda oturum açmak için {{host}} üzerindeki Orca'yı güncelleyin",
+      "updateHost": "Uygulamalarda oturum açmak için {{host}} üzerindeki Adehone'yı güncelleyin",
       "none": "Yok",
       "from": "{{agent}} ajanından {{count}}",
       "more": "{{agent}} ajanından {{count}} tane daha",
@@ -7835,7 +7837,7 @@
         "unsupported": "Bu uygulama henüz desteklenmiyor.",
         "unavailable": "Bu uygulamaya ulaşılamıyor. Adresi kontrol edip yeniden deneyin.",
         "noTool": "Bu botta artık o araç yok.",
-        "desktopOnly": "{{host}} üzerindeki Orca’dan oturum açın.",
+        "desktopOnly": "{{host}} üzerindeki Adehone’dan oturum açın.",
         "denied": "Erişime izin verilmedi.",
         "expired": "Oturum açmanın süresi doldu. Yeniden deneyin.",
         "couldNotSignIn": "Oturum açılamadı. Yeniden deneyin."
@@ -7997,7 +7999,7 @@
     "failures": {
       "lookUnfinished": "Son göz atma tamamlanmadı.",
       "lookTimedOut": "Son göz atma {{minutes}} dk sonra durduruldu.",
-      "lookInterrupted": "Son göz atma sırasında Orca durdu.",
+      "lookInterrupted": "Son göz atma sırasında Adehone durdu.",
       "lookCouldNotStart": "Son göz atma başlatılamadı.",
       "lookAsleep": "Bu bilgisayar uykudayken son göz atma kaçırıldı.",
       "tidyUpUnfinished": "Son toparlama tamamlanmadı.",
@@ -8006,11 +8008,11 @@
       "tidyUpAsleep": "Bu bilgisayar uykudayken son toparlama kaçırıldı.",
       "tidyUpUnreadChats": "Son toparlama sohbetlerini okuyamadığı için çalışmadı.",
       "tidyUpNoDraft": "Son toparlama yeni bir MEMORY.md ile yanıt vermedi.",
-      "tidyUpNoOps": "Son toparlamanın yanıtı, Orca'nın okuyabileceği bir değişiklik listesi değildi.",
-      "tidyUpAllSkipped": "Orca son toparlamanın istediği her değişikliği atladı, bu yüzden hiçbir şey değişmedi. ({{detail}})",
+      "tidyUpNoOps": "Son toparlamanın yanıtı, Adehone'nın okuyabileceği bir değişiklik listesi değildi.",
+      "tidyUpAllSkipped": "Adehone son toparlamanın istediği her değişikliği atladı, bu yüzden hiçbir şey değişmedi. ({{detail}})",
       "tidyUpNotListLines": "Son toparlama çalışmadı: MEMORY.md'de liste satırı olmayan birkaç satırdan fazlası var ve toparlama yalnızca liste satırlarını okur.",
-      "tidyUpMovedOnly": "Son toparlama durum satırlarını memory/journal/ klasörüne taşıdı, ancak Orca yanıtın geri kalanını kullanamadı. ({{detail}})",
-      "tidyUpBadTopic": "Son toparlama, Orca'nın yazamadığı bir konu dosyası belirtti, bu yüzden hiçbir şey değişmedi.",
+      "tidyUpMovedOnly": "Son toparlama durum satırlarını memory/journal/ klasörüne taşıdı, ancak Adehone yanıtın geri kalanını kullanamadı. ({{detail}})",
+      "tidyUpBadTopic": "Son toparlama, Adehone'nın yazamadığı bir konu dosyası belirtti, bu yüzden hiçbir şey değişmedi.",
       "tidyUpTooLong": "Son toparlamanın MEMORY.md dosyası {{max}} satırı aştı ve kısalmadı, bu yüzden hiçbir şey değişmedi.",
       "tidyUpTooManyRemoved": "Son toparlama aynı anda çok fazla satır çıkardı, bu yüzden hiçbir şey değişmedi.",
       "tidyUpTooManyAdded": "Son toparlama aynı anda çok fazla yeni satır ekledi, bu yüzden hiçbir şey değişmedi.",
@@ -8024,9 +8026,9 @@
       "toolSavedValueGone": "Bu kayıtlı değer artık kullanılamıyor. Yeniden girin veya satırını kaldırın.",
       "toolValueMissing": "Her satıra bir değer girin veya satırı kaldırın.",
       "toolCredentialsUnreadable": "Botun kayıtlı araç kimlik bilgileri okunamıyor. Aracın değerlerini yeniden girin.",
-      "toolSignInManaged": "Bu araçta oturumu Orca açar. Bunun yerine oturumunu açın veya kapatın.",
-      "toolCredentialsRaced": "Botun araç kimlik bilgileri başka bir Orca'da değişti. Tekrar deneyin.",
-      "toolSourceManaged": "Bu aracı Orca yönetiyor. Kurduğunuz yerden değiştirin.",
+      "toolSignInManaged": "Bu araçta oturumu Adehone açar. Bunun yerine oturumunu açın veya kapatın.",
+      "toolCredentialsRaced": "Botun araç kimlik bilgileri başka bir Adehone'da değişti. Tekrar deneyin.",
+      "toolSourceManaged": "Bu aracı Adehone yönetiyor. Kurduğunuz yerden değiştirin.",
       "toolValuesUnmoved": "Bir araç hâlâ kayıtlı değerlerini tutuyor. Taşımak için botun araçlarını yeniden açın.",
       "googleAccountsChanged": "Google hesapları siz açtıktan sonra değişti. Hesapları kontrol edip yeniden kaydedin.",
       "toolCodexCheckFailed": "Codex araçları denetleyemedi veya bağlayamadı. Kurulumunu kontrol edip tekrar deneyin.",
@@ -8042,7 +8044,7 @@
       "toolSignInEnded": "Oturum açma zaten sona ermiş veya zaman aşımına uğramıştı. Bağlan ile yeniden başlatın.",
       "toolNotFound": "Bu botta {{name}} adlı bir araç yok.",
       "toolNeedsNoSignIn": "{{name}} kayıtlı değerlerini kullanır ve oturum açması gerekmez.",
-      "toolSignInAgentUnsupported": "Orca, {{name}} için yalnızca Claude Code ve Codex'te oturum açar. Bunun yerine oturum açma değerleriyle ekleyin.",
+      "toolSignInAgentUnsupported": "Adehone, {{name}} için yalnızca Claude Code ve Codex'te oturum açar. Bunun yerine oturum açma değerleriyle ekleyin.",
       "toolCodexNoSignInPage": "Codex, {{name}} için bir oturum açma sayfası vermedi.",
       "toolClaudeSignInFailed": "Claude, {{name}} için oturum açmayı başlatamadı.",
       "toolClaudeNoSignInPage": "Claude, {{name}} için bir oturum açma sayfası açmadı.",
@@ -8061,7 +8063,7 @@
       "groupNeedsLocalBot": "Bu grubun bu bilgisayarda en az bir bota ihtiyacı var.",
       "groupNameTaken": "{{name}} zaten bu grupta. Bahsetmelerin karışmaması için üyelerin farklı adları olmalı.",
       "groupPostFromHost": "Başka bilgisayarlarda botları olan bir gruba göndermek için {{host}} kullanın.",
-      "groupPeerTooOld": "Botlarını bir gruba eklemek için {{host}} üzerindeki Orca'yı güncelleyin.",
+      "groupPeerTooOld": "Botlarını bir gruba eklemek için {{host}} üzerindeki Adehone'yı güncelleyin.",
       "attachmentUnreadable": "{{name}} okunamıyor.",
       "attachmentTooLarge": "{{name}}, {{maxMb}} MB'tan büyük.",
       "attachmentUploading": "{{name}} hâlâ yükleniyor.",
@@ -8268,9 +8270,9 @@
       "safetyCheck": "Güvenlik denetimi",
       "done": "Tamam",
       "waitingSignIn": "Tarayıcınızda oturum açmanız bekleniyor",
-      "signInFor": "{{host}} üzerinde Orca oturumu açar.",
+      "signInFor": "{{host}} üzerinde Adehone oturumu açar.",
       "cancelSignIn": "Oturum açmayı iptal et",
-      "signIn": "Paylaşmak için Orca’da oturum açın.",
+      "signIn": "Paylaşmak için Adehone’da oturum açın.",
       "signInToPublish": "Yayımlamak için oturum aç",
       "reload": "Yeniden yükle",
       "updateLink": "Bağlantıyı güncelle",
@@ -8325,11 +8327,11 @@
         "prepareAgain": "Bu arada bot başka bir pencereden paylaşıldı. “Botu paylaş”ı yeniden açın.",
         "stopped": "Bu bağlantı devre dışı bırakıldı. Yeni bağlantı oluşturmak için yeniden yayımlayın.",
         "moved": "Bu bağlantı başka bir yerde güncellendi. Güncel hâlini görmek için “Botu paylaş”ı yeniden açın.",
-        "unavailable": "Orca Cloud henüz bot paylaşımını desteklemiyor.",
-        "avatarRefused": "Orca Cloud botun görselini kabul etmedi. Başka bir görsel seçip yeniden deneyin.",
+        "unavailable": "Adehone Cloud henüz bot paylaşımını desteklemiyor.",
+        "avatarRefused": "Adehone Cloud botun görselini kabul etmedi. Başka bir görsel seçip yeniden deneyin.",
         "tooLarge": "Bu bot paylaşılamayacak kadar büyük. Bazı bellek dosyalarını veya becerileri paylaşım dışında bırakıp yeniden deneyin."
       },
-      "reconnect": "Paylaşmak için Orca’da yeniden oturum açın.",
+      "reconnect": "Paylaşmak için Adehone’da yeniden oturum açın.",
       "flag": {
         "secret": "Gizli bilgi",
         "pipeToShell": "İndirilen bir betiği çalıştırır",
@@ -8438,14 +8440,14 @@
       "shuffle": "Başka bir görsel",
       "namePlaceholder": "Botunuza ad verin",
       "purposeLabel": "Kimlik",
-      "purposeTooLongForHost": "{{host}} üzerindeki Orca, amaç için en fazla 200 karakter kabul ediyor. Kısaltın veya {{host}} üzerindeki Orca'yı güncelleyin.",
+      "purposeTooLongForHost": "{{host}} üzerindeki Adehone, amaç için en fazla 200 karakter kabul ediyor. Kısaltın veya {{host}} üzerindeki Adehone'yı güncelleyin.",
       "purposePlaceholder": "Kim olduğu ve ne yaptığı",
       "create": "Oluştur",
       "fromTemplate": "Şablon kullan",
       "takesOverList": "{{names}} için yönetimi devralır. Ajanları çalışmaya devam eder.",
       "runsOn": "Çalıştığı cihaz",
       "cantReach": "{{host}} yanıt vermiyor. Başka bir bilgisayar seçin.",
-      "otherAccount": "{{host}} kendi Orca hesabını ({{email}}) kullanır. Bu bilgisayardaki botlar, bu hesap adına paylaşım yapar ve bağlantı kurar.",
+      "otherAccount": "{{host}} kendi Adehone hesabını ({{email}}) kullanır. Bu bilgisayardaki botlar, bu hesap adına paylaşım yapar ve bağlantı kurar.",
       "agent": "Ajan",
       "computer": "Bilgisayar",
       "computerMessage": "Botun çalıştığı yer.",
@@ -8453,7 +8455,7 @@
       "noAgent": "Yok",
       "noChatAgents": "{{host}} üzerinde kullanılabilir sohbet ajanı yok.",
       "botsOffOn": "{{host}} üzerinde botlar kapalı",
-      "updateDesktopFirst": "Önce {{host}} üzerinde Orca’yı güncelleyin",
+      "updateDesktopFirst": "Önce {{host}} üzerinde Adehone’yı güncelleyin",
       "checking": "Kontrol ediliyor…"
     },
     "workspaces": {
@@ -8490,7 +8492,7 @@
   },
   "hostMutation": {
     "renameOffline": "{{host}} çevrimdışı. Metniniz, kaydedebilene kadar burada kalır.",
-    "renameUnconfirmed": "Henüz doğrulanmadı. {{host}} yeniden bağlandığında Orca adı kontrol edecek.",
+    "renameUnconfirmed": "Henüz doğrulanmadı. {{host}} yeniden bağlandığında Adehone adı kontrol edecek.",
     "saving": "Kaydediliyor",
     "serverUnreachable": "Sunucusuna ulaşılamıyor."
   },
@@ -8568,7 +8570,7 @@
       "clear": "Temizle"
     },
     "activity": {
-      "needsWindow": "Güncellenemedi. {{desktop}} üzerinde Orca’yı açın.",
+      "needsWindow": "Güncellenemedi. {{desktop}} üzerinde Adehone’yı açın.",
       "failed": "Ajan listesi güncellenemedi."
     }
   },

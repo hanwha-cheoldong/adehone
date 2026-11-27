@@ -1,7 +1,7 @@
 import type { FeatureInteractionState } from '../../../../../shared/feature-education/interactions/feature-interactions'
 import { hasFeatureInteraction } from '../../../../../shared/feature-education/interactions/feature-interactions'
 import {
-  FEATURE_WALL_SETUP_STEPS,
+  FEATURE_WALL_SETUP_CORE_STEPS,
   type FeatureWallSetupStepId
 } from '../../../../../shared/feature-education/explore/feature-wall-setup-steps'
 import type { GlobalSettings } from '../../../../../shared/settings/global-settings-types'
@@ -22,6 +22,7 @@ export type FeatureWallSetupProgressInput = {
   gitRepoCount: number
   worktreesByRepo: Record<string, Worktree[]>
   hasSetupScript: boolean
+  mobileBotSetupDone?: boolean
 }
 
 export type FeatureWallSetupProgress = {
@@ -99,13 +100,14 @@ export function getFeatureWallSetupProgress(
     browser: hasFeatureInteraction(input.featureInteractions, 'browser'),
     'task-sources': input.hasConnectedTaskSource,
     'agent-capabilities': setupGuideAgentCapabilitiesDone(input),
-    'setup-script': input.hasSetupScript
+    'setup-script': input.hasSetupScript,
+    'mobile-dev-bots': input.mobileBotSetupDone === true
   }
   return {
     ready: input.ready ?? true,
     stepDone,
-    coreDoneCount: FEATURE_WALL_SETUP_STEPS.filter((step) => stepDone[step.id]).length,
-    coreTotal: FEATURE_WALL_SETUP_STEPS.length
+    coreDoneCount: FEATURE_WALL_SETUP_CORE_STEPS.filter((step) => stepDone[step.id]).length,
+    coreTotal: FEATURE_WALL_SETUP_CORE_STEPS.length
   }
 }
 

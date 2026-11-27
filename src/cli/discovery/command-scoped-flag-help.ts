@@ -19,7 +19,8 @@ const COMMAND_SCOPED_FLAG_HELP: Record<string, Record<string, string>> = {
   },
   'bot item set': {
     title: BOT_ITEM_TITLE_HELP,
-    comment: '--comment <text>       Add a comment with this change'
+    comment: '--comment <text>       Add a comment with this change',
+    'expected-version': '--expected-version <n> Only write if the item is still at this version'
   },
   'bot item comment': { text: "--text <text>          The comment's text" },
   'bot item link': { ref: '--ref <ref>            A worker, PR, URL or file to link' },
@@ -69,7 +70,8 @@ const COMMAND_SCOPED_FLAG_HELP: Record<string, Record<string, string>> = {
     limit: '--limit <n>            Maximum matching workspaces (default 50)'
   },
   'worktree create': {
-    branch: '--branch <name>        Git branch name to use instead of the prefixed default',
+    branch: '--branch <name>        Git branch name to use instead of the generated one',
+    type: '--type <type>          Generated branch type: feat, fix, hotfix, release or chore',
     reference:
       '--reference <url-or-jira-key> Attach an issue/review URL or Jira key; repeat for several',
     'reference-site': '--reference-site <id> Jira site for bare keys; see orca jira connection',

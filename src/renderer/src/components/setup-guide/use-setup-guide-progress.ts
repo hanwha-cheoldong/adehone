@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useRef, useSyncExternalStore } from 'react'
 import { useAppStore } from '@/store/index'
 import { useOrcaTeamFeatureBlocked } from '@/lib/orca-team-policy'
 import { ORCA_CLOUD_TEAM_POLICY_FLAGS } from '../../../../shared/orca-profiles/orca-cloud-team-policy'
@@ -21,9 +21,9 @@ import { useOnboardingSkillRuntime } from '@/hooks/skills/runtime/use-onboarding
 import { getSetupGuideProgressSnapshot } from '../feature-wall/setup/feature-wall-setup-progress'
 import type { FeatureWallSetupProgress } from '../feature-wall/setup/feature-wall-setup-progress'
 import { deriveIntegrationConnectionStatus } from '../feature-wall/setup/integrations/use-integration-connection-status'
+import { useComputerUsePermissionReadiness } from './use-computer-use-permission-readiness'
 import { useSetupGuideBrowserMilestoneProgress } from './setup-guide-browser-milestone-progress'
 import {
-  getComputerUsePermissionSetupState,
   getCurrentSetupScriptProbeState,
   getSetupGuideProgressReady,
   getSetupScriptProbeSignature
@@ -34,6 +34,7 @@ import {
   setSetupScriptProbeCache,
   subscribeSetupScriptProbeCache
 } from './setup-script-probe-cache'
+import { useMobileBotSetupDone } from '../feature-wall/setup/mobile-bots/use-mobile-bot-setup-done'
 import { localPreflightContextKey } from '../../runtime/hosts/preflight/local-preflight-context-key'
 
 const SETUP_SCRIPT_PROBE_SETTLE_TIMEOUT_MS = 15_000
@@ -71,10 +72,6 @@ export function useSetupGuideProgress(
     readSetupScriptProbeCache,
     readSetupScriptProbeCache
   )
-  const [computerUsePermissionsReady, setComputerUsePermissionsReady] = useState(false)
-  const [computerUsePermissionStatusChecked, setComputerUsePermissionStatusChecked] =
-    useState(false)
-  const [computerUseUnavailable, setComputerUseUnavailable] = useState(false)
   const computerUseBlocked = useOrcaTeamFeatureBlocked(ORCA_CLOUD_TEAM_POLICY_FLAGS.computerUse)
   const skillOptions = {
     enabled: shouldRefreshCoreState && activeSkillRuntime.enabled,
@@ -190,50 +187,15 @@ export function useSetupGuideProgress(
     }
   }, [orderedGitRepos, settings, setupScriptProbeSignature, shouldRefreshCoreState])
 
-  const readComputerUsePermissions = useCallback(async (isStale: () => boolean): Promise<void> => {
-    const status = await window.api.computerUsePermissions.getStatus().catch(() => null)
-    if (isStale()) {
-      return
-    }
-    const permissionState = getComputerUsePermissionSetupState(status)
-    setComputerUsePermissionStatusChecked(true)
-    setComputerUsePermissionsReady(permissionState.ready)
-    setComputerUseUnavailable(permissionState.unavailable)
-  }, [])
-
   const shouldReadComputerUsePermissions =
     shouldRefreshCoreState && !computerUseBlocked && computerUseSkillInstalled
-  useEffect(() => {
-    if (!shouldReadComputerUsePermissions) {
-      // Unavailable steps must clear stale permission state before readiness is derived.
-      setComputerUsePermissionStatusChecked(false)
-      setComputerUsePermissionsReady(false)
-      setComputerUseUnavailable(false)
-      return
-    }
-    let stale = false
-    const refreshComputerUsePermissions = (): void => {
-      void readComputerUsePermissions(() => stale)
-    }
-    refreshComputerUsePermissions()
-    const handleFocus = (): void => {
-      void refreshComputerUsePermissions()
-    }
-    const handleVisibilityChange = (): void => {
-      if (document.visibilityState === 'visible') {
-        void refreshComputerUsePermissions()
-      }
-    }
-    // Users grant OS permissions elsewhere; refresh on return without remounting.
-    window.addEventListener('focus', handleFocus)
-    document.addEventListener('visibilitychange', handleVisibilityChange)
-    return () => {
-      stale = true
-      window.removeEventListener('focus', handleFocus)
-      document.removeEventListener('visibilitychange', handleVisibilityChange)
-    }
-  }, [readComputerUsePermissions, shouldReadComputerUsePermissions])
+  const {
+    computerUsePermissionsReady,
+    computerUsePermissionStatusChecked,
+    computerUseUnavailable
+  } = useComputerUsePermissionReadiness(shouldReadComputerUsePermissions)
 
+  const mobileBotSetupDone = useMobileBotSetupDone(shouldRefreshCoreState)
   const taskSourceStatus = deriveIntegrationConnectionStatus({
     preflightStatus,
     preflightStatusChecked,
@@ -291,7 +253,8 @@ export function useSetupGuideProgress(
           : orchestrationSkillInstalled,
         gitRepoCount,
         worktreesByRepo,
-        hasSetupScript: currentSetupScriptProbe.hasSetupScript
+        hasSetupScript: currentSetupScriptProbe.hasSetupScript,
+        mobileBotSetupDone
       }),
     [
       shouldRefreshCoreState,
@@ -307,6 +270,7 @@ export function useSetupGuideProgress(
       featureInteractions,
       gitRepoCount,
       hasConnectedTaskSource,
+      mobileBotSetupDone,
       currentSetupScriptProbe.hasSetupScript,
       orchestrationSkillInstalled,
       settings,

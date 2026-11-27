@@ -11,6 +11,7 @@ import {
   type BotPackageApply,
   type BotPackageApplyDeps
 } from './bot-package-apply'
+import { ADEHONE_DEV_AUTOMATIONS_DOC, ADEHONE_DEV_MEMORY_SEED } from './bot-template-adehone-files'
 import { ANDROID_DEV_AUTOMATIONS_DOC, ANDROID_DEV_MEMORY_SEED } from './bot-template-android-files'
 import { IOS_DEV_AUTOMATIONS_DOC, IOS_DEV_MEMORY_SEED } from './bot-template-ios-files'
 import {
@@ -24,6 +25,10 @@ import {
 import { botTemplateSkillFiles } from './bot-template-skill-text'
 
 const TEMPLATE_EXTRA_FILES: Partial<Record<string, readonly { to: string; text: string }[]>> = {
+  'adehone-dev': [
+    { to: 'MEMORY.md', text: ADEHONE_DEV_MEMORY_SEED },
+    { to: 'AUTOMATIONS.md', text: ADEHONE_DEV_AUTOMATIONS_DOC }
+  ],
   'android-dev': [
     { to: 'MEMORY.md', text: ANDROID_DEV_MEMORY_SEED },
     { to: 'AUTOMATIONS.md', text: ANDROID_DEV_AUTOMATIONS_DOC }

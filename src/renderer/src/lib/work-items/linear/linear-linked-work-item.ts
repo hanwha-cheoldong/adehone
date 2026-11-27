@@ -5,26 +5,12 @@ import {
 import { getLinearIssueWorkspaceName } from '../../../../../shared/workspace/naming/workspace-name'
 import type { LinearIssue } from '../../../../../shared/linear/issue-types'
 import type { LinkedWorkItemSummary } from '@/lib/workspace/creation/new-workspace'
-import {
-  buildLinearWorkspaceSource,
-  getUsableLinearBranchName
-} from '../../../../../shared/new-workspace/workspace-source'
+import { buildLinearWorkspaceSource } from '../../../../../shared/new-workspace/workspace-source'
 
 export function isLinearLinkedWorkItem(
   item: Pick<LinkedWorkItemSummary, 'provider' | 'linearIdentifier'> | null | undefined
 ): boolean {
   return item?.provider === 'linear' || Boolean(item?.linearIdentifier?.trim())
-}
-
-export function getLinearLinkedWorkItemBranchName(
-  item:
-    | Pick<LinkedWorkItemSummary, 'provider' | 'linearIdentifier' | 'linearBranchName'>
-    | null
-    | undefined
-): string | undefined {
-  return isLinearLinkedWorkItem(item)
-    ? getUsableLinearBranchName(item?.linearBranchName)
-    : undefined
 }
 
 export function buildLinearIssueComposerData(issue: LinearIssue, source: TaskSourceContext | null) {

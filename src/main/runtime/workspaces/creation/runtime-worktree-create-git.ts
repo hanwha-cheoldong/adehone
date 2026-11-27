@@ -6,7 +6,11 @@ import type { GitAdmissionTier } from '../../../../shared/rpc-contract/source-co
 import { gitExecFileAsync } from '../../../git/command-runner/git-exec-file'
 import { foldGitRefNameCase } from '../../../git/refs/resolution/repo-branch-conflict'
 import { listWorktrees } from '../../../git/worktrees/catalog/worktree-scan-cache'
-import { computeValidatedBranchName } from '../../../ipc/worktrees/creation/worktree-branch-name'
+import {
+  computeValidatedBranchName,
+  explicitBranchNameError
+} from '../../../ipc/worktrees/creation/worktree-branch-name'
+import type { ConventionalBranchParts } from '../../../../shared/git/branches/conventional-branch-name'
 import { getHostedReviewForBranch } from '../../../source-control/hosted-review'
 import {
   getSelectedReviewBranch,
@@ -19,14 +23,14 @@ import type { HostedReviewExecutionOptions } from '../../../source-control/hoste
 export async function resolveCreateBranchName(
   repoPath: string,
   branchNameOverride: string | undefined,
-  sanitizedName: string,
+  generated: ConventionalBranchParts,
   settings: { branchPrefix: string; branchPrefixCustom?: string },
   username: string | null,
   gitOptions: { wslDistro?: string; admissionTier?: GitAdmissionTier } = {}
 ): Promise<string> {
   if (!branchNameOverride) {
     return computeValidatedBranchName(
-      sanitizedName,
+      generated,
       { ...settings, branchPrefix: settings.branchPrefix as BranchPrefixStrategy },
       username
     )
@@ -34,10 +38,14 @@ export async function resolveCreateBranchName(
   if (branchNameOverride.startsWith('-')) {
     throw new Error('Branch name must not start with "-"')
   }
-  await gitExecFileAsync(['check-ref-format', '--branch', branchNameOverride], {
-    cwd: repoPath,
-    ...gitOptions
-  })
+  try {
+    await gitExecFileAsync(['check-ref-format', '--branch', branchNameOverride], {
+      cwd: repoPath,
+      ...gitOptions
+    })
+  } catch (error) {
+    throw explicitBranchNameError(branchNameOverride, error)
+  }
   return branchNameOverride
 }
 

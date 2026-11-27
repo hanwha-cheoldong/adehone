@@ -208,6 +208,22 @@ function translatedSkillName(skill: BotTemplateSkill, t: Translate): string {
       return t('bots.templateSkills.mobileWebWebviewBridge', 'mobile-web-webview-bridge')
     case 'mobile-web-performance-pwa':
       return t('bots.templateSkills.mobileWebPerformancePwa', 'mobile-web-performance-pwa')
+    case 'adehone-planner':
+      return t('bots.templateSkills.adehonePlanner', 'adehone-planner')
+    case 'adehone-electron-architecture':
+      return t('bots.templateSkills.adehoneElectronArchitecture', 'adehone-electron-architecture')
+    case 'adehone-electron-security':
+      return t('bots.templateSkills.adehoneElectronSecurity', 'adehone-electron-security')
+    case 'adehone-react-ui':
+      return t('bots.templateSkills.adehoneReactUi', 'adehone-react-ui')
+    case 'adehone-testing-proof':
+      return t('bots.templateSkills.adehoneTestingProof', 'adehone-testing-proof')
+    case 'adehone-build-resolver':
+      return t('bots.templateSkills.adehoneBuildResolver', 'adehone-build-resolver')
+    case 'adehone-code-review':
+      return t('bots.templateSkills.adehoneCodeReview', 'adehone-code-review')
+    case 'adehone-verification-loop':
+      return t('bots.templateSkills.adehoneVerificationLoop', 'adehone-verification-loop')
     case 'product-lens':
       return t('bots.templateSkills.productLens', 'product-lens')
     case 'prd-authoring':

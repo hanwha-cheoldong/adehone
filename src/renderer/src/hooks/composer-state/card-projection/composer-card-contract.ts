@@ -1,3 +1,4 @@
+import type { ComposerGeneratedBranch } from '@/components/new-workspace/composer/ComposerGeneratedBranchPreview'
 import type { ComposerModel } from '../composer-model'
 import type { ComposerAgentRows } from './composer-agent-rows-target'
 
@@ -71,6 +72,7 @@ export type ComposerCardActionProps = {
   smartNameRepoSwitchTarget?: 'project' | 'task-source'
   onNameValueChange: ComposerModel['handleNameValueChange']
   onBranchNameOverrideChange: ComposerModel['handleBranchNameOverrideChange']
+  generatedBranch?: ComposerGeneratedBranch
   onParentWorktreeIdChange: ComposerModel['setParentWorktreeId']
   onSmartGitHubItemSelect: ComposerModel['handleSmartGitHubItemSelect']
   onSmartGitLabItemSelect: ComposerModel['handleSmartGitLabItemSelect']

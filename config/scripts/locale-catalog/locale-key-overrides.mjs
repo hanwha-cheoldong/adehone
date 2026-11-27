@@ -519,11 +519,6 @@ const BASE_LOCALE_KEY_OVERRIDES = {
     zh: '操作',
     ja: '操作'
   },
-  'auto.components.settings.GitPane.b559bf9899': {
-    ko: '예: feature',
-    zh: '例如 feature',
-    ja: '例: feature'
-  },
   'auto.components.mobile.slides.TerminalSlide.985373052e': {
     ko: '휴대폰 모드로 전환',
     zh: '切换到手机模式',

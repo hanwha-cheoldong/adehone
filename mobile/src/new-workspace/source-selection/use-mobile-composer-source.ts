@@ -1,11 +1,10 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState, type SetStateAction } from 'react'
 import type { GitHubWorkItem } from '../../../../src/shared/github/work-items/work-item-types'
 import type { GitLabWorkItem } from '../../../../src/shared/gitlab/gitlab-types'
 import type { LinearIssue } from '../../../../src/shared/linear/issue-types'
 import { resolveComposerManualBranchNameChange } from '../../../../src/shared/new-workspace/composer-branch-selection'
 import { resolveGitHubWorkItemIdentity } from '../../../../src/shared/new-workspace/github-work-item-identity'
 import { getForkPushWarning } from '../../../../src/shared/new-workspace/fork-push-warning'
-import type { RpcClient } from '../../transport/rpc/rpc-client-contract'
 import type { JiraIssue } from '../../../../src/shared/jira/jira-types'
 import {
   buildGitHubLinkedWorkItem,
@@ -17,6 +16,7 @@ import {
   resolveComposerCreateSelection,
   resolveJiraAutoName,
   resolveLinearAutoName,
+  keepTypedBranchName,
   resolveWorkItemAutoName
 } from './composer-linked-work-item'
 import {
@@ -27,18 +27,12 @@ import {
 import type {
   ComposerBaseState,
   MobileComposerCreateSelection,
-  SmartNameSelection
+  SmartNameSelection,
+  UseMobileComposerSourceArgs
 } from './mobile-composer-source-types'
 import type { WorkspaceSourceLinkedItem as MobileLinkedWorkItem } from '../../../../src/shared/new-workspace/workspace-source'
 import { useMobileComposerName } from './use-mobile-composer-name'
 import { getBaseResolveError, useForkPushWarning } from './composer-source-copy'
-
-export type UseMobileComposerSourceArgs = {
-  client: RpcClient | null
-  selectedRepoId: string | null
-  worktreeBranches?: readonly string[]
-  onError?: (message: string) => void
-}
 
 export function useMobileComposerSource(args: UseMobileComposerSourceArgs) {
   const { client, selectedRepoId, worktreeBranches = [], onError } = args
@@ -56,7 +50,7 @@ export function useMobileComposerSource(args: UseMobileComposerSourceArgs) {
   const { name, setName, setNameState, lastAutoNameRef, applyAutoName, isNameAutoManaged } =
     useMobileComposerName(linkedWorkItem)
 
-  const clearBaseAndBranch = useCallback((nextBase: ComposerBaseState = {}) => {
+  const clearBaseAndBranch = useCallback((nextBase: SetStateAction<ComposerBaseState> = {}) => {
     branchSelectionRef.current = null
     setBranchCreateIntent(false)
     setBase(nextBase)
@@ -183,8 +177,8 @@ export function useMobileComposerSource(args: UseMobileComposerSourceArgs) {
       } else {
         applyAutoName(args.suggested, name)
       }
-      // As desktop: Linear's suggested branch, kept through name edits.
-      clearBaseAndBranch({ branchNameOverride: args.linked.linearBranchName })
+      const keepsTypedBranch = !linkedWorkItem && !branchSelectionRef.current
+      clearBaseAndBranch(keepsTypedBranch ? keepTypedBranchName : {})
     },
     [applyAutoName, clearBaseAndBranch, lastAutoNameRef, linkedWorkItem, name, setNameState]
   )
