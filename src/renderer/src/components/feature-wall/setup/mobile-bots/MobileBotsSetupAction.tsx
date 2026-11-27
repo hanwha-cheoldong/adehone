@@ -129,8 +129,7 @@ function MobileBotsForm({ done, onSkip }: Props): React.JSX.Element {
     }
     setSetup(withoutMobileBotDesignation(setup, hostId, kind))
     clearMobileBotOutcome(hostId, kind)
-    const { [kind]: _released, ...designations } = draft.designations
-    setEdited({ ...draft, designations })
+    setEdited(withChosenMobileBot(draft, kind, undefined))
   }
 
   const confirmLabel = running
