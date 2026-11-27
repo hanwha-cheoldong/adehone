@@ -109,9 +109,9 @@
         "standardStatus": "标准用户",
         "unknownAdministrator": "无法确定",
         "10aafff216": "打开管理会话",
-        "confirmOrcaAdministratorRestart": "以管理员身份重新启动 Orca？",
+        "confirmOrcaAdministratorRestart": "以管理员身份重新启动 Adehone？",
         "administratorRestartSummary": "本地终端和代理将会关闭。Windows 会请求你批准。",
-        "orcaCouldNotRestart": "Orca 无法重新启动。",
+        "orcaCouldNotRestart": "Adehone 无法重新启动。",
         "manualAdministratorSteps": "手动步骤",
         "restartOrca": "重新启动"
       },
@@ -391,7 +391,7 @@
           "touchId": "touch id"
         },
         "authFailed": "无法确认是你本人",
-        "copied": "已复制密码，Orca 会在 2 分钟后将其从剪贴板中清除",
+        "copied": "已复制密码，Adehone 会在 2 分钟后将其从剪贴板中清除",
         "search": "搜索 {{count}} 个密码",
         "add": "添加",
         "noMatches": "没有匹配的已保存密码",
@@ -424,38 +424,38 @@
           "note": "备注",
           "cancel": "取消",
           "save": "保存",
-          "description": "当你在此网站的登录字段下方选择它时，Orca 会填充它",
+          "description": "当你在此网站的登录字段下方选择它时，Adehone 会填充它",
           "usernamePlaceholder": "邮箱或用户名",
           "addNote": "添加备注"
         },
         "hide": "隐藏密码",
         "show": "显示密码",
         "offerToSave": "提示保存密码",
-        "offerToSaveDescription": "在 Orca 浏览器中登录网站后，提示保存登录信息",
+        "offerToSaveDescription": "在 Adehone 浏览器中登录网站后，提示保存登录信息",
         "fillReauth": "填充前要求 Touch ID 验证",
         "fillReauthDescription": "适用于共用的计算机，显示或复制密码时本来就会要求验证",
         "noReauth": "此计算机无法通过 Touch ID 确认你的身份，因此显示和填充密码时不会进行验证",
-        "reauthUnavailable": "Touch ID 目前无法使用，因此 Orca 不会显示、复制或填充需要验证的密码",
+        "reauthUnavailable": "Touch ID 目前无法使用，因此 Adehone 不会显示、复制或填充需要验证的密码",
         "import": "导入",
         "importCsv": "从 CSV 文件导入…",
         "deleteAllTitle": "删除所有密码数据",
         "deleteAllDescription": "{{profile}} 配置文件中所有已保存的密码、备注和永不保存的网站",
-        "empty": "Orca 会在你登录后提示保存登录信息，你也可以从其他浏览器或 CSV 文件导入",
+        "empty": "Adehone 会在你登录后提示保存登录信息，你也可以从其他浏览器或 CSV 文件导入",
         "account": "{{site}} 上的 {{username}}",
         "lastUsed": "上次使用：{{when}}",
         "copyFor": "复制 {{account}} 的密码",
         "editFor": "编辑 {{account}}",
         "moreActions": "{{account}} 的更多操作",
         "accountCount": "{{count}} 个账户",
-        "deleteConfirmDescription": "Orca 将不再填充此密码，此操作无法撤销",
+        "deleteConfirmDescription": "Adehone 将不再填充此密码，此操作无法撤销",
         "deleteConfirm": "删除",
-        "profileDescription": "{{profile}} 配置文件中保存的登录信息，仅当你在登录字段下方选中某一条时，Orca 才会填充",
+        "profileDescription": "{{profile}} 配置文件中保存的登录信息，仅当你在登录字段下方选中某一条时，Adehone 才会填充",
         "unavailableTitle": "此计算机上的密码保存功能已关闭",
         "emptyTitle": "还没有保存的密码",
         "searchLabel": "搜索密码",
         "deleteAllAction": "删除…",
         "title": "密码",
-        "description": "Orca 浏览器中保存的登录信息：可添加、导入、编辑和删除",
+        "description": "Adehone 浏览器中保存的登录信息：可添加、导入、编辑和删除",
         "httpSuffix": " · http"
       },
       "memorySaver": {
@@ -568,7 +568,7 @@
       "defaultSurfaceKeptChat_other": "{{agents}} 按你的设置继续以聊天方式打开。",
       "defaultSurfaceSetAllChat": "全部设为聊天",
       "defaultSurfaceSetAllTerminal": "全部设为终端",
-      "modelListFallback": "内置列表。Orca 无法从此主机获取模型列表。",
+      "modelListFallback": "内置列表。Adehone 无法从此主机获取模型列表。",
       "chatUnavailableOnWindows": "{{value0}} 聊天暂不支持 Windows，因此 {{value0}} 会在此主机的终端中打开。macOS 或 Linux 主机上的聊天仍可正常使用。",
       "undetectedCommandHint": "如果 {{agent}} CLI 安装在 PATH 之外，请输入其在此主机上的可执行文件完整路径。",
       "permissionMixed": "混合",
@@ -780,14 +780,14 @@
       "example": "示例：在每个仓库中创建一个工作树（仅限此计算机）",
       "useExample": "使用此示例",
       "description": "创建工作区时在此文件夹中运行的脚本，所有工作区共享此文件夹。本地脚本保存在此计算机上；`orca.yaml` 脚本会与你的团队共享",
-      "invalidSetup": "文件存在，但 Orca 找不到有效的设置脚本。",
+      "invalidSetup": "文件存在，但 Adehone 找不到有效的设置脚本。",
       "supportedKeys": "只定义受支持的键：`scripts` 和 `setup`。",
       "supportedArchiveKeys": "只定义受支持的键：`scripts`、`setup` 和 `archive`",
-      "invalidArchive": "文件存在，但 Orca 找不到有效的设置或归档脚本"
+      "invalidArchive": "文件存在，但 Adehone 找不到有效的设置或归档脚本"
     },
     "uninstall": {
       "groupTitle": "卸载",
-      "title": "卸载 Orca",
+      "title": "卸载 Adehone",
       "searchDescription": "移除智能体钩子、orca 命令、orca serve 服务器和 SSH 主机上的钩子",
       "keywords": {
         "uninstall": "卸载",
@@ -797,20 +797,20 @@
         "hooks": "钩子"
       },
       "copyCommand": "复制命令",
-      "quit": "退出 Orca",
+      "quit": "退出 Adehone",
       "next": {
-        "unknown": "退出 Orca，然后删除应用",
-        "macApp": "退出 Orca，然后将它从“应用程序”文件夹拖到废纸篓",
-        "homebrew": "Orca 是通过 Homebrew 安装的，运行以下命令即可移除应用：",
+        "unknown": "退出 Adehone，然后删除应用",
+        "macApp": "退出 Adehone，然后将它从“应用程序”文件夹拖到废纸篓",
+        "homebrew": "Adehone 是通过 Homebrew 安装的，运行以下命令即可移除应用：",
         "linuxPackage": "运行以下命令即可移除软件包：",
-        "windows": "请在 Windows 卸载程序中完成卸载，卸载程序打开时 Orca 会退出",
-        "appImage": "退出 Orca，然后删除 <path>{{path}}</path>"
+        "windows": "请在 Windows 卸载程序中完成卸载，卸载程序打开时 Adehone 会退出",
+        "appImage": "退出 Adehone，然后删除 <path>{{path}}</path>"
       },
       "openUninstaller": "打开卸载程序",
-      "agentStatusOff": "智能体状态已关闭，除非你在“设置 → 智能体”中重新开启，否则 Orca 不会再添加钩子",
-      "loadFailed": "Orca 无法检查它安装了哪些内容",
+      "agentStatusOff": "智能体状态已关闭，除非你在“设置 → 智能体”中重新开启，否则 Adehone 不会再添加钩子",
+      "loadFailed": "Adehone 无法检查它安装了哪些内容",
       "tryAgain": "重试",
-      "keeps": "项目、工作树和 Orca 设置会保留",
+      "keeps": "项目、工作树和 Adehone 设置会保留",
       "keepsShared": "{{name}} 也已安装，因此与它共用的钩子也会保留",
       "closesTerminals": "打开的终端将会关闭",
       "removing": "正在移除…",
@@ -829,8 +829,8 @@
         "sshHosts_other": "{{count}} 个 SSH 主机"
       },
       "path": {
-        "codexAccount": "Orca 管理的 Codex 账户",
-        "appData": "Orca 应用数据"
+        "codexAccount": "Adehone 管理的 Codex 账户",
+        "appData": "Adehone 应用数据"
       },
       "host": {
         "ssh": "SSH",
@@ -845,10 +845,10 @@
         "terminalDaemon": "终端后台进程",
         "hookScripts": "钩子脚本",
         "nothing": "应用之外没有需要移除的内容",
-        "loading": "正在检查 Orca 安装了哪些内容…",
+        "loading": "正在检查 Adehone 安装了哪些内容…",
         "done": "已移除，删除应用即可完成卸载",
         "problems_other": "删除应用前，还有 {{count}} 项需要你处理",
-        "stillInUse": "部分 Orca 文件仍在使用中，暂时保留"
+        "stillInUse": "部分 Adehone 文件仍在使用中，暂时保留"
       },
       "status": {
         "running": "正在移除",
@@ -856,8 +856,8 @@
         "problem": "需要处理",
         "kept": "已保留"
       },
-      "stepFailed": "Orca 无法完成此步骤",
-      "finishFailed": "Orca 无法完成此操作"
+      "stepFailed": "Adehone 无法完成此步骤",
+      "finishFailed": "Adehone 无法完成此操作"
     },
     "notifications": {
       "perfNotices": {
@@ -943,8 +943,8 @@
       "cli": {
         "title": "命令行",
         "otherTerminals": "在其他终端中使用 {{command}}",
-        "skillTitle": "供智能体使用的 Orca 技能",
-        "description": "Orca 自带的终端已内置该命令"
+        "skillTitle": "供智能体使用的 Adehone 技能",
+        "description": "Adehone 自带的终端已内置该命令"
       },
       "previewTabs": {
         "title": "预览标签页",
@@ -985,7 +985,7 @@
       },
       "about": {
         "title": "关于",
-        "version": "Orca {{version}}"
+        "version": "Adehone {{version}}"
       },
       "inlineBlameTitle": "行内 Git blame",
       "inlineBlameDescription": "在行尾显示光标所在行的最后修改者和修改时间",
@@ -1009,7 +1009,7 @@
       "reducedEffects": "开启“减少视觉效果”或系统“降低透明度”设置时不生效",
       "needsOpacity": "将背景不透明度调到 1 以下，即可透过终端看到桌面",
       "linuxCompositor": "是否模糊由你的合成器决定，需要重启",
-      "restartDescription": "重启 Orca 以应用窗口材质更改",
+      "restartDescription": "重启 Adehone 以应用窗口材质更改",
       "keywords": {
         "acrylic": "亚克力"
       },
@@ -1017,14 +1017,14 @@
       "fc2ba9b528": "窗口材质"
     },
     "updateDelay": {
-      "description": "新版本发布后，Orca 会等待所选天数再提供更新",
+      "description": "新版本发布后，Adehone 会等待所选天数再提供更新",
       "none": "无",
       "availableSoon": "{{relative}}向你提供",
       "availableOn": "{{date}}（{{relative}}）向你提供",
-      "clearedTitle": "Orca {{version}} 已就绪",
-      "heldTitle": "Orca {{version}} 暂缓提供",
+      "clearedTitle": "Adehone {{version}} 已就绪",
+      "heldTitle": "Adehone {{version}} 暂缓提供",
       "released": "发布于 {{released}}",
-      "progress": "距离 Orca {{version}} 可用的剩余时间",
+      "progress": "距离 Adehone {{version}} 可用的剩余时间",
       "skipDelayOnceHint": "立即检查此版本，你的延迟设置保持不变",
       "upToDateWithHeld": "已是最新版本，更新的版本将暂缓至 {{date}} 提供",
       "heldReleaseReady": "有更新的版本可用，检查更新即可获取",
@@ -1088,7 +1088,7 @@
         "changes": "{{count}} 项更改",
         "review": "查看",
         "never": "尚未整理。首次整理会在有新聊天的夜晚之后进行",
-        "whileRunning": "此电脑上的 Orca 必须保持运行",
+        "whileRunning": "此电脑上的 Adehone 必须保持运行",
         "tidying": "正在整理…",
         "now": "立即整理",
         "undoStale": "此后又运行了一次更新的整理。请先查看再撤销"
@@ -1122,7 +1122,7 @@
         "chat": "聊天“{{title}}”",
         "aChat": "某个聊天",
         "chatFrom": "{{chat}} · 来自 {{source}}",
-        "kept": "Orca · 被 {{chat}} 覆盖",
+        "kept": "Adehone · 被 {{chat}} 覆盖",
         "owner": "你，在设置中",
         "bot": "“忘记”，来自 {{chat}}",
         "undo": "撤销",
@@ -1171,14 +1171,14 @@
         "checking": "检查中",
         "unknown": "无法检查",
         "unlinked": "未关联",
-        "notInstalled": "未安装 Orca"
+        "notInstalled": "未安装 Adehone"
       },
       "noLinearBots": "Linear 上还没有 bots",
       "githubStatus": {
         "checking": "检查中",
         "unknown": "无法检查",
         "unlinked": "未关联",
-        "notInstalled": "未安装 Orca"
+        "notInstalled": "未安装 Adehone"
       },
       "noGitHubBots": "GitHub 上还没有 bots",
       "connectorPeopleCount": "{{count}} 人有访问权限",
@@ -1203,7 +1203,7 @@
         "focusPlaceholder": "等我处理的 PR、#eng 中的问题、本周到期的议题",
         "focusDescription": "可选。留空则留意所有等待你处理的内容",
         "lastLooked": "上次巡视",
-        "whileRunning": "此电脑上的 Orca 必须保持运行",
+        "whileRunning": "此电脑上的 Adehone 必须保持运行",
         "looking": "正在巡视…"
       },
       "tools": {
@@ -1286,7 +1286,7 @@
         "remove": "移除",
         "reading": "正在读取其技能…",
         "remote": "位于其他主机上。{{bot}} 在此电脑上运行，因此暂时无法加载这些技能",
-        "missing": "此项目已不在 Orca 中",
+        "missing": "此项目已不在 Adehone 中",
         "notYet": "暂不可用",
         "none": "此项目中还没有技能。运行项目的设置流程来添加技能；它们会在 {{bot}} 的下一次聊天中加载",
         "openFolder": "打开文件夹",
@@ -1310,12 +1310,12 @@
       "askNewHomeChatDescription": "在“新的主聊天”替换 bot 当前的对话之前进行确认",
       "notifyCouldNotFinishOnHostDescription": "当自动化运行或工作者失败时。只有与 {{host}} 配对的手机会收到通知",
       "group": {
-        "noAccount": "Orca 账户",
+        "noAccount": "Adehone 账户",
         "notSignedIn": "未登录 · {{computers}}",
         "yourAccount": "你的账户 · {{computers}}",
-        "signedOut": "已从 Orca 退出登录",
-        "signInChanged": "Orca 登录已变更",
-        "updateNeeded": "请更新 {{host}} 上的 Orca，以便在此管理其 bots",
+        "signedOut": "已从 Adehone 退出登录",
+        "signInChanged": "Adehone 登录已变更",
+        "updateNeeded": "请更新 {{host}} 上的 Adehone，以便在此管理其 bots",
         "offline": "无法连接到 {{host}}"
       },
       "connectorsOnHost": "人们可以通过这些渠道联系 {{host}} 上的 bots",
@@ -1343,7 +1343,7 @@
     },
     "automaticUpdates": {
       "title": "自动更新",
-      "description": "在支持此功能的桌面安装中，Orca 会在定期检查时下载符合条件的更新，并自动重启以完成安装。",
+      "description": "在支持此功能的桌面安装中，Adehone 会在定期检查时下载符合条件的更新，并自动重启以完成安装。",
       "info": "关于自动更新",
       "saveFailed": "无法保存自动更新设置。"
     },
@@ -1358,7 +1358,7 @@
       "signInFailedDetail": "浏览器仍然打开了控制台，请在其中登录后继续"
     },
     "mobile": {
-      "teamDisabledRelay": "你的团队已关闭 Orca Relay，请使用局域网"
+      "teamDisabledRelay": "你的团队已关闭 Adehone Relay，请使用局域网"
     },
     "computerUse": {
       "teamDisabled": "你的团队已关闭“计算机控制”"
@@ -1402,8 +1402,8 @@
         "restart_other": "重启 {{count}} 个会话",
         "staleTerminals_other": "{{count}} 个智能体终端使用的是旧的 MCP 设置",
         "staleTerminalsOnHost_other": "{{host}} 上有 {{count}} 个智能体终端使用的是旧的 MCP 设置",
-        "staleTerminalsRestart_other": "重启它们以重新连接 Orca 的 MCP 服务器。",
-        "staleTerminalsRestartManual_other": "请手动重启它们以重新连接 Orca 的 MCP 服务器。",
+        "staleTerminalsRestart_other": "重启它们以重新连接 Adehone 的 MCP 服务器。",
+        "staleTerminalsRestartManual_other": "请手动重启它们以重新连接 Adehone 的 MCP 服务器。",
         "staleTerminalsRestartSome_other": "其中 {{restartable}} 个可在此恢复，其余 {{count}} 个请手动重启。",
         "addedMany": "已添加 {{count}} 个服务器",
         "repoOn": "已在 {{repo}} 中开启 {{name}}",
@@ -1877,7 +1877,7 @@
             "33290e88ed": "连接配置文件失败",
             "9fcb07a796": "配置文件已连接",
             "2f6c78a039": "刷新配置文件身份验证失败",
-            "a37b5e6d37": "已从 Orca 退出登录",
+            "a37b5e6d37": "已从 Adehone 退出登录",
             "83600521e7": "退出登录失败",
             "76deec8f58": "切换组织失败",
             "7d4bc516ee": "切换配置文件失败",
@@ -2023,7 +2023,7 @@
             }
           },
           "availability": {
-            "web": "浮动工作区运行在你自己的计算机上，因此仅在 Orca 桌面应用中可用"
+            "web": "浮动工作区运行在你自己的计算机上，因此仅在 Adehone 桌面应用中可用"
           }
         }
       },
@@ -2205,7 +2205,7 @@
         },
         "ports": {
           "serverPortForward": {
-            "updateServer": "无法从 {{host}} 转发端口 {{port}}，请更新 {{host}} 上的 Orca 后重试",
+            "updateServer": "无法从 {{host}} 转发端口 {{port}}，请更新 {{host}} 上的 Adehone 后重试",
             "failed": "无法从 {{host}} 转发端口 {{port}}，请检查连接后重试",
             "forwarded": "已从 {{host}} 转发端口 {{port}}",
             "opened": "已在默认浏览器中打开 {{address}}",
@@ -2364,7 +2364,7 @@
         "notLocatedNamed": "Adehone 找不到 {{agent}} 的运行位置，因此无法打开它",
         "notLocated": "Adehone 找不到此智能体的运行位置，因此无法打开它",
         "worktreeDeleted": "工作树已删除。",
-        "projectRemoved": "项目已从 Orca 中移除。",
+        "projectRemoved": "项目已从 Adehone 中移除。",
         "folderWorkspaceRemoved": "文件夹工作区已移除。",
         "chatStillStarting": "此聊天仍在启动，请稍后重试",
         "chatOpenFailed": "无法打开此聊天",
@@ -2477,29 +2477,29 @@
       },
       "cli": {
         "detail": {
-          "registerForWsl": "注册 {{path}} 以从 WSL 使用 Orca",
-          "registerForTerminal": "注册 {{path}} 以从终端使用 Orca",
-          "registerForWindowsShell": "注册 {{path}} 以从命令提示符或 PowerShell 使用 Orca",
+          "registerForWsl": "注册 {{path}} 以从 WSL 使用 Adehone",
+          "registerForTerminal": "注册 {{path}} 以从终端使用 Adehone",
+          "registerForWindowsShell": "注册 {{path}} 以从命令提示符或 PowerShell 使用 Adehone",
           "devLauncherOnly": "开发模式仅使用生成的启动器进行验证",
           "differentLauncher": "{{path}} 指向其他启动器",
-          "launcherMissing": "此 Orca 构建缺少捆绑的 CLI 启动器",
+          "launcherMissing": "此 Adehone 构建缺少捆绑的 CLI 启动器",
           "noWslDistro": "没有可用的 WSL 发行版",
-          "notOrcaLauncherScript": "{{path}} 已存在，但不是 Orca 启动器脚本",
-          "notOrcaSymlink": "{{path}} 已存在，但不是 Orca 符号链接",
-          "olderLauncher": "{{path}} 包含旧版 Orca 启动器",
+          "notOrcaLauncherScript": "{{path}} 已存在，但不是 Adehone 启动器脚本",
+          "notOrcaSymlink": "{{path}} 已存在，但不是 Adehone 符号链接",
+          "olderLauncher": "{{path}} 包含旧版 Adehone 启动器",
           "platformUnsupported": "此平台尚未实现 CLI 注册",
-          "readlinkPermissionDenied": "Orca 没有权限检查 {{path}}，请检查该路径及其父目录的权限，然后重试",
+          "readlinkPermissionDenied": "Adehone 没有权限检查 {{path}}，请检查该路径及其父目录的权限，然后重试",
           "registeredAt": "已注册到 {{path}}",
           "registeredInDistroAt": "已在 {{distro}} 中注册到 {{path}}",
           "registrationUnavailable": "此构建版本不支持 CLI 注册",
           "unreadableSymlink": "无法读取 {{path}}，请重新注册以修复",
-          "windowsLauncherMissing": "缺少 Windows 版 Orca CLI 启动器",
-          "windowsPathCheckFailed": "Orca 启动器已存在，但 Orca 无法检查你的 Windows 用户 PATH",
+          "windowsLauncherMissing": "缺少 Windows 版 Adehone CLI 启动器",
+          "windowsPathCheckFailed": "Adehone 启动器已存在，但 Adehone 无法检查你的 Windows 用户 PATH",
           "windowsPathTimedOut": "Windows PATH 命令在 {{ms}} 毫秒后超时",
           "wslCommandTimedOut": "WSL 命令在 {{ms}} 毫秒后超时",
           "wslDistroUnreachable": "无法连接到 WSL 发行版，请重试",
           "wslHomeUnresolved": "无法解析 WSL 主目录",
-          "wslInteropUnavailable": "WSL 的 Windows 互操作功能不可用，Orca 无法从 WSL 启动 Windows CLI",
+          "wslInteropUnavailable": "WSL 的 Windows 互操作功能不可用，Adehone 无法从 WSL 启动 Windows CLI",
           "wslRegistrationUnavailable": "WSL CLI 注册不可用",
           "wslWindowsOnly": "WSL CLI 注册仅适用于 Windows"
         }
@@ -2539,7 +2539,7 @@
           "grokBillingConfigMissing": "Grok 账单响应未包含配置",
           "grokBillingUsageMissing": "Grok 账单响应未包含额度用量",
           "grokNotSignedIn": "未登录 Grok — 请运行 grok login",
-          "grokSignInExpired": "Grok 登录已过期 — 请在运行 Orca 的电脑上运行 grok，如有提示请完成登录，无需发送聊天消息",
+          "grokSignInExpired": "Grok 登录已过期 — 请在运行 Adehone 的电脑上运行 grok，如有提示请完成登录，无需发送聊天消息",
           "grokUsageFailedHttp": "Grok 用量请求失败 (HTTP {{status}})",
           "grokUsageRequestFailed": "Grok 用量请求失败",
           "grokUsageUnauthorizedHttp": "Grok 用量请求未授权 (HTTP {{status}})",
@@ -2584,13 +2584,13 @@
         }
       },
       "ephemeralVm": {
-        "provisionedRootNeedsUpdate": "此虚拟机上的 Orca 服务器无法接管预置的根目录，请更新虚拟机上的 Orca"
+        "provisionedRootNeedsUpdate": "此虚拟机上的 Adehone 服务器无法接管预置的根目录，请更新虚拟机上的 Adehone"
       },
       "executionHostFacts": {
         "sshPlatformWithheld": "SSH 主机尚未报告其操作系统，请连接后重试",
-        "runtimePlatformWithheld": "Orca 服务器尚未报告其操作系统，请重新连接后重试",
-        "runtimePlatformUpdate": "此 Orca 服务器不报告其操作系统，请更新服务器以在其上启动智能体",
-        "hostUnresolvedWithheld": "Orca 暂时无法判断此工作区属于哪个主机"
+        "runtimePlatformWithheld": "Adehone 服务器尚未报告其操作系统，请重新连接后重试",
+        "runtimePlatformUpdate": "此 Adehone 服务器不报告其操作系统，请更新服务器以在其上启动智能体",
+        "hostUnresolvedWithheld": "Adehone 暂时无法判断此工作区属于哪个主机"
       },
       "fileOwnerRuntimeTarget": {
         "unresolved": "无法确认此文件所属的主机，请重新打开文件后重试"
@@ -3024,7 +3024,7 @@
         "resolvedCommentBy": "{{author}} 发表的已解决评论",
         "refreshTask": "刷新任务",
         "refreshTaskFailed": "无法刷新此任务，请重试",
-        "refreshTaskUnsupported": "请更新此服务器上的 Orca，以便在此处刷新任务"
+        "refreshTaskUnsupported": "请更新此服务器上的 Adehone，以便在此处刷新任务"
       },
       "GitLabItemDialog": {
         "65e784c1f1": "重新打开",
@@ -4908,7 +4908,7 @@
             "fitHere": "在此适配"
           },
           "legacyRelayBridge": {
-            "unreachable": "此终端仍在主机上以旧版本 Orca 运行，正在重新连接…"
+            "unreachable": "此终端仍在主机上以旧版本 Adehone 运行，正在重新连接…"
           }
         }
       },
@@ -6039,7 +6039,7 @@
         "StatsHostScope": {
           "remoteCaption": "统计和使用情况记录于 {{value0}}。“启用”和“刷新”将作用于 {{value0}}",
           "tooOldTitle": "{{value0}} 暂时无法报告用量",
-          "tooOldBody": "它运行的是旧版 Orca。请在 {{value0}} 上更新 Orca，以便在此处查看其 Token 用量"
+          "tooOldBody": "它运行的是旧版 Adehone。请在 {{value0}} 上更新 Adehone，以便在此处查看其 Token 用量"
         }
       },
       "sparse": {
@@ -6484,9 +6484,9 @@
           "updateAvailable": "有可用更新",
           "repairAvailable": "可修复",
           "installAvailable": "可安装",
-          "otherBuild": "由其他版本的 Orca 安装",
-          "otherBuildKept": "已保留：由其他版本的 Orca 写入",
-          "differsFromOrca": "此副本与 Orca 的副本不同",
+          "otherBuild": "由其他版本的 Adehone 安装",
+          "otherBuildKept": "已保留：由其他版本的 Adehone 写入",
+          "differsFromOrca": "此副本与 Adehone 的副本不同",
           "replaceMovesFolder": "替换会将整个文件夹（包括所有额外文件）移动到 {{folder}}。",
           "replaceMovesFolderOnHost": "替换会将整个文件夹（包括所有额外文件）移动到 {{host}} 上的 {{folder}}。",
           "replaceMovesLink": "替换会将此链接移动到 {{folder}}。",
@@ -6510,11 +6510,11 @@
           "removedPreserved_other": "已移除 {{removed}} 个 · 已保留 {{count}} 个已修改的技能"
         },
         "skillFreshnessAutoUpdate": {
-          "strandedTitle": "Orca 无法备份你对 {{value0}} 的修改",
+          "strandedTitle": "Adehone 无法备份你对 {{value0}} 的修改",
           "strandedDescription": "你的修改仍在 {{value0}} 中，请在再次更新前将其复制到安全的位置",
           "preservedTitle": "你对 {{value0}} 的修改已单独保存",
-          "preservedDescription": "Orca 已更新该技能，并将你的修改保存到 {{value0}}",
-          "uncertainTitle": "Orca 无法确认 {{value0}} 上的技能更新",
+          "preservedDescription": "Adehone 已更新该技能，并将你的修改保存到 {{value0}}",
+          "uncertainTitle": "Adehone 无法确认 {{value0}} 上的技能更新",
           "uncertainDescriptionKept": "Adehone 可能已更新 {{value0}} 上的技能，但无法确认结果；如果你在更新期间编辑过技能，你的副本位于 {{value1}}，或仍在技能文件夹中",
           "preservedBackupOnly": "Adehone 已将你的修改保存到 {{value0}}"
         },
@@ -6803,7 +6803,7 @@
           "removeDescriptionSsh": "此操作仅将 {{name}} 从 Adehone 中移除，文件仍保留在 {{host}} 上 — 重新添加该 SSH 主机即可恢复",
           "removeDescriptionLocal": "此操作仅将 {{name}} 从 Adehone 中移除，文件仍保留在您的磁盘上",
           "removeDescriptionVmRecipe": "这将从 Adehone 中移除 {{name}}，其 VM 配方决定是否永久删除环境及其文件",
-          "linkedWorkspaceWarning_other": "此项目中的 {{count}} 个工作区也将从 Orca 中移除",
+          "linkedWorkspaceWarning_other": "此项目中的 {{count}} 个工作区也将从 Adehone 中移除",
           "openTerminalWarning_other": "此项目中打开的 {{count}} 个终端将被关闭"
         },
         "SetupGuideSidebarEntry": {
@@ -6843,9 +6843,9 @@
           "setupScript": "设置脚本",
           "archiveScript": "归档脚本",
           "save": "保存本地设置",
-          "descriptionWithSource": "来自 <file>{{source}}</file>，保存后 Orca 每次为 {{repo}} 创建工作树时都会运行此脚本",
+          "descriptionWithSource": "来自 <file>{{source}}</file>，保存后 Adehone 每次为 {{repo}} 创建工作树时都会运行此脚本",
           "notImported": "未导入",
-          "notImportedHint": "这些设置在 Orca 中没有对应项，不会被保存"
+          "notImportedHint": "这些设置在 Adehone 中没有对应项，不会被保存"
         },
         "SidebarFeedbackDialog": {
           "8bf619e4cf": "取消",
@@ -7806,7 +7806,7 @@
                 "d42f1f14e0_other": "重试 {{count}} 分支",
                 "0e0379f24a": "保留 {{count}} 分支",
                 "6310412304": "审查 {{count}} 分支",
-                "a3cdd9d9e6": "Git 保留 {{count}} 本地分支，因为它们可能包含未合并的提交，保留的分支不保留工作区文件夹，他们的提交保留在存储库中，Orca 可能会继续在后台释放工作区磁盘空间",
+                "a3cdd9d9e6": "Git 保留 {{count}} 本地分支，因为它们可能包含未合并的提交，保留的分支不保留工作区文件夹，他们的提交保留在存储库中，Adehone 可能会继续在后台释放工作区磁盘空间",
                 "cea24c2b7d": "{{count}} 工作区已删除",
                 "d42f1f14e0": "重试 {{count}} 分支"
               }
@@ -8777,7 +8777,7 @@
           "downloadUpdate": "下载更新",
           "restartToUpdate": "重启并更新",
           "versionAvailable": "版本 {{version}} 已可用。",
-          "externallyManagedVersionAvailable": "版本 {{version}} 已可用。Orca 无法自行安装此版本，请通过系统软件包管理器更新。",
+          "externallyManagedVersionAvailable": "版本 {{version}} 已可用。Adehone 无法自行安装此版本，请通过系统软件包管理器更新。",
           "versionReadyToInstall": "版本 {{version}} 已准备就绪，可以安装。",
           "versionInstalling": "正在安装版本 {{version}}。",
           "downloadingVersion": "正在下载版本 {{version}}（{{percent}}%）…"
@@ -8862,9 +8862,9 @@
           "prAutoRefreshHintAutomatic": "让拉取请求和检查保持最新",
           "prAutoRefreshHintLessOften": "降低检查 GitHub 的频率，适合在遇到 GitHub 速率限制时使用",
           "prAutoRefreshTitle": "PR 更新",
-          "prAutoRefreshDescription": "Orca 检查 GitHub 上拉取请求和 CI 变化的频率",
+          "prAutoRefreshDescription": "Adehone 检查 GitHub 上拉取请求和 CI 变化的频率",
           "prAutoRefreshHintOff": "在你推送或点击“刷新”时更新",
-          "prAutoRefreshUnsupportedHost": "请更新 {{host}} 上的 Orca 以更改此设置",
+          "prAutoRefreshUnsupportedHost": "请更新 {{host}} 上的 Adehone 以更改此设置",
           "prAutoRefreshUnknownHost": "所选服务器"
         },
         "HiddenExperimentalGroup": {
@@ -12439,7 +12439,7 @@
           "stopCleanupFailed": "无法停止云虚拟机清理",
           "cca21fb369": "刷新云虚拟机",
           "provisioning": "正在预配",
-          "untrackedRuntimeHint": "Orca 从未收到这台虚拟机的详细信息，清理时只能凭实例 ID {{instanceId}} 运行销毁操作；如果失败，请在你的提供商处删除该虚拟机，然后将其从此列表中移除",
+          "untrackedRuntimeHint": "Adehone 从未收到这台虚拟机的详细信息，清理时只能凭实例 ID {{instanceId}} 运行销毁操作；如果失败，请在你的提供商处删除该虚拟机，然后将其从此列表中移除",
           "removeFromList": "从列表中移除",
           "removeFromListFailed": "无法从列表中移除云虚拟机运行时"
         },
@@ -12919,7 +12919,7 @@
           "invalidArtifact": "工作进程或面板文件缺失或不安全。修复后请刷新",
           "consentChanged": "你审查期间此插件发生了变化。请重新审查",
           "installGitMoved": "Adehone 检查后仓库发生了变化。请重试。",
-          "installReservedIdentity": "此插件使用了为 Orca 官方插件保留的名称，而官方插件只能从 Orca 的目录安装；如果这是你自己的副本或复刻版本，请修改 orca-plugin.json 中的“id”，使其不以“orca-”开头，并将“publisher”设为你自己的名字"
+          "installReservedIdentity": "此插件使用了为 Adehone 官方插件保留的名称，而官方插件只能从 Adehone 的目录安装；如果这是你自己的副本或复刻版本，请修改 orca-plugin.json 中的“id”，使其不以“orca-”开头，并将“publisher”设为你自己的名字"
         },
         "plugins": {
           "search": {
@@ -13157,11 +13157,11 @@
           "title": "Adehone 账户",
           "description": "即时分享工作，并随时通过 Adehone Mobile 访问桌面",
           "searchDescription": "登录或退出产物和 Adehone Relay 使用的账户",
-          "managed": "你的团队管理着部分 Orca 设置",
+          "managed": "你的团队管理着部分 Adehone 设置",
           "deviceReportNamedViewers": "{{teams}} 的所有者和管理员可以查看此设备的报告",
           "deviceReportViewers": "团队所有者和管理员可以查看此设备的报告",
           "reportingDetails": "设备报告详情",
-          "reportingDisclosure": "“设备”视图会显示你的 Orca 版本、发布渠道、设备名称、平台、更新状态、Orca 无法安装的必需插件，以及设备上次报告的时间",
+          "reportingDisclosure": "“设备”视图会显示你的 Adehone 版本、发布渠道、设备名称、平台、更新状态、Adehone 无法安装的必需插件，以及设备上次报告的时间",
           "benefitsTitle": "账户已包含",
           "artifactsTitle": "产物分享",
           "artifactsDescription": "发布 HTML 和 Markdown 文件，然后在 Adehone 中管理所有分享链接",
@@ -13570,9 +13570,9 @@
           "setupContactLost": "Adehone 在设置服务器时与此主机失去联系，主机上的任何内容都未被停止，请重新连接以继续",
           "linkedProjects": "此主机的 Adehone 服务器已有 {{paths}}，因此此桌面现在使用服务器的副本，此桌面在那里的标签页和 {{count}} 个自动化未被迁移，它在那里创建的工作树会显示为外部工作树",
           "olderTerminals": "由旧版本 Adehone 启动的 {{count}} 个终端仍在此主机上运行，且不会自行停止，请在该版本的 Adehone 中关闭它们，或在主机上结束它们，然后重新连接",
-          "setupFreeHostSpace": "此主机的可用磁盘空间不足，Orca 无法在启动服务器时备份服务器数据，请释放主机上的空间，然后重新连接",
-          "setupStopUnmanagedRuntime": "一个并非由此应用启动的 Orca 服务器似乎仍在使用此主机的 Orca 数据，请在主机上停止它，然后重新连接，可在“设置 > SSH 主机”中此主机的“详情”里查看该进程的名称",
-          "setupSeeDetails": "Orca 无法在此主机上启动其服务器，可在“设置 > SSH 主机”中此主机的“详情”里查看原因"
+          "setupFreeHostSpace": "此主机的可用磁盘空间不足，Adehone 无法在启动服务器时备份服务器数据，请释放主机上的空间，然后重新连接",
+          "setupStopUnmanagedRuntime": "一个并非由此应用启动的 Adehone 服务器似乎仍在使用此主机的 Adehone 数据，请在主机上停止它，然后重新连接，可在“设置 > SSH 主机”中此主机的“详情”里查看该进程的名称",
+          "setupSeeDetails": "Adehone 无法在此主机上启动其服务器，可在“设置 > SSH 主机”中此主机的“详情”里查看原因"
         },
         "deltaMove": {
           "action": "迁移新项目…",
@@ -13630,7 +13630,7 @@
           "restartAsWslHost": {
             "button": "作为 WSL 主机重启",
             "title": "要作为 WSL 主机重启吗？",
-            "description": "结束 {{host}} 上的所有终端和代理（包括 SSH 主机打开的），然后将 Orca 的服务器作为 WSL 主机重启。",
+            "description": "结束 {{host}} 上的所有终端和代理（包括 SSH 主机打开的），然后将 Adehone 的服务器作为 WSL 主机重启。",
             "cancel": "取消",
             "action": "结束终端并重启"
           }
@@ -13768,7 +13768,7 @@
           "defaultHostHelp": "现有项目保持不变",
           "defaultHostWebHelp": "此浏览器会在所选服务器上打开新项目",
           "updateAll": "全部更新",
-          "shareRowHint": "让另一个 Orca 连接到这里",
+          "shareRowHint": "让另一个 Adehone 连接到这里",
           "manageShare": "管理",
           "share": "共享",
           "serversCaption": "服务器",
@@ -13844,7 +13844,7 @@
           "attentionSharedNotCurrent": "需要处理 · 此文件夹使用的共享副本不是 Adehone 的副本",
           "resultUpdateSkippedPlaces": "{{result}} · 已跳过 {{places}} 个位置的更新：{{reason}}",
           "resultUpdateSkippedAgent": "{{result}} · 已跳过 {{agent}} 中的更新：{{reason}}",
-          "attentionDiffersFromOrca": "需要处理 · 此副本与 Orca 的副本不同",
+          "attentionDiffersFromOrca": "需要处理 · 此副本与 Adehone 的副本不同",
           "replaceMovesCopyToBackup": "替换会将当前副本（包括所有额外文件）移动到备份。",
           "replaceMovesCopyToFolder": "替换会将当前副本（包括所有额外文件）移动到 {{folder}}。",
           "replaceMovesCopyToFolderOnHost": "替换会将当前副本（包括所有额外文件）移动到 {{host}} 上的 {{folder}}。"
@@ -14055,14 +14055,14 @@
           "allAccess": "查看全部访问权限",
           "newCommands": "命令",
           "newContributions": "代你执行操作的功能",
-          "newEvents": "响应更多 Orca 事件",
+          "newEvents": "响应更多 Adehone 事件",
           "newPanels": "添加面板",
           "newRecipes": "机器配方",
           "newShortcuts": "键盘快捷键",
           "update": "更新",
-          "replacesAction": "{{value0}} 代替 Orca 自带的 {{value1}} 运行",
+          "replacesAction": "{{value0}} 代替 Adehone 自带的 {{value1}} 运行",
           "newFileTypes": "更改它打开的文件",
-          "newHooks": "可以更改或阻止 Orca 和你的智能体的操作",
+          "newHooks": "可以更改或阻止 Adehone 和你的智能体的操作",
           "newSettings": "一个设置页面",
           "newStatusBarItems": "状态栏项",
           "opensFileTypes": "打开新的文件类型：{{value0}}",
@@ -14106,7 +14106,7 @@
           "editsFileTypes": "在 Adehone 中打开并编辑 {{value0}} 文件，且可读取它所打开的文件",
           "install": "安装并启用",
           "keepOff": "保持关闭",
-          "replacesAction": "{{value0}} 代替 Orca 自带的 {{value1}} 运行，你可以在其插件页面中切换回来"
+          "replacesAction": "{{value0}} 代替 Adehone 自带的 {{value1}} 运行，你可以在其插件页面中切换回来"
         },
         "PluginPageAction": {
           "contentOnly": "仅内容",
@@ -14153,7 +14153,7 @@
         "PluginUpdateReview": {
           "title": "查看 {{value0}} 的更新",
           "approve": "批准并更新",
-          "uncompared": "Orca 无法将此版本与你批准的版本进行比较。更新前请检查它可以访问的内容。",
+          "uncompared": "Adehone 无法将此版本与你批准的版本进行比较。更新前请检查它可以访问的内容。",
           "newInVersion": "此版本新增：",
           "titleMany": "审核 {{value0}} 个更新",
           "history": "在 GitHub 上查看更改"
@@ -14191,7 +14191,7 @@
           "details": "详情",
           "failed": "无法更新 {{value0}}",
           "morePlugins": "以及另外 {{value0}} 个插件",
-          "uncompared": "Orca 无法将其与你批准的版本进行比较。",
+          "uncompared": "Adehone 无法将其与你批准的版本进行比较。",
           "held": "{{value0}} 在你审核后发生了变化，因此正在 设置 → 插件 中等待你审核。"
         },
         "PluginInstallTrustDialog": {
@@ -14254,7 +14254,7 @@
         "StatusBarUsageFormatSetting": {
           "reset": "重置",
           "previewLabel": "预览",
-          "previewBuiltin": "留空以使用 Orca 的内置格式。",
+          "previewBuiltin": "留空以使用 Adehone 的内置格式。",
           "placeholder": {
             "provider": "提供商名称",
             "plan": "套餐（Codex）",
@@ -15800,7 +15800,7 @@
             "loading": "正在加载插件面板...",
             "unresponsive": "插件面板停止响应，已被暂停",
             "loadFailed": "无法加载插件面板",
-            "needsDesktop": "此面板只能在 Orca 桌面应用中运行",
+            "needsDesktop": "此面板只能在 Adehone 桌面应用中运行",
             "needsIsolatedFrames": "此面板不可用：它需要隔离插件框架，而该功能已关闭"
           },
           "activityBar": {
@@ -16905,7 +16905,7 @@
                 "f98e9d1bad": "搜索所有智能体会话",
                 "990cc29865": "按对话内容查找任意过往会话，然后从智能体停止的位置继续",
                 "91e2719807": "启用会话搜索",
-                "3eacedec93": "用 Orca CLI 让智能体驱动 Orca",
+                "3eacedec93": "用 Adehone CLI 让智能体驱动 Adehone",
                 "8d54d0ff53": "让智能体协调子工作树，并在工作树之间通信",
                 "0080bc86eb": "安装 CLI 与技能",
                 "9b58bc5d7a": "使用 <shortcut> 跳转到工作树",
@@ -17740,7 +17740,7 @@
                 "action": "保存为 UTF-8"
               }
             },
-            "bytesUpdateRequired": "在此处保存二进制文件需要更新版本的 Orca 服务器，请更新 Orca 服务器后重试",
+            "bytesUpdateRequired": "在此处保存二进制文件需要更新版本的 Adehone 服务器，请更新 Adehone 服务器后重试",
             "deniedByPlugin": "插件 {{plugin}} 拒绝了此次保存：{{reason}}"
           }
         },
@@ -17875,13 +17875,13 @@
           "pathAccessDenied": "拒绝访问：路径解析到允许目录之外，如果这阻碍了合法工作流，请提交 GitHub 议题",
           "changedDuringRead": "文件在加载过程中已在磁盘上更改，请重新加载文件以查看最新版本",
           "remotePathIsDirectory": "远程路径是一个目录",
-          "remotePagedReadUnsupported": "远程文件超过了此 Orca 服务器可发送的 512 KB 上限，请更新服务器后再打开",
+          "remotePagedReadUnsupported": "远程文件超过了此 Adehone 服务器可发送的 512 KB 上限，请更新服务器后再打开",
           "remoteFileTooLarge": "远程文件过大，无法在编辑器中打开（{{bytes}} 字节）"
         },
         "PluginEditorNeedsDesktopNotice": {
           "browser": "{{value0}} 只能在隔离框架中运行，而浏览器客户端无法提供隔离框架",
           "isolationOff": "{{value0}} 只能在隔离框架中运行，但隔离插件框架已关闭",
-          "heading": "此编辑器需要 Orca 桌面应用",
+          "heading": "此编辑器需要 Adehone 桌面应用",
           "openSource": "打开源码"
         },
         "MarkdownDefaultViewContextMenu": {
@@ -18120,7 +18120,7 @@
                     "extensions": {
                       "intro": {
                         "title": "带上你的 Chrome 扩展程序",
-                        "everydayTitle": "你常用的浏览器工具，尽在 Orca",
+                        "everydayTitle": "你常用的浏览器工具，尽在 Adehone",
                         "body": "从 Chrome 应用商店安装扩展程序，并将其固定在地址栏旁。",
                         "action": "打开应用商店",
                         "secondaryAction": "知道了"
@@ -19281,7 +19281,7 @@
         },
         "PluginDeclarativePanel": {
           "dismissLoadError": "关闭",
-          "invalidTree": "面板发送了 Orca 无法显示的布局",
+          "invalidTree": "面板发送了 Adehone 无法显示的布局",
           "loadFailed": "{{value0}} 加载失败",
           "loadFailedKeptLastGood": "{{value0}} 加载失败，正在显示上次成功加载的版本",
           "pluginMessage": "来自 {{value0}} 的消息：{{value1}}",
@@ -19911,7 +19911,7 @@
       "plugins": {
         "list": {
           "PluginsSectionDescription": {
-            "openWith": "打开方式（在 Orca 文本字段中输入时除外）"
+            "openWith": "打开方式（在 Adehone 文本字段中输入时除外）"
           }
         },
         "pluginInstallCount": {
@@ -19929,7 +19929,7 @@
         },
         "declarative": {
           "PluginDeclarativeView": {
-            "unsupported": "{{value0}} 在此版本的 Orca 中不可用"
+            "unsupported": "{{value0}} 在此版本的 Adehone 中不可用"
           },
           "KeyValue": {
             "yes": "是",
@@ -19948,10 +19948,10 @@
           }
         },
         "PluginCommandReplacementRow": {
-          "title": "{{value0}} 代替 Orca 自带的 {{value1}} 运行",
+          "title": "{{value0}} 代替 Adehone 自带的 {{value1}} 运行",
           "conflict": "未使用：先安装的 {{value0}} 已替代它",
-          "detail": "从其快捷键、命令面板和菜单触发时生效，如果插件失败，则运行 Orca 自带的命令",
-          "switch": "使用 {{value0}} 代替 Orca 自带的 {{value1}}"
+          "detail": "从其快捷键、命令面板和菜单触发时生效，如果插件失败，则运行 Adehone 自带的命令",
+          "switch": "使用 {{value0}} 代替 Adehone 自带的 {{value1}}"
         },
         "PluginCatalogHighlights": {
           "justNow": "刚刚",
@@ -19990,16 +19990,16 @@
         "resumedRestart_other": "重启后已恢复 {{count}} 个智能体。",
         "partial_other": "已恢复 {{total}} 个智能体中的 {{resumed}} 个。{{count}} 个需要你处理。",
         "stoppedOn_other": "{{machine}} 上有 {{count}} 个智能体已停止。",
-        "stoppedUpdate_other": "Orca 更新时有 {{count}} 个智能体已停止。",
-        "stoppedRestart_other": "Orca 关闭时有 {{count}} 个智能体已停止。",
+        "stoppedUpdate_other": "Adehone 更新时有 {{count}} 个智能体已停止。",
+        "stoppedRestart_other": "Adehone 关闭时有 {{count}} 个智能体已停止。",
         "promptsNotResent": "恢复不会重新发送你的提示。",
         "resume": "恢复",
         "details": "详情",
         "close": "关闭",
         "listLabel": "智能体",
         "untitled": "无标题智能体",
-        "willAsk": "Orca 会请求智能体继续。排队中的消息可能会被发送。",
-        "asked": "Orca 已请求智能体继续。排队中的消息可能会被发送。",
+        "willAsk": "Adehone 会请求智能体继续。排队中的消息可能会被发送。",
+        "asked": "Adehone 已请求智能体继续。排队中的消息可能会被发送。",
         "resumedAutomatically": "已自动恢复。",
         "changeInSettings": "在设置中更改",
         "dismissAll": "全部忽略",
@@ -20019,7 +20019,7 @@
         "ownershipUnknownShort": "尚未准备好恢复。",
         "notAttachedShort": "未重新连接。",
         "dispatchRejectedShort": "智能体拒绝继续。",
-        "unsupportedShort": "Orca 无法恢复此智能体。"
+        "unsupportedShort": "Adehone 无法恢复此智能体。"
       },
       "RunTargetCombobox": {
         "noWslDistros": "没有找到 WSL 发行版",
@@ -20080,12 +20080,12 @@
         "streamStopped": "远程终端流已停止响应"
       },
       "jira": {
-        "currentSprintNeedsUpdate": "请更新远程 Orca 服务器以按当前冲刺筛选预设议题",
-        "transitionFieldsNeedsUpdate": "请更新远程 Orca 服务器以提交必填的流转字段，或在 Jira 中完成流转"
+        "currentSprintNeedsUpdate": "请更新远程 Adehone 服务器以按当前冲刺筛选预设议题",
+        "transitionFieldsNeedsUpdate": "请更新远程 Adehone 服务器以提交必填的流转字段，或在 Jira 中完成流转"
       },
       "runtimeGitSyncClient": {
         "completeMergeNeedsNewerHost": "完成合并需要此主机上安装更新版本的 Adehone。请更新该主机上的 Adehone。",
-        "continueRebaseNeedsNewerHost": "继续变基需要此主机上更新版本的 Orca。请在该主机上更新 Orca。"
+        "continueRebaseNeedsNewerHost": "继续变基需要此主机上更新版本的 Adehone。请在该主机上更新 Adehone。"
       },
       "runtimeGitWorkingTreeClient": {
         "resolveConflictNeedsNewerHost": "解决冲突需要此主机上安装更新版本的 Adehone。请更新该主机上的 Adehone。"
@@ -20139,7 +20139,7 @@
         "dashboard": {
           "popout": {
             "window": {
-              "title": "Orca 智能体仪表板"
+              "title": "Adehone 智能体仪表板"
             }
           }
         }
@@ -20222,7 +20222,7 @@
         "runtimeNotInstalled": "运行此聊天的计算机上未安装 {{agent}}，请在最新版本的 Adehone 中从聊天里安装",
         "fullAccessAsRoot": "{{agent}} 以 root 身份运行时不会使用完全访问。请在运行此聊天的计算机的“设置”→“智能体”中为 {{agent}} 选择其他权限，然后开始新的聊天",
         "botToolsNeedStatusHooks": "{{agent}} 机器人需要代理状态钩子：机器人的工具正是通过它们以机器人身份运行。请在“设置”→“智能体”中为 {{agent}} 开启，然后开始新的聊天。",
-        "botToolsGatewayOutdated": "{{agent}} 的网关仍在运行旧版 Orca 插件，因此此机器人的工具无法以机器人身份运行。请运行 `hermes gateway stop`，然后开始新的聊天。",
+        "botToolsGatewayOutdated": "{{agent}} 的网关仍在运行旧版 Adehone 插件，因此此机器人的工具无法以机器人身份运行。请运行 `hermes gateway stop`，然后开始新的聊天。",
         "launchPreparationFailed": "Adehone 无法在运行此聊天的计算机上准备启动 {{agent}}",
         "conversationOpenElsewhere": "Codex 仍在保持此对话打开。请稍后重试，或关闭其他 Codex 终端",
         "conversationOpenInTerminal": "{{agent}} 已在另一个终端中运行此对话。请退出那里的 {{agent}} 或关闭该终端，然后在这里继续",
@@ -20398,7 +20398,7 @@
         "clearAfterSending": "您之前的消息仍在发送中，发送完成后再运行 /clear",
         "compactAfterSending": "您之前的消息仍在发送中，发送完成后再运行 /compact",
         "pendingWork": "在使用此命令之前，请等待挂起的工作和消息完成",
-        "mailOwnerUnconfirmed": "Orca 无法确认此消息是否仍是发给此聊天的"
+        "mailOwnerUnconfirmed": "Adehone 无法确认此消息是否仍是发给此聊天的"
       },
       "composer": {
         "planMode": "规划",
@@ -20537,7 +20537,7 @@
         "permissionFullAccess": "完全访问",
         "permissionAgentSettings": "{{agent}} 设置",
         "permissionAgentSettingsUsedHint": "使用你的 {{agent}} 权限设置。",
-        "permissionAgentSettingsUnnamedHint": "使用你的 {{agent}} 权限设置。Orca 无法显示此模式。",
+        "permissionAgentSettingsUnnamedHint": "使用你的 {{agent}} 权限设置。Adehone 无法显示此模式。",
         "permissionFromAgentSettings": "{{mode}}，来自 {{agent}} 设置",
         "permissionFullAccessDescription": "编辑或运行命令前从不询问",
         "permissionFullAccessCodexDescription": "从不询问，可以编辑任何文件并使用网络",
@@ -20659,8 +20659,8 @@
         "notSavedYet": "{{agent}} 尚未保存此对话，请在它回复后重试",
         "exitUnconfirmed": "{{agent}} 正在另一个终端中运行此对话。请在那里退出它或关闭该终端，然后重试。",
         "exitUnconfirmedFromTerminal": "{{agent}} 仍在此终端中运行此对话，请在这里退出 {{agent}}，然后从会话历史中打开此对话",
-        "terminalChanged": "运行 {{agent}} 的终端在关闭前发生了变化，因此 Orca 没有关闭它，请重试",
-        "terminalExitUnproven": "Orca 已关闭 {{agent}} 的终端，但无法确认它已停止，因此没有打开聊天，请检查主机连接，然后从会话历史中打开此对话",
+        "terminalChanged": "运行 {{agent}} 的终端在关闭前发生了变化，因此 Adehone 没有关闭它，请重试",
+        "terminalExitUnproven": "Adehone 已关闭 {{agent}} 的终端，但无法确认它已停止，因此没有打开聊天，请检查主机连接，然后从会话历史中打开此对话",
         "resumeFailed": "{{agent}} 无法在聊天中继续，请检查此终端和主机连接，然后重试"
       },
       "state": {
@@ -20841,10 +20841,10 @@
         "orcaStopRemote": "此回复进行期间，{{machine}} 上的 Adehone 已停止",
         "orcaStopCanContinue": "你可以在此对话中继续",
         "orcaStopUnnamedServer": "远程服务器",
-        "restartContinued": "重启后 Orca 已让此智能体继续，你自己的提示词没有重新发送",
-        "restartContinueRefused": "重启后 Orca 无法继续此聊天，请发送一条消息来继续",
-        "restartContinueUnconfirmed": "重启后 Orca 已让此智能体继续，但无法确认它是否已继续，请先查看它的最新回复，再发送下一条消息",
-        "restartNotConnected": "重启后 Orca 无法重新连接此聊天，因此没有让智能体继续",
+        "restartContinued": "重启后 Adehone 已让此智能体继续，你自己的提示词没有重新发送",
+        "restartContinueRefused": "重启后 Adehone 无法继续此聊天，请发送一条消息来继续",
+        "restartContinueUnconfirmed": "重启后 Adehone 已让此智能体继续，但无法确认它是否已继续，请先查看它的最新回复，再发送下一条消息",
+        "restartNotConnected": "重启后 Adehone 无法重新连接此聊天，因此没有让智能体继续",
         "permissionDenied": "{{agent}} 拒绝了权限。查看详情。",
         "safetyReviewApproved": "{{agent}} 已批准此操作。查看详情。",
         "safetyReview": "{{agent}} 报告了安全审查警告。查看详情。",
@@ -21113,7 +21113,7 @@
         "startToSend": "请启动 {{distro}} 后再发送",
         "startDistro": "启动 {{distro}}",
         "connecting": "正在连接到 {{distro}}…",
-        "startFailed": "无法启动 {{distro}}，请在“设置 → 远程 Orca 服务器”中查看"
+        "startFailed": "无法启动 {{distro}}，请在“设置 → 远程 Adehone 服务器”中查看"
       },
       "interruptedContinue": {
         "continue": "继续",
@@ -21337,8 +21337,8 @@
         "handOff": "交接给智能体",
         "more": "更多操作",
         "statusUnknown": "重置时间未知",
-        "statusCanContinueAtAuto": "你可以在 {{time}} 继续。Orca 将在 {{autoTime}} 继续此聊天",
-        "statusCanContinueAtNoAuto": "你可以在 {{time}} 继续。Orca 不会自动继续此聊天",
+        "statusCanContinueAtAuto": "你可以在 {{time}} 继续。Adehone 将在 {{autoTime}} 继续此聊天",
+        "statusCanContinueAtNoAuto": "你可以在 {{time}} 继续。Adehone 不会自动继续此聊天",
         "statusCanContinueAt": "你可以在 {{time}} 继续",
         "resetUnknown": "重置时间未知",
         "continuesAt": "将于 {{time}} 继续",
@@ -21348,10 +21348,10 @@
         "titleWeeklyReached": "{{agent}} 已达到每周上限",
         "titleExtraUsageReached": "{{agent}} 已达到额外用量上限",
         "titleUsageReached": "{{agent}} 已达到使用上限",
-        "statusHasUsageAuto": "{{agent}} 的使用额度已恢复。Orca 将在 {{time}} 继续此聊天",
+        "statusHasUsageAuto": "{{agent}} 的使用额度已恢复。Adehone 将在 {{time}} 继续此聊天",
         "statusHasUsage": "{{agent}} 的使用额度已恢复",
         "titleHasUsage": "{{agent}} 的使用额度已恢复",
-        "statusCanContinueNowAuto": "{{agent}} 现在可以继续。Orca 将在 {{time}} 继续此聊天",
+        "statusCanContinueNowAuto": "{{agent}} 现在可以继续。Adehone 将在 {{time}} 继续此聊天",
         "statusCanContinueNow": "{{agent}} 现在可以继续",
         "titleCanContinueNow": "{{agent}} 现在可以继续",
         "turnOnAutoContinue": "额度重置后自动继续"
@@ -21575,7 +21575,7 @@
         "unavailable": "此页面没有预览"
       },
       "workers": {
-        "stopUnconfirmed": "Orca 无法确认工作者已停止"
+        "stopUnconfirmed": "Adehone 无法确认工作者已停止"
       },
       "connectorAsker": {
         "anApp": "某个应用",
@@ -21615,7 +21615,7 @@
         "close": "关闭",
         "loading": "正在加载…",
         "notRunning": "发送下一条消息时连接",
-        "unsupported": "请更新此聊天所在主机上的 Orca，以便在这里管理它们",
+        "unsupported": "请更新此聊天所在主机上的 Adehone，以便在这里管理它们",
         "readFailed": "无法加载",
         "retry": "重试",
         "empty": "此聊天未设置任何服务器",
@@ -21667,7 +21667,7 @@
         "greenLead": "CI 通过于",
         "at": "的提交",
         "hide": "不再显示 CI 结果行",
-        "hidden": "Orca 将不再显示 CI 结果行"
+        "hidden": "Adehone 将不再显示 CI 结果行"
       },
       "sideChat": {
         "description": "在此聊天旁的分支中顺便提个问题",
@@ -21832,9 +21832,9 @@
         "someonesDm": "同时发布到某人与 {{bot}} 的私信",
         "channel": "同时发布到 {{channel}} 中的话题",
         "thread": "同时发布到 Slack 话题",
-        "offUnavailable": "仅在 Orca 中 · 话题不可用",
-        "offNotInChannel": "仅在 Orca 中 · 不在频道中",
-        "off": "仅在 Orca 中",
+        "offUnavailable": "仅在 Adehone 中 · 话题不可用",
+        "offNotInChannel": "仅在 Adehone 中 · 不在频道中",
+        "off": "仅在 Adehone 中",
         "shortDm": "Slack 私信",
         "shortChannel": "{{channel}} 话题",
         "shortThread": "Slack 话题",
@@ -21845,23 +21845,23 @@
         "detailRemovedFrom": "{{bot}} 已被移出 {{channel}}",
         "detailRemoved": "{{bot}} 已被移出该频道",
         "detailFallback": "会以 {{bot}} 的身份发布，并附上你的名字。在 Slack 中更新后，即可以你的名义发布",
-        "detailOwnDm": "你的消息和 {{bot}} 的回复，只有你能在此私信中看到。工具调用和工作者只留在 Orca 中",
-        "detailTheirDm": "你的消息和 {{bot}} 的回复，{{name}} 会在其私信中看到。工具调用和工作者只留在 Orca 中",
-        "detailSomeonesDm": "你的消息和 {{bot}} 的回复，此私信中的对方会看到。工具调用和工作者只留在 Orca 中",
-        "detailThread": "你的消息和 {{bot}} 的回复，频道中的所有人都能看到。工具调用和工作者只留在 Orca 中",
-        "detailExternal": "你的消息和 {{bot}} 的回复，{{channel}} 中的所有人都能看到，包括你所在工作区以外的人。工具调用和工作者只留在 Orca 中",
-        "detailChannel": "你的消息和 {{bot}} 的回复，{{channel}} 中的所有人都能看到。工具调用和工作者只留在 Orca 中",
+        "detailOwnDm": "你的消息和 {{bot}} 的回复，只有你能在此私信中看到。工具调用和工作者只留在 Adehone 中",
+        "detailTheirDm": "你的消息和 {{bot}} 的回复，{{name}} 会在其私信中看到。工具调用和工作者只留在 Adehone 中",
+        "detailSomeonesDm": "你的消息和 {{bot}} 的回复，此私信中的对方会看到。工具调用和工作者只留在 Adehone 中",
+        "detailThread": "你的消息和 {{bot}} 的回复，频道中的所有人都能看到。工具调用和工作者只留在 Adehone 中",
+        "detailExternal": "你的消息和 {{bot}} 的回复，{{channel}} 中的所有人都能看到，包括你所在工作区以外的人。工具调用和工作者只留在 Adehone 中",
+        "detailChannel": "你的消息和 {{bot}} 的回复，{{channel}} 中的所有人都能看到。工具调用和工作者只留在 Adehone 中",
         "posting": "正在发布到 Slack…",
         "failedFile": "未发布到 Slack · 文件过大",
         "failedEmpty": "未发布到 Slack · 没有可发布的内容",
         "failedTooLong": "未发布到 Slack · 消息过长",
         "failed": "未发布到 Slack",
         "delete": "从 Slack 中删除",
-        "postedFrom": "已从 Orca 发布到 {{place}}",
+        "postedFrom": "已从 Adehone 发布到 {{place}}",
         "retry": "重试",
         "rewindStays": "已发布到 Slack 的消息会保留在 Slack 中",
         "switch": "将此聊天发布到 Slack",
-        "tooltipOff": "你的消息只留在 Orca 中",
+        "tooltipOff": "你的消息只留在 Adehone 中",
         "tooltipOn": "你的消息和 {{bot}} 的回复也会发布到此 Slack 话题"
       },
       "typedBy": {
@@ -21893,7 +21893,7 @@
         "detected": "已检测",
         "settings": "登录设置…",
         "switched": "Antigravity 现已改用 {{method}}",
-        "switchFailed": "Orca 无法更改 Antigravity 的登录方式，请重试",
+        "switchFailed": "Adehone 无法更改 Antigravity 的登录方式，请重试",
         "confirmTitle": "切换到 {{method}}？",
         "confirmBody": "此主机上正在运行的 Antigravity 聊天将重新启动。正在生成的回复会停止，你的对话会保留",
         "cancel": "取消",
@@ -21902,10 +21902,10 @@
         "moreOptions": "更多选项…",
         "useApiKey": "使用你的 Gemini API 密钥",
         "useGoogle": "使用你的 Google 登录",
-        "apiKeySaved": "已保存在 Orca 中",
+        "apiKeySaved": "已保存在 Adehone 中",
         "googleFound": "你之前在此主机上用 Google 登录过",
         "askApiKeyEnvironment": "改用在你的环境变量中找到的 Gemini API 密钥？",
-        "askApiKeySaved": "改用保存在 Orca 中的 Gemini API 密钥？",
+        "askApiKeySaved": "改用保存在 Adehone 中的 Gemini API 密钥？",
         "askGcloud": "改用你的 gcloud 登录（项目 {{project}}）？",
         "askGoogle": "改用你的 Google 登录？",
         "noSubscription": "此 Google 账户没有 Antigravity 订阅",
@@ -21916,8 +21916,8 @@
         "signInGoogle": "使用 Google 登录",
         "yourAgy": "你的 agy",
         "yourAgyVersion": "你的 agy · v{{version}}",
-        "orcasAgy": "Orca 自带的 agy",
-        "orcasAgyVersion": "Orca 自带的 agy · v{{version}}",
+        "orcasAgy": "Adehone 自带的 agy",
+        "orcasAgyVersion": "Adehone 自带的 agy · v{{version}}",
         "runsOn": "运行于：{{program}}",
         "keepsOwnLogin": "此聊天沿用 agy 自带的 Google 登录，新聊天将使用 {{method}}",
         "apiKeyEnvironment": "来自你的环境变量",
@@ -21981,7 +21981,7 @@
         "addOrg": "添加组织",
         "addWorkspace": "添加工作区",
         "githubAsYou": "它也可以通过你的 gh 登录，以你的身份在 GitHub 上工作",
-        "linearAsYou": "它也可以通过你自己在 Orca 中的 Linear 登录，以你的身份在 Linear 中工作"
+        "linearAsYou": "它也可以通过你自己在 Adehone 中的 Linear 登录，以你的身份在 Linear 中工作"
       },
       "toolAdded": {
         "removed": "已移除",
@@ -22273,8 +22273,8 @@
           "statusLabel": "状态",
           "signalsLabel": "信号",
           "projectOnHost": "{{project}} · {{host}}",
-          "notGit": "不是 Git 工作区。请改为从 Orca 中移除该项目。",
-          "unreachable": "无法连接 {{host}}。重新连接后即可删除，或将其从 Orca 中移除。",
+          "notGit": "不是 Git 工作区。请改为从 Adehone 中移除该项目。",
+          "unreachable": "无法连接 {{host}}。重新连接后即可删除，或将其从 Adehone 中移除。",
           "mainCheckout": "无法删除项目的主检出。",
           "uncommittedFiles_other": "{{count}} 个未提交的文件",
           "couldntCheck": "无法检查更改"
@@ -22399,10 +22399,10 @@
         "copySessionIdSuccess": "已复制会话 ID",
         "copySessionIdError": "复制会话 ID 失败",
         "copySessionIdUnavailable": "没有可复制的会话 ID",
-        "copyOrcaSessionId": "复制 Orca 会话 ID",
-        "orcaSessionIdTooltip": "Orca 为此智能体分配的 ID，与智能体 CLI 自身的会话 ID 不同，智能体之间通过 Orca 用它来指代彼此",
-        "orcaSessionIdCopied": "已复制 Orca 会话 ID",
-        "orcaSessionIdCopyFailed": "复制 Orca 会话 ID 失败"
+        "copyOrcaSessionId": "复制 Adehone 会话 ID",
+        "orcaSessionIdTooltip": "Adehone 为此智能体分配的 ID，与智能体 CLI 自身的会话 ID 不同，智能体之间通过 Adehone 用它来指代彼此",
+        "orcaSessionIdCopied": "已复制 Adehone 会话 ID",
+        "orcaSessionIdCopyFailed": "复制 Adehone 会话 ID 失败"
       },
       "hostFile": {
         "updateHostForOutsideFiles": "更新 {{value0}} 上的 Adehone 以打开其工作区之外的文件"
@@ -22434,7 +22434,7 @@
           "subtitle": "选择一个聊天界面智能体，不支持聊天的智能体会改在终端中打开"
         },
         "agentTerminal": {
-          "subtitle": "Orca 支持所有 CLI 智能体，选择你最常用的那个"
+          "subtitle": "Adehone 支持所有 CLI 智能体，选择你最常用的那个"
         }
       },
       "skipConfirmation": {
@@ -22584,7 +22584,7 @@
           "position": "位置"
         },
         "claudeCodeThemeSync": {
-          "description": "此计算机上的 Claude Code 会使用你的终端配色，并实时跟随主题变化（包括在 Orca 之外），关闭后将恢复你之前的 Claude Code 主题，在 Claude Code 中选择主题会停止同步",
+          "description": "此计算机上的 Claude Code 会使用你的终端配色，并实时跟随主题变化（包括在 Adehone 之外），关闭后将恢复你之前的 Claude Code 主题，在 Claude Code 中选择主题会停止同步",
           "claude": "claude",
           "9353305ea6": "Claude Code 跟随终端主题"
         }
@@ -22611,7 +22611,7 @@
         "usageLimitContinueSearchLimit": "使用额度",
         "usageLimitContinueSearchReset": "重置",
         "usageLimitContinueToggleLabel": "切换使用额度重置后自动继续聊天",
-        "usageLimitContinueUnsupported": "请更新 {{host}} 上的 Orca 以在那里更改此设置",
+        "usageLimitContinueUnsupported": "请更新 {{host}} 上的 Adehone 以在那里更改此设置",
         "usageLimitContinueUpdateFailed": "无法更新 {{host}} 上的设置",
         "idleStopTitle": "空闲多久后停止智能体",
         "idleStopCopy": "聊天空闲达到此时长后，结束该聊天的智能体以释放内存。聊天会保留，你发送下一条消息时智能体会重新启动。如果智能体在轮次之间仍会在后台继续工作，请选择“从不”。",
@@ -22632,7 +22632,7 @@
         "markNewMessagesSearchUnread": "未读",
         "linkPreviewsToggleLabel": "切换链接预览",
         "linkPreviewsTitle": "链接预览",
-        "linkPreviewsCopy": "将鼠标悬停在网页链接上会显示预览卡片，Orca 会抓取该页面来生成卡片，因此该网站能看到这次请求",
+        "linkPreviewsCopy": "将鼠标悬停在网页链接上会显示预览卡片，Adehone 会抓取该页面来生成卡片，因此该网站能看到这次请求",
         "linkPreviewsSearchUnfurl": "链接展开",
         "linkPreviewsSearchHover": "悬停卡片",
         "composerSpellcheckTitle": "拼写检查和自动更正",
@@ -22819,7 +22819,7 @@
             "waitLabel": "等待",
             "wait": "文本会延迟几秒插入",
             "title": "开启 AI 整理？",
-            "description": "每次听写后，Orca 会先把文本发送给 {{agent}} 整理，然后再插入",
+            "description": "每次听写后，Adehone 会先把文本发送给 {{agent}} 整理，然后再插入",
             "cancel": "取消",
             "confirm": "开启"
           },
@@ -22861,8 +22861,8 @@
       },
       "workspaceCleanup": {
         "title": "工作区清理",
-        "description": "移除你已不再需要的工作区。在移除任何内容之前，Orca 会再次检查是否有未保存的工作",
-        "unsupportedHost": "此主机上的 Orca 版本不支持自动清理，请更新该主机上的 Orca 以使用这些设置",
+        "description": "移除你已不再需要的工作区。在移除任何内容之前，Adehone 会再次检查是否有未保存的工作",
+        "unsupportedHost": "此主机上的 Adehone 版本不支持自动清理，请更新该主机上的 Adehone 以使用这些设置",
         "previewFailed": "无法检查此更改会匹配哪些工作区",
         "pinFailed": "无法保留 {{name}}",
         "rules": {
@@ -23084,8 +23084,8 @@
       "recoverServer": {
         "titleOnHost": "清除 {{host}} 上的旧锁？",
         "titleGeneric": "清除旧锁？",
-        "summary": "之前的运行留下了锁，因此 Orca 的服务器无法启动。",
-        "confirmCheckHomeFolder": "没有其他共享此主文件夹的机器正在运行 Orca",
+        "summary": "之前的运行留下了锁，因此 Adehone 的服务器无法启动。",
+        "confirmCheckHomeFolder": "没有其他共享此主文件夹的机器正在运行 Adehone",
         "details": "详细信息",
         "clearing": "正在清除…"
       },
@@ -23093,13 +23093,13 @@
         "deleteHistoryWithWorkspace": {
           "updateFailed": "无法更新 {{host}} 上的设置",
           "recommended": "推荐",
-          "unsupported": "请更新 {{host}} 上的 Orca 以在那里使用此设置",
+          "unsupported": "请更新 {{host}} 上的 Adehone 以在那里使用此设置",
           "confirmTitle": "要删除已删除工作区的智能体历史记录吗？",
-          "confirmDescription": "Orca 将删除已不存在的工作区中的 Orca、Claude Code 和 Codex 聊天，包括今天之前删除的工作区。你现有工作区中的聊天会保留。删除的聊天无法恢复",
+          "confirmDescription": "Adehone 将删除已不存在的工作区中的 Adehone、Claude Code 和 Codex 聊天，包括今天之前删除的工作区。你现有工作区中的聊天会保留。删除的聊天无法恢复",
           "cancel": "取消",
           "turnOn": "开启",
           "title": "删除工作区时一并删除智能体历史记录",
-          "description": "已删除工作区中的 Orca、Claude Code 和 Codex 聊天会被自动移除，以释放磁盘空间。移除后无法恢复",
+          "description": "已删除工作区中的 Adehone、Claude Code 和 Codex 聊天会被自动移除，以释放磁盘空间。移除后无法恢复",
           "codexHistoryBadge": "Codex 历史记录：{{size}}",
           "codexHistoryBadgeAtLeast": "Codex 历史记录：{{size}}+",
           "codexHistoryTooltip": "Codex 在 {{host}} 上用于存储自身聊天记录的空间，包括你现有工作区中的聊天",
@@ -23115,20 +23115,20 @@
         "server": {
           "fallbackHost": "此服务器",
           "updateFailed": "无法更新 {{host}} 上的通知设置",
-          "unsupported": "请更新 {{host}} 上的 Orca 以在这里更改其通知设置",
+          "unsupported": "请更新 {{host}} 上的 Adehone 以在这里更改其通知设置",
           "enabledDescription": "{{host}} 为其智能体和终端发出的通知，包括发送到你手机的推送",
           "sectionDescription": "{{host}} 为其智能体和终端发出的通知"
         }
       },
       "orcaAccount": {
         "server": {
-          "sectionDescription": "{{host}} 运行时所用的 Orca 账户，用于其 bots 的 Slack、GitHub、Linear 和 Webhook",
-          "unread": "无法读取 {{host}} 的 Orca 账户。请更新或重新连接 {{host}}",
+          "sectionDescription": "{{host}} 运行时所用的 Adehone 账户，用于其 bots 的 Slack、GitHub、Linear 和 Webhook",
+          "unread": "无法读取 {{host}} 的 Adehone 账户。请更新或重新连接 {{host}}",
           "signInThere": "在 {{host}} 上运行 `orca auth login` 以登录"
         }
       },
       "hostScope": {
-        "updateHostToChange": "请更新 {{host}} 上的 Orca 以在那里更改此设置",
+        "updateHostToChange": "请更新 {{host}} 上的 Adehone 以在那里更改此设置",
         "updateFailed": "无法更新 {{host}} 上的设置"
       },
       "git": {
@@ -23221,7 +23221,7 @@
       "inherit": "浏览器设置（{{scope}}）",
       "deletedOption": "已删除的配置文件",
       "deleted": "为此项目选择的配置文件已被删除，因此新标签页会沿用浏览器设置",
-      "saveFailed": "无法保存浏览器配置文件，此项目所在主机上的 Orca 可能需要更新"
+      "saveFailed": "无法保存浏览器配置文件，此项目所在主机上的 Adehone 可能需要更新"
     },
     "managed-runtime": {
       "cancelled": "已取消安装",
@@ -23381,11 +23381,11 @@
       "activeAgentNeedsPermission": "当前智能体需要权限",
       "statusUnverified": "无法验证{{target}}智能体的状态",
       "approvalUnseen": "{{target}}智能体可能正在等待批准。请在其本轮结束后再发送备注。",
-      "hostUpdateRequired": "请更新{{target}}智能体所在主机上的 Orca 后再发送备注。",
+      "hostUpdateRequired": "请更新{{target}}智能体所在主机上的 Adehone 后再发送备注。",
       "notReady": "{{target}}智能体尚未准备好接收输入",
       "notWritable": "{{target}}智能体未接受这些备注",
-      "selectedSubmitFailed": "备注可能已粘贴到所选终端，但 Orca 无法提交",
-      "activeSubmitFailed": "备注可能已粘贴到当前终端，但 Orca 无法提交",
+      "selectedSubmitFailed": "备注可能已粘贴到所选终端，但 Adehone 无法提交",
+      "activeSubmitFailed": "备注可能已粘贴到当前终端，但 Adehone 无法提交",
       "notWritableSelection": "{{target}}智能体未接受所选内容"
     },
     "dictation": {
@@ -23439,8 +23439,8 @@
       "routing": {
         "preference": {
           "dialog": {
-            "keepInOrcaTitle": "继续在 Orca 中打开终端链接？",
-            "openInOrcaTitle": "在 Orca 中打开终端链接？",
+            "keepInOrcaTitle": "继续在 Adehone 中打开终端链接？",
+            "openInOrcaTitle": "在 Adehone 中打开终端链接？",
             "shortcutSummary": "{{shortcut}}-点击可改用系统浏览器打开一次。可在设置中更改。"
           }
         }
@@ -23482,7 +23482,7 @@
     },
     "sidebar": {
       "ForgetSshWorkspaceDialog": {
-        "removeFromOrcaTitle": "要从 Orca 中移除 {{name}}？",
+        "removeFromOrcaTitle": "要从 Adehone 中移除 {{name}}？",
         "ghostHostLine": "{{host}} 已不再是已保存的主机。文件会保留在该主机上。",
         "disconnectedHostLine": "{{host}} 未连接。文件会保留在主机上。",
         "filesStayLine": "文件会保留在 {{host}} 上。",
@@ -23855,10 +23855,10 @@
     "googleCookieClear": {
       "signInKeyword": "登录",
       "unavailable": "所选主机上的此配置文件不可用",
-      "explanation": "Google 的登录状态绑定在登录时所用的浏览器上，因此 Orca 不会从其他浏览器导入 Google Cookie。如果 Google 停留在错误的账户，或反复让您退出登录，请清除当前配置文件中的 Google Cookie，然后在 Orca 中重新登录 Google。其他网站仍保持登录状态",
+      "explanation": "Google 的登录状态绑定在登录时所用的浏览器上，因此 Adehone 不会从其他浏览器导入 Google Cookie。如果 Google 停留在错误的账户，或反复让您退出登录，请清除当前配置文件中的 Google Cookie，然后在 Adehone 中重新登录 Google。其他网站仍保持登录状态",
       "action": "清除 Google Cookie…",
       "confirmTitle": "清除 {{profile}} 中的 Google Cookie？",
-      "confirmDescription": "此配置文件在 Orca 浏览器中将退出 Google 登录，其他网站仍保持登录状态",
+      "confirmDescription": "此配置文件在 Adehone 浏览器中将退出 Google 登录，其他网站仍保持登录状态",
       "clear": "清除",
       "cancel": "取消",
       "cleared": "已清除 {{profile}} 中的 Google Cookie",
@@ -24075,9 +24075,9 @@
         "serviceUnconfirmed": "WSL 服务未确认该发行版是否正在运行",
         "peerCheckFailed": "Adehone 无法向 WSL 主机询问此电脑上的另一个 Adehone 是否仍在使用该主机：{{detail}}",
         "removalUnrecorded": "Adehone 无法记录此次移除后仍在运行的内容：{{detail}}",
-        "installLockWait_other": "正在等待此发行版中的另一个 Orca 安装完成。如果未完成，Orca 将在约 {{count}} 分钟后接管。",
-        "installLockWaitGivesUp_other": "正在等待此发行版中的另一个 Orca 安装完成。如果未完成，Orca 将在约 {{count}} 分钟后停止等待。",
-        "installLockWaitHolderGone": "此发行版中的另一个 Orca 安装已停止。Orca 将在几秒内接管。"
+        "installLockWait_other": "正在等待此发行版中的另一个 Adehone 安装完成。如果未完成，Adehone 将在约 {{count}} 分钟后接管。",
+        "installLockWaitGivesUp_other": "正在等待此发行版中的另一个 Adehone 安装完成。如果未完成，Adehone 将在约 {{count}} 分钟后停止等待。",
+        "installLockWaitHolderGone": "此发行版中的另一个 Adehone 安装已停止。Adehone 将在几秒内接管。"
       }
     },
     "agentSummary": {
@@ -24144,13 +24144,13 @@
       "hidden": "已隐藏 {{name}}",
       "hiddenDescription": "其终端和智能体会继续运行，可在列表下方的“已隐藏的项目”中重新显示",
       "undo": "撤销",
-      "hideFailed": "无法隐藏 {{name}}，其主机可能需要更新 Orca",
+      "hideFailed": "无法隐藏 {{name}}，其主机可能需要更新 Adehone",
       "showFailed": "无法重新显示 {{name}}",
       "listLabel": "已隐藏的项目",
       "show": "显示",
       "showAriaLabel": "在侧边栏中显示 {{name}}",
       "settingsTitle": "在侧边栏中隐藏",
-      "settingsDescription": "在侧边栏、项目选择器和工作区切换器中隐藏此主机上的项目副本，其终端、智能体和自动化会继续运行；在已配对的 Orca 服务器上，此操作会对连接到该服务器的所有人隐藏该项目",
+      "settingsDescription": "在侧边栏、项目选择器和工作区切换器中隐藏此主机上的项目副本，其终端、智能体和自动化会继续运行；在已配对的 Adehone 服务器上，此操作会对连接到该服务器的所有人隐藏该项目",
       "settingsToggleLabel": "在侧边栏中隐藏 {{name}}",
       "keywordHide": "隐藏",
       "keywordHidden": "已隐藏",
@@ -24158,7 +24158,7 @@
       "hideFromSidebar": "在侧边栏中隐藏",
       "sectionTitle": "已隐藏的项目（{{count}}）",
       "allHidden": "所有项目都已隐藏，可从下方的“已隐藏的项目”中重新显示",
-      "undoGone": "{{name}} 已从 Orca 中移除",
+      "undoGone": "{{name}} 已从 Adehone 中移除",
       "settingsGroup": "侧边栏",
       "showOnHostAriaLabel": "在侧边栏中显示 {{host}} 上的 {{name}}",
       "keywordShow": "显示",
@@ -24216,7 +24216,7 @@
     },
     "diffTooLarge": {
       "title": "文件过大，无法显示差异",
-      "detail": "此文件的某个版本超过 10 MB，因此 Orca 不会加载它来显示文本差异",
+      "detail": "此文件的某个版本超过 10 MB，因此 Adehone 不会加载它来显示文本差异",
       "connectionDetail": "此差异过大，无法通过远程连接打开"
     }
   },
@@ -24325,7 +24325,7 @@
       "itemsTitle": "它的工作，尽在一个列表",
       "groupTitle": "Bots 协同工作",
       "pageAnnounce": "第 {{number}} 页，共 {{count}} 页：{{title}}",
-      "product": "Orca Bots",
+      "product": "Adehone Bots",
       "groupName": "上线小队",
       "releaseBot": "发布 bot",
       "reviewBot": "评审 bot",
@@ -24938,7 +24938,7 @@
     "new": "新建稀疏检出预设",
     "edit": "编辑稀疏检出预设",
     "saveFailed": "无法保存预设，请重试",
-    "updateServerToRemove": "请更新此项目服务器上的 Orca，以移除其预设",
+    "updateServerToRemove": "请更新此项目服务器上的 Adehone，以移除其预设",
     "loading": "正在加载预设...",
     "details": "会检出哪些文件？",
     "pathInstructions": "每行输入一个文件夹，使用相对于仓库根目录的路径",
@@ -25022,8 +25022,8 @@
       "agentPlatformOption": "你的 gcloud 登录凭据（ADC）",
       "apiKey": "Gemini API 密钥",
       "projectFromGcloud": "取自 gcloud",
-      "adcHint": "可选。Orca 会使用你的 gcloud 项目和 global 位置。请先运行一次 gcloud auth application-default login",
-      "apiKeySaveFailed": "Orca 无法保存密钥。请重试",
+      "adcHint": "可选。Adehone 会使用你的 gcloud 项目和 global 位置。请先运行一次 gcloud auth application-default login",
+      "apiKeySaveFailed": "Adehone 无法保存密钥。请重试",
       "apiKeySaved": "密钥已加密保存在此主机上",
       "apiKeyFromEnvironment": "正在使用环境变量中的 GEMINI_API_KEY。如需改用其他密钥，请粘贴新密钥",
       "apiKeyLabel": "Gemini API 密钥",
@@ -25167,12 +25167,12 @@
     "rename": {
       "action": "重命名",
       "title": "重命名账户",
-      "description": "只会更改 Orca 中显示的名称，留空则显示 {{email}}",
+      "description": "只会更改 Adehone 中显示的名称，留空则显示 {{email}}",
       "label": "显示名称",
       "reset": "重置为默认",
       "cancel": "取消",
       "save": "保存",
-      "unsupportedHost": "请更新 {{host}} 上的 Orca 以在那里更改此设置"
+      "unsupportedHost": "请更新 {{host}} 上的 Adehone 以在那里更改此设置"
     },
     "selection": {
       "claudeRemoteWslDefaultUnavailable": "暂时还不能把这台主机的 WSL 账户切回系统默认。",
@@ -25227,8 +25227,8 @@
       "turnOffSharing": "关闭共享",
       "dialogQuestion": "让每个 Codex 标签页使用自己的服务器？",
       "stopSummary": "停止正在运行的服务器，并关闭所有使用它的 Codex 会话。",
-      "dialogSummary": "关闭 Codex 服务器共享，在 Orca 之外也会生效。",
-      "alsoStop": "同时停止正在运行的服务器（会关闭所有使用它的 Codex 会话，包括 Orca 之外的）",
+      "dialogSummary": "关闭 Codex 服务器共享，在 Adehone 之外也会生效。",
+      "alsoStop": "同时停止正在运行的服务器（会关闭所有使用它的 Codex 会话，包括 Adehone 之外的）",
       "couldNotTurnOff": "无法关闭共享。",
       "stopFailedAfterOff": "共享已关闭，但服务器未停止。",
       "turnOffAndStop": "关闭共享并停止服务器"
@@ -25305,11 +25305,11 @@
       "lighterText": "更细的终端文字"
     },
     "claudeThemeSyncOffer": {
-      "title": "让 Claude Code 匹配你的 Orca 主题？",
-      "description": "此计算机上的 Claude Code 将使用你的终端配色并跟随主题变化（包括在 Orca 之外），你可以在设置中更改此项",
+      "title": "让 Claude Code 匹配你的 Adehone 主题？",
+      "description": "此计算机上的 Claude Code 将使用你的终端配色并跟随主题变化（包括在 Adehone 之外），你可以在设置中更改此项",
       "accept": "匹配主题",
       "accepted": "Claude Code 主题同步已开启",
-      "acceptedDescription": "此计算机上新的 Claude Code 会话将使用你的 Orca 主题",
+      "acceptedDescription": "此计算机上新的 Claude Code 会话将使用你的 Adehone 主题",
       "decline": "不用了",
       "failed": "无法开启 Claude Code 主题同步",
       "failedDescription": "请在设置中开启"
@@ -25386,7 +25386,7 @@
       "createdBranchSkipped": "设置脚本未运行：此工作区分支中的 adehone.yaml 配置命令与你批准的命令不同。",
       "runFailed": "无法启动设置脚本",
       "changedAgain": "设置脚本未运行：在你审查之后，此工作区的 orca.yaml 再次发生了更改",
-      "hostUnsupported": "已批准，请更新工作区主机上的 Orca，以便为现有工作区运行设置脚本",
+      "hostUnsupported": "已批准，请更新工作区主机上的 Adehone，以便为现有工作区运行设置脚本",
       "reviewAction": "审查设置脚本",
       "branchDiffersTitle": "此工作区的分支包含不同的设置命令",
       "branchDiffersBody": "工作区已创建，但其分支中的 <code>orca.yaml</code> 与你批准的内容不同，因此设置脚本未运行，请仅在信任 <repo/> 时为此工作区运行这些命令",
@@ -25809,8 +25809,8 @@
   "updates": {
     "installOnQuit": {
       "title": "更新已准备就绪，可安装",
-      "summary": "退出 Orca，安装完成后重新打开",
-      "quit": "退出 Orca",
+      "summary": "退出 Adehone，安装完成后重新打开",
+      "quit": "退出 Adehone",
       "later": "稍后"
     },
     "installBlock": {
@@ -25873,29 +25873,29 @@
       "rateLimitedInMinuteSignedOut": "已达到 GitHub 速率限制。请约一分钟后重试，或运行 `gh auth login`，以便 Adehone 使用你账户的更高限额",
       "rateLimitedInMinutes_other": "已达到 GitHub 速率限制。请约 {{count}} 分钟后重试",
       "rateLimitedInMinutesSignedOut_other": "已达到 GitHub 速率限制。请约 {{count}} 分钟后重试，或运行 `gh auth login`，以便 Adehone 使用你账户的更高限额",
-      "teamUpdatePolicy": "你的团队管理着 Orca 更新",
-      "automaticInstallCheckpointFailed": "Orca 无法在重启前保存当前窗口。请重试安装更新。",
-      "automaticInstallTerminalBusy": "重启会结束部分终端会话。Orca 会在之后检查更新时重试。",
-      "macStagingTimeout": "macOS 仍在准备更新。如果长时间停留在此状态，请退出并重新打开 Orca。"
+      "teamUpdatePolicy": "你的团队管理着 Adehone 更新",
+      "automaticInstallCheckpointFailed": "Adehone 无法在重启前保存当前窗口。请重试安装更新。",
+      "automaticInstallTerminalBusy": "重启会结束部分终端会话。Adehone 会在之后检查更新时重试。",
+      "macStagingTimeout": "macOS 仍在准备更新。如果长时间停留在此状态，请退出并重新打开 Adehone。"
     },
     "automatic": {
-      "downloading": "正在下载 Orca {{version}}…",
-      "installing": "正在安装 Orca {{version}}…",
-      "restarting": "Orca 将自动重启"
+      "downloading": "正在下载 Adehone {{version}}…",
+      "installing": "正在安装 Adehone {{version}}…",
+      "restarting": "Adehone 将自动重启"
     },
     "emergencyRequired": {
-      "title": "需要 Orca {{version}}",
-      "summary": "需要 Orca {{version}}，请重启以更新"
+      "title": "需要 Adehone {{version}}",
+      "summary": "需要 Adehone {{version}}，请重启以更新"
     },
     "teamRequired": {
-      "summary": "你的团队要求使用 Orca {{version}}，请重启以更新",
-      "title": "你的团队要求使用 Orca {{version}}",
+      "summary": "你的团队要求使用 Adehone {{version}}，请重启以更新",
+      "title": "你的团队要求使用 Adehone {{version}}",
       "restartNow": "立即重启",
-      "countdown": "倒计时结束后，Orca 会保存你的会话并重启，运行中的智能体可能会延迟重启",
-      "waiting": "Orca 正在等待运行中的智能体结束，然后重启",
-      "retry": "Orca 会在下次启动时重试此更新",
+      "countdown": "倒计时结束后，Adehone 会保存你的会话并重启，运行中的智能体可能会延迟重启",
+      "waiting": "Adehone 正在等待运行中的智能体结束，然后重启",
+      "retry": "Adehone 会在下次启动时重试此更新",
       "manual": "自动安装失败，请手动安装此更新",
-      "deadline": "请在 {{deadline}} 前重启，Orca 会在重启前保存你的会话",
+      "deadline": "请在 {{deadline}} 前重启，Adehone 会在重启前保存你的会话",
       "download": "打开下载页面"
     },
     "remoteUpdateBusy": "此服务器已在更新中。请在更新完成后重新检查"
@@ -25970,10 +25970,10 @@
     "killAllLocal": "结束所有本地会话",
     "killFailed": "无法结束终端。将保留上次观察到的会话",
     "owner": {
-      "orca": "Orca",
+      "orca": "Adehone",
       "agents": "智能体",
       "otherTerminals": "其他终端",
-      "privateBytes": "Orca 和终端已提交的内存"
+      "privateBytes": "Adehone 和终端已提交的内存"
     },
     "chatRow": {
       "tooltip": "{{agent}} 聊天（包括其下运行的进程）"
@@ -26747,8 +26747,8 @@
       "other": "它无法移动",
       "windowsGitWorktrees": "Git for Windows 记录了其部分工作树（包括之后已删除的），而 WSL 主机上的 Git 无法使用这些记录。请移除这些工作树，或在 WSL 中运行 git worktree repair，然后再移动它",
       "windowsGitDir": "其 Git 文件夹通过 Windows 路径链接（由 Git for Windows 设置的工作树或独立 Git 文件夹），WSL 主机上的 Git 无法解析该路径",
-      "gitUnreadable": "Orca 未能及时读取其 Git 详细信息以进行检查，因此它会保留在此电脑上。请稍后重新检查",
-      "mappedDriveUnverifiable": "Orca 刚才无法检查其驱动器号指向的位置。请确保该驱动器已连接，然后重新检查"
+      "gitUnreadable": "Adehone 未能及时读取其 Git 详细信息以进行检查，因此它会保留在此电脑上。请稍后重新检查",
+      "mappedDriveUnverifiable": "Adehone 刚才无法检查其驱动器号指向的位置。请确保该驱动器已连接，然后重新检查"
     },
     "reloadToast": {
       "title": "重新加载以完成移动"
@@ -26818,11 +26818,11 @@
         "prompt": "智能体停在了一个需要你回答的提示处"
       },
       "agentInterrupted": "智能体在完成此次运行前被中断",
-      "botsOff": "设置中已关闭机器人，因此 Orca 跳过了这次运行。",
-      "botsOffByTeam": "你的团队已关闭 Bots，因此 Orca 跳过了此次运行",
+      "botsOff": "设置中已关闭机器人，因此 Adehone 跳过了这次运行。",
+      "botsOffByTeam": "你的团队已关闭 Bots，因此 Adehone 跳过了此次运行",
       "botMissing": "运行这个自动化的机器人已不存在。",
       "botFolderMissing": "机器人的文件夹已不可用。",
-      "botPaused": "{{bot}} 已暂停，因此 Orca 跳过了这次运行。"
+      "botPaused": "{{bot}} 已暂停，因此 Adehone 跳过了这次运行。"
     },
     "extraAgentArgs": {
       "errors": {
@@ -26859,7 +26859,7 @@
       "resultsToChannelNeedsSlack": "频道（请先连接 Slack）",
       "resultsToThread": "事件所在的话题",
       "resultsToThreadNeedsEvents": "事件所在的话题（需事件触发且每次新建对话）",
-      "resultsToThreadUnsupported": "事件所在的话题（Orca Cloud 尚不支持）",
+      "resultsToThreadUnsupported": "事件所在的话题（Adehone Cloud 尚不支持）",
       "resultsToNone": "不发送",
       "channelPlaceholder": "#频道名或 Slack 链接",
       "channelLabel": "频道",
@@ -26868,7 +26868,7 @@
       "option": "Bot · {{name}}",
       "channelMissing": "请输入接收结果的频道",
       "hostUnavailable": "bot 所在的电脑暂时无法承载新的自动化。请稍后重试",
-      "hostNeedsUpdate": "请更新 {host} 上的 Orca 服务器，它的 bots 才能使用自动化。",
+      "hostNeedsUpdate": "请更新 {host} 上的 Adehone 服务器，它的 bots 才能使用自动化。",
       "promptMissing": "请输入它要做什么",
       "deletedBot": "已删除的 bot",
       "fieldLabel": "Bot 或项目",
@@ -26929,8 +26929,8 @@
     },
     "wontFire": "无法运行：需要 {{connectors}} 连接器",
     "eventsWontFire": "仅按计划运行：需要 {{connectors}} 连接器",
-    "webhooksOff": "无法运行：Orca Cloud 尚不支持 Webhook",
-    "webhooksOffScheduled": "仅按计划运行：Orca Cloud 尚不支持 Webhook",
+    "webhooksOff": "无法运行：Adehone Cloud 尚不支持 Webhook",
+    "webhooksOffScheduled": "仅按计划运行：Adehone Cloud 尚不支持 Webhook",
     "openConnectors": "打开连接器",
     "hostUnreachable": "无法连接到 {{host}}，待其恢复后请重试"
   },
@@ -27208,8 +27208,8 @@
       "suspendExitedWithoutCode": "挂起操作已退出，退出码未知",
       "resumeExited": "恢复操作已退出，退出码为 {{exitCode}}",
       "resumeExitedWithoutCode": "恢复操作已退出，退出码未知",
-      "recipeTimedOut": "环境模板的 {{mode}} 步骤未在 {{timeout}} 内完成，Orca 已将其停止，请检查环境模板的输出，如果它需要更长时间，可在 orca.yaml 中调高 timeoutSeconds",
-      "provisionInterrupted": "Orca 在创建此虚拟机时停止了，请将其销毁，以释放提供方的所有资源"
+      "recipeTimedOut": "环境模板的 {{mode}} 步骤未在 {{timeout}} 内完成，Adehone 已将其停止，请检查环境模板的输出，如果它需要更长时间，可在 orca.yaml 中调高 timeoutSeconds",
+      "provisionInterrupted": "Adehone 在创建此虚拟机时停止了，请将其销毁，以释放提供方的所有资源"
     }
   },
   "installDirAcl": {
@@ -27261,7 +27261,7 @@
     "disabledReason": {
       "needsPermission": "智能体需要授权",
       "approvalUnseen": "智能体可能正在等待批准",
-      "hostUpdateRequired": "请更新此主机上的 Orca 才能发送给此智能体"
+      "hostUpdateRequired": "请更新此主机上的 Adehone 才能发送给此智能体"
     }
   },
   "wslDistroHold": {
@@ -27365,7 +27365,7 @@
       "missing": "该对话未在此电脑上打开",
       "unreachable": "无法连接到 {{hosts}}。bot 可能在那里，请在其恢复连接后重新打开链接",
       "pick": "多台电脑上都有与此链接对应的 bot：{{hosts}}。请从侧边栏打开",
-      "updateNeeded": "请更新 {{hosts}} 上的 Orca，以便在这里打开此 bot"
+      "updateNeeded": "请更新 {{hosts}} 上的 Adehone，以便在这里打开此 bot"
     },
     "activity": {
       "title": "活动",
@@ -27390,7 +27390,7 @@
     "connectors": {
       "tab": "连接器",
       "addNamed": "添加 {{name}}",
-      "signInChanged": "此电脑的 Orca 登录已更改。请重新登录以重新连接",
+      "signInChanged": "此电脑的 Adehone 登录已更改。请重新登录以重新连接",
       "addAnotherWorkspace": "添加其他工作区",
       "addGitHubAccess": "添加仓库或组织",
       "addAnotherOrg": "添加其他组织",
@@ -27473,8 +27473,8 @@
       "stateFirstChat": "首次聊天",
       "stateNotConnected": "未连接",
       "needsSetup": "需要设置",
-      "publisher": "由 Orca 提供",
-      "official": "Orca 官方模板",
+      "publisher": "由 Adehone 提供",
+      "official": "Adehone 官方模板",
       "useTemplate": "使用模板…",
       "inItsChat": "在它的聊天中",
       "firstChat": "它首先会做什么",
@@ -27551,8 +27551,8 @@
       "unreviewed-work": {
         "name": "未评审的智能体工作",
         "line": "每天列出还没人看过的已完成智能体工作",
-        "firstChat": "列出智能体已完成、但其更改你尚未评审或尚未变成 PR 的工作区。智能体等待你时 Orca 已经会通知你；这里关注的是已完成的工作",
-        "watches": "你的 Orca 工作区",
+        "firstChat": "列出智能体已完成、但其更改你尚未评审或尚未变成 PR 的工作区。智能体等待你时 Adehone 已经会通知你；这里关注的是已完成的工作",
+        "watches": "你的 Adehone 工作区",
         "does": "列出智能体已完成、但其更改无人评审或尚未开 PR 的工作区",
         "reports": "在这里，工作日上午 9 点",
         "example1": "mobile-pairing 昨天完成，差异有 340 行，还没有 PR",
@@ -27568,7 +27568,7 @@
         "name": "工作区清理",
         "line": "找出已完成或已废弃的工作区，并提议移除",
         "firstChat": "列出 PR 已合并或两周内没有变化的工作区，并注明未提交的更改。它只会移除你选中的工作区",
-        "watches": "你的 Orca 工作区及其 PR",
+        "watches": "你的 Adehone 工作区及其 PR",
         "does": "列出已完成或已废弃的工作区，并注明未提交的更改；只移除你选中的工作区",
         "reports": "在这里，每周五下午 4 点",
         "example1": "6 个工作区已完成：它们的 PR 已在本周合并",
@@ -27896,10 +27896,10 @@
       "fromTemplate": "模板",
       "agentClaude": "Claude Code",
       "hostUnreachable": "无法连接到 {{host}}",
-      "hostUpdate": "更新 {{host}} 上的 Orca",
-      "hostNoBots": "{{host}} 上的 Orca 暂时无法运行 bots",
-      "hostNeedsServer": "需要 Orca 服务器",
-      "hostNeedsServerHint": "要运行 bots，请在“设置 → 远程 Orca 服务器”中为 {{host}} 设置 Orca 服务器",
+      "hostUpdate": "更新 {{host}} 上的 Adehone",
+      "hostNoBots": "{{host}} 上的 Adehone 暂时无法运行 bots",
+      "hostNeedsServer": "需要 Adehone 服务器",
+      "hostNeedsServerHint": "要运行 bots，请在“设置 → 远程 Adehone 服务器”中为 {{host}} 设置 Adehone 服务器",
       "hostAs": "以 {{account}} 身份",
       "hostReconnect": "重新连接",
       "hostReconnecting": "正在重新连接…",
@@ -27931,7 +27931,7 @@
       "change": "更改",
       "computer": "电脑",
       "computerHint": "bot 运行的位置",
-      "computerAccountHint": "bot 运行的位置，以 {{account}} 身份登录 Orca",
+      "computerAccountHint": "bot 运行的位置，以 {{account}} 身份登录 Adehone",
       "useChatDefaults": "使用聊天默认设置",
       "chatDefault": "聊天默认",
       "usingChatDefault": "正在使用你的聊天默认设置。后台运行使用你的“智能体”设置",
@@ -27961,10 +27961,10 @@
         "noAgents": "无代理",
         "noAgentsAvailable": "没有可用的代理",
         "pictureLoading": "正在加载图片…",
-        "updateOrca": "更新 Orca"
+        "updateOrca": "更新 Adehone"
       },
       "parts": {
-        "olderHost": "{{host}} 需要更新 Orca 才能添加技能和计划",
+        "olderHost": "{{host}} 需要更新 Adehone 才能添加技能和计划",
         "skillsKept_other": "{{kept}}/{{count}} 个技能",
         "skills_other": "{{count}} 个技能",
         "automations_other": "{{count}} 个自动化",
@@ -28039,7 +28039,7 @@
         "guideHere": "在这里指导我",
         "guideBrowser": "在我的浏览器中指导我",
         "doItNote": "由 {{bot}} 替你点击完成",
-        "guideHereNote": "你在 Orca 中点击操作",
+        "guideHereNote": "你在 Adehone 中点击操作",
         "guideBrowserNote": "你在浏览器中点击操作"
       },
       "account": {
@@ -28058,8 +28058,8 @@
         "titleAccount": "登录以连接 {{email}}",
         "title": "登录以连接",
         "note": "你的浏览器会打开 Google 登录页面。你的 Google 登录信息会保留在此电脑上",
-        "warning": "由于这是你刚创建的自有应用，Google 会显示一条警告。请选择“高级”，然后选择“转至 Orca”，并在下一个页面勾选所有复选框",
-        "noteOnHost": "Orca 中对应 {{host}} 的浏览器会打开 Google 登录页面。你的 Google 登录信息会保留在 {{host}} 上"
+        "warning": "由于这是你刚创建的自有应用，Google 会显示一条警告。请选择“高级”，然后选择“转至 Adehone”，并在下一个页面勾选所有复选框",
+        "noteOnHost": "Adehone 中对应 {{host}} 的浏览器会打开 Google 登录页面。你的 Google 登录信息会保留在 {{host}} 上"
       },
       "connected": {
         "heading": "Google 已连接",
@@ -28086,7 +28086,7 @@
       },
       "takeOver": "接下来交给 bot",
       "ownerStep": "第 {{step}} 步，共 3 步",
-      "keyMissed": "已下载密钥，但 Orca 没有获取到？",
+      "keyMissed": "已下载密钥，但 Adehone 没有获取到？",
       "pickHostKey": "选择要导入的密钥文件：",
       "pickKeyHere": "在这台电脑上选择文件",
       "action": {
@@ -28108,7 +28108,7 @@
         "stopped": "设置已停止",
         "paused": "设置在“{{step}}”这一步暂停了。目前的进度都已保存",
         "yourTurn": "轮到你了：{{step}}",
-        "noKey": "Orca 需要先获取应用密钥",
+        "noKey": "Adehone 需要先获取应用密钥",
         "keyGone": "此应用的密钥已失效：它已在 Google Cloud 中被删除",
         "keyOtherProject": "已保存的密钥属于项目 {{keyProject}}，而不是 {{project}}",
         "otherAccount": "你以 {{signedIn}} 身份登录；但此设置针对的是 {{wanted}}",
@@ -28116,7 +28116,7 @@
         "needsPermission": "快完成了：请授权 {{services}}。Google 会为每项服务显示一个复选框，请全部勾选",
         "apiOff": "{{services}} 已在 Google Cloud 中停用",
         "adminBlocked": "你公司的 Google 管理员已阻止 {{services}}",
-        "checkFailed": "Orca 无法检查 {{services}}"
+        "checkFailed": "Adehone 无法检查 {{services}}"
       },
       "notNow": "暂不",
       "importSetupFile": "导入配置文件",
@@ -28696,9 +28696,9 @@
       "namesMore": "{{names}} 以及另外 {{count}} 个",
       "stepCreate": "创建 bot",
       "stepReply": "首条消息",
-      "projectsReading": "项目：正在查看你在 Orca 中的项目…",
+      "projectsReading": "项目：正在查看你在 Adehone 中的项目…",
       "projectsDone": "已查看你的项目",
-      "projectsNone": "Orca 中还没有项目",
+      "projectsNone": "Adehone 中还没有项目",
       "projectsOne": "找到 1 个项目：{{names}}",
       "projectsMany": "找到 {{count}} 个项目：{{names}}",
       "githubReading": "GitHub：正在读取你未关闭的 PR…",
@@ -28740,15 +28740,15 @@
       "mentionChatClosed": "{{name}} 的聊天“{{chat}}”已关闭，因此无法接收消息",
       "mentionChatElsewhere": "{{name}} 的聊天“{{chat}}”现在运行在另一台电脑上，因此无法接收来自此聊天的消息",
       "mentionChatNotItsChat": "该聊天不属于 {{name}}",
-      "mentionChatOlderHost": "{{host}} 上的 Orca 暂不支持发送到指定聊天",
-      "mentionChatOlderHostHere": "此 Orca 暂不支持发送到指定聊天",
+      "mentionChatOlderHost": "{{host}} 上的 Adehone 暂不支持发送到指定聊天",
+      "mentionChatOlderHostHere": "此 Adehone 暂不支持发送到指定聊天",
       "mentionChatSelf": "{{name}} 的聊天“{{chat}}”就是当前聊天，因此无法从这里向它发送消息",
       "mentionChatsLoadFailed": "无法加载聊天",
       "mentionChatsLoadFailedOn": "无法加载聊天：{{host}} 未连接",
       "mentionChatsUnreachable": "无法检查 {{name}} 的聊天：{{host}} 未连接",
       "mentionChatsUnreadable": "无法检查 {{name}} 的聊天",
       "mentionChatUnavailable": "聊天不可用",
-      "mentionChatUnverifiable": "Orca 无法确认此聊天能否接收消息",
+      "mentionChatUnverifiable": "Adehone 无法确认此聊天能否接收消息",
       "mentionLabelChatUnavailable": "提及的 bot：{{name}}，聊天不可用",
       "mentionOwnChats": "你的其他聊天",
       "mentionLabelChat": "提及的 bot：{{name}}，聊天"
@@ -28761,7 +28761,7 @@
       "heading": "请求访问权限",
       "decline": "拒绝",
       "full": "请先移除一个人，再添加 {{person}}",
-      "notOwner": "此请求是发给另一个 Orca 账户的。请以 bot 所有者的身份登录后再审核",
+      "notOwner": "此请求是发给另一个 Adehone 账户的。请以 bot 所有者的身份登录后再审核",
       "expired": "此请求已被打开过或已过期。请打开 bot 的设置查看待处理的请求",
       "failed": "无法打开此请求。请检查网络连接，然后重试",
       "notHere": "此请求针对的是另一台电脑上的 bot。请在运行该 bot 的电脑上打开此链接",
@@ -28818,7 +28818,7 @@
       "appAdded": "已添加你团队的 Google 应用",
       "disconnect": {
         "title": "要断开 {{email}} 的连接吗？",
-        "revokeNote": "Bots 将停止在此处使用此账户，Google 也会在所有已授权的地方撤销 Orca 的访问权限。",
+        "revokeNote": "Bots 将停止在此处使用此账户，Google 也会在所有已授权的地方撤销 Adehone 的访问权限。",
         "removeNote": "Bots 将停止在此处使用此账户。Bot 设置会保留，之后点击“连接 Google”即可重新开启。",
         "confirm": "断开连接",
         "remove": "从此电脑移除",
@@ -28890,7 +28890,7 @@
       "importSetupFile": "导入文件",
       "hostChoice": {
         "description": "选择 {{bot}} 登录你的 Gmail、日历和云端硬盘的方式",
-        "orca": "Orca 托管",
+        "orca": "Adehone 托管",
         "soon": "即将推出",
         "orcaNote": "使用 Google 登录",
         "self": "自行托管",
@@ -28903,7 +28903,7 @@
         "privacyPolicy": "应用隐私权政策链接",
         "authorizedDomain": "已获授权的网域",
         "copy": "复制“{{label}}”",
-        "owner": "你是此 Google 应用的所有者；这些链接只是指向 Orca"
+        "owner": "你是此 Google 应用的所有者；这些链接只是指向 Adehone"
       },
       "setUp": "设置 Google",
       "setUpOpens": "将打开 {{bot}} 的聊天",
@@ -28919,7 +28919,7 @@
         },
         "branding": {
           "start": "点击<b>开始</b>",
-          "name": "应用名称填写 <b>Orca</b>，用户支持电子邮件选择你的邮箱",
+          "name": "应用名称填写 <b>Adehone</b>，用户支持电子邮件选择你的邮箱",
           "external": "受众群体：<b>外部</b>",
           "internal": "受众群体：<b>内部</b>",
           "contact": "联系信息中填写你的电子邮件地址",
@@ -28938,7 +28938,7 @@
         "client": {
           "type": "应用类型选择<b>桌面应用</b>，然后点击<b>创建</b>",
           "agent": "如果看到 <b>Use this client for an AI-powered agent</b>，请勾选",
-          "download": "点击<b>下载 JSON</b>。Orca 会保存该密钥"
+          "download": "点击<b>下载 JSON</b>。Adehone 会保存该密钥"
         }
       },
       "pasteHint": "点击“允许”后，页面将无法加载。请将该页面的地址粘贴到这里",
@@ -28999,10 +28999,10 @@
       "cantReach": "无法连接",
       "signInOrca": "适用于 Claude 和 Codex",
       "finishing": "正在完成登录…",
-      "updateHost": "请更新 {{host}} 上的 Orca 以登录应用",
-      "updateServer": "请更新服务器上的 Orca 以登录应用",
-      "updateHostShort": "更新 {{host}} 上的 Orca",
-      "updateServerShort": "更新服务器上的 Orca"
+      "updateHost": "请更新 {{host}} 上的 Adehone 以登录应用",
+      "updateServer": "请更新服务器上的 Adehone 以登录应用",
+      "updateHostShort": "更新 {{host}} 上的 Adehone",
+      "updateServerShort": "更新服务器上的 Adehone"
     },
     "upNext": {
       "looked": "巡视于 {{time}}",
@@ -29057,7 +29057,7 @@
       "secretWhere": "{{flag}}，位于 {{where}} 第 {{line}} 行",
       "view": "查看",
       "goToLine": "转到该行",
-      "openFailed": "Orca 无法打开此文件",
+      "openFailed": "Adehone 无法打开此文件",
       "description": "任何拥有链接的人都可以创建副本",
       "removeSecret": "移除密钥后才能发布",
       "cancel": "取消",
@@ -29119,8 +29119,8 @@
       "warnings": "{{count}} 个警告",
       "nothingFound": "未发现问题",
       "whereLine": "{{where}} 第 {{line}} 行",
-      "reconnect": "请重新登录 Orca 以分享",
-      "signIn": "请登录 Orca 以分享",
+      "reconnect": "请重新登录 Adehone 以分享",
+      "signIn": "请登录 Adehone 以分享",
       "receive": {
         "fromLinkMenu": "从链接创建…",
         "fromLink": "从链接创建",
@@ -29173,8 +29173,8 @@
         "prepareAgain": "在此期间，此 bot 已从另一个窗口分享。请重新打开“分享 bot”",
         "stopped": "此链接已停用。发布即可生成新链接",
         "moved": "此链接已在其他地方更新。请重新打开“分享 bot”查看",
-        "unavailable": "Orca Cloud 暂不支持分享 bot",
-        "avatarRefused": "Orca Cloud 拒绝了 bot 的头像。请换一个头像后重试",
+        "unavailable": "Adehone Cloud 暂不支持分享 bot",
+        "avatarRefused": "Adehone Cloud 拒绝了 bot 的头像。请换一个头像后重试",
         "tooLarge": "此 bot 太大，无法分享。请去掉部分记忆或技能后重试"
       },
       "duplicateSkill": "同名，位于 {{folder}} · 不会分享"
@@ -29245,41 +29245,41 @@
     },
     "host": {
       "errors": {
-        "signedOut": "要连接 {{service}}，请先让 {{host}} 登录 Orca Cloud",
-        "accountChanged": "{{host}} 的 Orca 登录已变更。请重新开始",
-        "accountChangedHere": "此电脑的 Orca 登录已变更。请重新开始",
-        "notRouted": "{{service}} 的页面必须在 Orca 中 {{host}} 的浏览器里打开。请重新连接 {{host}}，然后重新开始"
+        "signedOut": "要连接 {{service}}，请先让 {{host}} 登录 Adehone Cloud",
+        "accountChanged": "{{host}} 的 Adehone 登录已变更。请重新开始",
+        "accountChangedHere": "此电脑的 Adehone 登录已变更。请重新开始",
+        "notRouted": "{{service}} 的页面必须在 Adehone 中 {{host}} 的浏览器里打开。请重新连接 {{host}}，然后重新开始"
       },
       "thisComputer": "此电脑",
       "pageUnrouted": "无法连接到 {{host}}，因此无法在其浏览器中打开此页面。请重新连接 {{host}}，然后重试",
       "botWorkspaceUnavailable": "此智能体的工作区目前在这里不可用，因此无法在其中打开该页面",
       "signIn": {
-        "waitingFirst": "请在 Orca 中 {{host}} 的浏览器里，登录 {{host}} 应使用的 Orca 账户。请确认页面显示 {{code}}",
-        "waiting": "请在 Orca 中 {{host}} 的浏览器里批准。请确认页面显示 {{code}}",
+        "waitingFirst": "请在 Adehone 中 {{host}} 的浏览器里，登录 {{host}} 应使用的 Adehone 账户。请确认页面显示 {{code}}",
+        "waiting": "请在 Adehone 中 {{host}} 的浏览器里批准。请确认页面显示 {{code}}",
         "copied": "已复制链接",
         "copyLink": "复制链接",
         "cancel": "取消",
         "again": "重新登录 {{host}}",
         "start": "在 {{host}} 上登录",
         "trust": "任何与 {{host}} 配对的人都可以使用其账户的连接器",
-        "updateFirst": "请先更新 {{host}} 上的 Orca，然后从这里登录",
-        "unconfigured": "{{host}} 上的 Orca 构建时未包含 Orca Cloud 登录。请在该主机上安装 Orca 正式版后再登录",
-        "unread": "无法读取 {{host}} 的 Orca 登录状态",
+        "updateFirst": "请先更新 {{host}} 上的 Adehone，然后从这里登录",
+        "unconfigured": "{{host}} 上的 Adehone 构建时未包含 Adehone Cloud 登录。请在该主机上安装 Adehone 正式版后再登录",
+        "unread": "无法读取 {{host}} 的 Adehone 登录状态",
         "readAgain": "重试"
       },
       "notice": {
         "notReachingHost": "Slack、Linear 和 GitHub 无法连接到 {{host}} 上的 bots",
         "notReaching": "Slack、Linear 和 GitHub 无法连接到 {{name}}",
-        "updateNeeded": "请更新 {{host}} 上的 Orca，以便从这里设置 {{name}} 的连接器",
-        "unreachable": "{{host}} 无法连接到 Orca Cloud",
-        "cantSave": "{{host}} 无法保存 Orca 登录信息：{{reason}}",
-        "cantSaveNext": "请在 {{host}} 上解锁或设置钥匙串，并在那里重启 Orca，然后在这里为它登录",
-        "lapsed": "{{host}} 上 {{email}} 的 Orca 登录已变更",
-        "lapsedNoEmail": "{{host}} 的 Orca 登录已变更",
-        "signedOut": "{{host}} 未登录 Orca",
+        "updateNeeded": "请更新 {{host}} 上的 Adehone，以便从这里设置 {{name}} 的连接器",
+        "unreachable": "{{host}} 无法连接到 Adehone Cloud",
+        "cantSave": "{{host}} 无法保存 Adehone 登录信息：{{reason}}",
+        "cantSaveNext": "请在 {{host}} 上解锁或设置钥匙串，并在那里重启 Adehone，然后在这里为它登录",
+        "lapsed": "{{host}} 上 {{email}} 的 Adehone 登录已变更",
+        "lapsedNoEmail": "{{host}} 的 Adehone 登录已变更",
+        "signedOut": "{{host}} 未登录 Adehone",
         "linksBelong": "{{name}} 的连接器属于 {{email}}",
-        "signedOutFirst": "{{host}} 未登录 Orca，因此 {{name}} 暂时无法使用 Slack、Linear 或 GitHub",
-        "linksBelongElsewhere": "{{name}} 的连接器属于另一个 Orca 账户"
+        "signedOutFirst": "{{host}} 未登录 Adehone，因此 {{name}} 暂时无法使用 Slack、Linear 或 GitHub",
+        "linksBelongElsewhere": "{{name}} 的连接器属于另一个 Adehone 账户"
       }
     },
     "settingsPage": {
@@ -29417,7 +29417,7 @@
       "computerFoot": "它的连接器、工具和文件位于此电脑上",
       "pairedServer": "已配对的服务器 · 运行此 bot 的聊天、工具和自动化",
       "thisComputerDetail": "此电脑",
-      "orcaAccount": "Orca 账户",
+      "orcaAccount": "Adehone 账户",
       "folder": "文件夹",
       "copyPath": "复制路径",
       "topicFiles": "主题文件",
@@ -29465,25 +29465,25 @@
       "sharingOn": "已开启"
     },
     "cloudSignIn": {
-      "automationScheduledOnly": "仅按计划运行：未登录 Orca 期间，事件触发已暂停",
-      "automationPaused": "未登录 Orca 期间已暂停",
-      "botOff": "未登录 Orca · Slack、事件和分享已关闭",
-      "accessRequests": "访问请求需要登录 Orca",
+      "automationScheduledOnly": "仅按计划运行：未登录 Adehone 期间，事件触发已暂停",
+      "automationPaused": "未登录 Adehone 期间已暂停",
+      "botOff": "未登录 Adehone · Slack、事件和分享已关闭",
+      "accessRequests": "访问请求需要登录 Adehone",
       "signIn": "登录",
-      "slack": "Slack 通过 Orca Cloud 连接。请登录 Orca 以继续",
-      "github": "GitHub 通过 Orca Cloud 连接。请登录 Orca 以继续",
-      "linear": "Linear 通过 Orca Cloud 连接。请登录 Orca 以继续",
+      "slack": "Slack 通过 Adehone Cloud 连接。请登录 Adehone 以继续",
+      "github": "GitHub 通过 Adehone Cloud 连接。请登录 Adehone 以继续",
+      "linear": "Linear 通过 Adehone Cloud 连接。请登录 Adehone 以继续",
       "cancel": "取消",
       "paused": "未登录期间已暂停",
       "needsSignIn": "需要登录",
-      "toldBot": "我现在已登录 Orca Cloud",
-      "signedIn": "已登录 Orca",
+      "toldBot": "我现在已登录 Adehone Cloud",
+      "signedIn": "已登录 Adehone",
       "continue": "继续",
-      "webhooksChat": "Webhook 需要登录 Orca Cloud。你登录后，我就会创建它",
-      "eventsChat": "{{source}} 事件需要登录 Orca Cloud。你登录后，我就会保存这条规则",
-      "webhooksHostChat": "Webhook 需要 {{host}} 登录 Orca Cloud。它登录后，我就会创建它",
-      "eventsHostChat": "{{source}} 事件需要 {{host}} 登录 Orca Cloud。它登录后，我就会保存这条规则",
-      "webhooksNotReaching": "Orca Cloud 无法连接到 {{name}}，因此暂时无法创建 Webhook"
+      "webhooksChat": "Webhook 需要登录 Adehone Cloud。你登录后，我就会创建它",
+      "eventsChat": "{{source}} 事件需要登录 Adehone Cloud。你登录后，我就会保存这条规则",
+      "webhooksHostChat": "Webhook 需要 {{host}} 登录 Adehone Cloud。它登录后，我就会创建它",
+      "eventsHostChat": "{{source}} 事件需要 {{host}} 登录 Adehone Cloud。它登录后，我就会保存这条规则",
+      "webhooksNotReaching": "Adehone Cloud 无法连接到 {{name}}，因此暂时无法创建 Webhook"
     },
     "newAgentChat": "新的 {{agent}} 聊天",
     "newChatWithAgent": "与 {{name}} 的新聊天 · {{agent}}",
@@ -29510,7 +29510,7 @@
       "hooks": "Webhook",
       "addInChat": "在聊天中添加",
       "editDraft": "修改“{{automation}}”的运行时机： ",
-      "orphanedNote": "{{bot}} 的 Orca 已不再列出此自动化，因此不会处理调用",
+      "orphanedNote": "{{bot}} 的 Adehone 已不再列出此自动化，因此不会处理调用",
       "checksLabel": "验证",
       "checks": {
         "change": "更改…",
@@ -29571,11 +29571,11 @@
         "copy": "复制密钥",
         "changeTitle": "更改签名密钥",
         "addTitle": "添加签名密钥",
-        "note": "之后 Orca 只接受用此密钥签名的调用，因此仅凭泄露的 URL 无法启动“{{automation}}”",
+        "note": "之后 Adehone 只接受用此密钥签名的调用，因此仅凭泄露的 URL 无法启动“{{automation}}”",
         "sender": "发送方",
-        "generateNote": "此密钥由 Orca 生成。接下来请将其复制到 {{sender}} 中",
+        "generateNote": "此密钥由 Adehone 生成。接下来请将其复制到 {{sender}} 中",
         "mode": "密钥来源",
-        "modeGenerate": "由 Orca 生成",
+        "modeGenerate": "由 Adehone 生成",
         "modePaste": "粘贴发送方的密钥",
         "pasteNote": "当发送方提供了自己的密钥时使用此项",
         "paste": "{{sender}} 密钥",
@@ -29594,11 +29594,11 @@
       "resultsNowhere": "结果不发送",
       "resultsToPlace": "结果发送到 {{place}}",
       "hostOffline": "{{bot}} 的电脑已离线",
-      "hostNeedsUpdate": "你的 Orca 需要更新，{{bot}} 才能执行此操作",
+      "hostNeedsUpdate": "你的 Adehone 需要更新，{{bot}} 才能执行此操作",
       "errors": {
         "notFound": "此 Webhook 已被删除",
         "unavailable": "Webhook 暂时不可用",
-        "signedOut": "未登录 Orca 期间已暂停"
+        "signedOut": "未登录 Adehone 期间已暂停"
       },
       "calls": {
         "refused": "已拒绝 ×{{count}}",
@@ -29657,8 +29657,8 @@
         "starts": "Webhook · 启动“{{automation}}”"
       },
       "theBot": "该 bot",
-      "fallbackNamed": "Webhook“{{automation}}”已生效。请在电脑上的 Orca 中复制其 URL：设置 › Bots › {{bot}} › Webhook。要暂停或删除它，请在这里告诉 {{bot}}",
-      "fallback": "此 Webhook 已生效。请在电脑上的 Orca 中，从 bot 设置的“Webhook”下复制其 URL。要暂停或删除它，请在这里告诉 bot",
+      "fallbackNamed": "Webhook“{{automation}}”已生效。请在电脑上的 Adehone 中复制其 URL：设置 › Bots › {{bot}} › Webhook。要暂停或删除它，请在这里告诉 {{bot}}",
+      "fallback": "此 Webhook 已生效。请在电脑上的 Adehone 中，从 bot 设置的“Webhook”下复制其 URL。要暂停或删除它，请在这里告诉 bot",
       "copiedNoClear": "用完后请清空剪贴板；此浏览器无法保证会替你清空",
       "pausedSignedOut": "{{hooks}} · 未登录期间已暂停",
       "copied": "已复制"
@@ -29727,8 +29727,8 @@
       "connection": {
         "description": "{{repos}} · 已以 @{{login}} 身份登录",
         "unlinked": "使用 GitHub 登录以关联你的 GitHub 账户",
-        "notInstalled": "已以 @{{login}} 身份登录。请在允许它工作的仓库上安装 Orca 应用",
-        "removeNote": "大家将无法再在 GitHub 上向它提问，它的 GitHub 人员名单也会被清空。Orca 应用不会被卸载",
+        "notInstalled": "已以 @{{login}} 身份登录。请在允许它工作的仓库上安装 Adehone 应用",
+        "removeNote": "大家将无法再在 GitHub 上向它提问，它的 GitHub 人员名单也会被清空。Adehone 应用不会被卸载",
         "removeConfirm": "移除",
         "finishSetup": "完成设置",
         "orgDescription": "{{repos}} · 已以 @{{login}} 身份登录",
@@ -29778,7 +29778,7 @@
         "otherComputer": "另一台电脑上的 bot",
         "title": "GitHub",
         "description": "你的 GitHub 账户，让你的 bots 知道哪些评论是你发的",
-        "linked": "已关联到此 Orca 账户",
+        "linked": "已关联到此 Adehone 账户",
         "unlink": "取消关联",
         "unlinked": "请在 bot 的“连接器”中添加 GitHub，以关联你的账户",
         "descriptionOnHost": "{{host}} 上的 bots 以此 GitHub 用户的身份工作，并归其所有",
@@ -29786,17 +29786,17 @@
         "descriptionOnHostPlural": "{{host}} 上的 bots 以这些 GitHub 用户的身份工作，并归他们所有",
         "linkedAs": "已关联为 {{login}}",
         "reconnect": "重新连接",
-        "linkFromApp": "请在与 {{host}} 配对的电脑上通过 Orca 关联 GitHub",
-        "linkedOnHost": "已关联到 {{host}} 的 Orca 账户"
+        "linkFromApp": "请在与 {{host}} 配对的电脑上通过 Adehone 关联 GitHub",
+        "linkedOnHost": "已关联到 {{host}} 的 Adehone 账户"
       },
       "errors": {
         "off": "GitHub 即将推出",
         "rateLimited": "尝试次数过多。请等待一分钟，然后重试",
         "unavailable": "GitHub 未响应。请重试",
-        "signedOut": "登录 Orca Cloud 以连接 GitHub",
-        "unreachable": "无法连接到 Orca Cloud。请检查网络连接，然后重试",
-        "wrongAccount": "此登录是从另一个 Orca 账户发起的。请从当前账户重新使用 GitHub 登录",
-        "alreadyLinked": "此 Orca 账户已关联到另一个 GitHub 用户。请先在“设置 › Bots › GitHub”中取消关联",
+        "signedOut": "登录 Adehone Cloud 以连接 GitHub",
+        "unreachable": "无法连接到 Adehone Cloud。请检查网络连接，然后重试",
+        "wrongAccount": "此登录是从另一个 Adehone 账户发起的。请从当前账户重新使用 GitHub 登录",
+        "alreadyLinked": "此 Adehone 账户已关联到另一个 GitHub 用户。请先在“设置 › Bots › GitHub”中取消关联",
         "replaced": "GitHub 连接未完成，可能已被之后发起的 Linear 或 GitHub 连接取代。请重新开始"
       },
       "howToAsk": "在议题或 PR 中提及 <code>{{mention}} {{handle}} …</code>",
@@ -29804,11 +29804,11 @@
       "connect": {
         "button": "连接 GitHub",
         "waiting": "请在浏览器中完成 GitHub 登录…",
-        "requested": "已请求组织所有者批准 Orca 应用",
-        "notInstalled": "Orca 应用尚未安装在你的任何仓库上",
+        "requested": "已请求组织所有者批准 Adehone 应用",
+        "notInstalled": "Adehone 应用尚未安装在你的任何仓库上",
         "connected": "已连接 GitHub",
         "pickRepositories": "登录并选择 {{name}} 可以在哪些仓库中工作",
-        "readsOnly": "Orca 只会读取你的 GitHub 用户名和 ID"
+        "readsOnly": "Adehone 只会读取你的 GitHub 用户名和 ID"
       },
       "allRepositoriesShort": "所有仓库",
       "signOut": {
@@ -29956,7 +29956,7 @@
     "avatar": {
       "intake": {
         "tooBig": "该图片超过 10 MB",
-        "type": "Orca 无法读取该图片。请尝试 PNG 或 JPEG",
+        "type": "Adehone 无法读取该图片。请尝试 PNG 或 JPEG",
         "tooSmall": "图片太小。请使用至少 128 px 的图片",
         "dropLine": "拖放以使用此图片",
         "saved": "头像已更新",
@@ -30003,7 +30003,7 @@
       "description": "{{name}} 的主聊天将在 {{agent}} 上重新开始。当前对话会保留在历史记录中",
       "kept": "保留：灵魂、记忆、自动化、连接器",
       "notKept": "不保留：当前对话",
-      "threads": "已有 Orca 聊天的 Slack 话题会保留该聊天的智能体",
+      "threads": "已有 Adehone 聊天的 Slack 话题会保留该聊天的智能体",
       "action": "切换到 {{agent}}"
     },
     "paused": {
@@ -30039,14 +30039,14 @@
         "keyAdded": "✓ 已添加密钥",
         "declined": "已关闭",
         "connectTitle": "连接 {{app}}",
-        "connectNote": "将在浏览器中打开 Composio 提供的 {{app}} 登录页面。此登录信息由 Composio 保管，而非 Orca",
+        "connectNote": "将在浏览器中打开 Composio 提供的 {{app}} 登录页面。此登录信息由 Composio 保管，而非 Adehone",
         "keyFirst": "请先添加你的 Composio 密钥",
         "connect": "连接 {{app}}",
         "ready": "就绪",
         "readyTitle": "{{bot}} 现在可以使用 {{app}} 了",
         "readyAs": "已以 {{label}} 身份连接。你的应用登录信息由 Composio 保管",
         "browse": "浏览更多应用",
-        "connectKeyNote": "将打开 Composio，以输入你的 {{app}} API 密钥。该密钥由 Composio 保管，而非 Orca",
+        "connectKeyNote": "将打开 Composio，以输入你的 {{app}} API 密钥。该密钥由 Composio 保管，而非 Adehone",
         "goneHeading": "需要设置",
         "goneTitle": "{{bot}} 目前无法使用 {{app}}",
         "goneDetail": "请在 bot 的“工具”中重新设置"
@@ -30087,7 +30087,7 @@
         "byHand": "手动设置",
         "done": "✓ 已设置",
         "chosenByHand": "在 Composio 中手动设置",
-        "oneAddressNote": "Orca 会为你登录的账户启用 {{trigger}}。你的 Composio 项目的事件都会发送到 Orca 的同一个地址，再分别转给对应的 bot"
+        "oneAddressNote": "Adehone 会为你登录的账户启用 {{trigger}}。你的 Composio 项目的事件都会发送到 Adehone 的同一个地址，再分别转给对应的 bot"
       },
       "removeKey": {
         "title": "要移除你的 Composio 密钥吗？",
@@ -30120,7 +30120,7 @@
         "paste": "在 Composio 中打开项目设置，进入 Webhooks，然后粘贴该地址",
         "open": "打开 Composio",
         "done": "完成",
-        "doneNote": "随后 Orca 会启用 {{trigger}}，并保存 Composio 的签名密钥"
+        "doneNote": "随后 Adehone 会启用 {{trigger}}，并保存 Composio 的签名密钥"
       },
       "disconnectTitle": "要断开与 {{app}} 的连接吗？",
       "disconnectNote": "{{bot}} 将无法再使用 {{app}}。你可以随时重新连接",
@@ -30136,14 +30136,14 @@
       "signInOnComposio": "请在 Composio 页面上登录 {{app}}",
       "fixKey": "修复密钥",
       "signInsUnreadShort": "无法读取登录信息",
-      "signInsUnreadNote": "Orca 无法向 Composio 查询 {{bot}} 使用了哪些应用",
+      "signInsUnreadNote": "Adehone 无法向 Composio 查询 {{bot}} 使用了哪些应用",
       "signInEnded": "登录被拒绝、失败或超时",
       "tryAgain": "重试"
     },
     "linear": {
       "connection": {
         "unlinked": "完成设置以关联你在 {{workspace}} 中的 Linear 账户",
-        "removeNote": "{{workspace}} 中的人将无法再把议题交给它，它的 Linear 人员名单也会被清空。Orca 不会从该工作区卸载",
+        "removeNote": "{{workspace}} 中的人将无法再把议题交给它，它的 Linear 人员名单也会被清空。Adehone 不会从该工作区卸载",
         "removeConfirm": "移除",
         "finishSetup": "完成设置"
       },
@@ -30153,9 +30153,9 @@
         "close": "关闭",
         "checking": "正在检查 Linear…",
         "retry": "重试",
-        "install": "Orca 尚未安装到 {{workspace}}。Linear 管理员只需为所有人安装一次",
+        "install": "Adehone 尚未安装到 {{workspace}}。Linear 管理员只需为所有人安装一次",
         "installing": "正在等待安装…",
-        "noInstallYet": "Orca 尚未安装到该工作区",
+        "noInstallYet": "Adehone 尚未安装到该工作区",
         "finish": "完成",
         "title": "将 {{name}} 添加到 Linear",
         "titleOn": "Linear 中的 {{name}}",
@@ -30163,8 +30163,8 @@
         "connectTitle": "连接 Linear",
         "tryIt": "在任意 Linear 议题上试试",
         "orLabel": "或添加标签",
-        "actsOnHost": "Orca 会在 {{host}} 上以该 Linear 用户的身份操作",
-        "actsAsYou": "Orca 会从此电脑以你的身份在 Linear 中操作"
+        "actsOnHost": "Adehone 会在 {{host}} 上以该 Linear 用户的身份操作",
+        "actsAsYou": "Adehone 会从此电脑以你的身份在 Linear 中操作"
       },
       "whoCanAsk": {
         "outsiders": "{{workspace}} 中的其他人会收到一条公开回复，可借此向你申请访问权限",
@@ -30179,21 +30179,21 @@
         "description": "你在每个工作区中的 Linear 账户，让 Linear 知道哪些请求是你发出的",
         "linkedAs": "已关联为 {{name}}",
         "unlink": "取消关联",
-        "linkHelp": "要关联你的 Linear 账户，或将其从另一个 Orca 账户移到这里，请在 bot 的“连接器”中连接 Linear",
+        "linkHelp": "要关联你的 Linear 账户，或将其从另一个 Adehone 账户移到这里，请在 bot 的“连接器”中连接 Linear",
         "descriptionOnHost": "{{host}} 上的 bots 以此 Linear 用户的身份操作，并归其所有。登录信息保存在 {{host}} 上",
         "reconnect": "重新连接",
-        "linkFromApp": "请在与 {{host}} 配对的电脑上通过 Orca 关联 Linear"
+        "linkFromApp": "请在与 {{host}} 配对的电脑上通过 Adehone 关联 Linear"
       },
       "errors": {
         "off": "Linear 即将推出",
         "notLinked": "请在 bot 的“连接器”中连接 Linear，以关联你的账户",
-        "alreadyLinked": "此 Orca 账户已关联到该工作区中的另一个 Linear 用户。请先在“设置 › Bots › Linear”中取消关联",
+        "alreadyLinked": "此 Adehone 账户已关联到该工作区中的另一个 Linear 用户。请先在“设置 › Bots › Linear”中取消关联",
         "notAMember": "只有该 Linear 工作区的正式成员才能从中选择人员",
         "rateLimited": "尝试次数过多。请等待一分钟，然后重试",
         "unavailable": "Linear 未响应。请重试",
-        "signedOut": "登录 Orca Cloud 以连接 Linear",
-        "unreachable": "无法连接到 Orca Cloud。请检查网络连接，然后重试",
-        "wrongAccount": "此登录是从另一个 Orca 账户发起的。请从当前账户重新连接 Linear",
+        "signedOut": "登录 Adehone Cloud 以连接 Linear",
+        "unreachable": "无法连接到 Adehone Cloud。请检查网络连接，然后重试",
+        "wrongAccount": "此登录是从另一个 Adehone 账户发起的。请从当前账户重新连接 Linear",
         "replaced": "Linear 连接未完成，可能已被之后发起的 Linear 或 GitHub 连接取代。请重新开始"
       },
       "howToAsk": "在议题中提及 <code>@Orca {{handle}}</code>，或添加标签 <code>bot:{{handle}}</code>",
@@ -30203,7 +30203,7 @@
         "waiting": "请在浏览器中完成 Linear 登录…",
         "turnOn": "启用 {{name}}",
         "connected": "已连接 Linear",
-        "stuck": "卡在显示“Could not find OAuth client”的 Linear 页面上？Orca 的 Linear 应用尚未向此工作区开放。拥有该应用的工作区的管理员必须将其设为公开",
+        "stuck": "卡在显示“Could not find OAuth client”的 Linear 页面上？Adehone 的 Linear 应用尚未向此工作区开放。拥有该应用的工作区的管理员必须将其设为公开",
         "another": "使用其他工作区",
         "pick": "选择一个 Linear 工作区",
         "pickWorkspace": "登录并选择 {{name}} 要在其中工作的 Linear 工作区"
@@ -30284,7 +30284,7 @@
         "waitingDetail": "请在 Slack 中完成操作。如果你的工作区需要管理员批准新应用，{{name}} 会在管理员批准后加入。如果管理员拒绝，点击“重新安装”会复用同一个应用",
         "close": "关闭",
         "installAgain": "重新安装",
-        "uncertain": "Slack 可能已创建一个名为 {{name}} 的应用，但 Orca 无法使用它。如果该应用存在，请在 Slack 应用设置中将其删除，然后重新设置",
+        "uncertain": "Slack 可能已创建一个名为 {{name}} 的应用，但 Adehone 无法使用它。如果该应用存在，请在 Slack 应用设置中将其删除，然后重新设置",
         "uncertainChecked": "我已检查 Slack：没有这个应用，或我已将其删除",
         "again": "重新设置",
         "done": "完成",
@@ -30316,8 +30316,8 @@
       "problem": {
         "reconnecting": "正在等待 {{host}} 重新连接…",
         "reconnectingNext": "{{host}} 恢复后，Slack 设置会自动重新开始。你无需从头开始，也无需粘贴令牌",
-        "offline": "Orca 无法连接到 {{host}}",
-        "offlineNext": "请确认 {{host}} 上的 Orca 正在运行，然后重新连接。{{host}} 恢复后，Slack 设置会重新开始",
+        "offline": "Adehone 无法连接到 {{host}}",
+        "offlineNext": "请确认 {{host}} 上的 Adehone 正在运行，然后重新连接。{{host}} 恢复后，Slack 设置会重新开始",
         "otherUser": "另一个 Slack 账号批准了此连接",
         "otherUserNext": "登录了另一个 Slack 账号的人批准了 Slack 链接，因此 {{bot}} 无法以你的身份操作。请获取新链接，并在登录你自己的 Slack 账号后批准",
         "expired": "Slack 登录未完成。",
@@ -30327,7 +30327,7 @@
         "reconnect": "重新连接",
         "replaceToken": "更换令牌",
         "details": "详细信息",
-        "reconnectFailed": "Orca 仍无法连接到 {{host}}"
+        "reconnectFailed": "Adehone 仍无法连接到 {{host}}"
       },
       "connection": {
         "appSettings": "Slack 应用设置",
@@ -30349,7 +30349,7 @@
         "step1": "在 Slack 应用设置中找到“Your App Configuration Tokens”，然后选择“Generate Token”",
         "step2": "选择 bot 要加入的工作区",
         "step3": "复制 Refresh Token 并粘贴到下方",
-        "kept": "Orca Cloud 会加密保存此令牌，之后在此工作区添加 bots 只需点击一下",
+        "kept": "Adehone Cloud 会加密保存此令牌，之后在此工作区添加 bots 只需点击一下",
         "label": "配置刷新令牌",
         "accessPasted": "这是 Access Token。请复制它旁边的 Refresh Token",
         "openSettings": "打开 Slack 应用设置",
@@ -30357,16 +30357,16 @@
         "copyRefresh": "复制 Refresh Token"
       },
       "workspaces": {
-        "otherTeam": "该令牌属于另一个工作区。Orca 会为那个工作区保留它",
+        "otherTeam": "该令牌属于另一个工作区。Adehone 会为那个工作区保留它",
         "reconnected": "Slack 工作区已重新连接",
         "reconnectTitle": "重新连接 Slack 工作区",
         "reconnectFor": "工作区 {{teamId}}",
         "reconnect": "重新连接",
         "forgotten": "已忘记。已在该工作区的 bots 会留在 Slack 中；新 bots 加入该工作区需要新令牌",
-        "description": "对于 Slack，Orca Cloud 会为每个工作区加密保存一个令牌，用于创建各个 bot 的应用",
+        "description": "对于 Slack，Adehone Cloud 会为每个工作区加密保存一个令牌，用于创建各个 bot 的应用",
         "forget": "忘记",
         "title": "Slack 工作区",
-        "descriptionFor": "Orca Cloud 会为 {{account}} 在每个工作区加密保存一个令牌。连接该工作区的 Slack 用户拥有通过该令牌安装的 bots",
+        "descriptionFor": "Adehone Cloud 会为 {{account}} 在每个工作区加密保存一个令牌。连接该工作区的 Slack 用户拥有通过该令牌安装的 bots",
         "installedBy": "{{bot}}，由 @{{user}} 安装"
       },
       "errors": {
@@ -30375,19 +30375,19 @@
         "rateLimited": "尝试次数过多。请等待一分钟，然后重试",
         "slackUnavailable": "Slack 未响应。请重试",
         "slackRefused": "Slack 拒绝设置该应用",
-        "unknownBot": "Orca Cloud 尚未识别此 bot。请过一分钟后重试",
+        "unknownBot": "Adehone Cloud 尚未识别此 bot。请过一分钟后重试",
         "wrongWorkspace": "此 bot 的 Slack 应用位于另一个工作区。请先将其从 Slack 中移除",
         "notInstalled": "请先将此 bot 添加到 Slack",
-        "signedOut": "登录 Orca Cloud 以连接 Slack",
-        "unreachable": "无法连接到 Orca Cloud。请检查网络连接，然后重试",
+        "signedOut": "登录 Adehone Cloud 以连接 Slack",
+        "unreachable": "无法连接到 Adehone Cloud。请检查网络连接，然后重试",
         "handOffExpired": "该移交已过期或已被使用。请重试"
       },
       "howToAsk": "在频道中提及 <code>@{{name}}</code>，或给它发私信",
       "handOff": {
-        "confirmMac": "此 Mac 上的 Orca 会使用 {{email}} 的令牌创建 Slack 应用。{{host}} 只会获得此 bot 的应用",
-        "confirm": "此电脑上的 Orca 会使用 {{email}} 的令牌创建 Slack 应用。{{host}} 只会获得此 bot 的应用",
-        "offerMac": "此 Mac 已以 {{email}} 身份登录 Orca，该账户已有 {{workspace}} 的令牌",
-        "offer": "此电脑已以 {{email}} 身份登录 Orca，该账户已有 {{workspace}} 的令牌",
+        "confirmMac": "此 Mac 上的 Adehone 会使用 {{email}} 的令牌创建 Slack 应用。{{host}} 只会获得此 bot 的应用",
+        "confirm": "此电脑上的 Adehone 会使用 {{email}} 的令牌创建 Slack 应用。{{host}} 只会获得此 bot 的应用",
+        "offerMac": "此 Mac 已以 {{email}} 身份登录 Adehone，该账户已有 {{workspace}} 的令牌",
+        "offer": "此电脑已以 {{email}} 身份登录 Adehone，该账户已有 {{workspace}} 的令牌",
         "use": "使用它 →",
         "question": "改用你的 {{device}} 上的 Slack 登录？",
         "firstQuestion": "你的 {{device}} 已登录 Slack。使用该登录？",
@@ -30398,15 +30398,15 @@
         "anotherWay": "用其他方式设置"
       },
       "postAs": {
-        "orcaUser": "Orca 用户",
+        "orcaUser": "Adehone 用户",
         "thisComputer": "此电脑",
         "caption": "在此 bot 的 Slack 话题中",
         "approve": "在 Slack 中批准",
         "cancel": "取消",
-        "viaOrca": "{{name}}（通过 Orca）",
+        "viaOrca": "{{name}}（通过 Adehone）",
         "app": "应用",
         "sample": "那之后就发布吧",
-        "line": "你从 Orca 回复 Slack 话题时，会以 <picker>{{name}}</picker> 的身份发布",
+        "line": "你从 Adehone 回复 Slack 话题时，会以 <picker>{{name}}</picker> 的身份发布",
         "waitingOn": "切换为 {{name}} 需要 {{installer}} 在 Slack 中批准",
         "waiting": "切换为 {{name}} 需要在 Slack 中获得批准"
       },
@@ -30418,7 +30418,7 @@
         "why": "Slack 已不再接受此工作区保存的令牌",
         "submit": "重新连接",
         "about": "关于 Slack 令牌",
-        "kept": "Orca Cloud 会加密保存新令牌，以后在这里创建 bots 只需点击一下",
+        "kept": "Adehone Cloud 会加密保存新令牌，以后在这里创建 bots 只需点击一下",
         "mineMac": "这台 Mac 上的令牌已过期。请粘贴新令牌",
         "mine": "这台电脑上的令牌已过期。请粘贴新令牌",
         "paste": "粘贴新令牌以重新连接",
@@ -30430,8 +30430,8 @@
         "continue": "继续"
       },
       "approve": {
-        "noteUntil": "仅可使用一次，有效期至 {{time}}。请在那里以你自己的身份登录 Slack；Orca Cloud 会把批准结果传回 {{host}}。",
-        "note": "仅可使用一次。请在那里以你自己的身份登录 Slack；Orca Cloud 会把批准结果传回 {{host}}。",
+        "noteUntil": "仅可使用一次，有效期至 {{time}}。请在那里以你自己的身份登录 Slack；Adehone Cloud 会把批准结果传回 {{host}}。",
+        "note": "仅可使用一次。请在那里以你自己的身份登录 Slack；Adehone Cloud 会把批准结果传回 {{host}}。",
         "noteUntilHere": "仅可使用一次，有效期至 {{time}}。请在那里以你自己的身份登录 Slack。",
         "noteHere": "仅可使用一次。请在那里以你自己的身份登录 Slack。",
         "openOn": "在 {{host}} 上打开 Slack",
@@ -30443,8 +30443,8 @@
     "page": {
       "serverDownTitle": "无法连接到 {{host}}",
       "serverReconnectingTitle": "正在重新连接到 {{host}}",
-      "serverDownBody": "请确认 {{host}} 上正在运行 Orca，然后重新连接",
-      "serverReconnectingBody": "与服务器的连接已断开。Orca 正在自动重试",
+      "serverDownBody": "请确认 {{host}} 上正在运行 Adehone，然后重新连接",
+      "serverReconnectingBody": "与服务器的连接已断开。Adehone 正在自动重试",
       "serverReconnect": "重新连接"
     },
     "setup": {
@@ -30455,7 +30455,7 @@
     "failures": {
       "lookUnfinished": "上次巡视没有完成。",
       "lookTimedOut": "上次巡视在 {{minutes}} 分钟后被停止。",
-      "lookInterrupted": "上次巡视期间 Orca 停止了。",
+      "lookInterrupted": "上次巡视期间 Adehone 停止了。",
       "lookCouldNotStart": "上次巡视无法开始。",
       "lookAsleep": "这台电脑处于睡眠状态，错过了上次巡视。",
       "tidyUpUnfinished": "上次整理没有完成。",
@@ -30464,11 +30464,11 @@
       "tidyUpAsleep": "这台电脑处于睡眠状态，错过了上次整理。",
       "tidyUpUnreadChats": "上次整理无法读取它的聊天，因此没有运行。",
       "tidyUpNoDraft": "上次整理没有回复新的 MEMORY.md。",
-      "tidyUpNoOps": "上次整理的回复不是 Orca 能读取的更改列表。",
-      "tidyUpAllSkipped": "Orca 跳过了上次整理要求的所有更改，因此没有任何变化。（{{detail}}）",
+      "tidyUpNoOps": "上次整理的回复不是 Adehone 能读取的更改列表。",
+      "tidyUpAllSkipped": "Adehone 跳过了上次整理要求的所有更改，因此没有任何变化。（{{detail}}）",
       "tidyUpNotListLines": "上次整理没有运行：MEMORY.md 中有不少不是列表行的内容，而整理只读取列表行。",
-      "tidyUpMovedOnly": "上次整理把状态行移到了 memory/journal/，但 Orca 无法使用它回复的其余部分。（{{detail}}）",
-      "tidyUpBadTopic": "上次整理指定了 Orca 无法写入的主题文件，因此没有任何变化。",
+      "tidyUpMovedOnly": "上次整理把状态行移到了 memory/journal/，但 Adehone 无法使用它回复的其余部分。（{{detail}}）",
+      "tidyUpBadTopic": "上次整理指定了 Adehone 无法写入的主题文件，因此没有任何变化。",
       "tidyUpTooLong": "上次整理的 MEMORY.md 超过 {{max}} 行且没有变短，因此没有任何变化。",
       "tidyUpTooManyRemoved": "上次整理一次删去了太多行，因此没有任何变化。",
       "tidyUpTooManyAdded": "上次整理一次添加了太多新行，因此没有任何变化。",
@@ -30482,9 +30482,9 @@
       "toolSavedValueGone": "那个已保存的值不再可用。请重新输入，或删除它所在的行。",
       "toolValueMissing": "请为每一行输入值，或删除该行。",
       "toolCredentialsUnreadable": "无法读取机器人已保存的工具凭据。请重新输入该工具的值。",
-      "toolSignInManaged": "这个工具由 Orca 登录。请改为登录或退出它。",
-      "toolCredentialsRaced": "机器人的工具凭据已在另一个 Orca 中更改。请重试。",
-      "toolSourceManaged": "这个工具由 Orca 管理。请到你设置它的地方更改。",
+      "toolSignInManaged": "这个工具由 Adehone 登录。请改为登录或退出它。",
+      "toolCredentialsRaced": "机器人的工具凭据已在另一个 Adehone 中更改。请重试。",
+      "toolSourceManaged": "这个工具由 Adehone 管理。请到你设置它的地方更改。",
       "toolValuesUnmoved": "有个工具仍保存着它的值。请重新打开机器人的工具以迁移这些值。",
       "toolCodexCheckFailed": "Codex 无法检查或连接这些工具。请检查它的设置后重试。",
       "toolCodexNoThread": "Codex 没有启动用于检查工具的线程。",
@@ -30499,7 +30499,7 @@
       "toolSignInEnded": "登录已经结束或超时。请用“连接”重新开始。",
       "toolNotFound": "这个机器人没有名为 {{name}} 的工具。",
       "toolNeedsNoSignIn": "{{name}} 使用已保存的值，无需登录。",
-      "toolSignInAgentUnsupported": "Orca 只为 Claude Code 和 Codex 登录 {{name}}。请改为用它的登录值添加。",
+      "toolSignInAgentUnsupported": "Adehone 只为 Claude Code 和 Codex 登录 {{name}}。请改为用它的登录值添加。",
       "toolCodexNoSignInPage": "Codex 没有提供 {{name}} 的登录页面。",
       "toolClaudeSignInFailed": "Claude 无法开始登录 {{name}}。",
       "toolClaudeNoSignInPage": "Claude 没有打开 {{name}} 的登录页面。",
@@ -30518,7 +30518,7 @@
       "groupNeedsLocalBot": "这个群组至少需要一个在这台电脑上的机器人。",
       "groupNameTaken": "{{name}} 已在这个群组中。成员需要不同的名称，提及才不会混淆。",
       "groupPostFromHost": "要在包含其他电脑上机器人的群组中发帖，请使用 {{host}}。",
-      "groupPeerTooOld": "请更新 {{host}} 上的 Orca，才能把它的机器人加入群组。",
+      "groupPeerTooOld": "请更新 {{host}} 上的 Adehone，才能把它的机器人加入群组。",
       "attachmentUnreadable": "无法读取 {{name}}。",
       "attachmentTooLarge": "{{name}} 超过 {{maxMb}} MB。",
       "attachmentUploading": "{{name}} 仍在上传。",
@@ -30545,7 +30545,7 @@
       "googleAccountsChanged": "这个 bot 的 Google 账户在你打开后有变化，请重新检查并保存。",
       "composioKeyCantCreateSessions": "这个 Composio 密钥无法创建会话。它需要 {{permission}}。",
       "composioKeyNeedsPermission": "这个 Composio 密钥缺少一项权限。它需要 {{permission}}。",
-      "composioKeyMissingPermission": "这个 Composio 密钥缺少 Orca 需要的一项权限。"
+      "composioKeyMissingPermission": "这个 Composio 密钥缺少 Adehone 需要的一项权限。"
     },
     "notices": {
       "couldNotFinish": "{{bot}} 未能完成",
@@ -30578,7 +30578,7 @@
         "unsupported": "暂不支持此应用。",
         "unavailable": "无法连接此应用。请检查地址后重试。",
         "noTool": "这个机器人已经没有那个工具了。",
-        "desktopOnly": "请在 {{host}} 上的 Orca 中登录。",
+        "desktopOnly": "请在 {{host}} 上的 Adehone 中登录。",
         "denied": "未获得访问授权",
         "expired": "登录已过期。请重试。",
         "couldNotSignIn": "无法登录。请重试。"
@@ -30619,8 +30619,8 @@
   "renderer": {
     "lib": {
       "filePreview": {
-        "remoteFileUnsupported": "仅本地文件可在 Orca 浏览器中打开",
-        "twinFileUnsupported": "该项目存在于多个主机上，Orca 无法确定要打开哪个副本"
+        "remoteFileUnsupported": "仅本地文件可在 Adehone 浏览器中打开",
+        "twinFileUnsupported": "该项目存在于多个主机上，Adehone 无法确定要打开哪个副本"
       }
     }
   },
@@ -30633,12 +30633,12 @@
   },
   "wslDriveProject": {
     "label": "Git",
-    "converted": "Orca 会在 Windows 上为此项目运行 Git，终端和智能体仍在 {{distro}} 中运行",
-    "checkFailed": "Orca 无法检查此项目",
-    "convertFailed": "Orca 无法切换 Git",
+    "converted": "Adehone 会在 Windows 上为此项目运行 Git，终端和智能体仍在 {{distro}} 中运行",
+    "checkFailed": "Adehone 无法检查此项目",
+    "convertFailed": "Adehone 无法切换 Git",
     "description": "此项目位于 Windows 驱动器上，WSL 中的 Git 在这里速度很慢，还会漏掉在 Windows 中所做的更改，请改用 Git for Windows；终端和智能体仍留在 {{distro}} 中",
     "useWindowsGit": "使用 Git for Windows",
-    "review": "此项目在 Orca 中的一切都保持不变：其标签页、终端、聊天和工作区都维持原样，正在运行的终端也会继续运行",
+    "review": "此项目在 Adehone 中的一切都保持不变：其标签页、终端、聊天和工作区都维持原样，正在运行的终端也会继续运行",
     "lineEndings": "同时为此仓库设置 core.autocrlf，使 WSL 终端中的 git 不再把每个文件都显示为已更改",
     "cancel": "取消",
     "confirm": "使用 Git for Windows",
@@ -30653,24 +30653,24 @@
   },
   "wslDriveUnc": {
     "label": "位置",
-    "description": "Orca 目前通过 WSL 打开此项目，请改为在 {{drivePath}} 打开：Git 将在 Windows 上运行，在这里会快得多，终端和智能体仍留在 {{distro}} 中",
+    "description": "Adehone 目前通过 WSL 打开此项目，请改为在 {{drivePath}} 打开：Git 将在 Windows 上运行，在这里会快得多，终端和智能体仍留在 {{distro}} 中",
     "convert": "在 {{drivePath}} 打开",
-    "review": "Orca 会暂停此项目的终端并重新启动，然后在 {{drivePath}} 重新打开此项目，标签页、终端及其历史记录、聊天和设置都会随之迁移，已暂停的终端会从中断处继续运行",
+    "review": "Adehone 会暂停此项目的终端并重新启动，然后在 {{drivePath}} 重新打开此项目，标签页、终端及其历史记录、聊天和设置都会随之迁移，已暂停的终端会从中断处继续运行",
     "cancel": "取消",
     "confirm": "重新启动并转换",
-    "failed": "Orca 无法转换此项目",
-    "restarting": "正在重新启动 Orca 以转换此项目…",
+    "failed": "Adehone 无法转换此项目",
+    "restarting": "正在重新启动 Adehone 以转换此项目…",
     "terminalsBusy": "此项目中的部分终端正忙，请等待其完成或将其关闭，然后重试",
-    "pauseFailed": "Orca 无法暂停此项目的终端，因此未做任何更改",
+    "pauseFailed": "Adehone 无法暂停此项目的终端，因此未做任何更改",
     "blocker": {
-      "pending": "Orca 已在转换一个项目，该转换将在 Orca 重新启动时完成",
-      "state": "Orca 发现此项目有无法安全转换的已保存状态，因此未做任何更改",
-      "duplicate": "{{drivePath}} 已是 Orca 中的项目",
+      "pending": "Adehone 已在转换一个项目，该转换将在 Adehone 重新启动时完成",
+      "state": "Adehone 发现此项目有无法安全转换的已保存状态，因此未做任何更改",
+      "duplicate": "{{drivePath}} 已是 Adehone 中的项目",
       "mixed": "此项目的部分文件夹位于 WSL 内，而不在 Windows 驱动器上",
-      "overlap": "此项目与一个 Orca 无法转换的项目共用文件夹，转换会导致它们被拆分",
+      "overlap": "此项目与一个 Adehone 无法转换的项目共用文件夹，转换会导致它们被拆分",
       "notDriveMount": "在此发行版中，该文件夹并不是 {{drivePath}}：它不是从该 Windows 驱动器挂载的",
       "notConvertible": "此项目不在此计算机的 Windows 驱动器上",
-      "differingState": "Orca 在此文件夹的 WSL 路径和 {{drivePath}} 下分别保存了不同的详细信息，因此未做任何更改",
+      "differingState": "Adehone 在此文件夹的 WSL 路径和 {{drivePath}} 下分别保存了不同的详细信息，因此未做任何更改",
       "projectSplit": "此项目还包含一个不参与转换的仓库，因此未做任何更改"
     }
   },
@@ -30680,7 +30680,7 @@
       "toast": "无法安装必需的插件",
       "open": "打开插件",
       "label": "团队要求",
-      "body": "Orca 无法安装 {{plugin}}"
+      "body": "Adehone 无法安装 {{plugin}}"
     },
     "frameSaveAs": {
       "title": "保存文件",
@@ -30712,8 +30712,8 @@
       "teamPublisher": "你的团队"
     },
     "displayText": {
-      "tb0b38488": "适用于 Orca 的 GitHub 主题",
-      "tb8aa98fc": "适用于 Orca 的 VS Code 默认主题",
+      "tb0b38488": "适用于 Adehone 的 GitHub 主题",
+      "tb8aa98fc": "适用于 Adehone 的 VS Code 默认主题",
       "tfc425a57": "Multipass 虚拟机配方",
       "t0f9f5503": "GitHub 官方的 VS Code 主题：Light Default、Dark Default、Dark Dimmed 以及高对比度版本",
       "t0b4f7e19": "VS Code 默认配色主题的非官方移植版：Dark Modern、Light Modern、Dark+ 和 Light+",
@@ -30738,10 +30738,10 @@
       "attachmentsOmitted": "已保存的卡死报告和诊断日志未附加：{{value0}}",
       "description": "发送已保存的卡死报告，帮助我们了解发生了什么",
       "notSent": "卡死报告未发送",
-      "notes": "可选：Orca 卡死前你在做什么？",
+      "notes": "可选：Adehone 卡死前你在做什么？",
       "sent": "卡死报告已发送",
       "sentWithoutAttachments": "详情已发送，但未附带已保存的卡死报告或诊断日志",
-      "summary": "Orca 停止响应",
+      "summary": "Adehone 停止响应",
       "title": "报告卡死",
       "uncheckAttachments": "取消勾选“包含已保存的卡顿报告和近期日志（已脱敏）”并重试，或复制详细信息",
       "includeRedacted": "包含已保存的卡顿报告和近期日志（已脱敏）"
@@ -30819,7 +30819,7 @@
     "turnOnPlugins": "在插件中开启",
     "languageDidNotLoad": "{{language}} 未能加载",
     "yourLanguage": "你的语言",
-    "offerSentence": "Orca 有 {{language}} 的社区翻译",
+    "offerSentence": "Adehone 有 {{language}} 的社区翻译",
     "offerInstall": "安装 <lang>{{language}}</lang>…",
     "offerUse": "使用 <lang>{{language}}</lang>",
     "offerInstalling": "正在安装 <lang>{{language}}</lang>…",
@@ -30828,7 +30828,7 @@
     "preparing": "正在准备…",
     "offerConfirming": "正在等待确认…",
     "offerRetry": "重试",
-    "suggestionTitle": "<lang>{{language}}</lang> 版 Orca",
+    "suggestionTitle": "<lang>{{language}}</lang> 版 Adehone",
     "systemResolved": "{{system}}（{{language}}）",
     "suggestionInstall": "安装",
     "suggestionUse": "使用",
@@ -30880,8 +30880,8 @@
     "failedChipLabel": "更新失败：查看错误",
     "failedChipTooltip": "更新失败，点击查看详情",
     "failedTitle": "无法更新 {{product}}",
-    "failedDescription": "Orca 在 <strong>{{host}}</strong> 上运行了 <code>{{command}}</code>，以将你的 {{product}} 从 <strong>{{installedVersion}}</strong> 更新到 <strong>{{latestVersion}}</strong>，但运行失败",
-    "failedDescriptionNoCommand": "Orca 无法更新你在 <strong>{{host}}</strong> 上的 {{product}}",
+    "failedDescription": "Adehone 在 <strong>{{host}}</strong> 上运行了 <code>{{command}}</code>，以将你的 {{product}} 从 <strong>{{installedVersion}}</strong> 更新到 <strong>{{latestVersion}}</strong>，但运行失败",
+    "failedDescriptionNoCommand": "Adehone 无法更新你在 <strong>{{host}}</strong> 上的 {{product}}",
     "cardLabel": "智能体 CLI 更新",
     "cardLater": "稍后",
     "copied": "已复制",

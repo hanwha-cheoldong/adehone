@@ -41,7 +41,7 @@ describe('Composio 403s', () => {
     )
     const unnamed = new ComposioApi('key', forbidden('APIKey_InsufficientPermissions', 'Denied.'))
     await expect(unnamed.app('notion')).rejects.toThrow(
-      'This Composio key is missing a permission Orca needs.'
+      'This Composio key is missing a permission Adehone needs.'
     )
   })
 
